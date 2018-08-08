@@ -75,8 +75,8 @@ contract ShaBiToken is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;SBT&quot;;
-        name = &quot;Sha Bi Token&quot;;
+        symbol = "SBT";
+        name = "Sha Bi Token";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         stopped = false;

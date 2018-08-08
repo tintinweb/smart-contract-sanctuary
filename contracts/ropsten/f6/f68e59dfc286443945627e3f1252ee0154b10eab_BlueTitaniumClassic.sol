@@ -113,8 +113,8 @@ contract BlueTitaniumClassic is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BlueTitaniumClassic() public {
-        symbol = &quot;BTC25&quot;;
-        name = &quot;BlueTitaniumClassic&quot;;
+        symbol = "BTC25";
+        name = "BlueTitaniumClassic";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xFB73267c6a50fb8d118FeBF86926F4AfC1f42F68] = _totalSupply;

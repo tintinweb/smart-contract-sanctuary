@@ -179,11 +179,11 @@ contract LimbToken is StandardToken { // Token is Geo-spatially coded ECR20 Cont
 
         totalSupply = 2000000 * 1000000000000000000;                        // Update total supply and add updated location data from https://glovis.usgs.gov (1000 for example) (CHANGE THIS)
 
-        name = &quot;LimbToken&quot;;                                   // Set the name for display purposes (CHANGE THIS)
+        name = "LimbToken";                                   // Set the name for display purposes (CHANGE THIS)
 
         decimals = 18;                                               // Amount of decimals for display purposes (CHANGE THIS)
 
-        symbol = &quot;LIMB&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "LIMB";                                             // Set the symbol for display purposes (CHANGE THIS)
 
         unitsOneEthCanBuy = 8;                                      // Set the price of your token for the ICO (CHANGE THIS)
 
@@ -225,7 +225,7 @@ contract LimbToken is StandardToken { // Token is Geo-spatially coded ECR20 Cont
 
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
 
-        //if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        //if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         Token called = Token(_spender);
         if (! called.receiveApproval(msg.sender, _value, this, _extraData)) { revert(); }
         return true;

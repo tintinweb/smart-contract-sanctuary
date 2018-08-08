@@ -113,8 +113,8 @@ contract CocoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CocoToken() public {
-        symbol = &quot;COCO&quot;;
-        name = &quot;Coco Token&quot;;
+        symbol = "COCO";
+        name = "Coco Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8FB6E0F2F310b828c1FCEc9BE0475308737701b3] = _totalSupply;

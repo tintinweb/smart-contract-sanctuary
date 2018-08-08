@@ -113,8 +113,8 @@ contract SucToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SucToken() public {
-        symbol = &quot;SUC&quot;;
-        name = &quot;Suc Token&quot;;
+        symbol = "SUC";
+        name = "Suc Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5e7130463c32fAD5a2ce06128Ff876F06da0ddcb] = _totalSupply;

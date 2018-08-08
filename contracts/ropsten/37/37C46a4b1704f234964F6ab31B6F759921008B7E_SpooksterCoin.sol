@@ -113,8 +113,8 @@ contract SpooksterCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SpooksterCoin() public {
-        symbol = &quot;SPOOK&quot;;
-        name = &quot;Spookster Coin&quot;;
+        symbol = "SPOOK";
+        name = "Spookster Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x205697a8ab4094aba26982A38608EB868Ffc021f] = _totalSupply;

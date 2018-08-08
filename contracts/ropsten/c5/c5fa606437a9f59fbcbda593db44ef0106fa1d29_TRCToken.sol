@@ -96,8 +96,8 @@ contract TRCToken is ERC20Interface, Ownable{
     // Constructor
     // ------------------------------------------------------------------------
     function TRCToken() public {
-        symbol = &quot;TRC&quot;;
-        name = &quot;TRC&quot;;
+        symbol = "TRC";
+        name = "TRC";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[msg.sender] = _totalSupply;

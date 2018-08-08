@@ -116,8 +116,8 @@ contract TokenCoin5 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TokenCoin5() public {
-        symbol = &quot;TKC5&quot;;
-        name = &quot;TokenCoin5 Token&quot;;
+        symbol = "TKC5";
+        name = "TokenCoin5 Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

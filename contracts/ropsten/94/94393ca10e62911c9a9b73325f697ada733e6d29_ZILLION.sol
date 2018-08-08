@@ -113,8 +113,8 @@ contract ZILLION is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZILLION() public {
-        symbol = &quot;ZILY&quot;;
-        name = &quot;ZILY&quot;;
+        symbol = "ZILY";
+        name = "ZILY";
         decimals = 8;
         _totalSupply = 10000000000000000000000000000000000;
         balances[0xd8e8B3C90bd95CE0Fb1351e6e58F51c831159299] = _totalSupply;

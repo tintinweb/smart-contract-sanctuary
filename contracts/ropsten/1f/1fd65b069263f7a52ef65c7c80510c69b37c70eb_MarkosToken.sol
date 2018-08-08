@@ -113,8 +113,8 @@ contract MarkosToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MarkosToken() public {
-        symbol = &quot;MRC&quot;;
-        name = &quot;MARKO TOKENS&quot;;
+        symbol = "MRC";
+        name = "MARKO TOKENS";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3BbBCB9a1214666d32aE5bAEa9a75A04448f370c] = _totalSupply;

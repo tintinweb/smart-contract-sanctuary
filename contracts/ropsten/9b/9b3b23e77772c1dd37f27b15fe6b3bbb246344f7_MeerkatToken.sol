@@ -49,8 +49,8 @@ contract MeerkatToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MCT&quot;;
-        name = &quot;Meerkat Token&quot;;
+        symbol = "MCT";
+        name = "Meerkat Token";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

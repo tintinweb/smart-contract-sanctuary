@@ -4,8 +4,8 @@ contract SimpleERC20Token {
     // Track how many tokens are owned by each address.
     mapping (address => uint256) public balanceOf;
 
-    string public name = &quot;Test KEY&quot;;
-    string public symbol = &quot;TKEY&quot;;
+    string public name = "Test KEY";
+    string public symbol = "TKEY";
     uint8 public decimals = 18;
 
     uint256 public totalSupply = 1000000 * (uint256(10) ** decimals);

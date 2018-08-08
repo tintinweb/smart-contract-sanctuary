@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract G2Token {
 
-    string public name = &quot;Dual Genesis&quot;;      //  token name
-    string public symbol = &quot;G2&quot;;           //  token symbol
+    string public name = "Dual Genesis";      //  token name
+    string public symbol = "G2";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

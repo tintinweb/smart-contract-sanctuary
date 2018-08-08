@@ -116,8 +116,8 @@ contract dayaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function dayaToken() public {
-        symbol = &quot;DAYA&quot;;
-        name = &quot;daya Token&quot;;
+        symbol = "DAYA";
+        name = "daya Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

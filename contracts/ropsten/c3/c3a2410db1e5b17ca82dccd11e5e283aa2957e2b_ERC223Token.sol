@@ -81,7 +81,7 @@ contract ERC223Token is ERC223, SafeMath {
   uint256 public totalSupply;
   
   function ERC223Token() public {
-      symbol = &quot;223rishi&quot;;
+      symbol = "223rishi";
       decimals = 0;
       totalSupply = 1000;
       balances[msg.sender] = totalSupply;

@@ -113,8 +113,8 @@ contract Quiricos is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Quiricos() public {
-        symbol = &quot;QRC&quot;;
-        name = &quot;Quiricos&quot;;
+        symbol = "QRC";
+        name = "Quiricos";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0532757fF0426080786A93228C4D970c1683aaf1] = _totalSupply;

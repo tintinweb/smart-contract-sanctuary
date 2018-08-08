@@ -238,8 +238,8 @@ contract StandardToken is ERC20, ERC223Token {
 
 contract TimeToken is StandardToken {
 
-    string public constant name = &quot;First Time Token&quot;;
-    string public constant symbol = &quot;FTT&quot;;
+    string public constant name = "First Time Token";
+    string public constant symbol = "FTT";
     uint8 public constant decimals = 18;
     uint256 public rate = 1;
     uint256 public constant INITIAL_SUPPLY = 10**2 * (10**uint256(decimals));

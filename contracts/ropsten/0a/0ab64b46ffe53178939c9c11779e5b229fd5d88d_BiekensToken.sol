@@ -113,8 +113,8 @@ contract BiekensToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BiekensToken() public {
-        symbol = &quot;Biekens&quot;;
-        name = &quot;Biekens Token&quot;;
+        symbol = "Biekens";
+        name = "Biekens Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa5cE4135a1486E0533A400fe28B464F2e3463e37] = _totalSupply;

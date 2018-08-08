@@ -52,8 +52,8 @@ contract StandardToken is ERC20 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     function Constructor() public {
-        _symbol = &quot;777&quot;;
-        _name = &quot;SevenSevenSeven&quot;;
+        _symbol = "777";
+        _name = "SevenSevenSeven";
         _decimals = 8;
         _totalSupply = 10000000000;
         balances[0xA0A856e6bC749c7E4f3866a6E7A3E7b1f9D6B6F2] = _totalSupply;

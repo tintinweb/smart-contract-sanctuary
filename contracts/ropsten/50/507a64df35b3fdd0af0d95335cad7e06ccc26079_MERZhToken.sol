@@ -113,8 +113,8 @@ contract MERZhToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MERZhToken() public {
-        symbol = &quot;MERZh&quot;;
-        name = &quot;MERZh Token&quot;;
+        symbol = "MERZh";
+        name = "MERZh Token";
         decimals = 18;
         _totalSupply = 10000000000000000000001234;
         balances[0xF3Eb23aD8a5E3E180a74E436D78ee4F9D872d712] = _totalSupply;

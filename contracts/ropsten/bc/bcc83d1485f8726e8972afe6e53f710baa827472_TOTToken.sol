@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -154,8 +154,8 @@ contract TOTToken is ERC20, Pausable {
 
   using SafeMath for uint256;
     
-  string public name = &quot;Trecento&quot;;      //  token name
-  string public symbol = &quot;TOT&quot;;           //  token symbol
+  string public name = "Trecento";      //  token name
+  string public symbol = "TOT";           //  token symbol
   uint256 public decimals = 8;            //  token digit
 
 

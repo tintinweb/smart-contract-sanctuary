@@ -65,8 +65,8 @@ contract DIDSToken is ERC20Token {
     }
 
     constructor() public {
-        symbol   = &quot;DIDS&quot;;                                              // Set the symbol for display purposes
-        name     = &quot;Doitdo Axis&quot;;                                   // Set the name for display purposes
+        symbol   = "DIDS";                                              // Set the symbol for display purposes
+        name     = "Doitdo Axis";                                   // Set the name for display purposes
         decimals = 18;                                                    // Amount of decimals for display purposes
 
         totalSupply = 3 * 10**27;                                // Update total supply

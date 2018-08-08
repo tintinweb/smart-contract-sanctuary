@@ -6,7 +6,7 @@ contract CloneFactory {
   event CloneCreated(address indexed target, address clone);
 
   function createClone(address target) internal returns (address result) {
-    bytes memory clone = hex&quot;600034603b57603080600f833981f36000368180378080368173bebebebebebebebebebebebebebebebebebebebe5af43d82803e15602c573d90f35b3d90fd&quot;;
+    bytes memory clone = hex"600034603b57603080600f833981f36000368180378080368173bebebebebebebebebebebebebebebebebebebebe5af43d82803e15602c573d90f35b3d90fd";
     // BK Ok - Template code address
     bytes20 targetBytes = bytes20(target);
     // BK Next block Ok - Overwrite `beefbeefbeefbeefbeefbeefbeefbeefbeefbeef` with template code address

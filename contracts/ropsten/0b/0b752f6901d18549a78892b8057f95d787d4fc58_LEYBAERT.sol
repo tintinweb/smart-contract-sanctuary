@@ -147,9 +147,9 @@ contract LEYBAERT is StandardToken {
 
         balances[msg.sender] = 200000;               // Give the creator all initial tokens (100000 for example)
         totalSupply = 200000;                        // Update total supply (100000 for example)
-        name = &quot;LEYBAERT&quot;;                                   // Set the name for display purposes
+        name = "LEYBAERT";                                   // Set the name for display purposes
         decimals = 0;                            // Amount of decimals for display purposes
-        symbol = &quot;LEYBT&quot;;                               // Set the symbol for display purposes
+        symbol = "LEYBT";                               // Set the symbol for display purposes
 
     }
 
@@ -165,7 +165,7 @@ contract LEYBAERT is StandardToken {
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

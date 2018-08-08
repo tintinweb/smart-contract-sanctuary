@@ -113,8 +113,8 @@ contract LIRAX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;LRX&quot;;
-        name = &quot;LIRAX&quot;;
+        symbol = "LRX";
+        name = "LIRAX";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa5F529B75a2BF84E4592C7E066f0F68060C65E11] = _totalSupply;

@@ -106,8 +106,8 @@ contract SecuritiesVaultBank is ERC20, Regulated, Nonpayable {
   mapping(address => mapping(address => uint)) allowed;
 
   function SecuritiesVaultBank() public {
-    symbol = &quot;YST&quot;;                                 // Create the Sucurities Token Symbol Here
-    name = &quot;Your Securities Token&quot;;                 // Description of the Securetized Tokens
+    symbol = "YST";                                 // Create the Sucurities Token Symbol Here
+    name = "Your Securities Token";                 // Description of the Securetized Tokens
     // In our sample we have created securites tokens and fractional securities for the tokens upto 18 digits
     decimals = 18;                                  // Number of Digits [0-18] If an organization wants to fractionalize the securities
     // The 0 can be any digit up to 18. Eighteen is the standard for cryptocurrencies

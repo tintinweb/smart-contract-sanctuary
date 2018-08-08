@@ -243,7 +243,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -302,8 +302,8 @@ contract Ownable {
   }
 }
 contract CpublicU is StandardToken {
-    string public name = &quot; CpublicU&quot;;
-    string public symbol = &quot;CPU&quot;;
+    string public name = " CpublicU";
+    string public symbol = "CPU";
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 6000000000000000000000000000;
     mapping(address => uint) public transferAllowedDates;

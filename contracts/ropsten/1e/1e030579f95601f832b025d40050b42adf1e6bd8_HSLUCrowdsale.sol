@@ -1,8 +1,8 @@
 pragma solidity ^0.4.22;
 
 contract HSLUCrowdsale {
-    string public name = &quot;HSLU Token&quot;;
-    string public symbol = &quot;HSLU&quot;;
+    string public name = "HSLU Token";
+    string public symbol = "HSLU";
     uint256 public decimals = 18;
     
     mapping(address => uint256) public balanceOf;

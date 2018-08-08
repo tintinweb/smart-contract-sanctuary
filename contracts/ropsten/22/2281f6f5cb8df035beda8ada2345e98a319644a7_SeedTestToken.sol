@@ -94,8 +94,8 @@ contract SeedTestToken is ERC20Interface, Owned, SafeMath {
   //  Constructor
   //============================================================================
   function SeedTestToken() public {
-        symbol = &quot;SDT&quot;;
-        name = &quot;Seed Test Token&quot;;
+        symbol = "SDT";
+        name = "Seed Test Token";
         decimals = 18;
         _totalSupply = 12000000000000000000000000000;
         _tokensForSale = 4800000000000000000000000000;

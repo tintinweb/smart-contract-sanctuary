@@ -113,8 +113,8 @@ contract ShresterToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ShresterToken() public {
-        symbol = &quot;SHRES&quot;;
-        name = &quot;ShresterToken&quot;;
+        symbol = "SHRES";
+        name = "ShresterToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4B18f6b5a1B1Fce9a2ABdF1d9FBaEbADac727C25] = _totalSupply;

@@ -113,8 +113,8 @@ contract BearTrap is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BearTrap() public {
-        symbol = &quot;BRTP&quot;;
-        name = &quot;BearTrap&quot;;
+        symbol = "BRTP";
+        name = "BearTrap";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x7D7fc11f3d623E883dC621Fe7B2CA3A9e0fE75B3] = _totalSupply;

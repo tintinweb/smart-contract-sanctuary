@@ -147,7 +147,7 @@ contract MyDBaseToken is ERC20 {
 
 }
 
-contract MyDToken is MyDBaseToken(&quot;MyD Token&quot;, &quot;MyD&quot;, 18, 10000000000000000000000000000), Ownable {
+contract MyDToken is MyDBaseToken("MyD Token", "MyD", 18, 10000000000000000000000000000), Ownable {
 
     uint256 internal privateToken;
     uint256 internal preSaleToken;

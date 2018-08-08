@@ -259,8 +259,8 @@ contract FreezeableToken is StandardToken, Freezeable {
 
 contract BLINGToken is FreezeableToken {
   // public variables
-  string public name = &quot;BLING&quot;; 
-  string public symbol = &quot;BLING&quot;;
+  string public name = "BLING"; 
+  string public symbol = "BLING";
   uint8 public decimals = 18;
 
   // internal variables

@@ -113,8 +113,8 @@ contract WatahaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WatahaToken() public {
-        symbol = &quot;WTH&quot;;
-        name = &quot;Wataha Token&quot;;
+        symbol = "WTH";
+        name = "Wataha Token";
         decimals = 18;
         _totalSupply = 20000000000000000000000000;
         balances[0xcb60b51b9a187859E4578B5673dac7b0655663A3] = _totalSupply;

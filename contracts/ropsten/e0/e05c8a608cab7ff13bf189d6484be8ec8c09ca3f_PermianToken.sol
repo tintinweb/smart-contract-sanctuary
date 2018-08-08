@@ -177,8 +177,8 @@ contract Ownable {
   }
 }
 contract PermianToken is StandardToken, Ownable {
-  string public name = &quot;Permian&quot;;
-  string public symbol = &quot;XPR&quot;;
+  string public name = "Permian";
+  string public symbol = "XPR";
   uint256 public decimals = 2;
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(2));
   event Burn(address indexed owner, uint256 value);

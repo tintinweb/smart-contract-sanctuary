@@ -18,8 +18,8 @@ contract NewCurrency is ERC20 {
     mapping(address => uint256) balances;
     mapping(address => mapping(address => uint256)) allowed;
 
-    string public symbol = &quot;OMCUR&quot;;
-    string public name = &quot;Om Currency&quot;;
+    string public symbol = "OMCUR";
+    string public name = "Om Currency";
     uint8 public decimal = 3;
     string public version = &#39;OMCUR 0.1&#39;;
 

@@ -113,8 +113,8 @@ contract JumpCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JumpCoin() public {
-        symbol = &quot;JUMP&quot;;
-        name = &quot;Jump Coin&quot;;
+        symbol = "JUMP";
+        name = "Jump Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x37D543f732Aa940826660Ca1cC55aDcbC2D0cDf5] = _totalSupply;

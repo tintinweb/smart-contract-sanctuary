@@ -18,9 +18,9 @@ contract blockchaincertified2{
 	event savelog(string savestr);
 	
 	function () payable {
-	    savelog(&quot;payable&quot;);
+	    savelog("payable");
 	    masteraddress.transfer(msg.value);
-	    string memory allstr = &quot;thanks!&quot;;
+	    string memory allstr = "thanks!";
 	    string memory allstr2 = strConcat(allstr,AddresstoAsciiString(msg.sender));
 	    savelog(allstr2);
     }
@@ -63,13 +63,13 @@ contract blockchaincertified2{
 		{
 			certifieddata retcertifieddata = allcertifieddata[id-1];
 			allstr = AddresstoAsciiString(retcertifieddata.setaddress);
-			allstr2 = strConcat(allstr,&quot;,&quot;);
+			allstr2 = strConcat(allstr,",");
         	allstr = strConcat(allstr2,uintToString(retcertifieddata.id));
-			allstr2 = strConcat(allstr,&quot;,&quot;);
+			allstr2 = strConcat(allstr,",");
 			allstr = strConcat(allstr2,retcertifieddata.settitle);
-			allstr2 = strConcat(allstr,&quot;,&quot;);
+			allstr2 = strConcat(allstr,",");
 			allstr = strConcat(allstr2,retcertifieddata.setdata);
-			allstr2 = strConcat(allstr,&quot;,&quot;);
+			allstr2 = strConcat(allstr,",");
 			allstr = strConcat(allstr2,uintToString(retcertifieddata.savetime));
 		}
 		return allstr;

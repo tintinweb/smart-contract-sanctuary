@@ -16,10 +16,10 @@ contract Token{
 
 contract MarmotToken is Token {
 
-    //21000000,&quot;Marmot Token&quot;,18,&quot;MMT&quot;
-    string public name;     //&quot;Marmot Token&quot;
+    //21000000,"Marmot Token",18,"MMT"
+    string public name;     //"Marmot Token"
     uint8 public decimals;  //18
-    string public symbol;   //&quot;MMT&quot;
+    string public symbol;   //"MMT"
 
     function MarmotToken(uint256 _initialAmount, string _tokenName, uint8 _decimalUnits, string _tokenSymbol) public {
         totalSupply = _initialAmount * 10 ** uint256(_decimalUnits);         // 设置初始总量

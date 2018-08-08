@@ -76,11 +76,11 @@ contract Ballot is Owned {
         // explanation about what went wrong.
         require(
             msg.sender == chairperson,
-            &quot;Only chairperson can give right to vote.&quot;
+            "Only chairperson can give right to vote."
         );
         require(
             !voters[voter].voted,
-            &quot;The voter already voted.&quot;
+            "The voter already voted."
         );
         require(voters[voter].weight == 0);
         voters[voter].weight = 1;
@@ -88,14 +88,14 @@ contract Ballot is Owned {
     
     function delegate(address to) public{
         Voter storage sender = voters[msg.sender];
-        require(!sender.voted,&quot;You already voted.&quot;);
-        require(to != msg.sender, &quot;Self-delegation is disallowed.&quot;);
+        require(!sender.voted,"You already voted.");
+        require(to != msg.sender, "Self-delegation is disallowed.");
         
         while (voters[to].delegate != address(0)) {
             to = voters[to].delegate;
 
             // We found a loop in the delegation, not allowed.
-            require(to != msg.sender, &quot;Found loop in delegation.&quot;);
+            require(to != msg.sender, "Found loop in delegation.");
         }
         
           // Since `sender` is a reference, this
@@ -118,7 +118,7 @@ contract Ballot is Owned {
     /// to proposal `proposals[proposal].name`.
     function vote(uint proposal) public {
         Voter storage sender = voters[msg.sender];
-        require(!sender.voted, &quot;Already voted.&quot;);
+        require(!sender.voted, "Already voted.");
         sender.voted = true;
         sender.vote = proposal;
 

@@ -113,8 +113,8 @@ contract AIC is UnboundedRegularToken {
 
     uint public totalSupply = 10**27;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;Artificial Intelligence COIN &quot;;
-    string constant public symbol = &quot;AIC&quot;;
+    string constant public name = "Artificial Intelligence COIN ";
+    string constant public symbol = "AIC";
 
     function AIC() {
         balances[msg.sender] = totalSupply;

@@ -24,9 +24,9 @@ contract NewToken is Token {
     constructor() public {
         balances[msg.sender] = 1000000000000000000000;               
         totalSupply = 1000000000000000000000;                        
-        name = &quot;NEWToken&quot;;                                   
+        name = "NEWToken";                                   
         decimals = 18;                                               
-        symbol = &quot;NEW&quot;;                                             
+        symbol = "NEW";                                             
         unitsOneEthCanBuy = 10;                                      
         fundsWallet = msg.sender;                                    
     }

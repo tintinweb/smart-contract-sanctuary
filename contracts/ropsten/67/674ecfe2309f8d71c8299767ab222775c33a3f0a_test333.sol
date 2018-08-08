@@ -39,9 +39,9 @@ contract test333 is StandToken {
     uint256 public dec_multiple;
 
     constructor() public {
-        name = &quot;test333&quot;;
+        name = "test333";
         decimals = 18;
-        symbol = &quot;TS&quot;;
+        symbol = "TS";
         dec_multiple = 10 ** uint256(decimals);
 
         totalSupply = 3 * 1000 * 1000 * 1000 * dec_multiple;

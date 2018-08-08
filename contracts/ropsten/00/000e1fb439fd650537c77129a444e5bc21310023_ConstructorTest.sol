@@ -11,6 +11,6 @@ contract  ConstructorTest {
     return a + b;
   }
   function helloworld  (  )  returns ( string ) {
-    return &quot;hello world!&quot;;
+    return "hello world!";
   }
 }

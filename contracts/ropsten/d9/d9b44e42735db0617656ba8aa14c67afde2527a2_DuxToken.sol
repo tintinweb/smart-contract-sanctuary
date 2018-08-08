@@ -113,8 +113,8 @@ contract DuxToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DuxToken() public {
-        symbol = &quot;DUX&quot;;
-        name = &quot;Duxton&quot;;
+        symbol = "DUX";
+        name = "Duxton";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xBc6877758f40CA76df095F9D91B7f76CA07dBDFE] = _totalSupply;

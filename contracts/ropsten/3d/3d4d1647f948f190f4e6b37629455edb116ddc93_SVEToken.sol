@@ -116,8 +116,8 @@ contract SVEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SVEToken() public {
-        symbol = &quot;SVEToken&quot;;
-        name = &quot;Silicon Valley Enlistment Token&quot;;
+        symbol = "SVEToken";
+        name = "Silicon Valley Enlistment Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

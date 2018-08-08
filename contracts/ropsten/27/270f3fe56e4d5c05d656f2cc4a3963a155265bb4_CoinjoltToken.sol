@@ -239,8 +239,8 @@ contract Ownable{
 
 contract CoinjoltToken is StandardToken , Ownable
 {
-    string public name=&quot;ERC20 standard token&quot;;
-    string public symbol = &quot;SUM&quot;;
+    string public name="ERC20 standard token";
+    string public symbol = "SUM";
     uint public decimal = 2;
     uint private constant initialsupply = 10*10**(6+2);
 

@@ -9,9 +9,9 @@ contract Token {
 
 
 contract RocketCoin {
-    string public constant symbol = &quot;XRC&quot;;
+    string public constant symbol = "XRC";
 
-    string public constant name = &quot;Rocket Coin&quot;;
+    string public constant name = "Rocket Coin";
 
     uint public constant decimals = 18;
 

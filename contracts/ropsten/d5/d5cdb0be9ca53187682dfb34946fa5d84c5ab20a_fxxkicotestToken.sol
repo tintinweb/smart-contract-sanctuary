@@ -116,8 +116,8 @@ contract fxxkicotestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function fxxkicotestToken() public {
-        symbol = &quot;FIT&quot;;
-        name = &quot;fxxk ico test Token&quot;;
+        symbol = "FIT";
+        name = "fxxk ico test Token";
         decimals = 18;
         startDate = now;
         bonusEnds = now + 1 weeks;

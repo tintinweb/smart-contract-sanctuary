@@ -111,7 +111,7 @@ library Addresses {
     }
 }
 
-contract MyToken is Token(&quot;LOCAS&quot;, &quot;Locanza&quot;, 8, 5000000000000000), ERC20, ERC223 {
+contract MyToken is Token("LOCAS", "Locanza", 8, 5000000000000000), ERC20, ERC223 {
 
     using SafeMath for uint;
     using Addresses for address;
@@ -170,7 +170,7 @@ contract MyToken is Token(&quot;LOCAS&quot;, &quot;Locanza&quot;, 8, 50000000000
     function transfer(address _to, uint _value)
         public
         returns (bool) {
-        return transfer(_to, _value, &quot;&quot;);
+        return transfer(_to, _value, "");
     }
 //checked
     function transfer(address _to, uint _value, bytes _data)
@@ -195,7 +195,7 @@ contract MyToken is Token(&quot;LOCAS&quot;, &quot;Locanza&quot;, 8, 50000000000
     function transferFrom(address _from, address _to, uint _value)
         public
         returns (bool) {
-        return transferFrom(_from, _to, _value, &quot;&quot;);
+        return transferFrom(_from, _to, _value, "");
     }
 
 //checked
@@ -316,17 +316,17 @@ contract MyToken is Token(&quot;LOCAS&quot;, &quot;Locanza&quot;, 8, 50000000000
     function getStage() public view returns(string){
 
         if (uint(stage)==0) {
-            return &quot;FirstLoyalty&quot;;
+            return "FirstLoyalty";
         } else if(uint(stage)==1){
-            return &quot;Stage1&quot;;
+            return "Stage1";
          } else if (uint(stage)==2){
-            return &quot;Stage2&quot;;
+            return "Stage2";
         }  else if(uint(stage)==3){
-            return &quot;Stage3&quot; ;
+            return "Stage3" ;
         } else if(uint(stage)==4){
-            return &quot;Stage4&quot; ;
+            return "Stage4" ;
         }else if(uint(stage)==5){
-            return &quot;Stage5&quot; ;
+            return "Stage5" ;
         }
     }
 

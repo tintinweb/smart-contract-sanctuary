@@ -90,7 +90,7 @@ contract StateChannels is ECVerify {
         bytes signature1
     ) {
         if (channels[channelId].channelId == channelId) {
-            Error(&quot;channel with that channelId already exists&quot;);
+            Error("channel with that channelId already exists");
             return;
         }
 
@@ -104,12 +104,12 @@ contract StateChannels is ECVerify {
         );
 
         if (!ecverify(fingerprint, signature0, address0)) {
-            Error(&quot;signature0 invalid&quot;);
+            Error("signature0 invalid");
             return;
         }
 
         if (!ecverify(fingerprint, signature1, address1)) {
-            Error(&quot;signature1 invalid&quot;);
+            Error("signature1 invalid");
             return;
         }
 
@@ -137,7 +137,7 @@ contract StateChannels is ECVerify {
         tryClose(channelId);
 
         if (channels[channelId].phase == PHASE_CLOSED) {
-            Error(&quot;channel closed&quot;);
+            Error("channel closed");
             return;
         }
 
@@ -149,17 +149,17 @@ contract StateChannels is ECVerify {
         );
 
         if (!ecverify(fingerprint, signature0, channels[channelId].address0)) {
-            Error(&quot;signature0 invalid&quot;);
+            Error("signature0 invalid");
             return;
         }
 
         if (!ecverify(fingerprint, signature1, channels[channelId].address1)) {
-            Error(&quot;signature1 invalid&quot;);
+            Error("signature1 invalid");
             return;
         }
 
         if (sequenceNumber <= channels[channelId].sequenceNumber) {
-            Error(&quot;sequence number too low&quot;);
+            Error("sequence number too low");
             return;
         }
 
@@ -173,7 +173,7 @@ contract StateChannels is ECVerify {
         address signer
     ) {
         if (channels[channelId].phase != PHASE_OPEN) {
-            Error(&quot;channel not open&quot;);
+            Error("channel not open");
             return;
         }
 
@@ -184,16 +184,16 @@ contract StateChannels is ECVerify {
 
         if (signer == channels[channelId].address0) {
             if (!ecverify(fingerprint, signature, channels[channelId].address0)) {
-                Error(&quot;signature invalid&quot;);
+                Error("signature invalid");
                 return;
             }
         } else if (signer == channels[channelId].address1) {
             if (!ecverify(fingerprint, signature, channels[channelId].address1)) {
-                Error(&quot;signature invalid&quot;);
+                Error("signature invalid");
                 return;
             }
         } else {
-            Error(&quot;signer invalid&quot;);
+            Error("signer invalid");
             return;
         }
 

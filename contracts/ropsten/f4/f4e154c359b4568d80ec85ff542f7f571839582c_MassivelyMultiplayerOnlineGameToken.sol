@@ -116,8 +116,8 @@ contract MassivelyMultiplayerOnlineGameToken is ERC20Interface, Owned, SafeMath 
     // Constructor
     // ------------------------------------------------------------------------
     function MMOTOKEN() public {
-        symbol = &quot;MMO TOKEN&quot;;
-        name = &quot;MassivelyMultiplayerOnlineGameToken&quot;;
+        symbol = "MMO TOKEN";
+        name = "MassivelyMultiplayerOnlineGameToken";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

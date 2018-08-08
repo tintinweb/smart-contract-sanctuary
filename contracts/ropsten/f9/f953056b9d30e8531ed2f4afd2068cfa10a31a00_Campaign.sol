@@ -79,7 +79,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -167,7 +167,7 @@ contract Campaign is Ownable {
 contract CustomCoinMinter is Ownable {
     using SafeMath for uint256;
 
-	//ropsten: &quot;0x29280a0ef3e3df985c6b9dac0cf4108318d98d3b&quot;
+	//ropsten: "0x29280a0ef3e3df985c6b9dac0cf4108318d98d3b"
 	BTTSTokenFactory public bttsFactory;
 	ERC20 public gzeCoin;
   	//target wallet for received GZE

@@ -114,8 +114,8 @@ contract FFCryptoCoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FFCryptoCoinToken() public {
-        symbol = &quot;FFC&quot;;
-        name = &quot;FFCryptoCoin Token&quot;;
+        symbol = "FFC";
+        name = "FFCryptoCoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

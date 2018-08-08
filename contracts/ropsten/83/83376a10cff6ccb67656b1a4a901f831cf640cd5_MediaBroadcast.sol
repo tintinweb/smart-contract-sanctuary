@@ -113,8 +113,8 @@ contract MediaBroadcast is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MediaBroadcast() public {
-        symbol = &quot;MNCCrypto&quot;;
-        name = &quot;MediaBroadcast&quot;;
+        symbol = "MNCCrypto";
+        name = "MediaBroadcast";
         decimals = 18;
         _totalSupply = 1000000000000;
         balances[0xa1920fb9391F38c26B0fC7c889bd07038D09eDC0] = _totalSupply;

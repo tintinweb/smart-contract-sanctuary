@@ -113,8 +113,8 @@ contract SendBobsNVag is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BobsNVag() public {
-        symbol = &quot;BOBS&quot;;
-        name = &quot;BobsNVag&quot;;
+        symbol = "BOBS";
+        name = "BobsNVag";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[ 0x92721d2D39E5e471ad993035B6EF580f99D171fF] = _totalSupply;

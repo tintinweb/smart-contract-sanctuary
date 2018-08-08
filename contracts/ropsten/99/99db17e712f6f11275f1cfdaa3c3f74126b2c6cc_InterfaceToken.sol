@@ -77,7 +77,7 @@ contract ERC721 is ERC721Basic, ERC721Enumerable, ERC721Metadata {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -92,7 +92,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) public returns(bytes4);
 }
@@ -177,7 +177,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -316,7 +316,7 @@ contract ERC721BasicToken is ERC721Basic {
   * @dev Safely transfers the ownership of a given token ID to another address
   * @dev If the target address is a contract, it must implement `onERC721Received`,
   *  which is called upon a safe transfer, and return the magic value
-  *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+  *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
   *  the transfer is reverted.
   * @dev Requires the msg sender to be the owner, approved, or operator
   * @param _from current owner of the token
@@ -324,14 +324,14 @@ contract ERC721BasicToken is ERC721Basic {
   * @param _tokenId uint256 ID of the token to be transferred
   */
   function safeTransferFrom(address _from, address _to, uint256 _tokenId) public canTransfer(_tokenId) {
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
   * @dev Safely transfers the ownership of a given token ID to another address
   * @dev If the target address is a contract, it must implement `onERC721Received`,
   *  which is called upon a safe transfer, and return the magic value
-  *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+  *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
   *  the transfer is reverted.
   * @dev Requires the msg sender to be the owner, approved, or operator
   * @param _from current owner of the token
@@ -637,15 +637,15 @@ library Strings {
   }
 
   function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-    return strConcat(_a, _b, _c, _d, &quot;&quot;);
+    return strConcat(_a, _b, _c, _d, "");
   }
 
   function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-    return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+    return strConcat(_a, _b, _c, "", "");
   }
 
   function strConcat(string _a, string _b) internal pure returns (string) {
-    return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+    return strConcat(_a, _b, "", "", "");
   }
 }
 
@@ -654,7 +654,7 @@ library Strings {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -694,7 +694,7 @@ contract Ownable {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable {
   mapping(address => bool) public whitelist;
@@ -828,8 +828,8 @@ contract InterfaceToken is ERC721Token, ERC165, Whitelist {
 
   event Minted(address indexed _owner, uint256 indexed _tokenId, bytes32 _blockhash, bytes32 _nickname);
 
-  string internal tokenBaseURI = &quot;https://ipfs.infura.io/ipfs/&quot;;
-  string internal defaultTokenURI = &quot;QmUrTjPy2g4awRYAV8KsRShGaHfLhcgk3nQpEGwY5893Bk&quot;;
+  string internal tokenBaseURI = "https://ipfs.infura.io/ipfs/";
+  string internal defaultTokenURI = "QmUrTjPy2g4awRYAV8KsRShGaHfLhcgk3nQpEGwY5893Bk";
 
   uint256 public purchaseTokenPointer =  1000000000;
   uint256 public costOfToken = 0.01 ether;
@@ -840,12 +840,12 @@ contract InterfaceToken is ERC721Token, ERC165, Whitelist {
   mapping(uint256 => bytes32) internal tokenIdToBlockhash;
   mapping(bytes32 => uint256) internal blockhashToTokenId;
 
-  function InterfaceToken() public ERC721Token(&quot;Interface Token&quot;, &quot;TOKN&quot;) {
+  function InterfaceToken() public ERC721Token("Interface Token", "TOKN") {
     super.addAddressToWhitelist(msg.sender);
   }
 
   function() public payable {
-    buyTokens(&quot;&quot;);
+    buyTokens("");
   }
 
   /**

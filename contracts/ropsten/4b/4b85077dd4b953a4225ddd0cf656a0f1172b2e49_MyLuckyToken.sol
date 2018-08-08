@@ -113,8 +113,8 @@ contract MyLuckyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MLT&quot;;
-        name = &quot;My Lucky Token&quot;;
+        symbol = "MLT";
+        name = "My Lucky Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x34e1e4747533e673289361e3D2B60f56814383D9] = _totalSupply;

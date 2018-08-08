@@ -116,8 +116,8 @@ contract HdIcoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;hd&quot;;
-        name = &quot;hd Token&quot;;
+        symbol = "hd";
+        name = "hd Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

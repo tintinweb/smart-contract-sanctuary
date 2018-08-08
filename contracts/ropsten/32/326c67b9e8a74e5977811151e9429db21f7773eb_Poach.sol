@@ -310,7 +310,7 @@ contract ERC721Base {
      * @param assetId uint256 ID of the asset to be transferred
      */
     function safeTransferFrom(address from, address to, uint256 assetId) external returns (bool) {
-        return _doTransferFrom(from, to, assetId, &quot;&quot;, true);
+        return _doTransferFrom(from, to, assetId, "", true);
     }
 
     /**
@@ -337,7 +337,7 @@ contract ERC721Base {
      * @param assetId uint256 ID of the asset to be transferred
      */
     function transferFrom(address from, address to, uint256 assetId) external returns (bool) {
-        return _doTransferFrom(from, to, assetId, &quot;&quot;, false);
+        return _doTransferFrom(from, to, assetId, "", false);
     }
 
     function _doTransferFrom(
@@ -371,7 +371,7 @@ contract ERC721Base {
         _addAssetTo(to, assetId);
 
         if (doCheck && _isContract(to)) {
-            // Equals to bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))
+            // Equals to bytes4(keccak256("onERC721Received(address,uint256,bytes)"))
             bytes4 ERC721_RECEIVED = bytes4(0xf0b9e5ba);
             require(
                 IERC721Receiver(to).onERC721Received(
@@ -433,7 +433,7 @@ contract Poach is ERC721Base {
     }
 
     modifier alive(uint256 id) {
-        require(poaches[id].alive, &quot;the pair its not alive&quot;);
+        require(poaches[id].alive, "the pair its not alive");
         _;
     }
 

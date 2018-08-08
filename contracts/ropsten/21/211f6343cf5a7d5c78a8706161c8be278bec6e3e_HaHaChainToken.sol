@@ -82,8 +82,8 @@ contract HaHaChainToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;HaHaChain&quot;;
-    string public constant symbol = &quot;HHC&quot;;
+    string public constant name = "HaHaChain";
+    string public constant symbol = "HHC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

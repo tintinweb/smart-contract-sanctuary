@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -58,8 +58,8 @@ contract usingZyPPAConsts {
     address constant PREICO_ADDRESS = 0x1f6CD406c0125Bf9E4B9D3951B1A8F5063A1f878;
     address constant COLD_WALLET = 0x6C0aAf8f235a39394D744Bdb42a124967D7de5B0;
 
-    string constant TOKEN_NAME = &quot;ZyPPA&quot;;
-    bytes32 constant TOKEN_SYMBOL = &quot;ZPA&quot;;
+    string constant TOKEN_NAME = "ZyPPA";
+    bytes32 constant TOKEN_SYMBOL = "ZPA";
 }
 /**
  * @title SafeMath

@@ -113,8 +113,8 @@ contract MistryToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;Mistry&quot;;
-        name = &quot;Mistry Token&quot;;
+        symbol = "Mistry";
+        name = "Mistry Token";
         decimals = 18;
         _totalSupply = 100000000;
         balances[0x7c895edeDe35eCC43A864D129E011a6Ad121eE17] = _totalSupply;

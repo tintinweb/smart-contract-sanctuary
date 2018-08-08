@@ -1,6 +1,6 @@
 pragma solidity ^0.4.21;
 library IPFSLib {
-    bytes constant ALPHABET = &quot;123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz&quot;;
+    bytes constant ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
     /**
      * @dev Base58 encoding

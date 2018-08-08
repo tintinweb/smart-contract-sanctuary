@@ -214,8 +214,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;test2&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;test2&quot;; // solium-disable-line uppercase
+  string public constant name = "test2"; // solium-disable-line uppercase
+  string public constant symbol = "test2"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 20180326 * (10 ** uint256(decimals));

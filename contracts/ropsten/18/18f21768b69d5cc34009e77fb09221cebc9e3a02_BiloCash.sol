@@ -51,8 +51,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 10000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;BiloCash&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BC&quot;;                               // Set the symbol for display purposes
+        name = "BiloCash";                                   // Set the name for display purposes
+        symbol = "BC";                               // Set the symbol for display purposes
     }
 
     /**
@@ -197,8 +197,8 @@ contract BiloCash is owned, TokenERC20 {
 		owner = msg.sender;
 		totalSupply = 10000000000000000000000000000;
 		balanceOf[owner]=totalSupply;
-		tokenName=&quot;BiloCash&quot;;
-		tokenSymbol=&quot;BC&quot;;
+		tokenName="BiloCash";
+		tokenSymbol="BC";
 	}
 
 

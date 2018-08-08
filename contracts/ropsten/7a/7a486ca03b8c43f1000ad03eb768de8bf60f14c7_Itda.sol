@@ -4,9 +4,9 @@ contract Itda {
     uint256 private uintField1 = 0;
     uint256 private uintField2 = 0;
     uint256 private uintField3 = 0;
-    string  private strField1 = &quot;&quot;;
-    string  private strField2 = &quot;&quot;;
-    string  private strField3 = &quot;&quot;;
+    string  private strField1 = "";
+    string  private strField2 = "";
+    string  private strField3 = "";
     bool private boolField1 = false;
     bool private boolField2 = false;
     bool private boolField3 = false;

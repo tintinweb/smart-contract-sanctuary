@@ -113,8 +113,8 @@ contract WordCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WordCoin() public {
-        symbol = &quot;WORD&quot;;
-        name = &quot;WordCoin&quot;;
+        symbol = "WORD";
+        name = "WordCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x15574B2166075c951805DD0e21E59604468bf058] = _totalSupply;

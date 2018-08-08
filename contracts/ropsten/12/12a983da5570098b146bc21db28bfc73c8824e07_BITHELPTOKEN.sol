@@ -60,8 +60,8 @@ contract BITHELPTOKEN is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;BITHELP TOKEN&quot;;
-    string public constant symbol = &quot;EHELP&quot;;
+    string public constant name = "BITHELP TOKEN";
+    string public constant symbol = "EHELP";
     uint public constant decimals = 18;
     
 uint256 public totalSupply = 2500000000e18;

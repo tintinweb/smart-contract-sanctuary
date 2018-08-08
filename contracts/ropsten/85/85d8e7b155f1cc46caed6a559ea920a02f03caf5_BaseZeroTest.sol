@@ -281,7 +281,7 @@ contract StandardToken is ERC20, BasicToken {
 
 contract BaseZeroTest is StandardToken, DetailedERC20 {
     constructor(uint _totalSupply) 
-        DetailedERC20(&quot;BaseZeroTest&quot;, &quot;BZ0&quot;, 8)
+        DetailedERC20("BaseZeroTest", "BZ0", 8)
     public {
         totalSupply_ = _totalSupply;
         balances[msg.sender] = _totalSupply;

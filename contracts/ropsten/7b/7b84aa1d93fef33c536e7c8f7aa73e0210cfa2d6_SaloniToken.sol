@@ -113,8 +113,8 @@ contract SaloniToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SaloniToken() public {
-        symbol = &quot;SAL&quot;;
-        name = &quot;Saloni Token&quot;;
+        symbol = "SAL";
+        name = "Saloni Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xBA4800e40208258b5A4b7E7405Be64C417635aF6] = _totalSupply;

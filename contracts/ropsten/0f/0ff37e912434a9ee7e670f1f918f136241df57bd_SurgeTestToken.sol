@@ -112,8 +112,8 @@ contract SurgeTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SurgeTestToken() public {
-        symbol = &quot;Surge&quot;;
-        name = &quot;Surge Test Token&quot;;
+        symbol = "Surge";
+        name = "Surge Test Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x99b1F27732f98e73b82B6264741ff4061947Fc1e] = _totalSupply;

@@ -113,8 +113,8 @@ contract john is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function john() public {
-        symbol = &quot;JC&quot;;
-        name = &quot;john&quot;;
+        symbol = "JC";
+        name = "john";
         decimals = 18;
         _totalSupply = 300000000000000000000000000;
         balances[0x738d990578B8255CcF9Bbe87948361877A2f69f8] = _totalSupply;

@@ -72,13 +72,13 @@ contract ElecR1 {
         //use address of Pair-Token
         SELT = SELTInterface(TokenAddress);
         TokenName = SELT.name();
-        addCandidate(&quot;_name1&quot;);
-        addCandidate(&quot;_name2&quot;);
-        addCandidate(&quot;_name3&quot;);
-        addCandidate(&quot;_name4&quot;);
-        addCandidate(&quot;_name5&quot;);
-        addCandidate(&quot;_name6&quot;);
-        addCandidate(&quot;_name7&quot;);
+        addCandidate("_name1");
+        addCandidate("_name2");
+        addCandidate("_name3");
+        addCandidate("_name4");
+        addCandidate("_name5");
+        addCandidate("_name6");
+        addCandidate("_name7");
     }
 
     function countBit(uint8 data) private pure returns (uint8 totalBits){

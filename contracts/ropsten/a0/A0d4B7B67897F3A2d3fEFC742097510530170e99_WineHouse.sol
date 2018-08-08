@@ -155,7 +155,7 @@ contract WineHouse {
             bool isActive
         ) {
         
-        bytes32 uniqueIdentCheck = keccak256(abi.encodePacked(_backLabel, &quot;|&quot;,  _bottle, &quot;|&quot;, _capsule, &quot;|&quot;, _cork, &quot;|&quot;, _frontLabel, &quot;|&quot;, _glass));
+        bytes32 uniqueIdentCheck = keccak256(abi.encodePacked(_backLabel, "|",  _bottle, "|", _capsule, "|", _cork, "|", _frontLabel, "|", _glass));
             
         require(
             keccak256(abi.encodePacked(uniqueIdentCheck)) == keccak256(abi.encodePacked(_uniqueIdentifier))

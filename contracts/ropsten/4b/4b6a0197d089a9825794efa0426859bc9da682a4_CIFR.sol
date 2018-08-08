@@ -54,8 +54,8 @@ contract Owned {
 
 contract CIFR is ERC20Interface, Owned, SafeMath {
 	/* Public variables of the token */	
-    string public constant symbol = &quot;CIFR&quot;;
-    string public constant name = &quot;CIFRCOIN TOKEN&quot;;
+    string public constant symbol = "CIFR";
+    string public constant name = "CIFRCOIN TOKEN";
     uint8 public constant decimals = 18;
     uint256 public totalSupply_;
 

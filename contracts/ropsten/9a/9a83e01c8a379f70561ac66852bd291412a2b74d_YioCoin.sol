@@ -45,8 +45,8 @@ contract YioCoin is ERC20Interface, SafeMath{
 
     //constructor
     function YioCoin() public {
-        symbol = &quot;YIO&quot;;
-        name = &quot;Yio Coin&quot;;
+        symbol = "YIO";
+        name = "Yio Coin";
         decimals = 18;
     }
 

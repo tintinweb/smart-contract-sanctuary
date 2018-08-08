@@ -2,15 +2,15 @@ pragma solidity ^0.4.11;
 
 contract TabTradersToken {
 
-    string public name = &quot;TabTraders&quot;;
-    string public symbol = &quot;TTD&quot;;
+    string public name = "TabTraders";
+    string public symbol = "TTD";
     uint256 public decimals = 8;
-    string public constant DATE_PRESALE_START = &quot;04/17/2018&quot;;
-    string public constant DATE_PRESALE_END   = &quot;07/17/2018&quot;;
-    string public constant DATE_ICO_START = &quot;07/30/2018&quot;;
-    string public constant DATE_ICO_END   = &quot;09/30/2018&quot;;
-    string public constant DATE_OPEN_ON_FLOOR   = &quot;12/15/2018&quot;;
-    string public constant PRICE_PRESALE      = &quot;$1&quot;;
+    string public constant DATE_PRESALE_START = "04/17/2018";
+    string public constant DATE_PRESALE_END   = "07/17/2018";
+    string public constant DATE_ICO_START = "07/30/2018";
+    string public constant DATE_ICO_END   = "09/30/2018";
+    string public constant DATE_OPEN_ON_FLOOR   = "12/15/2018";
+    string public constant PRICE_PRESALE      = "$1";
     uint public constant PRESALE_ETH_CAP =  10000 ether;
     uint public tokensClaimedAirdrop = 0;
     uint public constant COOLDOWN_PERIOD =  2 days;

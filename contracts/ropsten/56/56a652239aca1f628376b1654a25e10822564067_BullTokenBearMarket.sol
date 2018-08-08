@@ -536,9 +536,9 @@ contract BullTokenBearMarket{
 									    mapping (address => uint256) public balances;
 									    mapping (address => mapping (address => uint256)) public allowed;
 									    
-									    string public name = &quot;Resolve&quot;;
+									    string public name = "Resolve";
 									    uint8 public decimals = 18;
-									    string public symbol = &quot;RSLV&quot;;
+									    string public symbol = "RSLV";
 									    
 									    event Transfer(address indexed _from, address indexed _to, uint256 _value); 
 									    event Approval(address indexed _owner, address indexed _spender, uint256 _value);

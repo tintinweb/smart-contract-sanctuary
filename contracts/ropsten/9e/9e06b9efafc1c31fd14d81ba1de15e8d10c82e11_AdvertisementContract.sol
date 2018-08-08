@@ -179,11 +179,11 @@ contract AdvertisementContract {
             voters[j].amountEarned = voters[j].amountEarned.add(perVoterPayout);
             advertisementList[advId].amountToBePaid = advertisementList[advId].amountToBePaid.sub(perVoterPayout);
         }
-        //logString(&quot;Voter payout done&quot;);
+        //logString("Voter payout done");
         
         //catering for system payout (not trnasferring tokens as the wallet is where all tokens are already)
         advertisementList[advId].amountToBePaid = advertisementList[advId].amountToBePaid.sub(systemPayout);
-        //logString(&quot;System payout done&quot;);     
+        //logString("System payout done");     
                  
         require(advertisementList[advId].amountToBePaid == 0);
                 
@@ -193,10 +193,10 @@ contract AdvertisementContract {
    {
         require(advertisementList[adId].advertisementId == adId);
         require(advertisementList[adId].isUnlocked == false);
-        //logString(&quot;advertisement found&quot;);
+        //logString("advertisement found");
         voter = Voter({publicKey: voterPublicKey, amountEarned : 0});
         advertisementVoterList[adId].push(voter);
-        //logString(&quot;Vote added&quot;);
+        //logString("Vote added");
     }
     function unlockAdvertisement(uint adId) public
     {

@@ -38,7 +38,7 @@ contract IotPC {
     }
 
     function () payable public {
-        emit Deposited(&quot;Ether recieved&quot;, msg.value);
+        emit Deposited("Ether recieved", msg.value);
     }
 
     modifier only_owner() {

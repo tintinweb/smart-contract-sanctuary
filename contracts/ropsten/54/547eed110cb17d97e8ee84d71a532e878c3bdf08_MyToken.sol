@@ -115,8 +115,8 @@ contract MyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MyToken() public {
-        symbol = &quot;MYT&quot;;
-        name = &quot;MyToken&quot;;
+        symbol = "MYT";
+        name = "MyToken";
         decimals = 18;
         _totalSupply = 0;
         startDate = now;

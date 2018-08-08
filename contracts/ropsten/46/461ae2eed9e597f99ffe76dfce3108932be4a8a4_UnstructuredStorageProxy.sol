@@ -33,8 +33,8 @@ contract Proxy {
 
 contract UnstructuredStorageProxy is Proxy {
 
-    bytes32 private constant proxyOwnerSlot = keccak256(&quot;proxyOwnerSlot&quot;);
-    bytes32 private constant implementationSlot = keccak256(&quot;implementationSlot&quot;);
+    bytes32 private constant proxyOwnerSlot = keccak256("proxyOwnerSlot");
+    bytes32 private constant implementationSlot = keccak256("implementationSlot");
 
     constructor(address _implementation) public {
         setAddress(proxyOwnerSlot, msg.sender);

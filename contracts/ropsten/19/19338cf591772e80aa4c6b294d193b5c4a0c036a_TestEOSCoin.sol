@@ -113,8 +113,8 @@ contract TestEOSCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestEOSCoin() public {
-        symbol = &quot;EOS&quot;;
-        name = &quot;TestAnyCoin&quot;;
+        symbol = "EOS";
+        name = "TestAnyCoin";
         decimals = 8;
         _totalSupply = 1000000000000000000;
         balances[0x3886267bef7FB5EB7fAB270aFb998DE7c54C64dD] = _totalSupply;

@@ -28,7 +28,7 @@ contract Nines {
     nines[8] = Nine(msg.sender, 0);
     nines[9] = Nine(msg.sender, 0);
     nines[10] = Nine(msg.sender, 0);
-    msgs[msg.sender] = &quot;Claim this spot!&quot;;
+    msgs[msg.sender] = "Claim this spot!";
   }
 
   function getNine(uint256 _slot) public view returns (

@@ -55,8 +55,8 @@ contract SSTXCOIN {
     
     using SafeMath for uint256;
 
-    string public name      = &quot;Speed Shopper Token&quot;;                                    // Token name
-    string public symbol    = &quot;SSTX&quot;;                                                   // Token symbol
+    string public name      = "Speed Shopper Token";                                    // Token name
+    string public symbol    = "SSTX";                                                   // Token symbol
     uint256 public decimals = 18;                                                       // Token decimal points
     uint256 private _totalSupply = 500000000;                                           // Token total supply
     uint256 public totalSupply  = _totalSupply.mul(10 ** uint256(decimals));            // Token total supply with decimals
@@ -101,7 +101,7 @@ contract SSTXCOIN {
 
     // Send `tokens` amount of tokens from address `from` to address `to`
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:

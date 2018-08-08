@@ -113,8 +113,8 @@ contract Vish is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Vish() public {
-        symbol = &quot;VSS&quot;;
-        name = &quot;Vish&quot;;
+        symbol = "VSS";
+        name = "Vish";
         decimals = 8;
         _totalSupply = 400000000;
         balances[0xa5Ee702fB17349408fd5f620199DE7bD92A8e988] = _totalSupply;

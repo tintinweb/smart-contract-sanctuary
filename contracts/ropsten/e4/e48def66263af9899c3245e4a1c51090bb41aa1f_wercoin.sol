@@ -65,9 +65,9 @@ contract wercoin is StandardToken {
     function wercoin() {
         balances[msg.sender] = 10000000000000000000000;
         totalSupply = 10000000000000000000000;
-        name = &quot;wercoin&quot;;
+        name = "wercoin";
         decimals = 18; 
-        symbol = &quot;wer&quot;;
+        symbol = "wer";
         unitsOneEthCanBuy = 2000;
         fundsWallet = msg.sender;
     }
@@ -86,7 +86,7 @@ contract wercoin is StandardToken {
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

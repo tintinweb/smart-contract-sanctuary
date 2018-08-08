@@ -113,8 +113,8 @@ contract JoshCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;JOSHCOIN&quot;;
-        name = &quot;Josh Coin&quot;;
+        symbol = "JOSHCOIN";
+        name = "Josh Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x176782a1278836994beD0bC5FF5419B68C73bfa1] = _totalSupply;

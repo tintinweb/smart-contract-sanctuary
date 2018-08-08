@@ -12,7 +12,7 @@ interface VpfFactoryInterface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -77,7 +77,7 @@ contract PhenomenonsContract is Ownable {
     ) public onlyOwner
     {
         bytes32 hash = keccak256(abi.encodePacked(mnemonic));
-        require(bytes(phenomenons[hash].mnemonic).length == 0, &quot;Phenomenon already exists!&quot;);
+        require(bytes(phenomenons[hash].mnemonic).length == 0, "Phenomenon already exists!");
 
         Phenomenon memory phenomenon = Phenomenon(
             mnemonic,

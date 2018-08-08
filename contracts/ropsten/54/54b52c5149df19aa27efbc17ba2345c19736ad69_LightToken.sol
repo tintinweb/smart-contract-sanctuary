@@ -113,8 +113,8 @@ contract LightToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;LIGHT&quot;;
-        name = &quot;Light Token&quot;;
+        symbol = "LIGHT";
+        name = "Light Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xFf9284253cF7983D16CCE5A89F04E35697180500] = _totalSupply;

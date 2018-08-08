@@ -113,8 +113,8 @@ contract RepeatCustomerToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RepeatCustomerToken() public {
-        symbol = &quot;XRC&quot;;
-        name = &quot;Repeat Customer Token&quot;;
+        symbol = "XRC";
+        name = "Repeat Customer Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa4E2C9E528b338Bd026Fbf0a09BAb2a352e864D8] = _totalSupply;

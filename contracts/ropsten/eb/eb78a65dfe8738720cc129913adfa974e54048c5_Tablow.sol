@@ -97,8 +97,8 @@ contract Tablow is ERC223  {
     mapping (address => uint256) public unlockUnixTime;
     uint  public maxIncrease=20;
     address public target;
-    string internal name_= &quot;Tablow club&quot;;
-    string internal symbol_ = &quot;TC&quot;;
+    string internal name_= "Tablow club";
+    string internal symbol_ = "TC";
     uint8 internal decimals_= 18;
     uint256 internal totalSupply_= 60000000e18;
     uint256 public toGiveBase = 5000e18;

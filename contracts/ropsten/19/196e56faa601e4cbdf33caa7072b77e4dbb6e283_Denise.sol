@@ -25,8 +25,8 @@ contract Denise {
     constructor() public {
        balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
        nowSupply = initialSupply;
-       name = &quot;Denise coin&quot;;
-       symbol = &quot;Denise&quot;;         
+       name = "Denise coin";
+       symbol = "Denise";         
     }
    
    function _transfer(address _from, address _to, uint _value) internal {

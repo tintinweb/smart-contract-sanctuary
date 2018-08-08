@@ -113,8 +113,8 @@ contract Litecoinprivate is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Litecoinprivate() public {
-        symbol = &quot;LTCP&quot;;
-        name = &quot;Litecoinprivate&quot;;
+        symbol = "LTCP";
+        name = "Litecoinprivate";
         decimals = 18;
         _totalSupply = 42000000000000000000;
         balances[0x5beA09bfFBeF8153A45e3629ED9e0507ee8BC910] = _totalSupply;

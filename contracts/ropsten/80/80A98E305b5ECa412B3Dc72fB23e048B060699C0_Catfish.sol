@@ -15,7 +15,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -524,9 +524,9 @@ contract MintableToken is StandardToken, Ownable {
 
 contract Catfish is Galleasset, MintableToken, ERC677Token {
 
-  string public constant name = &quot;Galleass Catfish&quot;;
-  string public constant symbol = &quot;G_CATFISH&quot;;
-  bytes32 public constant image = &quot;catfish&quot;;
+  string public constant name = "Galleass Catfish";
+  string public constant symbol = "G_CATFISH";
+  bytes32 public constant image = "catfish";
   uint8 public constant decimals = 0;
 
 
@@ -539,7 +539,7 @@ contract Catfish is Galleasset, MintableToken, ERC677Token {
   function galleassTransferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
     require(_value <= balances[_from]);
-    require(hasPermission(msg.sender,&quot;transferFish&quot;));
+    require(hasPermission(msg.sender,"transferFish"));
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);

@@ -241,8 +241,8 @@ contract StandardToken is ERC20, BasicToken {
 
 }
 contract CpublicGold is StandardToken {
-string public name = &quot; CpublicGold&quot;;
-string public symbol = &quot;CPG&quot;;
+string public name = " CpublicGold";
+string public symbol = "CPG";
 uint8 public decimals = 18;
 uint public INITIAL_SUPPLY = 6000000000000000000000000000;
 }

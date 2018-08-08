@@ -113,8 +113,8 @@ contract GBTToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GBTToken() public {
-        symbol = &quot;GBT&quot;;
-        name = &quot;GBToken&quot;;
+        symbol = "GBT";
+        name = "GBToken";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 6 weeks;

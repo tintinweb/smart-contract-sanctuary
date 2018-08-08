@@ -116,8 +116,8 @@ contract WESSToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WESSToken() public {
-        symbol = &quot;WESS&quot;;
-        name = &quot;WESS Token&quot;;
+        symbol = "WESS";
+        name = "WESS Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

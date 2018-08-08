@@ -116,8 +116,8 @@ contract OffMenuMorselToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OffMenuMorselToken() public {
-        symbol = &quot;OFM&quot;;
-        name = &quot;Off Menu Morsel Token&quot;;
+        symbol = "OFM";
+        name = "Off Menu Morsel Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 2 weeks;

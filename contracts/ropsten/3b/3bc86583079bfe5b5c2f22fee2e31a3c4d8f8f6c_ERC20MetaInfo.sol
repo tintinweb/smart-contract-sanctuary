@@ -43,7 +43,7 @@ contract ERC20MetaInfo {
    */
   function setKeyValue(ERC20 _token, string _key, string _value) public returns (bool) {
     // If a value is empty, anybody can assign a pair of (key, value)
-    // Otherwise, only token contract&#39;s &quot;owner&quot; (if the token contract is Ownable),
+    // Otherwise, only token contract&#39;s "owner" (if the token contract is Ownable),
     // or ERC20MetaInfo contract owner can assign/update a value
     require(bytes(keyValues[_token][_key]).length == 0 || owner == msg.sender || _token.owner() == msg.sender);
     keyValues[_token][_key] = _value;

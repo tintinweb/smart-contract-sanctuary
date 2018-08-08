@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;NEXTRA&quot;;
-        name = &quot;Nextra Fixed Supply Token&quot;;
+        symbol = "NEXTRA";
+        name = "Nextra Fixed Supply Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

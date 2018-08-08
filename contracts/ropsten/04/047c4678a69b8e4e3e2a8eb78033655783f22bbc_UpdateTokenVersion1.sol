@@ -1,5 +1,5 @@
 pragma solidity ^0.4.11;
-//import &quot;./SafeMath.sol&quot;;
+//import "./SafeMath.sol";
 
     /// Name:       Update token
     /// Symbol:     UPT
@@ -79,8 +79,8 @@ contract UpdateTokenStandard {
     contract UpdateTokenVersion1 is ERC20,UpdateTokenStandard,Ownable {
     using SafeMath for uint256;
 
-    string public symbol = &quot;UPT14&quot;;
-    string public name = &quot;Update Token&quot;;
+    string public symbol = "UPT14";
+    string public name = "Update Token";
     uint public decimals = 18;
     uint public totalSupply;
     uint public maxTotalSupply;

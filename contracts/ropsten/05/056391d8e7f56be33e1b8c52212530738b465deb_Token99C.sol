@@ -242,8 +242,8 @@ library SafeERC20 {
 }
 
 contract Token99C is StandardToken {
-  string public name = &quot;99C&quot;;
-  string public symbol = &quot;99C&quot;;
+  string public name = "99C";
+  string public symbol = "99C";
   uint public decimals = 18;
   address owner;
   uint public INITIAL_SUPPLY = (1000000000)*(10**18);

@@ -34,8 +34,8 @@ interface ERC20 {
 contract Bitconneeect is ERC20 {
 	
 	//Token params
-	string public constant name = &quot;BitConnect 2.0&quot;;
-	string public constant symbol = &quot;BTX&quot;;
+	string public constant name = "BitConnect 2.0";
+	string public constant symbol = "BTX";
 	uint8 public constant decimals = 18;
 	//Keep track of current supply
 	uint256 public _totalSupply = 10000;

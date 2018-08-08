@@ -113,8 +113,8 @@ contract MMS is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MMS() public {
-        symbol = &quot;MMS&quot;;
-        name = &quot;MMS&quot;;
+        symbol = "MMS";
+        name = "MMS";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2fdAc0A27093143e18A0af5DAe502a1579Bd0743] = _totalSupply;

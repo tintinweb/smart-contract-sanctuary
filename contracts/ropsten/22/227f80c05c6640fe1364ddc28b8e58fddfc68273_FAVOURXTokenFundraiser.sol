@@ -769,8 +769,8 @@ contract BurnableToken is StandardToken {
 contract FAVOURXToken is MintableToken, BurnableToken {
   constructor(address _minter)
     StandardToken(
-      &quot;FAVOURX&quot;,   // Token name
-      &quot;FVRX&quot;, // Token symbol
+      "FAVOURX",   // Token name
+      "FVRX", // Token symbol
       18  // Token decimals
     )
     

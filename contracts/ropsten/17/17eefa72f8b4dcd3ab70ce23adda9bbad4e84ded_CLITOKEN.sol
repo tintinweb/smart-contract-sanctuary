@@ -113,8 +113,8 @@ contract CLITOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CLITOKEN() public {
-        symbol = &quot;CLI&quot;;
-        name = &quot;CLITOKEN&quot;;
+        symbol = "CLI";
+        name = "CLITOKEN";
         decimals = 8;
         _totalSupply = 10000000000000000000000;
         balances[0xffda4C2A109258e025E30c7a7FF7A7B4C2de59F4] = _totalSupply;

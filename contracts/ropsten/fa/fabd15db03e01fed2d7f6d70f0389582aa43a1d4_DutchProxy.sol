@@ -1,6 +1,6 @@
 pragma solidity ^0.4.23;
 
-//&quot;0xca35b7d915458ef540ade6068dfe2f44e8fa733c&quot;,&quot;0xa&quot;,&quot;0xca35b7d915458ef540ade6068dfe2f44e8fa733c&quot;,&quot;0xa&quot;
+//"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","0xa","0xca35b7d915458ef540ade6068dfe2f44e8fa733c","0xa"
 
 interface StorageInterface {
   function getTarget(bytes32 exec_id, bytes4 selector)
@@ -78,7 +78,7 @@ contract Proxy {
     }
     // If no returned message exists, emit a default error message. Otherwise, emit the error message
     if (bytes(message).length == 0)
-      emit StorageException(app_exec_id, &quot;No error recieved&quot;);
+      emit StorageException(app_exec_id, "No error recieved");
     else
       emit StorageException(app_exec_id, message);
   }

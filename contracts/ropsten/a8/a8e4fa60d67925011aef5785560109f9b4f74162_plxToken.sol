@@ -116,8 +116,8 @@ contract plxToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function plxToken() public {
-        symbol = &quot;PLX&quot;;
-        name = &quot;plx Token&quot;;
+        symbol = "PLX";
+        name = "plx Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

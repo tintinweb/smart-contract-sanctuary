@@ -58,7 +58,7 @@ contract Moses is Basic{
   * 预测参与信息上链
   */
   function attend(uint32 _id,string _attendHash) public onlyOwner returns (bool) {
-    moseEvents[_id] = MoseEvent({id:_id,attendHash:_attendHash,result: &quot;&quot;});
+    moseEvents[_id] = MoseEvent({id:_id,attendHash:_attendHash,result: ""});
     emit Attend(_id, _attendHash);
     return true;
   }

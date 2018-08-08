@@ -2,7 +2,7 @@ pragma solidity ^0.4.24;
 
 /**
  * ERC-20 standard token interface as defined at:
- * <a href=&quot;https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md&quot;>here</a>.
+ * <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md">here</a>.
  */
 
 contract Token {
@@ -354,7 +354,7 @@ contract PinmoToken is AbstractToken {
      * @return the name of this token
      */ 
     function name () public pure returns (string result) {
-    return &quot;Pinmo Token&quot;;
+    return "Pinmo Token";
     }
     /**
      * Function to ge the symbol of this token
@@ -362,7 +362,7 @@ contract PinmoToken is AbstractToken {
      * @return symbol for this token
      */ 
     function symbol () public pure returns (string result) {
-    return &quot;PMT&quot;;
+    return "PMT";
     }
     
     /**

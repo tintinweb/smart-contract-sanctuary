@@ -113,8 +113,8 @@ contract UoBAMZNToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UoBAMZNToken() public {
-        symbol = &quot;UoBAMZN&quot;;
-        name = &quot;UoBAMZN Token&quot;;
+        symbol = "UoBAMZN";
+        name = "UoBAMZN Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xbfd42fd1b48313a33f4f2397349e6e1f81dd6db4] = _totalSupply;

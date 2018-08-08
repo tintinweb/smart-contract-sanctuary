@@ -116,8 +116,8 @@ contract rushitesticoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function rushitesticoToken() public {
-        symbol = &quot;RUS&quot;;
-        name = &quot;rushitestico Token&quot;;
+        symbol = "RUS";
+        name = "rushitestico Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

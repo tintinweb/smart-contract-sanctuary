@@ -113,8 +113,8 @@ contract KopihitamToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KopihitamToken() public {
-        symbol = &quot;KOPI&quot;;
-        name = &quot;Kopihitam Token&quot;;
+        symbol = "KOPI";
+        name = "Kopihitam Token";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0xBE75656AE08C02CbE89EB9756Df84A6cBB8C750d] = _totalSupply;

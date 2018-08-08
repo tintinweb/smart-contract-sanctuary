@@ -72,8 +72,8 @@ contract SMS is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;SMS&quot;;
-    string public constant symbol = &quot;SM&quot;;
+    string public constant name = "SMS";
+    string public constant symbol = "SM";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8; // Supply

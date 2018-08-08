@@ -113,8 +113,8 @@ contract RabtestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RabtestToken() public {
-        symbol = &quot;RABT&quot;;
-        name = &quot;Rab Test Token&quot;;
+        symbol = "RABT";
+        name = "Rab Test Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x398aa139986966936545FC321645D78216289B55] = _totalSupply;

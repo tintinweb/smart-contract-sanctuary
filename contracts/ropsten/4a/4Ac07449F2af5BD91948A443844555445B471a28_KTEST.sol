@@ -113,8 +113,8 @@ contract KTEST is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;KTEST&quot;;
-        name = &quot;KTEST Token&quot;;
+        symbol = "KTEST";
+        name = "KTEST Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000;
         balances[0xFF604F635B89A69901A14618046e71Ae5F8B9Bbd] = _totalSupply;

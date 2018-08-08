@@ -114,8 +114,8 @@ contract LYToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;LYT&quot;;
-        name = &quot;LYToken&quot;;
+        symbol = "LYT";
+        name = "LYToken";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

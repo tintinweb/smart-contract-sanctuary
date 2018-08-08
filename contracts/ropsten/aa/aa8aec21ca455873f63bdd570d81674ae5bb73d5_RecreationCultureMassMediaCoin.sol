@@ -113,8 +113,8 @@ contract RecreationCultureMassMediaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RecreationCultureMassMediaCoin() public {
-        symbol = &quot;RCMC&quot;;
-        name = &quot;Recreation Culture & Mass Media Coin&quot;;
+        symbol = "RCMC";
+        name = "Recreation Culture & Mass Media Coin";
         decimals = 18;
         _totalSupply = 5000000000000000000000000000;
         balances[0xff60947022E9e3510974646C530445B51540292D] = _totalSupply;

@@ -54,8 +54,8 @@ contract GwbToken is ERC223, SafeMath {
 
     mapping(address => uint) balances;
     
-    string public name = &quot;GoWeb&quot;;
-    string public symbol = &quot;GWB&quot;;
+    string public name = "GoWeb";
+    string public symbol = "GWB";
     uint8 public decimals = 8;
     uint256 public totalSupply = 7500000000000000;
 

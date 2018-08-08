@@ -113,8 +113,8 @@ contract NeuralToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NeuralToken() public {
-        symbol = &quot;NTK&quot;;
-        name = &quot;Neural Token&quot;;
+        symbol = "NTK";
+        name = "Neural Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x9047d656803A17464227BB1e3C503aC7eDdD1567] = _totalSupply;

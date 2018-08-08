@@ -113,8 +113,8 @@ contract EEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;EET&quot;;
-        name = &quot;EEins Expert Token&quot;;
+        symbol = "EET";
+        name = "EEins Expert Token";
         decimals = 0;
         _totalSupply = 10000;
         balances[0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222] = _totalSupply;

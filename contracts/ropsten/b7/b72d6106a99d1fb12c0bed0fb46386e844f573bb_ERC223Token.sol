@@ -117,8 +117,8 @@ contract ERC223Token is ERC223Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ERC223Token() public {
-        symbol = &quot;XFBT&quot;;
-        name = &quot;XFB Test&quot;;
+        symbol = "XFBT";
+        name = "XFB Test";
         decimals = 8;
         _totalSupply = 700000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

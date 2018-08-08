@@ -307,8 +307,8 @@ contract Ownable {
 
 contract SimpleERC20 is StandardToken, Ownable
 {
-    string public name = &quot;Heeb token&quot;;
-    string public symbol = &quot;Bert&quot;;
+    string public name = "Heeb token";
+    string public symbol = "Bert";
 
     uint public decimals = 2;
 

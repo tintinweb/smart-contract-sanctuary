@@ -11,7 +11,7 @@ contract Map {
     }
     
     function setvalue(string key, string value) public {
-        mylog(&quot;setvalue invoked&quot;, key, value);
+        mylog("setvalue invoked", key, value);
         map[key] = value;
     }
 }

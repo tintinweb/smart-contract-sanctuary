@@ -165,8 +165,8 @@ contract StandardToken is Token {
 
 /* Dentacoin Contract */
 contract DentacoinToken is owned, SafeMath, StandardToken {
-    string public name = &quot;Dentacoin&quot;;                                       // Set the name for display purposes
-    string public symbol = &quot;٨&quot;;                                             // Set the symbol for display purposes
+    string public name = "Dentacoin";                                       // Set the name for display purposes
+    string public symbol = "٨";                                             // Set the symbol for display purposes
     address public DentacoinAddress = this;                                 // Address of the Dentacoin token
     uint8 public decimals = 0;                                              // Amount of decimals for display purposes
     uint256 public totalSupply = 8000000000000;                             // Set total supply of Dentacoins (eight trillion)

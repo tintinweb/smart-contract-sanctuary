@@ -130,8 +130,8 @@ contract StandardToken is ERC20 {
 }
 
 contract NECTToken is StandardToken {
-    string public constant name = &quot;New Energy Blockchain Token&quot;;
-    string public constant symbol = &quot;NECT&quot;;
+    string public constant name = "New Energy Blockchain Token";
+    string public constant symbol = "NECT";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 3000000000 * (10 ** uint256(decimals));
 

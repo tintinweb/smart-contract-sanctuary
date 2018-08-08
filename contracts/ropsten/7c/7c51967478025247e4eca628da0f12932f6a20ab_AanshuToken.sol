@@ -113,8 +113,8 @@ contract AanshuToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AanshuToken() public {
-        symbol = &quot;ans&quot;;
-        name = &quot;Aanshu Token&quot;;
+        symbol = "ans";
+        name = "Aanshu Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x815dc13e6bf1D0810777b931E1527E14654968c0] = _totalSupply;

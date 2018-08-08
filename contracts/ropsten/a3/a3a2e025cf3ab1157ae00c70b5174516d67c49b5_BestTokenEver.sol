@@ -193,8 +193,8 @@ contract BestTokenEver is StandardToken {
 
   event Burn(address indexed burner, uint256 value);
 
-  string public name = &quot;BestTokenEver&quot;;
-  string public symbol = &quot;BTE&quot;;
+  string public name = "BestTokenEver";
+  string public symbol = "BTE";
   uint8 public decimals = 18;
   uint public INITIAL_SUPPLY = 3200000000* 10 ** uint256(decimals);
 

@@ -248,8 +248,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GBToken is StandardToken {
-  string public name = &quot;GBTokenTEST&quot;; 
-  string public symbol = &quot;GOX&quot;;
+  string public name = "GBTokenTEST"; 
+  string public symbol = "GOX";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 200000000 * (10 ** decimals);
   function GBToken() public{

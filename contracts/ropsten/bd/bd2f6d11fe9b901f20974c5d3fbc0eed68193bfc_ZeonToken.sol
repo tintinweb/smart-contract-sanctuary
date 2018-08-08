@@ -103,8 +103,8 @@ contract ZeonToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ZNC&quot;;
-        name = &quot;ZeonToken&quot;;
+        symbol = "ZNC";
+        name = "ZeonToken";
         decimals = 18;
         _totalSupply = 50000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -115,8 +115,8 @@ contract AntFundRobotToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AntFundRobotToken() public {
-        symbol = &quot;AFR&quot;;
-        name = &quot;Ant Fund Robot Token&quot;;
+        symbol = "AFR";
+        name = "Ant Fund Robot Token";
         decimals = 18;
         _totalSupply = 10000000;
         //startDate = now;

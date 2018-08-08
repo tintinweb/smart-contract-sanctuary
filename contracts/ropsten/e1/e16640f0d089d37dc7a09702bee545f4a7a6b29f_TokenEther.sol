@@ -96,8 +96,8 @@ contract TokenEther is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TokenEther() public {
-        symbol = &quot;TET&quot;;
-        name = &quot;TokenEther&quot;;
+        symbol = "TET";
+        name = "TokenEther";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

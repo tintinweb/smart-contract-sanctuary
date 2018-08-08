@@ -82,8 +82,8 @@ contract Token1Token is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Token1&quot;;
-    string public constant symbol = &quot;Token&quot;;
+    string public constant name = "Token1";
+    string public constant symbol = "Token";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 30000000000e8;

@@ -113,7 +113,7 @@ contract WashExchange is SafeMath {
   function trade(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s, uint amount) {
     //amount is in amountGet terms
     bytes32 hash = keccak256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
-    require((ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &&
+    require((ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash),v,r,s) == user) &&
        block.number <= expires && safeAdd(orderFills[user][hash], amount) <= amountGet);
     tradeBalances(tokenGet, amountGet, tokenGive, amountGive, user, amount);
     orderFills[user][hash] = safeAdd(orderFills[user][hash], amount);
@@ -143,7 +143,7 @@ contract WashExchange is SafeMath {
   function availableVolume(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s) constant returns(uint) {
     bytes32 hash = keccak256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
     if (!(
-      (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &&
+      (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash),v,r,s) == user) &&
       block.number <= expires
     )) return 0;
     uint available1 = safeSub(amountGet, orderFills[user][hash]);

@@ -113,8 +113,8 @@ contract OC is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function OC() public {
-        symbol = &quot;OC&quot;;
-        name = &quot;EAU-COIN ROUND ONE&quot;;
+        symbol = "OC";
+        name = "EAU-COIN ROUND ONE";
         decimals = 18;
         _totalSupply = 6750000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

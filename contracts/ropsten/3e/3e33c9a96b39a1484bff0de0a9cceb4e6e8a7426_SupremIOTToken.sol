@@ -11,8 +11,8 @@ pragma solidity ^0.4.24;
 */
 
 contract SupremIOTToken {
-    string  public constant _name = &quot;Suprem IOT Token&quot;;
-    string  public constant _symbol = &quot;SHIOT&quot;;
+    string  public constant _name = "Suprem IOT Token";
+    string  public constant _symbol = "SHIOT";
     uint256 public constant _totalSupply = 2000000 * 10**uint(_decimals);   // WOW, 2,000,000 tokens !
     uint8   public constant _decimals = 18;                                 // OMFG that&#39;s 2,000,000.000000000000000000 tokens now !
 

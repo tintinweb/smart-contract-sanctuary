@@ -81,8 +81,8 @@ contract CCLToken is ERC20Interface, Owned, SafeMath {
     //event CCLSenderCheck(address owner, address sender, address spender);
     //event CCLAllowed(address owner, address from, address sender, address to, uint token, uint org, uint diff);
     function CCLToken() public {
-        symbol = &quot;CCL&quot;;
-        name = &quot;CyClean Token&quot;;
+        symbol = "CCL";
+        name = "CyClean Token";
         decimals = 18;
         _totalSupply = 4000000000000000000000000000; //4,000,000,000
         balances[owner] = _totalSupply;
@@ -253,9 +253,9 @@ contract KYCBase {
         private returns (bool)
     {
         // check the signature
-        bytes32 hash = sha256(abi.encodePacked(&quot;Eidoo icoengine authorization&quot;, this, buyerAddress, buyerId, maxAmount));
+        bytes32 hash = sha256(abi.encodePacked("Eidoo icoengine authorization", this, buyerAddress, buyerId, maxAmount));
         emit ThisCheck(this, msg.sender);
-        //bytes32 hash = sha256(&quot;Eidoo icoengine authorization&quot;, this, buyerAddress, buyerId, maxAmount);
+        //bytes32 hash = sha256("Eidoo icoengine authorization", this, buyerAddress, buyerId, maxAmount);
         address signer = ecrecover(hash, v, r, s);
         if (!isKycSigner[signer]) {
             revert();

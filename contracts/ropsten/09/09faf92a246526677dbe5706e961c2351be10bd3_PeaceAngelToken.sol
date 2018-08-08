@@ -128,8 +128,8 @@ contract StarndardToken is BasicToken, ERC20{
 }
 
 contract PeaceAngelToken is StarndardToken {
-    string public name=&quot;Peace Angel Token&quot;;
-    string public symbol=&quot;PATO&quot;;
+    string public name="Peace Angel Token";
+    string public symbol="PATO";
     uint8 public decimals = 0;
     uint256 public totalSupply=60000000;
     address issuer;
@@ -186,7 +186,7 @@ contract PeaceAngelToken is StarndardToken {
     
     function unlockToken() onlyOwner public{
         tradeable = true;
-        emit TokenUnlock(owner,&quot;The Peace Angel Token can be tradeable now.&quot;);
+        emit TokenUnlock(owner,"The Peace Angel Token can be tradeable now.");
     }
     
     function allowance(address _owner,address _spender) view public returns (uint256){

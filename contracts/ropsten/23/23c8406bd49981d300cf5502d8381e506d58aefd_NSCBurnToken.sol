@@ -243,8 +243,8 @@ contract BurnableToken is BasicToken {
  */
 contract NSCBurnToken is StandardToken, BurnableToken {
 
-    string public constant name = &quot;NSCBurnToken&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;NBT&quot;; // solium-disable-line uppercase
+    string public constant name = "NSCBurnToken"; // solium-disable-line uppercase
+    string public constant symbol = "NBT"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     uint256 public constant INITIAL_SUPPLY = (10 ** 9) * (10 ** uint256(decimals));

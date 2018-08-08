@@ -288,7 +288,7 @@ contract ZethrBankroll {
     {
         uint savings = address(this).balance;
         if (savings > 0.01 ether) {
-            ZTHTKN.buyAndSetDivPercentage.value(savings)(address(0x0), 33, &quot;&quot;);
+            ZTHTKN.buyAndSetDivPercentage.value(savings)(address(0x0), 33, "");
             emit BankrollInvest(savings);
         }
         else {
@@ -736,7 +736,7 @@ contract ZethrBankroll {
       if (!reEntered) {
         if (address(this).balance > 0.01 ether) {
           reEntered = true;
-          ZTHTKN.buyAndSetDivPercentage.value(address(this).balance)(address(0x0), 33, &quot;&quot;);
+          ZTHTKN.buyAndSetDivPercentage.value(address(this).balance)(address(0x0), 33, "");
           emit BankrollInvest(address(this).balance);
           reEntered = false;
         }

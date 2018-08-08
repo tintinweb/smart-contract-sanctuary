@@ -1,8 +1,8 @@
 contract MNY {
 
-    string public name = &quot;MNY by Monkey Capital&quot;;
+    string public name = "MNY by Monkey Capital";
     uint8 public decimals = 18;
-    string public symbol = &quot;MNY&quot;;
+    string public symbol = "MNY";
 
     address public owner;
     address public devFeesAddr = 0x36Bdc3B60dC5491fbc7d74a05709E94d5b554321;

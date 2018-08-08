@@ -22,7 +22,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -168,8 +168,8 @@ contract Experience is Galleasset {
 
   mapping(address => mapping(uint16 => bool)) public experience;
 
-  function update(address _player,uint16 _milestone,bool _value) public isGalleasset(&quot;Experience&quot;) returns (bool) {
-    require(hasPermission(msg.sender,&quot;updateExperience&quot;));
+  function update(address _player,uint16 _milestone,bool _value) public isGalleasset("Experience") returns (bool) {
+    require(hasPermission(msg.sender,"updateExperience"));
     experience[_player][_milestone]=_value;
     ExperienceUpdate(_player,_milestone,experience[_player][_milestone]);
     return true;

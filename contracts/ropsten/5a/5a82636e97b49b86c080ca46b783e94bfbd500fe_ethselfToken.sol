@@ -116,8 +116,8 @@ contract ethselfToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ethselfToken() public {
-        symbol = &quot;ETS&quot;;
-        name = &quot;ethself Token&quot;;
+        symbol = "ETS";
+        name = "ethself Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

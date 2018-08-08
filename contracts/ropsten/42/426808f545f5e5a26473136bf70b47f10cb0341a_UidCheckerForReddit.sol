@@ -26,7 +26,7 @@ contract UidCheckerForReddit
 is UidCheckerInterface
 {
 
-  string public fromVersion = &quot;1.0.0&quot;;
+  string public fromVersion = "1.0.0";
 
   function isUid(
     string _uid

@@ -137,7 +137,7 @@ contract ScriptExec {
     }
     // If no returned message exists, emit a default error message. Otherwise, emit the error message
     if (bytes(message).length == 0)
-      emit StorageException(_exec_id, &quot;No error recieved&quot;);
+      emit StorageException(_exec_id, "No error recieved");
     else
       emit StorageException(_exec_id, message);
   }

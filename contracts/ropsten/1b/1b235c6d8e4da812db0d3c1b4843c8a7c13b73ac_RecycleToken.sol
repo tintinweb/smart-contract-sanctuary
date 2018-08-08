@@ -113,8 +113,8 @@ contract RecycleToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RecycleToken() public {
-        symbol = &quot;RCL&quot;;
-        name = &quot;Recycle Token&quot;;
+        symbol = "RCL";
+        name = "Recycle Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xd399B5524bCB98CDd7CFbA3f02A6Cef3e0323D93] = _totalSupply;

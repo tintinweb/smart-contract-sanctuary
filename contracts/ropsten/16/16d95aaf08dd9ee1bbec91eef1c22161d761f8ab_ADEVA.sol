@@ -113,8 +113,8 @@ contract ADEVA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ADEVA() public {
-        symbol = &quot;ADE&quot;;
-        name = &quot;ADEVA&quot;;
+        symbol = "ADE";
+        name = "ADEVA";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb77ce4Cdbd34B0B8aC7aa8976D41251c82D2809B] = _totalSupply;

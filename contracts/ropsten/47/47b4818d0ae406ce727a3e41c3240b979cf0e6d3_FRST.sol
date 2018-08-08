@@ -250,8 +250,8 @@ contract Standard is ERC20, BasicToken {
 contract FRST is Ownable, Pausable, Standard, CrowdsaleToken {
     using SafeMath for uint256;
 
-    string name = &quot;FTEST&quot;;
-    string symbol = &quot;FT&quot;;
+    string name = "FTEST";
+    string symbol = "FT";
     uint8 decimals = 18;
 
     // Manual kill switch

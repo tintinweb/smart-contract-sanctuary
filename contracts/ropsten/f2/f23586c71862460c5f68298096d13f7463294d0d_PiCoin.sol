@@ -95,8 +95,8 @@ contract Owned {
 // token transfers
 // ----------------------------------------------------------------------------
 contract PiCoin is ERC20Interface, Owned, SafeMath {
-    string public symbol = &quot;PiCv2&quot;;
-    string public name = &quot;PiCoin&quot;;
+    string public symbol = "PiCv2";
+    string public name = "PiCoin";
     uint8 public decimals = 0;
     
     uint256 public _totalSupply;

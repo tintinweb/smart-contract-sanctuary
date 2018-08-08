@@ -166,8 +166,8 @@ library SafeMath {
 contract Token is Owned, Finalizable {
     using SafeMath for uint256;
 
-    string  public constant name = &quot;We Inc Token&quot;;
-    string  public constant symbol = &quot;WINC&quot;;
+    string  public constant name = "We Inc Token";
+    string  public constant symbol = "WINC";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     uint256 public tokensOutInMarket;

@@ -113,8 +113,8 @@ contract JustOneToken2 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JustOneToken2() public {
-        symbol = &quot;JustOneToken2&quot;;
-        name = &quot;Just One Token2&quot;;
+        symbol = "JustOneToken2";
+        name = "Just One Token2";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x80e8E6a83cCA21304E4D29d982Be9Cc30DA766e7] = _totalSupply;

@@ -77,7 +77,7 @@ contract SponsorToken is OwnerableContract{
 
   /* ERC721 */
   function name() public pure returns (string _name) {
-    return &quot;Sponsor Token&quot;;
+    return "Sponsor Token";
   }
   
   /* Read */

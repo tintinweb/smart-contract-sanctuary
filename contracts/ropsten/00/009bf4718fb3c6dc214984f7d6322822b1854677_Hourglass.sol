@@ -132,8 +132,8 @@ contract Hourglass {
     /*=====================================
     =            CONFIGURABLES  配置       =
     =====================================*/
-    string public name = &quot;LastHero3D&quot;; // 名字
-    string public symbol = &quot;Keys&quot;; // 符号
+    string public name = "LastHero3D"; // 名字
+    string public symbol = "Keys"; // 符号
     uint8 constant public decimals = 18; // 小数位
     uint8 constant internal dividendFee_ = 10; // 交易分红比例
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether; // 代币初始价格

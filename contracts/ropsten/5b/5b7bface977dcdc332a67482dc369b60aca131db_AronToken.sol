@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract AronToken {
 
-    string public name = &quot;Aronix&quot;;      //  token name
-    string public symbol = &quot;ARX&quot;;           //  token symbol
+    string public name = "Aronix";      //  token name
+    string public symbol = "ARX";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -113,8 +113,8 @@ contract MetaHash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MetaHash() public {
-        symbol = &quot;MHC&quot;;
-        name = &quot;MetaHash&quot;;
+        symbol = "MHC";
+        name = "MetaHash";
         decimals = 18;
         _totalSupply = 9200000000000000000000000000;
         balances[0x3bf77c293948F63296b2D3332A2E4c4B2009aDBB] = _totalSupply;

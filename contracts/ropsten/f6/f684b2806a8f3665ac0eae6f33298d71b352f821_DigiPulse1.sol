@@ -3,8 +3,8 @@ pragma solidity ^0.4.4;
 contract DigiPulse1 {
 
 	// Token data for ERC20
-  string public constant name = &quot;DigiPulse1&quot;;
-  string public constant symbol = &quot;DGT1&quot;;
+  string public constant name = "DigiPulse1";
+  string public constant symbol = "DGT1";
   uint8 public constant decimals = 8;
   mapping (address => uint256) public balanceOf;
 

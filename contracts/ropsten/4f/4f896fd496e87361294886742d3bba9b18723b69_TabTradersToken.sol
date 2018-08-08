@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract TabTradersToken {
 
-    string public name = &quot;TabTraders&quot;;
-    string public symbol = &quot;TTD&quot;; 
+    string public name = "TabTraders";
+    string public symbol = "TTD"; 
     uint256 public decimals = 8;
 
     mapping (address => uint256) public balanceOf;

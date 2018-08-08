@@ -19,11 +19,11 @@ contract MyToken is ERC20Interface {
     uint256 totalSupply_ = 10000000000000000000000000;
     
     function name() public view returns (string _name) {
-        return &quot;Deepyr Coin&quot; ;  
+        return "Deepyr Coin" ;  
     }
     
     function symbol() public view returns (string _symbol) {
-        return &quot;DEEPYR&quot; ;  
+        return "DEEPYR" ;  
     }
 
     function decimals() public view returns (uint8 _decimals) {

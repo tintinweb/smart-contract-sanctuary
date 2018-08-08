@@ -71,7 +71,7 @@ contract Spacedrop {
 
   function validateAndRegisterClaim(address sender, bytes32 h, uint8 v, bytes32 r, bytes32 s) internal {
     // signer must be sender
-    bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+    bytes memory prefix = "\x19Ethereum Signed Message:\n32";
     address signer = ecrecover(keccak256(prefix, h), v, r, s);
     require(signer == sender && signer != address(0));
 
@@ -90,7 +90,7 @@ contract Spacedrop {
   function claimTokensERC777(address token, address sender, address recipient, uint256 tokensToTransfer, uint256 nonce, bytes userData, uint8 v, bytes32 r, bytes32 s) public {
     bytes32 h = keccak256(token, sender, recipient, tokensToTransfer, nonce, userData);
     validateAndRegisterClaim(sender, h, v, r, s);
-    ERC777i(token).operatorSend(sender, recipient, tokensToTransfer, userData, &quot;spacedrop&quot;);
+    ERC777i(token).operatorSend(sender, recipient, tokensToTransfer, userData, "spacedrop");
     Sent(token, sender, recipient, tokensToTransfer, nonce, 777);
   }
 }

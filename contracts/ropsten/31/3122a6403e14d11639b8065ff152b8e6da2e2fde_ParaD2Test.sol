@@ -113,8 +113,8 @@ contract ParaD2Test is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ParaD2Test() public {
-        symbol = &quot;ParaD2&quot;;
-        name = &quot;ParaD2Test&quot;;
+        symbol = "ParaD2";
+        name = "ParaD2Test";
         decimals = 1;
         _totalSupply = 1;
         balances[0x44Ef8ccC249320cdE14b6b84dFFC83010890909f] = _totalSupply;

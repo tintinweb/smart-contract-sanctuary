@@ -328,8 +328,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract VendingMachineToken is StandardToken, MintableToken {
-    string public constant name = &quot;Vending Machine Token&quot;;
-    string public constant symbol = &quot;VMT&quot;;
+    string public constant name = "Vending Machine Token";
+    string public constant symbol = "VMT";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 10000 * (10 ** uint256(decimals));

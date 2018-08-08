@@ -113,8 +113,8 @@ contract SEARCH is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SEARCH() public {
-        symbol = &quot;SRC&quot;;
-        name = &quot;SEARCH&quot;;
+        symbol = "SRC";
+        name = "SEARCH";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2fd1a3c778b33c92c094e9bdfaabd1ebb01eb728] = _totalSupply;

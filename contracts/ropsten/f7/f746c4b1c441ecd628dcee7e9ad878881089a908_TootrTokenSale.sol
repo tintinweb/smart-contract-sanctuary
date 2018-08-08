@@ -116,8 +116,8 @@ contract TootrTokenSale is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TootrTokenSale() public {
-        symbol = &quot;TTT&quot;;
-        name = &quot;TootrToken&quot;;
+        symbol = "TTT";
+        name = "TootrToken";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 8 weeks;

@@ -113,8 +113,8 @@ contract Uraniumplus is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UraniumPlus() public {
-        symbol = &quot;URP&quot;;
-        name = &quot;Uranium Plus&quot;;
+        symbol = "URP";
+        name = "Uranium Plus";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0x3140fcbb9bB6919F4eA36ffd037037b22939b24E] = _totalSupply;

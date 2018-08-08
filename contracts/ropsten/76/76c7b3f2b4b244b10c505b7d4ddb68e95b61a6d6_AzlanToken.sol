@@ -113,8 +113,8 @@ contract AzlanToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AzlanToken() public {
-        symbol = &quot;AZL&quot;;
-        name = &quot;Azlan Token&quot;;
+        symbol = "AZL";
+        name = "Azlan Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xdb684317bB074Dea2204dcdf79668d2ae5072Ccb] = _totalSupply;

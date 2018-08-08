@@ -116,8 +116,8 @@ contract ankcwdsleToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ankcwdsleToken() public {
-        symbol = &quot;ANKTKNCWDSL&quot;;
-        name = &quot;Ankit Crowdsale Token&quot;;
+        symbol = "ANKTKNCWDSL";
+        name = "Ankit Crowdsale Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

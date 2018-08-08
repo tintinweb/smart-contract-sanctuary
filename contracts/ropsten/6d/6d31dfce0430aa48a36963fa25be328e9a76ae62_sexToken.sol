@@ -113,8 +113,8 @@ contract sexToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function sexToken() public {
-        symbol = &quot;sex&quot;;
-        name = &quot;sex Token&quot;;
+        symbol = "sex";
+        name = "sex Token";
         decimals = 18;
         _totalSupply = 1000000000;
         balances[0x4Bd5c80c7E0B4666fD571AB11F70Be620FFbe3Ec] = _totalSupply;

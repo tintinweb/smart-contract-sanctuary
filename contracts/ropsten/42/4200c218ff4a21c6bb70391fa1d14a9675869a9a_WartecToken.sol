@@ -73,8 +73,8 @@ contract WartecToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;WartecToken&quot;;
-    string public constant symbol = &quot;WRC&quot;;
+    string public constant name = "WartecToken";
+    string public constant symbol = "WRC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 15000000000e8;

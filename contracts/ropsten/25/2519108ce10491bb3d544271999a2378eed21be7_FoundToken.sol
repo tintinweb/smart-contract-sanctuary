@@ -113,8 +113,8 @@ contract FoundToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FoundToken() public {
-        symbol = &quot;FoundT&quot;;
-        name = &quot;Foundation Token&quot;;
+        symbol = "FoundT";
+        name = "Foundation Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000000000;
         balances[0xA8E8770d84f9858e52Efb32fd7dBE2b576d9314E] = _totalSupply;

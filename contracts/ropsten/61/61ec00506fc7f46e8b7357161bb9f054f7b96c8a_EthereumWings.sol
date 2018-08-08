@@ -58,8 +58,8 @@ contract EthereumWings is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;EthereumWings&quot;;
-    string public constant symbol = &quot;ETW&quot;;
+    string public constant name = "EthereumWings";
+    string public constant symbol = "ETW";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000e8;

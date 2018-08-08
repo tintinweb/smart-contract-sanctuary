@@ -92,7 +92,7 @@ contract AAEtherBet is Admin {
         return string(bytesStringTrimmed);
     }
     
-    // Test:    &quot;BEthy&quot;, &quot;Uruguay vs France&quot;, 0, [&quot;Uruguay&quot;, &quot;France&quot;]
+    // Test:    "BEthy", "Uruguay vs France", 0, ["Uruguay", "France"]
     constructor (string contractName) public {
         name = contractName;
     }

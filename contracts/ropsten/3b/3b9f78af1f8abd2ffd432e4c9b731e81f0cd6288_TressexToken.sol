@@ -113,8 +113,8 @@ contract TressexToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TressexToken() public {
-        symbol = &quot;TREX&quot;;
-        name = &quot;0 Tressex Token&quot;;
+        symbol = "TREX";
+        name = "0 Tressex Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x56837E9C3B4154dB57C469220Bf30b71B8ebB060] = _totalSupply;

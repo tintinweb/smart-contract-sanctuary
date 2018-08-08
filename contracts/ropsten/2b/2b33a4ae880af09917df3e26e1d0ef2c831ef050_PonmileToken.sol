@@ -72,8 +72,8 @@ contract PonmileToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Ponmile Token&quot;;
-    string public constant symbol = &quot;PON&quot;;
+    string public constant name = "Ponmile Token";
+    string public constant symbol = "PON";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 40000000000e8;

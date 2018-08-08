@@ -2,7 +2,7 @@ pragma solidity ^0.4.24;
 
 
 // 引入其他library
-// import &quot;./Custom.library&quot;;
+// import "./Custom.library";
 
 
 contract Part1 {

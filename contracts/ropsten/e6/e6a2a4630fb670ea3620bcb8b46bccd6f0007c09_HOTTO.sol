@@ -72,8 +72,8 @@ contract HOTTO is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;HOTTO&quot;;
-    string public constant symbol = &quot;HT&quot;;
+    string public constant name = "HOTTO";
+    string public constant symbol = "HT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

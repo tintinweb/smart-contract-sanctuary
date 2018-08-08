@@ -64,10 +64,10 @@ contract Owned {
 contract NewgoldToken is ERC20, Owned {
  
     using SafeMath for uint256;
-    string  public name=&quot;Newgold Token&quot;;
-    string  public symbol=&quot;NGOL&quot;;
+    string  public name="Newgold Token";
+    string  public symbol="NGOL";
     uint256 public decimals = 18;
-    string  public version = &quot;1.0&quot;; 
+    string  public version = "1.0"; 
     uint public totalSupply = 21000000  * 10 ** uint(decimals);
     
 

@@ -113,8 +113,8 @@ contract MarketContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MarketContract() public {
-        symbol = &quot;VOC&quot;;
-        name = &quot;Voucher Discount Promotion&quot;;
+        symbol = "VOC";
+        name = "Voucher Discount Promotion";
         decimals = 0;
         _totalSupply = 30000000;
         balances[0x0857a2DF936be6ED39E5DE88e7410B8067dBB505] = _totalSupply; //MEW address here

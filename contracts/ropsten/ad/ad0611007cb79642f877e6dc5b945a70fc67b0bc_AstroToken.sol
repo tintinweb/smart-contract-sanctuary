@@ -388,8 +388,8 @@ contract Consts {
     uint constant TOKEN_DECIMALS = 18;
     uint8 constant TOKEN_DECIMALS_UINT8 = 18;
     uint constant TOKEN_DECIMAL_MULTIPLIER = 10 ** TOKEN_DECIMALS;
-    string constant TOKEN_NAME = &quot;ASTRO&quot;;
-    string constant TOKEN_SYMBOL = &quot;ATR&quot;;
+    string constant TOKEN_NAME = "ASTRO";
+    string constant TOKEN_SYMBOL = "ATR";
     bool constant PAUSED = true;
     address constant TARGET_USER = 0x4Ed3A340E100e13510f32E68F4ed024945806506;
     uint constant START_TIME = 1530900000;

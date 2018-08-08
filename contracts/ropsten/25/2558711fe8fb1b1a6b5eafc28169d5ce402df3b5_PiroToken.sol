@@ -36,7 +36,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -389,8 +389,8 @@ contract DetailedERC20 is ERC20 {
 
 contract PiroToken is DetailedERC20, MintableToken {
     
-    string name = &quot;PW Token&quot;;
-    string symbol = &quot;PW01&quot;;    
+    string name = "PW Token";
+    string symbol = "PW01";    
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = (200 * (10**6)) * (10 ** uint256(decimals));
 

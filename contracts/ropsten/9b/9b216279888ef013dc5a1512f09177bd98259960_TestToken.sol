@@ -426,6 +426,6 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract TestToken is StandardBurnableToken, CappedToken, DetailedERC20, PausableToken  {
-    constructor() CappedToken(65*10**25) DetailedERC20(&quot;BeTest token&quot;, &quot;Test&quot;, 18) public {
+    constructor() CappedToken(65*10**25) DetailedERC20("BeTest token", "Test", 18) public {
     }
 }

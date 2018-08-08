@@ -113,8 +113,8 @@ contract AacharyaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AacharyaToken() public {
-        symbol = &quot;Aacharya&quot;;
-        name = &quot;Aacharya Token&quot;;
+        symbol = "Aacharya";
+        name = "Aacharya Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xd5FE0a7999141cBC4d2bF176653eA73E8C9E7b5F] = _totalSupply;

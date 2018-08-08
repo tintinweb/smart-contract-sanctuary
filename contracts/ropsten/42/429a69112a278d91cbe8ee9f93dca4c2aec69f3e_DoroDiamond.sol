@@ -113,8 +113,8 @@ contract DoroDiamond is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DoroDiamond() public {
-        symbol = &quot;DoroDia911&quot;;
-        name = &quot;Doro Diamond&quot;;
+        symbol = "DoroDia911";
+        name = "Doro Diamond";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x25b855B640Efb984FDB3D22fEbE9195479C08CAC] = _totalSupply;

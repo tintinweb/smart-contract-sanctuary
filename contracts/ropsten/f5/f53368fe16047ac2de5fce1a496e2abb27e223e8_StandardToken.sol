@@ -64,8 +64,8 @@ contract StandardToken is ERC20, ERC223 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     function StandardToken(/*string name, string symbol, uint8 decimals,*/ uint256 totalSupply) public {
-        _symbol = &quot;RVC&quot;;
-        _name = &quot;ReviewChain&quot;;
+        _symbol = "RVC";
+        _name = "ReviewChain";
         _decimals = 18;
         _totalSupply = totalSupply;
         balances[msg.sender] = totalSupply;

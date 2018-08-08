@@ -69,8 +69,8 @@ contract DHUBTest02 is ERC20Interface, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DHUBTest02() public {
-        symbol = &quot;DHBT02&quot;;
-        name = &quot;DHUB Test 02&quot;;
+        symbol = "DHBT02";
+        name = "DHUB Test 02";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000;
         balances[0x627De654A257B1F1B5bDb1Be65cc230592088B61] = _totalSupply;

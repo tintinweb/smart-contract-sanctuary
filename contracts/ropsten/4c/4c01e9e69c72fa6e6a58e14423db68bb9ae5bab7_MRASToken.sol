@@ -112,8 +112,8 @@ contract MRASToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MRASToken() public {
-        symbol = &quot;MRAS&quot;;
-        name = &quot;AS NETWORK&quot;;
+        symbol = "MRAS";
+        name = "AS NETWORK";
         decimals = 18;
         _totalSupply = 1800000000000000000000000;
         balances[0x7A2f08a6710D574822015f68A16EC74c684a4e87] = _totalSupply;

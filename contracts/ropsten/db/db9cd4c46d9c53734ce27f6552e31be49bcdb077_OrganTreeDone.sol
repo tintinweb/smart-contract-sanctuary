@@ -312,8 +312,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 // File: contracts/OrganTreeDone.sol
 
 contract OrganTreeDone is StandardBurnableToken {
-    bytes32 public constant name = &quot;OrganTreeDone&quot;;
-    bytes32 public constant symbol = &quot;OGTD&quot;;
+    bytes32 public constant name = "OrganTreeDone";
+    bytes32 public constant symbol = "OGTD";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY  = 2500000000000000000000000000;
 

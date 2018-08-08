@@ -103,8 +103,8 @@ contract testing is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;test&quot;;
-        name = &quot;testing&quot;;
+        symbol = "test";
+        name = "testing";
         decimals = 18;
         bonusEnds = now + 1 hours;
         endDate = now + 7 weeks;

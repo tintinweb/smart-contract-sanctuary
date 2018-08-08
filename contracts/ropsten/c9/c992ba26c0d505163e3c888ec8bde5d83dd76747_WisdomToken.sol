@@ -114,8 +114,8 @@ contract WisdomToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;0WISDOM&quot;;
-        name = &quot;0 Wisdom Token&quot;;
+        symbol = "0WISDOM";
+        name = "0 Wisdom Token";
         decimals = 1;
         _totalSupply = 10000;
         balances[0x9019664D36229Ac285780Ad59A4D6F26f1B135AF] = _totalSupply;

@@ -401,8 +401,8 @@ contract StandardToken is ERC20, BasicToken {
 contract UtilityToken is StandardToken, Ownable, BurnableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;GoldBackedToken&quot;;
-    string public constant symbol = &quot;GBT&quot;;
+    string public constant name = "GoldBackedToken";
+    string public constant symbol = "GBT";
     uint8 public constant decimals = 0;
 
     event Mint(address indexed to, uint256 amount);
@@ -492,8 +492,8 @@ contract MintableToken is StandardToken, Ownable {
 contract SecurityToken is StandardToken, MintableToken, BurnableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;MMintToken&quot;;
-    string public constant symbol = &quot;MMT&quot;;
+    string public constant name = "MMintToken";
+    string public constant symbol = "MMT";
     uint8 public constant decimals = 0;
 
     SupplyManager supplyManager;

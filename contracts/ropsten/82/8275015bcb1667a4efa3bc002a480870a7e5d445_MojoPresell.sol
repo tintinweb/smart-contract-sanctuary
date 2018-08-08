@@ -280,7 +280,7 @@ contract MojoPresell is AccessControl(){
     }
 
     function withdrawEther(address _sendTo, uint _amount) needOwner public {
-        require(_amount <= address(this).balance,&quot;not enough balance&quot;);
+        require(_amount <= address(this).balance,"not enough balance");
         _sendTo.transfer(_amount);
     }
 
@@ -325,7 +325,7 @@ contract MojoPresell is AccessControl(){
         /* presellOpen = false; */
         MojoAssetInterface asset = MojoAssetInterface(assetContract);
         ERC20Interface erc20 = ERC20Interface(erc20Contract);
-        require(asset.getPlayerHasGetFree(msg.sender) == false , &quot;player has get free before&quot;);
+        require(asset.getPlayerHasGetFree(msg.sender) == false , "player has get free before");
 
         uint8 idx  = uint8(getRandom256() % freegets.length);
         uint32 gid = freegets[idx];
@@ -343,13 +343,13 @@ contract MojoPresell is AccessControl(){
     function presell() payable public {
         address _owner = msg.sender;
         // check presell is open
-        require(presellOpen == true,&quot;presell is not open&quot;);
+        require(presellOpen == true,"presell is not open");
         // check price
-        require(msg.value == presellPrice,&quot;presell value is not same with price&quot;);
+        require(msg.value == presellPrice,"presell value is not same with price");
 
         uint16 total = getPreSelledInPool();
         // check to preselled general&#39;s count must great than zero
-        require(total > 0,&quot;there is no general in presell pool&quot;);
+        require(total > 0,"there is no general in presell pool");
 
         MojoAssetInterface asset = MojoAssetInterface(assetContract);
         MojoDataInterface data  = MojoDataInterface(dataContract);

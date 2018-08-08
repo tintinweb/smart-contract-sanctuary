@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 contract ContractProbe {
 
     function probe(address _addr) public view returns (bool isContract, address forwardedTo) {
-        bytes memory clone = hex&quot;6000368180378080368173bebebebebebebebebebebebebebebebebebebebe5af43d82803e15602c573d90f35b3d90fd&quot;;
+        bytes memory clone = hex"6000368180378080368173bebebebebebebebebebebebebebebebebebebebe5af43d82803e15602c573d90f35b3d90fd";
         uint size;
         bytes memory code;
 

@@ -113,8 +113,8 @@ contract  MONTANATOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MONTANATOKEN () public {
-        symbol = &quot;MONTANA&quot;;
-        name = &quot;MONTANA Token&quot;;
+        symbol = "MONTANA";
+        name = "MONTANA Token";
         decimals = 18;
         _totalSupply = 1000000000;
         balances[0x59eE339643ef691E5F7048405bD6dB3535ec224D] = _totalSupply;

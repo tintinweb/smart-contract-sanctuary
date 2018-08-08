@@ -10,7 +10,7 @@ library SafeMath {
       return 0;
     }
     c = a * b;
-    require(c / a == b, &quot;Overflow - Multiplication&quot;);
+    require(c / a == b, "Overflow - Multiplication");
     return c;
   }
 
@@ -25,7 +25,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    require(b <= a, &quot;Underflow - Subtraction&quot;);
+    require(b <= a, "Underflow - Subtraction");
     return a - b;
   }
 
@@ -34,7 +34,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    require(c >= a, &quot;Overflow - Addition&quot;);
+    require(c >= a, "Overflow - Addition");
     return c;
   }
 }
@@ -65,7 +65,7 @@ library Contract {
   function authorize(address _script_exec) internal view {
     // No memory should have been allocated yet - expect the free memory pointer
     // to point to 0x80 - and throw if it does not
-    require(freeMem() == 0x80, &quot;Memory allocated prior to execution&quot;);
+    require(freeMem() == 0x80, "Memory allocated prior to execution");
     // Next, set up memory for execution
     bytes32 perms = EXEC_PERMISSIONS;
     assembly {
@@ -98,7 +98,7 @@ library Contract {
       authorized := sload(keccak256(0, 0x40))
     }
     if (!authorized)
-      revert(&quot;Sender is not authorized as a script exec address&quot;);
+      revert("Sender is not authorized as a script exec address");
   }
 
   // Sets up contract execution when initializing an instance of the application
@@ -113,7 +113,7 @@ library Contract {
   function initialize() internal view {
     // No memory should have been allocated yet - expect the free memory pointer
     // to point to 0x80 - and throw if it does not
-    require(freeMem() == 0x80, &quot;Memory allocated prior to execution&quot;);
+    require(freeMem() == 0x80, "Memory allocated prior to execution");
     // Next, set up memory for execution
     assembly {
       mstore(0x80, sload(0))     // Execution id, read from storage
@@ -149,7 +149,7 @@ library Contract {
   function commit() conditions(validState, none) internal pure {
     // Check value of storage buffer pointer - should be at least 0x180
     bytes32 ptr = buffPtr();
-    require(ptr >= 0x180, &quot;Invalid buffer pointer&quot;);
+    require(ptr >= 0x180, "Invalid buffer pointer");
 
     assembly {
       // Get the size of the buffer
@@ -269,13 +269,13 @@ library Contract {
   // Returns the execution id from memory -
   function execID() internal pure returns (bytes32 exec_id) {
     assembly { exec_id := mload(0x80) }
-    require(exec_id != bytes32(0), &quot;Execution id overwritten, or not read&quot;);
+    require(exec_id != bytes32(0), "Execution id overwritten, or not read");
   }
 
   // Returns the original sender from memory -
   function sender() internal pure returns (address addr) {
     assembly { addr := mload(0xa0) }
-    require(addr != address(0), &quot;Sender address overwritten, or not read&quot;);
+    require(addr != address(0), "Sender address overwritten, or not read");
   }
 
   // Reading from storage: //
@@ -912,27 +912,27 @@ library MintedCappedIdx {
 
   // Whether the crowdsale and token are configured, and the sale is ready to run
   function isConfigured() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_is_configured&quot;); }
+    { return keccak256("sale_is_configured"); }
 
   // Whether or not the crowdsale is post-purchase
   function isFinished() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_is_completed&quot;); }
+    { return keccak256("sale_is_completed"); }
 
   // Storage location of the crowdsale&#39;s start time
   function startTime() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_start_time&quot;); }
+    { return keccak256("sale_start_time"); }
 
   // Storage location of the amount of time the crowdsale will take, accounting for all tiers
   function totalDuration() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_total_duration&quot;); }
+    { return keccak256("sale_total_duration"); }
 
   // Storage location of the amount of tokens sold in the crowdsale so far. Does not include reserved tokens
   function tokensSold() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_tokens_sold&quot;); }
+    { return keccak256("sale_tokens_sold"); }
 
   // Stores the amount of unique contributors so far in this crowdsale
   function contributors() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_contributors&quot;); }
+    { return keccak256("sale_contributors"); }
 
   // Maps addresses to a boolean indicating whether or not this address has contributed
   function hasContributed(address _purchaser) internal pure returns (bytes32)
@@ -942,105 +942,105 @@ library MintedCappedIdx {
 
   // Stores the number of tiers in the sale
   function saleTierList() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_tier_list&quot;); }
+    { return keccak256("sale_tier_list"); }
 
   // Stores the name of the tier
   function tierName(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;name&quot;, saleTierList()); }
+    { return keccak256(_idx, "name", saleTierList()); }
 
   // Stores the number of tokens that will be sold in the tier
   function tierCap(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;cap&quot;, saleTierList()); }
+    { return keccak256(_idx, "cap", saleTierList()); }
 
   // Stores the price of a token (1 * 10^decimals units), in wei
   function tierPrice(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;price&quot;, saleTierList()); }
+    { return keccak256(_idx, "price", saleTierList()); }
 
   // Stores the minimum number of tokens a user must purchase for a given tier
   function tierMin(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;minimum&quot;, saleTierList()); }
+    { return keccak256(_idx, "minimum", saleTierList()); }
 
   // Stores the duration of a tier
   function tierDuration(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;duration&quot;, saleTierList()); }
+    { return keccak256(_idx, "duration", saleTierList()); }
 
   // Whether or not the tier&#39;s duration is modifiable (before it has begin)
   function tierModifiable(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;mod_stat&quot;, saleTierList()); }
+    { return keccak256(_idx, "mod_stat", saleTierList()); }
 
   // Returns the storage location of the tier&#39;s whitelist status
   function tierWhitelisted(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;wl_stat&quot;, saleTierList()); }
+    { return keccak256(_idx, "wl_stat", saleTierList()); }
 
   // Storage location of the index of the current tier. If zero, no tier is currently active
   function currentTier() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_current_tier&quot;); }
+    { return keccak256("sale_current_tier"); }
 
   // Storage location of the end time of the current tier. Purchase attempts beyond this time will update the current tier (if another is available)
   function currentEndsAt() internal pure returns (bytes32)
-    { return keccak256(&quot;current_tier_ends_at&quot;); }
+    { return keccak256("current_tier_ends_at"); }
 
   // Storage location of the total number of tokens remaining for purchase in the current tier
   function currentTokensRemaining() internal pure returns (bytes32)
-    { return keccak256(&quot;current_tier_tokens_remaining&quot;); }
+    { return keccak256("current_tier_tokens_remaining"); }
 
   /// FUNDS ///
 
   // Storage location of team funds wallet
   function wallet() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_destination_wallet&quot;); }
+    { return keccak256("sale_destination_wallet"); }
 
   // Storage location of amount of wei raised during the crowdsale, total
   function totalWeiRaised() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_tot_wei_raised&quot;); }
+    { return keccak256("sale_tot_wei_raised"); }
 
   /// WHITELIST ///
 
   // Stores a tier&#39;s whitelist
   function tierWhitelist(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;tier_whitelists&quot;); }
+    { return keccak256(_idx, "tier_whitelists"); }
 
   // Stores a spender&#39;s maximum wei spend amount for a given whitelisted tier
   function whitelistMaxWei(uint _idx, address _spender) internal pure returns (bytes32)
-    { return keccak256(_spender, &quot;max_wei&quot;, tierWhitelist(_idx)); }
+    { return keccak256(_spender, "max_wei", tierWhitelist(_idx)); }
 
   // Stores a spender&#39;s minimum token purchase amount for a given whitelisted tier
   function whitelistMinTok(uint _idx, address _spender) internal pure returns (bytes32)
-    { return keccak256(_spender, &quot;min_tok&quot;, tierWhitelist(_idx)); }
+    { return keccak256(_spender, "min_tok", tierWhitelist(_idx)); }
 
   /// TOKEN ///
 
   // Storage location for token name
   function tokenName() internal pure returns (bytes32)
-    { return keccak256(&quot;token_name&quot;); }
+    { return keccak256("token_name"); }
 
   // Storage location for token ticker symbol
   function tokenSymbol() internal pure returns (bytes32)
-    { return keccak256(&quot;token_symbol&quot;); }
+    { return keccak256("token_symbol"); }
 
   // Storage location for token decimals
   function tokenDecimals() internal pure returns (bytes32)
-    { return keccak256(&quot;token_decimals&quot;); }
+    { return keccak256("token_decimals"); }
 
   // Storage location for token totalSupply
   function tokenTotalSupply() internal pure returns (bytes32)
-    { return keccak256(&quot;token_total_supply&quot;); }
+    { return keccak256("token_total_supply"); }
 
   // Storage seed for user balances mapping
-  bytes32 internal constant TOKEN_BALANCES = keccak256(&quot;token_balances&quot;);
+  bytes32 internal constant TOKEN_BALANCES = keccak256("token_balances");
 
   function balances(address _owner) internal pure returns (bytes32)
     { return keccak256(_owner, TOKEN_BALANCES); }
 
   // Storage seed for user allowances mapping
-  bytes32 internal constant TOKEN_ALLOWANCES = keccak256(&quot;token_allowances&quot;);
+  bytes32 internal constant TOKEN_ALLOWANCES = keccak256("token_allowances");
 
   function allowed(address _owner, address _spender) internal pure returns (bytes32)
     { return keccak256(_spender, keccak256(_owner, TOKEN_ALLOWANCES)); }
 
   // Storage seed for token &#39;transfer agent&#39; status for any address
   // Transfer agents can transfer tokens, even if the crowdsale has not yet been finalized
-  bytes32 internal constant TOKEN_TRANSFER_AGENTS = keccak256(&quot;token_transfer_agents&quot;);
+  bytes32 internal constant TOKEN_TRANSFER_AGENTS = keccak256("token_transfer_agents");
 
   function transferAgents(address _agent) internal pure returns (bytes32)
     { return keccak256(_agent, TOKEN_TRANSFER_AGENTS); }
@@ -1053,23 +1053,23 @@ library MintedCappedIdx {
 
   // Stores the number of addresses for which tokens are reserved
   function reservedDestinations() internal pure returns (bytes32)
-    { return keccak256(&quot;reserved_token_dest_list&quot;); }
+    { return keccak256("reserved_token_dest_list"); }
 
   // Stores the index of an address in the reservedDestinations list (1-indexed)
   function destIndex(address _destination) internal pure returns (bytes32)
-    { return keccak256(_destination, &quot;index&quot;, reservedDestinations()); }
+    { return keccak256(_destination, "index", reservedDestinations()); }
 
   // Stores the number of tokens reserved for a destination
   function destTokens(address _destination) internal pure returns (bytes32)
-    { return keccak256(_destination, &quot;numtokens&quot;, reservedDestinations()); }
+    { return keccak256(_destination, "numtokens", reservedDestinations()); }
 
   // Stores the number of percent of tokens sold reserved for a destination
   function destPercent(address _destination) internal pure returns (bytes32)
-    { return keccak256(_destination, &quot;numpercent&quot;, reservedDestinations()); }
+    { return keccak256(_destination, "numpercent", reservedDestinations()); }
 
   // Stores the number of decimals in the previous percentage (2 are added by default)
   function destPrecision(address _destination) internal pure returns (bytes32)
-    { return keccak256(_destination, &quot;precision&quot;, reservedDestinations()); }
+    { return keccak256(_destination, "precision", reservedDestinations()); }
 
   /*
   Creates a crowdsale with initial conditions. The admin should now initialize the crowdsale&#39;s token, as well

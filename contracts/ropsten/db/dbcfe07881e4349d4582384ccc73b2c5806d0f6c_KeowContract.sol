@@ -102,8 +102,8 @@ contract BasicTokenERC20 {
 
 contract KeowContract is BasicTokenERC20 {    
 
-    string public constant name = &quot;KeowToken&quot;; 
-    string public constant symbol = &quot;KEOW&quot;;
+    string public constant name = "KeowToken"; 
+    string public constant symbol = "KEOW";
     uint public decimals = 18; 
     uint256 public milion = 1000000;
     event TestLog(address indexed from, address indexed to, uint256 value, uint8 state);

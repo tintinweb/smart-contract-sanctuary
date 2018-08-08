@@ -113,8 +113,8 @@ contract BeautyCoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BeautyCoinToken() public {
-        symbol = &quot;BeautyCoin&quot;;
-        name = &quot;BeautyCoin Token&quot;;
+        symbol = "BeautyCoin";
+        name = "BeautyCoin Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x1820187314B29a9d77d435b2Bb85C49e6bC50078] = _totalSupply;

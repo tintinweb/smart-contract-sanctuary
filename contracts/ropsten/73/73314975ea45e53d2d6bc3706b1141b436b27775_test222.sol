@@ -45,9 +45,9 @@ contract test222 is StandToken {
     
     //constructor function 
     constructor() {
-        name = &quot;test222&quot;;                       // coin name
+        name = "test222";                       // coin name
         decimals = 18;                          // decimals
-        symbol = &quot;TS&quot;;                          // symbol
+        symbol = "TS";                          // symbol
         dec_multiple = 100000 * 100000 * 100000 * 1000;
         
         balances[msg.sender] =  3 * 1000 * 1000 * 1000 * dec_multiple;        

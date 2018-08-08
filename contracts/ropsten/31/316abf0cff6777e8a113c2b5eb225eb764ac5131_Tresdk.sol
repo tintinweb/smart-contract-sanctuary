@@ -113,8 +113,8 @@ contract Tresdk is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Tresdk() public {
-        symbol = &quot;TRSDK&quot;;
-        name = &quot;Tresdk&quot;;
+        symbol = "TRSDK";
+        name = "Tresdk";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xd5561DF2Bb0D50b6374400b3960bAd7a1f53b4b6] = _totalSupply;

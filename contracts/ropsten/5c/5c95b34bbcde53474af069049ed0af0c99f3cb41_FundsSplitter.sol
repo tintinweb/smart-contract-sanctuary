@@ -27,7 +27,7 @@ contract FundsSplitter {
      * by owner 
      */
     modifier ownerOnly{
-        require(msg.sender == owner, &quot;[ER01] Invalid owner address&quot;);
+        require(msg.sender == owner, "[ER01] Invalid owner address");
         _;
     }
 
@@ -35,7 +35,7 @@ contract FundsSplitter {
      * Modifier to validate if contract is not paused
      */
     modifier whenNotPaused(){
-        require(!paused, &quot;[ER05] Contract is paused&quot;);
+        require(!paused, "[ER05] Contract is paused");
         _;
     }
 
@@ -43,7 +43,7 @@ contract FundsSplitter {
      * Modifier to validate if the contract is paused
      */
     modifier whenPaused(){
-        require(paused, &quot;[ER06] Contract is not paused&quot;);
+        require(paused, "[ER06] Contract is not paused");
         _;
     }
 
@@ -59,10 +59,10 @@ contract FundsSplitter {
      * not depends on the owner.
      **/
     function splitFunds(address receiver1, address receiver2) public payable whenNotPaused returns(bool success)  {                
-        require(receiver1 != address(0), &quot;[ER02] Invalid address&quot;);
-        require(receiver2 != address(0), &quot;[ER02] Invalid address&quot;);
-        require(receiver1 != receiver2, &quot;[ER02] Invalid address&quot;);
-        require(msg.value > 0, &quot;[ER04] Invalid Values&quot;);
+        require(receiver1 != address(0), "[ER02] Invalid address");
+        require(receiver2 != address(0), "[ER02] Invalid address");
+        require(receiver1 != receiver2, "[ER02] Invalid address");
+        require(msg.value > 0, "[ER04] Invalid Values");
         uint amount = msg.value / 2;                
         balances[receiver1] += amount;
         balances[receiver2] += msg.value - amount;
@@ -77,8 +77,8 @@ contract FundsSplitter {
      */
     function withdrawFunds(uint amount) whenNotPaused public{
         require(amount > 0); // Funds can not be <= 0
-        require(balances[msg.sender] > 0, &quot;[ER03] Invalid address&quot;);
-        require(balances[msg.sender] >= amount, &quot;[ER04] Not enough Funds&quot;);
+        require(balances[msg.sender] > 0, "[ER03] Invalid address");
+        require(balances[msg.sender] >= amount, "[ER04] Not enough Funds");
         balances[msg.sender] -= amount;
         msg.sender.transfer(amount);
     }

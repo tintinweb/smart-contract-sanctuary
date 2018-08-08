@@ -53,7 +53,7 @@ contract GradeBook {
   }
 
   // Retrieve the student ID based on the text-based student identifier
-  // &quot;zero&quot; means the student is not recorded in the system.
+  // "zero" means the student is not recorded in the system.
   function getStudentID(bytes idText) public view returns (uint32) {
     return studentByID[idText];
   }

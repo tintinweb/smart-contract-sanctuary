@@ -113,8 +113,8 @@ contract Dandy is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Dandy() public {
-        symbol = &quot;DND&quot;;
-        name = &quot;DandyToken&quot;;
+        symbol = "DND";
+        name = "DandyToken";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0xF7425aFf44E6245d7968B44ACe8BBa7db388B8C3] = _totalSupply;

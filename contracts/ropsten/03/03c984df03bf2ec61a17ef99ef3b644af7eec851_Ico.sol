@@ -17,8 +17,8 @@ contract ERC20Token {
    function ERC20Token() {
        totalSupply = 10000;                      // Сколько токенов эмитируем
        balanceOf[msg.sender] = totalSupply;
-       name = &quot;ICO token&quot;;                        // Название токена
-       symbol = &quot;ICO&quot;;                        // Символ токена
+       name = "ICO token";                        // Название токена
+       symbol = "ICO";                        // Символ токена
        decimals = 0;                             // Amount of decimals for display purposes
    }
 

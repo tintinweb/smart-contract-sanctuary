@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -316,7 +316,7 @@ contract KYCBase {
     private returns (bool)
     {
         // check the signature
-        bytes32 hash = sha256(abi.encodePacked(&quot;Eidoo icoengine authorization&quot;, this, buyerAddress, buyerId, maxAmount));
+        bytes32 hash = sha256(abi.encodePacked("Eidoo icoengine authorization", this, buyerAddress, buyerId, maxAmount));
         address signer = ecrecover(hash, v, r, s);
         if (!isKycSigner[signer]) {
             revert();
@@ -734,8 +734,8 @@ pragma solidity ^0.4.24;
 
 
 contract GotToken is CanReclaimToken, MintableToken, PausableToken, BurnableToken {
-    string public constant name = &quot;GOToken&quot;;
-    string public constant symbol = &quot;GOT&quot;;
+    string public constant name = "GOToken";
+    string public constant symbol = "GOT";
     uint8 public constant decimals = 18;
 
     /**

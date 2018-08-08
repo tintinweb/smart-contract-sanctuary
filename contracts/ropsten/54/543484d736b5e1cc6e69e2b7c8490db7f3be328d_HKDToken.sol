@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -310,8 +310,8 @@ contract UpgradedStandardToken is StandardToken{
 
 contract HKDToken is Pausable, StandardToken, BlackList {
 
-    string public constant name = &quot;Hong Kong Dollar Token&quot;;
-    string public constant symbol = &quot;HKDT&quot;;
+    string public constant name = "Hong Kong Dollar Token";
+    string public constant symbol = "HKDT";
     uint public constant decimals = 18;
     address public upgradedAddress;
     bool public deprecated = false;

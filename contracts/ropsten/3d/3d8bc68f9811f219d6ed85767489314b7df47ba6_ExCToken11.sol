@@ -90,10 +90,10 @@ contract StandardToken is Token {
 contract ExCToken11 is StandardToken, SafeMath {
  
     // metadata
-    string  public constant name = &quot;ExinClassic11&quot;;
-    string  public constant symbol = &quot;EXC11&quot;;
+    string  public constant name = "ExinClassic11";
+    string  public constant symbol = "EXC11";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
  
     // contracts
     address public ethFundDeposit;          // ETH存放地址

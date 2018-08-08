@@ -81,9 +81,9 @@ contract BLAAICOIN is StandardToken {
     function BLAAICOIN() {
         balances[msg.sender] = 350000000000000000000000000;               
         totalSupply = 350000000000000000000000000;                        
-        name = &quot;BLAAICOIN&quot;;                                   
+        name = "BLAAICOIN";                                   
         decimals = 18;                                               
-        symbol = &quot;BLC&quot;;                                             
+        symbol = "BLC";                                             
         unitsOneEthCanBuy = 4450;                                      
         fundsWallet = msg.sender;                                    
     }
@@ -107,7 +107,7 @@ contract BLAAICOIN is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

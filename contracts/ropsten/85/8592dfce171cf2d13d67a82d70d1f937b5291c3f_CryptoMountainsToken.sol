@@ -107,8 +107,8 @@ contract StandardToken is Token {
 }
 
 contract CryptoMountainsToken is owned, SafeMath, StandardToken {
-    string public name = &quot;CryptoMountainsToken&quot;;                                       // Set the name for display purposes
-    string public symbol = &quot;CMT&quot;;                                             // Set the symbol for display purposes
+    string public name = "CryptoMountainsToken";                                       // Set the name for display purposes
+    string public symbol = "CMT";                                             // Set the symbol for display purposes
     address public DentacoinAddress = this;                                 // Address of the Dentacoin token
     uint8 public decimals = 2;                                              // Amount of decimals for display purposes
     uint256 public totalSupply = 10000000000000;                             // Set total supply of Dentacoins (eight trillion)

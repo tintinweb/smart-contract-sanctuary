@@ -113,8 +113,8 @@ contract SpencerToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SpencerToken() public {
-        symbol = &quot;0SPNC&quot;;
-        name = &quot;0 Spencer Token&quot;;
+        symbol = "0SPNC";
+        name = "0 Spencer Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xC4b07Da9B3881526591276B7C9F6Eb742683e600] = _totalSupply;

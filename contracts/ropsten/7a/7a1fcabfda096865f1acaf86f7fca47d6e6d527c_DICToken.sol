@@ -136,8 +136,8 @@ contract ERC20Token is ERC20 {
 }
 
 contract DICToken is ERC20Token {
-    string  public name = &quot;DIC Token&quot;;
-    string  public symbol = &quot;DIC&quot;;
+    string  public name = "DIC Token";
+    string  public symbol = "DIC";
     uint8   public decimals = 18;
     uint    public totalSupply = 1000000000 * 10 ** uint(decimals);
 

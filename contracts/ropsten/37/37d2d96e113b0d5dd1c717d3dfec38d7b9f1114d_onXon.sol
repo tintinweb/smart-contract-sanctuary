@@ -113,8 +113,8 @@ contract onXon is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function onXon() public {
-        symbol = &quot;OXO&quot;;
-        name = &quot;onXon&quot;;
+        symbol = "OXO";
+        name = "onXon";
         decimals = 0;
         _totalSupply = 10000000000;
         balances[0xFC4a6388E2461a13412927e77eA0f1491c4CD262] = _totalSupply;

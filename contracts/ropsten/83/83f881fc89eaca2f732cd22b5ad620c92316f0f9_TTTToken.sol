@@ -320,7 +320,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract TTTToken is TokenERC20 {
 
-    function TTTToken() TokenERC20(2500000000, &quot;TTT&quot;, &quot;TTT&quot;, 18) public {
+    function TTTToken() TokenERC20(2500000000, "TTT", "TTT", 18) public {
 
     }
     

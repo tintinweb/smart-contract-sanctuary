@@ -12,7 +12,7 @@ interface ERC820ImplementerInterface {
 contract ERC820Registry {
     bytes4 constant InvalidID = 0xffffffff;
     bytes4 constant ERC165ID = 0x01ffc9a7;
-    bytes32 constant ERC820_ACCEPT_MAGIC = keccak256(&quot;ERC820_ACCEPT_MAGIC&quot;);
+    bytes32 constant ERC820_ACCEPT_MAGIC = keccak256("ERC820_ACCEPT_MAGIC");
 
     mapping (address => mapping(bytes32 => address)) interfaces;
     mapping (address => address) managers;
@@ -130,7 +130,7 @@ contract ERC820Registry {
         bytes4 erc165ID = ERC165ID;
 
         assembly {
-                let x := mload(0x40)               // Find empty storage location using &quot;free memory pointer&quot;
+                let x := mload(0x40)               // Find empty storage location using "free memory pointer"
                 mstore(x, erc165ID)                // Place signature at begining of empty storage
                 mstore(add(x, 0x04), _interfaceId) // Place first argument directly next to signature
 

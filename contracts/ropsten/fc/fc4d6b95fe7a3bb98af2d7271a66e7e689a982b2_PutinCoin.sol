@@ -116,8 +116,8 @@ contract PutinCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PutinCoin() public {
-        symbol = &quot;PTC&quot;;
-        name = &quot;PutinCoin Token&quot;;
+        symbol = "PTC";
+        name = "PutinCoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

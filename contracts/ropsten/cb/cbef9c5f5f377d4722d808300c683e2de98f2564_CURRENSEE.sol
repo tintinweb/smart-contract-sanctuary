@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -380,8 +380,8 @@ contract UpgradeableToken is BurnableToken {
          currenseeFoundationAddress = _currenseeFoundationAddress;
          totalSupply = 15000000;
          totalSupply = totalSupply.mul( 10 ** uint256(decimals)); //Update total supply with the decimal amount
-         name = &quot;CURRENSEE&quot;;
-         symbol = &quot;CUR&quot;;
+         name = "CURRENSEE";
+         symbol = "CUR";
          balances[_ownerAddress] = totalSupply;
          percentQuotient = 1;
          percentDividend = 100;

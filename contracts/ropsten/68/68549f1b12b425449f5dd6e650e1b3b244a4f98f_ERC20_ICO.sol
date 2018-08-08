@@ -21,8 +21,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract ERC20 is owned {
     // Public variables of the token
-    string public name = &quot;Fiat Coin&quot;;
-    string public symbol = &quot;FIAT&quot;;
+    string public name = "Fiat Coin";
+    string public symbol = "FIAT";
     uint8 public decimals = 8;
     uint256 public totalSupply = 70400000 * 10 ** uint256(decimals);
 

@@ -22,7 +22,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -304,8 +304,8 @@ contract BaseInvestmentPool is Ownable, ReentrancyGuard, ERC223Receiver {
   )
     public
   {
-    require(_owner != address(0), &quot;owner address should not be null&quot;);
-    require(_rewardPermille < 1000, &quot;rate should be less than 1000&quot;);
+    require(_owner != address(0), "owner address should not be null");
+    require(_rewardPermille < 1000, "rate should be less than 1000");
     owner = _owner;
     investmentAddress = _investmentAddress;
     tokenAddress = _tokenAddress;
@@ -316,10 +316,10 @@ contract BaseInvestmentPool is Ownable, ReentrancyGuard, ERC223Receiver {
    * @notice sends all funds to investmentAddress.
    */
   function finalize() external nonReentrant {
-    require(!isFinalized, &quot;pool is already finalized&quot;);
+    require(!isFinalized, "pool is already finalized");
     _preValidateFinalization();
     // solium-disable-next-line security/no-call-value
-    require(investmentAddress.call.value(weiRaised)(), &quot;error when sending funds to ICO&quot;);
+    require(investmentAddress.call.value(weiRaised)(), "error when sending funds to ICO");
     isFinalized = true;
     emit Finalized();
   }
@@ -328,7 +328,7 @@ contract BaseInvestmentPool is Ownable, ReentrancyGuard, ERC223Receiver {
    * @notice withdraws sender&#39;s tokens.
    */
   function withdrawTokens() external nonReentrant {
-    require(msg.sender == owner || investments[msg.sender] != 0, &quot;you are not owner and not investor&quot;);
+    require(msg.sender == owner || investments[msg.sender] != 0, "you are not owner and not investor");
     if (investments[msg.sender] != 0) {
       _withdrawInvestorTokens(msg.sender);
     }
@@ -341,7 +341,7 @@ contract BaseInvestmentPool is Ownable, ReentrancyGuard, ERC223Receiver {
    * @notice token receiver fallback function for compatibility with ERC223. Applies ERC223 tokens from ICO.
    */
   function tokenFallback(address, uint, bytes) public {
-    require(msg.sender == tokenAddress, &quot;allowed receive tokens only from target ICO&quot;);
+    require(msg.sender == tokenAddress, "allowed receive tokens only from target ICO");
   }
 
   /**
@@ -363,7 +363,7 @@ contract BaseInvestmentPool is Ownable, ReentrancyGuard, ERC223Receiver {
    * @param _investmentAddress investment address to set.
    */
   function setInvestmentAddress(address _investmentAddress) public onlyOwner {
-    require(investmentAddress == address(0), &quot;investment address already set&quot;);
+    require(investmentAddress == address(0), "investment address already set");
     investmentAddress = _investmentAddress;
     emit SetInvestmentAddress(_investmentAddress);
   }
@@ -374,7 +374,7 @@ contract BaseInvestmentPool is Ownable, ReentrancyGuard, ERC223Receiver {
    * @param _tokenAddress token address to set.
    */
   function setTokenAddress(address _tokenAddress) public onlyOwner {
-    require(tokenAddress == address(0), &quot;token address already set&quot;);
+    require(tokenAddress == address(0), "token address already set");
     tokenAddress = _tokenAddress;
     emit SetTokenAddress(_tokenAddress);
   }
@@ -384,7 +384,7 @@ contract BaseInvestmentPool is Ownable, ReentrancyGuard, ERC223Receiver {
    */
   function _withdrawInvestorTokens(address _investor) internal {
     uint tokenAmount = _getInvestorTokenAmount(_investor);
-    require(tokenAmount != 0, &quot;contract have no tokens for you&quot;);
+    require(tokenAmount != 0, "contract have no tokens for you");
     _transferTokens(_investor, tokenAmount);
     tokensWithdrawnByInvestor[_investor] = tokensWithdrawnByInvestor[_investor].add(tokenAmount);
     emit WithdrawTokens(_investor, tokenAmount);
@@ -394,9 +394,9 @@ contract BaseInvestmentPool is Ownable, ReentrancyGuard, ERC223Receiver {
    * @notice withdraws owner&#39;s percent of tokens.
    */
   function _withdrawOwnerTokens() internal {
-    require(isFinalized, &quot;contract not finalized yet&quot;);
+    require(isFinalized, "contract not finalized yet");
     uint tokenAmount = _getRewardTokenAmount();
-    require(tokenAmount != 0, &quot;contract have no tokens for you&quot;);
+    require(tokenAmount != 0, "contract have no tokens for you");
     _transferTokens(owner, tokenAmount);
     rewardWithdrawn = rewardWithdrawn.add(tokenAmount);
     emit WithdrawReward(owner, tokenAmount);
@@ -440,16 +440,16 @@ contract BaseInvestmentPool is Ownable, ReentrancyGuard, ERC223Receiver {
    * @param _amount       wei amount investor send.
    */
   function _preValidateInvest(address _beneficiary, uint _amount) internal {
-    require(_beneficiary != address(0), &quot;cannot invest from null address&quot;);
-    require(!isFinalized, &quot;contract is already finalized&quot;);
+    require(_beneficiary != address(0), "cannot invest from null address");
+    require(!isFinalized, "contract is already finalized");
   }
 
   /**
    * @notice validates transaction before sending funds to ICO.
    */
   function _preValidateFinalization() internal {
-    require(investmentAddress != address(0), &quot;investment address did not set&quot;);
-    require(tokenAddress != address(0), &quot;token address did not set&quot;);
+    require(investmentAddress != address(0), "investment address did not set");
+    require(tokenAddress != address(0), "token address did not set");
   }
 }
 
@@ -473,7 +473,7 @@ contract CancellableInvestmentPool is BaseInvestmentPool {
    * @notice sets contract to cancelled state. No one can contribute funds to contract ins this state.
    */
   function cancel() public onlyOwner {
-    require(!isCancelled, &quot;pool is already cancelled&quot;);
+    require(!isCancelled, "pool is already cancelled");
     _preValidateCancellation();
     isCancelled = true;
     emit Cancelled();
@@ -483,7 +483,7 @@ contract CancellableInvestmentPool is BaseInvestmentPool {
    * @notice validates contract&#39;s state before cancellation.
    */
   function _preValidateCancellation() internal {
-    require(!isFinalized, &quot;pool is finalized&quot;);
+    require(!isFinalized, "pool is finalized");
   }
 
   /**
@@ -491,7 +491,7 @@ contract CancellableInvestmentPool is BaseInvestmentPool {
    */
   function _preValidateFinalization() internal {
     super._preValidateFinalization();
-    require(!isCancelled, &quot;pool is cancelled&quot;);
+    require(!isCancelled, "pool is cancelled");
   }
 
   /**
@@ -499,7 +499,7 @@ contract CancellableInvestmentPool is BaseInvestmentPool {
    */
   function _preValidateInvest(address _beneficiary, uint _amount) internal {
     super._preValidateInvest(_beneficiary, _amount);
-    require(!isCancelled, &quot;contract is already cancelled&quot;);
+    require(!isCancelled, "contract is already cancelled");
   }
 }
 
@@ -526,7 +526,7 @@ contract TimedInvestmentPool is BaseInvestmentPool {
    * @param _endTime    end time when investors allowed to contribute funds to the contract.
    */
   constructor(uint _startTime, uint _endTime) public {
-    require(_startTime < _endTime, &quot;start time should be before end time&quot;);
+    require(_startTime < _endTime, "start time should be before end time");
     startTime = _startTime;
     endTime = _endTime;
   }
@@ -550,8 +550,8 @@ contract TimedInvestmentPool is BaseInvestmentPool {
    */
   function _preValidateInvest(address _beneficiary, uint _amount) internal {
     super._preValidateInvest(_beneficiary, _amount);
-    require(hasStarted(), &quot;contract is not yet started&quot;);
-    require(!hasEnded(), &quot;contract is already ended&quot;);
+    require(hasStarted(), "contract is not yet started");
+    require(!hasEnded(), "contract is already ended");
   }
 
   /**
@@ -559,7 +559,7 @@ contract TimedInvestmentPool is BaseInvestmentPool {
    */
   function _preValidateFinalization() internal {
     super._preValidateFinalization();
-    require(!hasEnded(), &quot;time is out&quot;);
+    require(!hasEnded(), "time is out");
   }
 }
 
@@ -594,8 +594,8 @@ contract HardCappedInvestmentPool is BaseInvestmentPool {
    */
   function _preValidateInvest(address _beneficiary, uint _amount) internal {
     super._preValidateInvest(_beneficiary, _amount);
-    require(!hardCapReached(), &quot;hard cap already reached&quot;);
-    require(weiRaised.add(_amount) <= hardCap, &quot;cannot invest more than hard cap&quot;);
+    require(!hardCapReached(), "hard cap already reached");
+    require(weiRaised.add(_amount) <= hardCap, "cannot invest more than hard cap");
   }
 }
 
@@ -630,7 +630,7 @@ contract SoftCappedInvestmentPool is BaseInvestmentPool {
    */
   function _preValidateFinalization() internal {
     super._preValidateFinalization();
-    require(softCapReached(), &quot;soft cap did not reached yet&quot;);
+    require(softCapReached(), "soft cap did not reached yet");
   }
 }
 
@@ -701,9 +701,9 @@ contract RefundableInvestmentPool is CancellableInvestmentPool, TimedInvestmentP
     payable
     nonReentrant
   {
-    require(msg.sender == owner || msg.sender == serviceAccount, &quot;only owner and service account may do this&quot;);
-    require(investmentAddress != address(0), &quot;investment address did not set&quot;);
-    require(isFinalized, &quot;contract not finalized yet&quot;);
+    require(msg.sender == owner || msg.sender == serviceAccount, "only owner and service account may do this");
+    require(investmentAddress != address(0), "investment address did not set");
+    require(isFinalized, "contract not finalized yet");
     uint balanceBeforeCall = address(this).balance;
     isRefundMode = true;
     if (msg.value != 0) {
@@ -722,10 +722,10 @@ contract RefundableInvestmentPool is CancellableInvestmentPool, TimedInvestmentP
    *          or time was out and funds has not been sent to ICO.
    */
   function claimRefund() external nonReentrant {
-    require(investments[msg.sender] != 0, &quot;you are not investor&quot;);
+    require(investments[msg.sender] != 0, "you are not investor");
     // solium-disable-next-line indentation
     require(isCancelled || (!isFinalized && hasEnded()) || isInvestmentAddressRefunded,
-      &quot;contract has not ended, not cancelled and ico did not refunded&quot;);
+      "contract has not ended, not cancelled and ico did not refunded");
     address investor = msg.sender;
     uint amount = investments[investor];
     investor.transfer(amount);
@@ -855,6 +855,6 @@ contract InvestmentPool is // solium-disable-line lbrace
     HardCappedInvestmentPool(132000000000000000000)
     TimedInvestmentPool(1532083380, 1532084100)
   {
-    require(softCap < hardCap, &quot;soft cap should be less than hard cap&quot;);
+    require(softCap < hardCap, "soft cap should be less than hard cap");
   }
 }

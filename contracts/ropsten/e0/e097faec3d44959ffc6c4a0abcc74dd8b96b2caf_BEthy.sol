@@ -95,13 +95,13 @@ contract BEthy is ExchangeAdmin {
     string public name;
     Game[] current;
     
-    // Test:        &quot;BEthy&quot;
-    // Game Test:   &quot;Uruguay vs France&quot;, 1530626815, [&quot;0x55727567756179&quot;, &quot;0x4672616e6365&quot;]
+    // Test:        "BEthy"
+    // Game Test:   "Uruguay vs France", 1530626815, ["0x55727567756179", "0x4672616e6365"]
     //constructor (string contractName) public {
     //    name = contractName;
     //}
     constructor () public {
-        name = &quot;BEthy&quot;;
+        name = "BEthy";
     }
     
     function addGame(string gameName, uint gameExpiry, bytes32[] gameSides) public {

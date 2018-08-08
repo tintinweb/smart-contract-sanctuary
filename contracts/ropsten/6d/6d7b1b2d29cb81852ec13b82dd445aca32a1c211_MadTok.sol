@@ -113,8 +113,8 @@ contract MadTok is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MadTok() public {
-        symbol = &quot;MDTK&quot;;
-        name = &quot;MadTok Token&quot;;
+        symbol = "MDTK";
+        name = "MadTok Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x72183A90fE5249639f0bE4504441Aeb704724497] = _totalSupply;

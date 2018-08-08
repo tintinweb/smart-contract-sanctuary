@@ -111,8 +111,8 @@ contract FreedomToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FreedomToken() public {
-        symbol = &quot;BFREE&quot;;
-        name = &quot;Freedom Token&quot;;
+        symbol = "BFREE";
+        name = "Freedom Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4c5883D4EE2119791910A6332b4fC48B73ec07Fe] = _totalSupply;

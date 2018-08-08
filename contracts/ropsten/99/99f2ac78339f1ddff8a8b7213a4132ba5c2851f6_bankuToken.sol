@@ -116,8 +116,8 @@ string public name;
     // Constructor
     // ------------------------------------------------------------------------
     function bankuToken() public {
-        symbol = &quot;BNK&quot;;
-        name = &quot;banku Token&quot;;
+        symbol = "BNK";
+        name = "banku Token";
         decimals = 18;
         bonusEnds = now + 2 days;
         endDate = now + 7 weeks;

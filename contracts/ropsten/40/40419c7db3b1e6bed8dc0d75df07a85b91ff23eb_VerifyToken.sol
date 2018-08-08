@@ -60,8 +60,8 @@ contract VerifyToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;VRF&quot;;
-        name = &quot;0xVerify&quot;;
+        symbol = "VRF";
+        name = "0xVerify";
         decimals = 18;
         dailyDistribution=10000000 * 10**uint(decimals);
         claimedYesterday=20;

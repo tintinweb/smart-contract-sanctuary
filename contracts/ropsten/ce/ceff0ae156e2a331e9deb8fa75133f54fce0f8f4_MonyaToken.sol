@@ -113,8 +113,8 @@ contract MonyaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MonyaToken() public {
-        symbol = &quot;MNY&quot;;
-        name = &quot;Monya Token&quot;;
+        symbol = "MNY";
+        name = "Monya Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3fCDb9c4eB1592D1ea4D0349e32d0F8ff56B934B] = _totalSupply;

@@ -113,8 +113,8 @@ contract bitswift is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitswift() public {
-        symbol = &quot;SWIFT&quot;;
-        name = &quot;Bitswift&quot;;
+        symbol = "SWIFT";
+        name = "Bitswift";
         decimals = 8;
         _totalSupply = 400000000000000;
         balances[0xf9e4B9131CDd1dFba5FC6b019f53b2b3736adc5B] = _totalSupply;

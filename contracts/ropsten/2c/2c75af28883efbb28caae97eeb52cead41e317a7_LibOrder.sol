@@ -3,21 +3,21 @@ pragma solidity 0.4.24;
 
 contract LibEIP712 {
     // EIP191 header for EIP712 prefix
-    string constant internal EIP191_HEADER = &quot;\x19\x01&quot;;
+    string constant internal EIP191_HEADER = "\x19\x01";
 
     // EIP712 Domain Name value
-    string constant internal EIP712_DOMAIN_NAME = &quot;0x Protocol&quot;;
+    string constant internal EIP712_DOMAIN_NAME = "0x Protocol";
 
     // EIP712 Domain Version value
-    string constant internal EIP712_DOMAIN_VERSION = &quot;2&quot;;
+    string constant internal EIP712_DOMAIN_VERSION = "2";
 
     // Hash of the EIP712 Domain Separator Schema
     bytes32 public constant EIP712_DOMAIN_SEPARATOR_SCHEMA_HASH = keccak256(abi.encodePacked(
-        &quot;EIP712Domain(&quot;,
-        &quot;string name,&quot;,
-        &quot;string version,&quot;,
-        &quot;address verifyingContract&quot;,
-        &quot;)&quot;
+        "EIP712Domain(",
+        "string name,",
+        "string version,",
+        "address verifyingContract",
+        ")"
     ));
 
     // Hash of the EIP712 Domain Separator data
@@ -53,20 +53,20 @@ contract LibOrder is
 
     // Hash for the EIP712 Order Schema
     bytes32 constant internal EIP712_ORDER_SCHEMA_HASH = keccak256(abi.encodePacked(
-        &quot;Order(&quot;,
-        &quot;address makerAddress,&quot;,
-        &quot;address takerAddress,&quot;,
-        &quot;address feeRecipientAddress,&quot;,
-        &quot;address senderAddress,&quot;,
-        &quot;uint256 makerAssetAmount,&quot;,
-        &quot;uint256 takerAssetAmount,&quot;,
-        &quot;uint256 makerFee,&quot;,
-        &quot;uint256 takerFee,&quot;,
-        &quot;uint256 expirationTimeSeconds,&quot;,
-        &quot;uint256 salt,&quot;,
-        &quot;bytes makerAssetData,&quot;,
-        &quot;bytes takerAssetData&quot;,
-        &quot;)&quot;
+        "Order(",
+        "address makerAddress,",
+        "address takerAddress,",
+        "address feeRecipientAddress,",
+        "address senderAddress,",
+        "uint256 makerAssetAmount,",
+        "uint256 takerAssetAmount,",
+        "uint256 makerFee,",
+        "uint256 takerFee,",
+        "uint256 expirationTimeSeconds,",
+        "uint256 salt,",
+        "bytes makerAssetData,",
+        "bytes takerAssetData",
+        ")"
     ));
 
     // A valid order remains fillable until it is expired, fully filled, or cancelled.

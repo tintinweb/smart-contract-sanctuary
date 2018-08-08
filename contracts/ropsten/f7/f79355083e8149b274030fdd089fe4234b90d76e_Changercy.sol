@@ -159,8 +159,8 @@ contract Changercy is Token, Claimable {
   }
 
   constructor() public {
-    tokenName = &quot;Changercy&quot;;
-    tokenSymbol = &quot;XCY&quot;;
+    tokenName = "Changercy";
+    tokenSymbol = "XCY";
     tokenDecimals = 18;
     tokenTotalSupply = 1140000000000000000000000000;
     transferEnabled = false;

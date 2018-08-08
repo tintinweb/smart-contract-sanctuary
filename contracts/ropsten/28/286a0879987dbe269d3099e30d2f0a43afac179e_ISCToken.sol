@@ -58,8 +58,8 @@ contract ISCToken {
     // --- ERC20 Token Section ---
     uint8 constant public decimals = 24;
     uint public totalSupply = 100 * 10 ** (8+uint256(decimals));  // ***** 1 * 100 Million
-    string constant public name = &quot;ISC Token&quot;;
-    string constant public symbol = &quot;ISC&quot;;
+    string constant public name = "ISC Token";
+    string constant public symbol = "ISC";
 
     mapping(address => uint) ownerance; // Owner Balance
     mapping(address => mapping(address => uint)) public allowance; // Allower Balance

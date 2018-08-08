@@ -113,8 +113,8 @@ contract PawCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PawCoin() public {
-        symbol = &quot;AHLV&quot;;
-        name = &quot;PawCoin&quot;;
+        symbol = "AHLV";
+        name = "PawCoin";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0x2ea5B77B8ca4598715955ad6eF80888b97d64882] = _totalSupply;

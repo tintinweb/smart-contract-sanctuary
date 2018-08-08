@@ -184,7 +184,7 @@ contract TEST is StandardToken {
         They allow one to customise the token contract & in no way influences the core functionality.
         Some wallets/interfaces might not even bother to look at this information.
     */
-    string public version = &quot;H1.0&quot;; 
+    string public version = "H1.0"; 
     uint256 public totalEthInWei=1;         // WEI is the smallest unit of ETH (the equivalent of cent in USD or satoshi in BTC). We&#39;ll store the total ETH raised via our ICO here.  
     address public fundsWallet=0xf8215F8884E0DF8557fd07FccB433777A8012de0;           // Where should the raised ETH go?
  
@@ -200,9 +200,9 @@ contract TEST is StandardToken {
     function TEST() public {
         totalSupply = 1000;          // Update total supply
         balances[msg.sender] = totalSupply; // Give the creator all initial tokens.
-        name = &quot;TEST&quot;;                     // Set the name for display purposes
+        name = "TEST";                     // Set the name for display purposes
         decimals = 0;                       // Amount of decimals for display purposes
-        symbol = &quot;TEST&quot;;                     // Set the symbol for display purposes
+        symbol = "TEST";                     // Set the symbol for display purposes
         fundsWallet = msg.sender;           // The owner of the contract gets ETH
 
         uint ts = 500;

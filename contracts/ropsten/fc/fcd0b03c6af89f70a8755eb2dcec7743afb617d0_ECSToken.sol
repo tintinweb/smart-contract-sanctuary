@@ -79,7 +79,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -633,8 +633,8 @@ contract ECSToken is ERC827Token, Ownable, BurnableToken {
 
   using SafeMath for uint;
 
-  string public constant name = &quot;ECS Coin&quot;;
-  string public constant symbol = &quot;ECS&quot;;
+  string public constant name = "ECS Coin";
+  string public constant symbol = "ECS";
   uint8 public constant decimals = 18;
 
   // Event to log the timelock contract addresses, otherwise they will be lost. 

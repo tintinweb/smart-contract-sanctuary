@@ -113,8 +113,8 @@ contract TomSkin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TomSkin() public {
-        symbol = &quot;TOMS&quot;;
-        name = &quot;TomSkin&quot;;
+        symbol = "TOMS";
+        name = "TomSkin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xe825AD20F2aF2EC263C6b052430CC8b169f3eE6d] = _totalSupply;

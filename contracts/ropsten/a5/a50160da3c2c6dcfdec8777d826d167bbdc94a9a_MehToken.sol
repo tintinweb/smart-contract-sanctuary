@@ -113,8 +113,8 @@ contract MehToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;Meh&quot;;
-        name = &quot;Meh Token&quot;;
+        symbol = "Meh";
+        name = "Meh Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8BeE80eB70CcD00dE2CB6ee8A10734b70B9C7632] = _totalSupply;

@@ -50,8 +50,8 @@ contract ERC20Token {
 
     using SafeMath for uint256;
 
-    string public constant name = &quot;Mithril Token&quot;;
-    string public constant symbol = &quot;MITH&quot;;
+    string public constant name = "Mithril Token";
+    string public constant symbol = "MITH";
     uint8 public constant decimals = 18;
     uint256 public totalSupply;
 

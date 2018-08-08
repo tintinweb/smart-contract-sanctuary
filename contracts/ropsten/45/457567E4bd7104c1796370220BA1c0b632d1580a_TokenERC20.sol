@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenERC20 {
     // Public variables of the token
-    string public name = &quot;realchain token&quot;;
-    string public symbol = &quot;RCT&quot;;
+    string public name = "realchain token";
+    string public symbol = "RCT";
     uint256 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 1000*1000*1000*10**decimals;

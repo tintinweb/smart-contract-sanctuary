@@ -65,8 +65,8 @@ library Math {
     /// @dev Returns bounds for value of 2**x given x
     /// @param x exponent in fixed point
     /// @return {
-    ///   &quot;lower&quot;: &quot;lower bound of 2**x in fixed point&quot;,
-    ///   &quot;upper&quot;: &quot;upper bound of 2**x in fixed point&quot;
+    ///   "lower": "lower bound of 2**x in fixed point",
+    ///   "upper": "upper bound of 2**x in fixed point"
     /// }
     function pow2Bounds(int x)
         public
@@ -200,8 +200,8 @@ library Math {
     /// @dev Returns bounds for value of log2(x) given x
     /// @param x logarithm argument in fixed point
     /// @return {
-    ///   &quot;lower&quot;: &quot;lower bound of log2(x) in fixed point&quot;,
-    ///   &quot;upper&quot;: &quot;upper bound of log2(x) in fixed point&quot;
+    ///   "lower": "lower bound of log2(x) in fixed point",
+    ///   "upper": "upper bound of log2(x) in fixed point"
     /// }
     function log2Bounds(uint x)
         public

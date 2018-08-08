@@ -113,8 +113,8 @@ contract JNDToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JNDToken() public {
-        symbol = &quot;JND&quot;;
-        name = &quot;JND Token&quot;;
+        symbol = "JND";
+        name = "JND Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4052bf9b00CA301014d392e9EC21CAAaC40926CF] = _totalSupply;

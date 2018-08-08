@@ -2,8 +2,8 @@ pragma solidity ^0.4.21;
 
 contract SimpleDividendToken {
 
-    string public name = &quot;Simple Dividend Token&quot;;
-    string public symbol = &quot;SDIV&quot;;
+    string public name = "Simple Dividend Token";
+    string public symbol = "SDIV";
 
     // This code assumes decimals is zero---do not change.
     uint8 public decimals = 0;   //  DO NOT CHANGE!

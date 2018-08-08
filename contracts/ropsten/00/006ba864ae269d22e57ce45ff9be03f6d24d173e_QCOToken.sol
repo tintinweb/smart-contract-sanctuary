@@ -311,9 +311,9 @@ contract QCOToken is StandardToken {
 
     uint256 public soldTokens;
 
-    string public constant name = &quot;Qravity Coin Token&quot;;
+    string public constant name = "Qravity Coin Token";
 
-    string public constant symbol = &quot;QCO&quot;;
+    string public constant symbol = "QCO";
 
     uint8 public constant decimals = 18;
 
@@ -409,7 +409,7 @@ contract QCOToken is StandardToken {
 
     //this is the main funding function, it updates the balances of tokens during the ICO.
     //no particular incentive schemes have been implemented here
-    //it is only accessible during the &quot;ICO&quot; phase.
+    //it is only accessible during the "ICO" phase.
     function() payable
     public
     requireState(States.Ico)

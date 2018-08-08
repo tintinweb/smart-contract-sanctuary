@@ -15,8 +15,8 @@ contract FraCoin {
     
     function FraCoin() public  
     {
-        Str_Name = &quot;&quot; ;
-        Str_Symbol = &quot;&quot; ; 
+        Str_Name = "" ;
+        Str_Symbol = "" ; 
         int_ExCoins = 0 ; 
         owner = msg.sender ;
         

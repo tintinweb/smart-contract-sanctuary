@@ -113,8 +113,8 @@ contract RewireToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RewireToken() public {
-        symbol = &quot;REW&quot;;
-        name = &quot;Rewire Token&quot;;
+        symbol = "REW";
+        name = "Rewire Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x240b70f2485719B6859a547dfB4695e0F8cb168e] = _totalSupply;

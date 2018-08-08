@@ -113,8 +113,8 @@ contract ValithToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ValithToken() public {
-        symbol = &quot;0VAL&quot;;
-        name = &quot;0 Valith Token&quot;;
+        symbol = "0VAL";
+        name = "0 Valith Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x64fA01263D79799f6bE3Ae6f369b14b6520318E1] = _totalSupply;

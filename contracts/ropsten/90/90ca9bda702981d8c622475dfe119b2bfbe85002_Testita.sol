@@ -116,8 +116,8 @@ contract Testita is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Testita() public {
-        symbol = &quot;ITA&quot;;
-        name = &quot;Testita Token&quot;;
+        symbol = "ITA";
+        name = "Testita Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 2 weeks;

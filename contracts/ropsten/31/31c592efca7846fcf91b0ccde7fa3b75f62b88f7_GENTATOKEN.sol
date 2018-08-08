@@ -113,8 +113,8 @@ contract GENTATOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GENTATOKEN() public {
-        symbol = &quot;GENTA&quot;;
-        name = &quot;GENTATOKEN&quot;;
+        symbol = "GENTA";
+        name = "GENTATOKEN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x19C8dB2D97b6732AdbdA3a2ab3b0d2CCBd390EdA] = _totalSupply;

@@ -5,7 +5,7 @@ pragma solidity ^0.4.21;
 /**
  * @title MultiOwnable
  * @dev The MultiOwnable contract has owners addresses and provides basic authorization control
- * functions, this simplifies the implementation of &quot;users permissions&quot;.
+ * functions, this simplifies the implementation of "users permissions".
  */
 contract MultiOwnable {
     address public manager; // address used to set owners
@@ -436,8 +436,8 @@ contract SWIFTH is TransferLimitedToken {
     function SWIFTH(address _listener, address[] _owners, address manager) public
         TransferLimitedToken(SALE_END_TIME, _listener, _owners, manager)
     {
-        name = &quot;SWIFTH&quot;;
-        symbol = &quot;SWH&quot;;
+        name = "SWIFTH";
+        symbol = "SWH";
         decimals = 18;
     }
 }

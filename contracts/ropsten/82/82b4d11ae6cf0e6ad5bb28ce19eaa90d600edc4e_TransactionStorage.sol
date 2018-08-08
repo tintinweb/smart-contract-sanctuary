@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -117,7 +117,7 @@ contract RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev constructor. Sets msg.sender as admin by default
@@ -249,7 +249,7 @@ contract RBAC {
 
 contract MultiUser is Ownable, RBAC {
 
-    string public constant ROLE_ACCESS_ADDRESS = &quot;access-address&quot;;
+    string public constant ROLE_ACCESS_ADDRESS = "access-address";
 
     event adminTransferredEvent(address indexed previousAdmin, address indexed newAdmin);
 

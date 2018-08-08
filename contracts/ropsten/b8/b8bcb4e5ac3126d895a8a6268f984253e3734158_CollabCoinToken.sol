@@ -100,8 +100,8 @@ contract CollabCoinToken is ERC20Interface, Owned, SafeMath {
 
 
     function CollabCoinToken() public {
-        symbol = &quot;CLC&quot;;
-        name = &quot;CollabCoin Token&quot;;
+        symbol = "CLC";
+        name = "CollabCoin Token";
         decimals = 18;
         _totalSupply = 400000000000000000000000000;
         balances[0xf4617b57ad853f4bc2ce3f06c0d74958c240633c] = _totalSupply;

@@ -203,7 +203,7 @@ contract RLPEncode {
         }
 
     function stringToAddr(string _input) internal pure returns (address){
-        string memory _a = strConcat(&quot;0x&quot;,_input);
+        string memory _a = strConcat("0x",_input);
         bytes memory tmp = bytes(_a);
         uint160 iaddr = 0;
         uint160 b1;
@@ -312,13 +312,13 @@ contract IvtMultiSigWallet is RLPEncode{
         bytes[] memory rawTx = new bytes[](9);
         bytes[] memory bytesArray = new bytes[](9);
 
-        rawTx[0] = hex&quot;09&quot;;
-        rawTx[1] = hex&quot;09502f9000&quot;;
-        rawTx[2] = hex&quot;5208&quot;;
+        rawTx[0] = hex"09";
+        rawTx[1] = hex"09502f9000";
+        rawTx[2] = hex"5208";
         rawTx[3] = RLPEncode.addressToBytes(_destination);
         rawTx[4] = RLPEncode.strToBytes(_value);
         rawTx[5] = RLPEncode.strToBytes(_strTransactionData);
-        rawTx[6] = hex&quot;03&quot;; //03=testnet,01=mainnet
+        rawTx[6] = hex"03"; //03=testnet,01=mainnet
 
         for(uint i = 0; i < 9; i++){
             bytesArray[i] = RLPEncode.encodeBytes(rawTx[i]);

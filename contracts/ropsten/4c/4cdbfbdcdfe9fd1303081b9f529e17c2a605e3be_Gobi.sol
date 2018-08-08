@@ -113,8 +113,8 @@ contract Gobi is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Gobi() public {
-        symbol = &quot;GC1&quot;;
-        name = &quot;Gobi&quot;;
+        symbol = "GC1";
+        name = "Gobi";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x9872139a96bec17409656de5cbe53e33ead93f35] = _totalSupply;

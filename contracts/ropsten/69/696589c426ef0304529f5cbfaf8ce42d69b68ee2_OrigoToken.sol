@@ -265,8 +265,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract OrigoToken is StandardToken {
 
-  string public constant name = &quot;OrigoTokenTest&quot;;
-  string public constant symbol = &quot;OTest&quot;;
+  string public constant name = "OrigoTokenTest";
+  string public constant symbol = "OTest";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));

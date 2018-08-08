@@ -102,8 +102,8 @@ contract onLEXpaContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function onLEXpaContract() public {
-        symbol = &quot;onLEXpa&quot;;
-        name = &quot;onLEXpa Token&quot;;
+        symbol = "onLEXpa";
+        name = "onLEXpa Token";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0xed0b26224D4629264B02f994Dcc4375DA3e6F9e4] = _totalSupply; //MEW address here

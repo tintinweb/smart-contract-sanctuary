@@ -13,7 +13,7 @@ contract ERC20 {
 }
 
 // UbiTok.io on-chain continuous limit order book matching engine.
-// This variation is for a &quot;nice&quot; ERC20 token as base, ETH as quoted, and standard fees with reward token.
+// This variation is for a "nice" ERC20 token as base, ETH as quoted, and standard fees with reward token.
 // Copyright (c) Bonnag Limited. All Rights Reserved.
 // Version 1.1.0.
 // This contract allows minPriceExponent, baseMinInitialSize, and baseMinRemainingSize
@@ -206,7 +206,7 @@ contract BookERC20EthV1p1 {
   mapping (uint128 => Order) orderForOrderId;
 
   // Effectively a compact mapping from price to whether there are any open orders at that price.
-  // See &quot;Price Calculation Constants&quot; below as to why 85.
+  // See "Price Calculation Constants" below as to why 85.
 
   uint256[85] occupiedPriceBitmaps;
 
@@ -272,7 +272,7 @@ contract BookERC20EthV1p1 {
     feeCollector = creator;
   }
 
-  // &quot;Public&quot; Management - set address of base and reward tokens.
+  // "Public" Management - set address of base and reward tokens.
   //
   // Can only be done once (normally immediately after creation) by the fee collector.
   //
@@ -311,7 +311,7 @@ contract BookERC20EthV1p1 {
     rwrdToken = _rwrdToken;
   }
 
-  // &quot;Public&quot; Management - change fee collector
+  // "Public" Management - change fee collector
   //
   // The new fee collector only gets fees charged after this point.
   //
@@ -1059,7 +1059,7 @@ contract BookERC20EthV1p1 {
   // Record match (partial or complete) of resting order, and credit them their funds.
   //
   // If their order is completely matched, the order is marked as done,
-  // and &quot;theirsDead&quot; is returned as true.
+  // and "theirsDead" is returned as true.
   //
   // The order is NOT removed from the book by this call - the caller
   // must do that if theirsDead is true.

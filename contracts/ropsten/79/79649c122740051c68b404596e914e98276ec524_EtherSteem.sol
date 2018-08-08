@@ -111,8 +111,8 @@ contract EtherSteem is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EtherSteem() public {
-        symbol = &quot;ESTM&quot;;
-        name = &quot;EtherSteem&quot;;
+        symbol = "ESTM";
+        name = "EtherSteem";
         decimals = 4;
         _totalSupply = 25000000;
         balances[0x77a1CeEc9E797C89Ced0785cC95AD0fE0335e892] = _totalSupply;

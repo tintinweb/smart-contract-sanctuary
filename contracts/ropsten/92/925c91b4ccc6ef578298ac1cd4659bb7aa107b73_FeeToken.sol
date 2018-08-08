@@ -113,8 +113,8 @@ contract FeeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FeeToken() public {
-        symbol = &quot;FEE&quot;;
-        name = &quot;Fee Token&quot;;
+        symbol = "FEE";
+        name = "Fee Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x668BcEc126B137Ee0c9B34DDA65486fA23Fc04ba] = _totalSupply;

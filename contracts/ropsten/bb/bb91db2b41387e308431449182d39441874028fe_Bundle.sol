@@ -371,7 +371,7 @@ contract ERC721Base {
      * @param assetId uint256 ID of the asset to be transferred
      */
     function safeTransferFrom(address from, address to, uint256 assetId) external returns (bool) {
-        return _doTransferFrom(from, to, assetId, &quot;&quot;, true);
+        return _doTransferFrom(from, to, assetId, "", true);
     }
 
     /**
@@ -398,7 +398,7 @@ contract ERC721Base {
      * @param assetId uint256 ID of the asset to be transferred
      */
     function transferFrom(address from, address to, uint256 assetId) external returns (bool) {
-        return _doTransferFrom(from, to, assetId, &quot;&quot;, false);
+        return _doTransferFrom(from, to, assetId, "", false);
     }
 
     function _doTransferFrom(
@@ -432,7 +432,7 @@ contract ERC721Base {
         _addAssetTo(to, assetId);
 
         if (doCheck && _isContract(to)) {
-            // Equals to bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))
+            // Equals to bytes4(keccak256("onERC721Received(address,uint256,bytes)"))
             bytes4 ERC721_RECEIVED = bytes4(0xf0b9e5ba);
             require(
                 IERC721Receiver(to).onERC721Received(
@@ -497,7 +497,7 @@ contract Bundle is ERC721Base, BytesUtils, RpSafeMath {
     }
 
     modifier canWithdraw(uint256 packageId) {
-        require(_isAuthorized(msg.sender, packageId), &quot;Not authorized for withdraw&quot;);
+        require(_isAuthorized(msg.sender, packageId), "Not authorized for withdraw");
         _;
     }
 
@@ -528,7 +528,7 @@ contract Bundle is ERC721Base, BytesUtils, RpSafeMath {
         uint256 tokenId
     ) external returns (bool) {
         uint256 packageId = _packageId == 0 ? create() : _packageId;
-        require(canDeposit(packageId), &quot;Not authorized for deposit&quot;);
+        require(canDeposit(packageId), "Not authorized for deposit");
         return _deposit(packageId, token, tokenId);
     }
 
@@ -538,7 +538,7 @@ contract Bundle is ERC721Base, BytesUtils, RpSafeMath {
         uint256[] ids
     ) external returns (bool) {
         uint256 packageId = _packageId == 0 ? create() : _packageId;
-        require(canDeposit(packageId), &quot;Not authorized for deposit&quot;);
+        require(canDeposit(packageId), "Not authorized for deposit");
 
         require(tokens.length == ids.length);
         for (uint256 i = 0; i < ids.length; i++) {
@@ -590,7 +590,7 @@ contract Bundle is ERC721Base, BytesUtils, RpSafeMath {
         uint256 tokenId
     ) internal returns (bool) {
         token.transferFrom(msg.sender, address(this), tokenId);
-        require(token.ownerOf(tokenId) == address(this), &quot;ERC721 transfer failed&quot;);
+        require(token.ownerOf(tokenId) == address(this), "ERC721 transfer failed");
 
         Package storage package = packages[packageId];
         _add(package, token, tokenId);
@@ -611,7 +611,7 @@ contract Bundle is ERC721Base, BytesUtils, RpSafeMath {
         emit Withdraw(msg.sender, packageId, token, tokenId);
 
         token.transferFrom(this, to, tokenId);
-        require(token.ownerOf(tokenId) == to, &quot;ERC721 transfer failed&quot;);
+        require(token.ownerOf(tokenId) == to, "ERC721 transfer failed");
 
         return true;
     }
@@ -622,7 +622,7 @@ contract Bundle is ERC721Base, BytesUtils, RpSafeMath {
         uint256 id
     ) internal {
         uint256 position = package.order[token][id];
-        require(!_isAsset(package, position, token, id), &quot;Already exist&quot;);
+        require(!_isAsset(package, position, token, id), "Already exist");
         position = package.tokens.length;
         package.tokens.push(token);
         package.ids.push(id);
@@ -635,7 +635,7 @@ contract Bundle is ERC721Base, BytesUtils, RpSafeMath {
         uint256 id
     ) internal {
         uint256 delPosition = package.order[token][id];
-        require(_isAsset(package, delPosition, token, id), &quot;The token does not exist inside the package&quot;);
+        require(_isAsset(package, delPosition, token, id), "The token does not exist inside the package");
 
         // Replace item to remove with last item
         // (make the item to remove the last one)

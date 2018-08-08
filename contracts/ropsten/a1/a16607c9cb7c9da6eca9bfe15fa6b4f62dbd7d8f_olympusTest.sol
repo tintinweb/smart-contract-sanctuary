@@ -116,8 +116,8 @@ contract olympusTest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function olympusTest() public {
-        symbol = &quot;OLYTEST&quot;;
-        name = &quot;olympusTest&quot;;
+        symbol = "OLYTEST";
+        name = "olympusTest";
         decimals = 18;
         _totalSupply = 160000000000000000000000000;
         bonusEnds = now + 10 weeks;

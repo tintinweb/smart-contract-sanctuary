@@ -113,8 +113,8 @@ contract KiriToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;0KIRI&quot;;
-        name = &quot;0 Kiri Token&quot;;
+        symbol = "0KIRI";
+        name = "0 Kiri Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222] = _totalSupply;

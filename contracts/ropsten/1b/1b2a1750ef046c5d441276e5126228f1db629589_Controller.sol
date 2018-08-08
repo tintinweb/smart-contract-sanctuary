@@ -75,7 +75,7 @@ contract Ledger is Owned, SafeMath, Finalizable {
 
     /**
      * If bridge delivers currency back from the other network, it may be that we
-     * want to lock it until the user is able to &quot;claim&quot; it. This mapping would store the
+     * want to lock it until the user is able to "claim" it. This mapping would store the
      * state of the unclaimed currency.
      * @notice: not yet used
      */
@@ -266,9 +266,9 @@ contract Pausable is Owned {
 
 contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Pausable {
     // Set these appropriately before you deploy
-    string constant public name = &quot;AION&quot;;
+    string constant public name = "AION";
     uint8 constant public decimals = 8;
-    string constant public symbol = &quot;AION&quot;;
+    string constant public symbol = "AION";
     Controller public controller;
     string public motd;
     event Motd(string message);
@@ -278,7 +278,7 @@ contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Paus
 
     // functions below this line are onlyOwner
 
-    // set &quot;message of the day&quot;
+    // set "message of the day"
     function setMotd(string _m) onlyOwner {
         motd = _m;
         Motd(_m);
@@ -434,7 +434,7 @@ contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Paus
     }
 
     /**
-     * @dev         claim (quantumReceive) allows the user to &quot;prove&quot; some an ICT to the contract
+     * @dev         claim (quantumReceive) allows the user to "prove" some an ICT to the contract
      *              thereby thereby releasing the tokens into their account
      * 
      */

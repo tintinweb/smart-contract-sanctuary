@@ -26,7 +26,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -259,7 +259,7 @@ contract StandardTile is Galleasset, DataParser{
   //standard tile interface
   //called when tile is purchased from Land contract
   function onPurchase(uint16 _x,uint16 _y,uint8 _tile,address _owner,uint _amount) public returns (bool) {
-    require(msg.sender==getContract(&quot;Land&quot;) || msg.sender==getContract(&quot;LandLib&quot;));
+    require(msg.sender==getContract("Land") || msg.sender==getContract("LandLib"));
     landOwners[_x][_y][_tile] = _owner;
     emit LandOwner(_x,_y,_tile,_owner);
     return true;
@@ -283,10 +283,10 @@ contract StandardTile is Galleasset, DataParser{
   ///////internal helpers to keep stack thin enough//////////////////////////////////////////////////////////
   function _incrementTokenBalance(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) internal {
     tokenBalance[_x][_y][_tile][_token]+=_amount;
-    require(tokenBalance[_x][_y][_tile][_token]>=_amount,&quot;Overflow?&quot;);
+    require(tokenBalance[_x][_y][_tile][_token]>=_amount,"Overflow?");
   }
   function _decrementTokenBalance(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) internal {
-    require(tokenBalance[_x][_y][_tile][_token]>=_amount,&quot;This tile does not have enough of this token&quot;);
+    require(tokenBalance[_x][_y][_tile][_token]>=_amount,"This tile does not have enough of this token");
     tokenBalance[_x][_y][_tile][_token]-=_amount;
   }
 }
@@ -304,10 +304,10 @@ contract Harbor is StandardTile {
 
 
   constructor(address _galleass) public StandardTile(_galleass) {
-    //currentPrice[&quot;Dogger&quot;] = ((1 ether)/1000);
+    //currentPrice["Dogger"] = ((1 ether)/1000);
   }
 
-  function onTokenTransfer(address _sender, uint _amount, bytes _data) public isGalleasset(&quot;Harbor&quot;) returns (bool){
+  function onTokenTransfer(address _sender, uint _amount, bytes _data) public isGalleasset("Harbor") returns (bool){
     emit TokenTransfer(msg.sender,_sender,_amount,_data);
     uint8 action = uint8(_data[0]);
     if(action==0){
@@ -315,7 +315,7 @@ contract Harbor is StandardTile {
     } else if(action==1){
       return _build(_sender,_amount,_data);
     } else {
-      revert(&quot;unknown action&quot;);
+      revert("unknown action");
     }
     return true;
   }
@@ -332,12 +332,12 @@ contract Harbor is StandardTile {
     bytes32 _model = getRemainingBytesTrailingZs(6,_data);
 
     //you must be sending in timber
-    require(msg.sender == getContract(&quot;Timber&quot;));
+    require(msg.sender == getContract("Timber"));
 
     //you must own the tile
     require(_sender == landOwners[_x][_y][_tile]);
 
-    if(_model==&quot;Dogger&quot;){
+    if(_model=="Dogger"){
       //must send in enough timber to build
       require( _amount >= TIMBERTOBUILDDOGGER );
       require( _buildShip(_x,_y,_tile,_model) > 0);
@@ -350,9 +350,9 @@ contract Harbor is StandardTile {
 
   //this is really only used for the scripts that build doggers
   // I should carve this out and only use transfer and call because it is confusing to have two different build functions
-  function buildShip(uint16 _x,uint16 _y,uint8 _tile,bytes32 _model) public isGalleasset(&quot;Harbor&quot;) isLandOwner(_x,_y,_tile) returns (uint) {
-    if(_model==&quot;Dogger&quot;){
-      require( getTokens(msg.sender,&quot;Timber&quot;,TIMBERTOBUILDDOGGER) );
+  function buildShip(uint16 _x,uint16 _y,uint8 _tile,bytes32 _model) public isGalleasset("Harbor") isLandOwner(_x,_y,_tile) returns (uint) {
+    if(_model=="Dogger"){
+      require( getTokens(msg.sender,"Timber",TIMBERTOBUILDDOGGER) );
       return _buildShip(_x,_y,_tile,_model);
     }else{
       return 0;
@@ -362,7 +362,7 @@ contract Harbor is StandardTile {
   function _buildShip(uint16 _x,uint16 _y,uint8 _tile,bytes32 _model) internal returns (uint) {
     address shipsContractAddress = getContract(_model);
     require( shipsContractAddress!=address(0) );
-    require( approveTokens(&quot;Timber&quot;,shipsContractAddress,TIMBERTOBUILDDOGGER) );
+    require( approveTokens("Timber",shipsContractAddress,TIMBERTOBUILDDOGGER) );
     NFT shipContract = NFT(shipsContractAddress);
     uint256 shipId = shipContract.build();
     require( storeShip(_x,_y,_tile,shipId,_model) );
@@ -375,7 +375,7 @@ contract Harbor is StandardTile {
   // it also looks like you only get 9/10s of the price back if you sell it
   // I was probably just playing around with how ether moves around differently
   // than the native erc20s
-  /*function sellShip(uint256 shipId,bytes32 model) public isGalleasset(&quot;Harbor&quot;) returns (bool) {
+  /*function sellShip(uint256 shipId,bytes32 model) public isGalleasset("Harbor") returns (bool) {
     address shipsContractAddress = getContract(model);
     require( shipsContractAddress!=address(0) );
     require( currentPrice[model] > 0 );
@@ -389,7 +389,7 @@ contract Harbor is StandardTile {
     return msg.sender.send(buyBackAmount);
   }*/
 
-  function buyShip(uint16 _x,uint16 _y,uint8 _tile,bytes32 model) public payable isGalleasset(&quot;Harbor&quot;) returns (uint) {
+  function buyShip(uint16 _x,uint16 _y,uint8 _tile,bytes32 model) public payable isGalleasset("Harbor") returns (uint) {
     require( currentPrice[_x][_y][_tile][model] > 0 );
     require( msg.value >= currentPrice[_x][_y][_tile][model] );
     address shipsContractAddress = getContract(model);
@@ -399,7 +399,7 @@ contract Harbor is StandardTile {
     require( availableShip!=0 );
     shipsContract.transfer(msg.sender,availableShip);
 
-    address experienceContractAddress = getContract(&quot;Experience&quot;);
+    address experienceContractAddress = getContract("Experience");
     require( experienceContractAddress!=address(0) );
     Experience experienceContract = Experience(experienceContractAddress);
     require( experienceContract.update(msg.sender,1,true) );//milestone 1: buy ship

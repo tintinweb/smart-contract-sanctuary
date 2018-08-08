@@ -28,7 +28,7 @@ function testRecovery(bytes32 h, uint8 v, bytes32 r, bytes32 s) returns (address
 }
 function RecoveryKeccak256(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, uint8 v, bytes32 r, bytes32 s) returns (address) {
         bytes32 hash = keccak256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
-        address addr = ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s);
+        address addr = ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash),v,r,s);
 
         return addr;
 }

@@ -116,8 +116,8 @@ contract limorico is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function limorico() public {
-        symbol = &quot;limco&quot;;
-        name = &quot;limorico&quot;;
+        symbol = "limco";
+        name = "limorico";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

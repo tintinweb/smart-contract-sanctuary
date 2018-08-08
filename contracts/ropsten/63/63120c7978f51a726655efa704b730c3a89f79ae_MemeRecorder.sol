@@ -41,7 +41,7 @@ contract Meme {
     // minting new tokens > aka voting
     function mint(uint256 _numTokens) public payable {
         uint256 priceForTokens = getMintingPrice(_numTokens);
-        require(msg.value >= priceForTokens, &quot;Not enough value for total price of tokens&quot;);
+        require(msg.value >= priceForTokens, "Not enough value for total price of tokens");
 
         totalSupply = totalSupply + _numTokens;
         tokenBalances[msg.sender] = tokenBalances[msg.sender] + _numTokens;
@@ -59,7 +59,7 @@ contract Meme {
 
     // burning tokens >> eth to return
     function burn(uint256 _numTokens) public {
-        require(tokenBalances[msg.sender] >= _numTokens, &quot;Not enough owned tokens to burn&quot;);
+        require(tokenBalances[msg.sender] >= _numTokens, "Not enough owned tokens to burn");
 
         uint256 ethToReturn = getBurningReward(_numTokens);
 

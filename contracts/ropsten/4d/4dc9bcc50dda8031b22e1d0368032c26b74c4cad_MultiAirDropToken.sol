@@ -9,7 +9,7 @@ Deploy: 1 - Ropsten, 0x330FfAA810f7873271C4B274975011E7E8f60C40
  */
 contract MultiAirDropToken {
     /* Public variables of the token */
-    string public standard = &quot;Token 0.1&quot;;
+    string public standard = "Token 0.1";
     string public name;
     string public symbol;
     uint8 public decimals;

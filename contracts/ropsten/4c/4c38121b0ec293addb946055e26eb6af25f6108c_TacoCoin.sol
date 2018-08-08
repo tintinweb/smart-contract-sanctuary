@@ -113,8 +113,8 @@ contract TacoCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TacoCoin() public {
-        symbol = &quot;TACO&quot;;
-        name = &quot;Taco Coin&quot;;
+        symbol = "TACO";
+        name = "Taco Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x27580596c59660DCE6a66Af131DBC3Da01b638C5] = _totalSupply;

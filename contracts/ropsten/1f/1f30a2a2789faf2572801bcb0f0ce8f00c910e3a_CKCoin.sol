@@ -113,8 +113,8 @@ contract CKCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CKCoin() public {
-        symbol = &quot;CKCN&quot;;
-        name = &quot;CuckCoin&quot;;
+        symbol = "CKCN";
+        name = "CuckCoin";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0x462173820285039BF67e12979fb206d91a4BE304] = _totalSupply;

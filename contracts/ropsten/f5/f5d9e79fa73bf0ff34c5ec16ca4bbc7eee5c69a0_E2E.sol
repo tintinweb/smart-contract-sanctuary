@@ -4,10 +4,10 @@ contract E2E {
   using SafeMath for uint256;
 
   // ERC20 Meta-data
-  string public name = &quot;E2E Message&quot;;
+  string public name = "E2E Message";
   uint8 public decimals; // set to 0, messages are not divisible
-  string public symbol = &quot;MSG&quot;;
-  // string public version = &quot;1.0&quot;; // leave versioning out for now
+  string public symbol = "MSG";
+  // string public version = "1.0"; // leave versioning out for now
 
   // We keep total supply for ERC20 compatibility
   uint256 public totalSupply;

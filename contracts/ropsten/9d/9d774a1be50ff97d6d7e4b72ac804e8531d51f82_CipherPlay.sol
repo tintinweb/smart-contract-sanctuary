@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract CipherPlay {
 
-    string public name = &quot;Cipher Play&quot;;      //  token name
-    string public symbol = &quot;CIPL&quot;;           //  token symbol
+    string public name = "Cipher Play";      //  token name
+    string public symbol = "CIPL";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

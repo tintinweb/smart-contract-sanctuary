@@ -35,7 +35,7 @@ library StringUtils {
     	bytes memory n = bytes(_needle);
     	if(h.length < 1 || n.length < 1 || (n.length > h.length)) 
     		return -1;
-    	else if(h.length > (2**128 -1)) // since we have to be able to return -1 (if the char isn&#39;t found or input error), this function must return an &quot;int&quot; type with a max length of (2^128 - 1)
+    	else if(h.length > (2**128 -1)) // since we have to be able to return -1 (if the char isn&#39;t found or input error), this function must return an "int" type with a max length of (2^128 - 1)
     		return -1;									
     	else
     	{
@@ -111,7 +111,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -186,8 +186,8 @@ contract IOVContract is Ownable {
     }*/
 
     function storeHash(string _datetime, string _hashVal) public onlyOwner {
-        //require(!compareStrings(_datetime, &quot;&quot;) && !compareStrings(_hashVal, &quot;&quot;));
-        require(!_datetime.equal(&quot;&quot;) && !_hashVal.equal(&quot;&quot;));
+        //require(!compareStrings(_datetime, "") && !compareStrings(_hashVal, ""));
+        require(!_datetime.equal("") && !_hashVal.equal(""));
 
         bool b = infos[_datetime].flag;
 
@@ -197,9 +197,9 @@ contract IOVContract is Ownable {
         if (!b) {
             datetimes.push(_datetime);
             count = count.add(1);
-            emit evInsertHash(&quot;i&quot;, _datetime, _hashVal);
+            emit evInsertHash("i", _datetime, _hashVal);
         } else {
-            emit evUpdateHash(&quot;u&quot;, _datetime, _hashVal);
+            emit evUpdateHash("u", _datetime, _hashVal);
         }
     }
 
@@ -216,7 +216,7 @@ contract IOVContract is Ownable {
             IOVInfo memory info = infos[_datetime];
             return info.hashVal;
         }
-        return &quot;&quot;;
+        return "";
     }
 
     function getDateTime(uint _count) public view returns (string) {
@@ -226,7 +226,7 @@ contract IOVContract is Ownable {
 
     function currentDateTime() public view returns (string) {
         if (count == 0) {
-            return &quot;&quot;;
+            return "";
         }
         return datetimes[count - 1];
     }

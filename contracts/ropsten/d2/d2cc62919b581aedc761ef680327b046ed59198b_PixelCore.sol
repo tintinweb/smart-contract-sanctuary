@@ -231,8 +231,8 @@ contract PixelBase is AccessControl {
 contract PixelOwnership is PixelBase, ERC721 {
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;CryptoKitties&quot;;
-    string public constant symbol = &quot;CK&quot;;
+    string public constant name = "CryptoKitties";
+    string public constant symbol = "CK";
 
     bytes4 constant InterfaceSignature_ERC165 =
         bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));

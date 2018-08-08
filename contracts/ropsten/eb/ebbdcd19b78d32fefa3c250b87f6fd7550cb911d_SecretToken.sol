@@ -7,8 +7,8 @@ Website: http://secret.foundation/
 pragma solidity 0.4.18;
 
 contract SecretToken {
-    string public symbol = &quot;SECRET&quot;;
-    string public name = &quot;Secret Token&quot;;
+    string public symbol = "SECRET";
+    string public name = "Secret Token";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
     uint256 _MaxDistribPublicSupply = 300000000;

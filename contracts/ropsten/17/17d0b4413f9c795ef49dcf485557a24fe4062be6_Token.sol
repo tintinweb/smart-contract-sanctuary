@@ -166,8 +166,8 @@ interface ERC223 {
 contract Token is MultiOwner, ERC20, ERC223{
 	using SafeMath for uint256;
 	
-	string public name = &quot;VV Coin2&quot;;
-	string public symbol = &quot;VV2&quot;;
+	string public name = "VV Coin2";
+	string public symbol = "VV2";
 	uint8 public decimals = 8;
 	uint256 public totalSupply = 3000000000 * 10 ** uint256(decimals);
 	uint256 public EthPerToken = 300000;

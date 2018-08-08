@@ -113,8 +113,8 @@ contract TestJ is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestJ() public {
-        symbol = &quot;TSTJ&quot;;
-        name = &quot;TestJ&quot;;
+        symbol = "TSTJ";
+        name = "TestJ";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x44bc43e24d7bB948365d2F8650c383B427891D41] = _totalSupply;

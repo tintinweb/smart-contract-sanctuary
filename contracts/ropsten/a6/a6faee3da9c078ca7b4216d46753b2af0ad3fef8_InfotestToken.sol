@@ -115,8 +115,8 @@ contract InfotestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;INF&quot;;
-        name = &quot;infotest Token&quot;;
+        symbol = "INF";
+        name = "infotest Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

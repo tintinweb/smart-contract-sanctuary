@@ -1,6 +1,6 @@
 pragma solidity ^0.4.17;
 
-// import &quot;./ConvertLib.sol&quot;;
+// import "./ConvertLib.sol";
 
 // This is just a simple example of a coin-like contract.
 // It is not standards compatible and cannot be expected to talk to other
@@ -35,8 +35,8 @@ pragma solidity ^0.4.17;
 
 contract ObsToken {
   mapping(address => uint256) balances;
-  // string public constant NAME = &quot;ObsToken&quot;;
-  // string public constant SYMBOL = &quot;OBT&quot;;
+  // string public constant NAME = "ObsToken";
+  // string public constant SYMBOL = "OBT";
   string public symbol;
   string public  name;  
   uint256 totalSupply_;
@@ -44,8 +44,8 @@ contract ObsToken {
   event Transfer(address indexed from, address indexed to, uint256 value);
 
   constructor (uint256 INITIAL_SUPPLY, address _owner) public{
-    symbol = &quot;OBT&quot;;
-    name = &quot;ObsToken&quot;;
+    symbol = "OBT";
+    name = "ObsToken";
     totalSupply_ = INITIAL_SUPPLY;
     balances[_owner] = INITIAL_SUPPLY;
     decimals = 18 ;

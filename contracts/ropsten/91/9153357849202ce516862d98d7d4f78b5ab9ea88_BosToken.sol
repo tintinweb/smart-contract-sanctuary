@@ -134,8 +134,8 @@ contract BurnableToken is BasicToken {
 
 contract BosToken is StandardToken, BurnableToken {
 
-  string public constant name = &quot;BOSTOKEN&quot;; 
-  string public constant symbol = &quot;BOS&quot;; 
+  string public constant name = "BOSTOKEN"; 
+  string public constant symbol = "BOS"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

@@ -113,8 +113,8 @@ contract EFARMCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EFARMCoin() public {
-        symbol = &quot;EFARM&quot;;
-        name = &quot;EFARMCoin&quot;;
+        symbol = "EFARM";
+        name = "EFARMCoin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0x53989A8F3AD89Fc4405690B8149D36f0E2751816] = _totalSupply;

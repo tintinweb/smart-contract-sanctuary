@@ -57,7 +57,7 @@ contract ERC223ReceivingContract {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -111,8 +111,8 @@ contract MintableToken is ERC223, Ownable {
 }
 
 contract BBB is MintableToken, ERC223ReceivingContract{
-    string public name = &quot;GTC_TEST_CONTRACT_0001&quot;;
-    string public symbol  = &quot;BBB&quot;;
+    string public name = "GTC_TEST_CONTRACT_0001";
+    string public symbol  = "BBB";
 
 
     constructor() public {

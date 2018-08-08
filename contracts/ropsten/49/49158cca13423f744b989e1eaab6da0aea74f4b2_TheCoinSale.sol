@@ -115,8 +115,8 @@ contract TheCoinSale is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheCoinSale() public {
-        symbol = &quot;TC&quot;;
-        name = &quot;TheCoin Token&quot;;
+        symbol = "TC";
+        name = "TheCoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

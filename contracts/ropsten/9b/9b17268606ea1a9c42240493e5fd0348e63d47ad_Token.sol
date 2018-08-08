@@ -4,7 +4,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -516,8 +516,8 @@ contract Token is CappedToken, PausableToken {
 
   uint256 private constant TOKEN_CAP = 980 * 10**24;
 
-  string public constant name = &quot;SPSL token&quot;;
-  string public constant symbol = &quot;SPSL&quot;;
+  string public constant name = "SPSL token";
+  string public constant symbol = "SPSL";
   uint8 public constant decimals = 18;
 
   function Token() public CappedToken(TOKEN_CAP) {

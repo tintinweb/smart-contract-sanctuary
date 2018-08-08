@@ -101,8 +101,8 @@ contract StandardToken is Token,SafeMath {
 contract BOTCoin is StandardToken {
  
     // metadata
-    string  public constant name = &quot;BOTCoin&quot;;
-    string  public constant symbol = &quot;BOT&quot;;
+    string  public constant name = "BOTCoin";
+    string  public constant symbol = "BOT";
     
     
 	constructor(address _ownerAddress,uint256 _initialAmount) public {
@@ -117,8 +117,8 @@ contract BOTCoin is StandardToken {
 contract Coin007 is StandardToken {
  
     // metadata
-    string  public constant name = &quot;BOTCoin&quot;;
-    string  public constant symbol = &quot;BOT&quot;;
+    string  public constant name = "BOTCoin";
+    string  public constant symbol = "BOT";
     uint256 public constant decimals = 18;
     
 	constructor(address _ownerAddress,uint256 _initialAmount) public {

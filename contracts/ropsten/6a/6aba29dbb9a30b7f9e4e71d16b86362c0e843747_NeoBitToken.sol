@@ -113,8 +113,8 @@ contract NeoBitToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NeoBitToken() public {
-        symbol = &quot;NBT&quot;;
-        name = &quot;NeoBit Token&quot;;
+        symbol = "NBT";
+        name = "NeoBit Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x1183BfB8C2110465F29CaB11E4ddBDE389221aD7] = _totalSupply;

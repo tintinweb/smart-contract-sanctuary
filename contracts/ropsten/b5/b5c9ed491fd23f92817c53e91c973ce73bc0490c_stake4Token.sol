@@ -105,10 +105,10 @@ contract StandardToken is Token, SafeMath {
 contract stake4Token is StandardToken {
 
     // metadata
-    string  public constant name = &quot;STAKE4 Token&quot;;
-    string  public constant symbol = &quot;STAKE4&quot;;
+    string  public constant name = "STAKE4 Token";
+    string  public constant symbol = "STAKE4";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // deposit address for ETH for STAKE Team.

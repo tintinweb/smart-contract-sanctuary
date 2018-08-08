@@ -113,8 +113,8 @@ contract Quhabitat is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Quhabitat() public {
-        symbol = &quot;QHB&quot;;
-        name = &quot;Quhabitat Token&quot;;
+        symbol = "QHB";
+        name = "Quhabitat Token";
         decimals = 18;
         _totalSupply = 40000000000000000000000000;
         balances[0x2Db18672e8566D2355559e9b74e99b20369f7994] = _totalSupply;

@@ -26,13 +26,13 @@ contract ERC721 {
     function supportsInterface(bytes4 _interfaceID) external view returns (bool);
 }
 
-//import &quot;./ERC721.sol&quot;;
+//import "./ERC721.sol";
 
 contract SampleToken is ERC721 {
   /*** CONSTANTS ***/
 
-  string public constant name = &quot;SampleToken&quot;;
-  string public constant symbol = &quot;ST&quot;;
+  string public constant name = "SampleToken";
+  string public constant symbol = "ST";
 
   bytes4 constant InterfaceID_ERC165 =
     bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));

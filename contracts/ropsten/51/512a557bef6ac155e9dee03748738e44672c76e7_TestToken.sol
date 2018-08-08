@@ -170,8 +170,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract TestToken is StandardToken {
 
-    string public name = &quot;Test&quot;;
-    string public symbol = &quot;TST&quot;;
+    string public name = "Test";
+    string public symbol = "TST";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 10**(50+18);
 

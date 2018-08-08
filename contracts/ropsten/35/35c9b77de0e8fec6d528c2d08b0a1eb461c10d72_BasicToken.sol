@@ -258,8 +258,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract NectarToken is MintableToken {
-    string public name = &quot;Nectar&quot;;
-    string public symbol = &quot;NCT&quot;;
+    string public name = "Nectar";
+    string public symbol = "NCT";
     uint8 public decimals = 18;
 
     bool public transfersEnabled = false;
@@ -299,7 +299,7 @@ contract NectarToken is MintableToken {
         // it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
 
         // solium-disable-next-line security/no-low-level-calls
-        require(_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }
@@ -624,7 +624,7 @@ contract NectarCrowdsale is Ownable, Pausable {
      */
     function validPurchase(uint256 authorizedAmount, uint256 nonce, bytes sig) internal view returns (bool) {
         // 84 = 20 byte address + 32 byte authorized amount + 32 byte nonce
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n84&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n84";
         bytes32 hash = keccak256(prefix, msg.sender, authorizedAmount, nonce);
         bool validAuthorization = ECRecovery.recover(hash, sig) == purchaseAuthorizer;
 

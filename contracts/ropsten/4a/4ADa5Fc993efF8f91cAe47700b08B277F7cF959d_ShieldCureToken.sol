@@ -111,8 +111,8 @@ contract ShieldCureToken is ERC20, Ownable, Pausable {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     function ShieldCureToken() public {
-        name = &quot;SHIELDCURE&quot;;
-        symbol = &quot;ID&quot;;
+        name = "SHIELDCURE";
+        symbol = "ID";
         decimals = 18;
         initialSupply = 10000;
         totalSupply_ = initialSupply * 10 ** uint(decimals);

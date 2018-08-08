@@ -140,13 +140,13 @@ contract Sale {
     }
     
     function buy() internal {
-        require(msg.value>=minEthValue, &quot;Cannot buy with less than min ETH&quot;);
-        require(now < saleEnd4, &quot;Cannot sell after the sale ended&quot;); // main sale postponed
+        require(msg.value>=minEthValue, "Cannot buy with less than min ETH");
+        require(now < saleEnd4, "Cannot sell after the sale ended"); // main sale postponed
 
         uint256 amount = conversion(msg.value);
         uint256 total = totalSaled + amount;
         
-        require(total<=maxSale, &quot;Cannot sell more than max&quot;);
+        require(total<=maxSale, "Cannot sell more than max");
         
         totalSaled = total;
 
@@ -155,12 +155,12 @@ contract Sale {
         emit Contribution(msg.sender, amount);
     }
     function getYumWithETH(uint256 value) private {
-        require(value<=msg.value, &quot;value cannot be higher than it&#39;s original value&quot;);
+        require(value<=msg.value, "value cannot be higher than it&#39;s original value");
 
         uint256 amount = conversion(value);
         uint256 total = totalSaled + amount;
         
-        require(total<=maxSale, &quot;Cannot sell more than max&quot;);
+        require(total<=maxSale, "Cannot sell more than max");
         
         totalSaled = total;
 
@@ -172,7 +172,7 @@ contract Sale {
         uint256 amount = conversion(value);
         uint256 total = totalSaled + amount;
         
-        require(total<=maxSale, &quot;Cannot sell more than max&quot;);
+        require(total<=maxSale, "Cannot sell more than max");
         
         totalSaled = total;
 
@@ -218,7 +218,7 @@ contract Sale {
 
     // change creator address
     function changeCreator(address _creator) external {
-        require(msg.sender==creator, &quot;Changed the creator&quot;);
+        require(msg.sender==creator, "Changed the creator");
         creator = _creator;
     }
 
@@ -231,8 +231,8 @@ contract Sale {
     }
 
     function participateEvent(address referredAddress) external payable {
-        require(msg.value >= minEthValueForGame, &quot;the amount of ETH invested is less than minimum participating fee&quot;);
-        require(!hasGameOver, &quot;The game has already been over&quot;);
+        require(msg.value >= minEthValueForGame, "the amount of ETH invested is less than minimum participating fee");
+        require(!hasGameOver, "The game has already been over");
         
         uint256 timePassed = now.sub(lastInvestedTime);
         // game will be over when time out or event sale ended
@@ -246,7 +246,7 @@ contract Sale {
     }
 
     function gameOver() public {
-        require(!hasGameOver, &quot;The game has already been over&quot;);
+        require(!hasGameOver, "The game has already been over");
         uint256 timePassed = now.sub(lastInvestedTime);
         require(timePassed >= maxTimeInHours || now >= eventSaleEnd);
         uint256 amountForWinner = mainGamePot.mul(winnerReward).div(100);
@@ -298,7 +298,7 @@ contract Sale {
         uint256 amountForWinner = mainGamePot.mul(winnerReward).div(100);
         uint256 remainTotalETH = mainGamePot.sub(amountForWinner);
         uint256 TotalYUMToDistribute = conversion(remainTotalETH);
-        require(totalSaled.add(TotalYUMToDistribute)<=maxSale, &quot;Cannot distribute YUM token more than its maxsale&quot;);
+        require(totalSaled.add(TotalYUMToDistribute)<=maxSale, "Cannot distribute YUM token more than its maxsale");
         emit ParticipateGame(sender, distributionForMainGame, distributionForAirdrop);
     }
 

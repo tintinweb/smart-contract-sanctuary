@@ -40,7 +40,7 @@ contract ERC20TokenInterface is BasicTokenInterface, ApproveAndCallFallBack{
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 }
 
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
@@ -99,7 +99,7 @@ contract BasicToken is BasicTokenInterface{
 contract ManagedToken is BasicToken {
     address manager;
     modifier restricted(){
-        require(msg.sender == manager,&quot;Function can only be used by manager&quot;);
+        require(msg.sender == manager,"Function can only be used by manager");
         _;
     }
 
@@ -201,8 +201,8 @@ contract FlairDrop is ERC20Token {
 
     constructor() public {
         flairdrop = address(this);
-        name = &quot;FlairDrop! Airdrops With Pizzazz!&quot;;
-        symbol = &quot;FLAIRDROP&quot;;
+        name = "FlairDrop! Airdrops With Pizzazz!";
+        symbol = "FLAIRDROP";
         decimals = 0;
         totalSupply = 0;
         tokenPrice = 10000000000000; //0.01 finney
@@ -216,12 +216,12 @@ contract FlairDrop is ERC20Token {
             buyTokens();
         }
         
-        require(balances[msg.sender] >= droptargets.length,&quot;Insufficient funds to execute this airdrop&quot;);
+        require(balances[msg.sender] >= droptargets.length,"Insufficient funds to execute this airdrop");
         //Step 1 check our allowance with parent contract
         uint allowance = ERC20TokenInterface(parent).allowance(msg.sender, flairdrop);
 
         uint amount = amounts[0];
-        require(allowance >= (amount * droptargets.length), &quot;Function requires an allowance > token amount * number of drop targets&quot;);
+        require(allowance >= (amount * droptargets.length), "Function requires an allowance > token amount * number of drop targets");
         
         ERC20TokenInterface parentContract = ERC20TokenInterface(parent);
         uint x = 0;

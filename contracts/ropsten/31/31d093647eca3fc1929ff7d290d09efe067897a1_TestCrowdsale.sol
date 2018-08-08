@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -273,8 +273,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract TestToken is MintableToken {
-  string public name = &quot;Test Tokenz&quot;;
-  string public symbol = &quot;TzT&quot;;
+  string public name = "Test Tokenz";
+  string public symbol = "TzT";
   uint8 public decimals = 18;
 }
 
@@ -697,7 +697,7 @@ if (stage == CrowdsaleStage.PreICO) {
       uint256 tokensThatWillBeMintedAfterPurchase = msg.value.mul(rate);
       if ((stage == CrowdsaleStage.PreICO) && (token.totalSupply() + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringPreICO)) {
         msg.sender.transfer(msg.value); // Refund them
-        EthRefunded(&quot;PreICO Limit Hit&quot;);
+        EthRefunded("PreICO Limit Hit");
         return;
       }
 
@@ -711,15 +711,15 @@ if (stage == CrowdsaleStage.PreICO) {
   function forwardFunds() internal {
       if (stage == CrowdsaleStage.PreICO) {
           wallet.transfer(msg.value);
-          EthTransferred(&quot;forwarding funds to wallet&quot;);
+          EthTransferred("forwarding funds to wallet");
       } else if (stage == CrowdsaleStage.ICO) {
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       }else if (stage == CrowdsaleStage.ICO2) {
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       }else if (stage == CrowdsaleStage.ICO3) {
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       }
   }

@@ -113,8 +113,8 @@ contract mocatoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function mocatoken() public {
-        symbol = &quot;1907&quot;;
-        name = &quot;mocatoken&quot;;
+        symbol = "1907";
+        name = "mocatoken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xbb9afFb4Ff5e139997b3a006Be73F29f1A1F3C7A] = _totalSupply;

@@ -94,7 +94,7 @@ contract Oracle is Ownable {
     bytes32[] public currencies;
 
     /**
-        @dev Returns the url where the oracle exposes a valid &quot;oracleData&quot; if needed
+        @dev Returns the url where the oracle exposes a valid "oracleData" if needed
     */
     function url() public view returns (string);
 
@@ -192,10 +192,10 @@ contract Engine {
     of the insurance and the cost of the given are defined by the cosigner.
 
     The lender will decide what cosigner to use, if any; the address of the cosigner and the valid data provided by the
-    agent should be passed as params when the lender calls the &quot;lend&quot; method on the engine.
+    agent should be passed as params when the lender calls the "lend" method on the engine.
 
     When the default conditions defined by the cosigner aligns with the status of the loan, the lender of the engine
-    should be able to call the &quot;claim&quot; method to receive the benefit; the cosigner can define aditional requirements to
+    should be able to call the "claim" method to receive the benefit; the cosigner can define aditional requirements to
     call this method, like the transfer of the ownership of the loan.
 */
 contract Cosigner {
@@ -215,7 +215,7 @@ contract Cosigner {
 
     /**
         @dev The engine calls this method for confirmation of the conditions, if the cosigner accepts the liability of
-        the insurance it must call the method &quot;cosign&quot; of the engine. If the cosigner does not call that method, or
+        the insurance it must call the method "cosign" of the engine. If the cosigner does not call that method, or
         does not return true to this method, the operation fails.
 
         @return true if the cosigner accepts the liability
@@ -295,23 +295,23 @@ contract KyberGateway is RpSafeMath {
         uint _minChangeRCN,
         uint _minConversionRate
     ) public payable returns (bool) {
-        require(msg.value > 0, &quot;msg.value its 0&quot;);
+        require(msg.value > 0, "msg.value its 0");
 
         Token rcn = _engine.rcn();
         uint initialBalance = rcn.balanceOf(this);
 
         uint boughtRCN = _network.trade.value(msg.value)(ETH, msg.value, rcn, this, MAX_UINT, _minConversionRate, 0);
-        require(rcn.balanceOf(this) - initialBalance == boughtRCN, &quot;Kyber return wrong rcn amount&quot;);
+        require(rcn.balanceOf(this) - initialBalance == boughtRCN, "Kyber return wrong rcn amount");
 
         uint requiredRcn = _engine.convertRate(_engine.getOracle(_index), _engine.getCurrency(_index), _oracleData, _amount);
-        require(boughtRCN >= requiredRcn, &quot;insufficient rcn found&quot;);
+        require(boughtRCN >= requiredRcn, "insufficient rcn found");
 
         rcn.approve(address(_engine), requiredRcn);
-        require(_engine.pay(_index, _amount, msg.sender, _oracleData), &quot;pay engine fail&quot;);
+        require(_engine.pay(_index, _amount, msg.sender, _oracleData), "pay engine fail");
         rcn.approve(address(_engine), 0);
 
-        require(rebuyAndReturn(_network, rcn, _minChangeRCN, safeSubtract(boughtRCN, requiredRcn)), &quot;rebuy fail&quot;);
-        require(rcn.balanceOf(this) == initialBalance, &quot;Wrong final balance of rcn&quot;);
+        require(rebuyAndReturn(_network, rcn, _minChangeRCN, safeSubtract(boughtRCN, requiredRcn)), "rebuy fail");
+        require(rcn.balanceOf(this) == initialBalance, "Wrong final balance of rcn");
 
         return true;
     }
@@ -341,24 +341,24 @@ contract KyberGateway is RpSafeMath {
         uint _minChangeRCN,
         uint _minConversionRate
     ) public payable returns (bool) {
-        require(msg.value > 0, &quot;msg.value its 0&quot;);
+        require(msg.value > 0, "msg.value its 0");
 
         Token rcn = _engine.rcn();
         uint initialBalance = rcn.balanceOf(this);
 
         uint boughtRCN = _network.trade.value(msg.value)(ETH, msg.value, rcn, this, MAX_UINT, _minConversionRate, this);
-        require(rcn.balanceOf(this) - initialBalance == boughtRCN, &quot;Kyber return wrong rcn amount&quot;);
+        require(rcn.balanceOf(this) - initialBalance == boughtRCN, "Kyber return wrong rcn amount");
 
         uint requiredRcn = getRequiredRcnLend(_engine, _index, _cosignerData, _oracleData);
-        require(boughtRCN >= requiredRcn, &quot;insufficient rcn found&quot;);
+        require(boughtRCN >= requiredRcn, "insufficient rcn found");
 
         rcn.approve(address(_engine), requiredRcn);
-        require(_engine.lend(_index, _oracleData, _cosigner, _cosignerData), &quot;fail engine lend&quot;);
+        require(_engine.lend(_index, _oracleData, _cosigner, _cosignerData), "fail engine lend");
         rcn.approve(address(_engine), 0);
 
-        require(_engine.transfer(msg.sender, _index), &quot;fail rcn transfer&quot;);
-        require(rebuyAndReturn(_network, rcn, _minChangeRCN, safeSubtract(boughtRCN, requiredRcn)), &quot;rebuy fail&quot;);
-        require(rcn.balanceOf(this) == initialBalance, &quot;Wrong final balance of rcn&quot;);
+        require(_engine.transfer(msg.sender, _index), "fail rcn transfer");
+        require(rebuyAndReturn(_network, rcn, _minChangeRCN, safeSubtract(boughtRCN, requiredRcn)), "rebuy fail");
+        require(rcn.balanceOf(this) == initialBalance, "Wrong final balance of rcn");
 
         return true;
     }
@@ -384,9 +384,9 @@ contract KyberGateway is RpSafeMath {
                 _rcn.approve(address(_network), _change);
                 _change = _network.trade.value(0)(_rcn, _change, ETH, msg.sender, MAX_UINT, 0, this);
                 _rcn.approve(address(_network), 0);
-                require(msg.sender.balance - prevBalanceUser == _change, &quot;Kyber return wrong rcn amount&quot;);
+                require(msg.sender.balance - prevBalanceUser == _change, "Kyber return wrong rcn amount");
             }else{
-                require(_rcn.transfer(msg.sender, _change), &quot;Transfer rcn fail&quot;);
+                require(_rcn.transfer(msg.sender, _change), "Transfer rcn fail");
             }
         }
         return true;

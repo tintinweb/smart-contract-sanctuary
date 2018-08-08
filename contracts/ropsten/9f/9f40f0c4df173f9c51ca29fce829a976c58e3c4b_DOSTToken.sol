@@ -549,8 +549,8 @@ contract VestedToken is StandardToken, LimitedTransferToken {
 
 contract DOSTToken is VestedToken {
     //FIELDS
-    string public name = &quot;Dimension Operating System&quot;;
-    string public symbol = &quot;DOST&quot;;
+    string public name = "Dimension Operating System";
+    string public symbol = "DOST";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 138 * 100000000 * 1 ether;
     uint public iTime;

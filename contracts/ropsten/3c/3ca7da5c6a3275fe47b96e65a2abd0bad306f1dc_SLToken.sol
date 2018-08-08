@@ -114,8 +114,8 @@ contract SLToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;SLToken&quot;;
-        name = &quot;SLToken&quot;;
+        symbol = "SLToken";
+        name = "SLToken";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

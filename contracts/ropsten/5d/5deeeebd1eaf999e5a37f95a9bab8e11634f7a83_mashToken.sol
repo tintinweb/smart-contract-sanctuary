@@ -116,8 +116,8 @@ contract mashToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function mashToken() public {
-        symbol = &quot;MASH&quot;;
-        name = &quot;Mash Token&quot;;
+        symbol = "MASH";
+        name = "Mash Token";
         decimals = 10;
         bonusEnds = now + 17 weeks;
         endDate = now + 34 weeks;

@@ -113,8 +113,8 @@ contract AKBToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AKBToken() public {
-        symbol = &quot;AKB&quot;;
-        name = &quot;AKB Token&quot;;
+        symbol = "AKB";
+        name = "AKB Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0B2E1Dd0186D3af96dD8dD85E9bEf2D6fB8da911] = _totalSupply;

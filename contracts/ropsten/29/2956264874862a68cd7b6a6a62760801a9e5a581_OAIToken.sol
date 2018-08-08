@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract OAIToken {
 
-    string public name = &quot;OAIToken&quot;;      //  token name
-    string public symbol = &quot;OAIT&quot;;           //  token symbol
+    string public name = "OAIToken";      //  token name
+    string public symbol = "OAIT";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

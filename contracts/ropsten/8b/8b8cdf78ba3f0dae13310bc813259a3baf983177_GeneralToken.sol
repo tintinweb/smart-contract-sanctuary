@@ -118,7 +118,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -316,8 +316,8 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/GeneralToken.sol
 
 contract GeneralToken is MintableToken, BurnableToken {
-	string public name = &quot;DUMMY&quot;;
-	string public symbol = &quot;DUMMY&quot;;
+	string public name = "DUMMY";
+	string public symbol = "DUMMY";
 	uint8 public decimals = 18;
 
 	function GeneralToken(string _name, string _symbol, uint8 _decimals) public {

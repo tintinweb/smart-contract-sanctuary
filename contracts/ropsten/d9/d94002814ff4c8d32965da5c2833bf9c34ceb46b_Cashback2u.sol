@@ -37,7 +37,7 @@ contract Cashback2u is owned {
     event CashbackAdded(string name, address indexed wallet);
     event CashbackReceived(address indexed wallet,uint256 cashback);
 
-    // &quot;Anurag Makol&quot;,&quot;0x356233346361363663306461393137653830663639366161&quot;,&quot;0x14723a09acff6d2a60dcdf7aa4aff308fddc160c&quot;,[&quot;0xDE0B6B3A7640000&quot;,&quot;0x1BC16D674EC80000&quot;,&quot;0x29A2241AF62C0000&quot;],[1529476151,1529478151,1529496151]
+    // "Anurag Makol","0x356233346361363663306461393137653830663639366161","0x14723a09acff6d2a60dcdf7aa4aff308fddc160c",["0xDE0B6B3A7640000","0x1BC16D674EC80000","0x29A2241AF62C0000"],[1529476151,1529478151,1529496151]
     function addCashback(string name,uint256 identifier,address wallet,uint256[] cashbackAmount,uint256[] cashbackTime) public onlyOwner returns (bool success) {
         userDetails[identifier][wallet].name = name;
         userDetails[identifier][wallet].wallet = wallet;
@@ -55,7 +55,7 @@ contract Cashback2u is owned {
         return true;
     }
 
-    // &quot;0x356233346361363663306461393137653830663639366161&quot;,&quot;0x14723a09acff6d2a60dcdf7aa4aff308fddc160c&quot;
+    // "0x356233346361363663306461393137653830663639366161","0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"
     function receiveCashback(uint256 identifier, address wallet) public returns (bool success) {
         if(userDetails[identifier][wallet].cashbackTime1 < now && userDetails[identifier][wallet].cashbackPaid1 == false) {
             wallet.transfer(userDetails[identifier][wallet].cashbackAmount1);

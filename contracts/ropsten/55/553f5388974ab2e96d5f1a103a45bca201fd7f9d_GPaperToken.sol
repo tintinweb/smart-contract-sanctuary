@@ -99,8 +99,8 @@ contract GPaperToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GPC&quot;;
-        name = &quot;GeniPaper Coin&quot;;
+        symbol = "GPC";
+        name = "GeniPaper Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
       //  balances[0x4C91dEb5490653a9aE132A12CD40F0702f120cBa] = _totalSupply;

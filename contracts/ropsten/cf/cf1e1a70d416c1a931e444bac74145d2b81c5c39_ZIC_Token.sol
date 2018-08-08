@@ -87,8 +87,8 @@ contract ERC20 is ERC20Basic {
 contract ZIC_Token is ERC20, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Zinscoin&quot;;
-    string public symbol = &quot;ZIC&quot;;
+    string public name = "Zinscoin";
+    string public symbol = "ZIC";
     uint public decimals = 5;
 
     uint public chainStartTime;

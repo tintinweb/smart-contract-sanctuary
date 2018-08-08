@@ -49,9 +49,9 @@ library SafeMath {
 
 
 contract AccountRoles {
-    bytes32 public constant ROLE_TRANSFER_ETHER = keccak256(&quot;transfer_ether&quot;);
-    bytes32 public constant ROLE_TRANSFER_TOKEN = keccak256(&quot;transfer_token&quot;);
-    bytes32 public constant ROLE_TRANSFER_OWNERSHIP = keccak256(&quot;transfer_ownership&quot;);	
+    bytes32 public constant ROLE_TRANSFER_ETHER = keccak256("transfer_ether");
+    bytes32 public constant ROLE_TRANSFER_TOKEN = keccak256("transfer_token");
+    bytes32 public constant ROLE_TRANSFER_OWNERSHIP = keccak256("transfer_ownership");	
     
     /**
     * @dev modifier to validate the roles 
@@ -62,7 +62,7 @@ contract AccountRoles {
         for (uint8 i = 0; i < roles.length; i++) {
             require(roles[i] == ROLE_TRANSFER_ETHER 
             || roles[i] == ROLE_TRANSFER_TOKEN
-            || roles[i] == ROLE_TRANSFER_OWNERSHIP, &quot;Invalid account role&quot;);
+            || roles[i] == ROLE_TRANSFER_OWNERSHIP, "Invalid account role");
         }
         _;
     }
@@ -76,7 +76,7 @@ contract ISmartAccount {
 
 
 contract UIExtension {
-    string public uiExtensionVersion = &quot;0.0.1&quot;;
+    string public uiExtensionVersion = "0.0.1";
 	
     uint256 constant INTEGER = 1;
     uint256 constant FLOAT = 2;
@@ -290,7 +290,7 @@ contract UIExtension {
         private 
     {
         require(_setup.createFunctionSignature != _setup.updateFunctionSignature);
-        require(_setup.createFunctionSignature != &quot;&quot; && _setup.updateFunctionSignature != &quot;&quot;);
+        require(_setup.createFunctionSignature != "" && _setup.updateFunctionSignature != "");
             
         setupParameters.createFunctionSignature = _setup.createFunctionSignature;
         setupParameters.updateFunctionSignature = _setup.updateFunctionSignature;
@@ -324,7 +324,7 @@ contract UIExtension {
             validateTypeReference(_viewDatas[i].output.typeReference, _viewDatas[i].output.isArray);
             validateDescription(_viewDatas[i].output.description);
             Storage memory s;
-            s.baseData = setBaseStorage(_viewDatas[i].functionSignature, 1, &quot;&quot;);
+            s.baseData = setBaseStorage(_viewDatas[i].functionSignature, 1, "");
             viewDatas.push(s);
             viewDatas[i].parameters[0] = _viewDatas[i].output;
         }
@@ -339,7 +339,7 @@ contract UIExtension {
         pure 
         returns (BaseStorage) 
     {
-        require(_functionSignature != &quot;&quot;);
+        require(_functionSignature != "");
         BaseStorage memory s;
         s.functionSignature = _functionSignature;
         s.parametersCount = _parametersCount;
@@ -350,7 +350,7 @@ contract UIExtension {
 
 
 contract ManagerExtension {
-    string public managerExtensionVersion = &quot;0.0.1&quot;;
+    string public managerExtensionVersion = "0.0.1";
 
     mapping(address => bytes32[]) private identifier; //all extensions should define the identifier, it is necessary because the smart account can add the extension more than once
     mapping(bytes32 => uint256) private indexes;
@@ -406,12 +406,12 @@ contract ManagerExtension {
     }
     
     function transferTokenFrom(address _smartAccount, address _tokenAddress, address _to, uint256 _amount) internal {
-        bytes memory data = abi.encodePacked(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)), bytes32(_to), _amount);
+        bytes memory data = abi.encodePacked(bytes4(keccak256("transfer(address,uint256)")), bytes32(_to), _amount);
         ISmartAccount(_smartAccount).executeCall(_tokenAddress, 0, 0, data);
     }
     
     function transferEtherFrom(address _smartAccount, address _to, uint256 _amount) internal {
-        ISmartAccount(_smartAccount).executeCall(_to, _amount, 0, &quot;&quot;);
+        ISmartAccount(_smartAccount).executeCall(_to, _amount, 0, "");
     }
 }
 
@@ -444,50 +444,50 @@ contract RecurringPayment is IExtension {
     mapping(bytes32 => Data) paymentData;
     
     function getName() pure external returns(string) {
-        return &quot;Recurring Payment&quot;;
+        return "Recurring Payment";
     }
     
     function getDescription() pure external returns(string) {
-        return &quot;Define an authorized address to withdraw a number of Ethers or Tokens for some recurrent period.&quot;;
+        return "Define an authorized address to withdraw a number of Ethers or Tokens for some recurrent period.";
     }
     
     function getSetupParameters() pure internal returns(Setup) {
         ConfigParameter[] memory parameters = new ConfigParameter[](6);
-        parameters[0] = ConfigParameter(false, Parameter(false, false, ADDRESS, 0, &quot;Beneficiary address&quot;));
-        parameters[1] = ConfigParameter(false, Parameter(false, false, INTEGER, 86400, &quot;Recurrence time in days&quot;));
-        parameters[2] = ConfigParameter(true, Parameter(false, false, INTEGER, 0, &quot;Number of periods&quot;));
-        parameters[3] = ConfigParameter(false, Parameter(false, false, BOOL, 0, &quot;Payment in Ether&quot;));
-        parameters[4] = ConfigParameter(false, Parameter(false, true, ADDRESS, 0, &quot;Token address if payment not in Ether&quot;));
-        parameters[5] = ConfigParameter(true, Parameter(false, false, FLOAT, 1000000000000000000, &quot;Maximum amount per period&quot;));
-        return Setup(bytes4(keccak256(&quot;createSetup(address,uint256,uint256,bool,address,uint256)&quot;)), 
-            bytes4(keccak256(&quot;updateSetup(bytes32,address,uint256,uint256,bool,address,uint256)&quot;)),
+        parameters[0] = ConfigParameter(false, Parameter(false, false, ADDRESS, 0, "Beneficiary address"));
+        parameters[1] = ConfigParameter(false, Parameter(false, false, INTEGER, 86400, "Recurrence time in days"));
+        parameters[2] = ConfigParameter(true, Parameter(false, false, INTEGER, 0, "Number of periods"));
+        parameters[3] = ConfigParameter(false, Parameter(false, false, BOOL, 0, "Payment in Ether"));
+        parameters[4] = ConfigParameter(false, Parameter(false, true, ADDRESS, 0, "Token address if payment not in Ether"));
+        parameters[5] = ConfigParameter(true, Parameter(false, false, FLOAT, 1000000000000000000, "Maximum amount per period"));
+        return Setup(bytes4(keccak256("createSetup(address,uint256,uint256,bool,address,uint256)")), 
+            bytes4(keccak256("updateSetup(bytes32,address,uint256,uint256,bool,address,uint256)")),
             parameters);
     }
     
     function getActions() pure internal returns(Action[]) {
         Parameter[] memory parameters1 = new Parameter[](2);
-        parameters1[0] = Parameter(false, false, SMARTACCOUNTADDRESS, 0, &quot;Smart account&quot;);
-        parameters1[1] = Parameter(false, false, FLOAT, 1000000000000000000, &quot;Amount&quot;);
+        parameters1[0] = Parameter(false, false, SMARTACCOUNTADDRESS, 0, "Smart account");
+        parameters1[1] = Parameter(false, false, FLOAT, 1000000000000000000, "Amount");
         Parameter[] memory parameters2 = new Parameter[](1);
-        parameters2[0] = Parameter(false, false, ADDRESS, 0, &quot;Beneficiary&quot;);
+        parameters2[0] = Parameter(false, false, ADDRESS, 0, "Beneficiary");
         Action[] memory action = new Action[](2);
-        action[0].description = &quot;Make a withdraw&quot;;
+        action[0].description = "Make a withdraw";
         action[0].parameters = parameters1;
-        action[0].functionSignature = bytes4(keccak256(&quot;withdrawal(address,uint256)&quot;));
-        action[1].description = &quot;Cancel recurring payment&quot;;
+        action[0].functionSignature = bytes4(keccak256("withdrawal(address,uint256)"));
+        action[1].description = "Cancel recurring payment";
         action[1].parameters = parameters2;
-        action[1].functionSignature = bytes4(keccak256(&quot;cancelRecurringPayment(bytes32)&quot;));
+        action[1].functionSignature = bytes4(keccak256("cancelRecurringPayment(bytes32)"));
         return action;
     }
     
     function getViewDatas() pure internal returns(ViewData[]) {
         ViewData[] memory viewData = new ViewData[](3);
-        viewData[0].functionSignature = bytes4(keccak256(&quot;getAvailableAmountWithdrawal(address,bytes32)&quot;));
-        viewData[0].output = Parameter(false, false, FLOAT, 1000000000000000000, &quot;Available amount to withdrawal&quot;);
-        viewData[1].functionSignature = bytes4(keccak256(&quot;getAmountWithdrawal(address,bytes32)&quot;));
-        viewData[1].output = Parameter(false, false, FLOAT, 1000000000000000000, &quot;Amount released&quot;);
-        viewData[2].functionSignature = bytes4(keccak256(&quot;getPeriodsWithdrawal(address,bytes32)&quot;));
-        viewData[2].output = Parameter(false, false, INTEGER, 0, &quot;Amount of periods released&quot;);
+        viewData[0].functionSignature = bytes4(keccak256("getAvailableAmountWithdrawal(address,bytes32)"));
+        viewData[0].output = Parameter(false, false, FLOAT, 1000000000000000000, "Available amount to withdrawal");
+        viewData[1].functionSignature = bytes4(keccak256("getAmountWithdrawal(address,bytes32)"));
+        viewData[1].output = Parameter(false, false, FLOAT, 1000000000000000000, "Amount released");
+        viewData[2].functionSignature = bytes4(keccak256("getPeriodsWithdrawal(address,bytes32)"));
+        viewData[2].output = Parameter(false, false, INTEGER, 0, "Amount of periods released");
         return viewData;
     }
     

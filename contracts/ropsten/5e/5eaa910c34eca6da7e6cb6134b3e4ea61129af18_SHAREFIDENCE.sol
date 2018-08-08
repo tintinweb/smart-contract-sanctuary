@@ -113,8 +113,8 @@ contract SHAREFIDENCE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SHAREFIDENCE() public {
-        symbol = &quot;FIDE&quot;;
-        name = &quot;SHAREFIDENCE&quot;;
+        symbol = "FIDE";
+        name = "SHAREFIDENCE";
         decimals = 0;
         _totalSupply = 100000000;
         balances[0x08999f12d241ADf1BB40B33Febf62Ce00Eb3b99e] = _totalSupply;

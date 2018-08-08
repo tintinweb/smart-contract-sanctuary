@@ -232,8 +232,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;UVCOIN&quot;;
-  string public constant symbol = &quot;UVC&quot;;
+  string public constant name = "UVCOIN";
+  string public constant symbol = "UVC";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 1000 * (10 ** uint256(decimals));
 

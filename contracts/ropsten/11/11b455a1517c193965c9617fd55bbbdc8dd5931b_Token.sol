@@ -177,8 +177,8 @@ interface ERC223 {
 contract Token is MultiOwner, ERC20, ERC223{
 	using SafeMath for uint256;
 	
-	string public name = &quot;XFB&quot;;
-	string public symbol = &quot;XFB&quot;;
+	string public name = "XFB";
+	string public symbol = "XFB";
 	uint8 public decimals = 8;
 	uint256 public totalSupply = 7000000000 * 10 ** uint256(decimals);
 	uint256 public EthPerToken = 700000;

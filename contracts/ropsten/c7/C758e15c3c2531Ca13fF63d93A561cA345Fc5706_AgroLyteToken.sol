@@ -72,8 +72,8 @@ contract AgroLyteToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;AgroLyte Token&quot;;
-    string public constant symbol = &quot;AGR&quot;;
+    string public constant name = "AgroLyte Token";
+    string public constant symbol = "AGR";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 4000000000e8;

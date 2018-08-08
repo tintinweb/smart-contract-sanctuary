@@ -98,7 +98,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -197,11 +197,11 @@ library SafeMath {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -880,7 +880,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -1066,11 +1066,11 @@ contract Guesses is Ownable{
      */
     function guess(string bet) public payable{
         require(msg.value>0);
-        var splits=splitStr(bet,&quot;;&quot;);
+        var splits=splitStr(bet,";");
         uint totPrice=0;
         var intInfo=new uint[](splits.length*3);
         for(uint i=0;i<splits.length;i++){
-            var singleBet=splitStr2Int(splits[i],&quot;_&quot;);
+            var singleBet=splitStr2Int(splits[i],"_");
             //竞猜确实存在 
             require(allGuesses[singleBet[0]].id==singleBet[0]);
             
@@ -1149,12 +1149,12 @@ contract Guesses is Ownable{
      * @return  成功
      */
     function setGuessAnswer(string answers) public noReentrancy returns(bool){
-        var splits=splitStr(answers,&quot;;&quot;);
+        var splits=splitStr(answers,";");
         uint totWin=0;
         uint totLost=0;
         uint winOptionIndex;
         for(uint i=0;i<splits.length;i++){
-            var singleGuess=splitStr2Int(splits[i],&quot;_&quot;);
+            var singleGuess=splitStr2Int(splits[i],"_");
             require(singleGuess.length==2);
             Guess storage guess=allGuesses[singleGuess[0]];
             winOptionIndex=singleGuess[1];
@@ -1199,12 +1199,12 @@ contract Guesses is Ownable{
      * 
      */ 
     function getGuessInfo(string ids) public view returns(string){
-        var splits=splitStr2Int(ids,&quot;_&quot;);
+        var splits=splitStr2Int(ids,"_");
         var result=new strings.slice[](splits.length);
         for(uint i=0;i<splits.length;i++){
             result[i]=getSingleGuessInfo(splits[i]).toSlice();
         }
-        return strings.join(&quot;;&quot;.toSlice(),result);
+        return strings.join(";".toSlice(),result);
     }
     
     /**
@@ -1213,7 +1213,7 @@ contract Guesses is Ownable{
      */ 
     function getSingleGuessInfo(uint id) internal view returns(string){
         if(allGuesses[id].id!=id){   
-            return &quot;&quot;;
+            return "";
         }
          var options =allGuesses[id].options;//竞猜选项
          uint num=allGuesses[id].totOptionNum;
@@ -1225,11 +1225,11 @@ contract Guesses is Ownable{
          for(uint i=1;i<=num;i++){
              var s=Integers.toString(options[i].totNum);
              if(bytes(s).length==0){
-                 s=&quot;0&quot;;
+                 s="0";
              }
              result[i]=s.toSlice();
          }
-         return strings.join(&quot;,&quot;.toSlice(),result);
+         return strings.join(",".toSlice(),result);
     }
      
      /**

@@ -113,8 +113,8 @@ contract Giorgi is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Giorgi() public {
-        symbol = &quot;Giorgi&quot;;
-        name = &quot;Giorgi Token&quot;;
+        symbol = "Giorgi";
+        name = "Giorgi Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xcFa702AE06F6B5e5Fe71Fc1CfBe056bF06D3a5D0] = _totalSupply;

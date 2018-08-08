@@ -24,8 +24,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenERC20 {
     // Public variables of the token
-    string public name = &quot;Yumerium Token&quot;;
-    string public symbol = &quot;YUM&quot;;
+    string public name = "Yumerium Token";
+    string public symbol = "YUM";
     uint8 public decimals = 8;
     uint256 public totalSupply = 808274854 * 10 ** uint256(decimals);
 

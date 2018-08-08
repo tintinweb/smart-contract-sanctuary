@@ -115,8 +115,8 @@ contract xpectoTTF1Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function xpectoTTF1Token() public {
-        symbol = &quot;XTTF1&quot;;
-        name = &quot;xpecto TTF1 Token&quot;;
+        symbol = "XTTF1";
+        name = "xpecto TTF1 Token";
         decimals = 18;
         endDate = now + 150 weeks;
 

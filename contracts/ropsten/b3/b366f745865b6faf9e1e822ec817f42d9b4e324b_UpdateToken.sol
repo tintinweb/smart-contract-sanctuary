@@ -71,8 +71,8 @@ contract UpdateToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function UpdateToken() public {
-        symbol = &quot;UTP&quot;;
-        name = &quot;UpdateToken&quot;;
+        symbol = "UTP";
+        name = "UpdateToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x42CA549a136A9d4a5839b1a04c27dfA93d9e42b2] = _totalSupply;

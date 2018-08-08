@@ -711,7 +711,7 @@ contract ERC223Token is ERC223Storage, ERC223Receiver {
             oldTokensHolder,
             newTokensHolder,
             tokensNumber,
-            &quot;tokenFallback(address,uint256,bytes)&quot;,
+            "tokenFallback(address,uint256,bytes)",
             data
         );
     }

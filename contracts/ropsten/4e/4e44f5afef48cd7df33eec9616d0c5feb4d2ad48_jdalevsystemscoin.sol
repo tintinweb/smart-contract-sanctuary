@@ -7,8 +7,8 @@ pragma solidity ^0.4.13;
     Author JDA   john.allen@leveridgesystems.com   6/14/2018.
 
 
-    public name = &quot;EdisonCoin&quot;;
-    public symbol = &quot;EDIC&quot;;
+    public name = "EdisonCoin";
+    public symbol = "EDIC";
     public decimals = 18;
     public INITIAL_SUPPLY = 500000000 * (10 ** uint256(decimals));
 
@@ -205,8 +205,8 @@ contract StandardToken is ERC20, BasicToken {
 
 */
 contract jdalevsystemscoin is StandardToken {
-  string public name = &quot;JdaLevsystemscoin&quot;;
-  string public symbol = &quot;JDLS&quot;;
+  string public name = "JdaLevsystemscoin";
+  string public symbol = "JDLS";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 500000000 * (10 ** uint256(decimals));
 

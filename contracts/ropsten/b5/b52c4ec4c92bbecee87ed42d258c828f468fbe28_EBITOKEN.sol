@@ -145,8 +145,8 @@ contract Ownable {
 
 contract EBITOKEN is StandardToken, Ownable {
 
-  string public constant name = &quot;EBITOKEN&quot;;
-  string public constant symbol = &quot;EBI&quot;;
+  string public constant name = "EBITOKEN";
+  string public constant symbol = "EBI";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1 * (10 ** 10) * (10 ** uint256(decimals));

@@ -113,8 +113,8 @@ contract AiEXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AiEXToken() public {
-        symbol = &quot;AiEX&quot;;
-        name = &quot;AiEX Token&quot;;
+        symbol = "AiEX";
+        name = "AiEX Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xBbD9598Fc1B20eb6C8d688A1d9a2E72b93eF6FE9] = _totalSupply;

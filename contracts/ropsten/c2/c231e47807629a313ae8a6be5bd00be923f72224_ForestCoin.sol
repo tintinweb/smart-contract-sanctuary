@@ -16,9 +16,9 @@ contract ForestCoin {
     function ForestCoin() {
 
          initialSupply = 5000000000000000000000;
-         name =&quot;ForestCoin&quot;;
+         name ="ForestCoin";
         decimals = 1;
-         symbol = &quot;FFC2&quot;;
+         symbol = "FFC2";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

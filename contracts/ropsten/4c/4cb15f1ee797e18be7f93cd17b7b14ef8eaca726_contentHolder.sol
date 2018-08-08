@@ -1,9 +1,9 @@
 pragma solidity 0.4.24;
 
 contract contentHolder {
-  string internal prefix = &quot;&quot;;
-  string internal suffix = &quot;&quot;;
-  string internal content = &quot;&quot;;
+  string internal prefix = "";
+  string internal suffix = "";
+  string internal content = "";
 
   // Contract constructor that takes a string param
   function setContent(string _content) public {

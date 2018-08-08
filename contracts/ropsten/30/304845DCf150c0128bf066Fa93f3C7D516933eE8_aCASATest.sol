@@ -113,8 +113,8 @@ mapping(address => mapping(address => uint)) allowed;
 // Constructor
 // ------------------------------------------------------------------------
 function aCASATest() public {
-symbol = &quot;aCASAT&quot;;
-name = &quot;aCASATest&quot;;
+symbol = "aCASAT";
+name = "aCASATest";
 decimals = 18;
 _totalSupply = 100000000000000000000000000;
 balances[0x5aD09c3BAEa6a8A2558fF8B06DABacCA982fa463] = _totalSupply;

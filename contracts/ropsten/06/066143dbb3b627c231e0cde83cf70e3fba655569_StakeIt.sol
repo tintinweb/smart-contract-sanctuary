@@ -52,7 +52,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -143,8 +143,8 @@ contract StakeItStandard {
 contract StakeIt is ERC20, StakeItStandard, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;StakeIt&quot;;
-    string public symbol = &quot;STAKE&quot;;
+    string public name = "StakeIt";
+    string public symbol = "STAKE";
     uint public decimals = 8;
 
     uint public chainStartTime; // chain start time
@@ -348,7 +348,7 @@ contract StakeIt is ERC20, StakeItStandard, Ownable {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
 }

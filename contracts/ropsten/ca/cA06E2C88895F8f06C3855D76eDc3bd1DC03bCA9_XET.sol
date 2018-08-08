@@ -113,8 +113,8 @@ contract XET is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XeToken() public {
-        symbol = &quot;XET&quot;;
-        name = &quot;0xchange Token&quot;;
+        symbol = "XET";
+        name = "0xchange Token";
         decimals = 18;
         _totalSupply = 25000000000000000000000000;
         balances[0x81b8c9b4d6bC11F465749e8AE002D0Bd525B8b02] = _totalSupply;

@@ -138,7 +138,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -171,8 +171,8 @@ contract Ownable {
 
     
 contract H2G2 is StandardToken, Ownable {
-  string public constant name = &quot;Hitchhiker&#39;s Guide to the Galaxy&quot;;
-  string public constant symbol = &quot;H2G2&quot;;
+  string public constant name = "Hitchhiker&#39;s Guide to the Galaxy";
+  string public constant symbol = "H2G2";
   uint public constant decimals = 18;
   uint256 public initialSupply;
     

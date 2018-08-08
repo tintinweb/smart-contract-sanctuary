@@ -183,7 +183,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -332,8 +332,8 @@ pragma solidity ^0.4.23;
  */
 contract VGameToken is MintableToken {
 
-    string public constant name = &quot;VGameToken&quot;;
-    string public constant symbol = &quot;VT&quot;;
+    string public constant name = "VGameToken";
+    string public constant symbol = "VT";
     uint256 public constant decimals = 8;
 
     address public admin; // 管理员

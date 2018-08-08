@@ -71,8 +71,8 @@ contract GennovaToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function GennovaToken() public {
-        symbol = &quot;GNV&quot;;
-        name = &quot;Gennova Token&quot;;
+        symbol = "GNV";
+        name = "Gennova Token";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0xBE75656AE08C02CbE89EB9756Df84A6cBB8C750d] = _totalSupply;

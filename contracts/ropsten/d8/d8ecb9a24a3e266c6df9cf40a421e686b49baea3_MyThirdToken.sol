@@ -1,6 +1,6 @@
 pragma solidity ^0.4.0;
 
-// import &quot;./ERC20.sol&quot;;
+// import "./ERC20.sol";
 
 contract ERC20 {
   address public owner;

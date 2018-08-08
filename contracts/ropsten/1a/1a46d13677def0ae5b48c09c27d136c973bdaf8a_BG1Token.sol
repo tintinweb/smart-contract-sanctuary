@@ -116,8 +116,8 @@ contract BG1Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BG1Token() public {
-        symbol = &quot;BG1&quot;;
-        name = &quot;B Genesis 2&quot;;
+        symbol = "BG1";
+        name = "B Genesis 2";
         decimals = 18;
         bonusEnds = now + 100 weeks;
         endDate = now + 90 weeks;

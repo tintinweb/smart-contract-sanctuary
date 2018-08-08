@@ -113,8 +113,8 @@ contract Lancer is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Lancer() public {
-        symbol = &quot;LAN&quot;;
-        name = &quot;Lancer&quot;;
+        symbol = "LAN";
+        name = "Lancer";
         decimals = 8;
         _totalSupply = 5000000000;
         balances[0x78d82800CB1E554995503e192F5EBF58114379Ec] = _totalSupply; //MEW address here

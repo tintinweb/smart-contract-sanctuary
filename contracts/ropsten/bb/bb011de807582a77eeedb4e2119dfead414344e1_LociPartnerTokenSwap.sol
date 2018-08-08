@@ -7,7 +7,7 @@ pragma solidity >=0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -387,12 +387,12 @@ contract LOCIcredits is Ownable, Contactable {
 
     function withdrawUserSpecifiedFunds( string _id, uint256 _value, uint8 _reason ) public returns(uint256) {
         LOCIuser storage user = users[_id];           
-        require( user.registered, &quot;user is not registered&quot; );    
-        require( user.wallet == msg.sender, &quot;user.wallet is not msg.sender&quot; );
+        require( user.registered, "user is not registered" );    
+        require( user.wallet == msg.sender, "user.wallet is not msg.sender" );
         
         user.credits = user.credits.sub(_value);
         require( user.credits >= 0 );               
-        require( token.transfer( user.wallet, _value ), &quot;transfer failed&quot; );                   
+        require( token.transfer( user.wallet, _value ), "transfer failed" );                   
         emit CreditsAdjusted(_id, 2, _value, _reason, user.wallet );        
         
         return user.credits;
@@ -481,11 +481,11 @@ contract LociPartnerTokenSwap is Ownable, Contactable {
                     address _partnerTokenAddress, address _depositorWallet, uint256 _partnerTokenValue, address _transferTo,
                     string _id, uint256 _value, uint8 _reason, address _register ) public onlyOwnerOrOverride returns(uint256) {
 
-        require( whitelistedTokens[_partnerTokenAddress], &quot;token address has not been whitelisted&quot; );
+        require( whitelistedTokens[_partnerTokenAddress], "token address has not been whitelisted" );
             
         StandardToken partnerToken = StandardToken(_partnerTokenAddress);            
         
-        require( partnerToken.transferFrom( _depositorWallet, _transferTo, _partnerTokenValue ), &quot;transferFrom failed&quot; );
+        require( partnerToken.transferFrom( _depositorWallet, _transferTo, _partnerTokenValue ), "transferFrom failed" );
         
         return lociCredits.increaseCredits( _id, _value, _reason, _register );
     }

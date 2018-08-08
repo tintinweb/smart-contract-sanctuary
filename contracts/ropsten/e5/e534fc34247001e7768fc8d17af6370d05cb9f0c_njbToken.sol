@@ -113,8 +113,8 @@ contract njbToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function njbToken() public {
-        symbol = &quot;njb&quot;;
-        name = &quot;njb Token&quot;;
+        symbol = "njb";
+        name = "njb Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8c90c54D4faA6A019dDB178b40d114d45FfAC776] = _totalSupply;

@@ -116,8 +116,8 @@ contract baseball is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function baseball() public {
-        symbol = &quot;BASE&quot;;
-        name = &quot;Baseball Token&quot;;
+        symbol = "BASE";
+        name = "Baseball Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 10 weeks;

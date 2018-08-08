@@ -94,9 +94,9 @@ contract Database {
     // --------------------------------------------------------------------------------------
     constructor(address _ownerOne, address _ownerTwo, address _ownerThree)
     public {
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerOne))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerTwo))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerThree))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerOne))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerTwo))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerThree))] = true;
         emit LogInitialized(_ownerOne, _ownerTwo, _ownerThree);
     }
 
@@ -109,10 +109,10 @@ contract Database {
     function setContractManager(address _contractManager)
     external {
         require(_contractManager != address(0));
-        require(boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, msg.sender))]);
-        // require(addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] == address(0));   TODO: Allow swapping of CM for testing
-        addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] = _contractManager;
-        boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, _contractManager))] = true;
+        require(boolStorage[keccak256(abi.encodePacked("owner", msg.sender))]);
+        // require(addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] == address(0));   TODO: Allow swapping of CM for testing
+        addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] = _contractManager;
+        boolStorage[keccak256(abi.encodePacked("contract", _contractManager))] = true;
         emit LogContractManager(_contractManager, msg.sender); 
     }
 
@@ -215,7 +215,7 @@ contract Database {
     // Caller must be registered as a contract within the MyBit Dapp through ContractManager.sol
     // --------------------------------------------------------------------------------------
     modifier onlyMyBitContract() {
-        require(boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, msg.sender))]);
+        require(boolStorage[keccak256(abi.encodePacked("contract", msg.sender))]);
         _;
     }
 
@@ -260,13 +260,13 @@ contract Database {
     fundingLimit(_assetID)
     onlyApproved
     returns (bool) {
-      uint ownershipUnits = database.uintStorage(keccak256(abi.encodePacked(&quot;ownershipUnits&quot;, _assetID, msg.sender)));
+      uint ownershipUnits = database.uintStorage(keccak256(abi.encodePacked("ownershipUnits", _assetID, msg.sender)));
       if (ownershipUnits == 0) {
         emit LogNewFunder(_assetID, msg.sender);    // Create event to reference list of funders
       }
-      uint amountRaised = database.uintStorage(keccak256(abi.encodePacked(&quot;amountRaised&quot;, _assetID)));
-      database.setUint(keccak256(abi.encodePacked(&quot;amountRaised&quot;, _assetID)), amountRaised.add(msg.value));
-      database.setUint(keccak256(abi.encodePacked(&quot;ownershipUnits&quot;, _assetID, msg.sender)), ownershipUnits.add(msg.value));
+      uint amountRaised = database.uintStorage(keccak256(abi.encodePacked("amountRaised", _assetID)));
+      database.setUint(keccak256(abi.encodePacked("amountRaised", _assetID)), amountRaised.add(msg.value));
+      database.setUint(keccak256(abi.encodePacked("ownershipUnits", _assetID, msg.sender)), ownershipUnits.add(msg.value));
       emit LogAssetFunded(_assetID, msg.sender, msg.value);
       return true;
     }
@@ -284,12 +284,12 @@ contract Database {
     whenNotPaused
     atStage(_assetID, uint(3))       // Can only get to stage 3 by receiving enough funding within time limit
     returns (bool) {
-      uint amountRaised = database.uintStorage(keccak256(abi.encodePacked(&quot;amountRaised&quot;, _assetID)));
-      uint myBitAmount = amountRaised.getFractionalAmount(database.uintStorage(keccak256(abi.encodePacked(&quot;myBitFoundationPercentage&quot;))));
+      uint amountRaised = database.uintStorage(keccak256(abi.encodePacked("amountRaised", _assetID)));
+      uint myBitAmount = amountRaised.getFractionalAmount(database.uintStorage(keccak256(abi.encodePacked("myBitFoundationPercentage"))));
       uint installerAmount = amountRaised.sub(myBitAmount);
-      database.addressStorage(keccak256(abi.encodePacked(&quot;MyBitFoundation&quot;))).transfer(myBitAmount);             // Must be normal account
-      database.addressStorage(keccak256(abi.encodePacked(&quot;InstallerEscrow&quot;))).transfer(installerAmount);             // Must be normal account
-      database.setUint(keccak256(abi.encodePacked(&quot;fundingStage&quot;, _assetID)), uint(4));
+      database.addressStorage(keccak256(abi.encodePacked("MyBitFoundation"))).transfer(myBitAmount);             // Must be normal account
+      database.addressStorage(keccak256(abi.encodePacked("InstallerEscrow"))).transfer(installerAmount);             // Must be normal account
+      database.setUint(keccak256(abi.encodePacked("fundingStage", _assetID)), uint(4));
       emit LogAssetPayout(_assetID, amountRaised);
       return true;
     }
@@ -303,8 +303,8 @@ contract Database {
     fundingPeriodOver(_assetID)
     atStage(_assetID, uint(1))
     returns (bool) {
-      database.setUint(keccak256(abi.encodePacked(&quot;fundingStage&quot;, _assetID)), uint(2));
-      emit LogAssetFundingFailed(_assetID, database.uintStorage(keccak256(abi.encodePacked(&quot;amountRaised&quot;, _assetID))));
+      database.setUint(keccak256(abi.encodePacked("fundingStage", _assetID)), uint(2));
+      emit LogAssetFundingFailed(_assetID, database.uintStorage(keccak256(abi.encodePacked("amountRaised", _assetID))));
       return true;
     }
 
@@ -318,11 +318,11 @@ contract Database {
     whenNotPaused
     atStage(_assetID, uint(2))
     returns (bool) {
-      uint ownershipUnits = database.uintStorage(keccak256(abi.encodePacked(&quot;ownershipUnits&quot;, _assetID, msg.sender)));
+      uint ownershipUnits = database.uintStorage(keccak256(abi.encodePacked("ownershipUnits", _assetID, msg.sender)));
       require (ownershipUnits > uint(0));
-      database.deleteUint(keccak256(abi.encodePacked(&quot;ownershipUnits&quot;, _assetID, msg.sender)));
-      uint amountRaised = database.uintStorage(keccak256(abi.encodePacked(&quot;amountRaised&quot;, _assetID)));
-      database.setUint(keccak256(abi.encodePacked(&quot;amountRaised&quot;, _assetID)), amountRaised.sub(ownershipUnits));
+      database.deleteUint(keccak256(abi.encodePacked("ownershipUnits", _assetID, msg.sender)));
+      uint amountRaised = database.uintStorage(keccak256(abi.encodePacked("amountRaised", _assetID)));
+      database.setUint(keccak256(abi.encodePacked("amountRaised", _assetID)), amountRaised.sub(ownershipUnits));
       msg.sender.transfer(ownershipUnits);
       emit LogRefund(_assetID, msg.sender, ownershipUnits);
       return true;
@@ -336,7 +336,7 @@ contract Database {
     anyOwner
     public {
       require(_functionInitiator != msg.sender);
-      require(database.boolStorage(keccak256(abi.encodePacked(address(this), _functionInitiator, &quot;destroy&quot;, keccak256(abi.encodePacked(_holdingAddress))))));
+      require(database.boolStorage(keccak256(abi.encodePacked(address(this), _functionInitiator, "destroy", keccak256(abi.encodePacked(_holdingAddress))))));
       emit LogDestruction(_holdingAddress, address(this).balance, msg.sender);
       selfdestruct(_holdingAddress);
     }
@@ -350,7 +350,7 @@ contract Database {
     // Requires caller is one of the three owners
     //------------------------------------------------------------------------------------------------------------------
     modifier anyOwner {
-      require(database.boolStorage(keccak256(abi.encodePacked(&quot;owner&quot;, msg.sender))));
+      require(database.boolStorage(keccak256(abi.encodePacked("owner", msg.sender))));
       _;
     }
 
@@ -358,7 +358,7 @@ contract Database {
     // Requires that the contract is not paused
     //------------------------------------------------------------------------------------------------------------------
     modifier whenNotPaused {
-      require(!database.boolStorage(keccak256(abi.encodePacked(&quot;pause&quot;, address(this)))));
+      require(!database.boolStorage(keccak256(abi.encodePacked("pause", address(this)))));
       _;
     }
 
@@ -384,8 +384,8 @@ contract Database {
     // Requires user has burnt tokens to access this function
     //------------------------------------------------------------------------------------------------------------------
     modifier onlyApproved{
-      require(database.uintStorage(keccak256(abi.encodePacked(&quot;userAccess&quot;, msg.sender))) >= uint(1));
-      require(database.uintStorage(keccak256(abi.encodePacked(&quot;userAccessExpiration&quot;, msg.sender))) > now);
+      require(database.uintStorage(keccak256(abi.encodePacked("userAccess", msg.sender))) >= uint(1));
+      require(database.uintStorage(keccak256(abi.encodePacked("userAccessExpiration", msg.sender))) > now);
       _;
     }
 
@@ -396,13 +396,13 @@ contract Database {
     // TODO: Limit how far over the goal users are allowed to fund?
     //------------------------------------------------------------------------------------------------------------------
     modifier fundingLimit(bytes32 _assetID) {
-      require(now <= database.uintStorage(keccak256(abi.encodePacked(&quot;fundingDeadline&quot;, _assetID))));
-      uint currentEthPrice = database.uintStorage(keccak256(abi.encodePacked(&quot;ethUSDPrice&quot;)));
+      require(now <= database.uintStorage(keccak256(abi.encodePacked("fundingDeadline", _assetID))));
+      uint currentEthPrice = database.uintStorage(keccak256(abi.encodePacked("ethUSDPrice")));
       assert (currentEthPrice > uint(0));
       _;
-      uint amountRaised = database.uintStorage(keccak256(abi.encodePacked(&quot;amountRaised&quot;, _assetID))); 
-      if (amountRaised.mul(currentEthPrice).div(1e18) >= database.uintStorage(keccak256(abi.encodePacked(&quot;amountToBeRaised&quot;, _assetID)))) {
-         database.setUint(keccak256(abi.encodePacked(&quot;fundingStage&quot;, _assetID)), uint(3));
+      uint amountRaised = database.uintStorage(keccak256(abi.encodePacked("amountRaised", _assetID))); 
+      if (amountRaised.mul(currentEthPrice).div(1e18) >= database.uintStorage(keccak256(abi.encodePacked("amountToBeRaised", _assetID)))) {
+         database.setUint(keccak256(abi.encodePacked("fundingStage", _assetID)), uint(3));
          emit LogAssetFundingSuccess(_assetID, currentEthPrice, amountRaised);
         }
     }
@@ -411,7 +411,7 @@ contract Database {
     // Check that the Ether/USD prices have been updated
     //------------------------------------------------------------------------------------------------------------------
     modifier priceUpdated {
-      require (now < database.uintStorage(keccak256(abi.encodePacked(&quot;priceExpiration&quot;))));
+      require (now < database.uintStorage(keccak256(abi.encodePacked("priceExpiration"))));
       _;
     }
 
@@ -419,7 +419,7 @@ contract Database {
     // Requires the funding stage is at a particular stage
     //------------------------------------------------------------------------------------------------------------------
     modifier atStage(bytes32 _assetID, uint _stage) {
-      require(database.uintStorage(keccak256(abi.encodePacked(&quot;fundingStage&quot;, _assetID))) == _stage);
+      require(database.uintStorage(keccak256(abi.encodePacked("fundingStage", _assetID))) == _stage);
       _;
     }
 
@@ -427,7 +427,7 @@ contract Database {
     // Requires that the funding deadline has passed
     //------------------------------------------------------------------------------------------------------------------
     modifier fundingPeriodOver(bytes32 _assetID) {
-      require(now >= database.uintStorage(keccak256(abi.encodePacked(&quot;fundingDeadline&quot;, _assetID))));
+      require(now >= database.uintStorage(keccak256(abi.encodePacked("fundingDeadline", _assetID))));
       _;
     }
 

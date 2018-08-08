@@ -52,8 +52,8 @@ contract VUO is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 1000000000000000000;
-	string public constant name = &quot;VUO&quot;;
-    string public constant symbol = &quot;VUO&quot;;
+	string public constant name = "VUO";
+    string public constant symbol = "VUO";
     uint public constant decimals = 8;
 	
 	function VUO(){

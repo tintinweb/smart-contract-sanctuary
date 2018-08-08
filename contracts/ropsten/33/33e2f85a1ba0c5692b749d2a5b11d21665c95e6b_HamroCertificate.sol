@@ -74,28 +74,28 @@ contract HamroCertificate {
             certificateString = StringOperation.concat(
                                     certificates[i].id,
                                     certificates[i].courseName,
-                                    &quot;	&quot;);
+                                    "	");
             certificateString = StringOperation.concat(
                                     certificateString,
                                     certificates[i].issueDate,
-                                    &quot;	&quot;);
+                                    "	");
             certificateString = StringOperation.concat(
                                     certificateString,
                                     certificates[i].detail,
-                                    &quot;	&quot;);
+                                    "	");
             if (i > 0) {
                 allCertificate = StringOperation.concat(
                                     allCertificate,
                                     certificateString,
-                                    &quot;,&quot;);
+                                    ",");
             } else {
                 allCertificate = certificateString;
             }
         }
         allCertificate = StringOperation.concat(
-                            &quot;CertificateID	CourseName	IssueDate	CertificateDetail&quot;,
+                            "CertificateID	CourseName	IssueDate	CertificateDetail",
                             allCertificate,
-                            &quot;,&quot;);
+                            ",");
     }
 
     function viewCertificateByCourse(address user, string courseName) public constant returns (string certificate){
@@ -107,19 +107,19 @@ contract HamroCertificate {
                 certificate = StringOperation.concat(
                                 certificates[i].id,
                                 certificates[i].courseName,
-                                &quot;	&quot;);
+                                "	");
                 certificate = StringOperation.concat(
                                 certificate,
                                 certificates[i].issueDate,
-                                &quot;	&quot;);
+                                "	");
                 certificate = StringOperation.concat(
                                 certificate,
                                 certificates[i].detail,
-                                &quot;	&quot;);
+                                "	");
                 certificate = StringOperation.concat(
-                                &quot;CertificateID	CourseName	IssueDate	CertificateDetail&quot;,
+                                "CertificateID	CourseName	IssueDate	CertificateDetail",
                                 certificate,
-                                &quot;,&quot;);
+                                ",");
             }
         }
     }

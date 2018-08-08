@@ -113,8 +113,8 @@ contract Kanicoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Kanicoin() public {
-        symbol = &quot;Kcoin&quot;;
-        name = &quot;Kanicoin&quot;;
+        symbol = "Kcoin";
+        name = "Kanicoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xA864C3F5CE695d7c63e7e8e4d67Df05DBF9610cb] = _totalSupply;

@@ -116,8 +116,8 @@ contract bullcrapToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bullcrapToken() public {
-        symbol = &quot;BCT&quot;;
-        name = &quot;bullcrap Token&quot;;
+        symbol = "BCT";
+        name = "bullcrap Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

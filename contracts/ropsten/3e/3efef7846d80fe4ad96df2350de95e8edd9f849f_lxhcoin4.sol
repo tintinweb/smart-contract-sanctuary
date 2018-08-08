@@ -29,8 +29,8 @@ contract lxhcoin4 {
     ) public {
         totalSupply = 1000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;lxhcoin4&quot;;                                   // Set the name for display purposes
-        symbol = &quot;lxh4&quot;;                               // Set the symbol for display purposes
+        name = "lxhcoin4";                                   // Set the name for display purposes
+        symbol = "lxh4";                               // Set the symbol for display purposes
     }
 
     /**

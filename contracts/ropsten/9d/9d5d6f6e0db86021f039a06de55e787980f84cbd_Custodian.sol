@@ -97,7 +97,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -159,7 +159,7 @@ library Helpers {
     }
 
     // returns the digits of `inputValue` as a string.
-    // example: `uintToString(12345678)` returns `&quot;12345678&quot;`
+    // example: `uintToString(12345678)` returns `"12345678"`
     function uintToString(uint256 inputValue) internal pure returns (string) {
         // figure out the length of the resulting string
         uint256 length = 0;
@@ -187,7 +187,7 @@ library Helpers {
 // `internal` so they get compiled into contracts using them.
 library MessageSigning {
     function hashMessage(bytes message) internal pure returns (bytes32) {
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n";
         return keccak256(abi.encodePacked(prefix, Helpers.uintToString(message.length), message));
     }
 }

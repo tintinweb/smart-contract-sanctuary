@@ -136,8 +136,8 @@ contract USTM01 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function USTM01() public {
-        symbol = &quot;USTM01&quot;;
-        name = &quot;US Token Market&quot;;
+        symbol = "USTM01";
+        name = "US Token Market";
         decimals = 18;
         _totalSupply = 1000000000 * 1 ether;
         _totalFloating = 0;

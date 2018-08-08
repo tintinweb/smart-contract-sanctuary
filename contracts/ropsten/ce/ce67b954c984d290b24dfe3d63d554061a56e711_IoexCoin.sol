@@ -52,8 +52,8 @@ contract IoexCoin is owned, SafeMath {
 	
 	address public IoexCoinAddress 	= this;
 	address public creator 				= msg.sender;
-    string 	public name 				= &quot;IoexCoin&quot;;
-    string 	public symbol 				= &quot;IOEX&quot;;
+    string 	public name 				= "IoexCoin";
+    string 	public symbol 				= "IOEX";
     uint8 	public decimals 			= 18;											    
     uint256 public totalSupply 			= 600000000000000000000000000;
     uint256 public buyPrice 			= 2600000;

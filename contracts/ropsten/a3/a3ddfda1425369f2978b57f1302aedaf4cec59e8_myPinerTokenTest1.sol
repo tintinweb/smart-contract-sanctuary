@@ -115,8 +115,8 @@ contract myPinerTokenTest1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function myPinerTokenTest1() public {
-        symbol = &quot;MT1&quot;;
-        name = &quot;myPiner Token Test 1&quot;;
+        symbol = "MT1";
+        name = "myPiner Token Test 1";
         decimals = 18;
         // bonusEnds = now + 1 weeks;
         endDate = now + 4 weeks;

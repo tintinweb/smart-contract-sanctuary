@@ -158,16 +158,16 @@ contract BEthy is ExchangeAdmin {
     
     mapping (bytes32 => uint) public references;
     
-    // Test:        &quot;BEthy&quot;
-    // Game Test:   &quot;Uruguay vs France&quot;, 1530626815, [&quot;0x55727567756179&quot;, &quot;0x4672616e6365&quot;]
-    //              &quot;Brazil vs Belgium&quot;, 1830626815, [&quot;0x4272617a696c&quot;, &quot;0x42656c6769756d&quot;]
-    //              &quot;Russia vs Croatia&quot;, 1738412315, [&quot;0x527573736961&quot;, &quot;0x43726f61746961&quot;]
-    //              &quot;England vs Ireland&quot;, 1737412315, [&quot;0x456e676c616e64&quot;, &quot;0x4972656c616e64&quot;, &quot;0x44726177&quot;]
+    // Test:        "BEthy"
+    // Game Test:   "Uruguay vs France", 1530626815, ["0x55727567756179", "0x4672616e6365"]
+    //              "Brazil vs Belgium", 1830626815, ["0x4272617a696c", "0x42656c6769756d"]
+    //              "Russia vs Croatia", 1738412315, ["0x527573736961", "0x43726f61746961"]
+    //              "England vs Ireland", 1737412315, ["0x456e676c616e64", "0x4972656c616e64", "0x44726177"]
     //constructor (string contractName) public {
     //    name = contractName;
     //}
     constructor () public {
-        //name = &quot;BEthy&quot;;
+        //name = "BEthy";
     }
     
     function addGame(string gameName, uint gameExpiry, bytes32[] gameSides) onlyAdmin public {

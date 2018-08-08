@@ -74,8 +74,8 @@ contract CareKoreaToken is ERC20Interface, Owned {
 
 
   constructor() public {
-    symbol = &quot;KACW&quot;;
-    name = &quot;Care Korea Token&quot;;
+    symbol = "KACW";
+    name = "Care Korea Token";
     decimals = 8;
     _totalSupply = 1000000 * 10**uint(decimals);
     balances[owner] = _totalSupply;

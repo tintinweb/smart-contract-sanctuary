@@ -113,8 +113,8 @@ contract QoppaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QoppaCoin() public {
-        symbol = &quot;Ϙ&quot;;
-        name = &quot;QoppaCoin&quot;;
+        symbol = "Ϙ";
+        name = "QoppaCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xbfc8Fb0d94c57fdFBE9F3BAdB39C4CABdb9320E1] = _totalSupply;

@@ -113,8 +113,8 @@ contract PalletOneToken is UnboundedRegularToken {
 
     uint public totalSupply = 10*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;PalletOneToken&quot;;
-    string constant public symbol = &quot;PTN&quot;;
+    string constant public name = "PalletOneToken";
+    string constant public symbol = "PTN";
 
     function PalletOneToken() {
         balances[msg.sender] = totalSupply;

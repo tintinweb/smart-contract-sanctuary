@@ -116,8 +116,8 @@ contract TOMBOLINNI is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitfwdToken() public {
-        symbol = &quot;TMB&quot;;
-        name = &quot;TOMBOLLINI&quot;;
+        symbol = "TMB";
+        name = "TOMBOLLINI";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -69,7 +69,7 @@ library SafeMath {
   }
 }
 
-contract PinmoToken3 is Token(&quot;PNT3&quot;, &quot;Pinmo Token&quot;, 1, 250000000), ERC20 {
+contract PinmoToken3 is Token("PNT3", "Pinmo Token", 1, 250000000), ERC20 {
 
     using SafeMath for uint;
 

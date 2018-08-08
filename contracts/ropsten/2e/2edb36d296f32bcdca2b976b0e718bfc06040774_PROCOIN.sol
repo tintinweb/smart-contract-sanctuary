@@ -113,8 +113,8 @@ contract PROCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PROCOIN() public {
-        symbol = &quot;PROCOIN&quot;;
-        name = &quot;PROCOIN Token&quot;;
+        symbol = "PROCOIN";
+        name = "PROCOIN Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6180e86179a901ADcd0474552d51D11E3B881C3e] = _totalSupply;

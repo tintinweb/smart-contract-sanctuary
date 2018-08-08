@@ -13,8 +13,8 @@ contract owned {
     }
 }
 contract TestCoin is owned {
-    string public constant name = &quot;TestCoin&quot;;
-    string public constant symbol = &quot;ABC&quot;;
+    string public constant name = "TestCoin";
+    string public constant symbol = "ABC";
     uint public constant decimals = 8;
     uint constant ONETOKEN = 10 ** uint(decimals);
     uint constant MILLION = 1000000; 

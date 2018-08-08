@@ -69,9 +69,9 @@ contract PSCN is EIP20 {
         owner = msg.sender;
         totalSupply = 10000000000;
         balances[msg.sender] = totalSupply;               
-        name = &quot;Panasa Coin&quot;;                                   
+        name = "Panasa Coin";                                   
         decimals = 0;                            
-        symbol = &quot;PSCN&quot;;                               
+        symbol = "PSCN";                               
     }
 
     function whoOwnsYou() view public returns (address) {

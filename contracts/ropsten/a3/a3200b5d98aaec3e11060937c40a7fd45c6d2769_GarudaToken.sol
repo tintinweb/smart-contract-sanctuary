@@ -113,8 +113,8 @@ contract GarudaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GarudaToken() public {
-        symbol = &quot;GAT&quot;;
-        name = &quot;Garuda Token&quot;;
+        symbol = "GAT";
+        name = "Garuda Token";
         decimals = 18;
         _totalSupply = 30000000000000000000000000;
         balances[0xa0c9Db4DA3023EFf8f252850a075f7a7Be703F61] = _totalSupply; //MEW address here

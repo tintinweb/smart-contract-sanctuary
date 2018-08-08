@@ -113,8 +113,8 @@ contract RocketCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RocketCoins() public {
-        symbol = &quot;0Rocket&quot;;
-        name = &quot;0 Rocket Coin&quot;;
+        symbol = "0Rocket";
+        name = "0 Rocket Coin";
         decimals = 18;
         _totalSupply = 10000000000;
         balances[0x696423542f85B50fF3CA396A317De3abCb82f1c2] = _totalSupply;

@@ -101,8 +101,8 @@ contract MyTestToken2 is ERC20Interface, Owned, Lockable, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function MyTestToken2() public {
-        symbol = &quot;TEST2&quot;;
-        name = &quot;MyTests2&quot;;
+        symbol = "TEST2";
+        name = "MyTests2";
         decimals = 8;
         maxSupply = 21000000 * 10**8;
         totalSupply = maxSupply;

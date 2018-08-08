@@ -32,7 +32,7 @@ contract ETHx2 {
         participant[8] = Cost(msg.sender, 0);
         participant[9] = Cost(msg.sender, 0);
         participant[10] = Cost(msg.sender, 0);
-        msgs[msg.sender] = &quot;Claim this spot!&quot;;
+        msgs[msg.sender] = "Claim this spot!";
     }
 
     function getX2(uint256 _slot) public view returns(uint256 slot, address owner, uint256 cost, string message) {

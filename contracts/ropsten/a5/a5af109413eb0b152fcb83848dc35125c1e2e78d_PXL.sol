@@ -311,8 +311,8 @@ contract PXL is StandardToken, CustomToken, ExtendsOwnable {
     using SafeMath for uint256;
 
     // Token basic information
-    string public constant name = &quot;Pixel&quot;;
-    string public constant symbol = &quot;PXL&quot;;
+    string public constant name = "Pixel";
+    string public constant symbol = "PXL";
     uint256 public constant decimals = 18;
     uint256 public totalSupply;
 

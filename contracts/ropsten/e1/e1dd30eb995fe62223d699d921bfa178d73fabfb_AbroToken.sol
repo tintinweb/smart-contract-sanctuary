@@ -113,8 +113,8 @@ contract AbroToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AbroToken() public {
-        symbol = &quot;Abro&quot;;
-        name = &quot;Abro Token&quot;;
+        symbol = "Abro";
+        name = "Abro Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc378a77A3BA1C6bf1e1e6733BFA1E8383Ec0a346] = _totalSupply;

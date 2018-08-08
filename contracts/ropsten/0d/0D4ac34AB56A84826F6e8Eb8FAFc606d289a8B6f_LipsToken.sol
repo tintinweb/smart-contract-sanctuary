@@ -261,8 +261,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract LipsToken is StandardToken {
 
-  string public constant name = &quot;LipsToken&quot;;
-  string public constant symbol = &quot;LIPS&quot;;
+  string public constant name = "LipsToken";
+  string public constant symbol = "LIPS";
   uint8 public constant decimals = 8;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));

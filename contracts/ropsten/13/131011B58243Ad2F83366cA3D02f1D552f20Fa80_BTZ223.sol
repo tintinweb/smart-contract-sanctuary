@@ -229,8 +229,8 @@ contract BTZ223 is Standard223Token {
   address public owner;
 
   // BTZ Token parameters
-  string public name = &quot;Bits by Bunz&quot;;
-  string public symbol = &quot;BTZ&quot;;
+  string public name = "Bits by Bunz";
+  string public symbol = "BTZ";
   uint8 public constant decimals = 18;
   uint256 public constant decimalFactor = 10 ** uint256(decimals);
   uint256 public constant totalSupply = 200000000000 * decimalFactor;

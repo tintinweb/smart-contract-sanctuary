@@ -113,8 +113,8 @@ contract GameCandyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GC&quot;;
-        name = &quot;Game Candy Token&quot;;
+        symbol = "GC";
+        name = "Game Candy Token";
         decimals = 18;
         _totalSupply = 210000000000;
         balances[0x0395EC8477D7a106cbF3530F1C327E9a010A5bD3] = _totalSupply;

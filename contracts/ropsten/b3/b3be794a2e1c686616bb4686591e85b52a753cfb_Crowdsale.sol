@@ -191,7 +191,7 @@ contract Crowdsale {
    * @dev fallback function ***DO NOT OVERRIDE***
    */
   function () external payable {
-    buyTokens(msg.sender, &quot;&quot;, &quot;&quot;);
+    buyTokens(msg.sender, "", "");
   }
   
     function getReferrals(address referrer) public view returns (uint256){

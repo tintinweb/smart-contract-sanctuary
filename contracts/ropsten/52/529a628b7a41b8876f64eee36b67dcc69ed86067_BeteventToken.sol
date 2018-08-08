@@ -181,7 +181,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract BeteventToken is MintableToken {
-  string public name = &quot;Try Hard Token&quot;;
-  string public symbol = &quot;BETIT&quot;;
+  string public name = "Try Hard Token";
+  string public symbol = "BETIT";
   uint8 public decimals = 18;
 }

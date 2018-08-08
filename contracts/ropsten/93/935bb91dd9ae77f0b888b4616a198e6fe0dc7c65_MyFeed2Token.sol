@@ -29,11 +29,11 @@ contract ERC20 {
 
 contract MyFeed2Token is ERC20, SafeMath {
 
-    string public name = &quot;MyFeed2Token&quot;;      //  token name
-    string public symbol = &quot;MFT&quot;;           //  token symbol
+    string public name = "MyFeed2Token";      //  token name
+    string public symbol = "MFT";           //  token symbol
     uint256 public decimals = 18;            //  token digit
     uint256 public totalSupply = 0;
-    string public version = &quot;1.0.0&quot;;
+    string public version = "1.0.0";
     address creator = 0x0;
     /**
      *  0 : init, 1 : limited, 2 : running, 3 : finishing

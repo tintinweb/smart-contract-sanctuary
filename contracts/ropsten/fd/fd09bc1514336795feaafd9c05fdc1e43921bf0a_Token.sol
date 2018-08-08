@@ -187,8 +187,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Token is StandardToken {
 
-    string public name    = &quot;SZU_CAOWEIPENG Token&quot;;
-    string public symbol  = &quot;CWP&quot;;
+    string public name    = "SZU_CAOWEIPENG Token";
+    string public symbol  = "CWP";
     uint8 public decimals = 8;
 
     uint256 public constant INITIAL_SUPPLY = 3000000000;

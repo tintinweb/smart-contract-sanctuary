@@ -116,8 +116,8 @@ contract swipeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function swipeToken() public {
-        symbol = &quot;SWIPE&quot;;
-        name = &quot;swipe Token&quot;;
+        symbol = "SWIPE";
+        name = "swipe Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

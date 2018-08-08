@@ -113,8 +113,8 @@ contract BOBOTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BOBOTOKEN() public {
-        symbol = &quot;BOBO&quot;;
-        name = &quot;BOBO TOKEN&quot;;
+        symbol = "BOBO";
+        name = "BOBO TOKEN";
         decimals = 18;
         _totalSupply = 10000000;
         balances[0x715Ae4CF65Bc03daF3e70721E324Fba33A810c9f] = _totalSupply;

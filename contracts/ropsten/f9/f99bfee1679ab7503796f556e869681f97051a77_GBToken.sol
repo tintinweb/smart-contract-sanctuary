@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -348,8 +348,8 @@ contract BurnableToken is StandardToken {
    
 contract GBToken is StandardToken , BurnableToken  {
     using SafeMath for uint256;
-    string public constant name = &quot;lueGo&quot;;
-    string public constant symbol = &quot;GBT20&quot;;
+    string public constant name = "lueGo";
+    string public constant symbol = "GBT20";
     uint8 public constant decimals = 18;	
 	
 	// wallets address for allocation	

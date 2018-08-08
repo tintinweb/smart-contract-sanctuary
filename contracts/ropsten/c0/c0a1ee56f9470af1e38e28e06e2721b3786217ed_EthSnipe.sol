@@ -53,7 +53,7 @@ contract EthSnipe{
     
     // struct size: 1 storage slot [40k new; 10k update]
     struct Keyring{
-        uint Keys; // max 2^70 &quot;real&quot; keys 
+        uint Keys; // max 2^70 "real" keys 
         uint Payment;     
     }
     

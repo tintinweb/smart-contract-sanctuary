@@ -113,8 +113,8 @@ contract ATC is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ATC() public {
-        symbol = &quot;ATC&quot;;
-        name = &quot;Annuity Coin&quot;;
+        symbol = "ATC";
+        name = "Annuity Coin";
         decimals = 18;
         _totalSupply = 30000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -80,8 +80,8 @@ contract MFTcreator is Myfirsttoken {
     uint public decimals;
     
     function MFTcreator(){
-        name = &quot;MyFirstToken&quot;;
-        symbol = &quot;MFT&quot;;
+        name = "MyFirstToken";
+        symbol = "MFT";
         decimals = 10;
         totalsupply = 1000;
         _balanceof[msg.sender] = 1000; //creator gets all initial tokens
@@ -91,7 +91,7 @@ contract MFTcreator is Myfirsttoken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

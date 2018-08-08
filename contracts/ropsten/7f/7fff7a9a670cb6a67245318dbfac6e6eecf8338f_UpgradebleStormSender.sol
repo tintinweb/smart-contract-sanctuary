@@ -149,7 +149,7 @@ contract Ownable is EternalStorage {
     * @return the address of the owner
     */
     function owner() public view returns (address) {
-        return addressStorage[keccak256(&quot;owner&quot;)];
+        return addressStorage[keccak256("owner")];
     }
 
     /**
@@ -166,7 +166,7 @@ contract Ownable is EternalStorage {
     */
     function setOwner(address newOwner) internal {
         emit OwnershipTransferred(owner(), newOwner);
-        addressStorage[keccak256(&quot;owner&quot;)] = newOwner;
+        addressStorage[keccak256("owner")] = newOwner;
     }
 }
 
@@ -178,7 +178,7 @@ contract Ownable is EternalStorage {
  */
 contract Claimable is EternalStorage, Ownable {
     function pendingOwner() public view returns (address) {
-        return addressStorage[keccak256(&quot;pendingOwner&quot;)];
+        return addressStorage[keccak256("pendingOwner")];
     }
 
     /**
@@ -195,7 +195,7 @@ contract Claimable is EternalStorage, Ownable {
     */
     function transferOwnership(address newOwner) public onlyOwner {
         require(newOwner != address(0));
-        addressStorage[keccak256(&quot;pendingOwner&quot;)] = newOwner;
+        addressStorage[keccak256("pendingOwner")] = newOwner;
     }
 
     /**
@@ -203,8 +203,8 @@ contract Claimable is EternalStorage, Ownable {
     */
     function claimOwnership() public onlyPendingOwner {
         emit OwnershipTransferred(owner(), pendingOwner());
-        addressStorage[keccak256(&quot;owner&quot;)] = addressStorage[keccak256(&quot;pendingOwner&quot;)];
-        addressStorage[keccak256(&quot;pendingOwner&quot;)] = address(0);
+        addressStorage[keccak256("owner")] = addressStorage[keccak256("pendingOwner")];
+        addressStorage[keccak256("pendingOwner")] = address(0);
     }
 }
 
@@ -251,37 +251,37 @@ contract UpgradebleStormSender is OwnedUpgradeabilityStorage, Claimable {
         setArrayLimit(327);
         setDiscountStep(0.00006 ether);
         setFee(0.025 ether);
-        boolStorage[keccak256(&quot;rs_multisender_initialized&quot;)] = true;
+        boolStorage[keccak256("rs_multisender_initialized")] = true;
     }
 
     function initialized() public view returns (bool) {
-        return boolStorage[keccak256(&quot;rs_multisender_initialized&quot;)];
+        return boolStorage[keccak256("rs_multisender_initialized")];
     }
 
     function txCount(address customer) public view returns(uint256) {
-        return uintStorage[keccak256(abi.encodePacked(&quot;txCount&quot;, customer))];
+        return uintStorage[keccak256(abi.encodePacked("txCount", customer))];
     }
 
     function arrayLimit() public view returns(uint256) {
-        return uintStorage[keccak256(abi.encodePacked(&quot;arrayLimit&quot;))];
+        return uintStorage[keccak256(abi.encodePacked("arrayLimit"))];
     }
 
     function setArrayLimit(uint256 _newLimit) public onlyOwner {
         require(_newLimit != 0);
-        uintStorage[keccak256(&quot;arrayLimit&quot;)] = _newLimit;
+        uintStorage[keccak256("arrayLimit")] = _newLimit;
     }
 
     function discountStep() public view returns(uint256) {
-        return uintStorage[keccak256(&quot;discountStep&quot;)];
+        return uintStorage[keccak256("discountStep")];
     }
 
     function setDiscountStep(uint256 _newStep) public onlyOwner {
         require(_newStep != 0);
-        uintStorage[keccak256(&quot;discountStep&quot;)] = _newStep;
+        uintStorage[keccak256("discountStep")] = _newStep;
     }
 
     function fee() public view returns(uint256) {
-        return uintStorage[keccak256(&quot;fee&quot;)];
+        return uintStorage[keccak256("fee")];
     }
 
     function currentFee(address _customer) public view returns(uint256) {
@@ -294,7 +294,7 @@ contract UpgradebleStormSender is OwnedUpgradeabilityStorage, Claimable {
 
     function setFee(uint256 _newStep) public onlyOwner {
         require(_newStep != 0);
-        uintStorage[keccak256(&quot;fee&quot;)] = _newStep;
+        uintStorage[keccak256("fee")] = _newStep;
     }
 
     function discountRate(address _customer) public view returns(uint256) {
@@ -347,7 +347,7 @@ contract UpgradebleStormSender is OwnedUpgradeabilityStorage, Claimable {
     }
 
     function setTxCount(address customer, uint256 _txCount) private {
-        uintStorage[keccak256(abi.encodePacked(&quot;txCount&quot;, customer))] = _txCount;
+        uintStorage[keccak256(abi.encodePacked("txCount", customer))] = _txCount;
     }
 
 }

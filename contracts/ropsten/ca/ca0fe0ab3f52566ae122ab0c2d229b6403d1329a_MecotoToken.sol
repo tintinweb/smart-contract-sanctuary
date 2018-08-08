@@ -313,8 +313,8 @@ contract MecotoConstant {
     address constant FLOAT_WALLET = 0xb875ce361235d25B846ED487eFC1D14aC61B69C3;
 
     // Token Name and Symbol
-    string constant TOKEN_NAME = &quot;Mecoto Token&quot;;
-    string constant TOKEN_SYMBOL = &quot;XTK&quot;;
+    string constant TOKEN_NAME = "Mecoto Token";
+    string constant TOKEN_SYMBOL = "XTK";
 }
 
 
@@ -413,7 +413,7 @@ contract MecotoToken is MecotoConstant, StandardToken, Ownable {
     * @dev Function to mint tokens
     */
     function mint(address _to, uint256 _amount) onlyAllowedForMinting canMint public {
-        require(totalSupply_.add(_amount) <= TOKEN_HARDCAP, &quot;Token Hardcap Reached!&quot;);
+        require(totalSupply_.add(_amount) <= TOKEN_HARDCAP, "Token Hardcap Reached!");
         totalSupply_ = totalSupply_.add(_amount);
         balances[_to] = balances[_to].add(_amount);
         emit Mint(_to, _amount);

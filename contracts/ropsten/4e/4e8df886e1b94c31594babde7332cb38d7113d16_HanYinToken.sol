@@ -507,9 +507,9 @@ contract StableToken is StandardToken {
 
 contract HanYinToken is StableToken{
 
-    string public name = &quot;HanYin stable Token&quot;;                   //fancy name
+    string public name = "HanYin stable Token";                   //fancy name
     uint8 public decimals = 6;                //How many decimals to show. ie. There could 1000 base units with 3 decimals. Meaning 0.980 SBX = 980 base units. It&#39;s like comparing 1 wei to 1 ether.
-    string public symbol = &quot;HYT&quot;;                 //An identifier
+    string public symbol = "HYT";                 //An identifier
     string public version = &#39;v1.0&#39;;       //SET 0.1 standard. Just an arbitrary versioning scheme.
     uint256 public allocateEndTime;
 

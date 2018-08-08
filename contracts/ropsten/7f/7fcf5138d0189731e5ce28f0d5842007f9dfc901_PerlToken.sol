@@ -17,8 +17,8 @@ pragma solidity ^0.4.17;
 
  contract PerlToken{ 
     uint public constant _totalSupply=100000;
-    string public constant symbol=&quot;perl&quot;;
-    string public constant name=&quot;PERL Token&quot;;
+    string public constant symbol="perl";
+    string public constant name="PERL Token";
     uint8 public constant decimals=3;
 
     mapping(address=>uint256) balances;

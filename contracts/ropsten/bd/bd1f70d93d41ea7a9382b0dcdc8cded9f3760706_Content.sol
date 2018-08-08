@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -406,7 +406,7 @@ contract Content is ContentInterface, ExtendsOwnable, ValidValue {
         mapping (address => bool) buyUser;
     }
 
-    string public constant ROLE_NAME = &quot;PXL_DISTRIBUTOR&quot;;
+    string public constant ROLE_NAME = "PXL_DISTRIBUTOR";
 
     string public record;
     address public writer;
@@ -438,7 +438,7 @@ contract Content is ContentInterface, ExtendsOwnable, ValidValue {
         marketerRate = _marketerRate;
         roleManager = _roleManager;
 
-        emit RegisterContent(msg.sender, &quot;initializing content&quot;);
+        emit RegisterContent(msg.sender, "initializing content");
     }
 
     function updateContent(
@@ -451,7 +451,7 @@ contract Content is ContentInterface, ExtendsOwnable, ValidValue {
         record = _record;
         marketerRate = _marketerRate;
 
-        emit ChangeContent(msg.sender, &quot;update content&quot;);
+        emit ChangeContent(msg.sender, "update content");
     }
 
     function addEpisode(string _record, uint256 _price)
@@ -460,7 +460,7 @@ contract Content is ContentInterface, ExtendsOwnable, ValidValue {
     {
         episodes.push(Episode(_record, _price, 0));
 
-        emit RegisterEpisode(msg.sender, &quot;add episode&quot;, (episodes.length - 1));
+        emit RegisterEpisode(msg.sender, "add episode", (episodes.length - 1));
     }
 
     function updateEpisode(uint256 _index, string _record, uint256 _price)
@@ -470,7 +470,7 @@ contract Content is ContentInterface, ExtendsOwnable, ValidValue {
         episodes[_index].record = _record;
         episodes[_index].price = _price;
 
-        emit ChangeEpisode(msg.sender, &quot;update episode&quot;, _index);
+        emit ChangeEpisode(msg.sender, "update episode", _index);
     }
 
     function isPurchasedEpisode(uint256 _index, address _buyer)

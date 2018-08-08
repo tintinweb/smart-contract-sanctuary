@@ -274,9 +274,9 @@ contract owned {
 /* 子类:代币发行 */
 contract ExchBtcToken is owned, StandardToken {
 
-    string public name = &quot;ExchBtc Token&quot;;
+    string public name = "ExchBtc Token";
     
-    string public symbol = &quot;QQQQ&quot;;
+    string public symbol = "QQQQ";
 
     uint8 public decimals = 3;
     

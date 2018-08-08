@@ -113,8 +113,8 @@ contract SpinTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SpinTestToken() public {
-        symbol = &quot;SPINTEST&quot;;
-        name = &quot;Spin Test Token&quot;;
+        symbol = "SPINTEST";
+        name = "Spin Test Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xE32614b033E786ebfc4EB3B7FbE570069f724197] = _totalSupply;

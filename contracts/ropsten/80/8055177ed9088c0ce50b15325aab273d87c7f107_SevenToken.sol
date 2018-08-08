@@ -113,8 +113,8 @@ contract SevenToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;777&quot;;
-        name = &quot;777 Token&quot;;
+        symbol = "777";
+        name = "777 Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xA0A856e6bC749c7E4f3866a6E7A3E7b1f9D6B6F2] = _totalSupply;

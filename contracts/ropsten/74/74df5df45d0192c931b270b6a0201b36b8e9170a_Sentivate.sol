@@ -109,8 +109,8 @@ contract Sentivate is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Sentivate() public {
-        symbol = &quot;SNTVT&quot;;
-        name = &quot;Sentivate&quot;;
+        symbol = "SNTVT";
+        name = "Sentivate";
         decimals = 18;
         _totalSupply = 4200000000000000000000000000;
         balances[0x4D5773fA8Bc29aF90722e80067728B582005A6b3] = _totalSupply;

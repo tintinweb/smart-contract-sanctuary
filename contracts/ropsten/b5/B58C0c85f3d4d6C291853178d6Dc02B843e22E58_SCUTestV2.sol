@@ -13,12 +13,12 @@ pragma solidity ^0.4.24;
 // ----------------------------------------------------------------------------
 
 /*
-import &quot;../openzepplin/contracts/math/SafeMath.sol&quot;;
-import &quot;../openzepplin/contracts/ownership/Ownable.sol&quot;;
-import &quot;../openzepplin/contracts/token/ERC20/DetailedERC20.sol&quot;;
-import &quot;../openzepplin/contracts/token/ERC20/PausableToken.sol&quot;;
-import &quot;../openzepplin/contracts/token/ERC20/CappedToken.sol&quot;;
-import &quot;../openzepplin/contracts/token/ERC20/BurnableToken.sol&quot;;*/
+import "../openzepplin/contracts/math/SafeMath.sol";
+import "../openzepplin/contracts/ownership/Ownable.sol";
+import "../openzepplin/contracts/token/ERC20/DetailedERC20.sol";
+import "../openzepplin/contracts/token/ERC20/PausableToken.sol";
+import "../openzepplin/contracts/token/ERC20/CappedToken.sol";
+import "../openzepplin/contracts/token/ERC20/BurnableToken.sol";*/
 
 
 /**
@@ -74,7 +74,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -543,8 +543,8 @@ contract PausableToken is StandardToken, Pausable {
 contract SCUTestV2 is StandardToken, DetailedERC20, Ownable, PausableToken, CappedToken, BurnableToken {
     constructor() public {
         // DetailedERC20:
-        symbol = &quot;SCT2&quot;;
-        name = &quot;Space.Cloud.Unit.Test.V2&quot;;
+        symbol = "SCT2";
+        name = "Space.Cloud.Unit.Test.V2";
         decimals = 18;
         // BasicToken:
         totalSupply_ = 150000000 * 10**uint(decimals);

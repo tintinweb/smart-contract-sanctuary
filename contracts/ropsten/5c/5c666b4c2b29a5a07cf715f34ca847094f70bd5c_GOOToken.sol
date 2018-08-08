@@ -110,8 +110,8 @@ contract GOOToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GOO&quot;;
-        name = &quot;GOO Inc.&quot;;
+        symbol = "GOO";
+        name = "GOO Inc.";
         decimals = 18;
         _totalSupply = 1000000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

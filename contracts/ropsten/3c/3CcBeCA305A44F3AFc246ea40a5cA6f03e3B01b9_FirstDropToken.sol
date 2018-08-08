@@ -113,8 +113,8 @@ contract FirstDropToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FirstDropToken() public {
-        symbol = &quot;FiDrop&quot;;
-        name = &quot;First Drop Token&quot;;
+        symbol = "FiDrop";
+        name = "First Drop Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x360dB33b4ED3cDf3324F64016B31CF101B565ee4] = _totalSupply;

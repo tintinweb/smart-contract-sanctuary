@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CODEOPS&quot;;
-        name = &quot;Codeops Token&quot;;
+        symbol = "CODEOPS";
+        name = "Codeops Token";
         decimals = 0;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

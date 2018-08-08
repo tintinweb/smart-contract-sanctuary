@@ -117,8 +117,8 @@ contract RelentlessConscience2Token is ERC20Interface, Owned, SafeMath {
     // how deep on decimal. bonus? runs how long?
     // ------------------------------------------------------------------------
     function RelentlessConscience2Token() public {
-        symbol = &quot;RLTLS2&quot;;
-        name = &quot;RelentlessConscience2 Token&quot;;
+        symbol = "RLTLS2";
+        name = "RelentlessConscience2 Token";
         decimals = 18;
         bonusEnds = now;
         endDate = now + 16 weeks;

@@ -304,8 +304,8 @@ contract LoveyToken is BaseToken {
     
     
     constructor() public {
-        symbol = &quot;Lovey&quot;;
-        name = &quot;Lovey Token&quot;;
+        symbol = "Lovey";
+        name = "Lovey Token";
         decimals = 6;
         totalSupply = 1 * 10**uint(integers + decimals);
         balances[owner] = totalSupply;

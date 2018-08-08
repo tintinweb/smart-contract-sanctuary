@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract EbolaToken {
 
-    string public name = &quot;Lomeli&quot;;
-    string public symbol = &quot;LOM&quot;;
+    string public name = "Lomeli";
+    string public symbol = "LOM";
     uint256 public decimals = 18;
     uint256 public totalSupply = 100000000000000000000000000;
     address owner;

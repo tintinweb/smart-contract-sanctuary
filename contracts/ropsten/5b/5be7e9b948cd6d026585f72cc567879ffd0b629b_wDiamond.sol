@@ -82,8 +82,8 @@ contract wDiamond is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;wDiamond&quot;;
-    string public constant symbol = &quot;WDM&quot;;
+    string public constant name = "wDiamond";
+    string public constant symbol = "WDM";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 15000000000e18;

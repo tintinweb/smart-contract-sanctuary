@@ -131,8 +131,8 @@ contract GCPToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function GCPToken() public {
-        symbol = &quot;GCP&quot;;
-        name = &quot;G-Dock computing point&quot;;
+        symbol = "GCP";
+        name = "G-Dock computing point";
         decimals = 18;
         _totalSupply = 5000000000 * 10**uint256(decimals);
         inc_ether = 10**15; //0.001 Ether

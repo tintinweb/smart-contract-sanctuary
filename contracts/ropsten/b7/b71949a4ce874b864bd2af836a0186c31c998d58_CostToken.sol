@@ -278,8 +278,8 @@ contract CostToken is StandardToken, BurnableToken, Ownable, Pausable {
     using SafeMath for uint256;
 
     // Metadata
-    string  public constant name = &quot;Cost token&quot;;
-    string  public constant symbol = &quot;CST&quot;;
+    string  public constant name = "Cost token";
+    string  public constant symbol = "CST";
     uint8   public constant decimals = 18;
 
     // Token supplies

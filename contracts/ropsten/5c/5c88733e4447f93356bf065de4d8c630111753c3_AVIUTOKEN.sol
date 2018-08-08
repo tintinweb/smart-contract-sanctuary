@@ -110,7 +110,7 @@ contract AVIUTOKEN is ERC20Interface, Owned, SafeMath {
     // ------------------------------------------------------------------------
     // Constructor
     // ------------------------------------------------------------------------
-    function AVIU () public { symbol = &quot;AVIU&quot;; name = &quot;AVIUTOKEN&quot;; decimals = 18; _totalSupply = 50000000000000000000000000; balances[0x59f83b48Dba74A0eE66A6fE8030125E48c753331] = _totalSupply; emit Transfer (address(0), 0x59f83b48Dba74A0eE66A6fE8030125E48c753331, _totalSupply); }
+    function AVIU () public { symbol = "AVIU"; name = "AVIUTOKEN"; decimals = 18; _totalSupply = 50000000000000000000000000; balances[0x59f83b48Dba74A0eE66A6fE8030125E48c753331] = _totalSupply; emit Transfer (address(0), 0x59f83b48Dba74A0eE66A6fE8030125E48c753331, _totalSupply); }
 
 
     // ------------------------------------------------------------------------

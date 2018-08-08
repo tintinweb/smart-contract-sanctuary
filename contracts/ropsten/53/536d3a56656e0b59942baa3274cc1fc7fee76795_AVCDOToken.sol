@@ -111,8 +111,8 @@ contract AVCDOToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public{
-        symbol = &quot;AVCDO&quot;;
-        name = &quot;Avacado&quot;;
+        symbol = "AVCDO";
+        name = "Avacado";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5541532307c3694AE0791BEa27C7faCd416F3104] = _totalSupply;

@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract HzxhcToken {
 
-    string public name = &quot;HzxhcToken&quot;;      //  token name
-    string public symbol = &quot;XHCT&quot;;           //  token symbol
+    string public name = "HzxhcToken";      //  token name
+    string public symbol = "XHCT";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

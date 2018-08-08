@@ -158,8 +158,8 @@ contract OneYearDreamTokensVesting {
      * Provides ability to get attributes of every stage from external callers, ie Web3, Etherscan, tests, etc.
      * @param index Vesting stage number. Ordered by ascending date and starting from zero.
      * @return {
-     *    &quot;date&quot;: &quot;Date of stage in unix timestamp format.&quot;,
-     *    &quot;tokensUnlockedPercentage&quot;: &quot;Percent of tokens allowed to be withdrawn.&quot;
+     *    "date": "Date of stage in unix timestamp format.",
+     *    "tokensUnlockedPercentage": "Percent of tokens allowed to be withdrawn."
      * }
      */
     function getVestingStageAttributes (uint8 index) public view returns (

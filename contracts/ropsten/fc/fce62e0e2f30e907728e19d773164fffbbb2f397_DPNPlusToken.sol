@@ -1,7 +1,7 @@
 contract DPNPlusToken {
 
-    string public name = &quot;DIPNET PLUS&quot;;      //  token name
-    string public symbol = &quot;DPN+&quot;;           //  token symbol
+    string public name = "DIPNET PLUS";      //  token name
+    string public symbol = "DPN+";           //  token symbol
     uint256 public decimals = 8;             //  token digit
 
     mapping (address => uint256) public balanceOf;

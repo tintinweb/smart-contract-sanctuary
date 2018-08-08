@@ -113,8 +113,8 @@ contract ShopalToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ShopalToken() public {
-        symbol = &quot;SHPL&quot;;
-        name = &quot;Shopal Token&quot;;
+        symbol = "SHPL";
+        name = "Shopal Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x77018dB1588138bFf0270607a3af367Dd29bF730] = _totalSupply;

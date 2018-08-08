@@ -113,8 +113,8 @@ contract MyCurrency is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MyCurrency() public {
-        symbol = &quot;MYC&quot;;
-        name = &quot;My Currency&quot;;
+        symbol = "MYC";
+        name = "My Currency";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xACd994EAF46562aa40363a4C03058006dE5B9e9c] = _totalSupply;

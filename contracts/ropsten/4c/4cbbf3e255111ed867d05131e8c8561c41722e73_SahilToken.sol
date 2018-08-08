@@ -113,8 +113,8 @@ contract SahilToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SahilToken() public {
-        symbol = &quot;Sahil&quot;;
-        name = &quot;Sahil Token&quot;;
+        symbol = "Sahil";
+        name = "Sahil Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4Aa0BcCB6730312593f760CB942294f81805E4D2] = _totalSupply;

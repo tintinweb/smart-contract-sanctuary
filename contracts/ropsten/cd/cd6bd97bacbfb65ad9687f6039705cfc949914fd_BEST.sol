@@ -44,8 +44,8 @@ contract BEST is SafeM{
     function BEST() public {
         totalSupply = 200000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        tokenname = &quot;NAVYS&quot;;                                   
-        tokensymbol = &quot;NAVD&quot;;                               
+        tokenname = "NAVYS";                                   
+        tokensymbol = "NAVD";                               
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

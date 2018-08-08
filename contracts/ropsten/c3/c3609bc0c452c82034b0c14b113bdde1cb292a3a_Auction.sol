@@ -52,12 +52,12 @@ contract Auction {
     /// The value will only be refunded if the auction is not won.
     function bid(string targetUrl, string imageUrl, string imageTitle, string email) public payable {
 
-        require (!stopped, &quot;The auction is stopped.&quot;);
+        require (!stopped, "The auction is stopped.");
 
         restart ();
 
         // If the bid is not higher, send the money back.
-        require(msg.value > currentBid, &quot;There already is a higher bid.&quot;);
+        require(msg.value > currentBid, "There already is a higher bid.");
 
         // Save the bid for a further refund in case of a loss
         // Sending money with a simple highestBidder.send(highestBid) is
@@ -79,7 +79,7 @@ contract Auction {
 
     function withdraw(address to, uint amount) public {
 
-        require (msg.sender != owner, &quot;Funds can be withdrawn by the contract owner only&quot;);
+        require (msg.sender != owner, "Funds can be withdrawn by the contract owner only");
         if (!to.send(amount)) {
             // do nothing
         }
@@ -92,7 +92,7 @@ contract Auction {
 
             // Make sure that current highest bidder is not trying
             // to withdraw his bid until the auction is stopped
-            require(msg.sender != currentBidder, &quot;Funds can be refunded by non-leading bidders only.&quot;);
+            require(msg.sender != currentBidder, "Funds can be refunded by non-leading bidders only.");
 
         }
 
@@ -114,8 +114,8 @@ contract Auction {
 
     function start() public {
 
-        require(msg.sender == owner, &quot;Auction can be started by owner only.&quot;);
-        require(stopped, &quot;Auction has already been started.&quot;);
+        require(msg.sender == owner, "Auction can be started by owner only.");
+        require(stopped, "Auction has already been started.");
         stopped = false;
         restart ();
         emit Started();
@@ -123,15 +123,15 @@ contract Auction {
 
     function stop() public {
 
-        require(msg.sender == owner, &quot;Auction can be stopped by owner only.&quot;);
-        require(!stopped, &quot;Auction has already been stopped.&quot;);
+        require(msg.sender == owner, "Auction can be stopped by owner only.");
+        require(!stopped, "Auction has already been stopped.");
         stopped = true;
         emit Stopped();
     }
 
     function update() public {
-        require(msg.sender == owner, &quot;Auction can be updated by owner only.&quot;);
-        require(!stopped, &quot;Auction has been stopped.&quot;);
+        require(msg.sender == owner, "Auction can be updated by owner only.");
+        require(!stopped, "Auction has been stopped.");
         restart ();
     }
 
@@ -154,10 +154,10 @@ contract Auction {
 
             currentEnd = now + duration;
             currentBid = 0;
-            currentTargetUrl = &quot;&quot;;
-            currentImageUrl = &quot;&quot;;
-            currentImageTitle = &quot;&quot;;
-            currentEmail = &quot;&quot;;
+            currentTargetUrl = "";
+            currentImageUrl = "";
+            currentImageTitle = "";
+            currentEmail = "";
             currentBidder = 0x0;
 
             // broadcast the news

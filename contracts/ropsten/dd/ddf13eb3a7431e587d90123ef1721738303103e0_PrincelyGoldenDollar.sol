@@ -113,8 +113,8 @@ contract PrincelyGoldenDollar is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PrincelyGoldenDollar() public {
-        symbol = &quot;PAUD&quot;;
-        name = &quot;PrincelyGoldenDollar&quot;;
+        symbol = "PAUD";
+        name = "PrincelyGoldenDollar";
         decimals = 18;
         _totalSupply = 100000000000;
         balances[0x5dEc9E25619f635144b1cA1449EAB3C93FD2E65f] = _totalSupply;

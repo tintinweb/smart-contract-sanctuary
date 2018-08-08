@@ -198,8 +198,8 @@ contract FeedToken is  ProductsInterface,OrderInterface, ERC20Interface,Ownable,
     constructor() public {
         owner = msg.sender;
         ownerWallet =  msg.sender;
-        name  = &quot;Feed&quot;;
-        symbol = &quot;FEED&quot;;
+        name  = "Feed";
+        symbol = "FEED";
         decimals = 18;
         _totalSupply = 95000000 * 10 ** uint(decimals);
         tokenBalances[ msg.sender] = _totalSupply;   //Since we divided the token into 10^18 parts
@@ -222,7 +222,7 @@ contract FeedToken is  ProductsInterface,OrderInterface, ERC20Interface,Ownable,
      function checkUser() public constant returns(string ){
          require(bytes(registerbuyer[msg.sender].name).length!=0);
           
-             return &quot;Register User&quot;;
+             return "Register User";
          
          
      }

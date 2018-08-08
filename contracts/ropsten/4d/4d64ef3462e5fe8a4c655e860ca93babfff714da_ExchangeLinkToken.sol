@@ -52,8 +52,8 @@ contract ExchangeLinkToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 1000000000000000000;
-	string public constant name = &quot;ExchangeLinkToken&quot;;
-    string public constant symbol = &quot;ECLT&quot;;
+	string public constant name = "ExchangeLinkToken";
+    string public constant symbol = "ECLT";
     uint public constant decimals = 8;
 	
 	function ExchangeLinkToken(){

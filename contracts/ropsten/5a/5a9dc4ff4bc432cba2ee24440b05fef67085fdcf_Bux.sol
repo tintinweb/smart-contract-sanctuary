@@ -72,8 +72,8 @@ contract Bux is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;BUX&quot;;
-        name = &quot;Bux&quot;;
+        symbol = "BUX";
+        name = "Bux";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

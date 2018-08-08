@@ -179,8 +179,8 @@ contract Ownable {
 }
 
 contract DBITDemo is StandardToken, Ownable {
-  string public name = &quot;DBITDemo&quot;;
-  string public symbol = &quot;DBIT&quot;;
+  string public name = "DBITDemo";
+  string public symbol = "DBIT";
   uint256 public decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 20000000000 * (10 ** uint256(18));
 

@@ -113,8 +113,8 @@ contract dariatest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function dariatest() public {
-        symbol = &quot;daria&quot;;
-        name = &quot;daria&quot;;
+        symbol = "daria";
+        name = "daria";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x57dB782a73dA5110b6036796e3cbE4e825Ec7E36] = _totalSupply;

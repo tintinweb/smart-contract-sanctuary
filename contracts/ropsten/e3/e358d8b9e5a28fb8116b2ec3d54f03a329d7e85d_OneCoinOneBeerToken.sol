@@ -111,8 +111,8 @@ contract OneCoinOneBeerToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OneCoinOneBeerToken() public {
-        symbol = &quot;BEER&quot;;
-        name = &quot;1 Coin 1 Beer Token&quot;;
+        symbol = "BEER";
+        name = "1 Coin 1 Beer Token";
         decimals = 5;
         _totalSupply = 10000000000000;
         balances[0x0EcF54F69F73F118bAb24820d8c44EA3b97Fbf0D] = _totalSupply;

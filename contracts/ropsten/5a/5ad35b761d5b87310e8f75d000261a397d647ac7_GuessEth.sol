@@ -81,17 +81,17 @@ library utils{
     }
     
     function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
     
     function uint2str(uint i) internal pure returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -232,7 +232,7 @@ contract GuessEth is Ownable,GuessEthEvents{
         uint256 _codeLength;
     
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
     
@@ -417,7 +417,7 @@ contract GuessEth is Ownable,GuessEthEvents{
     
     
     function invest() isHuman payable public returns(uint){
-        require(msg.value >= 0.01 ether,&quot;Minima amoun:0.01 ether&quot;);
+        require(msg.value >= 0.01 ether,"Minima amoun:0.01 ether");
         
         Sponsors[msg.sender] = Sponsors[msg.sender].add(msg.value);
         balanceOfSPS = balanceOfSPS.add(msg.value);

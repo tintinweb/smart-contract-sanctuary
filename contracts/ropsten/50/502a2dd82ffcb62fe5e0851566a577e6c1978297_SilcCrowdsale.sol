@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -290,8 +290,8 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/SilcToken.sol
 
 contract SilcToken is MintableToken {
-  string public name = &quot;SILC Token Test 9&quot;;
-  string public symbol = &quot;SILCT9&quot;;
+  string public name = "SILC Token Test 9";
+  string public symbol = "SILCT9";
   uint8 public decimals = 18;
 }
 
@@ -680,7 +680,7 @@ contract SilcCrowdsale is CappedCrowdsale, MyRefundableCrowdsale {
       uint256 tokensThatWillBeMintedAfterPurchase = msg.value.mul(rate);
       if ((stage == CrowdsaleStage.preSale) && (token.totalSupply() + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringpreSale)) {
         msg.sender.transfer(msg.value); // Refund them
-        EthRefunded(&quot;preSale Limit Hit&quot;);
+        EthRefunded("preSale Limit Hit");
         return;
       }
 
@@ -695,14 +695,14 @@ contract SilcCrowdsale is CappedCrowdsale, MyRefundableCrowdsale {
   function forwardFunds() internal {
       if (stage == CrowdsaleStage.preSale) {
           //wallet.transfer(msg.value);
-          //EthTransferred(&quot;forwarding funds to wallet&quot;);
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          //EthTransferred("forwarding funds to wallet");
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       } else if (stage == CrowdsaleStage.mainSale1) {
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       } else if (stage == CrowdsaleStage.mainSale2) {
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       }
   }

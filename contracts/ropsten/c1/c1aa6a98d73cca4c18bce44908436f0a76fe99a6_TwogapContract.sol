@@ -17,8 +17,8 @@ contract TwogapContract {
 
     uint256 public totalSupply;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;Twogap&quot;;
-    string constant public symbol = &quot;TGT&quot;;
+    string constant public name = "Twogap";
+    string constant public symbol = "TGT";
 
     mapping (address => uint256) public balanceOf;
     mapping (address => mapping (address => uint256)) public allowance;

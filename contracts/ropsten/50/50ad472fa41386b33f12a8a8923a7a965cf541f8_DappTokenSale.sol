@@ -1,9 +1,9 @@
 pragma solidity ^0.4.2;
 
 contract DappToken {
-    string  public name = &quot;ZSOFT Token 01&quot;;
-    string  public symbol = &quot;ZSOFT01&quot;;
-    string  public standard = &quot;ZSOFT Token v1.0&quot;;
+    string  public name = "ZSOFT Token 01";
+    string  public symbol = "ZSOFT01";
+    string  public standard = "ZSOFT Token v1.0";
     uint256 public totalSupply;
 
     event Transfer(

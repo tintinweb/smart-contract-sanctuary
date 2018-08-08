@@ -145,10 +145,10 @@ contract DeSocializedAdmin
     {
         feewallet = msg.sender;
         admins[msg.sender] = 100;
-        options[&quot;likefee&quot;] = 1000000000000;     // 0.000001 ETH
-        options[&quot;dissfee&quot;] = 1000000000000;     // 0.000001 ETH
-        options[&quot;minefee&quot;] = 10000000000000;    // 0.00001 ETH
-        options[&quot;regifee&quot;] = 10000000000000000; // 0.01 ETH
+        options["likefee"] = 1000000000000;     // 0.000001 ETH
+        options["dissfee"] = 1000000000000;     // 0.000001 ETH
+        options["minefee"] = 10000000000000;    // 0.00001 ETH
+        options["regifee"] = 10000000000000000; // 0.01 ETH
     }
   
     /**
@@ -268,7 +268,7 @@ contract DeSocializedMain is DeSocializedAdmin
      */
     function saveBlock( string _m ) public payable
     {
-        require(msg.value >= options[&quot;minefee&quot;]);
+        require(msg.value >= options["minefee"]);
         feewallet.transfer(msg.value);
         
         uint id = blocks.push( Block( msg.sender, _m, 0, 0, uint(now), 0 ) ) - 1;
@@ -284,7 +284,7 @@ contract DeSocializedMain is DeSocializedAdmin
      */
     function likeBlock( uint _bid ) public payable
     {
-        require(msg.value >= options[&quot;likefee&quot;]);
+        require(msg.value >= options["likefee"]);
         address owner = blockToOwner[_bid];
         owner.transfer(msg.value);
         
@@ -299,7 +299,7 @@ contract DeSocializedMain is DeSocializedAdmin
      */
     function dissBlock( uint _bid ) public payable
     {
-        require(msg.value >= options[&quot;dissfee&quot;]);
+        require(msg.value >= options["dissfee"]);
         feewallet.transfer(msg.value);
         
         Block storage b = blocks[_bid];
@@ -327,7 +327,7 @@ contract DeSocializedMain is DeSocializedAdmin
     {
         require( handleToAddress[ _handle ] == 0 );
         
-        uint fee = options[&quot;regifee&quot;];
+        uint fee = options["regifee"];
         require(msg.value >= fee);
         feewallet.transfer(fee);
         
@@ -341,7 +341,7 @@ contract DeSocializedMain is DeSocializedAdmin
      */
     function _verify( address _user, string _handle ) internal
     {
-        if( keccak256( abi.encodePacked(addressToHandle[ _user ]) ) != keccak256( abi.encodePacked(&quot;&quot;) ) )
+        if( keccak256( abi.encodePacked(addressToHandle[ _user ]) ) != keccak256( abi.encodePacked("") ) )
         {
             handleToAddress[ addressToHandle[ _user ] ] = 0;
         }

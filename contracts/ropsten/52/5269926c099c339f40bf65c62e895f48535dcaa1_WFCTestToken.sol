@@ -89,9 +89,9 @@ contract StandardToken is ERC20Token {
 }
 contract WFCTestToken is StandardToken, Owned {
 
-    string public constant name = &quot;Wifi Chain Test Token&quot;;
-    string public constant symbol = &quot;WFCTT&quot;;
-    string public version = &quot;1.0&quot;;
+    string public constant name = "Wifi Chain Test Token";
+    string public constant symbol = "WFCTT";
+    string public version = "1.0";
     uint256 public constant decimals = 8;
     bool public disabled = false;
     uint256 public constant MILLION = (10**6 * 10**decimals);

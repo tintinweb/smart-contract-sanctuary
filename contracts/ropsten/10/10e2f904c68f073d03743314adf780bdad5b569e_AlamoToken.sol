@@ -260,8 +260,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/AlamoToken.sol
 
 contract AlamoToken is StandardToken {
-	string public name = &quot;AlamoToken&quot;;
-	string public symbol = &quot;ALMO&quot;;
+	string public name = "AlamoToken";
+	string public symbol = "ALMO";
 	uint8 public decimals = 4;
 	uint public INITIAL_SUPPLY = 10000000000;
 

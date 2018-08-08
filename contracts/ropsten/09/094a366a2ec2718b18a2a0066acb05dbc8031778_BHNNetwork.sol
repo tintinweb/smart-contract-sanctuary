@@ -113,8 +113,8 @@ contract BHNNetwork is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BHNNetwork() public {
-        symbol = &quot;BHN&quot;;
-        name = &quot;BHN Network&quot;;
+        symbol = "BHN";
+        name = "BHN Network";
         decimals = 18;
         _totalSupply = 30000000000000000000000000;
         balances[0x433b5d02bb0b8FD03b361748b94862f6c5422d1F] = _totalSupply;

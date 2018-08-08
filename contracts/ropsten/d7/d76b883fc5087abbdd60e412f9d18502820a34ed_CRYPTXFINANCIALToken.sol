@@ -71,8 +71,8 @@ contract CRYPTXFINANCIALToken is Interface, Own, SafeMath {
     event FrozenFunds(address target, bool frozen);
 
     constructor() public {
-        symbol = &quot;CRYPTX1&quot;;
-        name = &quot;CRYPTX FINANCIAL Token&quot;;
+        symbol = "CRYPTX1";
+        name = "CRYPTX FINANCIAL Token";
         decimals = 18;
         _totalSupply = 250000000000000000000000000;
         emit Transfer(address(0), 0xd8BD8f9727551f9020B2FB5f31fd70695a580E10, _totalSupply);

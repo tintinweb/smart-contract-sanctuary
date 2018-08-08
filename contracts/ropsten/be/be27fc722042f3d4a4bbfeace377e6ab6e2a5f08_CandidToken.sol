@@ -52,8 +52,8 @@ contract CandidToken is ERC20 {
 
 
     function CandidToken() public {
-        symbol = &quot;CIC&quot;;
-        name = &quot;Candid Token&quot;;
+        symbol = "CIC";
+        name = "Candid Token";
         decimals = 18;
         _totalSupply = 30000000000 * 10**uint(decimals);
         balances[msg.sender] = _totalSupply;

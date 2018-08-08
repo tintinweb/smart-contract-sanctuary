@@ -45,7 +45,7 @@ contract Token {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -192,8 +192,8 @@ contract StandardToken is Token, Pausable {
 
 contract ABsCoin is StandardToken {
 
-    string public constant name = &quot;ABsCoin&quot;;
-    string public constant symbol = &quot;ABSD&quot;;
+    string public constant name = "ABsCoin";
+    string public constant symbol = "ABSD";
     uint8 public constant decimals = 18;
     address public tokenWallet;
     address public teamWallet = 0xb2c8C4dEB09417dCEE037B1d5c3108fbFeb76F6E;

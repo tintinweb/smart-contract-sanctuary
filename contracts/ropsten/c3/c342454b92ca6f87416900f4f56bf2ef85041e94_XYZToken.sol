@@ -114,8 +114,8 @@ contract XYZToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;XYZ&quot;;
-        name = &quot;XYZ Token&quot;;
+        symbol = "XYZ";
+        name = "XYZ Token";
         decimals = 18;
         bonus1Ends = now + 1 days;
         bonus2Ends = bonus1Ends + 3 days;

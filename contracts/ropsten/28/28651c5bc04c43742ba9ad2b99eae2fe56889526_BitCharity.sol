@@ -113,8 +113,8 @@ contract BitCharity is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitCharity() public {
-        symbol = &quot;BITC&quot;;
-        name = &quot;BitCharity&quot;;
+        symbol = "BITC";
+        name = "BitCharity";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xD915fB1d387452DF58Cd156318beeff5aAF1da33] = _totalSupply; //MEW address here

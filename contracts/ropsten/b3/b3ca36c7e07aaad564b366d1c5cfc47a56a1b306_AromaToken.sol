@@ -416,8 +416,8 @@ contract ERC827Token is ERC827, StandardToken {
 contract AromaToken is ERC827Token {
    using SafeMath for uint256;
 
-   string public name = &quot;Aroma Token&quot;;
-   string public symbol = &quot;ART&quot;;
+   string public name = "Aroma Token";
+   string public symbol = "ART";
    uint public decimals = 18;
 
    address public wallet = 0x0;

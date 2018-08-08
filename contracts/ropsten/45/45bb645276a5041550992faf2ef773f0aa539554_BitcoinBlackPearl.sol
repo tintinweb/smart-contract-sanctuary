@@ -113,8 +113,8 @@ contract BitcoinBlackPearl is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinBlackPearl() public {
-        symbol = &quot;BBP&quot;;
-        name = &quot;Bitcoin Black Pearl&quot;;
+        symbol = "BBP";
+        name = "Bitcoin Black Pearl";
         decimals = 18;
         _totalSupply = 210000000000000000000000000;
         balances[0x0Dd2c22eE2a31885EC69090394d7DB5F76D3dE76] = _totalSupply;

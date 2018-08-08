@@ -113,8 +113,8 @@ contract PoiseToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PoiseToken() public {
-        symbol = &quot;POISE&quot;;
-        name = &quot;POISE TOKEN&quot;;
+        symbol = "POISE";
+        name = "POISE TOKEN";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0x1b4F6b96d3226905D7b2982d3B39A8B4a37Ba875] = _totalSupply;

@@ -172,8 +172,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract QQBToken is StandardToken {
 
-    string public name = &quot;Relatives Chain&quot;;
-    string public symbol = &quot;QQB&quot;;
+    string public name = "Relatives Chain";
+    string public symbol = "QQB";
     uint public decimals = 8;
 	
 	uint256 public constant total= 1000000000 * (10 ** uint256(decimals));

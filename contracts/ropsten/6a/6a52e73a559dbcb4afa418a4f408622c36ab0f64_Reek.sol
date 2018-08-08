@@ -113,8 +113,8 @@ contract Reek is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Reek() public {
-        symbol = &quot;Reek&quot;;
-        name = &quot;Reek&quot;;
+        symbol = "Reek";
+        name = "Reek";
         decimals = 10;
         _totalSupply = 100000000000000000;
         balances[0x80930f0e23c86F47dF4Dd268C6d15CdD69a9bF79] = _totalSupply;

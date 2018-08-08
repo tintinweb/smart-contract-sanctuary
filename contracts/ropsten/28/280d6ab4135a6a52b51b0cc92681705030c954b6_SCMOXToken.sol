@@ -113,8 +113,8 @@ contract SCMOXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SCMOXToken() public {
-        symbol = &quot;SCMOX&quot;;
-        name = &quot;SCMOPEX.com&quot;;
+        symbol = "SCMOX";
+        name = "SCMOPEX.com";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4327610eC02C65f34Ed3A8f8C2c80333919869Ca] = _totalSupply;

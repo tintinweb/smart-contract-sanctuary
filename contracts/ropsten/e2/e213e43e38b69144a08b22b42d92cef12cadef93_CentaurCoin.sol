@@ -107,7 +107,7 @@ contract CentaurCoin is StandardToken {
     string public name;                   // Token name
     uint8 public decimals;                // How many decimals to show. To be standard compliant, keep it 18
     string public symbol;                 // An identifier: eg SBX, XPR etc..
-    string public version = &quot;1.0&quot;; 
+    string public version = "1.0"; 
     uint256 public unitsOneEthCanBuy;     // How many units of your coin can be bought by 1 ETH?
     uint256 public totalEthInWei;         // WEI is the smallest unit of ETH (the equivalent of cent in USD or satoshi in BTC).
                                           // We&#39;ll store the total ETH raised via our ICO here.
@@ -121,9 +121,9 @@ contract CentaurCoin is StandardToken {
                                                                      // If you want your initial tokens to be X and your decimal is 5, 
                                                                      // set this value to X * 100000.
         totalSupply = 1000000000000000000000;                        // Update total supply (1000 for example)
-        name = &quot;CentaurCoin&quot;;                                        // Set the name for display purposes
+        name = "CentaurCoin";                                        // Set the name for display purposes
         decimals = 18;                                               // Amount of decimals for display purposes
-        symbol = &quot;CNTR&quot;;                                             // Set the symbol for display purposes
+        symbol = "CNTR";                                             // Set the symbol for display purposes
         unitsOneEthCanBuy = 10;                                      // Set the price of your token for the ICO
     }
 
@@ -153,7 +153,7 @@ contract CentaurCoin is StandardToken {
         // `receiveApproval(address from, uint256 value, address tokenContract, bytes extraData)`
         // It is assumed that when one does this the call *should* succeed, otherwise one would use vanilla approve instead.
         if(!spender.call(
-            bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))),
+            bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))),
             msg.sender,
             value,
             this,

@@ -115,8 +115,8 @@ contract MyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MyToken() public {
-        symbol = &quot;HEXD&quot;;
-        name = &quot;HEHE XD&quot;;
+        symbol = "HEXD";
+        name = "HEHE XD";
         decimals = 18;
         _totalSupply = 0;
         startDate = now;

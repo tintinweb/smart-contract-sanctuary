@@ -32,8 +32,8 @@ contract BossCoin {
     ) public {
         totalSupply = 2000000000;  
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;BossCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BSC&quot;;                               // Set the symbol for display purposes
+        name = "BossCoin";                                   // Set the name for display purposes
+        symbol = "BSC";                               // Set the symbol for display purposes
     }
 
     /**

@@ -3,8 +3,8 @@ pragma solidity ^0.4.24;
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
 contract TokenATEC {
-    string public name          = &quot;ATEC&quot;;
-    string public symbol        = &quot;ATEC&quot;;
+    string public name          = "ATEC";
+    string public symbol        = "ATEC";
     uint8 public decimals       = 18;
     uint256 public totalSupply  = 177000000 * 10 ** uint256(decimals);
 

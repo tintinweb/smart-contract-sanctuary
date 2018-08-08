@@ -116,8 +116,8 @@ contract ICOToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ICOToken() public {
-        symbol = &quot;ICO&quot;;
-        name = &quot;ICO Token&quot;;
+        symbol = "ICO";
+        name = "ICO Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 12 weeks;

@@ -148,7 +148,7 @@ contract WPKGToken is owned, TokenERC20 {
     /* This generates a public event on the blockchain that will notify clients */
     event FrozenFunds(address target, bool frozen);
     /* Initializes contract with initial supply tokens to the creator of the contract */
-   constructor() TokenERC20(5e8, &quot;callcall&quot;, &quot;callcall&quot;) public {}
+   constructor() TokenERC20(5e8, "callcall", "callcall") public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {

@@ -113,8 +113,8 @@ contract Duanwu is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Duanwu() public {
-        symbol = &quot;ZZ&quot;;
-        name = &quot;Zongzi&quot;;
+        symbol = "ZZ";
+        name = "Zongzi";
         decimals = 18;
         bonusEnds = now + 8 weeks;
         endDate = now + 52 weeks;

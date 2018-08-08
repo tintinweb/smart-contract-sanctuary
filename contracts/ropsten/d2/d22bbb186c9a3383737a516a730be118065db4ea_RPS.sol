@@ -41,7 +41,7 @@ library Pairing {
         bool success;
         assembly {
             success := call(sub(gas, 2000), 6, 0, input, 0xc0, r, 0x60)
-            // Use &quot;invalid&quot; to make gas estimation work
+            // Use "invalid" to make gas estimation work
             switch success case 0 { invalid }
         }
         require(success);
@@ -56,7 +56,7 @@ library Pairing {
         bool success;
         assembly {
             success := call(sub(gas, 2000), 7, 0, input, 0x80, r, 0x60)
-            // Use &quot;invalid&quot; to make gas estimation work
+            // Use "invalid" to make gas estimation work
             switch success case 0 { invalid }
         }
         require (success);
@@ -83,7 +83,7 @@ library Pairing {
         bool success;
         assembly {
             success := call(sub(gas, 2000), 8, 0, add(input, 0x20), mul(inputSize, 0x20), out, 0x20)
-            // Use &quot;invalid&quot; to make gas estimation work
+            // Use "invalid" to make gas estimation work
             switch success case 0 { invalid }
         }
         require(success);
@@ -177,7 +177,7 @@ contract RPS {
 	}
 	// Check if string is valid
 	modifier validChoice(string choice){
-		require(keccak256(choice) == keccak256(&quot;rock&quot;) || keccak256(choice) == keccak256(&quot;paper&quot;) || keccak256(choice) == keccak256(&quot;scissors&quot;));
+		require(keccak256(choice) == keccak256("rock") || keccak256(choice) == keccak256("paper") || keccak256(choice) == keccak256("scissors"));
 		_;
 	}
 	modifier resultVerified(){
@@ -350,7 +350,7 @@ contract RPS {
         }
         if (verify(inputValues, proof) == 0) {
             result = input[0];
-            Verified(&quot;Transaction successfully verified.&quot;);
+            Verified("Transaction successfully verified.");
             verified = true;
             return true;
         } else {

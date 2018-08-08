@@ -116,8 +116,8 @@ contract GestiToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GestiToken() public {
-        symbol = &quot;GST&quot;;
-        name = &quot;Gestinet Token&quot;;
+        symbol = "GST";
+        name = "Gestinet Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 7 weeks;

@@ -114,8 +114,8 @@ contract HPA_FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;HPA-TEST01&quot;;
-        name = &quot;Hotel Paradise Africa Token&quot;;
+        symbol = "HPA-TEST01";
+        name = "Hotel Paradise Africa Token";
         decimals = 18;
         _totalSupply = 25000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

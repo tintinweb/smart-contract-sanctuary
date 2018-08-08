@@ -212,7 +212,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableChild {
     address public owner;
@@ -307,7 +307,7 @@ contract Tribe is StandardToken, OwnableChild
 
     /**
      * start a new crowdfund in this tribe
-     * owner gives away &quot;amount&quot; of tokens for a sum of ether (&quot;goal&quot;)
+     * owner gives away "amount" of tokens for a sum of ether ("goal")
      */
     function startCrowdfund(uint _amount, uint _goal) public onlyOwner returns(bool){
         require(crowdfundActive == false); // cant be active
@@ -405,7 +405,7 @@ contract Tribe is StandardToken, OwnableChild
 
     /**
      * crowdfund payout and token distribution
-     * TODO: check if there can be multiple fundings, and multiple &quot;funderAddresses&quot; entries ? (like with balanceAddresses ?) probably not...
+     * TODO: check if there can be multiple fundings, and multiple "funderAddresses" entries ? (like with balanceAddresses ?) probably not...
      */
     function finishSuccessfulCrowdfund(Crowdfund storage c) private returns(bool){
         // distribute ETH (payout plan)
@@ -483,8 +483,8 @@ contract Tribe is StandardToken, OwnableChild
     /**
      * TODO: remove rounding errors
      * TODO: check if simple payments can be made, and if the gas price is set automatically higher (default transaction don&#39;t work)
-     * This default payment cannot be called by &quot;transfer&quot; or &quot;send&quot; from another contract (because of gas limitation, we need more gas for state change)
-     * WORKAROUND: call &quot;TRIBEADDRESS.call.value(WEIVALUE)()&quot;
+     * This default payment cannot be called by "transfer" or "send" from another contract (because of gas limitation, we need more gas for state change)
+     * WORKAROUND: call "TRIBEADDRESS.call.value(WEIVALUE)()"
      */
     function() public payable{
         dividendPerToken += msg.value / totalSupply();  // ignoring remainder

@@ -74,8 +74,8 @@ contract Kardanor is ERC20Interface, Owned, SafeMath {
 
 
     function Kardanor() public {
-        symbol = &quot;KDR&quot;;
-        name = &quot;Kardanor&quot;;
+        symbol = "KDR";
+        name = "Kardanor";
         decimals = 8;
         _totalSupply = 2100000000000000;
         balances[0x4ceC9bD72BCF9e8c2F40C6091bC510e88BCc36DF] = _totalSupply;

@@ -86,8 +86,8 @@ contract TESTToken {
 
     /*** ERC20 token standard ***/
 
-    string public constant name = &quot;Neureal TGE Test&quot;;
-    string public constant symbol = &quot;TEST&quot;;
+    string public constant name = "Neureal TGE Test";
+    string public constant symbol = "TEST";
     uint8 public constant decimals = 18;
 
     uint256 private totalSupply_ = 0;
@@ -105,7 +105,7 @@ contract TESTToken {
         revert(); //uses some gas, around 23000, only like 3 instructions
         // require(false); //uses some gas, around 23000, medium number of instructions
         // assert(false); //uses full gas limit
-        // revert(&quot;NOT SUPPORTED&quot;); //uses some gas, around 23000, lots of instructions
+        // revert("NOT SUPPORTED"); //uses some gas, around 23000, lots of instructions
         return false; //not needed?
     }
 

@@ -172,8 +172,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract HZRToken is StandardToken {
 
-    string public name = &quot;HUZR&quot;;
-    string public symbol = &quot;HZR&quot;;
+    string public name = "HUZR";
+    string public symbol = "HZR";
     uint public decimals = 8;
 	
 	uint256 public constant total= 1000000000 * (10 ** uint256(decimals));

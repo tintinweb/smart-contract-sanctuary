@@ -5,7 +5,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -293,7 +293,7 @@ contract MintableToken is StandardToken, Ownable {
   }
 }
 
-//The purpose of this contract is to have sample ERC20 a la &quot;MYST&quot; compatible mintable token
+//The purpose of this contract is to have sample ERC20 a la "MYST" compatible mintable token
 //for testing purposes of ERC20 interactions, actually we can use MintableToken directly,
 //but for the sake of demonstrating that any compatible token will do
 

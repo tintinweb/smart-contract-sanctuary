@@ -134,8 +134,8 @@ contract ERC223ReceivingContract {
 contract GlobalAssentToken is ERC20, ERC223, Ownable, Pausable, NonZero {
     using SafeMath for uint;
 
-    string public constant name = &quot;Travelnation&quot;;
-    string public constant symbol = &quot;TLN&quot;;
+    string public constant name = "Travelnation";
+    string public constant symbol = "TLN";
     uint8 public decimals = 9;
 
     mapping(address => uint) balances;

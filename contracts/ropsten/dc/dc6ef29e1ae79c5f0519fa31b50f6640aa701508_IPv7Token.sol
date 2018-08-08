@@ -147,8 +147,8 @@ contract ERC20StandardToken is ERC20Standard {
 contract IPv7Token is ERC20StandardToken, Ownable {
 
     // token information
-    string public constant name = &quot;IPv7Token&quot;;
-    string public constant symbol = &quot;IPv7&quot;;
+    string public constant name = "IPv7Token";
+    string public constant symbol = "IPv7";
     uint256 public constant decimals = 18;
     uint TotalTokenSupply=2100*(10**8)* (10**decimals);
 

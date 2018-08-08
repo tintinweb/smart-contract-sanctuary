@@ -70,8 +70,8 @@ contract PONADistributionContract is ERC20Interface, Owned {
     mapping (address =>  uint256) internal holds;
     
     function PONADistributionContract() public {
-        symbol = &quot;PONA&quot;;
-        name = &quot;Ponder Airdrop Token&quot;;
+        symbol = "PONA";
+        name = "Ponder Airdrop Token";
         decimals = 18;
         _totalSupply = 480000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

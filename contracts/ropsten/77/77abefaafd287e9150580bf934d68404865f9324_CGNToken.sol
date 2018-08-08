@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract CGNToken is PausableToken {
-    string public name = &quot;CGN Platform&quot;;
-    string public symbol = &quot;CGN&quot;;
+    string public name = "CGN Platform";
+    string public symbol = "CGN";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 1116000000*10**decimals; //1,116,000,000
 

@@ -112,8 +112,8 @@ contract Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Token() public {
-        symbol = &quot;LRX&quot;;
-        name = &quot;LIRAX&quot;;
+        symbol = "LRX";
+        name = "LIRAX";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[msg.sender] = _totalSupply;

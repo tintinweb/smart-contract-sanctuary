@@ -113,8 +113,8 @@ contract powercontract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function powercontract() public {
-        symbol = &quot;PWC&quot;;
-        name = &quot;POWERCOIN&quot;;
+        symbol = "PWC";
+        name = "POWERCOIN";
         decimals = 18;
         _totalSupply = 5000000;
         balances[0x11E97659417B52A164597Dc9717598C48793C649] = _totalSupply; //MEW address here

@@ -55,9 +55,9 @@ contract StandardToken is BasicToken {
 
 contract Signum is StandardToken {
 
-    string public name = &quot;Signum&quot;;
+    string public name = "Signum";
     uint8 public decimals = 18;
-    string public symbol = &quot;SIG&quot;;
+    string public symbol = "SIG";
     string public version = &#39;Signum 0.1&#39;;
     address public mintableAddress;
 
@@ -99,7 +99,7 @@ contract Signum is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

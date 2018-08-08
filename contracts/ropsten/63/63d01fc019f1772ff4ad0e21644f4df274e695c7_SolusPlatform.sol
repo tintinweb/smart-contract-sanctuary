@@ -113,9 +113,9 @@ contract SolusPlatform is StandardToken {
     function SolusPlatform() {
         balances[msg.sender] = 300000000000000000000000000;               
         totalSupply = 300000000000000000000000000;                        // Update total supply (1000 for example) (CHANGE THIS)
-        name = &quot;SolusPT Token&quot;;                                   // Set the name for display purposes (CHANGE THIS)
+        name = "SolusPT Token";                                   // Set the name for display purposes (CHANGE THIS)
         decimals = 18;                                               // Amount of decimals for display purposes (CHANGE THIS)
-        symbol = &quot;SLP&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "SLP";                                             // Set the symbol for display purposes (CHANGE THIS)
         unitsOneEthCanBuy = 5000;                                      // Set the price of your token for the ICO (CHANGE THIS)
         fundsWallet = msg.sender;                                    // The owner of the contract gets ETH
         bonusEnds = now + 4 weeks;
@@ -151,7 +151,7 @@ contract SolusPlatform is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

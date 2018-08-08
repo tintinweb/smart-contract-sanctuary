@@ -113,8 +113,8 @@ contract FireToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FireToken() public {
-        symbol = &quot;FTK&quot;;
-        name = &quot;FireToken&quot;;
+        symbol = "FTK";
+        name = "FireToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x33D7D97F38F167c223B7D25A76916185cD91D284] = _totalSupply;

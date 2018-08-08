@@ -113,8 +113,8 @@ contract SanchitToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SanchitToken() public {
-        symbol = &quot;0Sanchit&quot;;
-        name = &quot;0 Sanchit Token&quot;;
+        symbol = "0Sanchit";
+        name = "0 Sanchit Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x84B67102E5485f88D4F064a1E013aFA71042AB3e] = _totalSupply;

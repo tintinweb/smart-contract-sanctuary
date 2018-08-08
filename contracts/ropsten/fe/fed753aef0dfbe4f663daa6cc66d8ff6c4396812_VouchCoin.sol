@@ -278,8 +278,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract VouchCoin is StandardToken {
-  string public name = &quot;VouchCoin&quot;;
-  string public symbol = &quot;VHC&quot;;
+  string public name = "VouchCoin";
+  string public symbol = "VHC";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 100000000 * (10 ** decimals);
 

@@ -113,8 +113,8 @@ contract NassauToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NassauToken() public {
-        symbol = &quot;xNSU&quot;;
-        name = &quot;xNassauToken&quot;;
+        symbol = "xNSU";
+        name = "xNassauToken";
         decimals = 0;
         _totalSupply = 1000;
         balances[0] = _totalSupply;

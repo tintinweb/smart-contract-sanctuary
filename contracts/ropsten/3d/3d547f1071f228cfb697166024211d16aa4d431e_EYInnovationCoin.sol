@@ -113,8 +113,8 @@ contract EYInnovationCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EYInnovationCoin() public {
-        symbol = &quot;EYIC&quot;;
-        name = &quot;EY Innovation Coin&quot;;
+        symbol = "EYIC";
+        name = "EY Innovation Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x79d9f470786d6058FfB5F71E27C9C20ADADef4A2] = _totalSupply;

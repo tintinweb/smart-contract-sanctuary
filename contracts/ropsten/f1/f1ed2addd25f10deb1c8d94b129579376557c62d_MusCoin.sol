@@ -81,8 +81,8 @@ contract MusCoin is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;MUSCOIN&quot;;
-        name = &quot;Musiytseva Coin&quot;;
+        symbol = "MUSCOIN";
+        name = "Musiytseva Coin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -58,7 +58,7 @@ contract NarcosCoreInterface is ERC721 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -554,7 +554,7 @@ contract DistrictsCore is DistrictsAdmin {
 
 
   // allow a Narco to travel between districts
-  // travelling is done by taking &quot;exit&quot; --> index into the loctions
+  // travelling is done by taking "exit" --> index into the loctions
   function travelTo(uint256 _narcoId, uint256 _exitId) public payable whenNotPaused{
     require(narcoCore.ownerOf(_narcoId) == msg.sender); // must be owner
     require((msg.value >= travelPrice && _exitId < 7) || (msg.value >= airLiftPrice && _exitId==7));

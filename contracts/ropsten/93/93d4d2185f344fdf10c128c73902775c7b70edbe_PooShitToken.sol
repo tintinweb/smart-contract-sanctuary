@@ -113,8 +113,8 @@ contract PooShitToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PooShitToken() public {
-        symbol = &quot;PooS&quot;;
-        name = &quot;PooShit Token&quot;;
+        symbol = "PooS";
+        name = "PooShit Token";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0x4b611E297E9b93320cE4DaF6694B2aB47AfBd6e0] = _totalSupply;

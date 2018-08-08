@@ -116,8 +116,8 @@ contract MDIToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MDIToken() public {
-        symbol = &quot;MDI&quot;;
-        name = &quot;MDI Token&quot;;
+        symbol = "MDI";
+        name = "MDI Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

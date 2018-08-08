@@ -19,7 +19,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -522,10 +522,10 @@ contract TerminateableToken is MintableToken, Terminateable {
 }
 
 contract OSEToken is PausableToken, TerminateableToken, CappedToken {
-    string public name = &quot;OSE-V&quot;;
-    string public symbol = &quot;OSEV&quot;;
+    string public name = "OSE-V";
+    string public symbol = "OSEV";
     uint8 public decimals = 8;
-    string public icon = &quot;QmdXK2rRCQkQtRm2YZpVsDG3ERn3yqtpFetPEjiNQquQFx&quot;;
+    string public icon = "QmdXK2rRCQkQtRm2YZpVsDG3ERn3yqtpFetPEjiNQquQFx";
 
     constructor () public CappedToken(50000000000000000){}
 }

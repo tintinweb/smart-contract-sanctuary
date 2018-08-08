@@ -113,8 +113,8 @@ contract ScooterCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ScooterCoin() public {
-        symbol = &quot;SCT&quot;;
-        name = &quot;ScooterCoin Token&quot;;
+        symbol = "SCT";
+        name = "ScooterCoin Token";
         decimals = 18; // a coin can be splitted in 18 parts
         _totalSupply = 100000000000000000000000000; // for example you want to issue 100 tokens, on the total supply part you have to put 100 followed by the number of decimals that you choose.
         balances[0xc31cD5c4a32aD3D8217669bFE02f77cd0733dC68] = _totalSupply;

@@ -116,8 +116,8 @@ contract fooToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function fooToken() public {
-        symbol = &quot;FOO&quot;;
-        name = &quot;foo Token&quot;;
+        symbol = "FOO";
+        name = "foo Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

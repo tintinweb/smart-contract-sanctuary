@@ -36,7 +36,7 @@ contract Owned {
     modifier onlyOwner {
         require(
             msg.sender == owner,
-            &quot;Only owner can call this function.&quot;
+            "Only owner can call this function."
         );
         _;
     }

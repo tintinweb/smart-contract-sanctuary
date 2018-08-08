@@ -71,8 +71,8 @@ contract Pizza is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function KopihitamToken() public {
-        symbol = &quot;PIZZ&quot;;
-        name = &quot;Pizza&quot;;
+        symbol = "PIZZ";
+        name = "Pizza";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0xBE75656AE08C02CbE89EB9756Df84A6cBB8C750d] = _totalSupply;

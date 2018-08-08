@@ -214,7 +214,7 @@ contract TheEthGame {
         emit Bought(_cellId, newOwner, price);
         emit Sold(_cellId, oldOwner, price);
     
-        //Calculate developers cut and add it to the &quot;developersCut&quot; variable which controls
+        //Calculate developers cut and add it to the "developersCut" variable which controls
         //the maximum amount withdrawable by the owner.
         uint256 devCut = calculateDevCut(price);
         developersCut = developersCut.add(devCut);
@@ -502,8 +502,8 @@ contract TheEthGameTrophy {
     event Transfer (address indexed _from, address indexed _to);
 
     constructor () public {
-        name = &quot;The Eth Game Winner&quot;;
-        description = &quot;2019-08-17&quot;;
+        name = "The Eth Game Winner";
+        description = "2019-08-17";
         rank = 1;
         creator = msg.sender;
     }

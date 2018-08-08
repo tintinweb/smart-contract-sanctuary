@@ -116,8 +116,8 @@ contract willyWantTalkToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function willyWantTalkToken() public {
-        symbol = &quot;WWT&quot;;
-        name = &quot;willyWantTalkToken&quot;;
+        symbol = "WWT";
+        name = "willyWantTalkToken";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

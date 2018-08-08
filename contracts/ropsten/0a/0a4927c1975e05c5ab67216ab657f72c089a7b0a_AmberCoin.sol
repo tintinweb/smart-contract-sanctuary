@@ -32,8 +32,8 @@ contract AmberCoin {
     ) public {
         totalSupply = 20000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;AmberCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;AC&quot;;                               // Set the symbol for display purposes
+        name = "AmberCoin";                                   // Set the name for display purposes
+        symbol = "AC";                               // Set the symbol for display purposes
     }
 
     /**

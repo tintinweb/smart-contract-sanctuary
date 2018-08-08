@@ -73,8 +73,8 @@ contract Lexzoom is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Lexzoom&quot;;
-    string public constant symbol = &quot;LXM&quot;;
+    string public constant name = "Lexzoom";
+    string public constant symbol = "LXM";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

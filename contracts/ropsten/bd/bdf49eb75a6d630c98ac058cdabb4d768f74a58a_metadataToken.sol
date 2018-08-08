@@ -116,8 +116,8 @@ contract metadataToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function metadataToken() public {
-        symbol = &quot;METAIO&quot;;
-        name = &quot;Metadata Token&quot;;
+        symbol = "METAIO";
+        name = "Metadata Token";
         _totalSupply = 10000000000000000000000;
         decimals = 18;
         bonusEnds = now + 1 weeks;

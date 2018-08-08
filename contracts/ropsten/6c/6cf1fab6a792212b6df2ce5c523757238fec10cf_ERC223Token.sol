@@ -85,8 +85,8 @@ contract ERC223Token is ERC223, SafeMath {
 
   mapping(address => uint) balances;
   
-  string public name = &quot;Test Token&quot;;
-  string public symbol = &quot;TEST&quot;;
+  string public name = "Test Token";
+  string public symbol = "TEST";
   uint8 public decimals = 18;
   uint256 public totalSupply = (10**18) * 1000;
   

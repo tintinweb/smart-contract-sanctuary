@@ -113,8 +113,8 @@ contract Try2222 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Try2222() public {
-        symbol = &quot;Try2&quot;;
-        name = &quot;Try2222&quot;;
+        symbol = "Try2";
+        name = "Try2222";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x84b5669d5575a67FcBDF0807796044c8D10CD187] = _totalSupply;

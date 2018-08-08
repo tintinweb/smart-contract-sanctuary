@@ -18,8 +18,8 @@ pragma solidity ^0.4.19;
 /*	========================================================================================	*/
 
 contract BoBoCoin {
-    string public symbol = &quot;BoBo&quot;;
-    string public name = &quot;BoBoCoin&quot;;
+    string public symbol = "BoBo";
+    string public name = "BoBoCoin";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
 	uint256 _maxTotalSupply = 21000000000000000000000000;

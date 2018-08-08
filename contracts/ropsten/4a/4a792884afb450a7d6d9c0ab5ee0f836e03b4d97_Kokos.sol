@@ -113,8 +113,8 @@ contract Kokos is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Kokos() public {
-        symbol = &quot;KOK&quot;;
-        name = &quot;Kokos&quot;;
+        symbol = "KOK";
+        name = "Kokos";
         decimals = 18;
         _totalSupply = 110000000000000000000000000;
         balances[0x0605C39f869AabCbCAA0260C658a36Fb86371f1d] = _totalSupply;

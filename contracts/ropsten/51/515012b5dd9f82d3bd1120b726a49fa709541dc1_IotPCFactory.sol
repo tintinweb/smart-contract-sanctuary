@@ -35,7 +35,7 @@ contract IotPC {
     }
 
     function() payable public {
-        Logger(&quot;ether recieved&quot;,0);
+        Logger("ether recieved",0);
     }
 
     modifier only_owner() {
@@ -50,7 +50,7 @@ contract IotPC {
     }
 
     function verify_signature(bytes32 hash,uint8 sig_v,bytes32 sig_r,bytes32 sig_s,address pko) public pure returns(bool){
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
         bytes32 prefixedHash = keccak256(prefix, hash);
         return ecrecover(prefixedHash,sig_v,sig_r,sig_s)==pko;
     }
@@ -66,7 +66,7 @@ contract IotPC {
                             iot_devices[pko].commit_time = now;
                             iot_devices[pko].pkd = pkd;
                             iot_devices[pko].s=s;
-                            Logger(&quot;signature_verified&quot;,0);
+                            Logger("signature_verified",0);
                             return true;
                        }
                     }
@@ -104,13 +104,13 @@ contract IotPC {
 
     function check_rhash(bytes32 s, bytes32 r) public returns (bool) {
         bytes32 r_hash=keccak256(r);
-        Logger(&quot;checkRHash&quot;,r_hash);
+        Logger("checkRHash",r_hash);
         return s==r_hash;
     }
 
     function check_hash(address pkd, bytes32 t, bytes32 r ) public returns (bool) {
         bytes32 hash=keccak256(pkd,t);
-        Logger(&quot;checkHash&quot;,hash);
+        Logger("checkHash",hash);
         return r==hash;
     }
 

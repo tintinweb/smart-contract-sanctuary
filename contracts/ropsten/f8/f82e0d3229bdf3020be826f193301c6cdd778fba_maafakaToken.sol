@@ -116,8 +116,8 @@ contract maafakaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function maafakaToken() public {
-        symbol = &quot;MFKT&quot;;
-        name = &quot;maafaka Token&quot;;
+        symbol = "MFKT";
+        name = "maafaka Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

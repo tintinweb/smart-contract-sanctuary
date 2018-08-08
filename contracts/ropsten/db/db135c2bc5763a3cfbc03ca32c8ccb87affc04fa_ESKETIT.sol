@@ -320,7 +320,7 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract ESKETIT is PausableToken, MintableToken, BurnableToken {
-    string public constant name = &quot;ESKETIT&quot;;
-    string public constant symbol = &quot;GANG&quot;;
+    string public constant name = "ESKETIT";
+    string public constant symbol = "GANG";
     uint8 public constant decimals = 2;
 }

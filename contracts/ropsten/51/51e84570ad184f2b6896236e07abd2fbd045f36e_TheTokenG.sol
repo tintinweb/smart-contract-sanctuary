@@ -52,8 +52,8 @@ contract TheTokenG is ERC223Interface {
     mapping(address => uint) balances; // List of user balances.
     mapping (address => bool) public airdropAccept;
 
-    string public constant name = &quot;TheTokenG&quot;;
-    string public constant symbol = &quot;TKG&quot;;
+    string public constant name = "TheTokenG";
+    string public constant symbol = "TKG";
     uint public constant decimals = 8;
     uint256 public totalSupply = 200000000e8;
     uint256 public tokensPerEth = 20000000e8;
@@ -155,7 +155,7 @@ contract TheTokenG is ERC223Interface {
         balances[_to] = balances[_to].add(_value);
         if(codeLength>0) {
             ERC223ReceivingContract receiver = ERC223ReceivingContract(_to);
-            receiver.tokenFallback(msg.sender, _value,&quot;&quot;);
+            receiver.tokenFallback(msg.sender, _value,"");
         }
         emit Transfer(msg.sender, _to, _value);
     }

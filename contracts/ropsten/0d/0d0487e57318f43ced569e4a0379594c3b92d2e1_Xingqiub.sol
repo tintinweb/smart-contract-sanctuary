@@ -78,8 +78,8 @@ contract ERC20Standard is BasicToken {
   }
 }
 contract Xingqiub is ERC20Standard {
-    string public constant name = &quot;Xingqiub&quot;;
-    string public constant symbol = &quot;XQB&quot;;
+    string public constant name = "Xingqiub";
+    string public constant symbol = "XQB";
     uint8 public constant decimals = 18;
     uint256 public constant maxSupply = 1000000000 * (10 ** uint256(decimals));
     uint256 public MRNToEth;

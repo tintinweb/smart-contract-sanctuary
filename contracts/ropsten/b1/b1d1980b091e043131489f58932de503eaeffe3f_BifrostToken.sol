@@ -113,8 +113,8 @@ contract BifrostToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BifrostToken() public {
-        symbol = &quot;BFT&quot;;
-        name = &quot;Bifrost Token&quot;;
+        symbol = "BFT";
+        name = "Bifrost Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x7bE735a5355aC3947af75D845B500a29Abb20Aa5] = _totalSupply;

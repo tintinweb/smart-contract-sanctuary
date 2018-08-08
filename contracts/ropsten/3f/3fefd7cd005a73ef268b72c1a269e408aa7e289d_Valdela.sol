@@ -33,8 +33,8 @@ contract Valdela is ERC20 {
     
     uint256 public totalSupply = 3000000 * 10**8;
 
-    function name() public pure returns (string) { return &quot;Valdela&quot;; }
-    function symbol() public pure returns (string) { return &quot;VLD&quot;; }
+    function name() public pure returns (string) { return "Valdela"; }
+    function symbol() public pure returns (string) { return "VLD"; }
     function decimals() public pure returns (uint8) { return 8; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

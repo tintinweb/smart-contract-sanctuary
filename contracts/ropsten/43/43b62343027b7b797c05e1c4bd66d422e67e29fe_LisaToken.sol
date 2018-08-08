@@ -113,8 +113,8 @@ contract LisaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LisaToken() public {
-        symbol = &quot;LMAJ&quot;;
-        name = &quot;Lisa Token&quot;;
+        symbol = "LMAJ";
+        name = "Lisa Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000000;
         balances[0xb42bbf6cac4c121fe7d1d3615f401bd77a8adba8] = _totalSupply;

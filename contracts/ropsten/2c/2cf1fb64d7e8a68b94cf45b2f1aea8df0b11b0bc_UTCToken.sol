@@ -323,8 +323,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract UTCToken is PausableToken {
 
-    string public constant name = &quot;UTCToken&quot;;
-    string public constant symbol = &quot;UTC&quot;;
+    string public constant name = "UTCToken";
+    string public constant symbol = "UTC";
     uint public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 50000000*(10**decimals); // 50 million x 18 decimals to represent in wei (5000 for testing)

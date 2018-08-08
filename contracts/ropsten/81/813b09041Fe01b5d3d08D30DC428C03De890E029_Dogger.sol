@@ -15,7 +15,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -182,8 +182,8 @@ contract NFT {
       emit NFTTransfer(_from, _to, _tokenId);
   }
   //
-  //for some reason transactions never return a receipt if this is &quot;Transfer&quot; even though there is no conflict with the name
-  // I have no effing clue what I&#39;m doing wrong but I had to rename this to &quot;NFTTransfer&quot; and it works now :(
+  //for some reason transactions never return a receipt if this is "Transfer" even though there is no conflict with the name
+  // I have no effing clue what I&#39;m doing wrong but I had to rename this to "NFTTransfer" and it works now :(
   //
   event NFTTransfer(address from, address to, uint256 tokenId);
 
@@ -232,8 +232,8 @@ contract NFT {
 
 contract Dogger is Galleasset, NFT {
 
-    string public constant name = &quot;Galleass Dogger&quot;;
-    string public constant symbol = &quot;G_DOGGER&quot;;
+    string public constant name = "Galleass Dogger";
+    string public constant symbol = "G_DOGGER";
 
     constructor(address _galleass) Galleasset(_galleass) public {
       //0 index should be a blank item owned by no one
@@ -256,9 +256,9 @@ contract Dogger is Galleasset, NFT {
 
     Item[] private items;
 
-    function build() public isGalleasset(&quot;Dogger&quot;) returns (uint){
-      require( hasPermission(msg.sender,&quot;buildDogger&quot;) );
-      require( getTokens(msg.sender,&quot;Timber&quot;,2) );
+    function build() public isGalleasset("Dogger") returns (uint){
+      require( hasPermission(msg.sender,"buildDogger") );
+      require( getTokens(msg.sender,"Timber",2) );
 
       //when citizens are introduced to the game,
       //their level of craftsmanship will play a role
@@ -277,7 +277,7 @@ contract Dogger is Galleasset, NFT {
         require(_to != address(0));
         require(_to != address(this));
         require(_owns(_from, _tokenId));
-        require(hasPermission(msg.sender,&quot;transferDogger&quot;));
+        require(hasPermission(msg.sender,"transferDogger"));
         _transfer(_from, _to, _tokenId);
     }
 

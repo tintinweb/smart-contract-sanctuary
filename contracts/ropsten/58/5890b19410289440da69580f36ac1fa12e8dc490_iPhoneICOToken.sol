@@ -116,8 +116,8 @@ contract iPhoneICOToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;IPHT&quot;;
-        name = &quot;iPhoneICO Token&quot;;
+        symbol = "IPHT";
+        name = "iPhoneICO Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

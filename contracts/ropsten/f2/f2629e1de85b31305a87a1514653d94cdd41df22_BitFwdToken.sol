@@ -125,8 +125,8 @@ contract BitFwdToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function BitFwdToken() public {
-        symbol = &quot;FWD&quot;;
-        name = &quot;BitFwd Token&quot;;
+        symbol = "FWD";
+        name = "BitFwd Token";
         decimals = 18;
         mintable = true;
     }

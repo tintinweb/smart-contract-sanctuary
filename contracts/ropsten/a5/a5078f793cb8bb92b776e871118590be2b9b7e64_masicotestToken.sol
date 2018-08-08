@@ -116,8 +116,8 @@ contract masicotestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function masicotestToken() public {
-        symbol = &quot;MAST&quot;;
-        name = &quot;masicotest Token&quot;;
+        symbol = "MAST";
+        name = "masicotest Token";
         decimals = 18;
         bonusEnds = now + 1 days;
         endDate = now + 2 weeks;

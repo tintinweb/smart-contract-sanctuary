@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/AirgambitToken.sol
 
 contract AirgambitToken is StandardToken {
-  string public name = &quot;Airgambit Token&quot;;
-  string public symbol = &quot;AGT&quot;;
+  string public name = "Airgambit Token";
+  string public symbol = "AGT";
   uint8 public decimals = 18;
   uint public INITIAL_SUPPLY = 10000000;
 

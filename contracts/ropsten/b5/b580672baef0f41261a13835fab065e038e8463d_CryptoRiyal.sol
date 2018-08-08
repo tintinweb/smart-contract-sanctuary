@@ -232,9 +232,9 @@ contract CryptoRiyal is ERC20Interface, Owned, SafeMath {
 
     function CryptoRiyal() public {
 
-        symbol = &quot;CRT&quot;;
+        symbol = "CRT";
 
-        name = &quot;CryptoRiyal&quot;;
+        name = "CryptoRiyal";
 
         decimals = 18;
 

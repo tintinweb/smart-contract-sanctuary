@@ -83,8 +83,8 @@ contract QLANCE2 is ERC20Interface, Owned, SafeMath {
 
 
     function QLANCE2() public {
-        symbol = &quot;qlaa&quot;;
-        name = &quot;qlance2 Token&quot;;
+        symbol = "qlaa";
+        name = "qlance2 Token";
         decimals = 18;
         _totalSupply = INITIAL_SUPPLY;
         balances[msg.sender] = INITIAL_SUPPLY;

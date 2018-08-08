@@ -49,8 +49,8 @@ contract TokenERC20 is SafeMath{
     function TokenERC20() public {
         totalSupply = 2100000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;PRASHANT&quot;;                                   // Set the name for display purposes
-        symbol = &quot;PRA&quot;;                               // Set the symbol for display purposes
+        name = "PRASHANT";                                   // Set the name for display purposes
+        symbol = "PRA";                               // Set the symbol for display purposes
     }
 
     /**

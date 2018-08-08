@@ -279,7 +279,7 @@ contract StandardToken is ERC20, BasicToken {
 
 // File: contracts/CloseCrossToken.sol
 
-contract CloseCrossToken is StandardToken, DetailedERC20(&quot;CloseCross Token&quot;, &quot;CLOX&quot;, 18) {
+contract CloseCrossToken is StandardToken, DetailedERC20("CloseCross Token", "CLOX", 18) {
     constructor() public {
         totalSupply_ = 1e6 * (uint(10) ** decimals);
         balances[msg.sender] = totalSupply_;

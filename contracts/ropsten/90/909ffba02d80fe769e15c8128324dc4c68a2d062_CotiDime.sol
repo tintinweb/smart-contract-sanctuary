@@ -5,7 +5,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -453,13 +453,13 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/CotiDime.sol
 
 contract CotiDime is HasNoEther, Claimable, MintableToken {
-    string public constant name = &quot;COTI-DIME&quot;;
-    string public constant symbol = &quot;CTD&quot;;
+    string public constant name = "COTI-DIME";
+    string public constant symbol = "CTD";
     uint8 public constant decimals = 18;
 
     /// This modifier will be used to disable ERC20 transfer functionalities during the minting process.
     modifier isTransferable() {
-        require(mintingFinished, &quot;Minting hasn&#39;t finished yet&quot;);
+        require(mintingFinished, "Minting hasn&#39;t finished yet");
         _;
     }
 

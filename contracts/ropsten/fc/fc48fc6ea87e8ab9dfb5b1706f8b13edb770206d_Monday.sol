@@ -32,8 +32,8 @@ contract Monday {
     ) public {
         totalSupply = initialSupply * 10000000 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000;                // Give the creator all initial tokens
-        name = &quot;Monday&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MON&quot;;                               // Set the symbol for display purposes
+        name = "Monday";                                   // Set the name for display purposes
+        symbol = "MON";                               // Set the symbol for display purposes
     }
 
     /**

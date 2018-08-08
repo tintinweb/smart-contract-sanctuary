@@ -234,7 +234,7 @@ contract StandardToken is ERC20, BasicToken {
 
 // File: contracts/CloseCrossToken.sol
 
-contract CloseCrossToken is StandardToken, DetailedERC20(&quot;CloseCross Token&quot;, &quot;CLOX&quot;, 18) {
+contract CloseCrossToken is StandardToken, DetailedERC20("CloseCross Token", "CLOX", 18) {
     constructor() public {
         totalSupply_ = 1e6 * (uint(10) ** decimals);
         balances[msg.sender] = totalSupply_;
@@ -479,7 +479,7 @@ library ECRecovery {
 
   /**
    * toEthSignedMessageHash
-   * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+   * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
    * @dev and hash the result
    */
   function toEthSignedMessageHash(bytes32 hash)
@@ -490,7 +490,7 @@ library ECRecovery {
     // 32 is the length in bytes of hash,
     // enforced by the type signature above
     return keccak256(
-      &quot;\x19Ethereum Signed Message:\n32&quot;,
+      "\x19Ethereum Signed Message:\n32",
       hash
     );
   }
@@ -650,7 +650,7 @@ contract PaymentChannelManager {
         address _clientAddress
     ) private view
     {
-        bytes32 receiptHash = keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, keccak256(_receipt));
+        bytes32 receiptHash = keccak256("\x19Ethereum Signed Message:\n32", keccak256(_receipt));
         require(ECRecovery.recover(receiptHash, _clientSignature) == _clientAddress);
         require(ECRecovery.recover(receiptHash, _serverSignature) == serverAddress);
     }

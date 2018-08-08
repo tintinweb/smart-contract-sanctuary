@@ -73,8 +73,8 @@ contract CryptomniumChain is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Cryptomnium Chain Token&quot;;
-    string public constant symbol = &quot;CCT&quot;;
+    string public constant name = "Cryptomnium Chain Token";
+    string public constant symbol = "CCT";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1500000000e18;

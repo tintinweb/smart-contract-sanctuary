@@ -113,8 +113,8 @@ contract TradeBits is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TradeBits() public {
-        symbol = &quot;TBits&quot;;
-        name = &quot;TradeBits Exchange&quot;;
+        symbol = "TBits";
+        name = "TradeBits Exchange";
         decimals = 8;
         _totalSupply = 10000000000000000000;
         balances[0x2BABd949B80d75E8EbF907e2bFFFd83C2Aa15937] = _totalSupply; //MEW address here

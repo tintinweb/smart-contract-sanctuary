@@ -105,8 +105,8 @@ contract RADCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RADCOIN() public {
-        symbol = &quot;RAD&quot;;
-        name = &quot;RADCOIN&quot;;
+        symbol = "RAD";
+        name = "RADCOIN";
         decimals = 18;
         _totalSupply = 30000000000000000000000000;
         balances[0x3c7b78b83543bE6FF6a99209BE3E3Fde6FB198C3] = _totalSupply;

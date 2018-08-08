@@ -311,9 +311,9 @@ contract HACHIROKU is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;AE86&quot;;
+        symbol = "AE86";
 
-        name = &quot;HACHIROKU&quot;;
+        name = "HACHIROKU";
 
         decimals = 0;
 

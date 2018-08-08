@@ -334,7 +334,7 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract Vebe is PausableToken, MintableToken, BurnableToken {
-    string public constant name = &quot;VEBE&quot;;
-    string public constant symbol = &quot;VBE&quot;;
+    string public constant name = "VEBE";
+    string public constant symbol = "VBE";
     uint8 public constant decimals = 2;
 }

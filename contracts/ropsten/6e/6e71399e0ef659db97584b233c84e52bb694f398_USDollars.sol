@@ -113,8 +113,8 @@ contract USDollars is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function USDollars() public {
-        symbol = &quot;USD&quot;;
-        name = &quot;USDollars&quot;;
+        symbol = "USD";
+        name = "USDollars";
         decimals = 2;
         _totalSupply = 10000000000;
         balances[0x33E95241c65CaC6D38ECFC3f94395b3Ec0Fe93CE] = _totalSupply;

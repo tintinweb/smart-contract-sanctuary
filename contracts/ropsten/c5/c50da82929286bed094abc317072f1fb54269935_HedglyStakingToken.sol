@@ -116,8 +116,8 @@ contract HedglyStakingToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HedglyStakingToken() public {
-        symbol = &quot;HST&quot;;
-        name = &quot;Hedgly Staking Token&quot;;
+        symbol = "HST";
+        name = "Hedgly Staking Token";
         decimals = 18;
         bonusEnds = now + 8 weeks;
         endDate = now + 16 weeks;

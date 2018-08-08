@@ -110,8 +110,8 @@ contract LAM is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LAM() public {
-        symbol = &quot;LAM&quot;;
-        name = &quot;LAM&quot;;
+        symbol = "LAM";
+        name = "LAM";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         balances[0xa39583b07F3a4442a6ADe9960da3b7D68374aA14] = _totalSupply;

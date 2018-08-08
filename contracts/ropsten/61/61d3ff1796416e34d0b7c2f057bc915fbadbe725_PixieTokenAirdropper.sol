@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -179,13 +179,13 @@ contract PixieTokenAirdropper is Ownable, HasNoEther {
   // by calling methods on the token since we are using the same owner
   // and granting the distribution of tokens to this contract
   constructor(address _token) public payable {
-    require(_token != 0x0, &quot;Must be a non-zero address&quot;);
+    require(_token != 0x0, "Must be a non-zero address");
 
     token = ERC20Basic(_token);
   }
 
   function transfer(address[] _address, uint256[] _values) onlyOwner public {
-    require(_address.length == _values.length, &quot;Address array and values array must be same length&quot;);
+    require(_address.length == _values.length, "Address array and values array must be same length");
 
     for (uint i = 0; i < _address.length; i += 1) {
       token.transfer(_address[i], _values[i]);

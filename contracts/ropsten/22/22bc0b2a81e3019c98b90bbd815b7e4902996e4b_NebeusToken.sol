@@ -113,8 +113,8 @@ contract NebeusToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NebeusToken() public {
-        symbol = &quot;NBTK&quot;;
-        name = &quot;Nebeus Token&quot;;
+        symbol = "NBTK";
+        name = "Nebeus Token";
         decimals = 0;
         _totalSupply = 10000;
         balances[0x0a5b255daE5b3E9BdD00582094fE8FA8e6282136] = _totalSupply;

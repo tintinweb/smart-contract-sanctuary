@@ -113,8 +113,8 @@ contract pnpToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function pornToken() public {
-        symbol = &quot;pnp&quot;;
-        name = &quot;pnp Token&quot;;
+        symbol = "pnp";
+        name = "pnp Token";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0x4Bd5c80c7E0B4666fD571AB11F70Be620FFbe3Ec] = _totalSupply;

@@ -113,8 +113,8 @@ contract ConnectCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ConnectCoin() public {
-        symbol = &quot;CCN&quot;;
-        name = &quot;ConnectCoin&quot;;
+        symbol = "CCN";
+        name = "ConnectCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xA847981D5109c978a033513891b404EDF1198ee3] = _totalSupply;

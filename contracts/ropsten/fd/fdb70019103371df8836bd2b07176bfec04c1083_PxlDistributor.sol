@@ -130,61 +130,61 @@ contract Council is ExtendsOwnable, ValidValue {
     function setCdRate(uint256 _cdRate) external onlyOwner validRange(_cdRate) {
         cdRate = _cdRate;
 
-        emit ChangeDistributionRate(msg.sender, &quot;cd rate&quot;, _cdRate);
+        emit ChangeDistributionRate(msg.sender, "cd rate", _cdRate);
     }
 
     function setDepositRate(uint256 _depositRate) external onlyOwner validRange(_depositRate) {
         depositRate = _depositRate;
 
-        emit ChangeDistributionRate(msg.sender, &quot;deposit rate&quot;, _depositRate);
+        emit ChangeDistributionRate(msg.sender, "deposit rate", _depositRate);
     }
 
     function setInitialDeposit(uint256 _initialDeposit) external onlyOwner validRange(_initialDeposit) {
         initialDeposit = _initialDeposit;
 
-        emit ChangeDistributionRate(msg.sender, &quot;initial deposit&quot;, _initialDeposit);
+        emit ChangeDistributionRate(msg.sender, "initial deposit", _initialDeposit);
     }
 
     function setUserPaybackRate(uint256 _userPaybackRate) external onlyOwner validRange(_userPaybackRate) {
         userPaybackRate = _userPaybackRate;
 
-        emit ChangeDistributionRate(msg.sender, &quot;user payback rate&quot;, _userPaybackRate);
+        emit ChangeDistributionRate(msg.sender, "user payback rate", _userPaybackRate);
     }
 
     function setReportRegistrationFee(uint256 _reportRegistrationFee) external onlyOwner validRange(_reportRegistrationFee) {
         reportRegistrationFee = _reportRegistrationFee;
 
-        emit ChangeDistributionRate(msg.sender, &quot;report registration fee&quot;, _reportRegistrationFee);
+        emit ChangeDistributionRate(msg.sender, "report registration fee", _reportRegistrationFee);
     }
 
     function setUserPaybackPool(address _userPaybackPool) external onlyOwner validAddress(_userPaybackPool) {
         userPaybackPool = _userPaybackPool;
 
-        emit ChangeAddress(msg.sender, &quot;user payback pool&quot;, _userPaybackPool);
+        emit ChangeAddress(msg.sender, "user payback pool", _userPaybackPool);
     }
 
     function setRoleManager(address _roleManager) external onlyOwner validAddress(_roleManager) {
         roleManager = _roleManager;
 
-        emit ChangeAddress(msg.sender, &quot;role manager&quot;, _roleManager);
+        emit ChangeAddress(msg.sender, "role manager", _roleManager);
     }
 
     function setContentsManager(address _contentsManager) external onlyOwner validAddress(_contentsManager) {
         contentsManager = _contentsManager;
 
-        emit ChangeAddress(msg.sender, &quot;contents manager&quot;, _contentsManager);
+        emit ChangeAddress(msg.sender, "contents manager", _contentsManager);
     }
 
     function setPixelDistributor(address _pixelDistributor) external onlyOwner validAddress(_pixelDistributor) {
         pixelDistributor = _pixelDistributor;
 
-        emit ChangeAddress(msg.sender, &quot;pixel distributor&quot;, _pixelDistributor);
+        emit ChangeAddress(msg.sender, "pixel distributor", _pixelDistributor);
     }
 
     function setMarketer(address _marketer) external onlyOwner validAddress(_marketer) {
         marketer = _marketer;
 
-        emit ChangeAddress(msg.sender, &quot;marketer&quot;, _marketer);
+        emit ChangeAddress(msg.sender, "marketer", _marketer);
     }
 
     event RegisterCouncil(address _sender, uint256 _cdRate, uint256 _deposit, uint256 _initialDeposit, uint256 _userPaybackRate, uint256 _reportRegistrationFee, address _token);
@@ -493,8 +493,8 @@ contract PXL is StandardToken, CustomToken, ExtendsOwnable {
     using SafeMath for uint256;
 
     // Token basic information
-    string public constant name = &quot;Pixel&quot;;
-    string public constant symbol = &quot;PXL&quot;;
+    string public constant name = "Pixel";
+    string public constant symbol = "PXL";
     uint256 public constant decimals = 18;
     uint256 public totalSupply;
 
@@ -620,14 +620,14 @@ contract PXL is StandardToken, CustomToken, ExtendsOwnable {
 /*
 Copyright (c) 2017 Christoph Niemann
 Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the &quot;Software&quot;), to deal in
+this software and associated documentation files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to
 use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 of the Software, and to permit persons to whom the Software is furnished to do
 so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -698,7 +698,7 @@ library JsmnSolLib {
       bytes1 c = s[parser.pos];
 
       // Quote -> end of string
-      if (c == &#39;&quot;&#39;) {
+      if (c == &#39;"&#39;) {
         (success, token) = allocateToken(parser, tokens);
         if (!success) {
           parser.pos = start;
@@ -711,7 +711,7 @@ library JsmnSolLib {
       if (c == 92 && parser.pos + 1 < s.length) {
         // handle escaped characters: skip over it
         parser.pos++;
-        if (s[parser.pos] == &#39;\&quot;&#39; || s[parser.pos] == &#39;/&#39; || s[parser.pos] == &#39;\\&#39;
+        if (s[parser.pos] == &#39;\"&#39; || s[parser.pos] == &#39;/&#39; || s[parser.pos] == &#39;\\&#39;
         || s[parser.pos] == &#39;f&#39; || s[parser.pos] == &#39;r&#39; || s[parser.pos] == &#39;n&#39;
         || s[parser.pos] == &#39;b&#39; || s[parser.pos] == &#39;t&#39;) {
           continue;
@@ -833,7 +833,7 @@ library JsmnSolLib {
       }
 
       // 0x42
-      if (c == &#39;&quot;&#39;) {
+      if (c == &#39;"&#39;) {
         r = parseString(parser, tokens, s);
 
         if (r != RETURN_SUCCESS) {
@@ -942,7 +942,7 @@ library JsmnSolLib {
   }
 
   function uint2str(uint i) pure internal returns (string){
-    if (i == 0) return &quot;0&quot;;
+    if (i == 0) return "0";
     uint j = i;
     uint len;
     while (j != 0) {
@@ -1007,15 +1007,15 @@ library ParseLib {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     function parseAddr(string _a) internal pure returns (address){
@@ -1077,7 +1077,7 @@ library ParseLib {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

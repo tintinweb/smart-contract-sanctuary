@@ -116,8 +116,8 @@ contract bezpolToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bezpolToken() public {
-        symbol = &quot;BEZ&quot;;
-        name = &quot;bezpol Token&quot;;
+        symbol = "BEZ";
+        name = "bezpol Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -95,8 +95,8 @@ contract DUKCoin is ERC20Interface, Owned, SafeMath {
 
 
     function DUKCoin() public {
-        symbol = &quot;DUK&quot;;
-        name = &quot;DUK Coin&quot;;
+        symbol = "DUK";
+        name = "DUK Coin";
         decimals = 18;
         _totalSupply = 19999999000000000000000000;
         balances[0x4D16BB6b1d67FcEd65cf0a83C7b5c82F90273ebc] = _totalSupply;

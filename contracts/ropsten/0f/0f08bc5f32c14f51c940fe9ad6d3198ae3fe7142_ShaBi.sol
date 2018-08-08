@@ -98,8 +98,8 @@ contract ShaBi is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ShaBi() public {
-        symbol = &quot;SB&quot;;
-        name = &quot;ShaBi&quot;;
+        symbol = "SB";
+        name = "ShaBi";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xD1340ac9F07a3d785afe5716DDC6B3AA03903fdA] = _totalSupply;

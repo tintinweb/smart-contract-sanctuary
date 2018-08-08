@@ -113,8 +113,8 @@ contract wetCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function wetCoin() public {
-        symbol = &quot;WET&quot;;
-        name = &quot;WET&quot;;
+        symbol = "WET";
+        name = "WET";
         decimals = 18;
         _totalSupply = 5000000000000000000000000;
         balances[0x2DA1E68Fb8A3aC3eD4834f9c035029a9328C2F6e] = _totalSupply; //MEW address here

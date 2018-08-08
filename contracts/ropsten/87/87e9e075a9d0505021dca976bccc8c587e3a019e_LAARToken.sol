@@ -113,8 +113,8 @@ contract LAARToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LAARToken() public {
-        symbol = &quot;LAAR&quot;;
-        name = &quot;LAAR Token&quot;;
+        symbol = "LAAR";
+        name = "LAAR Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xD2045C5Bd63714038CB5ffE8dA3bEce02F9e5069] = _totalSupply;

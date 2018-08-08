@@ -183,7 +183,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -339,8 +339,8 @@ contract PausableToken is StandardToken, Pausable {
 contract CommemorativeCoin is PausableToken, MintableToken {
   using SafeMath for uint256;
 
-  string public name = &quot;CommemorativeCoin&quot;;
-  string public symbol = &quot;CMC&quot;;
+  string public name = "CommemorativeCoin";
+  string public symbol = "CMC";
   uint public decimals = 18;
 
 }

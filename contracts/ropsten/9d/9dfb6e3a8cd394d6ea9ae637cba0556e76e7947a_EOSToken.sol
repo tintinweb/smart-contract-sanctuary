@@ -54,8 +54,8 @@ contract EOSToken is EOSInterface, EOSOwned {
     mapping(address => mapping(address => uint)) allowed;
 
     function EOSToken() public {
-        symbol = &quot;EOS&quot;;
-        name = &quot;EOS Token&quot;;
+        symbol = "EOS";
+        name = "EOS Token";
         decimals = 18;
         number_of_token = 100000000;
         _totalSupply = number_of_token*10**uint(decimals);

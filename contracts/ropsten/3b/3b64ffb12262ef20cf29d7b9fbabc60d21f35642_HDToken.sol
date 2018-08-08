@@ -114,8 +114,8 @@ contract HDToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;HD&quot;;
-        name = &quot;HD Token&quot;;
+        symbol = "HD";
+        name = "HD Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[0xe388f7602Ffa828a9fF4350F4F01d06c48e3Cba4] = _totalSupply;

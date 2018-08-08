@@ -6,7 +6,7 @@ Copyright (c) 2016 Oraclize LTD
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -19,7 +19,7 @@ all copies or substantial portions of the Software.
 
 
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -61,7 +61,7 @@ MIT License
 Copyright (c) 2018 SmartContract ChainLink, Ltd.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -70,7 +70,7 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -323,22 +323,22 @@ contract usingOraclize {
     function oraclize_setNetwork() internal returns(bool){
         if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
             OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
-            oraclize_setNetworkName(&quot;eth_mainnet&quot;);
+            oraclize_setNetworkName("eth_mainnet");
             return true;
         }
         if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
             OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
-            oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
+            oraclize_setNetworkName("eth_ropsten3");
             return true;
         }
         if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
             OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
-            oraclize_setNetworkName(&quot;eth_kovan&quot;);
+            oraclize_setNetworkName("eth_kovan");
             return true;
         }
         if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
             OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
-            oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
+            oraclize_setNetworkName("eth_rinkeby");
             return true;
         }
         if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
@@ -848,15 +848,15 @@ contract usingOraclize {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     // parseInt
@@ -884,7 +884,7 @@ contract usingOraclize {
     }
 
     function uint2str(uint i) internal pure returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -961,7 +961,7 @@ contract usingOraclize {
         copyBytes(delay, 24, 8, delay_bytes8, 0);
 
         bytes[4] memory args = [unonce, nbytes, sessionKeyHash, delay];
-        bytes32 queryId = oraclize_query(&quot;random&quot;, args, _customGasLimit);
+        bytes32 queryId = oraclize_query("random", args, _customGasLimit);
 
         bytes memory delay_bytes8_left = new bytes(8);
 
@@ -1030,7 +1030,7 @@ contract usingOraclize {
         bytes memory tosign2 = new bytes(1+65+32);
         tosign2[0] = byte(1); //role
         copyBytes(proof, sig2offset-65, 65, tosign2, 1);
-        bytes memory CODEHASH = hex&quot;fd94fa71bc0ba10d39d464d0d8f465efeef0a2764e3887fcc9df41ded20f505c&quot;;
+        bytes memory CODEHASH = hex"fd94fa71bc0ba10d39d464d0d8f465efeef0a2764e3887fcc9df41ded20f505c";
         copyBytes(CODEHASH, 0, 32, tosign2, 1+65);
         sigok = verifySig(sha256(tosign2), sig2, appkey1_pubkey);
 
@@ -1038,7 +1038,7 @@ contract usingOraclize {
 
 
         // Step 7: verify the APPKEY1 provenance (must be signed by Ledger)
-        bytes memory LEDGERKEY = hex&quot;7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4&quot;;
+        bytes memory LEDGERKEY = hex"7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4";
 
         bytes memory tosign3 = new bytes(1+65);
         tosign3[0] = 0xFE;
@@ -1054,7 +1054,7 @@ contract usingOraclize {
 
     modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) {
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        require((_proof[0] == &quot;L&quot;) && (_proof[1] == &quot;P&quot;) && (_proof[2] == 1));
+        require((_proof[0] == "L") && (_proof[1] == "P") && (_proof[2] == 1));
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         require(proofVerified);
@@ -1064,7 +1064,7 @@ contract usingOraclize {
 
     function oraclize_randomDS_proofVerify__returnCode(bytes32 _queryId, string _result, bytes _proof) internal returns (uint8){
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        if ((_proof[0] != &quot;L&quot;)||(_proof[1] != &quot;P&quot;)||(_proof[2] != 1)) return 1;
+        if ((_proof[0] != "L")||(_proof[1] != "P")||(_proof[2] != 1)) return 1;
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         if (proofVerified == false) return 2;
@@ -1308,12 +1308,12 @@ contract LegendHeroez is usingOraclize {
     function withdraw(address _sideAddress) public payable {
         // Send withdraw query to sidechain
         bytes32 queryId = oraclize_query(
-            &quot;nested&quot;,
-            strConcat(&quot;[URL] [&#39;http://legendheroez.com:8081/withdraw&#39;, &#39;\\n{\&quot;mainAddress\&quot;:\&quot;&quot;, toAsciiString(msg.sender), &quot;\&quot;,\&quot;sideAddress\&quot;:\&quot;&quot;, toAsciiString(_sideAddress), &quot;\&quot;}&#39;]&quot;),
+            "nested",
+            strConcat("[URL] [&#39;http://legendheroez.com:8081/withdraw&#39;, &#39;\\n{\"mainAddress\":\"", toAsciiString(msg.sender), "\",\"sideAddress\":\"", toAsciiString(_sideAddress), "\"}&#39;]"),
             oraclizeGasLimit
         );
 
-        uint callbackCosts = oraclize_getPrice(&quot;URL&quot;, oraclizeGasLimit);
+        uint callbackCosts = oraclize_getPrice("URL", oraclizeGasLimit);
         require(msg.value >= callbackCosts);    // 0.00017525 ether
         uint _left = msg.value - callbackCosts; // Calculate ETH to send back to user
         msg.sender.transfer(_left);             // Send ETH back to user

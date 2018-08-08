@@ -148,8 +148,8 @@ contract Redenom is ERC20Interface, Owned{
     event Vote(address indexed voter, uint indexed propId, uint indexed voterBalance);
 
     function Redenom() public {
-        symbol = &quot;NOM&quot;;
-        name = &quot;Redenom&quot;;
+        symbol = "NOM";
+        name = "Redenom";
         _totalSupply = 0; // total NOM&#39;s in the game 
 
         total_fund = 1000000 * 10**decimals; // 1 000 000.00000000, 1Mt
@@ -195,7 +195,7 @@ contract Redenom is ERC20Interface, Owned{
     modifier onlyVoter {
         require(votingActive == true);
         require(bitmask_check(msg.sender, 4) == true); //passed KYC
-        //require((accounts[msg.sender].balance >= 100000000), &quot;must have >= 1 NOM&quot;);
+        //require((accounts[msg.sender].balance >= 100000000), "must have >= 1 NOM");
         require((accounts[msg.sender].lastVotedEpoch < epoch));
         require(bitmask_check(msg.sender, 1024) == false); // banned == false
         _;

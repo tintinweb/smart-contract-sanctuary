@@ -116,8 +116,8 @@ contract bitSSAToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitSSAToken() public {
-        symbol = &quot;bitSSA_s&quot;;
-        name = &quot;bitSSA_n Token&quot;;
+        symbol = "bitSSA_s";
+        name = "bitSSA_n Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -113,8 +113,8 @@ contract VinaexToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VinaexToken() public {
-        symbol = &quot;VINAEX&quot;;
-        name = &quot;Vinaex Token&quot;;
+        symbol = "VINAEX";
+        name = "Vinaex Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x62c2d9089F84a4ad1804ca0Aa3b4D38314C2a698] = _totalSupply;

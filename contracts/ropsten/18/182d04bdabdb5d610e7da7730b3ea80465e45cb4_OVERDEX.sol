@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract OVERDEX {
 
-    string public name = &quot;OVERDEX&quot;;      //  token name
-    string public symbol = &quot;0VDX&quot;;           //  token symbol
+    string public name = "OVERDEX";      //  token name
+    string public symbol = "0VDX";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -127,8 +127,8 @@ contract Ownable {
 
 contract SimpleERC20Token is StandardToken, Ownable
 {
-    string public name = &quot;CryptoDiamondToken&quot;;
-    string public symbol = &quot;CDM&quot;;
+    string public name = "CryptoDiamondToken";
+    string public symbol = "CDM";
 
     uint public decimals = 2;
 

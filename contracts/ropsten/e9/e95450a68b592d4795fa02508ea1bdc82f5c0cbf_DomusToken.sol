@@ -113,8 +113,8 @@ contract DomusToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DomusToken() public {
-        symbol = &quot;DETRM&quot;;
-        name = &quot;Domus Token&quot;;
+        symbol = "DETRM";
+        name = "Domus Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xBABd3024b0Bd71ed3797e5d1BdD8705b069993b1] = _totalSupply;

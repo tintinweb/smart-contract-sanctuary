@@ -276,8 +276,8 @@ contract VGWToken is StandardToken, BurnableToken, Ownable {
 
     using SafeMath for uint;    
 
-    string constant public symbol = &quot;VegaWallet Token&quot;;
-    string constant public name = &quot;VGW6.0&quot;;
+    string constant public symbol = "VegaWallet Token";
+    string constant public name = "VGW6.0";
 
     uint8 constant public decimals = 5;    
     uint256 public constant decimalFactor = 10 ** uint256(decimals);

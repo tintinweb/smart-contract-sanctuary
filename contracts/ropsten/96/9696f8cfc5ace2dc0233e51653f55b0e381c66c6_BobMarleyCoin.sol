@@ -113,8 +113,8 @@ contract BobMarleyCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BobMarleyCoin() public {
-        symbol = &quot;BMC&quot;;
-        name = &quot;Bob Marley Coin&quot;;
+        symbol = "BMC";
+        name = "Bob Marley Coin";
         decimals = 0;
         _totalSupply = 1000000;
         balances[0xceb584ee9b7e1568acc0ecfb5a23b590e64551cd] = _totalSupply;

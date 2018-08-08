@@ -94,8 +94,8 @@ contract Dada1427 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;0Dada&quot;;
-        name = &quot;0 Dada 1427&quot;;
+        symbol = "0Dada";
+        name = "0 Dada 1427";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xF4579C4f7C3C13A8F4d066e311B368c1B5226DaA] = _totalSupply;

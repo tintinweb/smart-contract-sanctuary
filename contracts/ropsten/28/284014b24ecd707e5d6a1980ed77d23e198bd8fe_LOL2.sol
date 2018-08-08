@@ -21,8 +21,8 @@ contract SafeMath {
 
 contract LOL2 is SafeMath {
 
-    string public name = &quot;LOL2&quot;;        //  token name
-    string public symbol = &quot;LOL2&quot;;      //  token symbol
+    string public name = "LOL2";        //  token name
+    string public symbol = "LOL2";      //  token symbol
     uint public decimals = 18;           //  token digit
 
     mapping (address => uint) public balanceOf;

@@ -154,8 +154,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 //the main DXBCToken contract
 contract DXBCToken is StandardToken {
-  string public constant name = &quot;独秀币&quot;;
-  string public constant symbol = &quot;DXBC&quot;;
+  string public constant name = "独秀币";
+  string public constant symbol = "DXBC";
   uint8 public constant decimals = 6;
 
   uint256 public constant total= 200000000 * (10 ** uint256(decimals));

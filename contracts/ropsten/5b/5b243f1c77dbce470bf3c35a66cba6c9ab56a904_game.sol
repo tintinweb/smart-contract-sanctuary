@@ -126,16 +126,16 @@ contract game is owned{
     function judge(uint8 orig) view returns(string mora){
         // 0 => 布   1 => 剪刀   2 => 石頭
             if (orig == 0){
-                return &quot;paper&quot;;
+                return "paper";
             }
             else if (orig == 1){
-                return &quot;scissors&quot;;
+                return "scissors";
             }
             else if (orig == 2){
-                return &quot;stone&quot;;
+                return "stone";
             }
             else {
-                return &quot;error&quot;;
+                return "error";
             }
             
         }

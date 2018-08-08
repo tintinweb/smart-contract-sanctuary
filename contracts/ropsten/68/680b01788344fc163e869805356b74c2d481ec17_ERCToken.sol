@@ -116,8 +116,8 @@ contract ERCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ERCToken() public {
-        symbol = &quot;ERC&quot;;
-        name = &quot;ERC Token&quot;;
+        symbol = "ERC";
+        name = "ERC Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 100 weeks;

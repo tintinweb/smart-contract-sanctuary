@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 contract NLToken is StandardToken, BurnableToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;NLT&quot;;
-    string constant public name = &quot;NLT Test Coin&quot;;
+    string constant public symbol = "NLT";
+    string constant public name = "NLT Test Coin";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 1000000000e18;

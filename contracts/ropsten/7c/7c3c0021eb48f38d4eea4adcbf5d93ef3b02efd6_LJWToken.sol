@@ -86,8 +86,8 @@ contract LJWToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;LJW&quot;;
-        name = &quot;LJW Token&quot;;
+        symbol = "LJW";
+        name = "LJW Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

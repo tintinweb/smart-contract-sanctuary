@@ -113,8 +113,8 @@ contract BHIMToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BHIMToken() public {
-        symbol = &quot;BHIM&quot;;
-        name = &quot;BHIM Token&quot;;
+        symbol = "BHIM";
+        name = "BHIM Token";
         decimals = 7;
         _totalSupply = 420000000000000000000;
         balances[0xfA1B96F68c13C7b3aff18c7aC7F8E668dA87FecF] = _totalSupply;

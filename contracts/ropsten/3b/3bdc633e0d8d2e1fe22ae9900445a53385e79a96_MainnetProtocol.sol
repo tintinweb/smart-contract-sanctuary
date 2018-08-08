@@ -58,8 +58,8 @@ contract MainnetProtocol is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;MainnetProtocol&quot;;
-    string public constant symbol = &quot;MTP&quot;;
+    string public constant name = "MainnetProtocol";
+    string public constant symbol = "MTP";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

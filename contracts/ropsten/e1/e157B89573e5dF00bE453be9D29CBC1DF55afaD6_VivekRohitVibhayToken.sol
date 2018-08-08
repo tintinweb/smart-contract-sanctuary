@@ -113,8 +113,8 @@ contract VivekRohitVibhayToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VivekRohitVibhayToken() public {
-        symbol = &quot;VRV&quot;;
-        name = &quot;Vivek Rohit Vibhay Token&quot;;
+        symbol = "VRV";
+        name = "Vivek Rohit Vibhay Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xF7a78670ae6ef050660101AcE901bf66DA16C1Af] = _totalSupply;

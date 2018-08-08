@@ -37,7 +37,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -238,17 +238,17 @@ contract BetContract is Ownable, EventStructContract {
       
        // проверяем - есть ли такое событие
         if(!eventStruct.isSet){
-            revert(&quot;Event not found&quot;);
+            revert("Event not found");
         }
         
         //проверяем - не прошло ли время наступления события
         if(eventStruct.eventDate <= now){
-            revert(&quot;The event has already occurred&quot;);
+            revert("The event has already occurred");
         }
         
         //проверяем - удовлетворяет ли присланная сумма условиям минимальной и максимальной ставки
         if( (msg.value < eventStruct.minBet)||(msg.value > eventStruct.maxBet) ){
-            revert(&quot;Amount beyond acceptable limits&quot;);
+            revert("Amount beyond acceptable limits");
         }
         
         currBetID++;
@@ -283,22 +283,22 @@ contract BetContract is Ownable, EventStructContract {
     
     //проверяем - есть ли такая ставка 
     if(!betStruct.isSet){
-        revert(&quot;Bet not found&quot;);
+        revert("Bet not found");
     }
     
     //проверяем - не приняли ли ее раньше
     if(betStruct.bookmaker!=0){
-        revert(&quot;The bet has already been accepted&quot;);
+        revert("The bet has already been accepted");
     }
     
     //проверяем - не прошло ли время наступления события
     if(eventStruct.eventDate <= now){
-        revert(&quot;The event has already occurred&quot;);
+        revert("The event has already occurred");
     }
     
     //проверяем - достаточно ли средств переведено
     if(msg.value < betStruct.bookmakerValue){
-        revert(&quot;Insufficient funds&quot;);
+        revert("Insufficient funds");
     }
     
     //возвращаем сдачу 
@@ -316,24 +316,24 @@ contract BetContract is Ownable, EventStructContract {
     BetStruct memory betStruct = betsDatabase[_betID];
     //проверяем - есть ли такая ставка 
     if(!betStruct.isSet){
-        revert(&quot;Bet not found&quot;);
+        revert("Bet not found");
     }
     
     EventStruct memory eventStruct = eventsDatabase.readEventFromDatabase(betStruct.eventID);
     
     //проверяем - настало ли событие
     if(now < eventStruct.eventDate ){
-        revert(&quot;The event has not yet come&quot;);
+        revert("The event has not yet come");
     }
     
     // проверяем - не было ли выплаты ранее 
     if(betStruct.isPaid){
-        revert(&quot;The payment has already been made&quot;);
+        revert("The payment has already been made");
     }
     
     //проверяем - была ли принята ставка
     if(betStruct.bookmaker==0){
-        revert(&quot;The bet was not accepted. Call the function returnBet()&quot;);
+        revert("The bet was not accepted. Call the function returnBet()");
     }
     
     betStruct.isPaid = true;
@@ -364,19 +364,19 @@ contract BetContract is Ownable, EventStructContract {
     BetStruct memory betStruct = betsDatabase[_betID];
     //проверяем - есть ли такая ставка 
     if(!betStruct.isSet){
-        revert(&quot;Bet not found&quot;);
+        revert("Bet not found");
     }
     
     EventStruct memory eventStruct = eventsDatabase.readEventFromDatabase(betStruct.eventID);
     
     //проверяем - настало ли событие
     if(now < eventStruct.eventDate ){
-        revert(&quot;The event has not yet come&quot;);
+        revert("The event has not yet come");
     }
     
     // проверяем - не было ли выплаты ранее 
     if(betStruct.isPaid){
-        revert(&quot;The payment has already been made&quot;);
+        revert("The payment has already been made");
     }
     
     betStruct.isPaid = true;

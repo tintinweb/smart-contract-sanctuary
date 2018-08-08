@@ -109,8 +109,8 @@ contract INGCL is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function INGCL() public {
-        symbol = &quot;INGCL&quot;;
-        name = &quot;Ingeniciel&quot;;
+        symbol = "INGCL";
+        name = "Ingeniciel";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3D3825640327AB2881EbC6F9ddfD7317bdE31705] = _totalSupply;

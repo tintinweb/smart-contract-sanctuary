@@ -57,13 +57,13 @@ contract Variable
 
   constructor() public
   {
-    name = &quot;KNK1.0&quot;;
-    symbol = &quot;TOWER&quot;;
+    name = "KNK1.0";
+    symbol = "TOWER";
     decimals = 18;
     _decimals = 10 ** uint256(decimals);
     tokenReward = 0;
     totalSupply = _decimals * 5000000000;
-    status = &quot;&quot;;
+    status = "";
     ICO_startingTime = 0;// 18.01.01 00:00:00 1514732400;
     ICO_closingTime = 0;// 18.12.31 23.59.59 1546268399;
     transferLock = true;

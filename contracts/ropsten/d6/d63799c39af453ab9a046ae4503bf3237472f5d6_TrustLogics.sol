@@ -78,8 +78,8 @@ contract TrustLogics is ERC20
     uint256 constant public TOKEN_DECIMALS = 10 ** 18;
     uint256 public totalCrowdsaleSupply    = 234973535; 
     uint256 public totalOwnerSupply        = 192251075;     
-    string public constant name            = &quot;TrustLogics Token&quot;;
-    string public constant symbol          = &quot;TLT&quot;;
+    string public constant name            = "TrustLogics Token";
+    string public constant symbol          = "TLT";
     uint256 public totalTokenSupply        = 427224610 * TOKEN_DECIMALS;  
     address public owner;
     address public trustLogicsCrowdsale;

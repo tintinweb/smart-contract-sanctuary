@@ -98,8 +98,8 @@ contract NPTToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NPTToken() public {
-        symbol = &quot;NPTToken&quot;;
-        name = &quot;NPT Token&quot;;
+        symbol = "NPTToken";
+        name = "NPT Token";
         decimals = 0;
         _totalSupply = 1000000000;
         balances[0xFBe01202168E17ca6D45CcD233A8166F159f4352] = _totalSupply;

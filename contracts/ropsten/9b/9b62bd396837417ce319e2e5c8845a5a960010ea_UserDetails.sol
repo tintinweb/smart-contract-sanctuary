@@ -3,7 +3,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -249,13 +249,13 @@ contract UserDetails is Ownable {
      require(_index<3);
      if(_index==0){
          educationQualificationOf= educationQualification.SSc;
-         return(&quot;SSc&quot;);
+         return("SSc");
      } else if(_index==1) {
          educationQualificationOf= educationQualification.HSc;
-         return(&quot;HSc&quot;);
+         return("HSc");
      } else {
      educationQualificationOf= educationQualification.college;
-     return(&quot;college&quot;);
+     return("college");
      }
  }
 }

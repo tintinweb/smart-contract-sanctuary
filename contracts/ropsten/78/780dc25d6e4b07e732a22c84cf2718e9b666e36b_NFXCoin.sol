@@ -113,8 +113,8 @@ contract NFXCoin is UnboundedRegularToken {
 
     uint public totalSupply = 500000000000000000000000000;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;NFXCoin&quot;;
-    string constant public symbol = &quot;NFXC&quot;;
+    string constant public name = "NFXCoin";
+    string constant public symbol = "NFXC";
 
     function NFXCoin() {
         balances[msg.sender] = totalSupply;

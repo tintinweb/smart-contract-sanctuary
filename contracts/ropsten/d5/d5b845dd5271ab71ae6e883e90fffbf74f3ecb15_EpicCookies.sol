@@ -114,8 +114,8 @@ contract EpicCookies is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;COOKIE&quot;;
-        name = &quot;Epic Cookie!!&quot;;
+        symbol = "COOKIE";
+        name = "Epic Cookie!!";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

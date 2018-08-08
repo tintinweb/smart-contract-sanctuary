@@ -58,8 +58,8 @@ contract IraPid is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;IraPid&quot;;
-    string public constant symbol = &quot;IRAPI&quot;;
+    string public constant name = "IraPid";
+    string public constant symbol = "IRAPI";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/AnmiToken.sol
 
 contract AnmiToken is StandardToken {
-  string public name = &quot;AnmiToken&quot;;
-  string public symbol = &quot;AMT&quot;;
+  string public name = "AnmiToken";
+  string public symbol = "AMT";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 21000000 * (10 ** decimals);
 

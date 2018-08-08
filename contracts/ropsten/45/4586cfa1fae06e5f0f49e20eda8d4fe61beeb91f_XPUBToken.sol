@@ -236,8 +236,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract XPUBToken is CappedToken, PausableToken {
-    string public constant name = &quot;X PUBLIC FUND&quot;; 
-    string public constant symbol = &quot;XPUB&quot;; 
+    string public constant name = "X PUBLIC FUND"; 
+    string public constant symbol = "XPUB"; 
     uint8 public constant decimals = 18; 
 
     uint256 public constant INITIAL_SUPPLY = 0;

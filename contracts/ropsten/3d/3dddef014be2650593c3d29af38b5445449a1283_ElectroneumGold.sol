@@ -113,8 +113,8 @@ contract ElectroneumGold is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ElectroneumGold() public {
-        symbol = &quot;ETG&quot;;
-        name = &quot;ElectroneumGold&quot;;
+        symbol = "ETG";
+        name = "ElectroneumGold";
         decimals = 8;
         _totalSupply = 5000000;
         balances[0xa5Ee702fB17349408fd5f620199DE7bD92A8e988] = _totalSupply;

@@ -28,8 +28,8 @@ contract NoCrowdsaleToken is ERC20 {
 
   // Store these in fixed byte arrays to avoid analyzer warnings
   // TODO: is this compatible?
-  bytes17 public name = &quot;Pidor token #1337&quot;;
-  bytes5 public symbol = &quot;PIDOR&quot;;
+  bytes17 public name = "Pidor token #1337";
+  bytes5 public symbol = "PIDOR";
 
   address _ownerAddress;
 

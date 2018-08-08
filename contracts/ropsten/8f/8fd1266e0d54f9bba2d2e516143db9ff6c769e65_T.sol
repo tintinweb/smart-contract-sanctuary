@@ -65,8 +65,8 @@ contract T is ERC20, ERC223 {
 		decimals = 18;
 		totalSupply = 2 * uint(10)**(decimals + 9);
 		balances[owner] = totalSupply;
-		name = &quot;Token&quot;;
-		symbol = &quot;TKN&quot;;
+		name = "Token";
+		symbol = "TKN";
 		emit Transfer(0x0, owner, totalSupply);
 	}
 	

@@ -179,8 +179,8 @@ contract Ownable {
 }
 
 contract TestToken is StandardToken, Ownable {
-  string public name = &quot;Test token&quot;;
-  string public symbol = &quot;TEST&quot;;
+  string public name = "Test token";
+  string public symbol = "TEST";
   uint256 public decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 10000000 * (10 ** uint256(18));
 

@@ -179,8 +179,8 @@ contract Ownable {
 }
 
 contract AgrowToken is StandardToken, Ownable {
-  string public name = &quot;AGROW&quot;;
-  string public symbol = &quot;AGR&quot;;
+  string public name = "AGROW";
+  string public symbol = "AGR";
   uint256 public decimals = 8;
   uint256 public constant INITIAL_SUPPLY = 61400000 * (10 ** uint256(8));
 

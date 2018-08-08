@@ -278,8 +278,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract VHW is StandardToken {
-  string public name = &quot;VHW&quot;;
-  string public symbol = &quot;VHW&quot;;
+  string public name = "VHW";
+  string public symbol = "VHW";
   uint public decimals = 6;
   uint public INITIAL_SUPPLY = 352500000 * (10 ** decimals);
 

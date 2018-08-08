@@ -113,8 +113,8 @@ contract EdCoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EdCoinToken() public {
-        symbol = &quot;EdCoin&quot;;
-        name = &quot;EdCoin Token&quot;;
+        symbol = "EdCoin";
+        name = "EdCoin Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0Fb77ab21A81a1B3C976BE5C472bC2550B44425E] = _totalSupply;

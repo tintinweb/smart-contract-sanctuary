@@ -105,8 +105,8 @@ contract ARBITRAGEToken is ERC20Interface,Ownable {
     uint256 public totalSupply;
     mapping(address => uint256) tokenBalances;
 
-   string public constant name = &quot;ARBITRAGE&quot;;
-   string public constant symbol = &quot;ARB&quot;;
+   string public constant name = "ARBITRAGE";
+   string public constant symbol = "ARB";
    uint256 public constant decimals = 18;
 
    uint256 public constant INITIAL_SUPPLY = 10000000;

@@ -253,8 +253,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TTTtoken is StandardToken {
-    string public name = &quot;seedplustoken&quot;;
-    string public symbol = &quot;ST&quot;; //이름
+    string public name = "seedplustoken";
+    string public symbol = "ST"; //이름
     uint public decimals = 2; //소수점 자리
     uint public INITIAL_SUPPLY = 99990000;
 

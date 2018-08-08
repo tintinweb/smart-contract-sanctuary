@@ -116,8 +116,8 @@ contract ms0 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ms0() public {
-        symbol = &quot;MS0&quot;;
-        name = &quot;ms0 Token&quot;;
+        symbol = "MS0";
+        name = "ms0 Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

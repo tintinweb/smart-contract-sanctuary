@@ -260,8 +260,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/DevsmartCoinFive.sol
 
 contract DevsmartCoinFive is StandardToken {
-  string public name = &quot;DevsmartCoinFive&quot;;
-  string public symbol = &quot;DCF&quot;;
+  string public name = "DevsmartCoinFive";
+  string public symbol = "DCF";
   uint8 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 1000000 * 10 ** uint256(decimals);
 

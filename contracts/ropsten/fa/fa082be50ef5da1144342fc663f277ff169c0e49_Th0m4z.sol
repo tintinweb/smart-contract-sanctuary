@@ -113,8 +113,8 @@ contract Th0m4z is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Th0m4z() public {
-        symbol = &quot;Th0m4z&quot;;
-        name = &quot;Dit is een test coin&quot;;
+        symbol = "Th0m4z";
+        name = "Dit is een test coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x743A3B65bde1Cc55fA6610da2d68fFB3C8b57A91] = _totalSupply;

@@ -111,8 +111,8 @@ contract EVRUToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;EVRU&quot;;
-        name = &quot;EVRU Token&quot;;
+        symbol = "EVRU";
+        name = "EVRU Token";
         decimals = 0;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

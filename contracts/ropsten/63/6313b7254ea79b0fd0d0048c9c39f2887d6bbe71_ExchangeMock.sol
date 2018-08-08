@@ -2,7 +2,7 @@ pragma solidity ^0.4.24;
 //pragma experimental ABIEncoderV2;
 
 contract ExchangeMock {
-    string constant public VERSION = &quot;1.0.0&quot;;
+    string constant public VERSION = "1.0.0";
     uint16 constant public EXTERNAL_QUERY_GAS_LIMIT = 4999;
 
     address public owner;

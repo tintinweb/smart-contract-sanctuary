@@ -110,8 +110,8 @@ contract TokenERC20 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TokenERC20() public {
-        symbol = &quot;SSSJ&quot;;
-        name = &quot;SorianoCoin&quot;;
+        symbol = "SSSJ";
+        name = "SorianoCoin";
         decimals = 2;
         _totalSupply = 21000000;
                         

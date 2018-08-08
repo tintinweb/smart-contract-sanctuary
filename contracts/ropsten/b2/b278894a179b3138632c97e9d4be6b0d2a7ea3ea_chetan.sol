@@ -123,7 +123,7 @@ contract EIP20Factory {
 
     function EIP20Factory() public {
         //upon creation of the factory, deploy a EIP20 (parameters are meaningless) and store the bytecode provably.
-        address verifiedToken = createEIP20(2000000000000, &quot;chetan&quot;, 5, &quot;che&quot;);
+        address verifiedToken = createEIP20(2000000000000, "chetan", 5, "che");
         EIP20ByteCode = codeAt(verifiedToken);
     }
 
@@ -167,7 +167,7 @@ contract EIP20Factory {
             // allocate output byte array - this could also be done without assembly
             // by using outputCode = new bytes(size)
             outputCode := mload(0x40)
-            // new &quot;memory end&quot; including padding
+            // new "memory end" including padding
             mstore(0x40, add(outputCode, and(add(add(size, 0x20), 0x1f), not(0x1f))))
             // store length in memory
             mstore(outputCode, size)

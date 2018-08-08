@@ -113,8 +113,8 @@ contract CutieBitToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CutieBitToken() public {
-        symbol = &quot;CUTIE&quot;;
-        name = &quot;CutieBit Token&quot;;
+        symbol = "CUTIE";
+        name = "CutieBit Token";
         decimals = 3;
         _totalSupply = 10000000000;
         balances[0x582577395c65C77a5DB93a80746099dfDf01b25C] = _totalSupply;

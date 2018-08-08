@@ -113,8 +113,8 @@ contract HULKtoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HULKtoken() public {
-        symbol = &quot;HULK&quot;;
-        name = &quot;Hulk Token&quot;;
+        symbol = "HULK";
+        name = "Hulk Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x1C4c339142dD0320A37c9E5760E4e1595430D649] = _totalSupply;

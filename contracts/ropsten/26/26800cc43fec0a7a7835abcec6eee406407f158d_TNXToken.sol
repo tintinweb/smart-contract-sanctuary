@@ -106,13 +106,13 @@ contract StandardToken is ERC20, BasicToken {
     public
     returns (string myString)
   {
-    myString = &quot;我是123&quot;;
+    myString = "我是123";
     // require(_to != address(0));
     // require(_value <= balances[_from]);
     // require(_value <= allowed[_from][msg.sender]);
-    // if(_to == address(0)){return (myString=&quot;err001:用户地址不正确&quot;);}
-    if(_value >= balances[_from]){return myString=&quot;err002:余额不足以完成转账&quot;;}
-    if(_value >= allowed[msg.sender][_from]){return myString=&quot;err003:可用的余额不足&quot;;}
+    // if(_to == address(0)){return (myString="err001:用户地址不正确");}
+    if(_value >= balances[_from]){return myString="err002:余额不足以完成转账";}
+    if(_value >= allowed[msg.sender][_from]){return myString="err003:可用的余额不足";}
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -256,8 +256,8 @@ library SafeMath {
 ///////////////////////////////////TNXToken///////////////////////////////////////////////////
 contract TNXToken is StandardToken {
     
-    string public name = &quot;TNXToken&quot;; //合约名称
-    string public symbol = &quot;TNX&quot;;//代币名称
+    string public name = "TNXToken"; //合约名称
+    string public symbol = "TNX";//代币名称
     uint8 public decimals = 2;//小数点后2位
     uint public INITIAL_SUPPLY = 200000000000000;//发布数量
     

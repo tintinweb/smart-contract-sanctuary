@@ -20,7 +20,7 @@ contract ERC721 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -187,17 +187,17 @@ contract ZombieFeeding is ZombieFactory {
     require(_isReady(myZombie));
     _targetDna = _targetDna % dnaModulus;
     uint newDna = (myZombie.dna + _targetDna) / 2;
-    if (keccak256(_species) == keccak256(&quot;kitty&quot;)) {
+    if (keccak256(_species) == keccak256("kitty")) {
       newDna = newDna - newDna % 100 + 99;
     }
-    _createZombie(&quot;NoName&quot;, newDna);
+    _createZombie("NoName", newDna);
     _triggerCooldown(myZombie);
   }
 
   function feedOnKitty(uint _zombieId, uint _kittyId) public {
     uint kittyDna;
     (, , , , , , , , , kittyDna) = kittyContract.getKitty(_kittyId);
-    feedAndMultiply(_zombieId, kittyDna, &quot;kitty&quot;);
+    feedAndMultiply(_zombieId, kittyDna, "kitty");
   }
 }
 
@@ -263,7 +263,7 @@ contract ZombieAttack is ZombieHelper {
       myZombie.winCount++;
       myZombie.level++;
       enemyZombie.lossCount++;
-      feedAndMultiply(_zombieId, enemyZombie.dna, &quot;zombie&quot;);
+      feedAndMultiply(_zombieId, enemyZombie.dna, "zombie");
     } else {
       myZombie.lossCount++;
       enemyZombie.winCount++;
@@ -311,7 +311,7 @@ contract ZombieOwnership is ZombieAttack, ERC721 {
 }
 
 contract CTCA is ZombieOwnership {
-  string public constant name = &quot;CTCA&quot;;
-  string public constant symbol = &quot;CTCA&quot;;
+  string public constant name = "CTCA";
+  string public constant symbol = "CTCA";
   uint256 public constant decimals = 18;
 }

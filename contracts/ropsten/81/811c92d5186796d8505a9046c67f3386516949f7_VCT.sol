@@ -113,8 +113,8 @@ contract VCT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VCT() public {
-        symbol = &quot;VCT&quot;;
-        name = &quot;VCT&quot;;
+        symbol = "VCT";
+        name = "VCT";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xD95DaE931F250426251A40944b1cB81C1FE1CC90] = _totalSupply;

@@ -55,7 +55,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -399,8 +399,8 @@ contract BurnableToken is MintableToken {
  */
 contract NovaToken is BurnableToken{
 
-    string public constant name = &quot;Real estate blockchain for professionals&quot;;
-    string public constant symbol = &quot;NOV&quot;;
+    string public constant name = "Real estate blockchain for professionals";
+    string public constant symbol = "NOV";
     uint32 public constant decimals = 8;
     uint public INITIAL_SUPPLY = 1000000000 * 10**8;
 

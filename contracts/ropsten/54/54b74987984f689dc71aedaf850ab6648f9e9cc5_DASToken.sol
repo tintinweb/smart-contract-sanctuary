@@ -191,8 +191,8 @@ contract DASToken is ERC223Token {
     // Constructor
     function DASToken() {
         secretaryGeneral = msg.sender;
-        name = &quot;DA$&quot;;
-        symbol = &quot;DA$&quot;;
+        name = "DA$";
+        symbol = "DA$";
         decimals = 18;
         totalSupply = 1000000000000000000000000000;
         balances[msg.sender] = totalSupply;

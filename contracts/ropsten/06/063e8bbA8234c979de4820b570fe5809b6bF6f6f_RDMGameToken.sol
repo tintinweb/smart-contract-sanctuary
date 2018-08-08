@@ -111,8 +111,8 @@ contract RDMGameToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RDMGameToken() public {
-        symbol = &quot;RDMG&quot;;
-        name = &quot;RDM Game Token&quot;;
+        symbol = "RDMG";
+        name = "RDM Game Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222] = _totalSupply;

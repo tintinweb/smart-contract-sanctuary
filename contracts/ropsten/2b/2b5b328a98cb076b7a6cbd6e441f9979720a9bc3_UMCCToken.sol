@@ -113,8 +113,8 @@ contract UMCCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UMCCToken() public {
-        symbol = &quot;UMCC&quot;;
-        name = &quot;UMCC Token&quot;;
+        symbol = "UMCC";
+        name = "UMCC Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xe7D7D96BacFe065081C8b6Ff29B6ac426490a0dB] = _totalSupply;

@@ -116,8 +116,8 @@ contract denfwdToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor () public {
-        symbol = &quot;DENFWD&quot;;
-        name = &quot;denfwd Token&quot;;
+        symbol = "DENFWD";
+        name = "denfwd Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

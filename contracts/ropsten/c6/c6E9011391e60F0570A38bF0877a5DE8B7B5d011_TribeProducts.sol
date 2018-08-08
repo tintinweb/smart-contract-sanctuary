@@ -67,7 +67,7 @@ contract TribeProducts {
 
 	// Map tribes and tokens to products
 	// Products themselves have tribe and tokens information. So both ways to query are possible.
-	// See &quot;tribeTokens&quot; and &quot;tokenTribe&quot;
+	// See "tribeTokens" and "tokenTribe"
 	mapping(address => string[]) internal tribeProducts;
 	mapping(uint => string) public tokenProduct;
 

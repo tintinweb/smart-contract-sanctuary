@@ -215,9 +215,9 @@ contract EtherNeo is ERC20Interface, Owned, SafeMath {
 
     function EtherNeo() public {
 
-        symbol = &quot;ETHN&quot;;
+        symbol = "ETHN";
 
-        name = &quot;EtherNeo&quot;;
+        name = "EtherNeo";
 
         decimals = 18;
 

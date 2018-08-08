@@ -499,8 +499,8 @@ event Burnfrom(address indexed from, uint256 value);
 
 contract TMToken is StandardBurnableToken, MintableToken, PausableToken {
 
-  string public constant name = &quot;Tokenmom&quot;;
-  string public constant symbol = &quot;TM&quot;;
+  string public constant name = "Tokenmom";
+  string public constant symbol = "TM";
   uint8 public constant decimals = 12;
   event Burn(address indexed from, uint256 value);
   event Burnfrom(address indexed from, uint256 value);

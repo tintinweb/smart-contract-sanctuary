@@ -113,8 +113,8 @@ contract GOE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GOE() public {
-        symbol = &quot;GOE&quot;;
-        name = &quot;GOE Coin&quot;;
+        symbol = "GOE";
+        name = "GOE Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6a65c9F77A008a7ec593ddF2443F1A8368Bb4997] = _totalSupply;

@@ -35,8 +35,8 @@ contract BaoBaoToken {
     ) public {
         totalSupply = 21000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;BaoBaoCoin&quot;;                              // Set the name for display purposes
-        symbol = &quot;BBC&quot;;                                   // Set the symbol for display purposes
+        name = "BaoBaoCoin";                              // Set the name for display purposes
+        symbol = "BBC";                                   // Set the symbol for display purposes
     }
 
     /**

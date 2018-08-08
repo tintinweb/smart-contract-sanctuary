@@ -138,11 +138,11 @@ contract Portfolio {
   function Portfolio(address _assembly) public {
     assemblyAddress = _assembly;
 
-    allocations[0] = Allocations.Allocation(&quot;Tactical Capital&quot;, 48);
-    allocations[1] = Allocations.Allocation(&quot;Safety Net&quot;, 20);
-    allocations[2] = Allocations.Allocation(&quot;Options&quot;, 20);
-    allocations[3] = Allocations.Allocation(&quot;Non-Profit&quot;, 10);
-    allocations[4] = Allocations.Allocation(&quot;Management&quot;, 2);
+    allocations[0] = Allocations.Allocation("Tactical Capital", 48);
+    allocations[1] = Allocations.Allocation("Safety Net", 20);
+    allocations[2] = Allocations.Allocation("Options", 20);
+    allocations[3] = Allocations.Allocation("Non-Profit", 10);
+    allocations[4] = Allocations.Allocation("Management", 2);
   }
 
   function getAllocation(uint index) public view returns (bytes16, uint8) {

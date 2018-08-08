@@ -4,7 +4,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -453,7 +453,7 @@ contract LinniaRecords is Ownable, Pausable, Destructible {
     function recover(bytes32 message, bytes32 r, bytes32 s, uint8 v)
     public pure returns (address)
     {
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
         bytes32 prefixedHash = keccak256(abi.encodePacked(prefix, message));
         return ecrecover(prefixedHash, v, r, s);
     }
@@ -621,7 +621,7 @@ contract LinniaPermissions is Ownable, Pausable, Destructible {
         require(permissions[dataHash][viewer].canAccess);
         permissions[dataHash][viewer] = Permission({
             canAccess: false,
-            dataUri: &quot;&quot;
+            dataUri: ""
             });
         emit LinniaAccessRevoked(dataHash, msg.sender, viewer);
         return true;

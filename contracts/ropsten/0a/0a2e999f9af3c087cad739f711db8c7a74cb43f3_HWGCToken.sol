@@ -17,9 +17,9 @@ contract HWGCToken {
   using SafeMath for uint256;
 
   address public owner;
-  string public name = &quot;HWG Cash&quot;;
-  string public symbol = &quot;HWGC&quot;;
-  string public icon = &quot;QmR2KRYCPnxrMNVt5GyBPdW3Bi3wHubonayvPPpmqdEM5b&quot;;
+  string public name = "HWG Cash";
+  string public symbol = "HWGC";
+  string public icon = "QmR2KRYCPnxrMNVt5GyBPdW3Bi3wHubonayvPPpmqdEM5b";
   uint256 public decimals = 5;
   uint256 public totalSupply = 0;
   uint256 public cap = 5000000000000000000; // 500,000,000 x 10^10;

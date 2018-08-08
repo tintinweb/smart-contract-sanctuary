@@ -116,8 +116,8 @@ contract TMONEY is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TMONEY() public {
-        symbol = &quot;TMONEY&quot;;
-        name = &quot;Time Money Token&quot;;
+        symbol = "TMONEY";
+        name = "Time Money Token";
         decimals = 0;
         bonusEnds = now + 13 weeks;
         endDate = now + 32 weeks;

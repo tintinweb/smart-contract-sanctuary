@@ -191,7 +191,7 @@ contract CryptosisToken is owned, TokenERC20 {
         uint256 initialSupply,
         string tokenName,
         string tokenSymbol
-    ) TokenERC20(42000000, &quot;C3yptosis&quot;, &quot;C3Y&quot;) public {} 
+    ) TokenERC20(42000000, "C3yptosis", "C3Y") public {} 
     /*TokenERC20(initialSupply, tokenName, tokenSymbol) public {}*/
 
     /* Internal transfer, only can be called by this contract */

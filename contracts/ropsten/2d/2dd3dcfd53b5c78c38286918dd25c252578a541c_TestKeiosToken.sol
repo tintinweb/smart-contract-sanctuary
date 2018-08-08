@@ -113,8 +113,8 @@ contract TestKeiosToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestKeiosToken() public {
-        symbol = &quot;0TKEIOS&quot;;
-        name = &quot;0 Test Keios Token&quot;;
+        symbol = "0TKEIOS";
+        name = "0 Test Keios Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2839E573866dE50FA82381B4EDedf1d34a59125F] = _totalSupply;

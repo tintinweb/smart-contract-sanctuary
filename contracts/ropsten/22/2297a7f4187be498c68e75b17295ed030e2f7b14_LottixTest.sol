@@ -113,8 +113,8 @@ contract LottixTest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LottixTest() public {
-        symbol = &quot;LTXT&quot;;
-        name = &quot;Lottix Test&quot;;
+        symbol = "LTXT";
+        name = "Lottix Test";
         decimals = 18;
         _totalSupply = 5000000000000000000000;
         balances[0x4FC0Ab110E1abca9106A07993A9E756A75a7d717] = _totalSupply;

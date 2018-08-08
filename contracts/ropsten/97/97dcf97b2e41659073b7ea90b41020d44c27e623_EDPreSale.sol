@@ -71,7 +71,7 @@ library SafeMath {
   }
 
   function uint2str(uint i) internal pure returns (string){
-      if (i == 0) return &quot;0&quot;;
+      if (i == 0) return "0";
       uint j = i;
       uint length;
       while (j != 0){
@@ -97,7 +97,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -571,12 +571,12 @@ contract lockedCrowdsale is Ownable {
   function crowdsaleStatus() public view returns (string) {
     bool withinPeriod = now >= startTime && now <= endTime;
     if(!withinPeriod){
-      return  &quot;Sale is not within period&quot;;
+      return  "Sale is not within period";
     } 
     if(!crowdsaleActive){
-      return  &quot;Sale is inactive&quot;;
+      return  "Sale is inactive";
     }
-    return &quot;Sale is active&quot;;
+    return "Sale is active";
   }
  
   

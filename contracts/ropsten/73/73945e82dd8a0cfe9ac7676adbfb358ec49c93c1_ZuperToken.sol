@@ -95,8 +95,8 @@ contract ZuperToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZuperToken() public {
-        symbol = &quot;ZPR&quot;;
-        name = &quot;Zuper Token&quot;;
+        symbol = "ZPR";
+        name = "Zuper Token";
         decimals = 18;
         _totalSupply = 55555555;
         balances[0x966d9F0cbD7081f8A033d8D242B1ADCB544DF6F0] = _totalSupply;

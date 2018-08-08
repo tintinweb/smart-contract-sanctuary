@@ -113,8 +113,8 @@ contract MitkeyCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MitkeyCoin() public {
-        symbol = &quot;MITK&quot;;
-        name = &quot;MitkeyCoin Token&quot;;
+        symbol = "MITK";
+        name = "MitkeyCoin Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa8BB7AC8183452B34Cd4aD296fAbe4fF430b5124] = _totalSupply;

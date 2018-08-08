@@ -116,8 +116,8 @@ contract bitikzikToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitikzikToken() public {
-        symbol = &quot;ikz&quot;;
-        name = &quot;ikzik Token&quot;;
+        symbol = "ikz";
+        name = "ikzik Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 27 weeks;

@@ -113,8 +113,8 @@ contract OhridToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;0OHRID&quot;;
-        name = &quot;0 Ohrid Token&quot;;
+        symbol = "0OHRID";
+        name = "0 Ohrid Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xEFdFb6739d00ad1FeAE1474565d62840bc481172] = _totalSupply;

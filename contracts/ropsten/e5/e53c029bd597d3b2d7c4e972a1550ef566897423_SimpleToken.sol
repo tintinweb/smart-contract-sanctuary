@@ -232,8 +232,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;SIMPLECOIN&quot;;
-  string public constant symbol = &quot;SIMC&quot;;
+  string public constant name = "SIMPLECOIN";
+  string public constant symbol = "SIMC";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));
 

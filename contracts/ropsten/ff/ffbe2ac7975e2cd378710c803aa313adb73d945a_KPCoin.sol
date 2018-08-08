@@ -113,8 +113,8 @@ contract KPCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KPCoin() public {
-        symbol = &quot;KP&quot;;
-        name = &quot;KPCoin&quot;;
+        symbol = "KP";
+        name = "KPCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xeDdB056437Bb04C965d707757B7d07A9bB4af028] = _totalSupply;

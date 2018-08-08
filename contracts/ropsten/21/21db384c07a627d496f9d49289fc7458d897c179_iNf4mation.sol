@@ -113,8 +113,8 @@ contract iNf4mation is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function iNf4mation() public {
-        symbol = &quot;iNf4&quot;;
-        name = &quot;iNf4mation&quot;;
+        symbol = "iNf4";
+        name = "iNf4mation";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xD49995c06805F59D40F1fF3665282b36DAb1551e] = _totalSupply;

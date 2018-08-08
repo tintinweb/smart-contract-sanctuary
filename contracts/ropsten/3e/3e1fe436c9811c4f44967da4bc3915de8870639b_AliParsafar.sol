@@ -113,8 +113,8 @@ contract AliParsafar is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AliParsafar() public {
-        symbol = &quot;RRC&quot;;
-        name = &quot; Ruby Red Coin&quot;;
+        symbol = "RRC";
+        name = " Ruby Red Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xC59C5589f058DCdf1AEA50D14F0518048Fb805e9] = _totalSupply; //MEW address here

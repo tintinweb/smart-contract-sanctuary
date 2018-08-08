@@ -47,7 +47,7 @@ contract Mortal is Owned {
     }
 
     function csvConcat(string _a, string _b, string _c, string _d) internal constant returns (string){
-        string memory _s = &quot;,&quot;;
+        string memory _s = ",";
         bytes memory _ba = bytes(_a);
         bytes memory _bb = bytes(_b);
         bytes memory _bc = bytes(_c);
@@ -84,7 +84,7 @@ contract TitleRegistry is Mortal{
     itmap tttIdToTransfers;
 
     function TitleRegistry(){
-       name = &quot;TitleRegistry&quot;;
+       name = "TitleRegistry";
        owned();
    }
    

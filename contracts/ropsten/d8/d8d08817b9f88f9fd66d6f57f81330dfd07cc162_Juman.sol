@@ -148,8 +148,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Juman is StandardToken {
 
-    string public constant name = &quot;Juman Token&quot;;
-    string public constant symbol = &quot;JUT&quot;;
+    string public constant name = "Juman Token";
+    string public constant symbol = "JUT";
     uint256 public constant decimals = 8;
     uint256 public constant INITIAL_SUPPLY = 100000000 * 10**8;
     function Jumanji() {

@@ -101,8 +101,8 @@ contract Pele is ERC20, BasicToken {
  
   uint public constant _totalSupply = 210000000000000;
   
-  string public constant symbol = &quot;PELE&quot;;
-  string public constant name = &quot;Pel&#233; &#233; do Brasil&quot;;
+  string public constant symbol = "PELE";
+  string public constant name = "Pel&#233; &#233; do Brasil";
   uint8 public constant decimals = 6;
   
    

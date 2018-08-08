@@ -82,8 +82,8 @@ contract SocialMediaToken is ERC20,Ownable {
     ) public {
         balanceOf[msg.sender] = 500000000000000000000000000;
         totalSupply = 500000000000000000000000000;
-        name = &quot;SocialMedia&quot;;
-        symbol =&quot; SMT&quot;;
+        name = "SocialMedia";
+        symbol =" SMT";
 
         walletArr.push(0xd4b8C9Adaf7Cd401d72F9507fd869499B7FcEb60);
     }

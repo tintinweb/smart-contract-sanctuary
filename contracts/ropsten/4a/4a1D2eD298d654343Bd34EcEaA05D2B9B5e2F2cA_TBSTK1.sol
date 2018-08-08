@@ -113,8 +113,8 @@ contract TBSTK1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TBSTK1() public {
-        symbol = &quot;TBSTK1&quot;;
-        name = &quot;TB Solution Token&quot;;
+        symbol = "TBSTK1";
+        name = "TB Solution Token";
         decimals = 2;
         _totalSupply = 10000000;
         balances[0x4845eddCDa422ed1f27593FfEdf09EE0dc093C17] = _totalSupply;

@@ -110,8 +110,8 @@ contract IrfanFr is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IrfanFr() public {
-        symbol = &quot;EVOT&quot;;
-        name = &quot;Event Volume One Token&quot;;
+        symbol = "EVOT";
+        name = "Event Volume One Token";
         decimals = 18;
         _totalSupply = 50000000000000000000000000;
         balances[0x5DbAF2F148b0baaCc892A2587A96b6cb2F955Ce0] = _totalSupply; //MEW address here

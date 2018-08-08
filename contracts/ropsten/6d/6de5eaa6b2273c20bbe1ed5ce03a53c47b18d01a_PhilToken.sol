@@ -116,8 +116,8 @@ contract PhilToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PhilToken() public {
-        symbol = &quot;PHL&quot;;
-        name = &quot;PhilToken&quot;;
+        symbol = "PHL";
+        name = "PhilToken";
         decimals = 18;
         bonusEnds = block.timestamp + 1 weeks;
         endDate = now + 7 weeks;

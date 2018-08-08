@@ -113,8 +113,8 @@ contract TheUltimateWorldDigitalCurrency is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheUltimateWorldDigitalCurrency() public {
-        symbol = &quot;TUWDC&quot;;
-        name = &quot;The Ultimate World Digital Currency&quot;;
+        symbol = "TUWDC";
+        name = "The Ultimate World Digital Currency";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDC0356A6c3879f66322BE05084c4CCAf3C905172] = _totalSupply;

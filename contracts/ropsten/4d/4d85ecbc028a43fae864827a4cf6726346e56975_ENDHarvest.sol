@@ -113,8 +113,8 @@ contract ENDHarvest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ENDHarvest() public {
-        symbol = &quot;ENDH&quot;;
-        name = &quot;ENDHarvest&quot;;
+        symbol = "ENDH";
+        name = "ENDHarvest";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x31Dd47B422Dd4bb2629FfBE932e9B028944129C8] = _totalSupply;

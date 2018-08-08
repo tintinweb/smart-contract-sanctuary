@@ -113,8 +113,8 @@ contract GC is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function GC() public {
-        symbol = &quot;GC&quot;;
-        name = &quot;Gric Coin&quot;;
+        symbol = "GC";
+        name = "Gric Coin";
         decimals = 18;
         _totalSupply = 10000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

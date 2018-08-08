@@ -113,8 +113,8 @@ contract plantcToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function plantcToken() public {
-        symbol = &quot;Plant&quot;;
-        name = &quot;Plant Token&quot;;
+        symbol = "Plant";
+        name = "Plant Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf99BB3441DD32C888C3eE41c174A82e6b860EB00] = _totalSupply;

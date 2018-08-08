@@ -49,8 +49,8 @@ contract toktok {
     ) public {
         totalSupply = 700000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;toktok&quot;;                                   // Set the name for display purposes
-        symbol = &quot;tok&quot;;                               // Set the symbol for display purposes
+        name = "toktok";                                   // Set the name for display purposes
+        symbol = "tok";                               // Set the symbol for display purposes
     }
 
     /**
@@ -321,7 +321,7 @@ contract Token {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     

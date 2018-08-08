@@ -4,8 +4,8 @@ pragma solidity ^0.4.11;
 * @dev software engeneer Alex Bloub
 */
 contract CarHashToken {
-    string public constant name = &quot;CarHashToken&quot;;
-    string public constant symbol = &quot;CaHaTo&quot;;
+    string public constant name = "CarHashToken";
+    string public constant symbol = "CaHaTo";
     uint32 public constant decimals = 18;
     uint256 public _totalSupply = 10000000000000000000;
     

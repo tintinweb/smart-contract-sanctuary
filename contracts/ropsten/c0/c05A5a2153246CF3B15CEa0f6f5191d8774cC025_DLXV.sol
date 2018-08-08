@@ -113,8 +113,8 @@ contract DLXV is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DLXV() public {
-        symbol = &quot;DLXV&quot;;
-        name = &quot;Delta-X Voucher&quot;;
+        symbol = "DLXV";
+        name = "Delta-X Voucher";
         decimals = 0;
         _totalSupply = 500000000;
         balances[0x899F0D1707E7d6ec4A937bd116b56b237a502849] = _totalSupply;

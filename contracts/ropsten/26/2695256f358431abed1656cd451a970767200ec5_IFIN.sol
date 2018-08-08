@@ -113,8 +113,8 @@ contract IFIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IFIN() public {
-        symbol = &quot;IFN&quot;;
-        name = &quot;IFIN Token&quot;;
+        symbol = "IFN";
+        name = "IFIN Token";
         decimals = 18;
         _totalSupply = 128000000000000000000000000;
         balances[0xD133cc957d41C0cd62ed6175155B2E54F951eA79] = _totalSupply;

@@ -34,7 +34,7 @@ contract CrowdSale {
     uint _amt = msg.value;
     if(_amt > 0){
       balances[msg.sender] += _amt;
-      BalanceDeposited(msg.sender, msg.value, &quot;Balance Deposited&quot;);
+      BalanceDeposited(msg.sender, msg.value, "Balance Deposited");
     }
   }
 
@@ -49,7 +49,7 @@ contract CrowdSale {
       balances[msg.sender] -= total;
       reward[msg.sender] += _amt;
       TotalToken -= _amt;
-      TokenPurchased(msg.sender, _amt, &quot;Token Purchased.&quot;);
+      TokenPurchased(msg.sender, _amt, "Token Purchased.");
     }
   }
 
@@ -57,7 +57,7 @@ contract CrowdSale {
     if(reward[msg.sender] >= _amt){
       reward[msg.sender] -= _amt;
       reward[_to] += _amt;
-      TokenTransfered(msg.sender, _to, _amt, &quot;Token Transfered.&quot;);
+      TokenTransfered(msg.sender, _to, _amt, "Token Transfered.");
     }
   }
 

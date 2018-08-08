@@ -197,9 +197,9 @@ contract ERC20Token is ERC20 {
 contract LVECoinDemo is ERC20Token, Pausable, Dealershipable {
 
     // Token name
-    string public  constant name                = &quot;LVECoinDemo&quot;;
+    string public  constant name                = "LVECoinDemo";
     // Token symbol
-    string public  constant symbol              = &quot;LVEDemo&quot;;
+    string public  constant symbol              = "LVEDemo";
     // 位數
     uint256 public constant decimals            = 18;
     // 總Token發行量(20億)

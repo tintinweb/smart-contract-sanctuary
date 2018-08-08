@@ -89,7 +89,7 @@ contract AllSportsCoin is owned, TokenERC20 {
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function AllSportsCoin(
-    ) TokenERC20(1500000000, &quot;All Sports Coin&quot;, &quot;SOC&quot;) public {}
+    ) TokenERC20(1500000000, "All Sports Coin", "SOC") public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {

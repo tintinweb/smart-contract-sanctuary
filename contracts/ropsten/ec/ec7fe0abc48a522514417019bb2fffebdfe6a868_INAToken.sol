@@ -247,7 +247,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -296,8 +296,8 @@ contract Ownable {
 }
 
 contract INAToken is StandardToken, Ownable {
-  string constant public name = &quot;INA Coin&quot;;
-  string constant public symbol = &quot;INA&quot;;
+  string constant public name = "INA Coin";
+  string constant public symbol = "INA";
   uint8 constant public decimals = 18;
   bool public isLocked = true;
 

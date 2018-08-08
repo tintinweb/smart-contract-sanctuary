@@ -111,8 +111,8 @@ contract EOSPlusToken is ERC20Interface, Owned, SafeMath {
         decimals = 18;                            // Amount of decimals for display purposes
         balances[msg.sender] = INITIAL_SUPPLY;               // Give the creator all initial tokens (100000 for example)
         _totalSupply = INITIAL_SUPPLY;                        //total supply (there are 1.2 billion tokens going to 18DP)
-        name = &quot;EOS+&quot;;                                   // Set the name for display purposes
-        symbol = &quot;EOS+&quot;;                               // Set the symbol for display purposes
+        name = "EOS+";                                   // Set the name for display purposes
+        symbol = "EOS+";                               // Set the symbol for display purposes
     }
 
 

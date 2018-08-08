@@ -113,8 +113,8 @@ contract DeaultERC20 is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DFLT&quot;;
-        name = &quot;Default&quot;;
+        symbol = "DFLT";
+        name = "Default";
         decimals = 18;
     }
 
@@ -251,15 +251,15 @@ contract IGCoin is DeaultERC20 {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;zvgh001&quot;;
-        name = &quot;zvgh001&quot;;
+        symbol = "zvgh001";
+        name = "zvgh001";
         decimals = 18;
         initialSaleComplete = false;
         _totalSupply = InitialSupply;  // Keep track of all IG Coins created, ever
         balances[owner] = _totalSupply;  // Give the creator all initial IG coins
         emit Transfer(address(0), owner, _totalSupply);
 
-        reserveAddress = new Contract(&quot;Reserve&quot;);  // Create contract to hold reserve
+        reserveAddress = new Contract("Reserve");  // Create contract to hold reserve
         quoteAsk();
         quoteBid();        
         debugVal = 1175293658221324600208007724055171054601*FIXED_3/1355713814124746533949216473472641271;

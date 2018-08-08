@@ -106,8 +106,8 @@ contract VenusToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-		symbol = &quot;VNS&quot;;
-        name = &quot;Venus Token&quot;;
+		symbol = "VNS";
+        name = "Venus Token";
         decimals = 18;
         _totalSupply = 100000000 * 10 ** decimals;
         balances[msg.sender] = _totalSupply;

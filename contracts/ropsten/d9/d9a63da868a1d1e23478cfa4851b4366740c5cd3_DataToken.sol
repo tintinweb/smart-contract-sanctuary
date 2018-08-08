@@ -104,8 +104,8 @@ contract DataToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DataToken() public {
-        symbol = &quot;DATA&quot;;
-        name = &quot;Data Token&quot;;
+        symbol = "DATA";
+        name = "Data Token";
         decimals = 18;
         _totalSupply = 2100000000000000000000000000;
         balances[0x63845cb113664eB5B6725C3Fe92a00487243461B] = _totalSupply;

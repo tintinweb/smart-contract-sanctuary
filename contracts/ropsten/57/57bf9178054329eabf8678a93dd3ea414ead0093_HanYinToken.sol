@@ -545,9 +545,9 @@ contract StableToken is StandardToken {
 
 contract HanYinToken is StableToken{
 
-    string public name = &quot;HanYin stable Token&quot;;
+    string public name = "HanYin stable Token";
     uint8 public decimals = 6;
-    string public symbol = &quot;HYT&quot;;
+    string public symbol = "HYT";
     string public version = &#39;v1.0&#39;;
     uint256 public allocateEndTime;
 

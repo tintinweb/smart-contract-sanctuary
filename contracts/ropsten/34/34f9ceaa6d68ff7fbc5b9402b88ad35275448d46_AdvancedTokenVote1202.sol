@@ -4,8 +4,8 @@ pragma solidity ^0.4.22;
 
 contract BasicErc20Token {
 
-    string public name = &quot;BasicErc20Token&quot;;
-    string public symbol = &quot;BET&quot;;
+    string public name = "BasicErc20Token";
+    string public symbol = "BET";
     uint8 public decimals = 0;
     uint256 public totalSupply;
     address public owner;
@@ -86,12 +86,12 @@ contract AdvancedTokenVote1202 {
 
     constructor() public {
         // This is a hack, remove until string[] is supported for a function parameter
-        optionDescMap[0][1] = &quot;No&quot;;
-        optionDescMap[0][2] = &quot;Yes, 100 more&quot;;
-        optionDescMap[0][3] = &quot;Yes, 200 more&quot;;
+        optionDescMap[0][1] = "No";
+        optionDescMap[0][2] = "Yes, 100 more";
+        optionDescMap[0][3] = "Yes, 200 more";
 
-        optionDescMap[1][1] = &quot;No&quot;;
-        optionDescMap[1][2] = &quot;Yes&quot;;
+        optionDescMap[1][1] = "No";
+        optionDescMap[1][2] = "Yes";
     }
 
     function createIssue(uint issueId, address _tokenAddr, uint[] options_,

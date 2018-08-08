@@ -113,8 +113,8 @@ contract WETCC is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function WETCC() public {
-        symbol = &quot;WETCC&quot;;
-        name = &quot;WeTrustCrypto Coin&quot;;
+        symbol = "WETCC";
+        name = "WeTrustCrypto Coin";
         decimals = 18;
         _totalSupply = 200000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -117,8 +117,8 @@ contract CleverTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CLVT&quot;;
-        name = &quot;Clever Test Token&quot;;
+        symbol = "CLVT";
+        name = "Clever Test Token";
         decimals = 18;
         bonus1Ends = now + 2 days;
         bonus2Ends = now + 1 weeks;

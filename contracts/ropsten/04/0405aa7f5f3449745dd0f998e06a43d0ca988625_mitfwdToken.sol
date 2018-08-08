@@ -116,8 +116,8 @@ contract mitfwdToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function mitfwdToken() public {
-        symbol = &quot;MIT&quot;;
-        name = &quot;bitfwd Token&quot;;
+        symbol = "MIT";
+        name = "bitfwd Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -86,8 +86,8 @@ contract TestToken {
     
     function TestToken () public {
         totalSupply = 690000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
-        name = &quot;TestToken 1&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TESTT1&quot;;                               // Set the symbol for display purposes
+        name = "TestToken 1";                                   // Set the name for display purposes
+        symbol = "TESTT1";                               // Set the symbol for display purposes
         owner = msg.sender;    
         distr(owner, totalDistributed);
     }

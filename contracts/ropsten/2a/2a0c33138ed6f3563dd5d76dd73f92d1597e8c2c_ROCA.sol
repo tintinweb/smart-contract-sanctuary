@@ -345,7 +345,7 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract ROCA is PausableToken, MintableToken, BurnableToken {
-    string public constant name = &quot;ROCA&quot;;
-    string public constant symbol = &quot;ROCA&quot;;
+    string public constant name = "ROCA";
+    string public constant symbol = "ROCA";
     uint8 public constant decimals = 2;
 }

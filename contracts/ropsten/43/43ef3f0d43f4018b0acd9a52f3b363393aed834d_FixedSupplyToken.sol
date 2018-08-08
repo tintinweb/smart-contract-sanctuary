@@ -77,8 +77,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;SPAM&quot;;
-        name = &quot;SPAM Token&quot;;
+        symbol = "SPAM";
+        name = "SPAM Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

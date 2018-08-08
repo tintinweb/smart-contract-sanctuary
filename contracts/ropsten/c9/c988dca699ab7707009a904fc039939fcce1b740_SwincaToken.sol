@@ -58,8 +58,8 @@ contract SwincaToken is BasicToken {
       bool isEnabled;
   }
 
-  string public constant name = &quot;SwincaV3&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;SWI&quot;; // solium-disable-line uppercase
+  string public constant name = "SwincaV3"; // solium-disable-line uppercase
+  string public constant symbol = "SWI"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
   
   address public owner;

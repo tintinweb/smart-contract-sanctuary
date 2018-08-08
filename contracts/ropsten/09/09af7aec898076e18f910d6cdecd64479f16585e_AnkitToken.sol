@@ -113,8 +113,8 @@ contract AnkitToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AnkitToken() public {
-        symbol = &quot;ANKTKN&quot;;
-        name = &quot;ANKITTOKEN&quot;;
+        symbol = "ANKTKN";
+        name = "ANKITTOKEN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0a814af6BFd599B463e8878f56D4E0089aA45D23] = _totalSupply;

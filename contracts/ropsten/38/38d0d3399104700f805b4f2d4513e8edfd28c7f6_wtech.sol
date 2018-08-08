@@ -116,8 +116,8 @@ contract wtech is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function wtech() public {
-        symbol = &quot;WTC&quot;;
-        name = &quot;Wtech Token&quot;;
+        symbol = "WTC";
+        name = "Wtech Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

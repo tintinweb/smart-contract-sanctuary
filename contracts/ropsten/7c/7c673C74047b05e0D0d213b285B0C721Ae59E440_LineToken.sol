@@ -113,8 +113,8 @@ contract LineToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LineToken() public {
-        symbol = &quot;p@@&quot;;
-        name = &quot;LineToken&quot;;
+        symbol = "p@@";
+        name = "LineToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x382e85E9CeE3247Fc029ddD31F28204042d99e95] = _totalSupply;

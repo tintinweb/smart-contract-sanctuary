@@ -103,10 +103,10 @@ contract StandardToken is Token {
 contract FlowchainToken is StandardToken, Mintable {
 
     /* Public variables of the token */
-    string public name = &quot;FlowchainCoin&quot;;
-    string public symbol = &quot;FLC&quot;;    
+    string public name = "FlowchainCoin";
+    string public symbol = "FLC";    
     uint8 public decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     address public mintableAddress;
     address public multiSigWallet;    
     address public creator;

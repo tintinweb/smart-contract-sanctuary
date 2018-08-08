@@ -99,8 +99,8 @@ contract BDIToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BDIToken() public {
-        symbol = &quot;BDI&quot;;
-        name = &quot;BDI Token&quot;;
+        symbol = "BDI";
+        name = "BDI Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xB23e346C948CbB2893ced599E0471585972E8FA2] = _totalSupply;

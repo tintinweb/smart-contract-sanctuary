@@ -116,8 +116,8 @@ contract DxyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DXY&quot;;
-        name = &quot;DX-Y Token&quot;;
+        symbol = "DXY";
+        name = "DX-Y Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

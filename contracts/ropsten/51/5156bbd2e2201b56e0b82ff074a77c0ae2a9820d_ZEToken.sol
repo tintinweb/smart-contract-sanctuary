@@ -113,8 +113,8 @@ contract ZEToken is UnlimitedAllowanceToken {
 
     uint8 constant public decimals = 18;
     uint public totalSupply = 10**27; // 1 billion tokens, 18 decimal places
-    string constant public name = &quot;ZE Token based on ZRX Token&quot;;
-    string constant public symbol = &quot;ZE Token&quot;;
+    string constant public name = "ZE Token based on ZRX Token";
+    string constant public symbol = "ZE Token";
 
     function ZEToken() {
         balances[msg.sender] = totalSupply;

@@ -178,10 +178,10 @@ contract StandardToken is Token {
 contract RunningCoinToken is StandardToken, SafeMath, owned {
 
     // metadata
-    string  public constant name = &quot;RunningCoin&quot;;
-    string  public constant symbol = &quot;RNC&quot;;
+    string  public constant name = "RunningCoin";
+    string  public constant symbol = "RNC";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // ETH存放地址

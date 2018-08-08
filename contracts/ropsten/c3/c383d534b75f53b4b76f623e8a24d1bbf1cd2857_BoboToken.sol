@@ -234,8 +234,8 @@ contract BoboTokenBasic is ERC20 {
 */
 contract BoboToken is BoboTokenBasic {
 
-  string public constant name = &quot;BOBOToken&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;BOO&quot;; // solium-disable-line uppercase
+  string public constant name = "BOBOToken"; // solium-disable-line uppercase
+  string public constant symbol = "BOO"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 9000000 * (10 ** uint256(decimals));

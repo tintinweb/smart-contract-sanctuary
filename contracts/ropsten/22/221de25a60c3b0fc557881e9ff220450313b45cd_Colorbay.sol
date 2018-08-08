@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -502,7 +502,7 @@ contract Colorbay is PausableToken,MintableToken,BurnableToken {
     string public symbol;
     uint256 public decimals = 18;
 
-    //&quot;1000000000&quot;,&quot;Colorbay&quot;,&quot;CLB&quot;
+    //"1000000000","Colorbay","CLB"
     constructor(uint256 initialSupply, string tokenName, string tokenSymbol) public {
         totalSupply_ = initialSupply * 10 ** uint256(decimals);
         balances[msg.sender] = totalSupply_;

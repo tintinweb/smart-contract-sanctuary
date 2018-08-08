@@ -73,8 +73,8 @@ contract bigbrother is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;bigbrother&quot;;
-    string public constant symbol = &quot;BB&quot;;
+    string public constant name = "bigbrother";
+    string public constant symbol = "BB";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 7000000000e8;

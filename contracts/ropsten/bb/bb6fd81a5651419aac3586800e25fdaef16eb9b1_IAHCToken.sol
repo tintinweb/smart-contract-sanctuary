@@ -79,8 +79,8 @@ contract StandardToken is Token {
 
 contract IAHCToken is StandardToken {
 
-    string public constant name   = &quot;IAHC&quot;;
-    string public constant symbol = &quot;IAHC&quot;;
+    string public constant name   = "IAHC";
+    string public constant symbol = "IAHC";
 
     uint8 public constant decimals = 8;
     uint  public constant decimals_multiplier = 100000000;

@@ -113,8 +113,8 @@ contract MadToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MadToken() public {
-        symbol = &quot;MCOIN&quot;;
-        name = &quot;M Coin&quot;;
+        symbol = "MCOIN";
+        name = "M Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa6184C78dEab6d403EBec59AC4f603cA9BF5E2A0] = _totalSupply;

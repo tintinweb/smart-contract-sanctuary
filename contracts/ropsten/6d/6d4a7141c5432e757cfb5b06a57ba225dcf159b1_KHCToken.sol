@@ -217,7 +217,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -337,9 +337,9 @@ contract KHCToken is PausableToken {
     }
 
     
-    string public name = &quot;KnowHowChain2&quot;;
+    string public name = "KnowHowChain2";
     uint8 public decimals = 8;
-    string public symbol = &quot;KHC2&quot;;
+    string public symbol = "KHC2";
     string public version = &#39;1.0.1&#39;;
     uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));
 

@@ -21,8 +21,8 @@ contract Owned {
 
 contract HBCM is Owned {
 
-    string public name=&quot;HBCM&quot;;
-    string public symbol=&quot;HBCM&quot;;
+    string public name="HBCM";
+    string public symbol="HBCM";
     uint8  public decimals=18;
     uint256 public totalSupply;
     uint256 public sellPrice;

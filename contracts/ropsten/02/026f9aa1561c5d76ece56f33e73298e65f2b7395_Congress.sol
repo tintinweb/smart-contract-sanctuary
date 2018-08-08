@@ -94,7 +94,7 @@ contract Congress is owned, tokenRecipient {
     )  payable public {
         changeVotingRules(minimumQuorumForProposals, minutesForDebate, marginOfVotesForMajority);
         // It’s necessary to add an empty first member
-        addMember(0, &quot;&quot;);
+        addMember(0, "");
         // and let&#39;s add the founder, to save a step later
         addMember(owner, &#39;founder&#39;);
     }

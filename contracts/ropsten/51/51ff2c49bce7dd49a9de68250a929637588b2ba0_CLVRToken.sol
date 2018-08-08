@@ -15,8 +15,8 @@ contract CLVRToken {
     constructor() public {
         totalSupply =  100000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Clever&quot;;
-        symbol = &quot;CLVR&quot;;
+        name = "Clever";
+        symbol = "CLVR";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

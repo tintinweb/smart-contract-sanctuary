@@ -1,8 +1,8 @@
 pragma solidity 0.4.18;
 
 contract BlueDragon {
-    string public symbol = &quot;BDG&quot;;
-    string public name = &quot;Blue Dragon&quot;;
+    string public symbol = "BDG";
+    string public name = "Blue Dragon";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
     uint256 _MaxDistribPublicSupply = 0;

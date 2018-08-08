@@ -113,8 +113,8 @@ contract EBIToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EBIToken() public {
-        symbol = &quot;EBI&quot;;
-        name = &quot;EBI Token&quot;;
+        symbol = "EBI";
+        name = "EBI Token";
         decimals = 3;
         _totalSupply = 1000000;
         balances[0xc242de90939a0b5F1733bfa9604bd5966DBaC81e] = _totalSupply;

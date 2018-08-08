@@ -116,8 +116,8 @@ contract EcomethToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EcomethToken() public {
-        symbol = &quot;EMT&quot;;
-        name = &quot;Ecometh Token&quot;;
+        symbol = "EMT";
+        name = "Ecometh Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 3 weeks;

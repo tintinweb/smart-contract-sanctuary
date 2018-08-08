@@ -222,8 +222,8 @@ contract StandardToken is ERC20, BasicToken {
 
 }
 contract CpublicTest is StandardToken {
-string public name = &quot; CpublicTest&quot;;
-string public symbol = &quot;CPT&quot;;
+string public name = " CpublicTest";
+string public symbol = "CPT";
 uint8 public decimals = 18;
 uint public INITIAL_SUPPLY = 6000000000000000000000000000;
 }

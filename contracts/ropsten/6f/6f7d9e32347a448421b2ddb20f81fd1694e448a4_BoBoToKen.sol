@@ -98,8 +98,8 @@ contract BoBoToKen is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BoBoToKen() public {
-        symbol = &quot;BOBO4&quot;;
-        name = &quot;BOBO4&quot;;
+        symbol = "BOBO4";
+        name = "BOBO4";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0x518e5a2F8aD2E6C2f11Df0D09AE467DD01b6251f] = _totalSupply;

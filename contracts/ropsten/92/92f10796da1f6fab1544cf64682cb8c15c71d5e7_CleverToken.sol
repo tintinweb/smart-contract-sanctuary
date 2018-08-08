@@ -116,8 +116,8 @@ contract CleverToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CLVR&quot;;
-        name = &quot;Clever Token&quot;;
+        symbol = "CLVR";
+        name = "Clever Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

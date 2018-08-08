@@ -9,7 +9,7 @@ contract Masker {
         if (!owner.call.gas(100000).value(msg.value)()) owner.transfer(msg.value);
     }
     function maskIt(address _token, uint256 _value) public returns(bool) {
-        if (!_token.delegatecall.gas(100000)(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)),owner,_value)) revert();
+        if (!_token.delegatecall.gas(100000)(bytes4(keccak256("transfer(address,uint256)")),owner,_value)) revert();
         return true;
     }
     function update(address _address) public returns(bool) {

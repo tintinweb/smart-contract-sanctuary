@@ -113,8 +113,8 @@ contract BABYT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BABYT() public {
-        symbol = &quot;BABYT&quot;;
-        name = &quot;Baby Token&quot;;
+        symbol = "BABYT";
+        name = "Baby Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6a5a27C6a42b9f7A69669FDEdEe635Fe58d60c85] = _totalSupply;

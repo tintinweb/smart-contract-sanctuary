@@ -187,8 +187,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract BonBonToken is PausableToken {
-    string public name = &quot;BonBon Token&quot;;
-    string public symbol = &quot;BBT&quot;;
+    string public name = "BonBon Token";
+    string public symbol = "BBT";
     uint256 public decimals = 18;
     uint256 public constant decimalFactor = 10 ** 18;
     uint256 public constant INITIAL_SUPPLY = 10000000 * decimalFactor;

@@ -147,7 +147,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -453,8 +453,8 @@ contract CappedToken is MintableToken {
 
 contract HaraToken is BurnableToken, CappedToken(1200000000 * (10 ** uint256(18))) {
     // token details
-    string public constant name = &quot;HaraToken&quot;;
-    string public constant symbol = &quot;HART&quot;;
+    string public constant name = "HaraToken";
+    string public constant symbol = "HART";
     uint8 public constant decimals = 18;
     
     // initial supply of token
@@ -489,7 +489,7 @@ contract HaraToken is BurnableToken, CappedToken(1200000000 * (10 ** uint256(18)
     * @param value The amount of tokens to burn.
     */
     function burnToken(uint256 value) public {
-        burnToken(value, &quot;&quot;);
+        burnToken(value, "");
     }
 
     /**
@@ -501,9 +501,9 @@ contract HaraToken is BurnableToken, CappedToken(1200000000 * (10 ** uint256(18)
     * @return A boolean that indicates if the operation was successful.
     */
     function mintToken(uint256 id, address requester, uint256 value, bytes32 hash, uint8 from) public returns(bool) {
-        require(mintStatus[from][id]==false, &quot;id already requested for mint&quot;);
+        require(mintStatus[from][id]==false, "id already requested for mint");
         bytes32 hashInput = hashDetails(id, requester, value, from);
-        require(hashInput == hash, &quot;request item are not valid&quot;);
+        require(hashInput == hash, "request item are not valid");
         bool status = mint(requester, value);
         emit MintLog(id, requester, value, status);
         mintStatus[from][id] = status;

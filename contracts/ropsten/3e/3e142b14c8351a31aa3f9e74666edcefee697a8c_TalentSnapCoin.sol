@@ -113,8 +113,8 @@ contract TalentSnapCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;TSC&quot;;
-        name = &quot;TalentSnap Coin&quot;;
+        symbol = "TSC";
+        name = "TalentSnap Coin";
         decimals = 0;
         _totalSupply = 27000000;
         balances[0xFF47E92530647Ef2108997f5E08E4D499859650b] = _totalSupply;

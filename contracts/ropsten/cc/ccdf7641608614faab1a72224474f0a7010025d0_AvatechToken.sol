@@ -113,8 +113,8 @@ contract AvatechToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AvatechToken() public {
-        symbol = &quot;AVT&quot;;
-        name = &quot;0 Avatech Token&quot;;
+        symbol = "AVT";
+        name = "0 Avatech Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x13DA7CE13AfD2C12b9275339fAF69f9a4CAE9669] = _totalSupply;

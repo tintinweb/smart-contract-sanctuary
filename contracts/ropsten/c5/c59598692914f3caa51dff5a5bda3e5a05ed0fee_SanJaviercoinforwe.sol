@@ -113,8 +113,8 @@ contract SanJaviercoinforwe is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SanJaviercoinforwe() public {
-        symbol = &quot;SJCEW&quot;;
-        name = &quot;SanJaviercoinforwe&quot;;
+        symbol = "SJCEW";
+        name = "SanJaviercoinforwe";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0x4fC5b344B82C578cEFb46d51244f3e54fa93de80] = _totalSupply;

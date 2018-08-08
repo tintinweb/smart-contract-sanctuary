@@ -113,8 +113,8 @@ contract BartAssToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;BASS&quot;;
-        name = &quot;Bart Ass Token&quot;;
+        symbol = "BASS";
+        name = "Bart Ass Token";
         decimals =9;
         _totalSupply = 1000000000000000;
         balances[0x489d56316F0449cb4d2609aEd952910b751976Ce] = _totalSupply;

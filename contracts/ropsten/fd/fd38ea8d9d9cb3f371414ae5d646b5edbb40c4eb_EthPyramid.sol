@@ -6,7 +6,7 @@ pragma solidity ^0.4.18;
       ,&#39;_/_  _ _`.
     ,&#39;__/_ ___ _  `.
   ,&#39;_  /___ __ _ __ `.
- &#39;-.._/___...-&quot;-.-..__`.
+ &#39;-.._/___...-"-.-..__`.
   B
 
  EthPyramid. A no-bullshit, transparent, self-sustaining pyramid scheme.
@@ -54,8 +54,8 @@ contract EthPyramid {
 	int constant price_coeff = -0x296ABF784A358468C;
 
 	// Typical values that we have to declare.
-	string constant public name = &quot;EthPyramid&quot;;
-	string constant public symbol = &quot;EPY&quot;;
+	string constant public name = "EthPyramid";
+	string constant public symbol = "EPY";
 	uint8 constant public decimals = 18;
 
 	// Array between each address and their number of tokens.

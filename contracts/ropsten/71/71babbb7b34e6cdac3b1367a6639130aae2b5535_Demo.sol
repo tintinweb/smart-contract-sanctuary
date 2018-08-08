@@ -8,7 +8,7 @@ contract Demo {
 	
 
   	function constructor() {
-  		message = &quot;&quot;;
+  		message = "";
   	}
 
   	// 寫入合約

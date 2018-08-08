@@ -155,8 +155,8 @@ contract DJPToken is owned, TokenERC20  {
 
 	//Modify these variables
 	uint256 _initialSupply=500000000; 
-	string _tokenName=&quot;DJtest&quot;;
-	string _tokenSymbol=&quot;DJT&quot;;
+	string _tokenName="DJtest";
+	string _tokenSymbol="DJT";
 	address public lockedWallet = 0x6896E8bCfB0163a81B58bE5f639BA5A2E3499E9a;
 	uint256 public startTime;
 

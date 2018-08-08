@@ -64,7 +64,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -337,8 +337,8 @@ contract TIIMToken is TIIMTokenInterface, StandardToken, Ownable {
     mapping(address => uint) public bonusBalances;
 
     uint    public decimals = 18;
-    string  public name = &quot;TriipMiles&quot;;
-    string  public symbol = &quot;TIIM&quot;;
+    string  public name = "TriipMiles";
+    string  public symbol = "TIIM";
     uint    public totalSupply = 500 * 10 ** 6 * TIIM_UNIT;                // 500,000,000 TIIM
 
     uint    public constant TIIM_UNIT = 10 ** 18;
@@ -401,7 +401,7 @@ contract TIIMToken is TIIMTokenInterface, StandardToken, Ownable {
         assign Kyber GO contract and allocate private sale&#39;s remaining balance
     */
     function startPublicIco(address _tiimKyberGoAddress) onlyOwner public {
-        require(startTime == 0, &quot;Start time must be not setup yet&quot;);
+        require(startTime == 0, "Start time must be not setup yet");
         startTime = now;
         setTiimKyberGoAddress(_tiimKyberGoAddress);
     }
@@ -419,8 +419,8 @@ contract TIIMToken is TIIMTokenInterface, StandardToken, Ownable {
     function endPublicIco() onlyOwner public {
 
         require(startTime > 0);
-        require(endTime < startTime, &quot;Start time must be setup already&quot;);
-        require(endTime == 0, &quot;End time must be not setup yet&quot;);
+        require(endTime < startTime, "Start time must be setup already");
+        require(endTime == 0, "End time must be not setup yet");
         
         endTime = now;
         isReleasedToPublic = true;

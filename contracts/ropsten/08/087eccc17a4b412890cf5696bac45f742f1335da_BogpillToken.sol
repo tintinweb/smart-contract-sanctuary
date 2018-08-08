@@ -113,8 +113,8 @@ contract BogpillToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BogpillToken() public {
-        symbol = &quot;BOJ&quot;;
-        name = &quot;Bogpill Token&quot;;
+        symbol = "BOJ";
+        name = "Bogpill Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x9acdd3DCd10Dd8Ed353A05AD66A5767e2447296A] = _totalSupply;

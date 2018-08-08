@@ -113,8 +113,8 @@ contract UltrixCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UltrixCoin() public {
-        symbol = &quot;ULX&quot;;
-        name = &quot;ULTRIX COIN&quot;;
+        symbol = "ULX";
+        name = "ULTRIX COIN";
         decimals = 18;
         _totalSupply = 250000000000000000000000000;
         balances[0xfE0f7A487440140C13545352a42d0317a28eE91F] = _totalSupply;

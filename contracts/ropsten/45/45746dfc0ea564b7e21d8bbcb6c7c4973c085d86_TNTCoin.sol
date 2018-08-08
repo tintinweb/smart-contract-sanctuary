@@ -107,8 +107,8 @@ contract TNTCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function TNTCoin() public {
-        name = &quot;Testing Coin&quot;;
-        symbol = &quot;TNT&quot;;
+        name = "Testing Coin";
+        symbol = "TNT";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

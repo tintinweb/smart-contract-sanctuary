@@ -132,8 +132,8 @@ contract Hourglass {
     /*=====================================
     =            CONFIGURABLES  配置       =
     =====================================*/
-    string public name = &quot;LastHero3D&quot;;
-    string public symbol = &quot;Keys&quot;;
+    string public name = "LastHero3D";
+    string public symbol = "Keys";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 10;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;

@@ -111,8 +111,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;FT&quot;;
-        name = &quot;FT Initial Token&quot;;
+        symbol = "FT";
+        name = "FT Initial Token";
         decimals = 18;
         _totalSupply = 2200000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

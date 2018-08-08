@@ -117,9 +117,9 @@ contract EGYPTTest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EGYPT() public {
-    name = &quot;EGYPTTest&quot;;                                                    // Set the name for display purposes (CHANGE THIS)
+    name = "EGYPTTest";                                                    // Set the name for display purposes (CHANGE THIS)
     decimals = 18;                                                      // Amount of decimals for display purposes (CHANGE THIS)
-    symbol = &quot;EGYT&quot;;                                                    // Set the symbol for display purposes (CHANGE THIS)
+    symbol = "EGYT";                                                    // Set the symbol for display purposes (CHANGE THIS)
     _totalSupply = 1000000000000000000000000000;                          // Update total supply (1000 for example) (CHANGE THIS)
     balances[0x38Dfb5621079A86EE2EEc3E70232dCfF1186Ee60] = _totalSupply; // Give the creator all initial tokens. This is set to 1000 for example. If you want your initial tokens to be X and your decimal is 5, set this value to X * 100000. (CHANGE THIS)
     Transfer(address(0), 0x38Dfb5621079A86EE2EEc3E70232dCfF1186Ee60, _totalSupply);

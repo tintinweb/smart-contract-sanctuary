@@ -116,8 +116,8 @@ contract TestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestToken() public {
-        symbol = &quot;TTC&quot;;
-        name = &quot;Test Token&quot;;
+        symbol = "TTC";
+        name = "Test Token";
         decimals = 5;
         _totalSupply = 300000000;
         balances[0x22bDc2e890E3866f8e11b1e5Cc30eE75039DBBaA] = _totalSupply;

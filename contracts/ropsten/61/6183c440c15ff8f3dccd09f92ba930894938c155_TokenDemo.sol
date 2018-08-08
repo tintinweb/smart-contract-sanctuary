@@ -14,9 +14,9 @@ contract Token{
 }
  
 contract TokenDemo is Token {    
-	string public name=&quot;Mytoken&quot;;                   //名称，例如&quot;My test token&quot;
+	string public name="Mytoken";                   //名称，例如"My test token"
     uint8 public decimals=3;               //返回token使用的小数点后几位。比如如果设置为3，就是支持0.001表示.
-    string public symbol=&quot;MTT&quot;;               //token简称,like MTT
+    string public symbol="MTT";               //token简称,like MTT
 	uint256  startTime;//记录合约部署时间
 	address simu;//私募账户
 	address team;//团队账户

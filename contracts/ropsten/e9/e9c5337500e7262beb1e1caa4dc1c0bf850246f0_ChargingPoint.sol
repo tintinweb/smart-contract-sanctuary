@@ -93,7 +93,7 @@ contract ChargingPoint is Token {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
     uint256 public totalSupply = 50000000;
-    string public name = &quot;ChargingPointToken&quot;;
+    string public name = "ChargingPointToken";
     uint256 public decimals = 2;
 	
 	modifier onlyOwner {

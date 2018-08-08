@@ -113,8 +113,8 @@ contract BBCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BBCToken() public {
-        symbol = &quot;0BBC&quot;;
-        name = &quot;0 BBC Token&quot;;
+        symbol = "0BBC";
+        name = "0 BBC Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x80af86B396040c2046a6D2029339e54A68604a2A] = _totalSupply;

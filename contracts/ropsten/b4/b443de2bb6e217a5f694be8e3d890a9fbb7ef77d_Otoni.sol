@@ -113,8 +113,8 @@ contract Otoni is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OtoniToken() public {
-        symbol = &quot;OTO&quot;;
-        name = &quot;Otoni&quot;;
+        symbol = "OTO";
+        name = "Otoni";
         decimals = 0;
         _totalSupply = 100001;
         balances[0xc064969786ef75ef247a9527770801274f376574] = _totalSupply;

@@ -187,8 +187,8 @@ contract EthRental is owned, TokenERC20  {
 	uint256 public buyPrice=1;
 
 	uint256 _initialSupply=1000000; 
-	string _tokenName=&quot;EthRental&quot;;  
-	string _tokenSymbol=&quot;ERT&quot;;
+	string _tokenName="EthRental";  
+	string _tokenSymbol="ERT";
 
 	mapping (address => mapping (address => bool)) public totalAllowance;
 

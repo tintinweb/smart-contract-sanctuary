@@ -32,7 +32,7 @@ contract TestRafX is owned {
     
     constructor() public {
         Raffle_ID = 10001;
-        Raffle_Prize = &quot;iPhone X&quot;;
+        Raffle_Prize = "iPhone X";
         Allow_Entries = true;       
         Raffle_Finished = false;
         Winning_Number = 0;

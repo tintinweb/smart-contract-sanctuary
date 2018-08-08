@@ -116,8 +116,8 @@ contract rakeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function rakeToken() public {
-        symbol = &quot;RAKE&quot;;
-        name = &quot;Rake Token&quot;;
+        symbol = "RAKE";
+        name = "Rake Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
 

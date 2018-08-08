@@ -255,8 +255,8 @@ contract MintableToken is StandardToken, Ownable {
 contract SecurityControlToken is MintableToken {
 
   // solium-disable-next-line uppercase
-  string public constant name = &quot;Security Control Token&quot;;
-  string public constant symbol = &quot;SCTN9EW&quot;; // solium-disable-line uppercase
+  string public constant name = "Security Control Token";
+  string public constant symbol = "SCTN9EW"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
 }

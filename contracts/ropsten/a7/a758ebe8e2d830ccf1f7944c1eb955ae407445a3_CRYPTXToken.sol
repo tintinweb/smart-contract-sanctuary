@@ -111,8 +111,8 @@ contract CRYPTXToken is Interface, Own, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CRYPTX&quot;;
-        name = &quot;CRYPTX Token&quot;;
+        symbol = "CRYPTX";
+        name = "CRYPTX Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balanceOf[0xee8E5F10D7af6b24D975437113DF615e8AaDdd68] = _totalSupply;
@@ -240,7 +240,7 @@ contract CRYPTXToken is Interface, Own, SafeMath {
         storedAmount[msg.sender] = safeAdd(storedAmount[msg.sender], amount);
         //Update user&#39;s balance
         balanceOf[msg.sender] = safeSub(balanceOf[msg.sender], amount);
-        emit FixedDepositLog(msg.sender, amount, &quot;Credit&quot;);
+        emit FixedDepositLog(msg.sender, amount, "Credit");
         return true;
     }
 
@@ -253,7 +253,7 @@ contract CRYPTXToken is Interface, Own, SafeMath {
         storedAmount[msg.sender] = safeSub(storedAmount[msg.sender], amount);
         //Update user&#39;s balance
         balanceOf[msg.sender] = safeAdd(balanceOf[msg.sender], amount);
-        emit FixedDepositLog(msg.sender, amount, &quot;Debit&quot;);
+        emit FixedDepositLog(msg.sender, amount, "Debit");
         return true;
     }
 

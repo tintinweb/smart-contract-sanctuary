@@ -150,7 +150,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -280,8 +280,8 @@ contract SuperStupidToken is PausableToken {
     * They allow one to customise the token contract & in no way influences the core functionality.
     * Some wallets/interfaces might not even bother to look at this information.
     */
-    string public name = &quot;Super Stupid Token&quot;;
-    string public symbol = &quot;SST&quot;;
+    string public name = "Super Stupid Token";
+    string public symbol = "SST";
     string public version = &#39;1.0.0&#39;;
     uint8 public decimals = 18;
     uint256 rate = 10000;

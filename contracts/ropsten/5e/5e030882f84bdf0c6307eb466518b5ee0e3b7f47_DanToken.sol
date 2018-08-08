@@ -114,8 +114,8 @@ contract DanToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DAN&quot;;
-        name = &quot;Dan Token&quot;;
+        symbol = "DAN";
+        name = "Dan Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

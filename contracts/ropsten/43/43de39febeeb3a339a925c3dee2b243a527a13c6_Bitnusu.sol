@@ -113,8 +113,8 @@ contract Bitnusu is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bitnusu() public {
-        symbol = &quot;BTN&quot;;
-        name = &quot;Bitnusu Token&quot;;
+        symbol = "BTN";
+        name = "Bitnusu Token";
         decimals = 3;
         _totalSupply = 100000000000;
         balances[0x4bE8c3b856AEA3b97622779988A0ac7023c22fdD] = _totalSupply;

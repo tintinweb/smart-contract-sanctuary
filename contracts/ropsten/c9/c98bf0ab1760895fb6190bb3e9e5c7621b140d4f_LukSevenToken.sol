@@ -113,8 +113,8 @@ contract LukSevenToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LukSevenToken() public {
-        symbol = &quot;LukSeven&quot;;
-        name = &quot;LukSeven Token&quot;;
+        symbol = "LukSeven";
+        name = "LukSeven Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x639E20B01D0127473511D003A67B60418a6Fb05E] = _totalSupply;

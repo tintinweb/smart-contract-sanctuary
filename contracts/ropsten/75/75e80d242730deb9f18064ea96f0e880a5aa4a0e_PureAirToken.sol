@@ -8,7 +8,7 @@ This is to demonstrate a smart contract without auditing could be completely use
 */
 contract PureAirToken {
     /* Public variables of the token */
-    string public standard = &quot;Token 0.1&quot;;
+    string public standard = "Token 0.1";
     string public name;
     string public symbol;
     uint8 public decimals;

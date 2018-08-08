@@ -19,11 +19,11 @@ contract MyToken is ERC20Interface {
     uint256 totalSupply_ = 12345678901234567890;
     
     function name() public view returns (string _name) {
-        return &quot;Bokky1&quot;;
+        return "Bokky1";
     }
 
     function symbol() public view returns (string _symbol) {
-        return &quot;BOKKY1&quot;;
+        return "BOKKY1";
     }
     
     function decimals() public view returns (uint8 _decimals) {

@@ -125,9 +125,9 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
     @param _erc20 address of ERC20 contract
     */
     function addERC20ToBundle(uint _bundleId, Token _erc20, uint _amount) public returns(bool) {
-        require(bundleToOwner[_bundleId] == msg.sender, &quot;sender its not the owner&quot;);
+        require(bundleToOwner[_bundleId] == msg.sender, "sender its not the owner");
 
-        require(_erc20.transferFrom(msg.sender, address(this), _amount), &quot;the transfer its no approved&quot;);
+        require(_erc20.transferFrom(msg.sender, address(this), _amount), "the transfer its no approved");
 
         Bundle storage bundle = bundles[_bundleId];
         if(bundle.erc20ToBalance[_erc20] == 0){
@@ -148,8 +148,8 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
     @param _erc721 address of ERC721 contract
     */
     function addERC721ToBundle(uint _bundleId, ERC721 _erc721, uint[] _nfts) public returns(bool) {
-        require(bundleToOwner[_bundleId] == msg.sender, &quot;sender its not the owner&quot;);
-        require(_nfts.length > 0, &quot;need at last one nft&quot;);
+        require(bundleToOwner[_bundleId] == msg.sender, "sender its not the owner");
+        require(_nfts.length > 0, "need at last one nft");
 
         Bundle storage bundle = bundles[_bundleId];
         uint[] storage nfts = bundle.erc721ToNfts[_erc721];
@@ -157,7 +157,7 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
         if(nfts.length == 0)
             bundle.erc721Addrs.push(_erc721);
         for(uint i; i < _nfts.length; i++){
-            require(_erc721.transferFrom(msg.sender, address(this), _nfts[i]), &quot;the transfer its no approved&quot;);
+            require(_erc721.transferFrom(msg.sender, address(this), _nfts[i]), "the transfer its no approved");
             nfts.push(_nfts[i]);
         }
         return true;
@@ -175,13 +175,13 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
     @param _to destination address of ERC20 amount
     */
     function withdrawERC20(uint256 _bundleId, uint _erc20Id, address _to, uint _amount) public returns(bool){
-        require(bundleToOwner[_bundleId] == msg.sender, &quot;sender its not the owner&quot;);
+        require(bundleToOwner[_bundleId] == msg.sender, "sender its not the owner");
         Bundle storage bundle = bundles[_bundleId];
         Token erc20 = bundle.erc20Addrs[_erc20Id];
-        require(bundle.erc20ToBalance[erc20] >= _amount, &quot;low balance&quot;);
+        require(bundle.erc20ToBalance[erc20] >= _amount, "low balance");
 
         bundle.erc20ToBalance[erc20] = safeSubtract(bundle.erc20ToBalance[erc20], _amount);
-        require(erc20.transfer(_to, _amount), &quot;fail token transfer&quot;);
+        require(erc20.transfer(_to, _amount), "fail token transfer");
 
         if(bundle.erc20ToBalance[erc20] == 0) {
             if(bundle.erc20Addrs.length > 1)
@@ -203,7 +203,7 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
     @param _nftId index of non fungible token in non fungible token array
     */
     function withdrawERC721(uint256 _bundleId, uint _erc721Id, address _to, uint _nftId) public returns(bool){
-        require(bundleToOwner[_bundleId] == msg.sender, &quot;sender its not the owner&quot;);
+        require(bundleToOwner[_bundleId] == msg.sender, "sender its not the owner");
         Bundle storage bundle = bundles[_bundleId];
         ERC721 erc721 = bundle.erc721Addrs[_erc721Id];
         uint nft = bundle.erc721ToNfts[erc721][_nftId];
@@ -212,7 +212,7 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
             bundle.erc721ToNfts[erc721][_nftId] = bundle.erc721ToNfts[erc721][bundle.erc721ToNfts[erc721].length - 1];
         bundle.erc721ToNfts[erc721].length -= 1;
 
-        require(erc721.transferFrom(address(this), _to, nft), &quot;fail nft transfer&quot;);
+        require(erc721.transferFrom(address(this), _to, nft), "fail nft transfer");
 
         if(bundle.erc721ToNfts[erc721].length == 0) {
             if(bundle.erc721Addrs.length > 1)
@@ -231,8 +231,8 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
     function balanceOf(address _owner) external view returns (uint256) { return addresToBalance[_owner]; }
 
     function approve(address _approved, uint256 _bundleId) external payable returns(bool) {
-        require(msg.sender == bundleToOwner[_bundleId], &quot;sender its not the owner&quot;);
-        require(msg.sender != _approved, &quot;sender and approved should not be equal&quot;);
+        require(msg.sender == bundleToOwner[_bundleId], "sender its not the owner");
+        require(msg.sender != _approved, "sender and approved should not be equal");
 
         bundleToApproved[_bundleId] = _approved;
 
@@ -243,11 +243,11 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
 
     function transferFrom(address _from, address _to, uint256 _bundleId) external payable returns(bool) {
         address owner = bundleToOwner[_bundleId];
-        require(owner != 0x0, &quot;the bundle dont exist&quot;);
-        require(owner == msg.sender || bundleToApproved[_bundleId] == msg.sender, &quot;sender its not the owner or not approved&quot;);
-        require(owner != _to, &quot;the owner and `_to` should not be equal&quot;);
-        require(owner == _from, &quot;the owner and `_from` should be equal&quot;);
-        require(_to != address(0), &quot;`_to` is the zero address&quot;);
+        require(owner != 0x0, "the bundle dont exist");
+        require(owner == msg.sender || bundleToApproved[_bundleId] == msg.sender, "sender its not the owner or not approved");
+        require(owner != _to, "the owner and `_to` should not be equal");
+        require(owner == _from, "the owner and `_from` should be equal");
+        require(_to != address(0), "`_to` is the zero address");
 
         addresToBalance[_from]--;
         addresToBalance[_to]++;
@@ -274,7 +274,7 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
         for(uint i; i < erc20s.length; i++)
             if(erc20s[i] == _erc20)
                 return i;
-        revert(&quot;ERC20 dont found&quot;);
+        revert("ERC20 dont found");
     }
     /**
     @notice Get all address of ERC20 contracts with his balances
@@ -309,7 +309,7 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
         for(uint i; i < erc721s.length; i++)
             if(erc721s[i] == _erc721)
                 return i;
-        revert(&quot;ERC721 not found&quot;);
+        revert("ERC721 not found");
     }
     /**
     @notice Get the non fungible token index
@@ -326,7 +326,7 @@ contract ErcBundle is ERC721, BytesUtils, Ownable, RpSafeMath {
         for(uint i; i < nfts.length; i++)
             if(nfts[i] == _nft)
                 return i;
-        revert(&quot;nft not found&quot;);
+        revert("nft not found");
     }
     /**
     @notice Get all address of ERC721 contracts

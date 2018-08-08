@@ -116,8 +116,8 @@ contract MMOTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MMOTOKEN() public {
-        symbol = &quot;MMO&quot;;
-        name = &quot;MMOTOKEN&quot;;
+        symbol = "MMO";
+        name = "MMOTOKEN";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

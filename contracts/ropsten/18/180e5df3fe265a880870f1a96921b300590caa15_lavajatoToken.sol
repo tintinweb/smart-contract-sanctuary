@@ -100,8 +100,8 @@ contract lavajatoToken is ERC20, BasicToken {
  
   uint public constant _totalSupply = 210000000000000;
   
-  string public constant symbol = &quot;JATO&quot;;
-  string public constant name = &quot;Lava Jato&quot;;
+  string public constant symbol = "JATO";
+  string public constant name = "Lava Jato";
   uint8 public constant decimals = 6;
   
    

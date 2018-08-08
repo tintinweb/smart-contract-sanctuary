@@ -113,8 +113,8 @@ contract CAPcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CAPcoin() public {
-        symbol = &quot;capc&quot;;
-        name = &quot;CAPcoin&quot;;
+        symbol = "capc";
+        name = "CAPcoin";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0xd38E4E6853d0b934C6c9993e54b0eBaE9dA2ac7D] = _totalSupply;

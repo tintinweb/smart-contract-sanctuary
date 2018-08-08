@@ -116,8 +116,8 @@ contract BullsFundToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BullsFundToken() public {
-        symbol = &quot;BFT&quot;;
-        name = &quot;Bulls Fund Token&quot;;
+        symbol = "BFT";
+        name = "Bulls Fund Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -116,8 +116,8 @@ contract Happy is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Happy() public {
-        symbol = &quot;HPY&quot;;
-        name = &quot;Happy&quot;;
+        symbol = "HPY";
+        name = "Happy";
         decimals = 18;
         bonusEnds = now + 3 weeks;
         endDate = now + 7 weeks;

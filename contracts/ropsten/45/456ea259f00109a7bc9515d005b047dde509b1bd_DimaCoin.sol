@@ -113,8 +113,8 @@ contract DimaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DimaCoin() public {
-        symbol = &quot;DIMA&quot;;
-        name = &quot;DimaCoin&quot;;
+        symbol = "DIMA";
+        name = "DimaCoin";
         decimals = 50;
         _totalSupply = 10000000000000000000000000000000000000000000000000000000000;
         balances[0xe5D0DBC25C91b390d5A6163E4b4126b16800790D] = _totalSupply;

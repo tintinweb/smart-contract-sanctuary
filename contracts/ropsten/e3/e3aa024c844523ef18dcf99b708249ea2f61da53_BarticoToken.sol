@@ -116,8 +116,8 @@ contract BarticoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;BICO&quot;;
-        name = &quot;Bartico Token&quot;;
+        symbol = "BICO";
+        name = "Bartico Token";
         decimals = 9;
         bonusEnds = now + 1 hours;
         endDate = now + 2 hours;

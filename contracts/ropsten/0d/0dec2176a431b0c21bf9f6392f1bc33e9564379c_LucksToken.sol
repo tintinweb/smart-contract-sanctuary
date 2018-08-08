@@ -113,8 +113,8 @@ contract LucksToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LucksToken() public {
-        symbol = &quot;0LUCKS&quot;;
-        name = &quot;LucksTkn&quot;;
+        symbol = "0LUCKS";
+        name = "LucksTkn";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6032A6933a37230272952D4B5aBdc17b38D569b3] = _totalSupply;

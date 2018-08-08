@@ -285,7 +285,7 @@ contract WrapEtheremon is WrapEtheremonInterface, Utils2 {
         require(token.transferFrom(msg.sender, this, tokenQty));
 
         // Swap player&#39;s token to ETH to send to Etheremon payments contract
-        uint userETH = _kyber.tradeWithHint(token, tokenQty, ETH_TOKEN_ADDRESS, address(this), maxDestQty, minRate, walletId, &quot;&quot;);
+        uint userETH = _kyber.tradeWithHint(token, tokenQty, ETH_TOKEN_ADDRESS, address(this), maxDestQty, minRate, walletId, "");
 
         // Check that the use&#39;s ETH >= monsterInETH
         require(userETH >= monsterInETH);

@@ -113,8 +113,8 @@ contract BugisChain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;BGSC&quot;;
-        name = &quot;BugisChain&quot;;
+        symbol = "BGSC";
+        name = "BugisChain";
         decimals = 18;
         _totalSupply = 15000000000000000000000000000;
         balances[0x4409a1DaC85c853bbb156A13c36E59b9e208E1A8] = _totalSupply;

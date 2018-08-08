@@ -2,9 +2,9 @@ pragma solidity ^0.4.16;
 
 contract TestIPG {
 
-    string public name = &quot;TestIPG&quot;;      //  token name
-    string public symbol = &quot;TIPG&quot;;           //  token symbol
-    string public version = &quot;test-2.0&quot;;
+    string public name = "TestIPG";      //  token name
+    string public symbol = "TIPG";           //  token symbol
+    string public version = "test-2.0";
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

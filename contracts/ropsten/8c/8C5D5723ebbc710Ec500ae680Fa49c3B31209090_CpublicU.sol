@@ -241,8 +241,8 @@ contract StandardToken is ERC20, BasicToken {
 
 }
 contract CpublicU is StandardToken {
-string public name = &quot; CpublicU&quot;;
-string public symbol = &quot;CPU&quot;;
+string public name = " CpublicU";
+string public symbol = "CPU";
 uint8 public decimals = 18;
 uint public INITIAL_SUPPLY = 6000000000000000000000000000;
 }

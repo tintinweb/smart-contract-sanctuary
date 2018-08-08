@@ -111,8 +111,8 @@ contract Bitroneum is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bitroneum() public {
-        symbol = &quot;BITRO&quot;;
-        name = &quot;Bitroneum&quot;;
+        symbol = "BITRO";
+        name = "Bitroneum";
         decimals = 8;
         _totalSupply = 7100000000000000;
         balances[0x6f02BEaAD56ba4563fbb51105C72FDF2F67BeCCD] = _totalSupply;

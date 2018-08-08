@@ -113,8 +113,8 @@ contract TestIOTACoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestIOTACoin() public {
-        symbol = &quot;IOTA&quot;;
-        name = &quot;TestIOTACoin&quot;;
+        symbol = "IOTA";
+        name = "TestIOTACoin";
         decimals = 8;
         _totalSupply = 1000000000000000000;
         balances[0x3886267bef7FB5EB7fAB270aFb998DE7c54C64dD] = _totalSupply;

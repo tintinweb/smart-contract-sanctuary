@@ -81,8 +81,8 @@ contract QUEENTEN is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;QUEENTEN&quot;;
-    string public constant symbol = &quot;QTEN&quot;;
+    string public constant name = "QUEENTEN";
+    string public constant symbol = "QTEN";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 25000000000e18;

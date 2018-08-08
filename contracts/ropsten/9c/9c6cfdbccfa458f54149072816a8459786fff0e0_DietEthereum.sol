@@ -161,8 +161,8 @@ contract Token is ERC20, BasicToken {
  * @dev Simple ERC20 Token with standard token functions.
  */
 contract DietEthereum is Token {
-  string public constant NAME = &quot;Diet Ethereum&quot;;
-  string public constant SYMBOL = &quot;DETH&quot;;
+  string public constant NAME = "Diet Ethereum";
+  string public constant SYMBOL = "DETH";
   uint256 public constant DECIMALS = 1;
 
   uint256 public constant INITIAL_SUPPLY = 500000000;

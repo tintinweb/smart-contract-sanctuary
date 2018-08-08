@@ -113,8 +113,8 @@ contract YangKunToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;YKT&quot;;
-        name = &quot;Yang Kun Token&quot;;
+        symbol = "YKT";
+        name = "Yang Kun Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x41b18b7549BBFB329201D5EAa21d5DC67ED872d7] = _totalSupply;

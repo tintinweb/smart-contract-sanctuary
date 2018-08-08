@@ -116,8 +116,8 @@ contract YayyyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YayyyToken() public {
-        symbol = &quot;TB0&quot;;
-        name = &quot;Yayyy Token&quot;;
+        symbol = "TB0";
+        name = "Yayyy Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

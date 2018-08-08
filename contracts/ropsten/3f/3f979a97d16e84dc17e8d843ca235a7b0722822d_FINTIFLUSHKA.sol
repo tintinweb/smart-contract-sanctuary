@@ -113,8 +113,8 @@ contract FINTIFLUSHKA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FINTIFLUSHKA() public {
-        symbol = &quot;FINTA&quot;;
-        name = &quot;FINTIFLUSHKA&quot;;
+        symbol = "FINTA";
+        name = "FINTIFLUSHKA";
         decimals = 8;
         _totalSupply = 100000000000;
         balances[0x778b0337B1Be660bfcCc9aB8C8C6438869014cF5] = _totalSupply;

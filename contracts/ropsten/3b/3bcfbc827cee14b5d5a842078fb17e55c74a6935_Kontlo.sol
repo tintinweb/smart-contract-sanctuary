@@ -113,8 +113,8 @@ contract Kontlo is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Kontlo() public {
-        symbol = &quot;KNTL&quot;;
-        name = &quot;Kontlo&quot;;
+        symbol = "KNTL";
+        name = "Kontlo";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x52f5a6eA565f6ddBdc2fC26C5CEbF6D8588C4730] = _totalSupply;

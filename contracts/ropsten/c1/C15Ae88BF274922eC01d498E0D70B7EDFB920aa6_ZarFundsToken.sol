@@ -118,8 +118,8 @@ contract ZarFundsToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZarFundsToken() public {
-        symbol = &quot;ZFT&quot;;
-        name = &quot;Zar Funds Token&quot;;
+        symbol = "ZFT";
+        name = "Zar Funds Token";
         decimals = 18;
         _totalSupply = 3500000000000000000000000000;
         balances[0xb3412CAb15D6B5FE96edAc368655a7d30cd6380d] = _totalSupply;

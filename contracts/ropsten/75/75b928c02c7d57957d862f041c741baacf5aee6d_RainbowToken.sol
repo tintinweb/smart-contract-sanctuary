@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -312,7 +312,7 @@ library SafeMath {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 internal constant ERC721_RECEIVED = 0x150b7a02;
@@ -328,7 +328,7 @@ contract ERC721Receiver {
    * @param _from The address which previously owned the token
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _operator,
@@ -371,7 +371,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 private constant ERC721_RECEIVED = 0x150b7a02;
 
@@ -529,7 +529,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * If the target address is a contract, it must implement `onERC721Received`,
    * which is called upon a safe transfer, and return the magic value
-   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    * the transfer is reverted.
    *
    * Requires the msg sender to be the owner, approved, or operator
@@ -546,14 +546,14 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * If the target address is a contract, it must implement `onERC721Received`,
    * which is called upon a safe transfer, and return the magic value
-   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    * the transfer is reverted.
    * Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -917,19 +917,19 @@ contract RainbowToken is ERC721Token, Ownable {
     * @param _symbol token symbol
     */
     constructor(string _name, string _symbol) public ERC721Token(_name, _symbol) {
-        uint _colorId = colors.push(&quot;red&quot;) - 1;
+        uint _colorId = colors.push("red") - 1;
         _mint(msg.sender, _colorId);
-        _colorId = colors.push(&quot;orange&quot;) - 1;
+        _colorId = colors.push("orange") - 1;
         _mint(msg.sender, _colorId);
-        _colorId = colors.push(&quot;yellow&quot;) - 1;
+        _colorId = colors.push("yellow") - 1;
         _mint(msg.sender, _colorId);
-        _colorId = colors.push(&quot;green&quot;) - 1;
+        _colorId = colors.push("green") - 1;
         _mint(msg.sender, _colorId);
-        _colorId = colors.push(&quot;blue&quot;) - 1;
+        _colorId = colors.push("blue") - 1;
         _mint(msg.sender, _colorId);
-        _colorId = colors.push(&quot;indigo&quot;) - 1;
+        _colorId = colors.push("indigo") - 1;
         _mint(msg.sender, _colorId);
-        _colorId = colors.push(&quot;violet&quot;) - 1;
+        _colorId = colors.push("violet") - 1;
         _mint(msg.sender, _colorId); 
     }
 

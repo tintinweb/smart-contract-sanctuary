@@ -11,9 +11,9 @@ contract JulianCoin is ERC20Events {
   uint256 constant JULIAN_COIN = 10**18;
   uint256 constant OWNER_ELIGIBLE = 300 * JULIAN_COIN;
 
-  string public name = &quot;Julian Coin&quot;; //fancy name: eg Simon Bucks
+  string public name = "Julian Coin"; //fancy name: eg Simon Bucks
   uint8 public decimals = 18;         // How many decimals to show.
-  string public symbol = &quot;JUL&quot;;
+  string public symbol = "JUL";
   bool isPoop;
   mapping (address => uint256) balances;
   mapping (address => bool) admins;

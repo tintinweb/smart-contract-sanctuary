@@ -98,8 +98,8 @@ contract SaraAndMauroToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SaraAndMauroToken() public {
-        symbol = &quot;SAMT&quot;;
-        name = &quot;Sara and Mauro Token&quot;;
+        symbol = "SAMT";
+        name = "Sara and Mauro Token";
         decimals = 0;
         _totalSupply = 2;
         balances[0x7b6712792F9d7835b45b3bA0906123a698672824] = _totalSupply;

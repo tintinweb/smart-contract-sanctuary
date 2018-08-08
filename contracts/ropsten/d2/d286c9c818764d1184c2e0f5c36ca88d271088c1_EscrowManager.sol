@@ -55,7 +55,7 @@ contract EscrowManager {
     modifier onlyEscrowInStateCreated(uint chosenEscrowId){
         require(
             escrowStates[chosenEscrowId] == EscrowState.Created,
-            &quot;Escrow not in Created Yet!&quot;
+            "Escrow not in Created Yet!"
         );
         _;
     }
@@ -85,7 +85,7 @@ contract EscrowManager {
         
         // Contract deposits tokens from _seller to escrow
         // msg.sender must have allowed contract to send transferFrom tokens to contract address
-        // msg sender needs to have performed ERC20Interface(_tokenAddressSell).allowed(&quot;contractAddress&quot;, _amountTokenSell);
+        // msg sender needs to have performed ERC20Interface(_tokenAddressSell).allowed("contractAddress", _amountTokenSell);
 
         ERC20Interface(_tokenAddressSell).transferFrom(msg.sender, this, _amountTokenSell);
         allEscrowOrders.push(newEscrow);

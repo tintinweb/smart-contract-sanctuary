@@ -73,8 +73,8 @@ contract DIGITALCASH is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;DIGITALCASH&quot;;
-    string public constant symbol = &quot;DCT&quot;;
+    string public constant name = "DIGITALCASH";
+    string public constant symbol = "DCT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

@@ -113,8 +113,8 @@ contract PromToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PromToken() public {
-        symbol = &quot;PROM&quot;;
-        name = &quot;Universal Promo Token&quot;;
+        symbol = "PROM";
+        name = "Universal Promo Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0xba7d70A5620B8986Fe4B9151D27c75b574831a37] = _totalSupply;

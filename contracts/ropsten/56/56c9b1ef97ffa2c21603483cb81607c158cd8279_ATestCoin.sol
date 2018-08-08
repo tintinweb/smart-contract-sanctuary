@@ -40,8 +40,8 @@ contract ATestCoin{
 
     constructor() public {
         owner = msg.sender;
-        symbol = &quot;TeC5&quot;;
-        name = &quot;TestCoin5&quot;;
+        symbol = "TeC5";
+        name = "TestCoin5";
         decimals = 8;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

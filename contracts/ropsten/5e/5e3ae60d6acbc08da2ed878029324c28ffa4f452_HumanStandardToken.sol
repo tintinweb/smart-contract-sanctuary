@@ -125,9 +125,9 @@ contract HumanStandardToken is StandardToken {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string public constant name = &quot;Hydra&quot;;                   //fancy name.
+    string public constant name = "Hydra";                   //fancy name.
     uint8 public constant decimals = 12;                //How many decimals to show.
-    string public constant symbol = &quot;RYD&quot;;                 //An identifier
+    string public constant symbol = "RYD";                 //An identifier
     string public constant version = &#39;H0.1&#39;;       //human 0.1 standard. Just an arbitrary versioning scheme.
 
     function HumanStandardToken() public {

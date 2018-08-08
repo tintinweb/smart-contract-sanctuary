@@ -96,8 +96,8 @@ contract Ecometh is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Ecometh() public {
-        symbol = &quot;EMT&quot;;
-        name = &quot;Ecometh&quot;;
+        symbol = "EMT";
+        name = "Ecometh";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xdc028ea1751919d67D9370dc60D1c2E072929d4c] = _totalSupply;

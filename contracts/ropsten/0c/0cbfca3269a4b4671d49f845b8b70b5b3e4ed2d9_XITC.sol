@@ -113,8 +113,8 @@ contract XITC is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XITC() public {
-        symbol = &quot;XITC&quot;;
-        name = &quot;XIT Coin&quot;;
+        symbol = "XITC";
+        name = "XIT Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8f2117470c93c025E0D547e42329BA321E485401] = _totalSupply;

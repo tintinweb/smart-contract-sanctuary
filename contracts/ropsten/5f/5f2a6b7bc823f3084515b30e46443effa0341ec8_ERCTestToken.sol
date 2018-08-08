@@ -113,8 +113,8 @@ contract ERCTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ERCTestToken() public {
-        symbol = &quot;ERCT&quot;;
-        name = &quot;ERCTest Token&quot;;
+        symbol = "ERCT";
+        name = "ERCTest Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x3069104Ccf21582E06e93a613d16c294F3605773] = _totalSupply;

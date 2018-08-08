@@ -101,8 +101,8 @@ contract ERC20Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ERC20Token() public {
-        symbol = &quot;DRON&quot;;
-        name = &quot;Dron&quot;;
+        symbol = "DRON";
+        name = "Dron";
         decimals = 8;
         _totalSupply = 25000000 * 10 ** uint256(decimals); // 1 billion coins WE RICH
         balances[msg.sender] = _totalSupply; // the address launching the token is msg sender

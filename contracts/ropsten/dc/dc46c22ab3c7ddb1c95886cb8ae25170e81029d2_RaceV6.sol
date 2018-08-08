@@ -35,7 +35,7 @@ contract RaceV6 {
     event DebugArray(bool[] a);
     
     modifier onlyFreeTrack(uint _trackId) {
-        require(tracks[_trackId].playerAddresses.length < 2, &quot;onlyFreeTrack&quot;);
+        require(tracks[_trackId].playerAddresses.length < 2, "onlyFreeTrack");
         _;
     }
     

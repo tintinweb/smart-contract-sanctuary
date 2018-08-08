@@ -2,8 +2,8 @@ pragma solidity ^0.4.20;
 
 
 contract hatsikiplee {
-    string public constant name = &quot;Hatsikidee&quot;;
-    string public constant symbol = &quot;Hatsi&quot;;
+    string public constant name = "Hatsikidee";
+    string public constant symbol = "Hatsi";
     uint8 public constant decimals = 1; 
     uint256 public totalSupply = 0;
     address public owner = 0x5372260584003e8Ae3a24E9dF09fa96037a04c2b;

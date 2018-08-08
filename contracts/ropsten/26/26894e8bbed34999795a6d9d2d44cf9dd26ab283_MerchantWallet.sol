@@ -5,7 +5,7 @@ pragma solidity 0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -168,7 +168,7 @@ contract Contactable is Ownable{
 
 contract MerchantWallet is Pausable, SafeDestructible, Contactable, Restricted {
 
-    string constant VERSION = &quot;0.3&quot;;
+    string constant VERSION = "0.3";
 
     /// Address of merchant&#39;s account, that can withdraw from wallet
     address public merchantAccount;

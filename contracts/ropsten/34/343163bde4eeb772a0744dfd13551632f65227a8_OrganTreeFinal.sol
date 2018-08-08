@@ -312,8 +312,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 // File: contracts/OrganTreeFinal.sol
 
 contract OrganTreeFinal is StandardBurnableToken {
-    bytes32 public constant name = &quot;OrganTreeFinal&quot;;
-    bytes32 public constant symbol = &quot;OGTF&quot;;
+    bytes32 public constant name = "OrganTreeFinal";
+    bytes32 public constant symbol = "OGTF";
     uint8 public constant decimals = 18;
     uint public totalSupply = 2500000000000000000000000000;
 }

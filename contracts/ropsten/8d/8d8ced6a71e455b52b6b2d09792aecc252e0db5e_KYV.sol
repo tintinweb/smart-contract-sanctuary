@@ -50,7 +50,7 @@ contract KYV {
     constructor (string _creator) public {
       creatorName = _creator;
       creatorAddress = msg.sender;
-      emit Log(&quot;Contract deployed successfully by &quot;,_creator);
+      emit Log("Contract deployed successfully by ",_creator);
     }
     
     //function to check access rights of transaction request sender
@@ -74,7 +74,7 @@ contract KYV {
          org.status = _status;
          org.isValue = true;
          orgTrack[_vendorId].push(org);
-         emit Log(&quot;Successfully added organisation&quot;,_status);
+         emit Log("Successfully added organisation",_status);
         return 0; 
     } 
         return 7;
@@ -90,7 +90,7 @@ contract KYV {
           org.adminId = _adminId;
           org.dataHash= _dataHash;
           orgTrack[_vendorId].push(org);
-          emit Log(&quot;Approve or Reject organisation&quot;,_status);
+          emit Log("Approve or Reject organisation",_status);
           return 0; 
         } 
           return 7;

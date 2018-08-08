@@ -248,8 +248,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract LLLToken is StandardToken {
-  string public name = &quot;LLLToken&quot;; 
-  string public symbol = &quot;LLLToken&quot;;
+  string public name = "LLLToken"; 
+  string public symbol = "LLLToken";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 200000000 * (10 ** decimals);
   constructor () public {

@@ -113,8 +113,8 @@ contract GiroToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GiroToken() public {
-        symbol = &quot;GIRO&quot;;
-        name = &quot;GIRO Token&quot;;
+        symbol = "GIRO";
+        name = "GIRO Token";
         decimals = 18;
         _totalSupply = 20000000000000000000000000;
         balances[0x58bB8a57797B50d3742ED280461C3cc147cAc2B7] = _totalSupply;

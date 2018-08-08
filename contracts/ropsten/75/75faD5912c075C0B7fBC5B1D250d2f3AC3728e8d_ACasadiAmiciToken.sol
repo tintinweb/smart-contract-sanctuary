@@ -116,8 +116,8 @@ contract ACasadiAmiciToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ACasadiAmiciToken() public {
-        symbol = &quot;ACDA&quot;;
-        name = &quot;A Casa di Amici Token&quot;;
+        symbol = "ACDA";
+        name = "A Casa di Amici Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

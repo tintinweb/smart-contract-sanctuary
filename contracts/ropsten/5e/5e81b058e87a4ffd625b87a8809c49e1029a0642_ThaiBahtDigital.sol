@@ -113,8 +113,8 @@ contract ThaiBahtDigital is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ThaiBahtDigital() public {
-        symbol = &quot;THBD&quot;;
-        name = &quot;Thai Baht Digital&quot;;
+        symbol = "THBD";
+        name = "Thai Baht Digital";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0b17D64E630814C9560B83C0514426ecC6E2F12A] = _totalSupply;

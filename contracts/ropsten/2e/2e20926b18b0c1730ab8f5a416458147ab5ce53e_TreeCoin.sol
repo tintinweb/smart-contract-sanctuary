@@ -166,8 +166,8 @@ contract Owned {
 // ----------------------------------------------------------------------------
 contract TreeCoin is ERC20Token, Owned {
 
-    string public constant name = &quot;Tree Coin&quot;;
-    string public constant symbol = &quot;TREE&quot;;
+    string public constant name = "Tree Coin";
+    string public constant symbol = "TREE";
     uint8 public constant decimals = 8;
 
     uint256 constant public TREE_UNIT = 1 * 10**8;

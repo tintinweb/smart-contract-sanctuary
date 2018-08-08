@@ -47,8 +47,8 @@ library SafeMath {
 contract BitsiveCoin {
   using SafeMath for uint;
   address public owner; // This is owner eth address for contract transaction
-  string public constant symbol = &quot;BSC&quot;; // This is token symbol
-  string public constant name = &quot;Bitsive Coin&quot;; // this is token name
+  string public constant symbol = "BSC"; // This is token symbol
+  string public constant name = "Bitsive Coin"; // this is token name
   uint8 public constant decimals = 18; // decimal digit for token price calculation.
   uint256 public totalSupply = 0;
   uint256 public maxSupply = 95000000; // This is max supply amount for token

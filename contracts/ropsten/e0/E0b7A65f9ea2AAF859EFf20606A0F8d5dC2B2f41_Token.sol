@@ -145,8 +145,8 @@ library SafeMath {
 
 
 contract Token is Owned, StandartToken {
-    string public name = &quot;TEstToken&quot;;
-    string public symbol = &quot;TET&quot;;
+    string public name = "TEstToken";
+    string public symbol = "TET";
     uint public decimals = 18;
 
     address public crowdsaleMinter;

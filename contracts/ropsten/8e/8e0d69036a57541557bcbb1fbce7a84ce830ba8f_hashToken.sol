@@ -116,8 +116,8 @@ contract hashToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function hashToken() public {
-        symbol = &quot;HASH&quot;;
-        name = &quot;Hash Token&quot;;
+        symbol = "HASH";
+        name = "Hash Token";
         decimals = 10;
         bonusEnds = now + 17 weeks;
         endDate = now + 34 weeks;

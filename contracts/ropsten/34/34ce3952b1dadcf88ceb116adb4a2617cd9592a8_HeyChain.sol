@@ -257,7 +257,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract HeyChain is MintableToken {
-  string public name = &quot;Hey Chain&quot;;
-  string public symbol = &quot;HEY&quot;;
+  string public name = "Hey Chain";
+  string public symbol = "HEY";
   uint256 public decimals = 18;
 }

@@ -113,8 +113,8 @@ contract PalmToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PalmToken() public {
-        symbol = &quot;PLM&quot;;
-        name = &quot;PalmToken&quot;;
+        symbol = "PLM";
+        name = "PalmToken";
         decimals = 0;
         _totalSupply = 88888888;
         balances[0xCfD6500Ef9A07326AcCeB4D5031611a0867940fD] = _totalSupply;

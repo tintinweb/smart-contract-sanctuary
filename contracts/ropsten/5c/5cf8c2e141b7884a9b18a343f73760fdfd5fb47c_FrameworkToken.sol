@@ -47,7 +47,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -410,8 +410,8 @@ contract PausableToken is StandardToken, Pausable {
   }
 }
 contract FrameworkToken is CappedToken, PausableToken, Contactable {
-  string public name = &quot;Framework&quot;;
-  string public symbol = &quot;FRWK&quot;;
+  string public name = "Framework";
+  string public symbol = "FRWK";
   uint8 public decimals = 18;
   uint256 public cappedTokenSupply = 100000000 * (10 ** uint256(decimals)); // There will be total 100 million FRWK Tokens
   mapping(address => bool) public owners;

@@ -1,14 +1,14 @@
 /*
 
   Copyright 2018 CoinAlpha, Inc.
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
   http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -94,11 +94,11 @@ contract BasketRegistry {
 
   // Modifiers
   modifier onlyBasket {
-    require(basketIndexFromAddress[msg.sender] > 0); // Check: &quot;Only a basket can call this function&quot;
+    require(basketIndexFromAddress[msg.sender] > 0); // Check: "Only a basket can call this function"
     _;
   }
   modifier onlyBasketFactory {
-    require(basketFactoryMap[msg.sender] == true);   // Check: &quot;Only a basket factory can call this function&quot;
+    require(basketFactoryMap[msg.sender] == true);   // Check: "Only a basket factory can call this function"
     _;
   }
 
@@ -119,7 +119,7 @@ contract BasketRegistry {
   /// @param  _basketFactory                       Basket factory address
   /// @return success                              Operation successful
   function whitelistBasketFactory(address _basketFactory) public returns (bool success) {
-    require(msg.sender == admin);                  // Check: &quot;Only an admin can call this function&quot;
+    require(msg.sender == admin);                  // Check: "Only an admin can call this function"
     basketFactoryMap[_basketFactory] = true;
     emit LogWhitelistBasketFactory(_basketFactory);
     return true;
@@ -219,6 +219,6 @@ contract BasketRegistry {
   }
 
   /// @dev Fallback to reject any ether sent to contract
-  //  CHeck: &quot;BasketRegistry does not accept ETH transfers&quot;
+  //  CHeck: "BasketRegistry does not accept ETH transfers"
   function () public payable { revert(); }
 }

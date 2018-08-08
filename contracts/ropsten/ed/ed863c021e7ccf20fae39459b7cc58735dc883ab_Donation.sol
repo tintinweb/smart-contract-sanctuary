@@ -44,8 +44,8 @@ library SafeMath {
 
 
 // de transfer van tokens verloopt via de originele token
-// import &quot;./MyToken.sol&quot;;
-// import &quot;.SafeMath.sol&quot; ;
+// import "./MyToken.sol";
+// import ".SafeMath.sol" ;
 //
 contract Donation  {
     using SafeMath for uint;

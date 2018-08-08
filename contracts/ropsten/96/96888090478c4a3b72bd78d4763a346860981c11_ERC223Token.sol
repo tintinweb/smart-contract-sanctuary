@@ -19,8 +19,8 @@ interface ContractReceiver {
 
 contract ERC223Token
 {
-  string  public name = &quot;Rune&quot;;
-  string  public symbol  = &quot;RUNE&quot;;
+  string  public name = "Rune";
+  string  public symbol  = "RUNE";
   uint256   public decimals  = 18;
   uint256 public totalSupply  = 1000000000 * (10 ** decimals);
  

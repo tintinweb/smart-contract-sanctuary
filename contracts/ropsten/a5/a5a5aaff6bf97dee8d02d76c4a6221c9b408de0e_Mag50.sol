@@ -147,7 +147,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 	The Ownable contract has an owner address, and provides basic authorization control
-	functions, this simplifies the implementation of &quot;user permissions&quot;.
+	functions, this simplifies the implementation of "user permissions".
 */
 
 contract Ownable {
@@ -184,8 +184,8 @@ contract Ownable {
 
     
 contract Mag50 is StandardToken, Ownable {
-  string public constant name = &quot;Magnificent 50&quot;;
-  string public constant symbol = &quot;Mag50&quot;;
+  string public constant name = "Magnificent 50";
+  string public constant symbol = "Mag50";
   uint public constant decimals = 18;
   uint256 public initialSupply;
     

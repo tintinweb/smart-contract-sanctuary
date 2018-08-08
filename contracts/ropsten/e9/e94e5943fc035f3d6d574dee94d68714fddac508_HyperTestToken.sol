@@ -98,8 +98,8 @@ contract HyperTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HyperTestToken() public {
-        symbol = &quot;HYPTT&quot;;
-        name = &quot;HyperTestToken&quot;;
+        symbol = "HYPTT";
+        name = "HyperTestToken";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000;
         balances[0xf593460D60534Dc0A4393674bae95014d6BEad8B] = _totalSupply;

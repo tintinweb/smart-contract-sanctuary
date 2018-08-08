@@ -72,8 +72,8 @@ contract KopiToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Kopi Token&quot;;
-    string public constant symbol = &quot;KPT&quot;;
+    string public constant name = "Kopi Token";
+    string public constant symbol = "KPT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 99000000000e8;

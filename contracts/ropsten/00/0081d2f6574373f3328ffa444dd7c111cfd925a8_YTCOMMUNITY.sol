@@ -113,8 +113,8 @@ contract YTCOMMUNITY is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YTCOMMUNITY() public {
-        symbol = &quot;YTCOM&quot;;
-        name = &quot;YT COMMUNITY&quot;;
+        symbol = "YTCOM";
+        name = "YT COMMUNITY";
         decimals = 18;
         _totalSupply = 786000000000000000000000;
         balances[0x49FFa0de6892bB45cF44B79163a9443Dc2d70807] = _totalSupply;

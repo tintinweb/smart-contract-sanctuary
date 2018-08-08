@@ -113,8 +113,8 @@ contract AdameToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AdameToken() public {
-        symbol = &quot;AAAT&quot;;
-        name = &quot;Adame Token&quot;;
+        symbol = "AAAT";
+        name = "Adame Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x102591Df772D896E5c88f263E3b9f886e3bA7a5D] = _totalSupply;

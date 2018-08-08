@@ -113,8 +113,8 @@ contract CokecoinTokenTest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CokecoinTokenTest() public {
-        symbol = &quot;CKCNT&quot;;
-        name = &quot;Cokecoin Token Test&quot;;
+        symbol = "CKCNT";
+        name = "Cokecoin Token Test";
         decimals = 18;
         _totalSupply = 690000000000000000000000000;
         balances[0x56955A71A6e7a23332A9db27EfbfE8E3aC0A45Ed] = _totalSupply;

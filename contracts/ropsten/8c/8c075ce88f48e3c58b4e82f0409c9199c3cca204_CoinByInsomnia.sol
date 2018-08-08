@@ -1,9 +1,9 @@
 pragma solidity ^0.4.2;
 
 contract CoinByInsomnia {
-    string  public name = &quot;CoinByInsomnia&quot;;
-    string  public symbol = &quot;CBI&quot;;
-    string  public standard = &quot;CoinByInsomnia v1.0&quot;;
+    string  public name = "CoinByInsomnia";
+    string  public symbol = "CBI";
+    string  public standard = "CoinByInsomnia v1.0";
     uint256 public totalSupply = 100000000;
     
  

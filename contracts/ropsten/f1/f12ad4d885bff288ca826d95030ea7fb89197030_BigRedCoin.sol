@@ -113,8 +113,8 @@ contract BigRedCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BigRedCoin() public {
-        symbol = &quot;BRED&quot;;
-        name = &quot;BIGRED COIN&quot;;
+        symbol = "BRED";
+        name = "BIGRED COIN";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0x78dDf16fEb5b30b1188451532C07bc51FCfB8480] = _totalSupply;

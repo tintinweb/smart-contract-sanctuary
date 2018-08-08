@@ -964,12 +964,12 @@ contract DNSSEC is Owned {
         // Insert the &#39;trust anchors&#39; - the key hashes that start the chain
         // of trust for all other records.
         anchors = _anchors;
-        rrsets[keccak256(&quot; &quot;)][DNSTYPE_DS] = RRSet({
+        rrsets[keccak256(" ")][DNSTYPE_DS] = RRSet({
             inception: uint32(0),
             inserted: uint64(now),
             hash: bytes20(keccak256(anchors))
         });
-        emit RRSetUpdated(&quot; &quot;, anchors);
+        emit RRSetUpdated(" ", anchors);
     }
 
     /**
@@ -1103,7 +1103,7 @@ contract DNSSEC is Owned {
             } else if(iter.dnstype == DNSTYPE_NSEC3) {
                 checkNsec3Name(iter, nsecName, deleteName, deleteType);
             } else {
-                revert(&quot;Unrecognised record type&quot;);
+                revert("Unrecognised record type");
             }
 
             delete rrsets[keccak256(deleteName)][deleteType];
@@ -1255,7 +1255,7 @@ contract DNSSEC is Owned {
     function checkNameLabels(bytes memory name, uint8 labels) internal pure {
         uint nameLabels = name.labelCount(0);
         // The name must either have the specified number of labels, or have a
-        // &quot;*.&quot;.
+        // "*.".
         require(nameLabels == labels || (nameLabels == labels + 1 && name.readUint16(0) == 0x012A));
     }
 
@@ -1286,7 +1286,7 @@ contract DNSSEC is Owned {
         } else if (dnstype == DNSTYPE_DNSKEY) {
             require(verifyWithKnownKey(data, sig, proof));
         } else {
-            revert(&quot;Unsupported proof record type&quot;);
+            revert("Unsupported proof record type");
         }
     }
 

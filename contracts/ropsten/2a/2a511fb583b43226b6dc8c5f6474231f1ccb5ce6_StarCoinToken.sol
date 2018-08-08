@@ -87,10 +87,10 @@ pragma solidity ^0.4.23;
     contract StarCoinToken is StandardToken, SafeMath {
      
         // metadata
-        string  public constant name = &quot;StarCoin&quot;;
-        string  public constant symbol = &quot;STS&quot;;
+        string  public constant name = "StarCoin";
+        string  public constant symbol = "STS";
         uint256 public constant decimals = 18;
-        string  public version = &quot;1.0&quot;;
+        string  public version = "1.0";
      
         // contracts
         address public ethFundDeposit;          // ETH存放地址

@@ -113,8 +113,8 @@ contract CIFRCOINTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CIFRCOINTOKEN() public {
-        symbol = &quot;CIFR&quot;;
-        name = &quot;CIFRCOIN TOKEN&quot;;
+        symbol = "CIFR";
+        name = "CIFRCOIN TOKEN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xA53DA82444c353ED0cF0FaC92628127a4900266d] = _totalSupply;

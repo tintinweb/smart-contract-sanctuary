@@ -89,8 +89,8 @@ contract SToekn is ERC20Interface, Owned {
 
 
     function SToekn() public {
-        symbol = &quot;STKN&quot;;
-        name = &quot;S Token&quot;;
+        symbol = "STKN";
+        name = "S Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

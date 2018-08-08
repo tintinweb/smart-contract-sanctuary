@@ -51,10 +51,10 @@ library SafeMath {
  *      Teams and Tournament Organizers: 15%
  *      Team and Early Investors: 10%
  *
- * The DreamTeam &quot;Vesting&quot; smart contract should be in place to ensure meeting the token sale commitments.
+ * The DreamTeam "Vesting" smart contract should be in place to ensure meeting the token sale commitments.
  *
  * Two instances of the contract will be deployed for holding tokens. 
- * First instance for &quot;Teams and Tournament Organizers&quot; tokens and second for &quot;Team and Early Investors&quot;.
+ * First instance for "Teams and Tournament Organizers" tokens and second for "Team and Early Investors".
  */
 contract OneYearDreamTokensVesting {
 
@@ -164,8 +164,8 @@ contract OneYearDreamTokensVesting {
      * Provides ability to get attributes of every stage from external callers, ie Web3, truffle tests, etc.
      * @param index Vesting stage number. Ordered by ascending date and starting from zero.
      * @return {
-     *    &quot;date&quot;: &quot;Date of stage in unix timestamp format.&quot;,
-     *    &quot;tokensUnlockedPercentage&quot;: &quot;Percent of tokens allowed to be withdrawn.&quot;
+     *    "date": "Date of stage in unix timestamp format.",
+     *    "tokensUnlockedPercentage": "Percent of tokens allowed to be withdrawn."
      * }
      */
     function getVestingStageAttributes (uint8 index) public view returns (

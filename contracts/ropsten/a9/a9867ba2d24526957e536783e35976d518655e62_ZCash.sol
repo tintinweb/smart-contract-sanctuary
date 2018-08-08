@@ -113,8 +113,8 @@ contract ZCash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZCash() public {
-        symbol = &quot;ZCASH&quot;;
-        name = &quot;Z Cash&quot;;
+        symbol = "ZCASH";
+        name = "Z Cash";
         decimals = 0;
         _totalSupply = 1000000;
         balances[0xb33097B9cDe3afE3cF1073fbc6df1A3C8a8c7C9a] = _totalSupply;

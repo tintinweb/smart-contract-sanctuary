@@ -111,8 +111,8 @@ contract FixedSupplyToken is ERC20Interface, Maxtradex {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MXTX&quot;;
-        name = &quot;Maxtradex Token&quot;;
+        symbol = "MXTX";
+        name = "Maxtradex Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[0x25d38eFD2d164e21D80c041CA8fB5b8aA08376a8] = _totalSupply;

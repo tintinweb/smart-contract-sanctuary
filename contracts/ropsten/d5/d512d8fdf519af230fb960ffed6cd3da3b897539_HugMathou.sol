@@ -113,8 +113,8 @@ contract HugMathou is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HugMathou() public {
-        symbol = &quot;Weahh&quot;;
-        name = &quot;We e EHHH&quot;;
+        symbol = "Weahh";
+        name = "We e EHHH";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0df55499b14f010c93470a3d83d3c8ce2fdc469d] = _totalSupply;

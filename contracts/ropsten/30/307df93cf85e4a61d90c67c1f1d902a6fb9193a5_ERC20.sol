@@ -23,8 +23,8 @@ contract ERC20 is ERC20Interface {
     mapping(address => mapping(address => uint256)) allowed;
     
     constructor(string _name) public {
-        name = _name; //&quot;niunanfen&quot;;
-        symbol = &quot;NNF&quot;;
+        name = _name; //"niunanfen";
+        symbol = "NNF";
         decimals = 0;
         totalSupply = 1000000;
         balanceOf[msg.sender] = totalSupply;

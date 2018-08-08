@@ -113,8 +113,8 @@ contract SkySwapToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SkySwapToken() public {
-        symbol = &quot;SKY&quot;;
-        name = &quot;SkySwapToken&quot;;
+        symbol = "SKY";
+        name = "SkySwapToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x05Deeae8D57238896882f26421dC71f50e2EaC99] = _totalSupply;

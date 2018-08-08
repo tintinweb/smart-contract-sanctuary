@@ -113,8 +113,8 @@ contract GammaGrokToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GAMMAGROK&quot;;
-        name = &quot;GammaGrok Token&quot;;
+        symbol = "GAMMAGROK";
+        name = "GammaGrok Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3fF394d2Aca6B130db9f6eaA3E5b5B7CFdA5c9b3] = _totalSupply;

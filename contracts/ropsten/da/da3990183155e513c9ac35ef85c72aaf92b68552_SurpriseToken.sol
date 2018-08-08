@@ -56,8 +56,8 @@ contract SurpriseToken is Ownable{
     
     using SafeMath for uint256;
     
-    string public constant name       = &quot;SURPRISE&quot;;
-    string public constant symbol     = &quot;ZZZ&quot;;
+    string public constant name       = "SURPRISE";
+    string public constant symbol     = "ZZZ";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply        = 40000000 ether;
     uint256 public currentTotalSupply = 0;

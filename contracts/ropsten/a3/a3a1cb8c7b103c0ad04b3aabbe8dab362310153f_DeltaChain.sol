@@ -215,9 +215,9 @@ contract DeltaChain is ERC20Interface, Owned, SafeMath {
 
     function EtherNeo() public {
 
-        symbol = &quot;DLC&quot;;
+        symbol = "DLC";
 
-        name = &quot;DeltaChain&quot;;
+        name = "DeltaChain";
 
         decimals = 18;
 

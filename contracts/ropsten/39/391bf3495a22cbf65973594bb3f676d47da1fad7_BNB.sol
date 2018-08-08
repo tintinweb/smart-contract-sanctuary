@@ -64,8 +64,8 @@ contract BNB is SafeMath{
         ) {
         balanceOf[msg.sender] = 100000000;              // Give the creator all initial tokens
         totalSupply = 100000000;                        // Update total supply
-        name = &quot;BNB_BYZH&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BNB_SYMBOL&quot;;                               // Set the symbol for display purposes
+        name = "BNB_BYZH";                                   // Set the name for display purposes
+        symbol = "BNB_SYMBOL";                               // Set the symbol for display purposes
         decimals = 10^18;                            // Amount of decimals for display purposes
 		owner = msg.sender;
     }

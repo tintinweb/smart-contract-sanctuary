@@ -113,8 +113,8 @@ contract porcoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function porcoToken() public {
-        symbol = &quot;prc&quot;;
-        name = &quot;porcoToken&quot;;
+        symbol = "prc";
+        name = "porcoToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa2bc50ca73e2f2b8354c28c3830960996db45b7c] = _totalSupply;

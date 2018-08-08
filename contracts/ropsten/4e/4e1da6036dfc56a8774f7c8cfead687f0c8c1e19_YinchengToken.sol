@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract YinchengToken {
 
-    string public name = &quot;YinchengToken&quot;;      //  token name
-    string public symbol = &quot;YCC&quot;;           //  token symbol
+    string public name = "YinchengToken";      //  token name
+    string public symbol = "YCC";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -1,8 +1,8 @@
 pragma solidity ^0.4.24;
 
 contract Come {
-    string public name = &quot;Come_6&quot;;
-    string public symbol = &quot;CC_6&quot;;
+    string public name = "Come_6";
+    string public symbol = "CC_6";
     uint8 public decimals = 18;
     //uint256 public totalSupply = 1000000000 * 10 ** uint256(decimals);
     uint256 public increasedSupply = 200000000 * 10 ** uint256(decimals);

@@ -189,8 +189,8 @@ contract KTC is Crownable, Mintable  {
 
     using SafeMath for uint256;
     /* Public variables of the token */
-    string public constant name = &quot;Kryptonite Trade Coin&quot;;
-    string public constant symbol = &quot;KTC&quot;;
+    string public constant name = "Kryptonite Trade Coin";
+    string public constant symbol = "KTC";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     uint256 public initialSupply;

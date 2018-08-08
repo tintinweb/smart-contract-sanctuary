@@ -259,7 +259,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -384,8 +384,8 @@ contract AmberToken is DetailedERC20, StandardToken, BurnableToken, PausableToke
     function AmberToken(
         uint256 totalSupply
     )  DetailedERC20(
-        &quot;Amber Token&quot;,
-        &quot;At&quot;,
+        "Amber Token",
+        "At",
         18
     ) {
         totalSupply_ = totalSupply;

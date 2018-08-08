@@ -24,9 +24,9 @@ contract DGCASH {//is inherently ERC20
     * @storage allowed Holds the allowable balance to be transferable by another address.
     */
 
-    string constant public name = &quot;DGCASH&quot;;
+    string constant public name = "DGCASH";
 
-    string constant public symbol = &quot;DGCASH&quot;;
+    string constant public symbol = "DGCASH";
 
     uint8 constant public decimals = 8;
 
@@ -54,7 +54,7 @@ contract DGCASH {//is inherently ERC20
     * @return Whether the transfer was successful or not
     */
     function transfer(address _to, uint256 _value) public returns (bool success) {
-        /* Ensures that tokens are not sent to address &quot;0x0&quot; */
+        /* Ensures that tokens are not sent to address "0x0" */
         require(_to != address(0));
         /* Prevents sending tokens directly to contracts. */
         require(isNotContract(_to));
@@ -75,7 +75,7 @@ contract DGCASH {//is inherently ERC20
     * @return Whether the transfer was successful or not
     */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        /* Ensures that tokens are not sent to address &quot;0x0&quot; */
+        /* Ensures that tokens are not sent to address "0x0" */
         require(_to != address(0));
         /* Ensures tokens are not sent to this contract */
         require(_to != address(this));
@@ -142,7 +142,7 @@ contract DGCASH {//is inherently ERC20
     * @return Whether the approval was successful or not
     */
     function approve(address _spender, uint256 _value) public returns (bool success) {
-        /* Ensures address &quot;0x0&quot; is not assigned allowance. */
+        /* Ensures address "0x0" is not assigned allowance. */
         require(_spender != address(0));
 
         allowed[msg.sender][_spender] = _value;

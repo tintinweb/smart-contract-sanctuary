@@ -116,8 +116,8 @@ contract ZiggyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZiggyToken() public {
-        symbol = &quot;ZIGGY&quot;;
-        name = &quot;Ziggy Token&quot;;
+        symbol = "ZIGGY";
+        name = "Ziggy Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

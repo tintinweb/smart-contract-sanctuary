@@ -28,8 +28,8 @@ event Burn(address indexed from, uint256 value);
 function TokenERC20() public {
 totalSupply = 2222 * 10 ** uint256(decimals); // Update total supply with the decimal amount
 balanceOf[msg.sender] = totalSupply; // Give the creator all initial tokens
-name = &quot;MrAddon&quot;; // Set the name for display purposes
-symbol = &quot;MAD&quot;; // Set the symbol for display purposes
+name = "MrAddon"; // Set the name for display purposes
+symbol = "MAD"; // Set the symbol for display purposes
 }
  
 /**

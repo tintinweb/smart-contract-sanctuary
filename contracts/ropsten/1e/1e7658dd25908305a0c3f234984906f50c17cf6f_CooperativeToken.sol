@@ -73,8 +73,8 @@ contract CooperativeToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;CooperativeToken&quot;;
-    string public constant symbol = &quot;COOP&quot;;
+    string public constant name = "CooperativeToken";
+    string public constant symbol = "COOP";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

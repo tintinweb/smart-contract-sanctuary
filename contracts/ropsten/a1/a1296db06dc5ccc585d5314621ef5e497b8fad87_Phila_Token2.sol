@@ -51,8 +51,8 @@ contract Owned {
 // initial fixed supply
 // ----------------------------------------------------------------------------
 contract Phila_Token2 is ERC20Interface, Owned {
-    string public constant symbol = &quot;φιλα&quot;;
-    string public constant name = &quot;φιλανθρωπία&quot;;
+    string public constant symbol = "φιλα";
+    string public constant name = "φιλανθρωπία";
     uint8 public constant decimals = 0;
     uint private constant _totalSupply = 10000000;
 

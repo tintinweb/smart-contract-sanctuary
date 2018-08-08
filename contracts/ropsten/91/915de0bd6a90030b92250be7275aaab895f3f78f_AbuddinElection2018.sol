@@ -1,7 +1,7 @@
 pragma solidity ^0.4.0;
 //WP27080956Concordia
 contract AbuddinElection2018 {
-    string[7] candidates  = [&quot;Abstain&quot;,&quot;Conservative&quot;, &quot;Liberal&quot;, &quot;Socialist&quot;, &quot;Communist&quot;, &quot;Fascist&quot;,&quot;Libertarian&quot;];
+    string[7] candidates  = ["Abstain","Conservative", "Liberal", "Socialist", "Communist", "Fascist","Libertarian"];
     mapping(bytes32 => bool) validShaHashes;
     mapping(uint8 => uint) public tallies; 
     
@@ -40,7 +40,7 @@ contract AbuddinElection2018 {
        if(isHashValid(accescodeHash)){
             _vote(accescodeHash, indexOfCandidate);
        } else {
-           revert(&quot;accesscode is invalid, or you already voted&quot;);
+           revert("accesscode is invalid, or you already voted");
        }
    }
    constructor() public {

@@ -113,8 +113,8 @@ contract APTest1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function APTest1() public {
-        symbol = &quot;AP1&quot;;
-        name = &quot;APTest1&quot;;
+        symbol = "AP1";
+        name = "APTest1";
         decimals = 18;
         _totalSupply = 4000000000000000000000000;
         balances[0xF03C6d7F5f4E2beE903ee395Ea0985409e150305] = _totalSupply;

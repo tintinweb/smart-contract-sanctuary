@@ -66,7 +66,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -335,7 +335,7 @@ contract CappedToken is MintableToken {
 
 contract CustomToken is CappedToken {
     //1.3 update add minter/delete minter address validation
-    string public version = &quot;1.3&quot;;
+    string public version = "1.3";
 
     string public name;
 

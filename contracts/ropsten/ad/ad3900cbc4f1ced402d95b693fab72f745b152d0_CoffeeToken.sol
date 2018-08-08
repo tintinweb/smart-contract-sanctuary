@@ -105,8 +105,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 
 contract CoffeeToken is StandardToken {
-	string public constant symbol = &quot;Coffee&quot;;
-	string public constant name = &quot;Coffee&quot;;
+	string public constant symbol = "Coffee";
+	string public constant name = "Coffee";
 	uint8 public constant decimals = 18;
 	address public target;
 	

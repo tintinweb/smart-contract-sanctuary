@@ -184,9 +184,9 @@ contract BurnableToken is StandardToken {
 
 contract TBL4Token is BurnableToken {
     
-  string public constant name = &quot;TBL4 Test Token&quot;;
+  string public constant name = "TBL4 Test Token";
     
-  string public constant symbol = &quot;TBL4&quot;;
+  string public constant symbol = "TBL4";
     
   uint32 public constant decimals = 15;
     

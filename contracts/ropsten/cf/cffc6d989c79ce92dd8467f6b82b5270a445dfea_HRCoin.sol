@@ -275,8 +275,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract HRCoin is MintableToken{
-  string public name = &quot;HR COIN&quot;;
-  string public symbol = &quot;HRCoin&quot;;
+  string public name = "HR COIN";
+  string public symbol = "HRCoin";
   uint8 public decimals = 18;
   uint public INITIAL_SUPPLY = 100000000 * (10 ** decimals);
 

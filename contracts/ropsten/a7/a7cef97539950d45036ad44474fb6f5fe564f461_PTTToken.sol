@@ -225,9 +225,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract PTTToken is  StandardToken {
 
-    string public constant name = &quot;PTT&quot;;
+    string public constant name = "PTT";
 
-    string public constant symbol = &quot;PTT&quot;;
+    string public constant symbol = "PTT";
 
     uint8 public constant decimals = 8;
 

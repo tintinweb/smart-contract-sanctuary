@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -710,9 +710,9 @@ contract Indecoin is MintableToken, Dividend {
   */
 
   // Expected of ERC20
-  string public constant name     = &quot;LaunchCoinTest v0.3&quot;;
+  string public constant name     = "LaunchCoinTest v0.3";
   // TODO: Refactor once done with testnet
-  string public constant symbol   = &quot;LC_t3&quot;;
+  string public constant symbol   = "LC_t3";
   uint8  public constant decimals = 18;
 
   bool public compromised; // In testing, true means the contract was breached
@@ -1497,10 +1497,10 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * This simplifies the implementation of &quot;user permissions&quot;.
+ * This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if operator is not whitelisted.

@@ -116,8 +116,8 @@ contract BlockFundIncubatorToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BlockFundIncubatorToken() public {
-        symbol = &quot;BFIC&quot;;
-        name = &quot;BlockFundIncubator Token&quot;;
+        symbol = "BFIC";
+        name = "BlockFundIncubator Token";
         decimals = 18;
         bonusEnds = now + 6 weeks;
         endDate = now + 12 weeks;

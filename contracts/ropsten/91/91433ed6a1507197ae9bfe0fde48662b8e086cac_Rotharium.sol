@@ -95,8 +95,8 @@ contract Rotharium is owned{
     function Rotharium() public {
         totalSupply = 10 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                    // Give the creator all initial tokens
-        name = &quot;Rotharium&quot;;                                       // Set the name for display purposes
-        symbol = &quot;RTH&quot;;                                   // Set the symbol for display purposes
+        name = "Rotharium";                                       // Set the name for display purposes
+        symbol = "RTH";                                   // Set the symbol for display purposes
     }
 
     /** 

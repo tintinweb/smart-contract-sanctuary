@@ -116,8 +116,8 @@ contract plantToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function plantToken() public {
-        symbol = &quot;PlantCoin&quot;;
-        name = &quot;Plant Token&quot;;
+        symbol = "PlantCoin";
+        name = "Plant Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

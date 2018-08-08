@@ -113,8 +113,8 @@ contract SnakeTokenTheFirst is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;SNK&quot;;
-        name = &quot;SnakeTokenTheFirst&quot;;
+        symbol = "SNK";
+        name = "SnakeTokenTheFirst";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x528cf9a9514a38ddd07fb24d82acb37d28021c22] = _totalSupply;

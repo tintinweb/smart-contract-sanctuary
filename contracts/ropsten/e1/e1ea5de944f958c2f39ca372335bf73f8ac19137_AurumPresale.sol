@@ -70,7 +70,7 @@ contract Ownable {
      * @dev Throws if called by any account other than the owner.
      */
     modifier onlyOwner() {
-        require(msg.sender == owner, &quot;Only owner can do that.&quot;);
+        require(msg.sender == owner, "Only owner can do that.");
         _;
     }
 
@@ -78,7 +78,7 @@ contract Ownable {
      * @dev Modifier throws if called by any account other than the pendingOwner.
      */
     modifier onlyPendingOwner() {
-        require(msg.sender == pendingOwner, &quot;Only nominated pretender can do that.&quot;);
+        require(msg.sender == pendingOwner, "Only nominated pretender can do that.");
         _;
     }
 
@@ -172,7 +172,7 @@ contract AurumPresale is Ownable {
     }
 
     modifier onlyWhileActive() {
-        require(isActive(), &quot;Presale has closed.&quot;);
+        require(isActive(), "Presale has closed.");
         _;
     }
 
@@ -180,7 +180,7 @@ contract AurumPresale is Ownable {
      * @dev Sets minimal participation threshold
      */
     modifier minThreshold(uint256 _amount) {
-        require(msg.value >= _amount, &quot;Not enough Ether provided.&quot;);
+        require(msg.value >= _amount, "Not enough Ether provided.");
         _;
     }
 

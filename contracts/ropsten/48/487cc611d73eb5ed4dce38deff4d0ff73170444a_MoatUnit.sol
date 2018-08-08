@@ -12,7 +12,7 @@ interface AddressRegistry {
 contract Registry {
     address public RegistryAddress;
     modifier onlyAdmin() {
-        require(msg.sender == getAddress(&quot;admin&quot;));
+        require(msg.sender == getAddress("admin"));
         _;
     }
     function getAddress(string AddressName) internal view returns(address) {
@@ -333,13 +333,13 @@ contract MoatUnit is PausableToken {
         RegistryAddress = rAddress;
     }
 
-    string public constant name = &quot;MoatUnit&quot;;
-    string public constant symbol = &quot;MTUv3&quot;;
+    string public constant name = "MoatUnit";
+    string public constant symbol = "MTUv3";
     uint8 public constant decimals = 0;
 
     function MintToken(uint NoOfMTU) onlyAdmin public {
         totalSupply_ = totalSupply_.add(NoOfMTU);
-        address fundAddress = getAddress(&quot;fund&quot;);
+        address fundAddress = getAddress("fund");
         balances[fundAddress] = balances[fundAddress].add(NoOfMTU);
         emit Transfer(0, fundAddress, NoOfMTU);
     }
@@ -347,7 +347,7 @@ contract MoatUnit is PausableToken {
     function SendERC20ToAsset(address tokenAddress) onlyAdmin public {
         token tokenFunctions = token(tokenAddress);
         uint256 tokenBal = tokenFunctions.balanceOf(address(this));
-        tokenFunctions.transfer(getAddress(&quot;asset&quot;), tokenBal);
+        tokenFunctions.transfer(getAddress("asset"), tokenBal);
     }
 
 }

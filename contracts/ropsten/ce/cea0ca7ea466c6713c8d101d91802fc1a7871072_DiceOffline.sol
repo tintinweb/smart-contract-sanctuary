@@ -44,7 +44,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -131,7 +131,7 @@ contract Pausable is Ownable {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Config is Pausable {
     // 配置信息
@@ -157,7 +157,7 @@ contract Config is Pausable {
         setNormalRoomMax(1 ether);
         setTripleRoomMin(1 ether);
         setTripleRoomMax(10 ether);
-        setRandomApiKey(&quot;50faa373-68a1-40ce-8da8-4523db62d42a&quot;);
+        setRandomApiKey("50faa373-68a1-40ce-8da8-4523db62d42a");
         referrelFund = 10;
     }
 
@@ -729,11 +729,11 @@ contract DiceOffline is Config,RoomManager,UserManager {
     // 提现
     function withdraw(uint256 value) public onlyOwner{
         if(getAvailableBalance() < value){
-            emit withdraw_failed(&quot;withdraw_failed&quot;);
+            emit withdraw_failed("withdraw_failed");
             return;
         }
         owner.transfer(value);  
-        emit withdraw_succeeded(owner,value,&quot;withdraw&quot;);
+        emit withdraw_succeeded(owner,value,"withdraw");
     }
 
     // 获取可提现额度
@@ -754,7 +754,7 @@ contract DiceOffline is Config,RoomManager,UserManager {
        
         if(bet.value < minStake){
             bet.player.transfer(bet.value);
-            emit bet_failed(bet.player,bet.value,result,0,0,&quot;bet_failed&quot;);
+            emit bet_failed(bet.player,bet.value,result,0,0,"bet_failed");
             return false;
         }
         if(bet.value > maxStake){
@@ -772,7 +772,7 @@ contract DiceOffline is Config,RoomManager,UserManager {
         // 生成随机数
         bytes32 serialNumber = doOraclize();
         rollingBet[serialNumber] = bet;
-        emit bet_succeeded(bet.player,bet.value,result,0,serialNumber,&quot;bet_succeeded&quot;);
+        emit bet_succeeded(bet.player,bet.value,result,0,serialNumber,"bet_succeeded");
         if(isOffline){
             callback(serialNumber);
         }
@@ -782,7 +782,7 @@ contract DiceOffline is Config,RoomManager,UserManager {
     // 如果setCount为0，表示大小
     function openRoom(uint setCount,uint roomData,address referral) public payable returns(bool) {
         if(setCount > 35){
-            emit evt_createRoomFailed(msg.sender,&quot;createRoomFailed&quot;);
+            emit evt_createRoomFailed(msg.sender,"createRoomFailed");
             msg.sender.transfer(msg.value);
             return false;
         }
@@ -794,7 +794,7 @@ contract DiceOffline is Config,RoomManager,UserManager {
         }
 
         if(msg.value < minValue || msg.value > maxValue){
-            emit evt_createRoomFailed(msg.sender,&quot;createRoomFailed&quot;);
+            emit evt_createRoomFailed(msg.sender,"createRoomFailed");
             msg.sender.transfer(msg.value);
             return false;
         } 
@@ -803,7 +803,7 @@ contract DiceOffline is Config,RoomManager,UserManager {
         setReferral(msg.sender,referral);
         addOpenRoomCount(msg.sender);
 
-        emit evt_createRoomSucceeded(msg.sender,roomid,&quot;createRoomSucceeded&quot;); 
+        emit evt_createRoomSucceeded(msg.sender,roomid,"createRoomSucceeded"); 
     }
 
     function closeRoom(uint roomid) public returns(bool) {        
@@ -811,11 +811,11 @@ contract DiceOffline is Config,RoomManager,UserManager {
         bool taxPayed = false;        
         (ret,taxPayed) = tryCloseRoom(msg.sender,roomid,taxRate);
         if(!ret){
-            emit evt_closeRoomFailed(msg.sender,roomid,&quot;closeRoomFailed&quot;);
+            emit evt_closeRoomFailed(msg.sender,roomid,"closeRoomFailed");
             return false;
         }
         
-        emit evt_closeRoomSucceeded(msg.sender,roomid,&quot;closeRoomSucceeded&quot;);
+        emit evt_closeRoomSucceeded(msg.sender,roomid,"closeRoomSucceeded");
 
         if(!taxPayed){
             subOpenRoomCount(msg.sender);
@@ -827,7 +827,7 @@ contract DiceOffline is Config,RoomManager,UserManager {
     function rollRoom(uint roomid,address referral) public payable returns(bool) {
         bool ret = tryRollRoom(msg.sender,msg.value,roomid);
         if(!ret){
-            emit bet_failed(msg.sender,msg.value,0,roomid,0,&quot;rollRoom return failed&quot;);
+            emit bet_failed(msg.sender,msg.value,0,roomid,0,"rollRoom return failed");
             msg.sender.transfer(msg.value);
             return false;
         }        
@@ -839,7 +839,7 @@ contract DiceOffline is Config,RoomManager,UserManager {
         // 生成随机数
         bytes32 serialNumber = doOraclize();
         rollingBet[serialNumber] = bet;
-        emit bet_succeeded(msg.sender,msg.value,0,roomid,serialNumber,&quot;rollRoom&quot;);
+        emit bet_succeeded(msg.sender,msg.value,0,roomid,serialNumber,"rollRoom");
         if(isOffline){
             callback(serialNumber);
         }
@@ -886,7 +886,7 @@ contract DiceOffline is Config,RoomManager,UserManager {
                 fundReferrel(bet.player,SafeMath.div(SafeMath.mul(tax,referrelFund),1000));
             }
             addGameRecord(bet.player,bet.value,winAmount,0,bet.result);
-            emit evt_calculate(bet.player,num1,num2,num3,winAmount,&quot;evt_calculate&quot;);
+            emit evt_calculate(bet.player,num1,num2,num3,winAmount,"evt_calculate");
             delete rollingBet[myid];
             return;
         }
@@ -906,22 +906,22 @@ contract DiceOffline is Config,RoomManager,UserManager {
         uint256 tax;
         (success,isend,roomowner,player,winer,winamount,tax) = calculateRoom(bet.roomid,result,isTriple,taxRate);
         if(!success){
-            emit logString(&quot;calulateRoom failed&quot;,&quot;doCalculateRoom&quot;);
+            emit logString("calulateRoom failed","doCalculateRoom");
             return;
         }
         if(isend){
-            emit evt_calculate(winer,num1,num2,num3,winamount,&quot;evt_calculate&quot;);
+            emit evt_calculate(winer,num1,num2,num3,winamount,"evt_calculate");
             fundReferrel(winer,SafeMath.div(SafeMath.mul(tax,referrelFund),1000));
             if(winer == player){
                 addGameRecord(bet.player,bet.value,winamount,1,0);
-                emit evt_calculate(roomowner,num1,num2,num3,0,&quot;evt_calculate&quot;);    
+                emit evt_calculate(roomowner,num1,num2,num3,0,"evt_calculate");    
             } else{
-                emit evt_calculate(player,num1,num2,num3,0,&quot;evt_calculate&quot;);    
+                emit evt_calculate(player,num1,num2,num3,0,"evt_calculate");    
             }
 
         } else{
             addGameRecord(bet.player,bet.value,0,1,0);
-            emit evt_calculate(player,num1,num2,num3,0,&quot;evt_calculate&quot;);
+            emit evt_calculate(player,num1,num2,num3,0,"evt_calculate");
         }
     }
 

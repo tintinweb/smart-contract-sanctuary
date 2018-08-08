@@ -45,8 +45,8 @@ contract CRYPTXFINANCIALToken is Interface, SafeMath {
     event FrozenFunds(address target, bool frozen);
 
     constructor() public {
-        symbol = &quot;CRYPTX2&quot;;
-        name = &quot;CRYPTX FINANCIAL Token&quot;;
+        symbol = "CRYPTX2";
+        name = "CRYPTX FINANCIAL Token";
         decimals = 18;
         owner = msg.sender;
         _totalSupply = 250000000000000000000000000;

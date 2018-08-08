@@ -170,8 +170,8 @@ contract TIX is StandardToken, Ownable {
 
   using SafeMath for uint256;
 
-  string public constant name = &quot;Tixguru Token&quot;;
-  string public constant symbol = &quot;TIX&quot;;
+  string public constant name = "Tixguru Token";
+  string public constant symbol = "TIX";
   uint256 public constant decimals = 3;
   uint256 internal constant wei_to_token = 10 ** 15;
 

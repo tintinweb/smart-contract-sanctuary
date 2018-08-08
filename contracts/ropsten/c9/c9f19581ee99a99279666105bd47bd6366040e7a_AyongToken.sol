@@ -113,8 +113,8 @@ contract AyongToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;AYO&quot;;
-        name = &quot;AYONGTOKEN&quot;;
+        symbol = "AYO";
+        name = "AYONGTOKEN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xbEd2EC229C2a1BF30a5225d7dF469Ec3e8dD5187] = _totalSupply;

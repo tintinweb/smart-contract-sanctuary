@@ -113,8 +113,8 @@ contract IkokoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IkokoToken() public {
-        symbol = &quot;IKK&quot;;
-        name = &quot;Ikoko Token&quot;;
+        symbol = "IKK";
+        name = "Ikoko Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5dF6775ad22273af239c42CFcE1Ccf9D3449b9B0] = _totalSupply;

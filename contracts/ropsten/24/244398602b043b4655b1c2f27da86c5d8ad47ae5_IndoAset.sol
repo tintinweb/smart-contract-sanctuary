@@ -72,8 +72,8 @@ contract IndoAset is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;IndoAset&quot;;
-    string public constant symbol = &quot;IDST&quot;;
+    string public constant name = "IndoAset";
+    string public constant symbol = "IDST";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 100000000e8;

@@ -1,6 +1,6 @@
 pragma solidity ^0.4.2;
 
-//import &quot;./SafeMathLib.sol&quot;;
+//import "./SafeMathLib.sol";
 /**
  * Safe unsigned safe math.
  *
@@ -703,8 +703,8 @@ contract TTGCoin is ReleasableToken, MintableToken , DistributeToken, RecycleTok
 
     addAdmin(owner);
 
-    name  = &quot;TotalGame Coin&quot;;
-    symbol = &quot;TTG&quot;;
+    name  = "TotalGame Coin";
+    symbol = "TTG";
     totalSupply = 2000000000*10**18;
     decimals = 18;
 

@@ -113,8 +113,8 @@ contract ZeroChainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZeroChainToken() public {
-        symbol = &quot;ZCHAIN&quot;;
-        name = &quot;ZeroChain Network&quot;;
+        symbol = "ZCHAIN";
+        name = "ZeroChain Network";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222] = _totalSupply;

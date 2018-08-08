@@ -60,7 +60,7 @@ library JsmnSolLib {
             bytes1 c = s[parser.pos];
 
             // Quote -> end of string
-            if (c == &#39;&quot;&#39;) {
+            if (c == &#39;"&#39;) {
                 (success, token) = allocateToken(parser, tokens);
                 if (!success) {
                     parser.pos = start;
@@ -73,7 +73,7 @@ library JsmnSolLib {
             if (c == 92 && parser.pos + 1 < s.length) {
                 // handle escaped characters: skip over it
                 parser.pos++;
-                if (s[parser.pos] == &#39;\&quot;&#39; || s[parser.pos] == &#39;/&#39; || s[parser.pos] == &#39;\\&#39;
+                if (s[parser.pos] == &#39;\"&#39; || s[parser.pos] == &#39;/&#39; || s[parser.pos] == &#39;\\&#39;
                 || s[parser.pos] == &#39;f&#39; || s[parser.pos] == &#39;r&#39; || s[parser.pos] == &#39;n&#39;
                 || s[parser.pos] == &#39;b&#39; || s[parser.pos] == &#39;t&#39;) {
                     continue;
@@ -195,7 +195,7 @@ library JsmnSolLib {
             }
 
             // 0x42
-            if (c == &#39;&quot;&#39;) {
+            if (c == &#39;"&#39;) {
                 r = parseString(parser, tokens, s);
 
                 if (r != RETURN_SUCCESS) {
@@ -304,7 +304,7 @@ library JsmnSolLib {
     }
 
     function uint2str(uint i) pure internal returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0) {
@@ -352,7 +352,7 @@ library JsmnSolLib {
 
 contract Test {
 
-    string public json = &#39;{ &quot;key_1&quot;: &quot;value&quot;, &quot;key_2&quot;: 23, &quot;key_3&quot;: true }&#39;;
+    string public json = &#39;{ "key_1": "value", "key_2": 23, "key_3": true }&#39;;
 
     constructor() public {
     }

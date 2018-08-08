@@ -252,8 +252,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract AMToken is StandardToken {
 
-  string public constant name = &quot;Assets And Merchandise Token&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;AMT&quot;; // solium-disable-line uppercase
+  string public constant name = "Assets And Merchandise Token"; // solium-disable-line uppercase
+  string public constant symbol = "AMT"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 2 * (10 ** 9) * (10 ** uint256(decimals));

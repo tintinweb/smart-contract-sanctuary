@@ -114,8 +114,8 @@ contract CryptoDiamondToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CDM&quot;;
-        name = &quot;CryptoDiamond Token&quot;;
+        symbol = "CDM";
+        name = "CryptoDiamond Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

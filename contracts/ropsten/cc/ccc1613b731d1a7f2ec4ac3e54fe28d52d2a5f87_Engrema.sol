@@ -113,8 +113,8 @@ contract Engrema is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Engrema() public {
-        symbol = &quot;EGR&quot;;
-        name = &quot;ENGREMA&quot;;
+        symbol = "EGR";
+        name = "ENGREMA";
         decimals = 18;
         _totalSupply = 9000000000000000000000000;
         balances[0x10e3f7790adb19A289987c2f08b09b4733252406] = _totalSupply;

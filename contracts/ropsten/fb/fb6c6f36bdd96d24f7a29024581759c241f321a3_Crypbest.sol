@@ -113,8 +113,8 @@ contract Crypbest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Crypbest() public {
-        symbol = &quot;CBT&quot;;
-        name = &quot;Crypbest&quot;;
+        symbol = "CBT";
+        name = "Crypbest";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0x81a2246dFDEd0d97C099e915927397a28d161fb9] = _totalSupply;

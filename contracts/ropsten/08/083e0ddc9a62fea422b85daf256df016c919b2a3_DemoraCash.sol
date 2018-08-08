@@ -72,8 +72,8 @@ contract DemoraCash is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;DemoraCash Token&quot;;
-    string public constant symbol = &quot;DC&quot;;
+    string public constant name = "DemoraCash Token";
+    string public constant symbol = "DC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

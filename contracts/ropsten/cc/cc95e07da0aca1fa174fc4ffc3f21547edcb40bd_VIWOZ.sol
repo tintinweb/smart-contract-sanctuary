@@ -168,8 +168,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract VIWOZ is StandardToken {
 
-  string public constant name = &quot;VIWOZ&quot;;
-  string public constant symbol = &quot;WOZ&quot;;
+  string public constant name = "VIWOZ";
+  string public constant symbol = "WOZ";
   uint8 public constant decimals = 8;
 
   uint256 public constant INITIAL_SUPPLY = 99000000000 * (10 ** uint256(decimals));

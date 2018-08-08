@@ -23,8 +23,8 @@ contract CCCCCC{
     function EtherChain() {
         balanceOf[msg.sender] =  340000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  340000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;CCCCCC&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CCCCCC&quot;;                               // Set the symbol for display purposes
+        name = "CCCCCC";                                   // Set the name for display purposes
+        symbol = "CCCCCC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

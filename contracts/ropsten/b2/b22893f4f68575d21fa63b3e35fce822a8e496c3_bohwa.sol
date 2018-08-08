@@ -126,9 +126,9 @@ contract bohwa is ERC20Interface, OwnerHelper
 
     function bohwa() public
     {
-        name = &quot;Bohwatest3&quot;;
+        name = "Bohwatest3";
         decimals = 18;
-        symbol = &quot;BHT3&quot;;
+        symbol = "BHT3";
         owner = 0x03bf3a22d51a39a52a1b2f954ab3bac9656b2497;
     	
 	    totalSupply = 0;

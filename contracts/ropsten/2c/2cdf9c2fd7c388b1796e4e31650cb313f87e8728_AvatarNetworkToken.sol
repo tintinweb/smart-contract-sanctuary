@@ -3,10 +3,10 @@ pragma solidity ^0.4.11;
 contract AvatarNetworkToken {
 
     // Token name
-    string public name = &quot;Avatar_Network_Token&quot;;
+    string public name = "Avatar_Network_Token";
     
     // Token symbol
-    string public constant symbol = &quot;ATT&quot;;
+    string public constant symbol = "ATT";
     
     // Token decimals
     uint256 public constant decimals = 6;

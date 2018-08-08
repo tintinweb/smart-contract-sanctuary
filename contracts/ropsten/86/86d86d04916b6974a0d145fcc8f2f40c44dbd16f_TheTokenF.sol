@@ -51,8 +51,8 @@ contract TheTokenF is ERC223Interface {
     address owner = msg.sender;
     mapping(address => uint) balances; // List of user balances.
 
-    string public constant name = &quot;The Token F&quot;;
-    string public constant symbol = &quot;TKF&quot;;
+    string public constant name = "The Token F";
+    string public constant symbol = "TKF";
     uint public constant decimals = 8;
     uint256 public totalSupply = 690000000e8;
     uint256 public tokensPerEth = 15000000e8;

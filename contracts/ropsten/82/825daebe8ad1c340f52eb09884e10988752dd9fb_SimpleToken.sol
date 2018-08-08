@@ -52,7 +52,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -350,8 +350,8 @@ contract MintableToken is BurnableToken {
 
 contract SimpleToken is MintableToken {
 
-  string public constant name = &quot;SimpleToken&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;SIM&quot;; // solium-disable-line uppercase
+  string public constant name = "SimpleToken"; // solium-disable-line uppercase
+  string public constant symbol = "SIM"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
   /**
    * @dev Constructor that gives msg.sender all of existing tokens.

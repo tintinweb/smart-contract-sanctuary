@@ -33,8 +33,8 @@ contract COEDAB {
     }
     
     function addAuthByCode(string amaCode, string phoneNumber, string userName) external onlyOwner returns(string) {
-        require(!compareStrings(amaCode, &quot;&quot;) || !compareStrings(phoneNumber, &quot;&quot;) || !compareStrings(userName, &quot;&quot;), &quot;BAD_REQUEST&quot;);
-        require(compareStrings(byCode[amaCode], &quot;&quot;), &quot;AUTHENTICATED&quot;);
+        require(!compareStrings(amaCode, "") || !compareStrings(phoneNumber, "") || !compareStrings(userName, ""), "BAD_REQUEST");
+        require(compareStrings(byCode[amaCode], ""), "AUTHENTICATED");
         
         byCode[amaCode] = phoneNumber;
         addAuthByPhone(amaCode, phoneNumber);
@@ -42,12 +42,12 @@ contract COEDAB {
     }
     
     function addAuthByPhone(string amaCode, string phoneNumber) internal {
-        if (compareStrings(byPhone[phoneNumber], &quot;&quot;)) {
+        if (compareStrings(byPhone[phoneNumber], "")) {
             byPhone[phoneNumber] = amaCode;
             totalByPhone[phoneNumber] = 1;
         }
         else {
-            byPhone[phoneNumber] = strConcat(byPhone[phoneNumber], &quot; | &quot;, amaCode);
+            byPhone[phoneNumber] = strConcat(byPhone[phoneNumber], " | ", amaCode);
             totalByPhone[phoneNumber] += 1;
         }
         totalAuthentication += 1;
@@ -96,15 +96,15 @@ contract COEDAB {
     }
     
     function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
     
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
     
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
     
 }

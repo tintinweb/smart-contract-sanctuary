@@ -113,8 +113,8 @@ contract RapidToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;RREW&quot;;
-        name = &quot;Rapid Token&quot;;
+        symbol = "RREW";
+        name = "Rapid Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDF07D75572181D9F56526645bc71Bb40b0cfd005] = _totalSupply;

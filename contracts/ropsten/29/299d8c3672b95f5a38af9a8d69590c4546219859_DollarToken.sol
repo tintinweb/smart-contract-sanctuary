@@ -113,8 +113,8 @@ contract DollarToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DollarToken() public {
-        symbol = &quot;Dollar&quot;;
-        name = &quot;Dollar Token&quot;;
+        symbol = "Dollar";
+        name = "Dollar Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x77F638B056F4114B0cdF232a2e51DF76301aA49F] = _totalSupply;

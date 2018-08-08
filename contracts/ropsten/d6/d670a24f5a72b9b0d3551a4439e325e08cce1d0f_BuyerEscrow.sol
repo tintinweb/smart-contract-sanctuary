@@ -95,7 +95,7 @@ contract BuyerEscrow is SafeMath {
             _isEscrowActive = true;
             EscrowOwner = msg.sender;
             balance = msg.value;
-            start = now; //now is an alias for block.timestamp, not really &quot;now&quot;st
+            start = now; //now is an alias for block.timestamp, not really "now"st
             TokenContract = Token(ata);
             askingtokenaddress = ata;
             askingtokenunitprice = atup;//

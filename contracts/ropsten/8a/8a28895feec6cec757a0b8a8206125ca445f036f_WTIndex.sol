@@ -12,7 +12,7 @@ contract AbstractBaseContract {
 
   // The hex-encoded version, follows the semantic standard MAJOR.MINOR.PATCH-EXTENSION
   // It should always match the version in package.json.
-  bytes32 public version = bytes32(&quot;0.2.3&quot;);
+  bytes32 public version = bytes32("0.2.3");
 
   // The hex-encoded type of the contract, in all lowercase letters without any spaces.
   // It has to be defined in each contract that uses this interface.
@@ -25,7 +25,7 @@ contract AbstractBaseContract {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -171,7 +171,7 @@ contract AbstractHotel is Destructible, AbstractBaseContract {
  */
 contract Hotel is AbstractHotel {
 
-  bytes32 public contractType = bytes32(&quot;hotel&quot;);
+  bytes32 public contractType = bytes32("hotel");
 
   // Who owns this Hotel and can manage it.
   address public manager;
@@ -218,7 +218,7 @@ contract Hotel is AbstractHotel {
  */
 contract WTIndex is AbstractWTIndex {
 
-  bytes32 public contractType = bytes32(&quot;wtindex&quot;);
+  bytes32 public contractType = bytes32("wtindex");
 
   // Array of addresses of `Hotel` contracts
   address[] public hotels;
@@ -319,7 +319,7 @@ contract WTIndex is AbstractWTIndex {
 
   /**
    * @dev `getHotelsLength` get the length of the `hotels` array
-   * @return {&quot; &quot;: &quot;Length of the hotels array. Might contain zero addresses.&quot;}
+   * @return {" ": "Length of the hotels array. Might contain zero addresses."}
    */
   function getHotelsLength() view public returns (uint) {
     return hotels.length;
@@ -327,7 +327,7 @@ contract WTIndex is AbstractWTIndex {
 
   /**
    * @dev `getHotels` get `hotels` array
-   * @return {&quot; &quot;: &quot;Array of hotel addresses. Might contain zero addresses.&quot;}
+   * @return {" ": "Array of hotel addresses. Might contain zero addresses."}
    */
   function getHotels() view public returns (address[]) {
     return hotels;
@@ -336,7 +336,7 @@ contract WTIndex is AbstractWTIndex {
   /**
    * @dev `getHotelsByManager` get all the hotels belonging to one manager
    * @param  manager Manager address
-   * @return {&quot; &quot;: &quot;Array of hotels belonging to one manager. Might contain zero addresses.&quot;}
+   * @return {" ": "Array of hotels belonging to one manager. Might contain zero addresses."}
    */
 	function getHotelsByManager(address manager) view public returns (address[]) {
 		return hotelsByManager[manager];

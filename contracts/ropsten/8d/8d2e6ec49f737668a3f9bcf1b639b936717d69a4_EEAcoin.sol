@@ -103,8 +103,8 @@ contract EEAcoin is ERC223  {
     mapping (address => uint256) public unlockUnixTime;
     uint  public maxIncrease=20;
     address public target;
-    string internal name_= &quot;EEAcoin&quot;;
-    string internal symbol_ = &quot;EEA&quot;;
+    string internal name_= "EEAcoin";
+    string internal symbol_ = "EEA";
     uint8 internal decimals_= 18;
     uint256 internal totalSupply_= 1200000000e18;
     uint256 public toGiveBase = 3000e18;

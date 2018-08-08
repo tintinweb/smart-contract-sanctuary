@@ -172,8 +172,8 @@ library SafeMath {
 
 contract TNXToken is StandardToken {
     
-    string public name = &quot;TNXToken&quot;;
-    string public symbol = &quot;TNX&quot;;
+    string public name = "TNXToken";
+    string public symbol = "TNX";
     uint8 public decimals = 2;
     uint public INITIAL_SUPPLY = 200000000000000; 
     

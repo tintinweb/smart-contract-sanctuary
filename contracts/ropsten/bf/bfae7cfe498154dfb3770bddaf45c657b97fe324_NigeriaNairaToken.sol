@@ -118,9 +118,9 @@ contract NigeriaNairaToken is StandardToken {
         ) {
         balances[msg.sender] = 37100000000000000000;               // Give the creator all initial tokens (100000 for example)
         totalSupply = 37100000000000000000;                        // Update total supply (100000 for example)
-        name = &quot;Nigeria Naira Token&quot;;                                   // Set the name for display purposes
+        name = "Nigeria Naira Token";                                   // Set the name for display purposes
         decimals = 12;                            // Amount of decimals for display purposes
-        symbol = &quot;NGNT&quot;;                               // Set the symbol for display purposes
+        symbol = "NGNT";                               // Set the symbol for display purposes
     }
 
     /* Approves and then calls the receiving contract */
@@ -131,7 +131,7 @@ contract NigeriaNairaToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

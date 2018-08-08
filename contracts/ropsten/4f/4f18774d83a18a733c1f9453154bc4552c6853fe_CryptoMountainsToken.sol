@@ -103,8 +103,8 @@ contract StandardToken is Token {
 }
 
 contract CryptoMountainsToken is owned, SafeMath, StandardToken {
-    string public name = &quot;CryptoMountainsToken&quot;;                               
-    string public symbol = &quot;CMT&quot;;                                      
+    string public name = "CryptoMountainsToken";                               
+    string public symbol = "CMT";                                      
     address public CMTAddress = this;                            
     uint8 public decimals = 2;                                            
     uint256 public totalSupply = 10000000000000;                           

@@ -7,7 +7,7 @@ pragma solidity ^0.4.24;
 /// @dev Ignore DRY approach to achieve readability
 contract RBACMixin {
   /// @notice Constant string message to throw on lack of access
-  string constant FORBIDDEN = &quot;Haven&#39;t enough right to access&quot;;
+  string constant FORBIDDEN = "Haven&#39;t enough right to access";
   /// @notice Public map of owners
   mapping (address => bool) public owners;
   /// @notice Public map of minters

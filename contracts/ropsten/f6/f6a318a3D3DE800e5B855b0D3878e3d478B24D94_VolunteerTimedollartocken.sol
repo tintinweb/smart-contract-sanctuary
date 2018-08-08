@@ -113,8 +113,8 @@ contract VolunteerTimedollartocken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Volunteertimedollartocken() public {
-        symbol = &quot;VTD&quot;;
-        name = &quot;Volunteer Timedollar tocken&quot;;
+        symbol = "VTD";
+        name = "Volunteer Timedollar tocken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x86c833058d03252ffb15551410249510dce9a627] = _totalSupply;

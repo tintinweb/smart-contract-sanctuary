@@ -254,8 +254,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract GoatCash is StandardToken {
-	string public name = &quot;GoatCash&quot;;
-	string public symbol = &quot;GOAT&quot;;
+	string public name = "GoatCash";
+	string public symbol = "GOAT";
 	uint public decimals = 18;
 	uint public INITIAL_SUPPLY = 450000000 * (10 ** decimals);
 

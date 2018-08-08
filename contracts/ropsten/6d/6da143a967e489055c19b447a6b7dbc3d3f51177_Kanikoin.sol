@@ -113,8 +113,8 @@ contract Kanikoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;KNK&quot;;
-        name = &quot;Kanikoin&quot;;
+        symbol = "KNK";
+        name = "Kanikoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xA864C3F5CE695d7c63e7e8e4d67Df05DBF9610cb] = _totalSupply;

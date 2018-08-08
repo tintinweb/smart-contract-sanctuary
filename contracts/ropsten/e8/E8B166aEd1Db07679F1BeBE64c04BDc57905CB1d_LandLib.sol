@@ -17,7 +17,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -242,26 +242,26 @@ contract LandLib is Galleasset, DataParser {
   constructor(address _galleass) public Galleasset(_galleass) {
     //this is mainly just for human reference and to make it easier to track tiles mentally
     //it&#39;s expensive and probably won&#39;t be included in production contracts
-    tileTypes[&quot;Water&quot;]=0;
+    tileTypes["Water"]=0;
 
-    tileTypes[&quot;MainHills&quot;]=1;
-    tileTypes[&quot;MainGrass&quot;]=2;
-    tileTypes[&quot;MainStream&quot;]=3;
+    tileTypes["MainHills"]=1;
+    tileTypes["MainGrass"]=2;
+    tileTypes["MainStream"]=3;
 
-    tileTypes[&quot;Grass&quot;]=50;
-    tileTypes[&quot;Forest&quot;]=51;
-    tileTypes[&quot;Mountain&quot;]=52;
-    tileTypes[&quot;CopperMountain&quot;]=53;
-    tileTypes[&quot;SilverMountain&quot;]=54;
+    tileTypes["Grass"]=50;
+    tileTypes["Forest"]=51;
+    tileTypes["Mountain"]=52;
+    tileTypes["CopperMountain"]=53;
+    tileTypes["SilverMountain"]=54;
 
-    tileTypes[&quot;Harbor&quot;]=100;
-    tileTypes[&quot;Fishmonger&quot;]=101;
-    tileTypes[&quot;Market&quot;]=102;
+    tileTypes["Harbor"]=100;
+    tileTypes["Fishmonger"]=101;
+    tileTypes["Market"]=102;
 
-    tileTypes[&quot;TimberCamp&quot;]=150;
+    tileTypes["TimberCamp"]=150;
 
-    tileTypes[&quot;Village&quot;]=2000;
-    tileTypes[&quot;Castle&quot;]=2010;
+    tileTypes["Village"]=2000;
+    tileTypes["Castle"]=2010;
   }
   function () public {revert();}
 
@@ -270,7 +270,7 @@ contract LandLib is Galleasset, DataParser {
   }
 
   //erc677 receiver
-  function onTokenTransfer(address _sender, uint _amount, bytes _data) public isGalleasset(&quot;LandLib&quot;) returns (bool) {
+  function onTokenTransfer(address _sender, uint _amount, bytes _data) public isGalleasset("LandLib") returns (bool) {
     TokenTransfer(msg.sender,_sender,_amount,_data);
     uint8 action = uint8(_data[0]);
     if(action==1){
@@ -287,8 +287,8 @@ contract LandLib is Galleasset, DataParser {
   event TokenTransfer(address token,address sender,uint amount,bytes data);
 
   function _buyTile(address _sender, uint _amount, bytes _data) internal returns (bool) {
-    Land landContract = Land(getContract(&quot;Land&quot;));
-    address copperContractAddress = getContract(&quot;Copper&quot;);
+    Land landContract = Land(getContract("Land"));
+    address copperContractAddress = getContract("Copper");
     require(msg.sender == copperContractAddress);
     uint16 _x = getX(_data);
     uint16 _y = getY(_data);
@@ -302,7 +302,7 @@ contract LandLib is Galleasset, DataParser {
     require(copperContract.transfer(landContract.ownerAt(_x,_y,_tile),_amount));
     //set the new owner to the sender
     landContract.setOwnerAt(_x,_y,_tile,_sender);
-    //when a piece of land is purchased, an &quot;onPurchase&quot; function is called
+    //when a piece of land is purchased, an "onPurchase" function is called
     // on the contract to help the inner contract track events and owners etc
     if(landContract.contractAt(_x,_y,_tile)!=address(0)){
       StandardTile tileContract = StandardTile(landContract.contractAt(_x,_y,_tile));
@@ -313,22 +313,22 @@ contract LandLib is Galleasset, DataParser {
     return true;
   }
 
-  function buildTile(uint16 _x, uint16 _y,uint8 _tile,uint16 _newTileType) public isGalleasset(&quot;LandLib&quot;) returns (bool) {
-    Land landContract = Land(getContract(&quot;Land&quot;));
+  function buildTile(uint16 _x, uint16 _y,uint8 _tile,uint16 _newTileType) public isGalleasset("LandLib") returns (bool) {
+    Land landContract = Land(getContract("Land"));
     //must be the owner of the tile to build here
     require(msg.sender==landContract.ownerAt(_x,_y,_tile));
     //get the current type of tile here to see what can be built on it
     uint16 tileType = landContract.tileTypeAt(_x,_y,_tile);
-    if(tileType==tileTypes[&quot;MainHills&quot;]||tileType==tileTypes[&quot;MainGrass&quot;]){
+    if(tileType==tileTypes["MainHills"]||tileType==tileTypes["MainGrass"]){
       //they want to build on a main, blank spot whether hills or grass
-      if(_newTileType==tileTypes[&quot;Village&quot;]){
-        //require( getTokens(msg.sender,&quot;Timber&quot;,6) );
-        StandardToken timberContract = StandardToken(getContract(&quot;Timber&quot;));
-        require( timberContract.galleassTransferFrom(msg.sender,getContract(&quot;Land&quot;),6) ); //use 6 timber (moved to Land contract)
+      if(_newTileType==tileTypes["Village"]){
+        //require( getTokens(msg.sender,"Timber",6) );
+        StandardToken timberContract = StandardToken(getContract("Timber"));
+        require( timberContract.galleassTransferFrom(msg.sender,getContract("Land"),6) ); //use 6 timber (moved to Land contract)
         //set tile type on the Land Contract
         landContract.setTileTypeAt(_x,_y,_tile,_newTileType);
         //set contract at tile to the Village
-        address villageContract = getContract(&quot;Village&quot;);
+        address villageContract = getContract("Village");
         landContract.setContractAt(_x,_y,_tile,villageContract);
         //trigger the onPurchase for the contract (this is used for land contracts to track owners and initialize)
         StandardTile(villageContract).onPurchase(_x,_y,_tile,msg.sender,0);
@@ -336,16 +336,16 @@ contract LandLib is Galleasset, DataParser {
       }else{
         return false;
       }
-    } else if(tileType==tileTypes[&quot;Village&quot;]){
+    } else if(tileType==tileTypes["Village"]){
       //they want to build on a main, blank spot whether hills or grass
-      if(_newTileType==tileTypes[&quot;Castle&quot;]){
-        //require( getTokens(msg.sender,&quot;Timber&quot;,6) );
-        StandardToken stoneContract = StandardToken(getContract(&quot;Stone&quot;));
-        require( stoneContract.galleassTransferFrom(msg.sender,getContract(&quot;Land&quot;),20) ); //use 20 stone (moved to Land contract)
+      if(_newTileType==tileTypes["Castle"]){
+        //require( getTokens(msg.sender,"Timber",6) );
+        StandardToken stoneContract = StandardToken(getContract("Stone"));
+        require( stoneContract.galleassTransferFrom(msg.sender,getContract("Land"),20) ); //use 20 stone (moved to Land contract)
         //set tile type on the Land Contract
         landContract.setTileTypeAt(_x,_y,_tile,_newTileType);
         //set contract at tile to the Village
-        address castleContract = getContract(&quot;Castle&quot;);
+        address castleContract = getContract("Castle");
         landContract.setContractAt(_x,_y,_tile,castleContract);
         //trigger the onPurchase for the contract (this is used for land contracts to track owners and initialize)
         StandardTile(castleContract).onPurchase(_x,_y,_tile,msg.sender,0);
@@ -359,9 +359,9 @@ contract LandLib is Galleasset, DataParser {
   }
 
   function _buildTimberCamp(address _sender, uint _amount, bytes _data) internal returns (bool) {
-    Land landContract = Land(getContract(&quot;Land&quot;));
+    Land landContract = Land(getContract("Land"));
     //build timber camp
-    address copperContractAddress = getContract(&quot;Copper&quot;);
+    address copperContractAddress = getContract("Copper");
     require(msg.sender == copperContractAddress);
     uint16 _x = getX(_data);
     uint16 _y = getY(_data);
@@ -373,9 +373,9 @@ contract LandLib is Galleasset, DataParser {
     require(_amount>=6);
     //move that copper to the Land contract
     StandardToken copperContract = StandardToken(copperContractAddress);
-    require(copperContract.transfer(getContract(&quot;Land&quot;),_amount));
+    require(copperContract.transfer(getContract("Land"),_amount));
     //must be built on a forest tile
-    require(landContract.tileTypeAt(_x,_y,_tile)==tileTypes[&quot;Forest&quot;]);
+    require(landContract.tileTypeAt(_x,_y,_tile)==tileTypes["Forest"]);
 
 
     //assuming the we used the fist 6 bytes of the data for action,x,y,tile we will use the rest as the id of
@@ -387,11 +387,11 @@ contract LandLib is Galleasset, DataParser {
     // if everything is right, set the status to timber camp
     require(_useCitizenAsLumberjack(_sender,_x,_y,_tile,citizenId));
     //set new tile type
-    landContract.setTileTypeAt(_x,_y,_tile,tileTypes[&quot;TimberCamp&quot;]);
+    landContract.setTileTypeAt(_x,_y,_tile,tileTypes["TimberCamp"]);
 
-    //Debug(getContract(&quot;TimberCamp&quot;));
+    //Debug(getContract("TimberCamp"));
     //set contract to timber camp
-    landContract.setContractAt(_x,_y,_tile,getContract(&quot;TimberCamp&quot;));
+    landContract.setContractAt(_x,_y,_tile,getContract("TimberCamp"));
     StandardTile tileContract = StandardTile(landContract.contractAt(_x,_y,_tile));
     tileContract.onPurchase(_x,_y,_tile,landContract.ownerAt(_x,_y,_tile),landContract.priceAt(_x,_y,_tile));
 
@@ -400,7 +400,7 @@ contract LandLib is Galleasset, DataParser {
   //event Debug(bytes32 citizenBytes,uint8 b,uint8 d, bytes32 thisByte);
 
   function _useCitizenAsLumberjack(address _sender, uint16 _x, uint16 _y, uint8 _tile,uint _citizen) internal returns (bool){
-    Citizens citizensContract = Citizens(getContract(&quot;Citizens&quot;));
+    Citizens citizensContract = Citizens(getContract("Citizens"));
     address owner;
     uint8 status;
     uint16 x;
@@ -417,20 +417,20 @@ contract LandLib is Galleasset, DataParser {
     require(_y==y);
     require(_tile==tile);
     //citizen must have enough strength and stamina to be a lumberjack
-    CitizensLib citizensLibContract = CitizensLib(getContract(&quot;CitizensLib&quot;));
+    CitizensLib citizensLibContract = CitizensLib(getContract("CitizensLib"));
     uint16 strength;
     uint16 stamina;
     (strength,stamina,,,,,) = citizensLibContract.getCitizenCharacteristics(_citizen);
     require(strength>1);
     require(stamina>1);
     //set citizen status to TimberCamp tile type (lumberjack!)
-    require(citizensLibContract.setStatus(_citizen,uint8(tileTypes[&quot;TimberCamp&quot;])));
+    require(citizensLibContract.setStatus(_citizen,uint8(tileTypes["TimberCamp"])));
     return true;
   }
 
   function _extractRawResource(address _sender, uint _amount, bytes _data) internal returns (bool) {
-    Land landContract = Land(getContract(&quot;Land&quot;));
-    address copperContractAddress = getContract(&quot;Copper&quot;);
+    Land landContract = Land(getContract("Land"));
+    address copperContractAddress = getContract("Copper");
     require(msg.sender == copperContractAddress);
 
     uint16 _x = getX(_data);
@@ -441,25 +441,25 @@ contract LandLib is Galleasset, DataParser {
     require(landContract.ownerAt(_x,_y,_tile)==_sender);
     //move that copper to the Land contract
     StandardToken copperContract = StandardToken(copperContractAddress);
-    require(copperContract.transfer(getContract(&quot;Land&quot;),_amount));
+    require(copperContract.transfer(getContract("Land"),_amount));
     StandardToken resourceContract;
 
-    if(landContract.tileTypeAt(_x,_y,_tile)==tileTypes[&quot;Forest&quot;] || landContract.tileTypeAt(_x,_y,_tile)==tileTypes[&quot;TimberCamp&quot;]){
+    if(landContract.tileTypeAt(_x,_y,_tile)==tileTypes["Forest"] || landContract.tileTypeAt(_x,_y,_tile)==tileTypes["TimberCamp"]){
       //they must send in 3 copper to extract 1 Timber
       require(_amount>=3);
-      resourceContract = StandardToken(getContract(&quot;Timber&quot;));
+      resourceContract = StandardToken(getContract("Timber"));
       require(resourceContract.galleassMint(_sender,1));
       return true;
-    } else if(landContract.tileTypeAt(_x,_y,_tile)==tileTypes[&quot;Grass&quot;] || landContract.tileTypeAt(_x,_y,_tile)==tileTypes[&quot;MainGrass&quot;]){
+    } else if(landContract.tileTypeAt(_x,_y,_tile)==tileTypes["Grass"] || landContract.tileTypeAt(_x,_y,_tile)==tileTypes["MainGrass"]){
       //they must send in 2 copper to extract 1 Greens
       require(_amount>=2);
-      resourceContract = StandardToken(getContract(&quot;Greens&quot;));
+      resourceContract = StandardToken(getContract("Greens"));
       require(resourceContract.galleassMint(_sender,1));
       return true;
-    } else if(landContract.tileTypeAt(_x,_y,_tile)==tileTypes[&quot;Mountain&quot;]) {
+    } else if(landContract.tileTypeAt(_x,_y,_tile)==tileTypes["Mountain"]) {
       //they must send in 4 copper to extract 1 Stone
       require(_amount>=4);
-      resourceContract = StandardToken(getContract(&quot;Stone&quot;));
+      resourceContract = StandardToken(getContract("Stone"));
       require(resourceContract.galleassMint(_sender,1));
       return true;
     }else{
@@ -468,7 +468,7 @@ contract LandLib is Galleasset, DataParser {
   }
 
   function translateTileToWidth(uint16 _tileType) public constant returns (uint16) {
-    if(_tileType==tileTypes[&quot;Water&quot;]){
+    if(_tileType==tileTypes["Water"]){
       return 95;
     }else if (_tileType>=1&&_tileType<50){
       return 120;
@@ -485,23 +485,23 @@ contract LandLib is Galleasset, DataParser {
 
   function translateToStartingTile(uint16 tilepart) public constant returns (uint16) {
     if(tilepart<12850){
-      return tileTypes[&quot;Water&quot;];
+      return tileTypes["Water"];
     }else if(tilepart<19275){
-      return tileTypes[&quot;MainHills&quot;];
+      return tileTypes["MainHills"];
     }else if(tilepart<24415){
-      return tileTypes[&quot;MainGrass&quot;];
+      return tileTypes["MainGrass"];
     }else if(tilepart<26985){
-      return tileTypes[&quot;MainStream&quot;];
+      return tileTypes["MainStream"];
     }else if(tilepart<40606){
-      return tileTypes[&quot;Grass&quot;];
+      return tileTypes["Grass"];
     }else if(tilepart<59624){
-      return tileTypes[&quot;Forest&quot;];
+      return tileTypes["Forest"];
     }else if(tilepart<64250){
-      return tileTypes[&quot;Mountain&quot;];
+      return tileTypes["Mountain"];
     }else if(tilepart<65287){
-      return tileTypes[&quot;CopperMountain&quot;];
+      return tileTypes["CopperMountain"];
     }else{
-      return tileTypes[&quot;SilverMountain&quot;];
+      return tileTypes["SilverMountain"];
     }
   }
 

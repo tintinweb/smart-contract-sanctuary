@@ -187,8 +187,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Token is StandardToken {
 
-    string public name    = &quot;SZU_zhengpeixi&quot;;
-    string public symbol  = &quot;ZPX&quot;;
+    string public name    = "SZU_zhengpeixi";
+    string public symbol  = "ZPX";
     uint8 public decimals = 8;
 
     uint256 public constant INITIAL_SUPPLY = 19940512;

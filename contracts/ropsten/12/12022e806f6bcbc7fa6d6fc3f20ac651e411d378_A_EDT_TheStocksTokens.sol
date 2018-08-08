@@ -179,9 +179,9 @@ contract A_EDT_TheStocksTokens is Owned, StandardToken {
     
     using SafeMath for uint256;
     
-  string public constant name = &quot;FDBB Stocks&quot;;
+  string public constant name = "FDBB Stocks";
   
-  string public constant symbol = &quot;FBS&quot;;
+  string public constant symbol = "FBS";
   
   uint32 public constant decimals = 0;
 

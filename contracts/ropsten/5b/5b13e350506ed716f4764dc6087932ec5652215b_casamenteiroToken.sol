@@ -116,8 +116,8 @@ contract casamenteiroToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function casamenteiroToken() public {
-        symbol = &quot;FGZ&quot;;
-        name = &quot;casamenteiro Token&quot;;
+        symbol = "FGZ";
+        name = "casamenteiro Token";
         decimals = 13;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

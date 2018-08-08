@@ -71,9 +71,9 @@ contract StandardToken is BasicToken {
 
 contract Token is StandardToken {
 
-    string public name = &quot;BASIC ERC20 SALE&quot;;
+    string public name = "BASIC ERC20 SALE";
     uint8 public decimals = 18;
-    string public symbol = &quot;BASIC&quot;;
+    string public symbol = "BASIC";
     string public version = &#39;BASIC 0.1&#39;;
     address public mintableAddress;
 
@@ -115,7 +115,7 @@ contract Token is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

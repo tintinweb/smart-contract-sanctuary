@@ -109,8 +109,8 @@ contract RADION is ERC20Interface,Ownable {
     constructor(address _wallet) public {
         owner = msg.sender;
         wallet = _wallet;
-        name  = &quot;RADION&quot;;
-        symbol = &quot;RADIO&quot;;
+        name  = "RADION";
+        symbol = "RADIO";
         decimals = 18;
         _totalSupply = 55000000 * 10 ** uint(decimals);
         tokenBalances[wallet] = _totalSupply;   //Since we divided the token into 10^18 parts

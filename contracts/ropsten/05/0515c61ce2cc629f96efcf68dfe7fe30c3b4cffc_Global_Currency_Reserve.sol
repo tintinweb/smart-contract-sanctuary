@@ -113,8 +113,8 @@ contract Global_Currency_Reserve is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Global_Currency_Reserve() public {
-        symbol = &quot;GCR&quot;;
-        name = &quot;Global Currency Reserve&quot;;
+        symbol = "GCR";
+        name = "Global Currency Reserve";
         decimals = 18;
         _totalSupply = 200000000000000000000000;
         balances[0xCBD96A30eAb64EC0aE94Ca553DE072522B593e7b] = _totalSupply;

@@ -113,8 +113,8 @@ contract UltraNote is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UltraNote() public {
-        symbol = &quot;TUN&quot;;
-        name = &quot;UltraNote&quot;;
+        symbol = "TUN";
+        name = "UltraNote";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x1DD4B69113bfAc09cfd532Cd7b85b25a39AA59c2] = _totalSupply;

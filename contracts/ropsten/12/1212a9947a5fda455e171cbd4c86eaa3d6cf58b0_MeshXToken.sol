@@ -33,8 +33,8 @@ library SafeMath {
 
 contract MeshXToken {
 	using SafeMath for uint256;
-    string public constant name         = &quot;MeshX&quot;;
-    string public constant symbol       = &quot;MSX&quot;;
+    string public constant name         = "MeshX";
+    string public constant symbol       = "MSX";
     uint public constant decimals       = 18;
     
     uint256 EthRate                  = 10 ** decimals;

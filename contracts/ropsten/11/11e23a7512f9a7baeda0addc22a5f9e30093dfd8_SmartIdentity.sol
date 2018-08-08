@@ -115,7 +115,7 @@ contract SmartIdentity {
      */
     function setOwner(address _newowner) onlyBy(override) checkBlockLock() blockLock() public returns(bool) {
         owner = _newowner;
-        sendEvent(SIG_CHANGE_EVENT, &quot;Owner has been changed&quot;);
+        sendEvent(SIG_CHANGE_EVENT, "Owner has been changed");
         return true;
     }
 
@@ -134,7 +134,7 @@ contract SmartIdentity {
      */
     function setOverride(address _override) onlyBy(owner) checkBlockLock() blockLock() public returns(bool) {
         override = _override;
-        sendEvent(SIG_CHANGE_EVENT, &quot;Override has been changed&quot;);
+        sendEvent(SIG_CHANGE_EVENT, "Override has been changed");
         return true;
     }
 
@@ -144,7 +144,7 @@ contract SmartIdentity {
      */
     function removeOverride() onlyBy(owner) checkBlockLock() blockLock() public returns(bool) {
         override = owner;
-        sendEvent(SIG_CHANGE_EVENT, &quot;Override has been removed&quot;);
+        sendEvent(SIG_CHANGE_EVENT, "Override has been removed");
         return true;
     }
 
@@ -154,11 +154,11 @@ contract SmartIdentity {
     function addAttribute(bytes32 _hash) onlyBy(owner) checkBlockLock() public returns(bool) {
         var attribute = attributes[_hash];
         if (attribute.hash == _hash) {
-            sendEvent(SIG_CHANGE_EVENT, &quot;A hash exists for the attribute&quot;);
+            sendEvent(SIG_CHANGE_EVENT, "A hash exists for the attribute");
             revert();
         }
         attribute.hash = _hash;
-        sendEvent(INFO_EVENT, &quot;Attribute has been added&quot;);
+        sendEvent(INFO_EVENT, "Attribute has been added");
         return true;
     }
 
@@ -169,10 +169,10 @@ contract SmartIdentity {
      * the history of an attribute against the blockchain.
      */
     function updateAttribute(bytes32 _oldhash, bytes32 _newhash) onlyBy(owner) checkBlockLock() public returns(bool) {
-        sendEvent(DEBUG_EVENT, &quot;Attempting to update attribute&quot;);
+        sendEvent(DEBUG_EVENT, "Attempting to update attribute");
         removeAttribute(_oldhash);
         addAttribute(_newhash);
-        sendEvent(SIG_CHANGE_EVENT, &quot;Attribute has been updated&quot;);
+        sendEvent(SIG_CHANGE_EVENT, "Attribute has been updated");
         return true;
     }
 
@@ -182,11 +182,11 @@ contract SmartIdentity {
     function removeAttribute(bytes32 _hash) onlyBy(owner) checkBlockLock() public returns(bool) {
         var attribute = attributes[_hash];
         if (attribute.hash != _hash) {
-            sendEvent(WARNING_EVENT, &quot;Hash not found for attribute&quot;);
+            sendEvent(WARNING_EVENT, "Hash not found for attribute");
             revert();
         }
         delete attributes[_hash];
-        sendEvent(SIG_CHANGE_EVENT, &quot;Attribute has been removed&quot;);
+        sendEvent(SIG_CHANGE_EVENT, "Attribute has been removed");
         return true;
     }
 
@@ -197,18 +197,18 @@ contract SmartIdentity {
     function addEndorsement(bytes32 _attributeHash, bytes32 _endorsementHash) public returns(bool) {
         var attribute = attributes[_attributeHash];
         if (attribute.hash != _attributeHash) {
-            sendEvent(ERROR_EVENT, &quot;Attribute doesn&#39;t exist&quot;);
+            sendEvent(ERROR_EVENT, "Attribute doesn&#39;t exist");
             revert();
         }
         var endorsement = attribute.endorsements[_endorsementHash];
         if (endorsement.hash == _endorsementHash) {
-            sendEvent(ERROR_EVENT, &quot;Endorsement already exists&quot;);
+            sendEvent(ERROR_EVENT, "Endorsement already exists");
             revert();
         }
         endorsement.hash = _endorsementHash;
         endorsement.endorser = msg.sender;
         endorsement.accepted = false;
-        sendEvent(INFO_EVENT, &quot;Endorsement has been added&quot;);
+        sendEvent(INFO_EVENT, "Endorsement has been added");
         return true;
     }
 
@@ -219,7 +219,7 @@ contract SmartIdentity {
         var attribute = attributes[_attributeHash];
         var endorsement = attribute.endorsements[_endorsementHash];
         endorsement.accepted = true;
-        sendEvent(SIG_CHANGE_EVENT, &quot;Endorsement has been accepted&quot;);
+        sendEvent(SIG_CHANGE_EVENT, "Endorsement has been accepted");
     }
 
     /**
@@ -228,19 +228,19 @@ contract SmartIdentity {
     function checkEndorsementExists(bytes32 _attributeHash, bytes32 _endorsementHash) public returns(bool) {
         var attribute = attributes[_attributeHash];
         if (attribute.hash != _attributeHash) {
-            sendEvent(ERROR_EVENT, &quot;Attribute doesn&#39;t exist&quot;);
+            sendEvent(ERROR_EVENT, "Attribute doesn&#39;t exist");
             return false;
         }
         var endorsement = attribute.endorsements[_endorsementHash];
         if (endorsement.hash != _endorsementHash) {
-            sendEvent(ERROR_EVENT, &quot;Endorsement doesn&#39;t exist&quot;);
+            sendEvent(ERROR_EVENT, "Endorsement doesn&#39;t exist");
             return false;
         }
         if (endorsement.accepted == true) {
-            sendEvent(INFO_EVENT, &quot;Endorsement exists for attribute&quot;);
+            sendEvent(INFO_EVENT, "Endorsement exists for attribute");
             return true;
         } else {
-            sendEvent(ERROR_EVENT, &quot;Endorsement hasn&#39;t been accepted&quot;);
+            sendEvent(ERROR_EVENT, "Endorsement hasn&#39;t been accepted");
             return false;
         }
     }
@@ -253,15 +253,15 @@ contract SmartIdentity {
         var endorsement = attribute.endorsements[_endorsementHash];
         if (msg.sender == endorsement.endorser) {
             delete attribute.endorsements[_endorsementHash];
-            sendEvent(SIG_CHANGE_EVENT, &quot;Endorsement removed&quot;);
+            sendEvent(SIG_CHANGE_EVENT, "Endorsement removed");
             return true;
         }
         if (msg.sender == owner && endorsement.accepted == false) {
             delete attribute.endorsements[_endorsementHash];
-            sendEvent(SIG_CHANGE_EVENT, &quot;Endorsement denied&quot;);
+            sendEvent(SIG_CHANGE_EVENT, "Endorsement denied");
             return true;
         }
-        sendEvent(SIG_CHANGE_EVENT, &quot;Endorsement removal failed&quot;);
+        sendEvent(SIG_CHANGE_EVENT, "Endorsement removal failed");
         revert();
     }
 
@@ -272,7 +272,7 @@ contract SmartIdentity {
      */
     function setEncryptionPublicKey(string _myEncryptionPublicKey) onlyBy(owner) checkBlockLock() public returns(bool) {
         encryptionPublicKey = _myEncryptionPublicKey;
-        sendEvent(SIG_CHANGE_EVENT, &quot;Encryption key added&quot;);
+        sendEvent(SIG_CHANGE_EVENT, "Encryption key added");
         return true;
     }
 
@@ -283,7 +283,7 @@ contract SmartIdentity {
      */
     function setSigningPublicKey(string _mySigningPublicKey) onlyBy(owner) checkBlockLock() public returns(bool) {
         signingPublicKey = _mySigningPublicKey;
-        sendEvent(SIG_CHANGE_EVENT, &quot;Signing key added&quot;);
+        sendEvent(SIG_CHANGE_EVENT, "Signing key added");
         return true;
     }
 
@@ -292,6 +292,6 @@ contract SmartIdentity {
      */
     function kill() onlyBy(owner) public  returns(uint) {
         selfdestruct(owner);
-        sendEvent(WARNING_EVENT, &quot;Contract killed&quot;);
+        sendEvent(WARNING_EVENT, "Contract killed");
     }
 }

@@ -47,7 +47,7 @@ contract ERC223ReceivingContract {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -121,7 +121,7 @@ contract aToken is Ownable{
 
 /** uint256 public constant _totalSupply = 500000000 * 10**18; */
 }
-contract ERCToken is aToken(&quot;ERCCoin&quot;, &quot;ERC Token&quot;, 18, 500000000), ERC20, ERC223 {
+contract ERCToken is aToken("ERCCoin", "ERC Token", 18, 500000000), ERC20, ERC223 {
     using SafeMath for uint256;
 
     event TokenTransferRequest(string method,address from, address backer, uint amount);
@@ -139,7 +139,7 @@ contract ERCToken is aToken(&quot;ERCCoin&quot;, &quot;ERC Token&quot;, 18, 5000
     }
 
     function transfer(address _to, uint _value) public returns (bool) {
-        emit TokenTransferRequest(&quot;transfer&quot;,msg.sender, _to, _value);
+        emit TokenTransferRequest("transfer",msg.sender, _to, _value);
         if (_value > 0 && 
             _value <= _balanceOf[msg.sender] 
             ){
@@ -152,7 +152,7 @@ contract ERCToken is aToken(&quot;ERCCoin&quot;, &quot;ERC Token&quot;, 18, 5000
     }
 
     function transfer(address _to, uint _value, bytes _data) public returns (bool) {
-       emit TokenTransferRequest(&quot;transfer_erc223&quot;,msg.sender, _to, _value);
+       emit TokenTransferRequest("transfer_erc223",msg.sender, _to, _value);
         if (_value > 0 && 
             _value <= _balanceOf[msg.sender]) {
             _balanceOf[msg.sender] = _balanceOf[msg.sender].sub(_value);
@@ -166,7 +166,7 @@ contract ERCToken is aToken(&quot;ERCCoin&quot;, &quot;ERC Token&quot;, 18, 5000
     }
 
     function transferFrom(address _from, address _to, uint _value) public returns (bool) {
-      emit TokenTransferRequest(&quot;transferFrom&quot;,_from, _to, _value);
+      emit TokenTransferRequest("transferFrom",_from, _to, _value);
        if (
             _value > 0 &&
             _balanceOf[_from] >= _value) {

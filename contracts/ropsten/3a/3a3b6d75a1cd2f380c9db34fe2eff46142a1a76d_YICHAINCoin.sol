@@ -108,8 +108,8 @@ contract YICHAINCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YICHAINCoin() public {
-        symbol = &quot;YICC&quot;;
-        name = &quot;YICHAIN Coin&quot;;
+        symbol = "YICC";
+        name = "YICHAIN Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x696423542f85B50fF3CA396A317De3abCb82f1c2] = _totalSupply;

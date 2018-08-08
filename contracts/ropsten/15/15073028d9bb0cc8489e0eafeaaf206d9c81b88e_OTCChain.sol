@@ -113,8 +113,8 @@ contract OTCChain is UnboundedRegularToken {
 
     uint public totalSupply = 10*10**29;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;OTCChain&quot;;
-    string constant public symbol = &quot;OTCC&quot;;
+    string constant public name = "OTCChain";
+    string constant public symbol = "OTCC";
 
     function OTCChain() {
         balances[msg.sender] = totalSupply;

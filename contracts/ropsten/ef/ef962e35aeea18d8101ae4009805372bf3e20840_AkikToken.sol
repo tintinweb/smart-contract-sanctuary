@@ -113,8 +113,8 @@ contract AkikToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AkikToken() public {
-        symbol = &quot;AKIK&quot;;
-        name = &quot;AKIK Token&quot;;
+        symbol = "AKIK";
+        name = "AKIK Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x068828F95D10d9576588C342BbfEd2b8395FC0bF] = _totalSupply;

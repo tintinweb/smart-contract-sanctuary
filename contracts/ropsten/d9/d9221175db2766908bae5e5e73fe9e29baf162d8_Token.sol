@@ -193,8 +193,8 @@ contract TokenI is ERC20Token, Controlled {
 contract Token is TokenI {
     using SafeMath for uint256;
 
-    string public techProvider = &quot;WeYii Tech&quot;;
-    string public officialSite = &quot;http://www.beautybloc.io&quot;;
+    string public techProvider = "WeYii Tech";
+    string public officialSite = "http://www.beautybloc.io";
 
     //owner是最初的币持有者。对比之下，controller 是合约操作者
     address public owner;
@@ -382,7 +382,7 @@ contract Token is TokenI {
     
     //只能自己或者 owner,controller 才能冻结账户
     function freeze(address _user, uint256 _value, uint8 _step) moreThanZero(_value) userOrController(_user) public returns (bool success) {
-        //info256(&quot;balanceOf[_user]&quot;, balanceOf[_user]);
+        //info256("balanceOf[_user]", balanceOf[_user]);
         require(balanceOf[_user] >= _value);
         balanceOf[_user] = balanceOf[_user] - _value;
         freezeOf[_step][lastFreezeSeq[_step]] = FreezeInfo({user:_user, amount:_value});
@@ -401,10 +401,10 @@ contract Token is TokenI {
         //_end = length of freezeOf[_step]
         uint32 _end = lastFreezeSeq[_step];
         require(_end > 0);
-        //info(&quot;_end&quot;, _end);
+        //info("_end", _end);
         unlockOver = (_end <= 99);
         uint32 _start = (_end > 99) ? _end-100 : 0;
-        //info(&quot;_start&quot;, _start);
+        //info("_start", _start);
         for(; _end>_start; _end--){
             FreezeInfo storage fInfo = freezeOf[_step][_end-1];
             uint256 _amount = fInfo.amount;

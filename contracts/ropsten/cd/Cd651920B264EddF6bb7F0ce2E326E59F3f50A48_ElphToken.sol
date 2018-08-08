@@ -222,8 +222,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/TokensoftToken.sol
 
 contract ElphToken is StandardToken {
-  string public name = &quot;Elph&quot;; 
-  string public symbol = &quot;ELPH&quot;;
+  string public name = "Elph"; 
+  string public symbol = "ELPH";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 4000000000 * (10 ** decimals);
 

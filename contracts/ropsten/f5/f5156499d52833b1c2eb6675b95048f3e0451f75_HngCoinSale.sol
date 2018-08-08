@@ -63,8 +63,8 @@ contract HngCoin {
         //initialSupply = 900000000000000000000000000;
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;HNGCOIN&quot;;                                   // Set the name for display purposes
-        symbol = &quot;HNGC&quot;;                               // Set the symbol for display purposes
+        name = "HNGCOIN";                                   // Set the name for display purposes
+        symbol = "HNGC";                               // Set the symbol for display purposes
         coinunits = 100;                                      // Set the price of your token for the ICO (CHANGE THIS)
         tokensWallet = msg.sender;
         salesaccount = msg.sender;

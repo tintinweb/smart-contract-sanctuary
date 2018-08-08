@@ -113,8 +113,8 @@ contract QiToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QiToken() public {
-        symbol = &quot;Qi&quot;;
-        name = &quot;QiToken&quot;;
+        symbol = "Qi";
+        name = "QiToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x30eff105dc230b908e87d2932851a733df3e34dc] = _totalSupply;

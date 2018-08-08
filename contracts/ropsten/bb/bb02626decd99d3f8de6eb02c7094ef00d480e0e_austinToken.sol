@@ -113,8 +113,8 @@ contract austinToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;austin&quot;;
-        name = &quot;austinToken&quot;;
+        symbol = "austin";
+        name = "austinToken";
         decimals = 2;
         _totalSupply = 210000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

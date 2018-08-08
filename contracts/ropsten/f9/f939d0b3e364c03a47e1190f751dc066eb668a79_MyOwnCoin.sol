@@ -111,8 +111,8 @@ contract MyOwnCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MyOwnCoin() public {
-        symbol = &quot;0MTO&quot;;
-        name = &quot;0 My Own Coin&quot;;
+        symbol = "0MTO";
+        name = "0 My Own Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3Bc3A5D926da857F9B3effBfbC2854248cFFea80] = _totalSupply;

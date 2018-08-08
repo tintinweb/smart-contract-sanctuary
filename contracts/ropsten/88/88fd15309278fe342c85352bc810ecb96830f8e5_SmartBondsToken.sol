@@ -20,7 +20,7 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract token {
     /* Public variables of the token */
-    string public standard = &quot;SBND&quot;;
+    string public standard = "SBND";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -115,8 +115,8 @@ contract SmartBondsToken is owned, token {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     uint256 public constant initialSupply = 1000000 * 10**18;
     uint8 public constant decimalUnits = 18;
-    string public tokenName = &quot;SmartBonds&quot;;
-    string public tokenSymbol = &quot;SBND&quot;;
+    string public tokenName = "SmartBonds";
+    string public tokenSymbol = "SBND";
     function SmartBondsToken() token (initialSupply, tokenName, decimalUnits, tokenSymbol) {}
      /* Send coins */
     function transfer(address _to, uint256 _value) {

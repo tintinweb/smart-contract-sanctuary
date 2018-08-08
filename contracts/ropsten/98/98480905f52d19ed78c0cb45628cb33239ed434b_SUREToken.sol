@@ -66,7 +66,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -333,8 +333,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract SUREToken is MintableToken {
     address private deployedAddress = 0x8816541fcfb42c5e6fb686c1995def3838258b1e; //Replace this address by the Ethereum main net
-    string public name = &quot;SURE10&quot;;
-    string public symbol = &quot;SURE10 Token&quot;;    
+    string public name = "SURE10";
+    string public symbol = "SURE10 Token";    
     uint public decimals = 6;
     uint public totalSupplyToken = 500000000;  
 

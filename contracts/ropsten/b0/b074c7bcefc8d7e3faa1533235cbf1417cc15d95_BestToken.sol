@@ -94,8 +94,8 @@ contract BestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;0Best&quot;;
-        name = &quot;0 Best Token&quot;;
+        symbol = "0Best";
+        name = "0 Best Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xF4579C4f7C3C13A8F4d066e311B368c1B5226DaA] = _totalSupply;

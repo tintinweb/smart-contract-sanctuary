@@ -15,8 +15,8 @@ contract Token {
     constructor() public {
         totalSupply = 1000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Token ERC20&quot;;
-        symbol = &quot;TES&quot;;
+        name = "Token ERC20";
+        symbol = "TES";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

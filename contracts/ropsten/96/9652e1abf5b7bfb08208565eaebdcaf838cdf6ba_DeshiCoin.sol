@@ -195,8 +195,8 @@ contract StandardToken is ERC20, BasicToken, BurnableToken {
 
 
 contract DeshiCoin is StandardToken {
-    string public name = &quot;DeshiCoin&quot;;
-    string public symbol = &quot;DSC&quot;;
+    string public name = "DeshiCoin";
+    string public symbol = "DSC";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 7500000000000000000000000;
     function DeshiCoin() {

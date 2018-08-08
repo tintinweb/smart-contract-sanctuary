@@ -113,8 +113,8 @@ contract OGPToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function OGPToken() public {
-        symbol = &quot;OGP&quot;;
-        name = &quot;OUR GREEN POWER&quot;;
+        symbol = "OGP";
+        name = "OUR GREEN POWER";
         decimals = 9;
         _totalSupply = 400000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

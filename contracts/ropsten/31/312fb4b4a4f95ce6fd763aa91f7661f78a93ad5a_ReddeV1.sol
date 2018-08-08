@@ -58,8 +58,8 @@ contract ReddeV1 is BasicToken {
       bool isEnabled;
   }
 
-  string public constant name = &quot;ReddeV1&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;RDW&quot;; // solium-disable-line uppercase
+  string public constant name = "ReddeV1"; // solium-disable-line uppercase
+  string public constant symbol = "RDW"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
   
   address public owner;

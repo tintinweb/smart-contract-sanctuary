@@ -116,8 +116,8 @@ contract ExTokeB is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ExTokeB() public {
-        symbol = &quot;XTOb&quot;;
-        name = &quot;ExTokeB&quot;;
+        symbol = "XTOb";
+        name = "ExTokeB";
         decimals = 18;
 	_totalSupply = 1000000000000000000000000000;
 	unitsOneEthCanBuy = 1000000;

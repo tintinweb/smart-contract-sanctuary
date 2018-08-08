@@ -5,7 +5,7 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract srvskCoin {
     // Public variables of the token
     string public name=&#39;SRVSKCOIN&#39;;
-    string public symbol=&quot;SRV&quot;;
+    string public symbol="SRV";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;

@@ -79,8 +79,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
 
 
     function FixedSupplyToken() public {
-        symbol = &quot;SPH&quot;;
-        name = &quot;Sapphire Coin&quot;;
+        symbol = "SPH";
+        name = "Sapphire Coin";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

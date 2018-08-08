@@ -69,7 +69,7 @@ library SafeMath {
   }
 }
 
-contract MyToken2 is Token(&quot;MT2&quot;, &quot;MyToken2&quot;, 18, 1000000000000000000000), ERC20 {
+contract MyToken2 is Token("MT2", "MyToken2", 18, 1000000000000000000000), ERC20 {
 
     using SafeMath for uint;
 

@@ -113,8 +113,8 @@ contract SCTXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SCTX() public {
-        symbol = &quot;SCTX&quot;;
-        name = &quot;SCMOPEX.com&quot;;
+        symbol = "SCTX";
+        name = "SCMOPEX.com";
         decimals = 18;
         _totalSupply = 10000000000000000000;
         balances[0x14387E6A7E79d28340fd78Ea3ac2243F4f511CAD] = _totalSupply;

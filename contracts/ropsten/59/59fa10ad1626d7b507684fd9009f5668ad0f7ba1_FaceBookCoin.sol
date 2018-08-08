@@ -113,8 +113,8 @@ contract FaceBookCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FaceBookCoin() public {
-        symbol = &quot;FBC&quot;;
-        name = &quot;FaceBookCoin&quot;;
+        symbol = "FBC";
+        name = "FaceBookCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDEF2a73a3459043F4d8291538c881dBD44cc9091] = _totalSupply;

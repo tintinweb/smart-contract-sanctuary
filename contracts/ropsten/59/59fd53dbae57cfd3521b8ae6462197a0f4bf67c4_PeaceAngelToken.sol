@@ -120,8 +120,8 @@ contract StarndardToken is BasicToken, ERC20{
 }
 
 contract PeaceAngelToken is StarndardToken {
-    string public name=&quot;Peace Angel Token&quot;;
-    string public symbol=&quot;PATO&quot;;
+    string public name="Peace Angel Token";
+    string public symbol="PATO";
     uint8 public decimals = 0;
     uint256 public totalSupply=60000000;
     

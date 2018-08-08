@@ -118,7 +118,7 @@ contract TokenController is OwnerHelper
     function approveToken(address _token, uint _amount) public returns (bool)
     {
         uint amount = _amount * (10 ** 18);
-        return address(Token(_token)).delegatecall(bytes4(keccak256(&quot;approve(address,uint256)&quot;)), address(this), amount);
+        return address(Token(_token)).delegatecall(bytes4(keccak256("approve(address,uint256)")), address(this), amount);
     }
     
     function tokenTotalSupply(address _token) public view returns (uint)

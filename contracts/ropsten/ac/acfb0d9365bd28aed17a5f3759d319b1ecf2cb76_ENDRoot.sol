@@ -113,8 +113,8 @@ contract ENDRoot is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ENDRoot() public {
-        symbol = &quot;ENDR&quot;;
-        name = &quot;ENDRoot&quot;;
+        symbol = "ENDR";
+        name = "ENDRoot";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x31Dd47B422Dd4bb2629FfBE932e9B028944129C8] = _totalSupply;

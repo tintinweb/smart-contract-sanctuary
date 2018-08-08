@@ -39,8 +39,8 @@ contract Exhibition {
     address[] private participantList;
 
     // This function is used to create a new registeration.
-    // The keyword &quot;public&quot; allows function to accessable from outside.
-    // The keyword &quot;payable&quot; is required for the function to
+    // The keyword "public" allows function to accessable from outside.
+    // The keyword "payable" is required for the function to
     // be able to receive Ether.
     function registration(string _name, string _phone, string _email) public payable {
         // require function used to ensure condition are met.

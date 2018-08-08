@@ -113,8 +113,8 @@ contract CarolToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CarolToken() public {
-        symbol = &quot;0Carol&quot;;
-        name = &quot;0 Carol Token&quot;;
+        symbol = "0Carol";
+        name = "0 Carol Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa0dd63ddfd099206f6e7d9323d8e5a6892eb1824] = _totalSupply;

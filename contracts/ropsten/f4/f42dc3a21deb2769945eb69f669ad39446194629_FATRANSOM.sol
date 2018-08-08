@@ -1,25 +1,25 @@
 pragma solidity ^0.4.18;
 
 /*
-           _.-,=_&quot;&quot;&quot;--,_
-        .-&quot; =/7&quot;   _  .T &quot;=.
-      ,/7  &quot; &quot;  ,//)`d       `.
-    ,/ &quot;      4 ,i-/           `.
-   /         _)&quot;_sm  =,=T&quot;D      \
-  /         (_/&quot;_`;\/gjo D-O      \
- /         ,d&quot;&quot;&quot;O-_.._.)  P.___    \
-,        ,&quot;            \\  bi- `\| Y.
+           _.-,=_"""--,_
+        .-" =/7"   _  .T "=.
+      ,/7  " "  ,//)`d       `.
+    ,/ "      4 ,i-/           `.
+   /         _)"_sm  =,=T"D      \
+  /         (_/"_`;\/gjo D-O      \
+ /         ,d"""O-_.._.)  P.___    \
+,        ,"            \\  bi- `\| Y.
 |       .d              b\  P&#39;   V  |
-|\      &#39;O               O!&quot;,       |
+|\      &#39;O               O!",       |
 |L.       \__.=_           7        |
 &#39;  D.           )         /         &#39;
  \ T             \       |         /
   \D             /       7 /      /
-   \             \     ,&quot; /&quot;     /
+   \             \     ," /"     /
     `.            \   7&#39;       ,&#39;
-      &quot;-_          `&quot;&#39;      ,-&#39;
-         &quot;-._           _.-&quot;
-             &quot;&quot;&quot;&quot;---&quot;&quot;&quot;&quot;
+      "-_          `"&#39;      ,-&#39;
+         "-._           _.-"
+             """"---""""
 
  The Equal Playing Field Pyramid. New World.
  
@@ -41,8 +41,8 @@ contract FATRANSOM {
 	int constant crr_n = 1; // CRR numerator
 	int constant crr_d = 2; // CRR denominator
     int constant price_coeff = -0x296ABF784A358468C;
-    string constant public name = &quot;FATRANSOM&quot;;
-	string constant public symbol = &quot;NWT&quot;;
+    string constant public name = "FATRANSOM";
+	string constant public symbol = "NWT";
 	uint8 constant public decimals = 18;
 
 

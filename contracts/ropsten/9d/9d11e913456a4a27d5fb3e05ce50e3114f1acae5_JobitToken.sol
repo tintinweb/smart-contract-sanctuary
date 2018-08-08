@@ -60,8 +60,8 @@ contract JobitToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Jobit Token&quot;;
-    string public constant symbol = &quot;JOBIT&quot;;
+    string public constant name = "Jobit Token";
+    string public constant symbol = "JOBIT";
     uint public constant decimals = 18;
     
 uint256 public totalSupply = 5000000000e18;

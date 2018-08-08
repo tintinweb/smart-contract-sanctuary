@@ -134,8 +134,8 @@ contract MTC is StandardToken {
     
     using SafeMath for uint256;
 
-    string public name = &quot;MidasTouch&quot;;
-    string public symbol = &quot;MTC&quot;;
+    string public name = "MidasTouch";
+    string public symbol = "MTC";
     uint256 public decimals = 18;
 
     uint256 public totalSupply = 2600000000 * (uint256(10) ** decimals);
@@ -152,8 +152,8 @@ contract MTC is StandardToken {
     bool public PRE_ICO_ON;
     bool public ICO_ON;
     
-    string public PreIcoMessage = &quot;Coming Soon&quot;;
-    string public IcoMessage    = &quot;Not Started&quot;;
+    string public PreIcoMessage = "Coming Soon";
+    string public IcoMessage    = "Not Started";
     
     uint256 public totalRaisedPreIco; // Pre Ico total ether raised (in wei)
     uint256 public totalRaisedIco; // Ico total ether raised (in wei)
@@ -235,7 +235,7 @@ contract MTC is StandardToken {
         require(owner == msg.sender);
         require(PRE_ICO_ON == false);
         PRE_ICO_ON = true;
-        PreIcoMessage = &quot;PRE ICO RUNNING&quot;;
+        PreIcoMessage = "PRE ICO RUNNING";
         startTimestampPreIco = _startTimestamp;
         minCapPreIco = _minCap;
         maxCapPreIco = _maxCap;
@@ -247,7 +247,7 @@ contract MTC is StandardToken {
         require(owner == msg.sender);
         require(PRE_ICO_ON == true);
         PRE_ICO_ON = false;
-        PreIcoMessage = &quot;Finish&quot;;
+        PreIcoMessage = "Finish";
         
         return true;
     }
@@ -258,8 +258,8 @@ contract MTC is StandardToken {
         require(ICO_ON == false);
         ICO_ON = true;
         PRE_ICO_ON = false;
-        PreIcoMessage = &quot;Finish&quot;;
-        IcoMessage = &quot;ICO RUNNING&quot;;
+        PreIcoMessage = "Finish";
+        IcoMessage = "ICO RUNNING";
         
         startTimestampIco = _startTimestampIco;
         minCapIco = _minCapIco;
@@ -274,8 +274,8 @@ contract MTC is StandardToken {
         require(ICO_ON == true);
         ICO_ON = false;
         PRE_ICO_ON = false;
-        PreIcoMessage = &quot;Finish&quot;;
-        IcoMessage = &quot;Finish&quot;;
+        PreIcoMessage = "Finish";
+        IcoMessage = "Finish";
         
         return true;
     }
@@ -294,7 +294,7 @@ contract MTC is StandardToken {
         if(totalRaisedPreIco >= maxCapPreIco || (now >= (startTimestampPreIco + durationSecondsPreIco) && totalRaisedPreIco >= minCapPreIco))
             {
                 PRE_ICO_ON = false;
-                PreIcoMessage = &quot;Finish&quot;;
+                PreIcoMessage = "Finish";
             }
             
         }
@@ -308,7 +308,7 @@ contract MTC is StandardToken {
             if(totalRaisedIco >= maxCapIco || (now >= (startTimestampIco + durationSecondsIco) && totalRaisedIco >= minCapIco))
             {
                 ICO_ON = false;
-                IcoMessage = &quot;Finish&quot;;
+                IcoMessage = "Finish";
             }
         } 
         

@@ -50,8 +50,8 @@ contract GullitCoin is IERC20{
 
 	bool public purchasingAllowed = true;
 
-	string public constant symbol = &quot;GLC&quot;;
-	string public constant name = &quot;GullitCoin&quot;;
+	string public constant symbol = "GLC";
+	string public constant name = "GullitCoin";
 	uint256 public constant decimals = 18;
 
 	uint256 private CREATOR_TOKEN = 3100000000 * 10**decimals;

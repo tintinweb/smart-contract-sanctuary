@@ -260,8 +260,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/VODToken.sol
 
 contract VODToken is StandardToken {
-  string public constant name = &quot;VODToken&quot;;
-  string public constant symbol = &quot;VOD&quot;;
+  string public constant name = "VODToken";
+  string public constant symbol = "VOD";
   uint8 public constant decimals = 18;
 
   constructor(address initialAccount, uint256 initialBalance) public {

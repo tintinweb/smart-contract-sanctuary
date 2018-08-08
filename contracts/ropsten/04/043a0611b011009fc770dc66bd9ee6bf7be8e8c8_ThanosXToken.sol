@@ -147,11 +147,11 @@ contract StandardToken is Token {
 contract ThanosXToken is StandardToken { 
 
     //metadata
-    string  public constant	name		= &quot;ThanosX Token&quot;;
-    string  public constant	symbol		= &quot;TNSX&quot;;
+    string  public constant	name		= "ThanosX Token";
+    string  public constant	symbol		= "TNSX";
     uint256 public constant	decimals	= 8;
     uint256 public constant	MILLION		= (10 ** 6 * 10 ** decimals);
-    string  public version = &quot;0.1&quot;;
+    string  public version = "0.1";
 
     function ThanosXToken() {
         totalSupply = 100 * MILLION;
@@ -165,7 +165,7 @@ contract ThanosXToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 

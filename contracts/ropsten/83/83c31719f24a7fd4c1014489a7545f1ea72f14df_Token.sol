@@ -152,8 +152,8 @@ contract Whitelist {
 
 contract Token is ERC20 {
 
-    string public name = &quot;Array.io Token&quot;;
-    string public symbol = &quot;eRAY&quot;;
+    string public name = "Array.io Token";
+    string public symbol = "eRAY";
     uint8 public decimals = 18;
     bool public tgrLive = false;
     uint public tgrStartBlock;

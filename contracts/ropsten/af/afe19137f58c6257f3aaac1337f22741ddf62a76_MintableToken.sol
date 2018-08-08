@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract MintableToken is StandardToken, Ownable {
-  string public constant name = &quot;MintTest1&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;MT1&quot;; // solium-disable-line uppercase
+  string public constant name = "MintTest1"; // solium-disable-line uppercase
+  string public constant symbol = "MT1"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
   event Mint(address indexed to, uint256 amount);
   event MintFinished();

@@ -113,8 +113,8 @@ contract KBV01 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KBV01() public {
-        symbol = &quot;KBV01&quot;;
-        name = &quot;Kingsbury Vault 01&quot;;
+        symbol = "KBV01";
+        name = "Kingsbury Vault 01";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x5d1F617aE6705f44b4970f81541701bf5E90B833] = _totalSupply;

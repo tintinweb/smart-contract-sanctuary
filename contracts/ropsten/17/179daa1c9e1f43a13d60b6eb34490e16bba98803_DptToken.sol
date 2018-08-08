@@ -55,8 +55,8 @@ contract DptToken {
     using SafeMath for uint256;
 
     // Token basic information
-    string  public name     = &quot;Deliverers Power Token&quot;;
-    string  public symbol   = &quot;DPT&quot;;
+    string  public name     = "Deliverers Power Token";
+    string  public symbol   = "DPT";
     uint256 public decimals = 18;
 
     // Mapping of balance and allowance

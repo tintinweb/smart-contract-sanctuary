@@ -114,8 +114,8 @@ contract BLMCH is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BLMCH() public {
-        symbol = &quot;BLMCH&quot;;
-        name = &quot;BLMCH Token&quot;;
+        symbol = "BLMCH";
+        name = "BLMCH Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x03A5e66193E08424440941562FC81bCE3Fee9944] = _totalSupply;

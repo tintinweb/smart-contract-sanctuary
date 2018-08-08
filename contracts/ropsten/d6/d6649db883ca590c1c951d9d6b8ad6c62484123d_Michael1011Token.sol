@@ -113,8 +113,8 @@ contract Michael1011Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Michael1011Token() public {
-        symbol = &quot;1011&quot;;
-        name = &quot;Michael1011Token&quot;;
+        symbol = "1011";
+        name = "Michael1011Token";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0x6de76fb8fe3501912480c816c2ca76b4245202bd] = _totalSupply;

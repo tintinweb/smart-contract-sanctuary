@@ -113,8 +113,8 @@ contract TOP1000 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TOP1000() public {
-        symbol = &quot;TOP1000&quot;;
-        name = &quot;TOP1000 Token&quot;;
+        symbol = "TOP1000";
+        name = "TOP1000 Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000;
         balances[0x0c8f5d6816a4bc8b71e77ac78561a1d7c48a1515] = _totalSupply;

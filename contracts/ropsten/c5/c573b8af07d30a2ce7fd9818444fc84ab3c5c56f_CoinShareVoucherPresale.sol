@@ -276,7 +276,7 @@ contract Ownable {
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner, &quot;Only owner can call this function.&quot;);
+        require(msg.sender == owner, "Only owner can call this function.");
         _;
     }
 
@@ -309,7 +309,7 @@ contract Startable {
     }
 
     modifier whenStarted() {
-        require(_started, &quot;This function can only be called when the contract is started.&quot;);
+        require(_started, "This function can only be called when the contract is started.");
         _;
     }
 
@@ -335,7 +335,7 @@ contract Stoppable is Startable {
     }
 
     modifier whenStopped() {
-        require(!_started,&quot;This function can be called only when contract is stopped.&quot;);
+        require(!_started,"This function can be called only when contract is stopped.");
         _;
     }
 
@@ -394,13 +394,13 @@ contract CoinShareBasePresale is Ownable, Stoppable, ERC223TokenReceiver{
 
     modifier onlyOwnerOrRateUpdater() {
         require(msg.sender == owner || (rateUpdater != address(0) && msg.sender == rateUpdater),
-            &quot;Only owner or designated rate updater can call this function.&quot;);
+            "Only owner or designated rate updater can call this function.");
         _;
     }
 
     modifier onlyIntermediary() {
         require(isIntermediary(msg.sender)||msg.sender == owner || msg.sender == beneficiary,
-            &quot;Only authorized intermediaries can call this function.&quot;);
+            "Only authorized intermediaries can call this function.");
         _;
     }
 
@@ -477,7 +477,7 @@ contract CoinShareBasePresale is Ownable, Stoppable, ERC223TokenReceiver{
         // what if there are not enough tokens to be sold
         uint256 availableTokens = token.balanceOf(this);
         // hard check
-        // require(availableTokens>= tokensToBuy,&quot;Not enough tokens remaining&quot;);
+        // require(availableTokens>= tokensToBuy,"Not enough tokens remaining");
         // soft check with refund
         require(availableTokens > 0);
         uint256 refund;

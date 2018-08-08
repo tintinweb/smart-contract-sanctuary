@@ -91,11 +91,11 @@ contract TestERC721 is RpSafeMath, ERC721 {
 
     function transferFrom(address _from, address _to, uint256 _nftId) external payable returns(bool) {
         address owner = nftToOwner[_nftId];
-        require(owner != 0x0, &quot;the bundle dont exist&quot;);
-        require(owner == msg.sender || nftIdToApproved[_nftId] == msg.sender, &quot;sender its not the owner or not approved&quot;);
-        require(owner != _to, &quot;the owner and `_to` should not be equal&quot;);
-        require(owner == _from, &quot;the owner and `_from` should be equal&quot;);
-        require(_to != address(0), &quot;`_to` is the zero address&quot;);
+        require(owner != 0x0, "the bundle dont exist");
+        require(owner == msg.sender || nftIdToApproved[_nftId] == msg.sender, "sender its not the owner or not approved");
+        require(owner != _to, "the owner and `_to` should not be equal");
+        require(owner == _from, "the owner and `_from` should be equal");
+        require(_to != address(0), "`_to` is the zero address");
 
         ownerNftCount[_from]--;
         ownerNftCount[_to]++;

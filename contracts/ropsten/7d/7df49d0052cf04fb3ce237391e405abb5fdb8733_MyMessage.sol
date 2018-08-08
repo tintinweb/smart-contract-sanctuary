@@ -4,7 +4,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -69,12 +69,12 @@ contract MyMessage is Ownable {
     uint public maxLength;   
     
     constructor() public {
-        message = &quot;Hello World&quot;;
+        message = "Hello World";
         maxLength = 280;
     }
     
     function setMessage(string _message) public {
-        require(bytes(_message).length <= maxLength, &quot;That message is too long.&quot;);
+        require(bytes(_message).length <= maxLength, "That message is too long.");
         
         message = _message;
     }

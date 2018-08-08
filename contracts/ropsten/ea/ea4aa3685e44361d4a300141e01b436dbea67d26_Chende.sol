@@ -1,8 +1,8 @@
 pragma solidity 0.4.19;
 
 contract Chende {
-    string public symbol = &quot;CW&quot;;
-    string public name = &quot;Chende World&quot;;
+    string public symbol = "CW";
+    string public name = "Chende World";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
     uint256 _MaxDistribPublicSupply = 0;

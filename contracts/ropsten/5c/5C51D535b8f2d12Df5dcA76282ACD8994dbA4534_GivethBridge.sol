@@ -602,7 +602,7 @@ pragma solidity ^0.4.21;
 
 
 /// @dev `FailClosedVault` is a version of the vault that requires
-///  the securityGuard to &quot;see&quot; each payment before it can be collected
+///  the securityGuard to "see" each payment before it can be collected
 contract FailClosedVault is Vault {
     uint public securityGuardLastCheckin;
 

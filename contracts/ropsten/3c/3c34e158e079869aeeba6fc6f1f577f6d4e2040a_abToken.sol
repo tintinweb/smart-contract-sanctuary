@@ -116,8 +116,8 @@ contract abToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function abToken() public {
-        symbol = &quot;ABT&quot;;
-        name = &quot;Ab Token&quot;;
+        symbol = "ABT";
+        name = "Ab Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

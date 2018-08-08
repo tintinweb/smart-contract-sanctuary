@@ -236,8 +236,8 @@ contract StandardToken is ERC20, BasicToken {
 
 }
 contract TestCoin is StandardToken {
-    string public name = &quot;TestCoin&quot;;
-    string public symbol = &quot;TLC&quot;;
+    string public name = "TestCoin";
+    string public symbol = "TLC";
     uint8 public decimals = 4;
     uint256 public INITIAL_SUPPLY = 666666;
 

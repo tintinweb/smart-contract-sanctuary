@@ -6,7 +6,7 @@ Copyright (c) 2016 Oraclize LTD
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -19,7 +19,7 @@ all copies or substantial portions of the Software.
 
 
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -83,22 +83,22 @@ contract usingOraclize {
     function oraclize_setNetwork(uint8 networkID) internal returns(bool){
         if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
             OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
-            oraclize_setNetworkName(&quot;eth_mainnet&quot;);
+            oraclize_setNetworkName("eth_mainnet");
             return true;
         }
         if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
             OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
-            oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
+            oraclize_setNetworkName("eth_ropsten3");
             return true;
         }
         if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
             OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
-            oraclize_setNetworkName(&quot;eth_kovan&quot;);
+            oraclize_setNetworkName("eth_kovan");
             return true;
         }
         if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
             OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
-            oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
+            oraclize_setNetworkName("eth_rinkeby");
             return true;
         }
         if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
@@ -613,15 +613,15 @@ contract usingOraclize {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     // parseInt
@@ -649,7 +649,7 @@ contract usingOraclize {
     }
 
     function uint2str(uint i) internal returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -773,7 +773,7 @@ contract usingOraclize {
             mstore(add(sessionKeyHash, 0x20), sessionKeyHash_bytes32)
         }
         bytes[3] memory args = [unonce, nbytes, sessionKeyHash];
-        bytes32 queryId = oraclize_query(_delay, &quot;random&quot;, args, _customGasLimit);
+        bytes32 queryId = oraclize_query(_delay, "random", args, _customGasLimit);
         oraclize_randomDS_setCommitment(queryId, keccak256(abi.encodePacked(bytes8(_delay), args[1], sha256(abi.encodePacked(args[0])), args[2])));
         return queryId;
     }
@@ -826,7 +826,7 @@ contract usingOraclize {
         bytes memory tosign2 = new bytes(1+65+32);
         tosign2[0] = 1; //role
         copyBytes(proof, sig2offset-65, 65, tosign2, 1);
-        bytes memory CODEHASH = hex&quot;f5557abbf544c3db784d84e777d3ca2894372d5ae761c74aa9266231225f156c&quot;;
+        bytes memory CODEHASH = hex"f5557abbf544c3db784d84e777d3ca2894372d5ae761c74aa9266231225f156c";
         copyBytes(CODEHASH, 0, 32, tosign2, 1+65);
         sigok = verifySig(sha256(tosign2), sig2, appkey1_pubkey);
 
@@ -834,7 +834,7 @@ contract usingOraclize {
 
 
         // Step 7: verify the APPKEY1 provenance (must be signed by Ledger)
-        bytes memory LEDGERKEY = hex&quot;7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4&quot;;
+        bytes memory LEDGERKEY = hex"7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4";
 
         bytes memory tosign3 = new bytes(1+65);
         tosign3[0] = 0xFE;
@@ -850,7 +850,7 @@ contract usingOraclize {
 
     modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) {
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        if ((_proof[0] != &quot;L&quot;)||(_proof[1] != &quot;P&quot;)||(_proof[2] != 1)) revert();
+        if ((_proof[0] != "L")||(_proof[1] != "P")||(_proof[2] != 1)) revert();
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         if (proofVerified == false) revert();
@@ -1068,43 +1068,43 @@ contract OracleUrls is usingOraclize{
 
     function yahooOracleUrl(bytes32 symbol) constant internal returns (string) {
         string memory url = strConcat(
-            &quot;https://query.yahooapis.com/v1/public/yql?q=select%20Ask,Bid%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22&quot;,
+            "https://query.yahooapis.com/v1/public/yql?q=select%20Ask,Bid%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22",
             bytes32ToString(symbol),
-            &quot;%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=&quot;
+            "%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
         );
 
         return strConcat(
-            &quot;json(&quot;,
+            "json(",
             url,
-            &quot;).query.results.quote.Ask&quot;
+            ").query.results.quote.Ask"
         );
     }
 
     function cryptocompareUsdOracleUrl(bytes32 symbol) constant internal returns (string) {
         string memory url = strConcat(
-            &quot;https://min-api.cryptocompare.com/data/price?fsym=&quot;,
+            "https://min-api.cryptocompare.com/data/price?fsym=",
             bytes32ToString(symbol),
-            &quot;&tsyms=USD&e=Kraken&quot;
+            "&tsyms=USD&e=Kraken"
         );
 
         return strConcat(
-            &quot;json(&quot;,
+            "json(",
             url,
-            &quot;).USD&quot;
+            ").USD"
         );
     }
 
     function cryptocompareBtcOracleUrl(bytes32 symbol) constant internal returns (string) {
         string memory url = strConcat(
-            &quot;https://min-api.cryptocompare.com/data/price?fsym=&quot;,
+            "https://min-api.cryptocompare.com/data/price?fsym=",
             bytes32ToString(symbol),
-            &quot;&tsyms=BTC&e=Kraken&quot;
+            "&tsyms=BTC&e=Kraken"
         );
 
         return strConcat(
-            &quot;json(&quot;,
+            "json(",
             url,
-            &quot;).BTC&quot;
+            ").BTC"
         );
     }
 
@@ -1360,10 +1360,10 @@ contract CfdMarket is OrdersManager {
         assert(!positionOracleRequested[positionId]);
 
         positionOracleRequested[positionId] = true;
-        uint oracleCommission = oraclize_getPrice(&quot;URL&quot;, callbackGasLimit);
+        uint oracleCommission = oraclize_getPrice("URL", callbackGasLimit);
         assert(oracleCommission + pos.oracleCommission < pos.collateral);
 
-        bytes32 myId = oraclize_query(&quot;URL&quot;, buildOracleUrl(pos.symbol, pos.oracle), callbackGasLimit);
+        bytes32 myId = oraclize_query("URL", buildOracleUrl(pos.symbol, pos.oracle), callbackGasLimit);
         emit UpdatePosition(positionId);
         oracleRequests[myId] = OracleRequest(true, positionId, 0x0, oracleCommission);
     }
@@ -1393,11 +1393,11 @@ contract CfdMarket is OrdersManager {
     function internalTrade(uint id, Order order, address countrerparty) internal {
         assert(!orderOracleRequested[id]);
         if (order.premiumBp > 0) { //price is pegged to the oracle value
-            uint oracleCommission = oraclize_getPrice(&quot;URL&quot;, callbackGasLimit);
+            uint oracleCommission = oraclize_getPrice("URL", callbackGasLimit);
             assert(oracleCommission < order.collateral);
             orderOracleRequested[id] = true;
 
-            bytes32 myId = oraclize_query(&quot;URL&quot;, buildOracleUrl(order.symbol, order.oracle), callbackGasLimit);
+            bytes32 myId = oraclize_query("URL", buildOracleUrl(order.symbol, order.oracle), callbackGasLimit);
             oracleRequests[myId] = OracleRequest(false, id, countrerparty, oracleCommission);
         } else { //price is fixed
             createPositionFromOrder(id, order, countrerparty, order.strikeMilis, 0);

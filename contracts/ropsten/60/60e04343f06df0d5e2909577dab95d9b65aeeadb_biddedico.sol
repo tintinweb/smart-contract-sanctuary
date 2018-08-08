@@ -116,8 +116,8 @@ contract biddedico is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function biddedico() public {
-        symbol = &quot;BIDICO&quot;;
-        name = &quot;biddedico Token&quot;;
+        symbol = "BIDICO";
+        name = "biddedico Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -115,8 +115,8 @@ contract Platinume is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;PLM&quot;;
-        name = &quot;platinum&quot;;
+        symbol = "PLM";
+        name = "platinum";
         decimals = 8;
         buyPrice = 1000;
         _totalSupply = 1000000 * 10**uint(decimals);

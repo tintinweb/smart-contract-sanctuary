@@ -51,8 +51,8 @@ library SafeMath {
 contract FixedSupplyGo7Token  {
     using SafeMath for uint;
 
-    string public constant symbol = &quot;Go7&quot;;
-    string public constant name = &quot;Go7Token&quot;;
+    string public constant symbol = "Go7";
+    string public constant name = "Go7Token";
     uint8 public constant decimals = 5;
     uint256 _totalSupply ;
     uint256 public buyPrice ;

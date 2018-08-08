@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract LoomToken is StandardToken {
-  string public name    = &quot;LoomToken&quot;;
-  string public symbol  = &quot;LOOM&quot;;
+  string public name    = "LoomToken";
+  string public symbol  = "LOOM";
   uint8 public decimals = 18;
 
   // one billion in initial supply

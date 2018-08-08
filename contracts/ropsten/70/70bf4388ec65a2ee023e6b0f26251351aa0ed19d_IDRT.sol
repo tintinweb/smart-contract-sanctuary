@@ -113,8 +113,8 @@ contract IDRT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IDRT() public {
-        symbol = &quot;IDRT&quot;;
-        name = &quot;IDRT&quot;;
+        symbol = "IDRT";
+        name = "IDRT";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x155713Df2032972145537e4e05B178bB6fDaDf70] = _totalSupply;

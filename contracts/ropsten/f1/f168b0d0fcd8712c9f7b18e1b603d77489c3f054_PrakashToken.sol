@@ -113,8 +113,8 @@ contract PrakashToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PrakashToken() public {
-        symbol = &quot;PKR&quot;;
-        name = &quot;Prakash Token&quot;;
+        symbol = "PKR";
+        name = "Prakash Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xD7f0d62Ac830Fc50A1Aed0164866a91A71429696] = _totalSupply;

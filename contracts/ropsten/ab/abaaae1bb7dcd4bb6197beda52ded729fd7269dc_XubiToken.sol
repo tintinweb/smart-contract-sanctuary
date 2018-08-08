@@ -116,8 +116,8 @@ contract XubiToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XubiToken() public {
-        symbol = &quot;XUBI&quot;;
-        name = &quot;Xubi Token&quot;;
+        symbol = "XUBI";
+        name = "Xubi Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

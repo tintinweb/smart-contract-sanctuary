@@ -57,9 +57,9 @@ contract EthereumDepositToken is Owned {
     
     using SafeMath for uint;
     
-	string public constant name = &quot;FDBB - Deposit Token 5%&quot;;
+	string public constant name = "FDBB - Deposit Token 5%";
 	
-	string public constant symbol = &quot;DT05&quot;;
+	string public constant symbol = "DT05";
 	
 	uint32 public constant decimals = 15;
     
@@ -114,7 +114,7 @@ contract EthereumDepositToken is Owned {
         _tokens += _value;
         balances[msg.sender] += _value;
         _sellprice = _money.mul(10**18).mul(99).div(_tokens).div(100);
-        emit OperationEvent(&quot;buy&quot;, _sellprice, now);
+        emit OperationEvent("buy", _sellprice, now);
     }
     // OK
     function () external payable {
@@ -131,7 +131,7 @@ contract EthereumDepositToken is Owned {
             _sellprice = _money.mul(10**18).mul(99).div(_tokens).div(100);
         }
         msg.sender.transfer(_value);
-        emit OperationEvent(&quot;sell&quot;, _sellprice, now);
+        emit OperationEvent("sell", _sellprice, now);
     }
     // OK
     function getPrice() public constant returns (uint bid, uint ask) {

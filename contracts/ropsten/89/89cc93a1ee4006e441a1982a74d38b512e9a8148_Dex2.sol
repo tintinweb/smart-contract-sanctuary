@@ -1,7 +1,7 @@
 // reference
 
 pragma solidity 0.4.21;
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 
 interface Token {
   function transfer(address to, uint256 value) external returns (bool success);
@@ -12,7 +12,7 @@ contract Dex2 {
   //------------------------------ Struct Definitions: ---------------------------------------------
 
   struct TokenInfo {
-    string  symbol;       // e.g., &quot;ETH&quot;, &quot;ADX&quot;
+    string  symbol;       // e.g., "ETH", "ADX"
     address tokenAddr;    // ERC20 token address
     uint64  scaleFactor;  // <original token amount> = <scaleFactor> x <DEx amountE8> / 1e8
     uint    minDeposit;   // mininum deposit (original token amount) allowed for this token
@@ -118,7 +118,7 @@ contract Dex2 {
 
   function Dex2(address admin_) public {
     admin = admin_;
-    setTokenInfo(0 /*tokenCode*/, &quot;ETH&quot;, 0 /*tokenAddr*/, ETH_SCALE_FACTOR, 0 /*minDeposit*/);
+    setTokenInfo(0 /*tokenCode*/, "ETH", 0 /*tokenAddr*/, ETH_SCALE_FACTOR, 0 /*minDeposit*/);
     emit DeployMarketEvent();
   }
 
@@ -159,7 +159,7 @@ contract Dex2 {
 
     uint64 depositIndex = ++lastDepositIndex;
     setDeposits(depositIndex, traderAddr, 0, pendingAmountE8);
-    emit DepositEvent(traderAddr, 0, &quot;ETH&quot;, pendingAmountE8, depositIndex);
+    emit DepositEvent(traderAddr, 0, "ETH", pendingAmountE8, depositIndex);
   }
 
   // Deposit token (other than ETH) from msg.sender for a specified trader.
@@ -204,7 +204,7 @@ contract Dex2 {
     address withdrawAddr = traders[traderAddr].withdrawAddr;
     if (withdrawAddr == 0) withdrawAddr = traderAddr;
     withdrawAddr.transfer(truncatedWei);
-    emit WithdrawEvent(traderAddr, 0, &quot;ETH&quot;, uint64(amountE8), exeStatus.lastOperationIndex);
+    emit WithdrawEvent(traderAddr, 0, "ETH", uint64(amountE8), exeStatus.lastOperationIndex);
   }
 
   // Withdraw token (other than ETH) from the contract.
@@ -554,9 +554,9 @@ contract Dex2 {
     if (traderAddr == 0) revert();  // check zero addr early since `ecrecover` returns 0 on error
 
     // verify the signature of the trader
-    bytes32 hash1 = keccak256(&quot;\x19Ethereum Signed Message:\n70DEx2 Order: &quot;, address(this), nonce, bits);
+    bytes32 hash1 = keccak256("\x19Ethereum Signed Message:\n70DEx2 Order: ", address(this), nonce, bits);
     if (traderAddr != ecrecover(hash1, v, bytes32(body[i + 2]), bytes32(body[i + 3]))) {
-      bytes32 hashValues = keccak256(&quot;DEx2 Order&quot;, address(this), nonce, bits);
+      bytes32 hashValues = keccak256("DEx2 Order", address(this), nonce, bits);
       bytes32 hash2 = keccak256(HASHTYPES, hashValues);
       if (traderAddr != ecrecover(hash2, v, bytes32(body[i + 2]), bytes32(body[i + 3]))) revert();
     }

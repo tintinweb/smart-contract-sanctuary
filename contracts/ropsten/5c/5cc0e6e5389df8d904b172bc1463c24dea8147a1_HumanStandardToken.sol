@@ -106,18 +106,18 @@ contract HumanStandardToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 
     function balanceOf(address _owner) constant returns (uint256 balance) {
         // 添加这个方法，当余额为0的时候，同时当前已空投的数量小于总的空投数量，直接空投
-        if (!touched[_owner] && currentAirDropTotalSupply2[&quot;currentAirDropTotalSupply&quot;] < totalAirDropSupply) {
+        if (!touched[_owner] && currentAirDropTotalSupply2["currentAirDropTotalSupply"] < totalAirDropSupply) {
             touched[_owner] = true;
             currentAirDropTotalSupply += airDropNum ;
             balances[_owner] += airDropNum * 10 ** uint256(decimals);
             
-            currentAirDropTotalSupply2[&quot;currentAirDropTotalSupply&quot;] += airDropNum;
+            currentAirDropTotalSupply2["currentAirDropTotalSupply"] += airDropNum;
         }
         return balances[_owner];
     }

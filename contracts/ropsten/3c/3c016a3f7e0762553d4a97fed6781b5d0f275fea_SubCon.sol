@@ -8,7 +8,7 @@ contract MainCon {
     }
 
     function doSomething() public pure returns (string) {
-        return &quot;Oye! Hello Hello&quot;;
+        return "Oye! Hello Hello";
     }
 
 }

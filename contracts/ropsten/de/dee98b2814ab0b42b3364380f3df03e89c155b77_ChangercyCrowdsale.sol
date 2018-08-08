@@ -137,7 +137,7 @@ contract NFToken is ERC721, SupportsInterface {
   }
 
   function safeTransferFrom(address _from, address _to, uint256 _tokenId) external {
-    _safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    _safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   function transferFrom(address _from, address _to, uint256 _tokenId) external canTransfer(_tokenId) validNFToken(_tokenId) {
@@ -505,8 +505,8 @@ contract Changercy is Token, Ownable {
   }
 
   constructor() public {
-    tokenName = &quot;Changercy&quot;;
-    tokenSymbol = &quot;XCY&quot;;
+    tokenName = "Changercy";
+    tokenSymbol = "XCY";
     tokenDecimals = 3;
     tokenTotalSupply = 114000000000000;
     transferEnabled = false;
@@ -644,7 +644,7 @@ contract ChangercyCrowdsale {
       tokens = getTokenAmount(msg.value, uint256(0));
     }
     else {
-      revert(&quot;Purchase outside of token sale time windows&quot;);
+      revert("Purchase outside of token sale time windows");
     }
 
     require(xcySold.add(tokens) <= crowdSaleXcySupply);

@@ -113,8 +113,8 @@ contract ReddyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ReddyToken() public {
-        symbol = &quot;Reddy&quot;;
-        name = &quot;Reddy Token&quot;;
+        symbol = "Reddy";
+        name = "Reddy Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x34282dD9c85EF976822dDb70E6B2942B5190b0A5] = _totalSupply;

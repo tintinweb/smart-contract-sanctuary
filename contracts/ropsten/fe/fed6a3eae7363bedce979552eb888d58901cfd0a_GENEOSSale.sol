@@ -260,7 +260,7 @@ contract DSMath {
     }
 
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -399,7 +399,7 @@ contract WhiteList {
 
 contract DSToken is DSTokenBase(0), DSStop {
 
-    bytes32  public  symbol = &quot;GENEOS&quot;;
+    bytes32  public  symbol = "GENEOS";
     uint256  public  decimals = 18; // standard token precision. override to customize
     
     WhiteList public wlcontract;
@@ -447,7 +447,7 @@ contract DSToken is DSTokenBase(0), DSStop {
 
     // Optional token name
 
-    bytes32   public  name = &quot;&quot;;
+    bytes32   public  name = "";
     
     function setName(bytes32 name_) auth {
         name = name_;
@@ -459,7 +459,7 @@ contract GENEOSSale is DSAuth, DSExec, DSMath {
     DSToken  public  GENEOS;               
     uint128  public  totalSupply = 1000000000000000000000000000;         // Total GENEOS amount created
     uint128  public  foundersAllocation = 100000000000000000000000000;   // Amount given to founders
-    string   public  foundersKey = &quot;Dev key&quot;;          // Public key of founders
+    string   public  foundersKey = "Dev key";          // Public key of founders
 
     uint     public  createLastDay = 200000000000000000000000000;        // Tokens sold in last window
     uint     public  createPerDay = 4000000000000000000000000;           // Tokens sold in each window

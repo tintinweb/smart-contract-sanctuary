@@ -113,8 +113,8 @@ contract JaiHoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JaiHoToken() public {
-        symbol = &quot;JaiHo&quot;;
-        name = &quot;JaiHo Token&quot;;
+        symbol = "JaiHo";
+        name = "JaiHo Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xE97bD0913D604d1075913FEbfc7322911807B941] = _totalSupply;

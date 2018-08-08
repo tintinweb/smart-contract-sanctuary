@@ -116,8 +116,8 @@ contract TheFrozenDeadShitCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheFrozenDeadShitCoin() public {
-        symbol = &quot;TFDS&quot;;
-        name = &quot;The Frozen Dead Shit Coin&quot;;
+        symbol = "TFDS";
+        name = "The Frozen Dead Shit Coin";
         decimals = 2;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

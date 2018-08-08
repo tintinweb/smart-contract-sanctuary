@@ -126,8 +126,8 @@ contract Start is Owned {
 // ----------------------------------------------------------------------------
 contract NeLunaCoin is ERC20Interface, Owned, Start, SafeMath {
     //Public vars of the token
-    string public constant symbol = &quot;NLC&quot;;
-    string public constant name = &quot;NeLunaCoin&quot;;
+    string public constant symbol = "NLC";
+    string public constant name = "NeLunaCoin";
     uint256 public constant decimals = 18;
     
     //Token sellPrice 1 ETH = 1000 Tokens
@@ -285,6 +285,6 @@ contract NeLunaCoin is ERC20Interface, Owned, Start, SafeMath {
     // Kill contract and send funds to Owner
     function kill() onlyOwner public {
         selfdestruct(owner);
-        emit Kill(&quot;Contract is dead&quot;);
+        emit Kill("Contract is dead");
     }
 }

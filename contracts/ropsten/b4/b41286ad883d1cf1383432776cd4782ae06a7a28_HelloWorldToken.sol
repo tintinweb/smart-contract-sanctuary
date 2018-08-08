@@ -116,8 +116,8 @@ contract HelloWorldToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;HWT&quot;;
-        name = &quot;HelloWorld Token&quot;;
+        symbol = "HWT";
+        name = "HelloWorld Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

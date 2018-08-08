@@ -52,7 +52,7 @@ contract EasyToken is Crowdsale {
     
     string  public standard    = &#39;Test&#39;;
     string  public name        = &#39;TestTokens&#39;;
-    string  public symbol      = &quot;TET&quot;;
+    string  public symbol      = "TET";
     uint8   public decimals    = 0;
 
     function EasyToken() payable Crowdsale() {}

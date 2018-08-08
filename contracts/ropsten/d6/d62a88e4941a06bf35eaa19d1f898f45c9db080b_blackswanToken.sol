@@ -116,8 +116,8 @@ contract blackswanToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function blackswanToken() public {
-        symbol = &quot;BLK&quot;;
-        name = &quot;blackswan Token&quot;;
+        symbol = "BLK";
+        name = "blackswan Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

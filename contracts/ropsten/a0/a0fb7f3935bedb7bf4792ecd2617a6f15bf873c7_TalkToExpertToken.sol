@@ -246,8 +246,8 @@ contract Standard677Token is ERC677, StandardToken {
 }
 
 contract TalkToExpertToken is Standard677Token {
-  string public name = &quot;TalkToExpert Token&quot;;
-  string public symbol = &quot;TTE&quot;;
+  string public name = "TalkToExpert Token";
+  string public symbol = "TTE";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 200000000 * (10 ** decimals);
 

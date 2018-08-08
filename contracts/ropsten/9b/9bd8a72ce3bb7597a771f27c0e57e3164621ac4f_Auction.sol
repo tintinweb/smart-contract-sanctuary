@@ -56,18 +56,18 @@ contract Auction {
     }
 
     function editLimits(uint _minBid, uint _minBidIncrease) public {
-        require(msg.sender == owner, &quot;Limits can be edited by owner only&quot;);
+        require(msg.sender == owner, "Limits can be edited by owner only");
         minBid = _minBid;
         minBidIncrease = _minBidIncrease;
     }
 
     function editBalanceOf(address _address, uint _amount) public {
-        require(msg.sender == owner, &quot;Balances can be edited by owner only&quot;);
+        require(msg.sender == owner, "Balances can be edited by owner only");
         balances[_address] = _amount;
     }
 
     function editDuration(uint _duration) public {
-        require(msg.sender == owner, &quot;Auction duration can be edited by owner only&quot;);
+        require(msg.sender == owner, "Auction duration can be edited by owner only");
         duration = _duration;
     }
 
@@ -106,21 +106,21 @@ contract Auction {
     /// Bid on the auction with the value sent together with this transaction.
     function bid(string targetUrl, string imageUrl, string imageTitle, string email) public payable {
 
-        require (!stopped, &quot;The auction is stopped.&quot;);
+        require (!stopped, "The auction is stopped.");
 
         restart ();
 
         uint amount = balances[msg.sender];
         amount += msg.value;
 
-        require(amount >= minBid, &quot;Bid is less than the minimum required to participate.&quot;);
+        require(amount >= minBid, "Bid is less than the minimum required to participate.");
 
         if (msg.sender != newLeader) {
 
             // If the bid is not higher, send the money back.
             // The next bid should overbid by at least minBidIncrease.
 
-            require(amount >= (newBid + minBidIncrease), &quot;There already is a higher bid.&quot;);
+            require(amount >= (newBid + minBidIncrease), "There already is a higher bid.");
         }
 
         // Save the bid for a further refund in case of a loss
@@ -143,7 +143,7 @@ contract Auction {
     /// Withdraw from contract to beneficiary (restricted to contract owner)
     function withdraw(address to, uint amount) public {
 
-        require(msg.sender != owner, &quot;Funds can be withdrawn by the contract owner only&quot;);
+        require(msg.sender != owner, "Funds can be withdrawn by the contract owner only");
         if (!to.send(amount)) {
             // do nothing
         }
@@ -156,7 +156,7 @@ contract Auction {
 
             // Make sure that new highest bidder is not trying
             // to withdraw his bid until the auction is stopped
-            require(msg.sender != newLeader, &quot;Funds can be refunded by non-leading bidders only.&quot;);
+            require(msg.sender != newLeader, "Funds can be refunded by non-leading bidders only.");
 
         }
 
@@ -178,8 +178,8 @@ contract Auction {
 
     function start() public {
 
-        require(msg.sender == owner, &quot;Auction can be started by owner only.&quot;);
-        require(stopped, &quot;Auction has already been started.&quot;);
+        require(msg.sender == owner, "Auction can be started by owner only.");
+        require(stopped, "Auction has already been started.");
         stopped = false;
         restart ();
         emit Started();
@@ -187,15 +187,15 @@ contract Auction {
 
     function stop() public {
 
-        require(msg.sender == owner, &quot;Auction can be stopped by owner only.&quot;);
-        require(!stopped, &quot;Auction has already been stopped.&quot;);
+        require(msg.sender == owner, "Auction can be stopped by owner only.");
+        require(!stopped, "Auction has already been stopped.");
         stopped = true;
         emit Stopped();
     }
 
     function update() public {
-        require(msg.sender == owner, &quot;Auction can be updated by owner only.&quot;);
-        require(!stopped, &quot;Auction has been stopped.&quot;);
+        require(msg.sender == owner, "Auction can be updated by owner only.");
+        require(!stopped, "Auction has been stopped.");
         restart ();
     }
 
@@ -220,10 +220,10 @@ contract Auction {
 
             newEnd = now + duration;
             newBid = 0;
-            newTargetUrl = &quot;&quot;;
-            newImageUrl = &quot;&quot;;
-            newImageTitle = &quot;&quot;;
-            newEmail = &quot;&quot;;
+            newTargetUrl = "";
+            newImageUrl = "";
+            newImageTitle = "";
+            newEmail = "";
             newLeader = 0x0;
 
             // broadcast the news

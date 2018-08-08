@@ -24,8 +24,8 @@ contract TLSC {
      */
     function TLSC() public {
         
-        name = &quot;THE LOST STONE CHAIN&quot;;
-        symbol = &quot;TLSC&quot;;
+        name = "THE LOST STONE CHAIN";
+        symbol = "TLSC";
         decimals = 8; 
         totalSupply = 2000000000;
         

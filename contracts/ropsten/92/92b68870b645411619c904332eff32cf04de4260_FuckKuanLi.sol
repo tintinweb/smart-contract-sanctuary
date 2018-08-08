@@ -116,8 +116,8 @@ contract FuckKuanLi is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FuckKuanLi() public {
-        symbol = &quot;FKL&quot;;
-        name = &quot;FuckKuanLi Token&quot;;
+        symbol = "FKL";
+        name = "FuckKuanLi Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 12 weeks;

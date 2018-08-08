@@ -113,8 +113,8 @@ contract Preesh is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Preesh() public {
-        symbol = &quot;PREESH&quot;;
-        name = &quot;Preesh Token&quot;;
+        symbol = "PREESH";
+        name = "Preesh Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x473a238aA84f1fAA08D9373a216770Fb6aB21a16] = _totalSupply;

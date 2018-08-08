@@ -2,10 +2,10 @@ pragma solidity ^0.4.24;
 
 contract TestReturnValues {
  
-    string message = &quot;&quot;;
+    string message = "";
     
     function retrunError() public {
-        message = &quot;I&#39;m an error message&quot;;
+        message = "I&#39;m an error message";
         require(false, message);
     }   
 }

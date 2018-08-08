@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -89,7 +89,7 @@ contract Ownable {
 contract MultiSender is Ownable {
     using SafeMath for uint;
 
-    string public constant NAME = &quot;MultiSender&quot;;
+    string public constant NAME = "MultiSender";
 
     event Transfer(address indexed holder, uint amount);
     

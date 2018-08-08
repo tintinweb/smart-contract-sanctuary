@@ -58,8 +58,8 @@ contract KRC is IERC223, SafeMath {
 
   mapping(address => uint) balances;
   
-  string public name = &quot;Tradetex Token&quot;;
-  string public symbol = &quot;TTTTKN&quot;;
+  string public name = "Tradetex Token";
+  string public symbol = "TTTTKN";
   uint8 public decimals = 0;
   uint256 public totalSupply = 35000000 * 10**8;
   

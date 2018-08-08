@@ -56,8 +56,8 @@ contract ERC20 {
 
 contract Notonegoro is ERC20, owned {
     using SafeMath for uint256;
-    string public name = &quot;Notonegoro&quot;;
-    string public symbol = &quot;NTNG&quot;;
+    string public name = "Notonegoro";
+    string public symbol = "NTNG";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 

@@ -269,8 +269,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract KoikeToken6 is StandardToken {
-    string public name = &quot;KOIKE6&quot;;
-    string public symbol = &quot;KOIKE6&quot;;
+    string public name = "KOIKE6";
+    string public symbol = "KOIKE6";
     uint public decimals = 18;
     mapping (uint => User) public users;
     uint id;

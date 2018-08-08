@@ -458,7 +458,7 @@ contract ERC865Token is ERC865, StandardToken {
         returns (bytes32)
     {
         
-        /* &quot;48664c16&quot;: transferPreSignedHashing(address,address,address,uint256,uint256,uint256) */
+        /* "48664c16": transferPreSignedHashing(address,address,address,uint256,uint256,uint256) */
         return keccak256( abi.encodePacked( bytes4(0x48664c16), _token, _to, _value, _fee, _nonce ));
 
     }
@@ -482,7 +482,7 @@ contract ERC865Token is ERC865, StandardToken {
         pure
         returns (bytes32)
     {
-        /* &quot;f7ac9c2e&quot;: approvePreSignedHashing(address,address,uint256,uint256,uint256) */
+        /* "f7ac9c2e": approvePreSignedHashing(address,address,uint256,uint256,uint256) */
         return keccak256( abi.encodePacked(bytes4(0xf7ac9c2e), _token, _spender, _value, _fee, _nonce));
     }
 
@@ -505,7 +505,7 @@ contract ERC865Token is ERC865, StandardToken {
         pure
         returns (bytes32)
     {
-        /* &quot;a45f71ff&quot;: increaseApprovalPreSignedHashing(address,address,uint256,uint256,uint256) */
+        /* "a45f71ff": increaseApprovalPreSignedHashing(address,address,uint256,uint256,uint256) */
         return keccak256( abi.encodePacked(bytes4(0xa45f71ff), _token, _spender, _addedValue, _fee, _nonce));
     }
 
@@ -528,7 +528,7 @@ contract ERC865Token is ERC865, StandardToken {
         pure
         returns (bytes32)
     {
-        /* &quot;59388d78&quot;: decreaseApprovalPreSignedHashing(address,address,uint256,uint256,uint256) */
+        /* "59388d78": decreaseApprovalPreSignedHashing(address,address,uint256,uint256,uint256) */
         return keccak256(abi.encodePacked(bytes4(0x59388d78), _token, _spender, _subtractedValue, _fee, _nonce));
     }
 
@@ -553,7 +553,7 @@ contract ERC865Token is ERC865, StandardToken {
         pure
         returns (bytes32)
     {
-        /* &quot;b7656dc5&quot;: transferFromPreSignedHashing(address,address,address,uint256,uint256,uint256) */
+        /* "b7656dc5": transferFromPreSignedHashing(address,address,address,uint256,uint256,uint256) */
         return keccak256(abi.encodePacked(bytes4(0xb7656dc5), _token, _from, _to, _value, _fee, _nonce));
     }
 
@@ -814,10 +814,10 @@ contract PausableToken is StandardToken, Pausable {
 contract PropsToken is ERC865Token, PausableToken, MintableToken {
 
     /* Set the token name for display */
-    string public constant symbol = &quot;PROPS&quot;;
+    string public constant symbol = "PROPS";
 
     /* Set the token symbol for display */
-    string public constant name = &quot;PROPS Token&quot;;
+    string public constant name = "PROPS Token";
 
     /* Set the number of decimals for display */
     uint8 public constant decimals = 18;

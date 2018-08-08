@@ -30,9 +30,9 @@ library SafeMath {                             //SafeMath.sol
 contract QurozToken {
   using SafeMath for uint256;
   address public owner;                                              //Ownable.sol
-  string public name = &quot;Qfora&quot;;                                      //DetailedERC20.sol
-  string public symbol = &quot;Quroz&quot;;                                    //DetailedERC20.sol
-  string public version = &quot;Quroz v1.1&quot;;              // new
+  string public name = "Qfora";                                      //DetailedERC20.sol
+  string public symbol = "Quroz";                                    //DetailedERC20.sol
+  string public version = "Quroz v1.1";              // new
   uint256 public decimals = 18;                                        //DetailedERC20.sol  
   uint256 totalSupply_ = 12e8 * (10**uint256(decimals));             //BasicToken.sol
   uint256 public cap = totalSupply_;                                 //CappedToken.sol
@@ -47,7 +47,7 @@ contract QurozToken {
   event OwnershipTransferred(address indexed previousOwner, address indexed newOwner); //Ownable.sol
   event Pause();                                                                   //Pausable.sol
   event Unpause();                                                                 //Pausable.sol
-  event Mint(address indexed to, uint256 amount, string reason);                   //MintableToken.sol, &quot;reason&quot; added
+  event Mint(address indexed to, uint256 amount, string reason);                   //MintableToken.sol, "reason" added
   event MintFinished();                                                            //MintableToken.sol
   event MintStarted(string reason);                      // new
   event Lock(address indexed LockedAddress);             // new. lock each address

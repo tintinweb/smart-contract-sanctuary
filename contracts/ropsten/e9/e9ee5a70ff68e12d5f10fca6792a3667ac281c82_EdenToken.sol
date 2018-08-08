@@ -62,8 +62,8 @@ contract BasicToken {
 }
 contract EdenToken is BasicToken, owned {
     using SafeMath for uint256;
-    string public name = &quot;Eden Token&quot;;
-    string public symbol= &quot;EDT&quot;;
+    string public name = "Eden Token";
+    string public symbol= "EDT";
     uint8 public decimals = 8;
     uint256 public totalSupply = 200000000;  
     mapping (address => uint256) public balanceOf;

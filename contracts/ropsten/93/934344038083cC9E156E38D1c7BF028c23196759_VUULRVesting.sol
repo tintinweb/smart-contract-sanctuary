@@ -73,7 +73,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -432,8 +432,8 @@ contract XClaimable is Claimable {
 }
 
 contract VUULRTokenConfig {
-    string public constant NAME = &quot;Vuulr Token&quot;;
-    string public constant SYMBOL = &quot;VUU&quot;;
+    string public constant NAME = "Vuulr Token";
+    string public constant SYMBOL = "VUU";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
     uint public constant TOTALSUPPLY = 1000000000 * DECIMALSFACTOR;

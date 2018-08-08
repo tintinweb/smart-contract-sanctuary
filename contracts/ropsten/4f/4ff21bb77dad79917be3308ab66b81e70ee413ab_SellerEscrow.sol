@@ -125,7 +125,7 @@ contract SellerEscrow is SafeMath {
                        
                        //Reject the incoming eth
                         msg.sender.transfer(msg.value);
-                        emit PurchaseRejected(&quot;Escrow Token transfer failed&quot;); 
+                        emit PurchaseRejected("Escrow Token transfer failed"); 
                         return false;
                        
                 }
@@ -134,7 +134,7 @@ contract SellerEscrow is SafeMath {
         else{
             
                         msg.sender.transfer(msg.value);
-                         emit PurchaseRejected(&quot;Not enough balance in escrow&quot;); 
+                         emit PurchaseRejected("Not enough balance in escrow"); 
         }
         
        

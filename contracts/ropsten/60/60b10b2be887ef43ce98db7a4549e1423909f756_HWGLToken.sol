@@ -17,9 +17,9 @@ contract HWGLToken {
   using SafeMath for uint256;
 
   address public owner;
-  string public name = &quot;HWG Live&quot;;
-  string public symbol = &quot;HWGL&quot;;
-  string public icon = &quot;QmbKD9oXotab7RCpmdKKvq8QmUkAJMVsTMsked6hS2cgHA&quot;;
+  string public name = "HWG Live";
+  string public symbol = "HWGL";
+  string public icon = "QmbKD9oXotab7RCpmdKKvq8QmUkAJMVsTMsked6hS2cgHA";
   uint256 public decimals = 10;
   uint256 public totalSupply = 0;
   uint256 public cap = 1000000000000000000; // 100,000,000 x 10^10;

@@ -1,5 +1,5 @@
 pragma solidity ^0.4.23;
-// import &quot;./doccoin.sol&quot;;
+// import "./doccoin.sol";
 contract owned {
     address public owner;
 

@@ -4,11 +4,11 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract VenusToken {
     // Public variables of the token
-    string public name = &quot;VenusToken&quot;;
-    string public symbol = &quot;VNS&quot;;
+    string public name = "VenusToken";
+    string public symbol = "VNS";
     uint8 public decimals = 18;
     uint256 public totalSupply = 54053687735;
-    //54053687735,&quot;VenusToken&quot;,&quot;VNS&quot;
+    //54053687735,"VenusToken","VNS"
 
     // This creates an array with all balances
     mapping (address => uint256) public balanceOf;

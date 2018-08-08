@@ -123,9 +123,9 @@ contract BACToken is Token{
 
         balances[msg.sender] = 500000000 * 1000000000000000000;
         totalSupply = 500000000 * 1000000000000000000;
-        name = &quot;Bacchus&quot;;
+        name = "Bacchus";
         decimals = 18;
-        symbol = &quot;BAC&quot;;
+        symbol = "BAC";
         unitsOneEthCanBuy = 100;
         minimumContribution = 10 finney;
         fundsWallet = msg.sender;
@@ -170,7 +170,7 @@ contract BACToken is Token{
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {
             revert();
         }
 

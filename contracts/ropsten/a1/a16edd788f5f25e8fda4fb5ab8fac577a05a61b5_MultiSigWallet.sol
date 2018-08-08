@@ -30,7 +30,7 @@ contract MultiSigWallet{
     function submitTransactionWithSignatures(address _destination, uint256 _value,  uint8[] _v, bytes32[] _r,bytes32[] _s) public{
         require(_destination != 0 && _destination!=address(this));
 
-        bytes32 _msgHash = keccak256(&quot;ETHER&quot;, _destination, _value, sequenceId);
+        bytes32 _msgHash = keccak256("ETHER", _destination, _value, sequenceId);
         verifySignatures(_msgHash, _v, _r,_s);
         _destination.transfer(_value);
         emit Transacted(_destination,0,_value);
@@ -41,7 +41,7 @@ contract MultiSigWallet{
     function submitTransactionWithSignaturesToken(address _destination,address _tokenContractAddress,uint256 _value, uint8[] _v, bytes32[] _r,bytes32[] _s) public{
         require(_destination != 0 &&_destination!=address(this));
 
-        bytes32 _msgHash = keccak256(&quot;TOKEN&quot;, _destination, _value, sequenceId);
+        bytes32 _msgHash = keccak256("TOKEN", _destination, _value, sequenceId);
         verifySignatures(_msgHash, _v, _r,_s);
         ERC20Interface instance = ERC20Interface(_tokenContractAddress);
         require(instance.transfer(_destination,_value));

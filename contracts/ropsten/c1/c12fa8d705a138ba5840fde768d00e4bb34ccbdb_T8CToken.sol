@@ -72,8 +72,8 @@ contract StandardToken is ERC20 {
 contract T8CToken is StandardToken {
 
 	//FIELDS
-	string public name = &quot;T8Coin&quot;;
-    string public symbol = &quot;T8C&quot;;
+	string public name = "T8Coin";
+    string public symbol = "T8C";
     uint public decimals = 3;
 
 	//INITIALIZATION

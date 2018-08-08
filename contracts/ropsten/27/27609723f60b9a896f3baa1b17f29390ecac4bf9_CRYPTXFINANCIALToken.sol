@@ -51,8 +51,8 @@ contract CRYPTXFINANCIALToken is Interface, SafeMath {
     event FrozenFunds(address target, bool frozen);  // This generates a public event on the ethereum blockchain for freeze notification
 
     constructor() public {
-        symbol = &quot;CRYPTX2&quot;;
-        name = &quot;CRYPTX FINANCIAL Token&quot;;
+        symbol = "CRYPTX2";
+        name = "CRYPTX FINANCIAL Token";
         decimals = 18;
         owner = msg.sender; // Assigns the contract depoloyer as the contract owner
         totalSupply = 250000000000000000000000000; // Total number of tokens minted

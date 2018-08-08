@@ -113,8 +113,8 @@ contract KARMAtoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KARMAtoken() public {
-        symbol = &quot;KRM&quot;;
-        name = &quot;KARMAtoken&quot;;
+        symbol = "KRM";
+        name = "KARMAtoken";
         decimals = 2;
         _totalSupply = 100000000;
         balances[0x864e25214620e66BDBBc96a3C58Bf82cFaD7c4f7] = _totalSupply;

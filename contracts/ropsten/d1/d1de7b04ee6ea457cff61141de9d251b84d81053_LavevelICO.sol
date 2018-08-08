@@ -70,7 +70,7 @@ library SafeMath {
 
 /**
  * @title Ownable
- * @dev Ownable has an owner address to simplify &quot;user permissions&quot;.
+ * @dev Ownable has an owner address to simplify "user permissions".
  */
 contract Ownable {
   address public owner;

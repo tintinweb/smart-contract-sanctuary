@@ -114,8 +114,8 @@ contract loik is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function loik() public {
-        symbol = &quot;loik&quot;;
-        name = &quot;loik Token&quot;;
+        symbol = "loik";
+        name = "loik Token";
         decimals = 18;
         _totalSupply = 1000000000;
         bonusEnds = now + 2 hours;

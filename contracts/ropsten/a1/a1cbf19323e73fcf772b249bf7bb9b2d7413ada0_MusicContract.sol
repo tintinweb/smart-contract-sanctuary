@@ -188,7 +188,7 @@ contract MusicContract {
     
     function DoSponsorPayout(Music musicObj) private
     {
-        //logString(&quot;In sponsor payout function&quot;);
+        //logString("In sponsor payout function");
         
         //sponsor   
         localIntAsPerNeed = musicObj.musicId;
@@ -228,7 +228,7 @@ contract MusicContract {
             sponsors[counter].amountEarned = sponsors[counter].amountEarned.add(amtToSend);
             musicObj.amountToBePaid = musicObj.amountToBePaid.sub(amtToSend);
         }
-        //logString(&quot;paid out to sponsors&quot;);        
+        //logString("paid out to sponsors");        
         
         
         //doing voter payout
@@ -242,7 +242,7 @@ contract MusicContract {
                 voters[counter].amountEarned = voters[counter].amountEarned.add(perVoterPayout);
                 musicObj.amountToBePaid = musicObj.amountToBePaid.sub(perVoterPayout);
             }
-            //logString(&quot;paid out to voters&quot;);
+            //logString("paid out to voters");
         }
         else
         {
@@ -254,11 +254,11 @@ contract MusicContract {
         localAddressAsPerNeed = musicObj.musician;
         token.mint(wallet,localAddressAsPerNeed,musicianPayout);
         musicObj.amountToBePaid = musicObj.amountToBePaid.sub(musicianPayout);
-        //logString(&quot;paid out to musicians&quot;);
+        //logString("paid out to musicians");
                 
         //catering for system payout - no token transfers as the tokens are already in the owner wallet
         musicObj.amountToBePaid = musicObj.amountToBePaid.sub(systemPayout);
-        //logString(&quot;paid out to system&quot;);
+        //logString("paid out to system");
         
         require(musicObj.amountToBePaid == 0);
     }
@@ -266,7 +266,7 @@ contract MusicContract {
     {
         uint j = 0;
         //sponsor   
-        //logString(&quot;In voter payout function&quot;);
+        //logString("In voter payout function");
         
         //calculating voter payout
         voters = musicVoterList[musicObj.musicId];
@@ -292,16 +292,16 @@ contract MusicContract {
             voters[j].amountEarned = voters[j].amountEarned.add(perVoterPayout);
             musicObj.amountToBePaid = musicObj.amountToBePaid.sub(perVoterPayout);
         }
-        //logString(&quot;voter payout done&quot;);
+        //logString("voter payout done");
         
         //doing musician payout
         token.mint(wallet,musicObj.musician,musicianPayout);
         musicObj.amountToBePaid = musicObj.amountToBePaid.sub(musicianPayout);
-        //logString(&quot;musician payout done&quot;);
+        //logString("musician payout done");
         
         //catering for system payout - not doing manual transfer as all the tokens are already in the wallet
         musicObj.amountToBePaid = musicObj.amountToBePaid.sub(systemPayout);
-        //logString(&quot;system payout done&quot;);
+        //logString("system payout done");
         
         require(musicObj.amountToBePaid == 0);            
     }
@@ -312,19 +312,19 @@ contract MusicContract {
         require(musicList[musId].isUnlocked == true);
         require(musicList[musId].amountToBePaid > 0);
         require(token.balanceOf(wallet)>=musicList[musId].amountToBePaid);
-        //logString(&quot;In music payout&quot;);
+        //logString("In music payout");
         bool unlock = musicList[musId].marketType;
         if (unlock == false)
         {
             //unlock type is sponsor
-            //logString(&quot;Unlock type is sponsor&quot;);
+            //logString("Unlock type is sponsor");
             DoSponsorPayout(musicList[musId]);
             musicList[musId].amountToBePaid = 0;
         }
         else
         {
             //unlock type is voter
-            //logString(&quot;Unlock type is voter&quot;);
+            //logString("Unlock type is voter");
             DoVoterPayout(musicList[musId]);
             musicList[musId].amountToBePaid = 0;
         }
@@ -340,7 +340,7 @@ contract MusicContract {
         require (musicList[musId].amountLeftForUnlock>=sponsorAmount);
         token.mint(sponsorAddress,wallet,sponsorAmount);
         
-        //logString(&quot;sufficient payment done&quot;);
+        //logString("sufficient payment done");
         musicList[musId].amountLeftForUnlock = musicList[musId].amountLeftForUnlock.sub(sponsorAmount);
         musicList[musId].amountToBePaid = musicList[musId].amountToBePaid.add(sponsorAmount);
         sponsor = Sponsor({
@@ -350,11 +350,11 @@ contract MusicContract {
         });
                   
         musicSponsorList[musId].push(sponsor);
-        //logString(&quot;sponsor added&quot;);
+        //logString("sponsor added");
         if (musicList[musId].amountLeftForUnlock == 0)
         {
             musicList[musId].isUnlocked = true;
-            //logString(&quot;music unlocked&quot;);
+            //logString("music unlocked");
         }
     }
     
@@ -362,10 +362,10 @@ contract MusicContract {
     {
         require(musicList[musId].musicId == musId);
         require(musicList[musId].isUnlocked == false);
-        //logString(&quot;music found&quot;);
+        //logString("music found");
         voter = Voter({publicKey: voterPublicKey, amountEarned : 0});
         musicVoterList[musId].push(voter);
-        //logString(&quot;voter added&quot;);
+        //logString("voter added");
     }
     function unlockVoterMusic(uint musId) public
     {

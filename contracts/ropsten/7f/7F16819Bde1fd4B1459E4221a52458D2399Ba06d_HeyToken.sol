@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract HeyToken is StandardToken {
-  string public name    = &quot;Hey Token&quot;;
-  string public symbol  = &quot;HEY&quot;;
+  string public name    = "Hey Token";
+  string public symbol  = "HEY";
   uint8 public decimals = 18;
   uint public lastAddTime;
   address creator;

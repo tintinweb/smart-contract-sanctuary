@@ -24,9 +24,9 @@ contract Auction {
   event BidEvent(address indexed winner, uint indexed price, uint indexed timestamp); // cannot have event and struct with the same name
   event Refund(address indexed sender, uint indexed amount, uint indexed timestamp);
   
-  modifier onlyOwner { require(owner == msg.sender, &quot;only owner&quot;); _; }
-  modifier onlyWinner { require(winner == msg.sender, &quot;only winner&quot;); _; }
-  modifier ended { require(now > timestampEnd, &quot;not ended yet&quot;); _; }
+  modifier onlyOwner { require(owner == msg.sender, "only owner"); _; }
+  modifier onlyWinner { require(winner == msg.sender, "only winner"); _; }
+  modifier ended { require(now > timestampEnd, "not ended yet"); _; }
 
   function setDescription(string _description) public onlyOwner() {
     description = _description;
@@ -37,7 +37,7 @@ contract Auction {
   }
 
   constructor(uint _price, string _description, uint _timestampEnd, address _beneficiary) public {
-    require(_timestampEnd > now, &quot;end of the auction must be in the future&quot;);
+    require(_timestampEnd > now, "end of the auction must be in the future");
     owner = msg.sender;
     price = _price;
     description = _description;
@@ -52,7 +52,7 @@ contract Auction {
       return;
     }
 
-    require(now < timestampEnd, &quot;auction has ended&quot;); // sending ether only allowed before the end
+    require(now < timestampEnd, "auction has ended"); // sending ether only allowed before the end
 
     if (bids[msg.sender] > 0) { // First we add the bid to an existing bid
       bids[msg.sender] += msg.value;
@@ -62,9 +62,9 @@ contract Auction {
     }
 
     if (initialPrice) {
-      require(bids[msg.sender] >= price, &quot;bid too low, minimum is the initial price&quot;);
+      require(bids[msg.sender] >= price, "bid too low, minimum is the initial price");
     } else {
-      require(bids[msg.sender] >= (price * 5 / 4), &quot;bid too low, minimum 25% increment&quot;);
+      require(bids[msg.sender] >= (price * 5 / 4), "bid too low, minimum 25% increment");
     }
     
     if (now > timestampEnd - increaseTimeIfBidBeforeEnd) {
@@ -78,8 +78,8 @@ contract Auction {
   }
 
   function finalize() public ended() onlyOwner() {
-    require(finalized == false, &quot;can withdraw only once&quot;);
-    require(initialPrice == false, &quot;can withdraw only if there were bids&quot;);
+    require(finalized == false, "can withdraw only once");
+    require(initialPrice == false, "can withdraw only if there were bids");
 
     finalized = true;
     beneficiary.transfer(price);
@@ -97,8 +97,8 @@ contract Auction {
   }   
 
   function refund() public {
-    require(msg.sender != winner, &quot;winner cannot refund&quot;);
-    require(bids[msg.sender] > 0, &quot;refunds only allowed if you sent something&quot;);
+    require(msg.sender != winner, "winner cannot refund");
+    require(bids[msg.sender] > 0, "refunds only allowed if you sent something");
 
     uint refundValue = bids[msg.sender];
     bids[msg.sender] = 0; // reentrancy fix, setting to zero first
@@ -109,7 +109,7 @@ contract Auction {
 
 }
 
-// 1, &quot;something&quot;, 1529659548, &quot;0xca35b7d915458ef540ade6068dfe2f44e8fa733c&quot;, 3
+// 1, "something", 1529659548, "0xca35b7d915458ef540ade6068dfe2f44e8fa733c", 3
 
 contract AuctionMultiple is Auction {
 
@@ -139,10 +139,10 @@ contract AuctionMultiple is Auction {
   event LogAddress(address addr);
   
   constructor(uint _price, string _description, uint _timestampEnd, address _beneficiary, uint _howMany) Auction(_price, _description, _timestampEnd, _beneficiary) public {
-    emit LogText(&quot;constructor&quot;);
+    emit LogText("constructor");
 
 
-    require(_howMany > 1, &quot;This auction is suited to multiple items. With 1 item only - use different code. Or remove this &#39;require&#39; - you&#39;ve been warned&quot;);
+    require(_howMany > 1, "This auction is suited to multiple items. With 1 item only - use different code. Or remove this &#39;require&#39; - you&#39;ve been warned");
     howMany = _howMany;
 
     bids[HEAD] = Bid({
@@ -168,7 +168,7 @@ contract AuctionMultiple is Auction {
   }
 
   function bid() public payable {
-    require(now < timestampEnd, &quot;cannot bid after the auction ends&quot;);
+    require(now < timestampEnd, "cannot bid after the auction ends");
 
     uint myBidId = contributors[msg.sender];
     uint insertionBidId;
@@ -194,8 +194,8 @@ contract AuctionMultiple is Auction {
         } 
 
     } else { // bid from this guy does not exist, create a new one
-        require(msg.value >= price, &quot;Not much sense sending less than the price, likely an error&quot;); // but it is OK to bid below the cut off bid, some guys may withdraw
-        require(lastBidID < 4000, &quot;Due to blockGas limit we limit number of people in the auction to 4000 - round arbitrary number - check test gasLimit folder for more info&quot;);
+        require(msg.value >= price, "Not much sense sending less than the price, likely an error"); // but it is OK to bid below the cut off bid, some guys may withdraw
+        require(lastBidID < 4000, "Due to blockGas limit we limit number of people in the auction to 4000 - round arbitrary number - check test gasLimit folder for more info");
 
         lastBidID++;
         acceptedBids++;
@@ -224,7 +224,7 @@ contract AuctionMultiple is Auction {
   // This is to simplify the case of increasing bids (can go upwards, cannot go lower)
   // NOTE: blockSize gas limit in case of so many bids (wishful thinking)
   function searchInsertionPoint(uint _contribution, uint _startSearch) view public returns (uint) {
-    require(_contribution > bids[_startSearch].value, &quot;your contribution and _startSearch does not make sense, it will search in a wrong direction&quot;);
+    require(_contribution > bids[_startSearch].value, "your contribution and _startSearch does not make sense, it will search in a wrong direction");
 
     Bid memory lowerBid = bids[_startSearch];
     Bid memory higherBid;
@@ -242,7 +242,7 @@ contract AuctionMultiple is Auction {
 
   function getPosition(address addr) view public returns(uint) {
     uint bidId = contributors[addr];
-    require(bidId != 0, &quot;cannot ask for a position of a guy who is not on the list&quot;);
+    require(bidId != 0, "cannot ask for a position of a guy who is not on the list");
     uint position = 1;
 
     Bid memory currentBid = bids[HEAD];
@@ -263,7 +263,7 @@ contract AuctionMultiple is Auction {
   // What is the best practice here?
 
   function withdraw() public returns (bool) {
-    LogText(&quot;withdraw&quot;);
+    LogText("withdraw");
 
     bool result = withdraw(msg.sender);
     return result;
@@ -272,7 +272,7 @@ contract AuctionMultiple is Auction {
   function withdraw(address addr) private returns (bool) {
     uint myBidId = contributors[addr];
 
-    require(myBidId > 0, &quot;the guy with this address does not exist, makes no sense to witdraw&quot;);
+    require(myBidId > 0, "the guy with this address does not exist, makes no sense to witdraw");
 
     Bid memory myBid = bids[ myBidId ];
     Bid memory cutOffBid = bids[cutOffBidID];
@@ -301,8 +301,8 @@ contract AuctionMultiple is Auction {
   }
 
   function finalize() public ended() onlyOwner() {
-    require(finalized == false, &quot;can withdraw only once&quot;);
-    require(initialPrice == false, &quot;can withdraw only if there were bids&quot;);
+    require(finalized == false, "can withdraw only once");
+    require(initialPrice == false, "can withdraw only if there were bids");
 
     finalized = true;
     beneficiary.transfer(1); // TODO: calculate amount to witdraw

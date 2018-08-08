@@ -116,8 +116,8 @@ contract katoCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;KTC&quot;;
-        name = &quot;katoCoin Token&quot;;
+        symbol = "KTC";
+        name = "katoCoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

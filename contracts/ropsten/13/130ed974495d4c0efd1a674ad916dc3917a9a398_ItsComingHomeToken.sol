@@ -116,8 +116,8 @@ contract ItsComingHomeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ItsComingHomeToken() public {
-        symbol = &quot;ICH&quot;;
-        name = &quot;Its Coming Home Token&quot;;
+        symbol = "ICH";
+        name = "Its Coming Home Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

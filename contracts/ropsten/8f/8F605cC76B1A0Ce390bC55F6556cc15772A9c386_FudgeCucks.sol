@@ -113,8 +113,8 @@ contract FudgeCucks is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FudgeCucks() public {
-        symbol = &quot;FCUCKS&quot;;
-        name = &quot;Fudge Cucks&quot;;
+        symbol = "FCUCKS";
+        name = "Fudge Cucks";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x405ca2Ec4cD4A9a1E56047C0B174074844557f05] = _totalSupply;

@@ -107,8 +107,8 @@ contract Bags is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bags() public {
-        symbol = &quot;BAGS&quot;;
-        name = &quot;BAGS&quot;;
+        symbol = "BAGS";
+        name = "BAGS";
         decimals = 3;
         _totalSupply = 374000000000000;
         balances[0xc5C2f1d0D344150cEEFA9A31217620632C5d38B4] = _totalSupply;

@@ -113,8 +113,8 @@ contract MyFairToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MyFairToken() public {
-        symbol = &quot;FAIRTOCK0&quot;;
-        name = &quot;Fair Token&quot;;
+        symbol = "FAIRTOCK0";
+        name = "Fair Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x952683a88F7dcBE0B308f29db6b5A69DcfbE2940] = _totalSupply;

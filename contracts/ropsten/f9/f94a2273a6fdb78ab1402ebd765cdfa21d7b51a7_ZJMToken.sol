@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract ZJMToken {
 
-    string public name = &quot;ZJMToken&quot;;      //  token name
-    string public symbol = &quot;ZJM&quot;;           //  token symbol
+    string public name = "ZJMToken";      //  token name
+    string public symbol = "ZJM";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

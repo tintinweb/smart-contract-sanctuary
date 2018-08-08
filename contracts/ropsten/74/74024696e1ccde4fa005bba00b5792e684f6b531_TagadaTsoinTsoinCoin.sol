@@ -113,8 +113,8 @@ contract TagadaTsoinTsoinCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TagadaTsoinTsoinCoin() public {
-        symbol = &quot;TTTC&quot;;
-        name = &quot;TagadaTsoinTsoinCoin&quot;;
+        symbol = "TTTC";
+        name = "TagadaTsoinTsoinCoin";
         decimals = 4;
         _totalSupply = 432580000000;
         balances[0x38219a0778FC0b34E42bf903db674f0fec45571D] = _totalSupply;

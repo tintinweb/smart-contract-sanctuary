@@ -113,8 +113,8 @@ contract FxxkToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FxxkToken() public {
-        symbol = &quot;FXXK&quot;;
-        name = &quot;Fxxk Token&quot;;
+        symbol = "FXXK";
+        name = "Fxxk Token";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;  // 210 b, just lick btc
         balances[0xdee81Dde8EF61bAaE65F3CBEaF8191E3668C7916] = _totalSupply;

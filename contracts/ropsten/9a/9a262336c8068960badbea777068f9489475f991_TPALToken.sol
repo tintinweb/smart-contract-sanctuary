@@ -223,7 +223,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -267,8 +267,8 @@ contract TPALToken is StandardToken, Ownable {
   /**
    * @dev Token Contract Constants
    */
-  string    public constant name     = &quot;TPAL Token&quot;;
-  string    public constant symbol   = &quot;TPAL&quot;;
+  string    public constant name     = "TPAL Token";
+  string    public constant symbol   = "TPAL";
   uint8     public constant decimals = 18;
   uint256   public constant DECIMAL_FACTOR = 10 ** uint256(decimals);
   uint256   public constant TOTAL_SUPPLY = 1000000000 * DECIMAL_FACTOR;
@@ -303,7 +303,7 @@ contract TPALToken is StandardToken, Ownable {
    * @param _to - Address to transfer to
    * @param _value - Value to transfer
    *
-   * &quot;Overloaded&quot; Function of ERC20Basic&#39;s transfer
+   * "Overloaded" Function of ERC20Basic&#39;s transfer
    *
    */
   function transfer(address _to, uint256 _value) public
@@ -318,7 +318,7 @@ contract TPALToken is StandardToken, Ownable {
    * @param _to - Address to transfer to
    * @param _value - Value to transfer
    *
-   * &quot;Overloaded&quot; Function of ERC20&#39;s transferFrom
+   * "Overloaded" Function of ERC20&#39;s transferFrom
    * added with modifiers,
    *    1. isValidDestination
    *

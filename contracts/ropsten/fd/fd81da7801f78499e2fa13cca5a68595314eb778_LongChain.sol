@@ -113,8 +113,8 @@ contract LongChain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LongChain() public {
-        symbol = &quot;Long&quot;;
-        name = &quot;LongChain&quot;;
+        symbol = "Long";
+        name = "LongChain";
         decimals = 18;
         _totalSupply = 18500000;
         balances[owner] = _totalSupply;

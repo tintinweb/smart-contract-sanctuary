@@ -113,8 +113,8 @@ contract SEVENTNET is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SEVENTNET() public {
-        symbol = &quot;S7N&quot;;
-        name = &quot;SEVENT7NET&quot;;
+        symbol = "S7N";
+        name = "SEVENT7NET";
         decimals = 18;
         _totalSupply = 1000000000000000000000;
         balances[0x11E97659417B52A164597Dc9717598C48793C649] = _totalSupply; //MEW address here

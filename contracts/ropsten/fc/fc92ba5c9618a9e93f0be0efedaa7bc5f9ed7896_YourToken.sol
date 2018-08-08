@@ -113,8 +113,8 @@ contract YourToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YourToken() public {
-        symbol = &quot;YRT&quot;;
-        name = &quot;YourToken&quot;;
+        symbol = "YRT";
+        name = "YourToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x984fF778515DD9C3387E6638D187548F432Ea56e] = _totalSupply;

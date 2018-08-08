@@ -72,8 +72,8 @@ contract DeltaChain1 is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;DeltaChain1 Token&quot;;
-    string public constant symbol = &quot;DELTA1&quot;;
+    string public constant name = "DeltaChain1 Token";
+    string public constant symbol = "DELTA1";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

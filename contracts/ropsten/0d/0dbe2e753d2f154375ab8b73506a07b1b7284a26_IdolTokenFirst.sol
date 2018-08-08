@@ -113,8 +113,8 @@ contract IdolTokenFirst is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IdolToken1() public {
-        symbol = &quot;Idol1&quot;;
-        name = &quot;Idol Token 1&quot;;
+        symbol = "Idol1";
+        name = "Idol Token 1";
         decimals = 18;
         _totalSupply = 11250000000000000000000000000;
         balances[0xDde129F2a9314bc69844E2D134e8f7766C3C8E99] = _totalSupply;

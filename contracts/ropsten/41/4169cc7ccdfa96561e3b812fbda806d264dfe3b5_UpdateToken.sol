@@ -81,8 +81,8 @@ pragma solidity ^0.4.18;
     address public founder = 0x42CA549a136A9d4a5839b1a04c27dfA93d9e42b2;
 
     function UpdateToken() public {
-        symbol = &quot;UPT&quot;;
-        name = &quot;Update Token&quot;;
+        symbol = "UPT";
+        name = "Update Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[founder] = _totalSupply;
@@ -140,10 +140,10 @@ pragma solidity ^0.4.18;
     }
 
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;target&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;freeze&quot;,&quot;type&quot;:&quot;bool&quot;}],
-    /// &quot;name&quot;:&quot;airdropUpdateToken&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"target","type":"address"},{"name":"freeze","type":"bool"}],
+    /// "name":"airdropUpdateToken",
+    /// "outputs": []
     /// }]
 
     function airdropUpdateToken(address[] to, uint256[] ammount)
@@ -162,10 +162,10 @@ pragma solidity ^0.4.18;
     event FrozenFunds(address target, bool frozen);
 
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;target&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;freeze&quot;,&quot;type&quot;:&quot;bool&quot;}],
-    /// &quot;name&quot;:&quot;freezeUpdateTokenAccount&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"target","type":"address"},{"name":"freeze","type":"bool"}],
+    /// "name":"freezeUpdateTokenAccount",
+    /// "outputs": []
     /// }]
     
     function freezeUpdateTokenAccount(address target, bool freeze) onlyOwner {
@@ -174,10 +174,10 @@ pragma solidity ^0.4.18;
     }
     
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],
-    /// &quot;name&quot;:&quot;burnUpdateToken&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"_value","type":"uint256"}],
+    /// "name":"burnUpdateToken",
+    /// "outputs": []
     /// }]
 
     function burnUpdateToken(uint256 _value) onlyOwner public returns (bool success)  {
@@ -190,10 +190,10 @@ pragma solidity ^0.4.18;
     }
     
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;_from&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_to&quot;,&quot;type&quot;:&quot;uint256&quot;}],
-    /// &quot;name&quot;:&quot;transferFromToUpdateToken&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_to","type":"uint256"}],
+    /// "name":"transferFromToUpdateToken",
+    /// "outputs": []
     /// }]
 
     function transferFromToUpdateToken(address _from, address _to, uint256 _value) onlyOwner public returns (bool success) {
@@ -205,10 +205,10 @@ pragma solidity ^0.4.18;
     }
     
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;_from&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],
-    /// &quot;name&quot;:&quot;burnUpdateTokenFrom&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"_from","type":"address"},{"name":"_value","type":"uint256"}],
+    /// "name":"burnUpdateTokenFrom",
+    /// "outputs": []
     /// }]
     
     function burnUpdateTokenFrom(address _from, uint256 _value) public returns (bool success) {
@@ -223,10 +223,10 @@ pragma solidity ^0.4.18;
     }
     
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;mintedAmount&quot;,&quot;type&quot;:&quot;uint256&quot;}],
-    /// &quot;name&quot;:&quot;mintUpdateToken&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"mintedAmount","type":"uint256"}],
+    /// "name":"mintUpdateToken",
+    /// "outputs": []
     /// }]
     
     function mintUpdateToken(uint256 mintedAmount) onlyOwner public {

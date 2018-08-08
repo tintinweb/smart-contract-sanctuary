@@ -352,8 +352,8 @@ contract ConstantValues {
     
     uint8 public constant decimals = 18;
     uint256 constant decimal_multiplier = 10 ** uint(decimals);
-    string public constant name = &quot;AEXmock&quot;;
-    string public constant symbol = &quot;AEXm&quot;;
+    string public constant name = "AEXmock";
+    string public constant symbol = "AEXm";
 }
 
 contract AEXmockTest is ConstantValues, FreezableMintableToken, BurnableToken, Pausable {

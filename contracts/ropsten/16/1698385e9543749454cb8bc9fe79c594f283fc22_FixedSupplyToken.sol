@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;PYRAMID&quot;;
-        name = &quot;Fixed Supply Pyramid Token&quot;;
+        symbol = "PYRAMID";
+        name = "Fixed Supply Pyramid Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -113,8 +113,8 @@ contract DescartesToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DescartesToken() public {
-        symbol = &quot;DSC&quot;;
-        name = &quot;Descartes Token&quot;;
+        symbol = "DSC";
+        name = "Descartes Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x203Cc2a4Ba719192E211007cDE7Dc217bE8b4434] = _totalSupply;

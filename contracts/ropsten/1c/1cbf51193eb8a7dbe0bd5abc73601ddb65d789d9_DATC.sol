@@ -145,7 +145,7 @@ contract TokenERC is ERC20, ERC223, Owned {
      * @param _value the amount to send
      */
     function transfer(address _to, uint256 _value) public returns (bool) {
-        _transfer(msg.sender, _to, _value, &quot;&quot;);
+        _transfer(msg.sender, _to, _value, "");
         return true;
     }
     
@@ -164,7 +164,7 @@ contract TokenERC is ERC20, ERC223, Owned {
      * @param _value the amount to send
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-        return transferFrom(_from, _to, _value, &quot;&quot;);
+        return transferFrom(_from, _to, _value, "");
     }
 
     function transferFrom(address _from, address _to, uint _value, bytes _data) public returns (bool) {
@@ -290,8 +290,8 @@ contract DATC is TokenERC {
     function mintToken(address target, uint256 mintedAmount) onlyOwner public {
         balanceOf[target] = balanceOf[target].add(mintedAmount);
         totalSupply = totalSupply.add(mintedAmount);
-        emit Transfer(0, this, mintedAmount, &quot;&quot;);
-        emit Transfer(this, target, mintedAmount, &quot;&quot;);
+        emit Transfer(0, this, mintedAmount, "");
+        emit Transfer(this, target, mintedAmount, "");
     }
 
     /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
@@ -314,7 +314,7 @@ contract DATC is TokenERC {
     function buy() payable public {
         uint amount = msg.value.div(buyPrice);
         // calculates the amount
-        _transfer(this, msg.sender, amount, &quot;&quot;);
+        _transfer(this, msg.sender, amount, "");
         // makes the transfers
     }
 
@@ -324,7 +324,7 @@ contract DATC is TokenERC {
         address myAddress = this;
         require(myAddress.balance >= amount.mul(sellPrice));
         // checks if the contract has enough ether to buy
-        _transfer(msg.sender, this, amount, &quot;&quot;);
+        _transfer(msg.sender, this, amount, "");
         // makes the transfers
         msg.sender.transfer(amount.mul(sellPrice));
         // sends ether to the seller. It&#39;s important to do this last to avoid recursion attacks

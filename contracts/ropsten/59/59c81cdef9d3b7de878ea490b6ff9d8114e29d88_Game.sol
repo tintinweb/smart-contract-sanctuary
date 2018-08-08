@@ -101,8 +101,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DOTCH&quot;;
-        name = &quot;Diamond Of The Crypto Hill&quot;;
+        symbol = "DOTCH";
+        name = "Diamond Of The Crypto Hill";
         decimals = 0;
         _totalSupply = 10000000000;
         balances[this] = _totalSupply;

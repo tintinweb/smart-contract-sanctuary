@@ -135,7 +135,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -289,8 +289,8 @@ contract StandardToken is ERC20, BasicToken {
 * @dev VINYL
 */
 contract VinylToken is StandardToken, BurnableToken, Ownable {
-    string public constant name = &quot;Vinyl&quot;;
-    string public constant symbol = &quot;VINYL&quot;;
+    string public constant name = "Vinyl";
+    string public constant symbol = "VINYL";
     uint8 public constant decimals = 18;
     // locked tokens can not be transferred
     bool private isLocked = true;

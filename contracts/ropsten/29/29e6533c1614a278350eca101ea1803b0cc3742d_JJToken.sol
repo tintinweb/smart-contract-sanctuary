@@ -15,8 +15,8 @@ contract JJToken is IERC20 {
     
     uint public constant _totalSupply = 50000;
     
-    string public constant symbol = &quot;JJ&quot;;
-    string public constant name = &quot;JJ Token&quot;;
+    string public constant symbol = "JJ";
+    string public constant name = "JJ Token";
     uint8 public constant decimal = 3;
     
     mapping(address => uint256) balances;

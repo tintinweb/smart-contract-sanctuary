@@ -113,8 +113,8 @@ contract NZToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function NZToken() public {
-        symbol = &quot;NZ&quot;;
-        name = &quot;New Zone&quot;;
+        symbol = "NZ";
+        name = "New Zone";
         decimals = 12;
         _totalSupply = 5000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -113,8 +113,8 @@ contract JMToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JMToken() public {
-        symbol = &quot;JMT&quot;;
-        name = &quot;JM Token&quot;;
+        symbol = "JMT";
+        name = "JM Token";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0x01e439aBBDf27863336a84EDD111A3396EAf142b] = _totalSupply;

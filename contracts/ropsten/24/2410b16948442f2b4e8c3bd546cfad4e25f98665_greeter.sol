@@ -20,7 +20,7 @@ contract greeter is mortal {
     string greeting;
     /* this runs when the contract is executed */
     function greeter() public {
-        greeting = &quot;test22&quot;;
+        greeting = "test22";
     }
 
     /* main function */

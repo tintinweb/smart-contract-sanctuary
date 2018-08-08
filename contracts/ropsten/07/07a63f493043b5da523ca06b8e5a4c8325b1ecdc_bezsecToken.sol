@@ -113,8 +113,8 @@ contract bezsecToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;BES&quot;;
-        name = &quot;bezsec Token&quot;;
+        symbol = "BES";
+        name = "bezsec Token";
         decimals = 18;
         stoped = true;
         promotion = false;

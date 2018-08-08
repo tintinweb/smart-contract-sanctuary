@@ -113,8 +113,8 @@ contract EatToken is UnboundedRegularToken {
 
     uint public totalSupply = 1000*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;EatToken&quot;;
-    string constant public symbol = &quot;EAT&quot;;
+    string constant public name = "EatToken";
+    string constant public symbol = "EAT";
 
     function EatToken() {
         balances[msg.sender] = totalSupply;

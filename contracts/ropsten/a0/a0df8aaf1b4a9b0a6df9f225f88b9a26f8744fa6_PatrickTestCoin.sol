@@ -113,8 +113,8 @@ contract PatrickTestCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PatrickTestCoin() public {
-        symbol = &quot;PTST&quot;;
-        name = &quot;Patrick Test Coin&quot;;
+        symbol = "PTST";
+        name = "Patrick Test Coin";
         decimals = 18;
         // remove number of decimals in 0s to get actual total supply
         _totalSupply = 100000000000000000000000000;

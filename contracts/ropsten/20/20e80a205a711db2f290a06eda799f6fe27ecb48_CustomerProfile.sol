@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 contract CustomerProfile {
     
     
-    string constant NoneString = &quot;&quot;; 
+    string constant NoneString = ""; 
     bytes32 constant NoneBytes32 = bytes32(0);
     int64 constant NoneInt64 = int64(0);
     uint256 constant NoneUint256 = uint256(0);

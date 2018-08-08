@@ -72,8 +72,8 @@ contract SafiraToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function SafiraToken() public {
-        symbol = &quot;SAFIRA&quot;;
-        name = &quot;Safira Token&quot;;
+        symbol = "SAFIRA";
+        name = "Safira Token";
         decimals = 18;
         _totalSupply = 10000000000;
         _totalSupply = _totalSupply.mul(10 ** uint(decimals));

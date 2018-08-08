@@ -104,8 +104,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Payperblock is StandardToken {
 
-  string public constant name = &quot;Payperblock&quot;;
-  string public constant symbol = &quot;Payb&quot;;
+  string public constant name = "Payperblock";
+  string public constant symbol = "Payb";
   uint256 public constant decimals = 18;
   address public owner;
   

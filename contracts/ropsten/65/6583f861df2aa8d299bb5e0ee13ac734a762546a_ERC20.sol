@@ -16,7 +16,7 @@ contract ERC20Interface {
 }
 //pragma solidity ^0.4.20;
 
-//import &quot;./ERC20Interface.sol&quot;;
+//import "./ERC20Interface.sol";
 
 contract ERC20 is ERC20Interface {
 
@@ -25,7 +25,7 @@ contract ERC20 is ERC20Interface {
 
     function ERC20(string _symbol) public {
         totalSupply = 100000000;
-        name = &quot;BW Token&quot;;
+        name = "BW Token";
         symbol = _symbol;
         decimals = 18;
         balanceOf[msg.sender] = totalSupply;

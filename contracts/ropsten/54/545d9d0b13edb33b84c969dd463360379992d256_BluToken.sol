@@ -114,8 +114,8 @@ contract BluToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;0Blu&quot;;
-        name = &quot;0 Blu Token&quot;;
+        symbol = "0Blu";
+        name = "0 Blu Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xab180c5b69df130d5a1585375384152ffd5813de] = _totalSupply;

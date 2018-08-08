@@ -98,8 +98,8 @@ contract SparkChainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SparkChainToken() public {
-        symbol = &quot;SPC&quot;;
-        name = &quot;Spark Chain Token&quot;;
+        symbol = "SPC";
+        name = "Spark Chain Token";
         decimals = 18;
         _totalSupply = 10*1000*1000*1000**decimals;
         balances[0xE6D6436360479df8d3812a6DbfcbB60B532dB8FA] = _totalSupply;

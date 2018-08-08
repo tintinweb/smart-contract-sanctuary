@@ -114,8 +114,8 @@ contract GoodDayToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GOODDAY&quot;;
-        name = &quot;GoodDayToken&quot;;
+        symbol = "GOODDAY";
+        name = "GoodDayToken";
         decimals = 18;
         _totalSupply = 3000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

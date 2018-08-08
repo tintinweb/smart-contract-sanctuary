@@ -135,7 +135,7 @@ contract CyTestCoin is StandardToken {
         //调用你想要通知合约的 receiveApprovalcall 方法 ，这个方法是可以不需要包含在这个合约里的。
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //假设这么做是可以成功，不然应该调用vanilla approve。
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -32,8 +32,8 @@ contract OXY is owned {
     event Burn(address indexed from, uint256 value);
 
     constructor() public {
-        symbol = &quot;OXY&quot;;
-        name = &quot;Oxycoin&quot;;
+        symbol = "OXY";
+        name = "Oxycoin";
         decimals = 18;
         totalSupply = 150000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;

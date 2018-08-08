@@ -82,8 +82,8 @@ contract QueenXChain is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;QueenXChain&quot;;
-    string public constant symbol = &quot;QXC&quot;;
+    string public constant name = "QueenXChain";
+    string public constant symbol = "QXC";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 10000000000e18;

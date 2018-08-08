@@ -113,8 +113,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 contract Sunshine is StandardToken {
 
-    string public name = &quot;Sunshine&quot;;
-    string public symbol = &quot;SUNS&quot;;
+    string public name = "Sunshine";
+    string public symbol = "SUNS";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 21000000000000000000000000;
 

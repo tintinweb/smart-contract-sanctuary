@@ -76,8 +76,8 @@ contract Voodka is ERC20Interface, Owned, SafeMath {
 
 
     function Voodka() public {
-        symbol = &quot;VDT&quot;;
-        name = &quot;Voodka&quot;;
+        symbol = "VDT";
+        name = "Voodka";
         decimals = 10;
         _totalSupply = 210000000000000000;
         balances[0x64e32D56d5e4931e84a9f88BA5A6fDd76cfe80BC] = _totalSupply;

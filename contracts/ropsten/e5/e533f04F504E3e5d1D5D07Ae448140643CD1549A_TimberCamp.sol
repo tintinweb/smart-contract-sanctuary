@@ -14,7 +14,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -247,7 +247,7 @@ contract StandardTile is Galleasset, DataParser{
   //standard tile interface
   //called when tile is purchased from Land contract
   function onPurchase(uint16 _x,uint16 _y,uint8 _tile,address _owner,uint _amount) public returns (bool) {
-    require(msg.sender==getContract(&quot;Land&quot;) || msg.sender==getContract(&quot;LandLib&quot;));
+    require(msg.sender==getContract("Land") || msg.sender==getContract("LandLib"));
     landOwners[_x][_y][_tile] = _owner;
     emit LandOwner(_x,_y,_tile,_owner);
     return true;
@@ -271,10 +271,10 @@ contract StandardTile is Galleasset, DataParser{
   ///////internal helpers to keep stack thin enough//////////////////////////////////////////////////////////
   function _incrementTokenBalance(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) internal {
     tokenBalance[_x][_y][_tile][_token]+=_amount;
-    require(tokenBalance[_x][_y][_tile][_token]>=_amount,&quot;Overflow?&quot;);
+    require(tokenBalance[_x][_y][_tile][_token]>=_amount,"Overflow?");
   }
   function _decrementTokenBalance(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) internal {
-    require(tokenBalance[_x][_y][_tile][_token]>=_amount,&quot;This tile does not have enough of this token&quot;);
+    require(tokenBalance[_x][_y][_tile][_token]>=_amount,"This tile does not have enough of this token");
     tokenBalance[_x][_y][_tile][_token]-=_amount;
   }
 }
@@ -288,7 +288,7 @@ contract TimberCamp is StandardTile {
   bytes2 public max = 0x0666; // 2.4% chance? 1 out of evyer 46 or so? should be about 1 every 10 minutes?
 
   uint8 public maxCollect = 8;
-  bytes32 public resource = &quot;Timber&quot;;
+  bytes32 public resource = "Timber";
 
   //keep track of the last block they pulled resources so you know what is available
   mapping(uint16 => mapping(uint16 => mapping(uint8 => uint64))) public lastBlock;
@@ -299,7 +299,7 @@ contract TimberCamp is StandardTile {
     return true;
   }
 
-  function collect(uint16 _x,uint16 _y,uint8 _tile) public isGalleasset(&quot;TimberCamp&quot;) isLandOwner(_x,_y,_tile) returns (bool) {
+  function collect(uint16 _x,uint16 _y,uint8 _tile) public isGalleasset("TimberCamp") isLandOwner(_x,_y,_tile) returns (bool) {
     uint8 amount = canCollect(_x,_y,_tile);
     StandardToken resourceContract = StandardToken(getContract(resource));
     require(resourceContract.galleassMint(msg.sender,amount));

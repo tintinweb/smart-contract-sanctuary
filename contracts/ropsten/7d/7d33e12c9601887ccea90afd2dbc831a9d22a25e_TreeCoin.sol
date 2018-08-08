@@ -113,8 +113,8 @@ contract TreeCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TreeCoin() public {
-        symbol = &quot;TREC&quot;;
-        name = &quot;TreeCoin Token&quot;;
+        symbol = "TREC";
+        name = "TreeCoin Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb41F16F491B21BB50E8927EFD2EBA319429649c1] = _totalSupply;

@@ -88,8 +88,8 @@ contract WPPToken is ERC20, Ownable {
 	mapping  (address => uint256)                       _balances;
     mapping  (address => mapping (address => uint256))  _approvals;
 
-    string   public  name = &quot;WPPTOKEN&quot;;
-    string   public  symbol = &quot;WPP&quot;;
+    string   public  name = "WPPTOKEN";
+    string   public  symbol = "WPP";
     uint256  public  decimals = 18;
 
     event Mint(uint256 wad);

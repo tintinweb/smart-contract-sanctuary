@@ -12,7 +12,7 @@ contract testStorage {
     storingFunction x = new storingFunction();
     
     function storeSomething() public {
-        string memory stringToStore = &quot;0x12345678901234678 and stuff&quot;;
+        string memory stringToStore = "0x12345678901234678 and stuff";
         x.storeIt(stringToStore);
     }
     

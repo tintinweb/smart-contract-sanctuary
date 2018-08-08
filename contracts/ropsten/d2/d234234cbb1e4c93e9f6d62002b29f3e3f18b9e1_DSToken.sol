@@ -252,7 +252,7 @@ contract DSToken is DSTokenBase(0),Ownable {
     
     
     function DSToken() {
-        symbol = &quot;WPP&quot;;
+        symbol = "WPP";
     }
 
     function transfer(address dst, uint wad)  returns (bool) {
@@ -285,7 +285,7 @@ contract DSToken is DSTokenBase(0),Ownable {
 
     // Optional token name
 
-    string   public  name = &quot;&quot;;
+    string   public  name = "";
     
     function setName(string name_) onlyOwner {
         name = name_;

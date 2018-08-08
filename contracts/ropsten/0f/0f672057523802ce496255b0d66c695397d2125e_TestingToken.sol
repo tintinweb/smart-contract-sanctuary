@@ -95,8 +95,8 @@ contract TestingToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestingToken() public {
-        symbol = &quot;PTT&quot;;
-        name = &quot;Polybird Test Token&quot;;
+        symbol = "PTT";
+        name = "Polybird Test Token";
         decimals = 4;
         _totalSupply = 10000000000000;
         balances[0x1845ec6D0fE85580ABf9f9Eb39aE8A32F767F61d] = _totalSupply;

@@ -23,7 +23,7 @@ contract ZschopauToken {
     }
 
     function transfer(address _to, uint _value) public {
-        require(balanceOf[msg.sender] >= _value, &quot;Insufficient funds&quot;);
+        require(balanceOf[msg.sender] >= _value, "Insufficient funds");
 
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
@@ -32,8 +32,8 @@ contract ZschopauToken {
     }
 
     function transferFrom(address _from, address _to, uint _value) public returns (bool) {
-        require(approvals[_from][_to] <= _value, &quot;This amount is not approved!&quot;);
-        require(balanceOf[_from] >= _value, &quot;Insufficient funds&quot;);
+        require(approvals[_from][_to] <= _value, "This amount is not approved!");
+        require(balanceOf[_from] >= _value, "Insufficient funds");
 
         approvals[_to][_from] -= _value;
         balanceOf[_from] -= _value;

@@ -326,9 +326,9 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract ArtToken is MintableToken, PausableToken {
-    string public constant version = &quot;1.0&quot;;
-    string public constant name = &quot;ArtToken 01&quot;;
-    string public constant symbol = &quot;AET01&quot;;
+    string public constant version = "1.0";
+    string public constant name = "ArtToken 01";
+    string public constant symbol = "AET01";
     uint8 public constant decimals = 18;
 
     event MintMasterTransferred(address indexed previousMaster, address indexed newMaster);

@@ -113,8 +113,8 @@ contract FrankTestToken1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FrankTestToken1() public {
-        symbol = &quot;FTT&quot;;
-        name = &quot;Frank Test Token1&quot;;
+        symbol = "FTT";
+        name = "Frank Test Token1";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0xBd5a3852987Df0d141403DCBbD7aFEd14cfFD8F0] = _totalSupply;

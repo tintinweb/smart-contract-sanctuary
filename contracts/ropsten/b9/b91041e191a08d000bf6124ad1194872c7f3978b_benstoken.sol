@@ -116,8 +116,8 @@ contract benstoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitfwdToken() public {
-        symbol = &quot;BEN&quot;;
-        name = &quot;bens Token&quot;;
+        symbol = "BEN";
+        name = "bens Token";
         decimals = 8;
         bonusEnds = now + 1 weeks;
         endDate = now + 2 weeks;

@@ -116,8 +116,8 @@ contract Token3G is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Token3G() public {
-        symbol = &quot;3G&quot;;
-        name = &quot;Token3G&quot;;
+        symbol = "3G";
+        name = "Token3G";
         decimals = 18;
         bonusEnds = now + 6 weeks;
         endDate = now + 11 weeks;

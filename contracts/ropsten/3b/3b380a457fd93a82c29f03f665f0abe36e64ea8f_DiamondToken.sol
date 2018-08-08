@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -428,8 +428,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract DiamondToken is CappedToken, PausableToken, BurnableToken {
-    string public constant name = &quot;Diamond Token&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;DT&quot;; // solium-disable-line uppercase
+    string public constant name = "Diamond Token"; // solium-disable-line uppercase
+    string public constant symbol = "DT"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     uint256 public constant INITIAL_SUPPLY = 0;

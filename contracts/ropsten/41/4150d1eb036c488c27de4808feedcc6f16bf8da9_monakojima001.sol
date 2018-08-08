@@ -151,8 +151,8 @@ contract monakojima001 is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function monakojima001() public onlyOwner{
-        symbol = &quot;KMN01&quot;; // シンボル
-        name = &quot;0xmonakojima001 Token&quot;; // トークン名
+        symbol = "KMN01"; // シンボル
+        name = "0xmonakojima001 Token"; // トークン名
         decimals = 8; // 小数点以下桁数
         _totalSupply = 21000000 * 10**uint(decimals);
 

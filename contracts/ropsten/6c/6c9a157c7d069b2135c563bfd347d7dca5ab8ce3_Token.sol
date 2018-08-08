@@ -223,8 +223,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Token is StandardToken {
 
-    string constant public name = &quot;PrivateToken&quot;;
-    string constant public symbol = &quot;TTT&quot;;
+    string constant public name = "PrivateToken";
+    string constant public symbol = "TTT";
     uint8 constant public decimals = 18;
     
     function Token() public {

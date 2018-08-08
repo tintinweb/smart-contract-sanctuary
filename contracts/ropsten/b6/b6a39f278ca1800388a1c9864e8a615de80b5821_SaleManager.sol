@@ -10,7 +10,7 @@ library SafeMath {
       return 0;
     }
     c = a * b;
-    require(c / a == b, &quot;Overflow - Multiplication&quot;);
+    require(c / a == b, "Overflow - Multiplication");
     return c;
   }
 
@@ -25,7 +25,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    require(b <= a, &quot;Underflow - Subtraction&quot;);
+    require(b <= a, "Underflow - Subtraction");
     return a - b;
   }
 
@@ -34,7 +34,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    require(c >= a, &quot;Overflow - Addition&quot;);
+    require(c >= a, "Overflow - Addition");
     return c;
   }
 }
@@ -65,7 +65,7 @@ library Contract {
   function authorize(address _script_exec) internal view {
     // No memory should have been allocated yet - expect the free memory pointer
     // to point to 0x80 - and throw if it does not
-    require(freeMem() == 0x80, &quot;Memory allocated prior to execution&quot;);
+    require(freeMem() == 0x80, "Memory allocated prior to execution");
     // Next, set up memory for execution
     bytes32 perms = EXEC_PERMISSIONS;
     assembly {
@@ -98,7 +98,7 @@ library Contract {
       authorized := sload(keccak256(0, 0x40))
     }
     if (!authorized)
-      revert(&quot;Sender is not authorized as a script exec address&quot;);
+      revert("Sender is not authorized as a script exec address");
   }
 
   // Sets up contract execution when initializing an instance of the application
@@ -113,7 +113,7 @@ library Contract {
   function initialize() internal view {
     // No memory should have been allocated yet - expect the free memory pointer
     // to point to 0x80 - and throw if it does not
-    require(freeMem() == 0x80, &quot;Memory allocated prior to execution&quot;);
+    require(freeMem() == 0x80, "Memory allocated prior to execution");
     // Next, set up memory for execution
     assembly {
       mstore(0x80, sload(0))     // Execution id, read from storage
@@ -149,7 +149,7 @@ library Contract {
   function commit() conditions(validState, none) internal pure {
     // Check value of storage buffer pointer - should be at least 0x180
     bytes32 ptr = buffPtr();
-    require(ptr >= 0x180, &quot;Invalid buffer pointer&quot;);
+    require(ptr >= 0x180, "Invalid buffer pointer");
 
     assembly {
       // Get the size of the buffer
@@ -269,13 +269,13 @@ library Contract {
   // Returns the execution id from memory -
   function execID() internal pure returns (bytes32 exec_id) {
     assembly { exec_id := mload(0x80) }
-    require(exec_id != bytes32(0), &quot;Execution id overwritten, or not read&quot;);
+    require(exec_id != bytes32(0), "Execution id overwritten, or not read");
   }
 
   // Returns the original sender from memory -
   function sender() internal pure returns (address addr) {
     assembly { addr := mload(0xa0) }
-    require(addr != address(0), &quot;Sender address overwritten, or not read&quot;);
+    require(addr != address(0), "Sender address overwritten, or not read");
   }
 
   // Reading from storage: //
@@ -878,10 +878,10 @@ library ConfigureSale {
   using SafeMath for uint;
 
   // event TierMinUpdate(bytes32 indexed exec_id, uint indexed tier_index, uint current_token_purchase_min)
-  bytes32 private constant TIER_MIN_UPDATE = keccak256(&quot;TierMinUpdate(bytes32,uint256,uint256)&quot;);
+  bytes32 private constant TIER_MIN_UPDATE = keccak256("TierMinUpdate(bytes32,uint256,uint256)");
 
   // event CrowdsaleTiersAdded(bytes32 indexed exec_id, uint current_tier_list_len)
-  bytes32 private constant CROWDSALE_TIERS_ADDED = keccak256(&quot;CrowdsaleTiersAdded(bytes32,uint256)&quot;);
+  bytes32 private constant CROWDSALE_TIERS_ADDED = keccak256("CrowdsaleTiersAdded(bytes32,uint256)");
 
   function MIN_UPDATE(bytes32 _exec_id, uint _idx) private pure returns (bytes32[3] memory)
     { return [TIER_MIN_UPDATE, _exec_id, bytes32(_idx)]; }
@@ -902,7 +902,7 @@ library ConfigureSale {
       || _tier_names.length != _tier_modifiable.length
       || _tier_names.length != _tier_whitelisted.length
       || _tier_names.length == 0
-    ) revert(&quot;array length mismatch&quot;);
+    ) revert("array length mismatch");
 
     uint durations_sum = uint(Contract.read(SaleManager.totalDuration()));
     uint num_tiers = uint(Contract.read(SaleManager.saleTierList()));
@@ -918,7 +918,7 @@ library ConfigureSale {
       // Ensure valid input -
       if (
         _tier_caps[i] == 0 || _tier_prices[i] == 0 || _tier_durations[i] == 0
-      ) revert(&quot;invalid tier vals&quot;);
+      ) revert("invalid tier vals");
 
       // Increment total duration of the crowdsale
       durations_sum = durations_sum.add(_tier_durations[i]);
@@ -960,7 +960,7 @@ library ConfigureSale {
       _to_whitelist.length != _min_token_purchase.length
       || _to_whitelist.length != _max_purchase_amt.length
       || _to_whitelist.length == 0
-    ) revert(&quot;mismatched input lengths&quot;);
+    ) revert("mismatched input lengths");
 
     // Get tier whitelist length
     uint tier_whitelist_length = uint(Contract.read(SaleManager.tierWhitelist(_tier_index)));
@@ -1020,26 +1020,26 @@ library ConfigureSale {
 
     // Ensure an update is being performed
     if (previous_duration == _new_duration)
-      revert(&quot;duration unchanged&quot;);
+      revert("duration unchanged");
     // Total crowdsale duration should always be minimum the previous duration for the tier to update
     if (total_duration < previous_duration)
-      revert(&quot;total duration invalid&quot;);
+      revert("total duration invalid");
     // Ensure tier to update is within range of existing tiers -
     if (uint(Contract.read(SaleManager.saleTierList())) <= _tier_index)
-      revert(&quot;tier does not exist&quot;);
+      revert("tier does not exist");
     // Ensure tier to update has not already passed -
     if (current_tier > _tier_index)
-      revert(&quot;tier has already completed&quot;);
+      revert("tier has already completed");
     // Ensure the tier targeted was marked as &#39;modifiable&#39; -
     if (Contract.read(SaleManager.tierModifiable(_tier_index)) == 0)
-      revert(&quot;tier duration not modifiable&quot;);
+      revert("tier duration not modifiable");
 
     Contract.storing();
 
     // If the tier to update is tier 0, the sale should not have started yet -
     if (_tier_index == 0) {
       if (now >= starts_at)
-        revert(&quot;cannot modify initial tier once sale has started&quot;);
+        revert("cannot modify initial tier once sale has started");
 
       // Store current tier end time
       Contract.set(SaleManager.currentEndsAt()).to(_new_duration.add(starts_at));
@@ -1047,14 +1047,14 @@ library ConfigureSale {
       // If the end time has passed, and we are trying to update the next tier, the tier
       // is already in progress and cannot be updated
       if (_tier_index - current_tier == 1 && now >= cur_ends_at)
-        revert(&quot;cannot modify tier after it has begun&quot;);
+        revert("cannot modify tier after it has begun");
 
       // Loop over tiers in storage and increment end time -
       for (uint i = current_tier + 1; i < _tier_index; i++)
         cur_ends_at = cur_ends_at.add(uint(Contract.read(SaleManager.tierDuration(i))));
 
       if (cur_ends_at < now)
-        revert(&quot;cannot modify current tier&quot;);
+        revert("cannot modify current tier");
     } else {
       // Not a valid state to update - throw
       revert(&#39;cannot update tier&#39;);
@@ -1102,10 +1102,10 @@ library ManageSale {
   using Contract for *;
 
   // event CrowdsaleConfigured(bytes32 indexed exec_id, bytes32 indexed token_name, uint start_time);
-  bytes32 internal constant CROWDSALE_CONFIGURED = keccak256(&quot;CrowdsaleConfigured(bytes32,bytes32,uint256)&quot;);
+  bytes32 internal constant CROWDSALE_CONFIGURED = keccak256("CrowdsaleConfigured(bytes32,bytes32,uint256)");
 
   // event CrowdsaleFinalized(bytes32 indexed exec_id);
-  bytes32 internal constant CROWDSALE_FINALIZED = keccak256(&quot;CrowdsaleFinalized(bytes32)&quot;);
+  bytes32 internal constant CROWDSALE_FINALIZED = keccak256("CrowdsaleFinalized(bytes32)");
 
   // Returns the topics for a crowdsale configuration event
   function CONFIGURE(bytes32 _exec_id, bytes32 _name) private pure returns (bytes32[3] memory)
@@ -1169,96 +1169,96 @@ library SaleManager {
 
   // Whether the crowdsale and token are configured, and the sale is ready to run
   function isConfigured() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_is_configured&quot;); }
+    { return keccak256("sale_is_configured"); }
 
   // Whether or not the crowdsale is post-purchase
   function isFinished() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_is_completed&quot;); }
+    { return keccak256("sale_is_completed"); }
 
   // Storage location of the crowdsale&#39;s start time
   function startTime() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_start_time&quot;); }
+    { return keccak256("sale_start_time"); }
 
   // Storage location of the amount of time the crowdsale will take, accounting for all tiers
   function totalDuration() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_total_duration&quot;); }
+    { return keccak256("sale_total_duration"); }
 
   /// TIERS ///
 
   // Stores the number of tiers in the sale
   function saleTierList() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_tier_list&quot;); }
+    { return keccak256("sale_tier_list"); }
 
   // Stores the name of the tier
   function tierName(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;name&quot;, saleTierList()); }
+    { return keccak256(_idx, "name", saleTierList()); }
 
   // Stores the number of tokens that will be sold in the tier
   function tierCap(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;cap&quot;, saleTierList()); }
+    { return keccak256(_idx, "cap", saleTierList()); }
 
   // Stores the price of a token (1 * 10^decimals units), in wei
   function tierPrice(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;price&quot;, saleTierList()); }
+    { return keccak256(_idx, "price", saleTierList()); }
 
   // Stores the minimum number of tokens a user must purchase for a given tier
   function tierMin(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;minimum&quot;, saleTierList()); }
+    { return keccak256(_idx, "minimum", saleTierList()); }
 
   // Stores the duration of a tier
   function tierDuration(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;duration&quot;, saleTierList()); }
+    { return keccak256(_idx, "duration", saleTierList()); }
 
   // Whether or not the tier&#39;s duration is modifiable (before it has begin)
   function tierModifiable(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;mod_stat&quot;, saleTierList()); }
+    { return keccak256(_idx, "mod_stat", saleTierList()); }
 
   // Returns the storage location of the tier&#39;s whitelist status
   function tierWhitelisted(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;wl_stat&quot;, saleTierList()); }
+    { return keccak256(_idx, "wl_stat", saleTierList()); }
 
   // Storage location of the index of the current tier. If zero, no tier is currently active
   function currentTier() internal pure returns (bytes32)
-    { return keccak256(&quot;sale_current_tier&quot;); }
+    { return keccak256("sale_current_tier"); }
 
   // Storage location of the end time of the current tier. Purchase attempts beyond this time will update the current tier (if another is available)
   function currentEndsAt() internal pure returns (bytes32)
-    { return keccak256(&quot;current_tier_ends_at&quot;); }
+    { return keccak256("current_tier_ends_at"); }
 
   /// WHITELIST ///
 
   // Stores a tier&#39;s whitelist
   function tierWhitelist(uint _idx) internal pure returns (bytes32)
-    { return keccak256(_idx, &quot;tier_whitelists&quot;); }
+    { return keccak256(_idx, "tier_whitelists"); }
 
   // Stores a spender&#39;s maximum number of tokens allowed to be purchased
   function whitelistMaxTok(uint _idx, address _spender) internal pure returns (bytes32)
-    { return keccak256(_spender, &quot;max_tok&quot;, tierWhitelist(_idx)); }
+    { return keccak256(_spender, "max_tok", tierWhitelist(_idx)); }
 
   // Stores a spender&#39;s minimum token purchase amount for a given whitelisted tier
   function whitelistMinTok(uint _idx, address _spender) internal pure returns (bytes32)
-    { return keccak256(_spender, &quot;min_tok&quot;, tierWhitelist(_idx)); }
+    { return keccak256(_spender, "min_tok", tierWhitelist(_idx)); }
 
   /// TOKEN ///
 
   // Storage location for token name
   function tokenName() internal pure returns (bytes32)
-    { return keccak256(&quot;token_name&quot;); }
+    { return keccak256("token_name"); }
 
   // Storage location for token ticker symbol
   function tokenSymbol() internal pure returns (bytes32)
-    { return keccak256(&quot;token_symbol&quot;); }
+    { return keccak256("token_symbol"); }
 
   // Storage location for token decimals
   function tokenDecimals() internal pure returns (bytes32)
-    { return keccak256(&quot;token_decimals&quot;); }
+    { return keccak256("token_decimals"); }
 
   // Storage location for token totalSupply
   function tokenTotalSupply() internal pure returns (bytes32)
-    { return keccak256(&quot;token_total_supply&quot;); }
+    { return keccak256("token_total_supply"); }
 
   // Storage seed for user balances mapping
-  bytes32 internal constant TOKEN_BALANCES = keccak256(&quot;token_balances&quot;);
+  bytes32 internal constant TOKEN_BALANCES = keccak256("token_balances");
 
   function balances(address _owner) internal pure returns (bytes32)
     { return keccak256(_owner, TOKEN_BALANCES); }

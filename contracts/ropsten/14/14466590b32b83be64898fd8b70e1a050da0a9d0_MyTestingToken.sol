@@ -145,8 +145,8 @@ contract MyTestingToken is ERC20Interface, Owned, Pausable, SafeMath {
 
 
     function MyTestingToken() public {
-        symbol = &quot;my testing token&quot;;
-        name = &quot;testinggggggg Token&quot;;
+        symbol = "my testing token";
+        name = "testinggggggg Token";
         decimals = 18;
         _totalSupply = 375000000000000000000000000;
         balances[owner] = _totalSupply;

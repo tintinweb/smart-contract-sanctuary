@@ -60,8 +60,8 @@ contract TSSECOND is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;TSSECOND&quot;;
-    string public constant symbol = &quot;2nd&quot;;
+    string public constant name = "TSSECOND";
+    string public constant symbol = "2nd";
     uint public constant decimals = 18;
     
 uint256 public totalSupply = 30000000000e18;

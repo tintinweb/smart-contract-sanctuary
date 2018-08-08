@@ -49,7 +49,7 @@ library SafeMath {
     /**
     * @title Ownable
     * @dev The Ownable contract has an owner address, and provides basic authorization control
-    * functions, this simplifies the implementation of &quot;user permissions&quot;.
+    * functions, this simplifies the implementation of "user permissions".
     */
 contract Ownable {
     address public owner;
@@ -157,11 +157,11 @@ contract PaoToken is Lockable {
     mapping(address => uint256) balances;
     mapping (address => mapping (address => uint256)) internal allowed;
 
-    string public name = &quot;PAO Token&quot;;
+    string public name = "PAO Token";
     uint8 public decimals = 0;
     uint256 totalSupply_ = 10000000000 * 10 ** uint256(decimals);
     uint256 public tokenBuyPrice = 5000;
-    string public symbol = &quot;PAO&quot;;
+    string public symbol = "PAO";
     address public publicSaleWallet = 0x5A0DA1fD7f6b084A81F07fb9d641D295b2E7e669;
     address public reservedWallet = 0x8a7fe9893c63f718Ad066a1dd48458eC47F2FbaD;
     uint publicSaleRatio = 3;
@@ -294,11 +294,11 @@ contract ConsumeToken is Lockable {
     mapping(address => uint256) balances;
     mapping (address => mapping (address => uint256)) internal allowed;
 
-    string public name = &quot;Consume Token&quot;;
+    string public name = "Consume Token";
     uint8 public decimals = 2;
     uint256 totalSupply_ = 10000000000 * 10 ** uint256(decimals);
     uint256 public tokenBuyPrice = 54106;           //JPY to ETH
-    string public symbol = &quot;Con&quot;;
+    string public symbol = "Con";
     address public fundWallet = 0x5A0DA1fD7f6b084A81F07fb9d641D295b2E7e669;
     address public paoContactAddress;
 

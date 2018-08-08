@@ -72,8 +72,8 @@ contract SSA is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;SSA&quot;;
-    string public constant symbol = &quot;SSA&quot;;
+    string public constant name = "SSA";
+    string public constant symbol = "SSA";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 150000000000e18;

@@ -8,10 +8,10 @@ pragma solidity ^0.4.19;
     of the insurance and the cost of the given are defined by the cosigner. 
 
     The lender will decide what cosigner to use, if any; the address of the cosigner and the valid data provided by the
-    agent should be passed as params when the lender calls the &quot;lend&quot; method on the engine.
+    agent should be passed as params when the lender calls the "lend" method on the engine.
     
     When the default conditions defined by the cosigner aligns with the status of the loan, the lender of the engine
-    should be able to call the &quot;claim&quot; method to receive the benefit; the cosigner can define aditional requirements to
+    should be able to call the "claim" method to receive the benefit; the cosigner can define aditional requirements to
     call this method, like the transfer of the ownership of the loan.
 */
 contract Cosigner {
@@ -31,7 +31,7 @@ contract Cosigner {
     
     /**
         @dev The engine calls this method for confirmation of the conditions, if the cosigner accepts the liability of
-        the insurance it must call the method &quot;cosign&quot; of the engine. If the cosigner does not call that method, or
+        the insurance it must call the method "cosign" of the engine. If the cosigner does not call that method, or
         does not return true to this method, the operation fails.
 
         @return true if the cosigner accepts the liability
@@ -136,7 +136,7 @@ contract Oracle is Ownable {
     bytes32[] public currencies;
 
     /**
-        @dev Returns the url where the oracle exposes a valid &quot;oracleData&quot; if needed
+        @dev Returns the url where the oracle exposes a valid "oracleData" if needed
     */
     function url() public view returns (string);
 
@@ -217,20 +217,20 @@ contract ERC721Cosigner is Cosigner, BytesUtils, Ownable {
     }
 
     function requestCosign(Engine _engine, uint256 _index, bytes _data, bytes ) public returns (bool) {
-        require(msg.sender == address(_engine), &quot;the sender its not the Engine&quot;);
+        require(msg.sender == address(_engine), "the sender its not the Engine");
 
         ERC721 erc721 = ERC721(address(readBytes32(_data, INDEX_ERC721_ADDR)));
         uint nft = uint(readBytes32(_data, INDEX_NFT));
-        require(erc721.transferFrom(_engine.getBorrower(_index), address(this), nft), &quot;fail transfer&quot;);
+        require(erc721.transferFrom(_engine.getBorrower(_index), address(this), nft), "fail transfer");
         loanIdToERC721Data[_index] = ERC721Data(erc721, nft);
 
-        require(_engine.cosign(_index, 0), &quot;fail cosing&quot;);
+        require(_engine.cosign(_index, 0), "fail cosing");
 
         return true;
     }
 
     function url() public view returns (string) {
-        return &quot;&quot;;
+        return "";
     }
 
     /**
@@ -250,15 +250,15 @@ contract ERC721Cosigner is Cosigner, BytesUtils, Ownable {
       // for borrower claim
       address borrower = engine.getBorrower(_index);
       if(msg.sender == borrower) {
-          require(engine.getStatus(_index) == Engine.Status.paid, &quot;the loan its not paid&quot;);
-          require(erc721Data.addr.transferFrom(address(this), borrower, erc721Data.nft), &quot;fail transfer&quot;);
+          require(engine.getStatus(_index) == Engine.Status.paid, "the loan its not paid");
+          require(erc721Data.addr.transferFrom(address(this), borrower, erc721Data.nft), "fail transfer");
           return true;
       }
       // for lender claim
       address lender = engine.ownerOf(_index);
-      require(msg.sender == lender, &quot;bad sender&quot;);
-      require(isDefaulted(engine, _index), &quot;the loan its not defaulted&quot;);
-      require(erc721Data.addr.transferFrom(address(this), lender, erc721Data.nft), &quot;fail transfer&quot;);
+      require(msg.sender == lender, "bad sender");
+      require(isDefaulted(engine, _index), "the loan its not defaulted");
+      require(erc721Data.addr.transferFrom(address(this), lender, erc721Data.nft), "fail transfer");
       return true;
     }
 }

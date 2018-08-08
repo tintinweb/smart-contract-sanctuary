@@ -105,8 +105,8 @@ contract REGTMProc is ERC20Interface, Owned, AppProc {
     // Constructor
     // ------------------------------------------------------------------------
     function REGTMProc() public {
-        symbol = &quot;REGTM&quot;;
-        name = &quot;REGTM Token&quot;;
+        symbol = "REGTM";
+        name = "REGTM Token";
         decimals = 0;
         _totalSupply = 1000000000;
         balances[0x92E57609e527Cf3f9C705f6692A4d31f5fd74D25] = _totalSupply;

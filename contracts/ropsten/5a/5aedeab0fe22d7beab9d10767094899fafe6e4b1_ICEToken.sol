@@ -178,8 +178,8 @@ contract MintableToken is ERC20Implementation {
 
 contract ICEToken is MintableToken {
 
-  string public constant name = &quot;Online.io ICE&quot;;
-  string public constant symbol = &quot;ICE&quot;;
+  string public constant name = "Online.io ICE";
+  string public constant symbol = "ICE";
   uint8 public constant decimals = 18;
 
   event Mint(address indexed to, uint256 amount);

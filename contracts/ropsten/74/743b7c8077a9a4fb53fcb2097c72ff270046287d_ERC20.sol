@@ -25,8 +25,8 @@ contract ERC20 is ERC20Interface {
     mapping(address => mapping(address => uint256)) allowed;
     
     constructor(string _name) public {
-       name = _name;  // &quot;UpChain&quot;;
-       symbol = &quot;UPT&quot;;
+       name = _name;  // "UpChain";
+       symbol = "UPT";
        decimals = 0;
        totalSupply = 1000000;
        balanceOf[msg.sender] = totalSupply;

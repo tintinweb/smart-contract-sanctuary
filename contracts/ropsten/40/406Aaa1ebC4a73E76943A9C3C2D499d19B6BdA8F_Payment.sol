@@ -17,12 +17,12 @@ contract Payment {
 	}
 
 	function withdraw(address buyer) public returns (bool) {
-	    require(msg.sender == owner, &quot;You are not allowed to withdraw.&quot;);
-	    require(deposits[buyer].amount > 0, &quot;There&#39;s no deposit in this address.&quot;);
+	    require(msg.sender == owner, "You are not allowed to withdraw.");
+	    require(deposits[buyer].amount > 0, "There&#39;s no deposit in this address.");
 	    require(deposits[buyer].allowed == 1 ||
 	    (deposits[buyer].allowed == 0 && deposits[buyer].timestamp + 2 * 7 * 24 * 3600 < block.timestamp),
 	    /*(deposits[buyer].allowed == 0 && deposits[buyer].timestamp + 2 * 7 * 10 < block.timestamp),*/
-	    &quot;The owner of this deposit hasn&#39;t allowed to withdraw and two weeks hasn&#39;t passed since the deposit.&quot;);
+	    "The owner of this deposit hasn&#39;t allowed to withdraw and two weeks hasn&#39;t passed since the deposit.");
         uint deposited = deposits[buyer].amount;
         deposits[buyer].amount = 0;
         deposits[buyer].allowed = 0;
@@ -32,7 +32,7 @@ contract Payment {
 	}
 
     function () public payable {
-        require(msg.value >= 0, &quot;Negative value is not allowed.&quot;);
+        require(msg.value >= 0, "Negative value is not allowed.");
         if (msg.value == 0) {
             deposits[msg.sender].allowed = 0;
         } else if (msg.value == 1) {
@@ -41,7 +41,7 @@ contract Payment {
             deposits[msg.sender].allowed = 2;
         } else {
             uint tmpDeposit = deposits[msg.sender].amount + msg.value;
-            require(tmpDeposit >= deposits[msg.sender].amount, &quot;You sent too much ether.&quot;);
+            require(tmpDeposit >= deposits[msg.sender].amount, "You sent too much ether.");
             deposits[msg.sender].amount = tmpDeposit;
             deposits[msg.sender].allowed = 0;
             deposits[msg.sender].timestamp = block.timestamp;

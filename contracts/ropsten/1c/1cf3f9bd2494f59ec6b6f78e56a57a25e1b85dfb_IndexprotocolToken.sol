@@ -221,8 +221,8 @@ contract Ownable {
 }
 
 contract IndexprotocolToken is StandardToken, Ownable {
-  string public name = &quot;Indexprotocol&quot;;
-  string public symbol = &quot;ETF100&quot;;
+  string public name = "Indexprotocol";
+  string public symbol = "ETF100";
   uint256 public decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 2000000 * (10 ** uint256(18));
   

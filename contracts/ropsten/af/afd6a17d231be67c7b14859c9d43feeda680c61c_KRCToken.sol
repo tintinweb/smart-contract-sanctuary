@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -242,8 +242,8 @@ contract BurnableToken is StandardToken, Ownable {
      constructor(address ownerWallet) public 
      {
         totalSupply = 500000000 * uint(10**18);
-        name = &quot;Kineticex&quot;;
-        symbol = &quot;KRC&quot;;
+        name = "Kineticex";
+        symbol = "KRC";
         balances[ownerWallet] = totalSupply;
         owner = ownerWallet;
         //Emitting transfer event since assigning all tokens to the creator also corresponds to the transfer of tokens to the creator

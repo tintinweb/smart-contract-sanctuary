@@ -113,8 +113,8 @@ contract PotatoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PotatoToken() public {
-        symbol = &quot;NIO&quot;;
-        name = &quot;POTATO TOKEN&quot;;
+        symbol = "NIO";
+        name = "POTATO TOKEN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xB002B6B46a4eBbbC58E689d7Cf72E043c0BC4e80] = _totalSupply;

@@ -55,7 +55,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -365,8 +365,8 @@ contract IOGToken is StandardToken, Ownable, Pausable {
     event AddressLocked(address indexed _owner, uint256 _expiry);
 
     // erc20 constants
-    string public constant name = &quot;IOX89Token&quot;;
-    string public constant symbol = &quot;IOX89&quot;;
+    string public constant name = "IOX89Token";
+    string public constant symbol = "IOX89";
     uint8 public constant decimals = 18;
     uint256 public constant TOTAL_SUPPLY = 2200000000 * (10 ** uint256(decimals));
 

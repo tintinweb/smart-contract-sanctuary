@@ -703,10 +703,10 @@ contract WhiteListToken is CommonSale {
 contract MYTCToken is MintableToken {	
     
   //Token name
-  string public constant name = &quot;MYTC&quot;;
+  string public constant name = "MYTC";
    
   //Token symbol
-  string public constant symbol = &quot;MYTC&quot;;
+  string public constant symbol = "MYTC";
     
   //Token&#39;s number of decimals
   uint32 public constant decimals = 18;

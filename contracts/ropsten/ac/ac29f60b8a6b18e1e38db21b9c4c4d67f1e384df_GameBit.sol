@@ -116,8 +116,8 @@ contract GameBit is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GameBit() public {
-        symbol = &quot;GBT&quot;;
-        name = &quot;GameBit&quot;;
+        symbol = "GBT";
+        name = "GameBit";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -113,8 +113,8 @@ contract WildFurToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WildFurToken() public {
-        symbol = &quot;WDF&quot;;
-        name = &quot;Wild Fur Token&quot;;
+        symbol = "WDF";
+        name = "Wild Fur Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x36b0778dFD236A8f8b0607dF15dDd067CbBD2780] = _totalSupply;

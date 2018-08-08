@@ -101,8 +101,8 @@ contract OMIVIA is ERC20Interface, Owned, SafeMath {
 
    
     function OMIVIA() public {
-        symbol = &quot;OVA&quot;;
-        name = &quot;OMIVIA&quot;;
+        symbol = "OVA";
+        name = "OMIVIA";
         decimals = 8;
         _totalSupply = 1000000000000000;
         balances[0xd1574C1EDf6fcE4D9735e989364dd17937806816] = _totalSupply;

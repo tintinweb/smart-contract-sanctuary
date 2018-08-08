@@ -113,8 +113,8 @@ contract Coinbase is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Coinbase() public {
-        symbol = &quot;CBSE&quot;;
-        name = &quot;Coinbase&quot;;
+        symbol = "CBSE";
+        name = "Coinbase";
         decimals = 18;
         _totalSupply = 50000000000000000000000;
         balances[0xc2eE6cC396ee25A9E736FA50aecc0b31e3755243] = _totalSupply;

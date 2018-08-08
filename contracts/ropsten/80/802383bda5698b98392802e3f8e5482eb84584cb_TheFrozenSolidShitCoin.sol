@@ -118,8 +118,8 @@ contract TheFrozenSolidShitCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheFrozenSolidShitCoin() public {
-        symbol = &quot;TFSS&quot;;
-        name = &quot;The Frozen Solid Shit Coin&quot;;
+        symbol = "TFSS";
+        name = "The Frozen Solid Shit Coin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

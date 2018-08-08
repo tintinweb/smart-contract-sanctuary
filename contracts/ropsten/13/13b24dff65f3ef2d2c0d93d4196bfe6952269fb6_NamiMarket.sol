@@ -406,8 +406,8 @@ contract NamiCrowdSale {
      *  Constants
     /*/
 
-    string public name = &quot;Nami ICO&quot;;
-    string public  symbol = &quot;NAC&quot;;
+    string public name = "Nami ICO";
+    string public  symbol = "NAC";
     uint   public decimals = 18;
 
     bool public TRANSFERABLE = false; // default not transferable
@@ -1025,7 +1025,7 @@ contract NamiMarket{
         }
     }
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    string public name = &quot;Nami Market&quot;;
+    string public name = "Nami Market";
     
     function depositEth() public payable
     {

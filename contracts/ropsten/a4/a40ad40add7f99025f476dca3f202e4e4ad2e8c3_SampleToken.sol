@@ -4,9 +4,9 @@ pragma solidity ^0.4.22;
 contract SampleToken {
 
     /* Public variables of the token */
-    string public standard = &quot;Token 0.1&quot;;
-    string public name = &quot;ZToken&quot;;
-    string public symbol = &quot;ZTK&quot;;
+    string public standard = "Token 0.1";
+    string public name = "ZToken";
+    string public symbol = "ZTK";
     uint8 public decimals = 0;
     uint256 public totalSupply;
     address public owner;

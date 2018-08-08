@@ -241,7 +241,7 @@ contract W12Crowdsale is IW12Crowdsale, Ownable, ReentrancyGuard {
             require(startDate < stage_endDates[i]);
             // Checking that stages entered in historical order
             if(i < stagesCount - 1)
-                require(stage_endDates[i] < stage_endDates[i+1], &quot;Stages are not in historical order&quot;);
+                require(stage_endDates[i] < stage_endDates[i+1], "Stages are not in historical order");
 
             // Reverting stage order for future use
             stages[stagesCount - i - 1].endDate = stage_endDates[i];

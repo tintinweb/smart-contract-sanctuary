@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract TokenTESTToken {
 
-    string public name = &quot;TokenTESTToken&quot;;
-    string public symbol = &quot;TTT&quot;;
+    string public name = "TokenTESTToken";
+    string public symbol = "TTT";
     uint256 public decimals = 18;
     uint256 public totalSupply = 100000000000000000000000000;
     address owner;

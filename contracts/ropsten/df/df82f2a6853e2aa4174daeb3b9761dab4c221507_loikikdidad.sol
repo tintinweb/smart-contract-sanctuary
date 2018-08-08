@@ -114,8 +114,8 @@ contract loikikdidad is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function loikikdidad() public {
-        symbol = &quot;loikikdidad&quot;;
-        name = &quot;loikikdidad Token&quot;;
+        symbol = "loikikdidad";
+        name = "loikikdidad Token";
         decimals = 18;
         _totalSupply = 8000000000000000000000000000;
         endDate = now + 72 weeks;

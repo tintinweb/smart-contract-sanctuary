@@ -114,8 +114,8 @@ contract NTToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;NTToken&quot;;
-        name = &quot;NTToken&quot;;
+        symbol = "NTToken";
+        name = "NTToken";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

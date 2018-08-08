@@ -197,7 +197,7 @@ contract Zethroll is ZTHReceivingContract {
   betIsValid(_tkn.value, _rollUnder)
   {
     // Note that msg.sender is the Token Contract Address
-    // and &quot;_from&quot; is the sender of the tokens
+    // and "_from" is the sender of the tokens
     require(_humanSender(_tkn.sender));
     // Check that this is a non-contract sender
     require(_zthToken(msg.sender));
@@ -414,14 +414,14 @@ contract Zethroll is ZTHReceivingContract {
     // Is this the ZTH token contract?
   }
 
-  // Determine if the &quot;_from&quot; address is a contract
+  // Determine if the "_from" address is a contract
   function _humanSender(address _from) private view returns (bool) {
     uint codeLength;
     assembly {
       codeLength := extcodesize(_from)
     }
     return (codeLength == 0);
-    // If this is &quot;true&quot; sender is most likely a Wallet
+    // If this is "true" sender is most likely a Wallet
   }
 
 }

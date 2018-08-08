@@ -35,7 +35,7 @@ contract SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public ethFundDeposit;
@@ -345,10 +345,10 @@ contract StandardToken is controllable, Pausable, Token, Lockable {
 
 contract BugXToken is StandardToken {
     // metadata
-    string  public constant name = &quot;BUGX Token&quot;;
-    string  public constant symbol = &quot;BUGX&quot;;
+    string  public constant name = "BUGX Token";
+    string  public constant symbol = "BUGX";
     uint256 internal constant decimals = 18;
-    string  internal version = &quot;2.5&quot;;
+    string  internal version = "2.5";
 
     // contracts
     address public newContractAddr;         // the new contract for BUGX token updates;

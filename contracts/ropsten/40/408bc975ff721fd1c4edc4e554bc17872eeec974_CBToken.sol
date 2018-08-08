@@ -113,8 +113,8 @@ contract CBToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CBToken() public {
-        symbol = &quot;CBC&quot;;
-        name = &quot;Cleveland Blocks Token&quot;;
+        symbol = "CBC";
+        name = "Cleveland Blocks Token";
         decimals = 4;
         _totalSupply = 200000000000;
         balances[0xeDFa6a66eF0C788a41929defECc5395047d5dD32] = _totalSupply;

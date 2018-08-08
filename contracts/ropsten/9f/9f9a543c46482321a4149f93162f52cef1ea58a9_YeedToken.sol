@@ -133,8 +133,8 @@ library SafeMath {
 contract YeedToken is ERC20, Lockable {
 
     // ADD INFORMATION
-    string public constant name = &quot;YGGDRASH&quot;;
-    string public constant symbol = &quot;YEED&quot;;
+    string public constant name = "YGGDRASH";
+    string public constant symbol = "YEED";
     uint8 public constant decimals = 18;  // 18 is the most common number of decimal places
     bool public emergency;
 

@@ -113,8 +113,8 @@ contract TremendousToken  is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Tremendoustoken() public {
-        symbol = &quot;TRN&quot;;
-        name = &quot;Tremendous&quot;;
+        symbol = "TRN";
+        name = "Tremendous";
         decimals = 18;
         _totalSupply = 270000000;
         balances[0xD2f76d9a03e99bc6Bd54576da1D876Dc17F1b2f3] = _totalSupply;

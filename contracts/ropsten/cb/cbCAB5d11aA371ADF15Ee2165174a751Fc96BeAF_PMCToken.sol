@@ -86,10 +86,10 @@ contract StandardToken is Token {
 contract PMCToken is StandardToken, SafeMath {
  
     // metadata
-    string  public constant name = &quot;PMC&quot;;
-    string  public constant symbol = &quot;PMC&quot;;
+    string  public constant name = "PMC";
+    string  public constant symbol = "PMC";
     uint256 public constant decimals = 8;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
  
     // contracts
     address public ethFundDeposit;          // ETH存放地址

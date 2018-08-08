@@ -9,7 +9,7 @@ contract DemoPart1 {
     }
   
     function writeMessage(string _msg) public {
-        messagePool[msg.sender] = &quot;DemoPart1合約測試&quot;;
+        messagePool[msg.sender] = "DemoPart1合約測試";
     }
 
     function readMessage() returns(string){
@@ -28,7 +28,7 @@ contract DemoPart2 is DemoPart1 {
     }
   
     function writeMessage(string _msg) public {
-      messagePool[msg.sender] = &quot;DemoPart2合約測試&quot;;
+      messagePool[msg.sender] = "DemoPart2合約測試";
     }
 
     function readMessage() returns(string){

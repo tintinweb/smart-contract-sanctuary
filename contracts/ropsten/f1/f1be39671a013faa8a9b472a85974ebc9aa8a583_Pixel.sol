@@ -113,8 +113,8 @@ contract Pixel is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Pixel() public {
-        symbol = &quot;PIXL&quot;;
-        name = &quot;Pixels & Shovels Mining&quot;;
+        symbol = "PIXL";
+        name = "Pixels & Shovels Mining";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x56Ee40C9D07Ba79D2062d25A87D79208BDC705B5] = _totalSupply;

@@ -89,8 +89,8 @@ contract MEPToken is MEPInterface, Owned {
 
 
     constructor() public {
-        symbol = &quot;MEP&quot;;
-        name = &quot;Medipedia Token&quot;;
+        symbol = "MEP";
+        name = "Medipedia Token";
         decimals = 18;
         _totalSupply = 1087500000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

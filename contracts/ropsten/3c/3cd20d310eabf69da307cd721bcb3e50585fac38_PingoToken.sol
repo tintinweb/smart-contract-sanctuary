@@ -113,8 +113,8 @@ contract PingoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PingoToken() public {
-        symbol = &quot;0PINGO&quot;;
-        name = &quot;0 Pingo Token&quot;;
+        symbol = "0PINGO";
+        name = "0 Pingo Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x55f7Fb9Fb48d9D845A0eDF35d7a6b79f3D34B837] = _totalSupply;

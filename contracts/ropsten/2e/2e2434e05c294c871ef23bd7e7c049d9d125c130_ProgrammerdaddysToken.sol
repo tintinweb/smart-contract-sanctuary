@@ -113,8 +113,8 @@ contract ProgrammerdaddysToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ProgrammerdaddysToken() public {
-        symbol = &quot;PGDD&quot;;
-        name = &quot;Programmerdaddy Token&quot;;
+        symbol = "PGDD";
+        name = "Programmerdaddy Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xF74e1064E12c725Ab4c18764bEE5c5daCd3482Bd] = _totalSupply;

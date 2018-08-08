@@ -69,7 +69,7 @@ contract RocketBase {
     * @dev Throws if called by any account other than the owner.
     */
     modifier onlyOwner() {
-        roleCheck(&quot;owner&quot;, msg.sender);
+        roleCheck("owner", msg.sender);
         _;
     }
 
@@ -77,7 +77,7 @@ contract RocketBase {
     * @dev Modifier to scope access to admins
     */
     modifier onlyAdmin() {
-        roleCheck(&quot;admin&quot;, msg.sender);
+        roleCheck("admin", msg.sender);
         _;
     }
 
@@ -85,7 +85,7 @@ contract RocketBase {
     * @dev Modifier to scope access to admins
     */
     modifier onlySuperUser() {
-        require(roleHas(&quot;owner&quot;, msg.sender) || roleHas(&quot;admin&quot;, msg.sender));
+        require(roleHas("owner", msg.sender) || roleHas("admin", msg.sender));
         _;
     }
 
@@ -114,7 +114,7 @@ contract RocketBase {
     * @return bool
     */
     function isOwner(address _address) public view returns (bool) {
-        return rocketStorage.getBool(keccak256(&quot;access.role&quot;, &quot;owner&quot;, _address));
+        return rocketStorage.getBool(keccak256("access.role", "owner", _address));
     }
 
     /**
@@ -122,7 +122,7 @@ contract RocketBase {
     * @return bool
     */
     function roleHas(string _role, address _address) internal view returns (bool) {
-        return rocketStorage.getBool(keccak256(&quot;access.role&quot;, _role, _address));
+        return rocketStorage.getBool(keccak256("access.role", _role, _address));
     }
 
      /**
@@ -169,16 +169,16 @@ contract Upgradable is RocketBase {
     function addContract(string _name, address _newContractAddress) onlyOwner external {
 
         // Make sure the contract name isn&#39;t already in use.  If it is, upgradeContract() is the proper function to use
-        address existing_ = rocketStorage.getAddress(keccak256(&quot;contract.name&quot;, _name));
+        address existing_ = rocketStorage.getAddress(keccak256("contract.name", _name));
         require(existing_ == 0x0);
      
-        // Add the contract to the storage using a hash of the &quot;contract.name&quot; namespace and the name of the contract that was supplied as the &#39;key&#39; and use the new contract address as the &#39;value&#39;
+        // Add the contract to the storage using a hash of the "contract.name" namespace and the name of the contract that was supplied as the &#39;key&#39; and use the new contract address as the &#39;value&#39;
         // This means we can get the address of the contract later by looking it up using its name eg &#39;rocketUser&#39;
-        rocketStorage.setAddress(keccak256(&quot;contract.name&quot;, _name), _newContractAddress);
-        // Add the contract to the storage using a hash of the &quot;contract.address&quot; namespace and the address of the contract that was supplied as the &#39;key&#39; and use the new contract address as the &#39;value&#39;
+        rocketStorage.setAddress(keccak256("contract.name", _name), _newContractAddress);
+        // Add the contract to the storage using a hash of the "contract.address" namespace and the address of the contract that was supplied as the &#39;key&#39; and use the new contract address as the &#39;value&#39;
         // This means we can verify this contract as belonging to the dApp by using it&#39;s address rather than its name.
         // Handy when you need to protect certain methods from being accessed by any contracts that are not part of the dApp using msg.sender (see the modifier onlyLatestRocketNetworkContract() in the RocketStorage code)
-        rocketStorage.setAddress(keccak256(&quot;contract.address&quot;, _newContractAddress), _newContractAddress);
+        rocketStorage.setAddress(keccak256("contract.address", _newContractAddress), _newContractAddress);
         // Log it
         emit ContractAdded(_newContractAddress, now);
     }
@@ -188,17 +188,17 @@ contract Upgradable is RocketBase {
     // TODO: Write unit tests to verify
     function upgradeContract(string _name, address _upgradedContractAddress) onlyOwner external {
         // Get the current contracts address
-        address oldContractAddress = rocketStorage.getAddress(keccak256(&quot;contract.name&quot;, _name));
+        address oldContractAddress = rocketStorage.getAddress(keccak256("contract.name", _name));
         // Check it exists
         require(oldContractAddress != 0x0);
         // Check it is not the contract&#39;s current address
         require(oldContractAddress != _upgradedContractAddress);
         // Replace the address for the name lookup - contract addresses can be looked up by their name or verified by a reverse address lookup
-        rocketStorage.setAddress(keccak256(&quot;contract.name&quot;, _name), _upgradedContractAddress);
+        rocketStorage.setAddress(keccak256("contract.name", _name), _upgradedContractAddress);
         // Add the new contract address for a direct verification using the address (used in RocketStorage to verify its a legit contract using only the msg.sender)
-        rocketStorage.setAddress(keccak256(&quot;contract.address&quot;, _upgradedContractAddress), _upgradedContractAddress);
+        rocketStorage.setAddress(keccak256("contract.address", _upgradedContractAddress), _upgradedContractAddress);
         // Remove the old contract address verification
-        rocketStorage.deleteAddress(keccak256(&quot;contract.address&quot;, oldContractAddress));
+        rocketStorage.deleteAddress(keccak256("contract.address", oldContractAddress));
         // Log it
         emit ContractUpgraded(oldContractAddress, _upgradedContractAddress, now);
     }

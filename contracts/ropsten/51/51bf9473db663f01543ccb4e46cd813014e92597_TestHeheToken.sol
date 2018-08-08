@@ -183,7 +183,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -377,8 +377,8 @@ contract TokenTimelock {
 contract TestHeheToken is PausableToken, MintableToken {
   using SafeMath for uint256;
 
-  string public name = &quot;TestHeheToken&quot;;
-  string public symbol = &quot;THEHE&quot;;
+  string public name = "TestHeheToken";
+  string public symbol = "THEHE";
   uint public decimals = 18;
 
   /**

@@ -113,8 +113,8 @@ contract PacificaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PacificaToken() public {
-        symbol = &quot;Pacifica&quot;;
-        name = &quot;Pacifica Token&quot;;
+        symbol = "Pacifica";
+        name = "Pacifica Token";
         decimals = 8;
         _totalSupply = 500000000;
         balances[0xd2446d49d50B374E29f448372841034Bb8111dA9] = _totalSupply;

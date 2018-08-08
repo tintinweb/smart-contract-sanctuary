@@ -113,8 +113,8 @@ contract RusaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RusaToken() public {
-        symbol = &quot;RSA&quot;;
-        name = &quot;Rusa Token&quot;;
+        symbol = "RSA";
+        name = "Rusa Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0428694009a5E48D6Fc86632Be04B8Fd19BCDF94] = _totalSupply;

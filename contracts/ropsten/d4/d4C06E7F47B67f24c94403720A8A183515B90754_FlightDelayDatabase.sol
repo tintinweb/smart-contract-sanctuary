@@ -206,31 +206,31 @@ contract FlightDelayConstants {
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     string constant ORACLIZE_RATINGS_BASE_URL =
         // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
-        &quot;[URL] json(https://api.flightstats.com/flex/ratings/rest/v1/json/flight/&quot;;
+        "[URL] json(https://api.flightstats.com/flex/ratings/rest/v1/json/flight/";
     string constant ORACLIZE_RATINGS_QUERY =
-        &quot;?${[decrypt] BCGB+KxK9Hi0+HSuAjqUImcDiycjuUNPi8ibBGo6KFP/m9gOK6xtJbyi5lbPxPfDypCywVtTwe13VZbu02337Lw0mhTFO0OkUltmxGxi2mWgDBwN+VZdiXjtStOwuNYnhj8hjm71ppPGCVKXExvl1z3qDXkSbMMYZNBG+JNVFP7/YWhSZCXW}).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]&quot;;
+        "?${[decrypt] BCGB+KxK9Hi0+HSuAjqUImcDiycjuUNPi8ibBGo6KFP/m9gOK6xtJbyi5lbPxPfDypCywVtTwe13VZbu02337Lw0mhTFO0OkUltmxGxi2mWgDBwN+VZdiXjtStOwuNYnhj8hjm71ppPGCVKXExvl1z3qDXkSbMMYZNBG+JNVFP7/YWhSZCXW}).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]";
     string constant ORACLIZE_STATUS_BASE_URL =
         // flight status api is v2, see https://developer.flightstats.com/api-docs/flightstatus/v2/flight
-        &quot;[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
+        "[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/";
     string constant ORACLIZE_STATUS_QUERY =
         // pattern:
-        &quot;?${[decrypt] BKc9+sMSvpu/p3qUjdu0QrHliQpNylhoQmHqL/8mQ/jKfsf7wdIiwwdMizp5u6LoP8rIvGhRfEcjK1SgotQDGFqws/5+9S9D5OXdEPXnkEsjQZJsyu8uhRRWg/0QSSP6LYP2ONUQc92QncGJbPCDxOcf3lGiNRrhznHfjFW7n+lwz4mVxN76}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+        "?${[decrypt] BKc9+sMSvpu/p3qUjdu0QrHliQpNylhoQmHqL/8mQ/jKfsf7wdIiwwdMizp5u6LoP8rIvGhRfEcjK1SgotQDGFqws/5+9S9D5OXdEPXnkEsjQZJsyu8uhRRWg/0QSSP6LYP2ONUQc92QncGJbPCDxOcf3lGiNRrhznHfjFW7n+lwz4mVxN76}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]";
 // <-- prod-mode
 
 // --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        string constant ORACLIZE_RATINGS_BASE_URL =
 //            // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
-//            &quot;[URL] json(https://api-test.etherisc.com/flex/ratings/rest/v1/json/flight/&quot;;
+//            "[URL] json(https://api-test.etherisc.com/flex/ratings/rest/v1/json/flight/";
 //        string constant ORACLIZE_RATINGS_QUERY =
 //            // for testrpc:
-//            &quot;).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]&quot;;
+//            ").ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]";
 //        string constant ORACLIZE_STATUS_BASE_URL =
 //            // flight status api is v2, see https://developer.flightstats.com/api-docs/flightstatus/v2/flight
-//            &quot;[URL] json(https://api-test.etherisc.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
+//            "[URL] json(https://api-test.etherisc.com/flex/flightstatus/rest/v2/json/flight/status/";
 //        string constant ORACLIZE_STATUS_QUERY =
 //            // for testrpc:
-//            &quot;?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+//            "?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]";
 // <-- test-mode
 }
 
@@ -583,15 +583,15 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
     }
 
     function setContracts() public onlyController {
-        FD_AC = FlightDelayAccessControllerInterface(getContract(&quot;FD.AccessController&quot;));
+        FD_AC = FlightDelayAccessControllerInterface(getContract("FD.AccessController"));
 
-        FD_AC.setPermissionById(101, &quot;FD.NewPolicy&quot;);
-        FD_AC.setPermissionById(101, &quot;FD.Underwrite&quot;);
+        FD_AC.setPermissionById(101, "FD.NewPolicy");
+        FD_AC.setPermissionById(101, "FD.Underwrite");
 
-        FD_AC.setPermissionById(101, &quot;FD.Payout&quot;);
-        FD_AC.setPermissionById(101, &quot;FD.Ledger&quot;);
+        FD_AC.setPermissionById(101, "FD.Payout");
+        FD_AC.setPermissionById(101, "FD.Ledger");
 
-        FD_AC.setPermissionById(102, &quot;FD.Owner&quot;);
+        FD_AC.setPermissionById(102, "FD.Owner");
     }
 
     function setMinDepartureLim(uint _timestamp) returns (bool _success) {
@@ -673,7 +673,7 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
         bool _access
     ) public {
         // one and only hardcoded accessControl
-        require(msg.sender == FD_CI.getContract(&quot;FD.AccessController&quot;));
+        require(msg.sender == FD_CI.getContract("FD.AccessController"));
         accessControl[_contract][_caller][_perm] = _access;
     }
 
@@ -709,9 +709,9 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
         ledger[_index] += _value;
 
 // --> debug-mode
-//            LogInt(&quot;previous&quot;, previous);
-//            LogInt(&quot;ledger[_index]&quot;, ledger[_index]);
-//            LogInt(&quot;_value&quot;, _value);
+//            LogInt("previous", previous);
+//            LogInt("ledger[_index]", ledger[_index]);
+//            LogInt("_value", _value);
 // <-- debug-mode
 
         // check for int overflow
@@ -758,7 +758,7 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
         //todo: check for ovewflows
 
 // --> test-mode
-//            LogUint(&quot;_policyId&quot;, _policyId);
+//            LogUint("_policyId", _policyId);
 // <-- test-mode
 
         customerPolicies[_customer].push(_policyId);
@@ -846,7 +846,7 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
         );
 
 // --> test-mode
-//            LogBytes32(&quot;riskId&quot;, _riskId);
+//            LogBytes32("riskId", _riskId);
 // <-- test-mode
 
         Risk storage r = risks[_riskId];

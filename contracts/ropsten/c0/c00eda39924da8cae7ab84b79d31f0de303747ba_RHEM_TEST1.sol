@@ -18,7 +18,7 @@ contract ERC20Interface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -54,8 +54,8 @@ contract Ownable {
  * @dev Implemantation of the RHEM token
  */
 contract RHEM_TEST1 is Ownable, ERC20Interface {
-    string public constant symbol = &quot;RM1&quot;;
-    string public constant name = &quot;RM1&quot;;
+    string public constant symbol = "RM1";
+    string public constant name = "RM1";
     uint8 public constant decimals = 18;
     uint256 public _unmintedTokens = 3000000000000*uint(10)**decimals;
 

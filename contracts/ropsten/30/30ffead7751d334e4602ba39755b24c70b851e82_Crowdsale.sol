@@ -43,7 +43,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -666,7 +666,7 @@ contract Token is ERC20, Ownable {
     string public name;
     string public symbol;
     uint public decimals; // How many decimals to show.
-    string public version = &quot;v0.1&quot;;
+    string public version = "v0.1";
     uint public totalSupply;
     bool public locked;
     address public crowdSaleAddress;

@@ -22,7 +22,7 @@ contract KTCWhitelist {
 contract BuyOffer {
     
     
-    string public offertype = &quot;Offer to Buy&quot;;
+    string public offertype = "Offer to Buy";
     address public AssetContractAddress;
     address public OfferAddress;
     uint public numberofdays;
@@ -115,7 +115,7 @@ contract WhiteListChecker {
 contract SellOffer  {
     
     
-    string public offertype = &quot;Offer to Sell&quot;;
+    string public offertype = "Offer to Sell";
     address public AssetContractAddress;
     address public OffererAddress;
     uint public numberofdays;
@@ -293,7 +293,7 @@ contract AssetContract  is Bookings, Offerable, WhiteListChecker  {
         require ( _numdata != 0x0 );
         require ( msg.sender == KTC_Address );
         
-        if ( keccak256( _data ) == keccak256(&quot;1&quot;) ) { book ( _address, _value, _numdata ); }
+        if ( keccak256( _data ) == keccak256("1") ) { book ( _address, _value, _numdata ); }
         
     }
     

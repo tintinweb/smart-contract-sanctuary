@@ -113,8 +113,8 @@ contract CharlieToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CharlieToken() public {
-        symbol = &quot;CHA&quot;;
-        name = &quot;Charlie Token&quot;;
+        symbol = "CHA";
+        name = "Charlie Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4b712A33dbA669A1efeEd2A0F5f2A6dC00a23279] = _totalSupply;

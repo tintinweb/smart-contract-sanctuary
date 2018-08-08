@@ -113,8 +113,8 @@ contract RentaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RentaCoin() public {
-        symbol = &quot;RENTA&quot;;
-        name = &quot;RentaCoin&quot;;
+        symbol = "RENTA";
+        name = "RentaCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xD9Dc7f6e68c1a9648817e3D78458179B98b6993b] = _totalSupply;

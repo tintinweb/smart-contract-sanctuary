@@ -63,8 +63,8 @@ contract SupplyManager {
     }
 
     /**
-     * @dev This function validates that a given account has enough &quot;mint
-     * credit&quot; (security tokens - minted utility tokens) to be able to 
+     * @dev This function validates that a given account has enough "mint
+     * credit" (security tokens - minted utility tokens) to be able to 
      * mint utility tokens.
      * @param _account any ethereum address representing
      * an account that holds security tokens
@@ -83,8 +83,8 @@ contract SupplyManager {
     }
 
     /**
-     * @dev This function validates that a given account has enough &quot;mint
-     * balance&quot; (confirmed minted utility tokens) to be able to 
+     * @dev This function validates that a given account has enough "mint
+     * balance" (confirmed minted utility tokens) to be able to 
      * burn utility tokens.
      * @param _account any ethereum address representing
      * an account that holds security and utility tokens
@@ -452,7 +452,7 @@ contract VariableTaxToken is StandardToken, Ownable {
      * @return the fee that should be charged
      */
     function calculateFee(uint256 _value) private view returns (uint256) {
-        require(tax > 0, &quot;No fee can be applied if no tax is defined.&quot;);
+        require(tax > 0, "No fee can be applied if no tax is defined.");
         assert(taxBase > 0);
         uint256 taxFee = _value.mul(tax).div(taxBase);
         return taxFee;
@@ -465,7 +465,7 @@ contract VariableTaxToken is StandardToken, Ownable {
      * @param _value the new `tax` value
      */
     function updateTax(uint256 _value) public onlyOwner {
-        require(tax != _value, &quot;Tax value is unchanged&quot;);
+        require(tax != _value, "Tax value is unchanged");
         tax = _value;
     }
 
@@ -476,7 +476,7 @@ contract VariableTaxToken is StandardToken, Ownable {
      * @param _to the new `taxMan` address
      */
     function taxTo(address _to) public onlyOwner {
-        require(taxMan != _to, &quot;Tax recipient is unchanged.&quot;);
+        require(taxMan != _to, "Tax recipient is unchanged.");
         taxMan = _to;
     }
 
@@ -485,7 +485,7 @@ contract VariableTaxToken is StandardToken, Ownable {
      * so as to charge the fee on a successful transfer.
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-        require(_value > 0, &quot;Useless waste of gas&quot;);
+        require(_value > 0, "Useless waste of gas");
         super.transferFrom(_from, _to, _value);
         // tax is only applied when the necessary variables are defined
         if (taxMan != address(0) && tax > 0) {
@@ -500,7 +500,7 @@ contract VariableTaxToken is StandardToken, Ownable {
      * so as to charge the fee on a successful transfer.
      */
     function transfer(address _to, uint256 _value) public returns (bool) {
-        require(_value > 0, &quot;Useless waste of gas&quot;);
+        require(_value > 0, "Useless waste of gas");
         super.transfer(_to, _value);
         // tax is only applied when the necessary variables are defined
         if (taxMan != address(0) && tax > 0) {
@@ -515,8 +515,8 @@ contract VariableTaxToken is StandardToken, Ownable {
 contract UtilityToken is StandardToken, Ownable, BurnableToken, VariableTaxToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;GoldBackedToken&quot;;
-    string public constant symbol = &quot;GBT&quot;;
+    string public constant name = "GoldBackedToken";
+    string public constant symbol = "GBT";
     uint8 public constant decimals = 0;
 
     event Mint(address indexed to, uint256 amount);
@@ -603,8 +603,8 @@ contract MintableToken is StandardToken, Ownable {
 contract SecurityToken is StandardToken, MintableToken, BurnableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;MMintToken&quot;;
-    string public constant symbol = &quot;MMT&quot;;
+    string public constant name = "MMintToken";
+    string public constant symbol = "MMT";
     uint8 public constant decimals = 0;
 
     SupplyManager supplyManager;

@@ -113,8 +113,8 @@ contract LandmarkCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LandmarkCoin() public {
-        symbol = &quot;LAC&quot;;
-        name = &quot;Landmark Coin&quot;;
+        symbol = "LAC";
+        name = "Landmark Coin";
         decimals = 5;
         _totalSupply = 300000000000000;
         balances[0xD81F2c2Ef83F1434809B16fd16a432E4Ee979F88] = _totalSupply;

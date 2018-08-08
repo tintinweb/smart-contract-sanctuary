@@ -3,8 +3,8 @@ pragma solidity ^0.4.24;
 contract BitGemPlayToken {
    
 
-    string public name = &quot;Bit gem play&quot;;      //  token name
-    string public symbol = &quot;BTGP&quot;;           //  token symbol
+    string public name = "Bit gem play";      //  token name
+    string public symbol = "BTGP";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -193,9 +193,9 @@ contract XRT is AdvanceToken{
 	uint8 public constant decimals = 18;
 	uint256 private billion = 10*10**8;
     uint256 private multiplier = billion*10**18;
-  	string public constant name = &quot;XRT Token&quot;;
-  	string public constant symbol = &quot;XRT&quot;;
-  	string public version = &quot;X1.0&quot;;
+  	string public constant name = "XRT Token";
+  	string public constant symbol = "XRT";
+  	string public version = "X1.0";
   	uint256 private maxSupply = multiplier;
     uint256 public totalSupply = (50*maxSupply)/100;
   	

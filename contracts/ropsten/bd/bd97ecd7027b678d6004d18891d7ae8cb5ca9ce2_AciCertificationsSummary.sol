@@ -35,8 +35,8 @@ contract AciCertificationsSummary {
         bytes memory block_bytes = bytes(_block_hash);
         bytes memory tree_bytes = bytes(_tree_root);
 
-        require(block_bytes.length > 0,    &quot;hash block not valid&quot;);
-        require(tree_bytes.length > 0,   &quot;hash merkel tree not valid&quot;);
+        require(block_bytes.length > 0,    "hash block not valid");
+        require(tree_bytes.length > 0,   "hash merkel tree not valid");
 
         certs[count] = DataSummary(_block_hash, _tree_root);
 

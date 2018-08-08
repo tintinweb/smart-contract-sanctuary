@@ -113,8 +113,8 @@ contract LollygagToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;LGAG&quot;;
-        name = &quot;Lollygag Token&quot;;
+        symbol = "LGAG";
+        name = "Lollygag Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xbEF06B04a305a34A2753806a8e1b28D233Bd00F5] = _totalSupply;

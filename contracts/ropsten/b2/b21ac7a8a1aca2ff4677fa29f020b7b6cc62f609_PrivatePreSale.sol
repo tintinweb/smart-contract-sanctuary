@@ -5,7 +5,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -97,7 +97,7 @@ contract KYCWhitelist is Claimable {
   }
 
   /**
-   * @dev Does a &quot;require&quot; check if _beneficiary address is approved
+   * @dev Does a "require" check if _beneficiary address is approved
    * @param _beneficiary Token beneficiary
    */
   function validateWhitelisted(address _beneficiary) internal view {

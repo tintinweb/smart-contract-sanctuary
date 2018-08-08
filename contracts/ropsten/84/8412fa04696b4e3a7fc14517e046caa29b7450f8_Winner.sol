@@ -80,8 +80,8 @@ contract Winner is WinnerEvents {
 // game settings
 //==============================================================================
 
-    string constant public name = &quot;Im Winner Game&quot;;
-    string constant public symbol = &quot;IMW&quot;;
+    string constant public name = "Im Winner Game";
+    string constant public symbol = "IMW";
 
 
 //==============================================================================
@@ -143,7 +143,7 @@ contract Winner is WinnerEvents {
      * @dev check if the contract is activated
      */
      modifier isActivated() {
-        require(activated_ == true, &quot;the contract is not ready yet&quot;);
+        require(activated_ == true, "the contract is not ready yet");
         _;
      }
 
@@ -155,7 +155,7 @@ contract Winner is WinnerEvents {
         uint256 _codeLength;
         
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
 
@@ -172,7 +172,7 @@ contract Winner is WinnerEvents {
             }
         }
 
-        require(_isAdmin == true, &quot;sorry admins only&quot;);
+        require(_isAdmin == true, "sorry admins only");
         _;
     }
 
@@ -180,8 +180,8 @@ contract Winner is WinnerEvents {
      * @dev sets boundaries for incoming tx 
      */
     modifier isWithinLimits(uint256 _eth) {
-        require(_eth >= 10000000000, &quot;eth too small&quot;);
-        require(_eth <= 100000000000000000000000, &quot;eth too huge&quot;);
+        require(_eth >= 10000000000, "eth too small");
+        require(_eth <= 100000000000000000000000, "eth too huge");
         _;    
     }
 
@@ -322,7 +322,7 @@ contract Winner is WinnerEvents {
     isAdmin()
     public 
      {
-        require( activated_ == false, &quot;contract is activated&quot;);
+        require( activated_ == false, "contract is activated");
 
         activated_ = true;
 
@@ -340,7 +340,7 @@ contract Winner is WinnerEvents {
     isWithinLimits(eth) {
 
         uint pID = address2PID_[addr];
-        require(pID > 0, &quot;user not exist&quot;);
+        require(pID > 0, "user not exist");
 
         addr.transfer(eth);
 
@@ -362,7 +362,7 @@ contract Winner is WinnerEvents {
     public {
         bool isExist = isAdminAddressExist(addr);
 
-        require( isExist == false, &quot;addmin address exist&quot;);
+        require( isExist == false, "addmin address exist");
 
         adminAddresses_.push(addr);
     }
@@ -375,9 +375,9 @@ contract Winner is WinnerEvents {
     public {
         bool isExist = isAdminAddressExist(addr);
 
-        require( isExist == true, &quot;admin address not exist&quot;);
+        require( isExist == true, "admin address not exist");
 
-        require( addr != msg.sender, &quot;admin cannot remove self&quot;);
+        require( addr != msg.sender, "admin cannot remove self");
 
         uint256 idx = getAdminAddressIndex(addr);
         for( uint256 i = idx; i<adminAddresses_.length-1; i++) {
@@ -410,11 +410,11 @@ contract Winner is WinnerEvents {
 
         uint256 pID = address2PID_[addr];
 
-        require( pID != 0, &quot;cannot find the player&quot;);
-        require( balance >= 0, &quot;balance invalid&quot;);
-        require( interest >= 0, &quot;interest invalid&quot;);
-        require( win >= 0, &quot;win invalid&quot;);
-        require( reff >= 0, &quot;reff invalid&quot;);
+        require( pID != 0, "cannot find the player");
+        require( balance >= 0, "balance invalid");
+        require( interest >= 0, "interest invalid");
+        require( win >= 0, "win invalid");
+        require( reff >= 0, "reff invalid");
 
         pID2Player_[pID].pname = pname;
         pID2Player_[pID].balance = balance;
@@ -441,13 +441,13 @@ contract Winner is WinnerEvents {
     public {
         uint256 pID = address2PID_[addr];
 
-        require( pID != 0, &quot;cannot find the player&quot;);
-        require( roundID == roundID_, &quot;not current round&quot;);
-        require( eth >= 0, &quot;eth invalid&quot;);
-        require( keys >= 0, &quot;keys invalid&quot;);
-        require( interest >= 0, &quot;interest invalid&quot;);
-        require( win >= 0, &quot;win invalid&quot;);
-        require( reff >= 0, &quot;reff invalid&quot;);
+        require( pID != 0, "cannot find the player");
+        require( roundID == roundID_, "not current round");
+        require( eth >= 0, "eth invalid");
+        require( keys >= 0, "keys invalid");
+        require( interest >= 0, "interest invalid");
+        require( win >= 0, "win invalid");
+        require( reff >= 0, "reff invalid");
 
         pID2Round_[pID][roundID_].eth = eth;
         pID2Round_[pID][roundID_].keys = keys;
@@ -477,17 +477,17 @@ contract Winner is WinnerEvents {
     isActivated()
     public {
 
-        require( roundID == roundID_, &quot;not current round&quot;);
+        require( roundID == roundID_, "not current round");
 
         uint256 pID = address2PID_[leader];
-        require( pID != 0, &quot;cannot find the leader&quot;);
-        require( end >= start, &quot;start end invalid&quot;);
-        require( keys >= 0, &quot;keys invalid&quot;);
-        require( eth >= 0, &quot;eth invalid&quot;);
-        require( pool >= 0, &quot;pool invalid&quot;);
-        require( interest >= 0, &quot;interest invalid&quot;);
-        require( win >= 0, &quot;win invalid&quot;);
-        require( reff >= 0, &quot;reff invalid&quot;);
+        require( pID != 0, "cannot find the leader");
+        require( end >= start, "start end invalid");
+        require( keys >= 0, "keys invalid");
+        require( eth >= 0, "eth invalid");
+        require( pool >= 0, "pool invalid");
+        require( interest >= 0, "interest invalid");
+        require( win >= 0, "win invalid");
+        require( reff >= 0, "reff invalid");
 
         rID2Round_[roundID_].leader = leader;
         rID2Round_[roundID_].start = start;
@@ -577,14 +577,14 @@ library NameFilter {
         uint256 _length = _temp.length;
         
         //sorry limited to 32 characters
-        require (_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require (_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // make sure it doesnt start with or end with space
-        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, "string cannot start or end with space");
         // make sure first two characters are not 0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
         
         // create a bool to track if we have a non number character
@@ -611,11 +611,11 @@ library NameFilter {
                     (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                     // or 0-9
                     (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // make sure theres not 2x spaces in a row
                 if (_temp[i] == 0x20)
-                    require( _temp[i+1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require( _temp[i+1] != 0x20, "string cannot contain consecutive spaces");
                 
                 // see if we have a character other than a number
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -623,7 +623,7 @@ library NameFilter {
             }
         }
         
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
         
         bytes32 _ret;
         assembly {
@@ -651,7 +651,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -663,7 +663,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -676,7 +676,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     

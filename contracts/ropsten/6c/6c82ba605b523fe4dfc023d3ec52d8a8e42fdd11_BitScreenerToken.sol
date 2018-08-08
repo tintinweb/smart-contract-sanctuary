@@ -17,7 +17,7 @@ contract ERC20Basic {
 /**
  * @title MultiOwnable
  * @dev The MultiOwnable contract has owners addresses and provides basic authorization control
- * functions, this simplifies the implementation of &quot;users permissions&quot;.
+ * functions, this simplifies the implementation of "users permissions".
  */
 contract MultiOwnable {
     address public manager; // address used to set owners
@@ -540,8 +540,8 @@ contract ERC827Token is ERC827, StandardToken {
 
 
 contract BitScreenerToken is ERC827Token, MultiOwnable {
-    string public name = &quot;BitScreenerToken&quot;;
-    string public symbol = &quot;BITX&quot;;
+    string public name = "BitScreenerToken";
+    string public symbol = "BITX";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     address public owner;

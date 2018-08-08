@@ -70,8 +70,8 @@ contract Owned {
 contract LetsFunds is ERC20Interface, Owned, SafeMath {
     uint8 public decimals;
     uint public _totalSupply;
-    string constant public symbol = &quot;LFC&quot;;
-    string constant public name = &quot;LetsFunds&quot;;
+    string constant public symbol = "LFC";
+    string constant public name = "LetsFunds";
 
     uint256 INITIAL_SUPPLY = 24000000e18;
 

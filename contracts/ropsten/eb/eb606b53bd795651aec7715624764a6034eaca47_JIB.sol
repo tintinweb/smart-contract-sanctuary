@@ -81,8 +81,8 @@ contract JIB is ERC20Interface
     using SafeMath for uint256;
    
     uint256 constant public TOKEN_DECIMALS = 10 ** 18;
-    string public constant name            = &quot;Jibbit Token&quot;;
-    string public constant symbol          = &quot;JIB&quot;;
+    string public constant name            = "Jibbit Token";
+    string public constant symbol          = "JIB";
     uint256 public totalTokenSupply        = 700000000 * TOKEN_DECIMALS;
     uint8 public constant decimals         = 18;
     address public owner;

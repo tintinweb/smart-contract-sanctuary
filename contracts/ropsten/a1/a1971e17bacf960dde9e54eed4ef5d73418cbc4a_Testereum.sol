@@ -46,8 +46,8 @@ contract Testereum {
     ) public {
         totalSupply = 25000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Testereum&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TSTR&quot;;                               // Set the symbol for display purposes
+        name = "Testereum";                                   // Set the name for display purposes
+        symbol = "TSTR";                               // Set the symbol for display purposes
     }
 
     /**

@@ -113,8 +113,8 @@ contract Bx8 is ERC20Interface, Owned, SafeMath {
   // Constructor
   // ------------------------------------------------------------------------
   constructor() public {
-    symbol = &quot;BX8&quot;;
-    name = &quot;BX8&quot;;
+    symbol = "BX8";
+    name = "BX8";
     decimals = 18;
     _totalSupply = 8000000000;
     balances[0xdE500E92ba8E27bB8DaBc8F45CE654171b12a804] = _totalSupply;

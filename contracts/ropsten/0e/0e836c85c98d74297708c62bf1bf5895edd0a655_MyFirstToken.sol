@@ -1,6 +1,6 @@
 contract MyFirstToken {
-    string public constant symbol = &quot;XAN&quot;;
-    string public constant name = &quot;Abdul Mateen Token&quot;;
+    string public constant symbol = "XAN";
+    string public constant name = "Abdul Mateen Token";
     uint8 public constant decimals = 18;
     
     uint private constant __totalSupply = 1000;

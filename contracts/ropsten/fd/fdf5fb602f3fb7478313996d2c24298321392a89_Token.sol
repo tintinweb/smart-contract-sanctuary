@@ -155,8 +155,8 @@ contract Token is owned, TokenERC20  {
 
 	//Modify these variables
 	uint256 _initialSupply=420000000; 
-	string _tokenName=&quot;XXX&quot;;  
-	string _tokenSymbol=&quot;XXX&quot;;
+	string _tokenName="XXX";  
+	string _tokenSymbol="XXX";
 	address wallet1 = 0xf2dF7e438f908005B6BC22BFf04BE176dAB9d6eB;
 	address wallet2 = 0x4084cC0E630dd39b6B791C7528B96C76Ab82b3E5;
 	address wallet3 = 0x0f9f16c596Fd083815B4aC4003cc5Cca45ca483A;

@@ -113,8 +113,8 @@ contract SmartN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SmartN() public {
-        symbol = &quot;STN&quot;;
-        name = &quot;SmartN&quot;;
+        symbol = "STN";
+        name = "SmartN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x116Bb96Dc135F458E32331567D113adb9650BC42] = _totalSupply;

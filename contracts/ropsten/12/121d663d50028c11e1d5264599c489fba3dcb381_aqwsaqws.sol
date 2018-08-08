@@ -114,8 +114,8 @@ contract aqwsaqws is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function aqwsaqws() public {
-        symbol = &quot;aqws&quot;;
-        name = &quot;aqwsaqws Token&quot;;
+        symbol = "aqws";
+        name = "aqwsaqws Token";
         decimals = 0;
         endDate = now + 1234 weeks;
 

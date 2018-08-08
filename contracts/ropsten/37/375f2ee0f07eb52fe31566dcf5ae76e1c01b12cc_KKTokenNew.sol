@@ -98,8 +98,8 @@ contract Owned {
 // token transfers
 // ----------------------------------------------------------------------------
 contract KKTokenNew is ERC20Interface, Owned, SafeMath {
-    string public constant symbol = &quot;KKTN&quot;;
-    string public constant name = &quot;KKTokenNew&quot;;
+    string public constant symbol = "KKTN";
+    string public constant name = "KKTokenNew";
     uint256 public constant decimals = 18;
     uint public _totalSupply;
 	uint public _devTokens;

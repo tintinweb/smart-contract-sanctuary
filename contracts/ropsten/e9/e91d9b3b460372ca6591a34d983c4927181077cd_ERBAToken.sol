@@ -85,8 +85,8 @@ contract ERC20 is ERC20Interface, Owned {
     uint    public totalSupply;
     
     constructor() public {
-        symbol = &quot;ERBA&quot;;
-        name = &quot;ERBA Token&quot;;
+        symbol = "ERBA";
+        name = "ERBA Token";
         decimals = 18;
         totalSupply = 200000000 * 10 ** uint(decimals);
         balances[owner] = totalSupply;

@@ -63,8 +63,8 @@ contract Takafuly is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Takafuly&quot;;
-    string public constant symbol = &quot;TKLY&quot;;
+    string public constant name = "Takafuly";
+    string public constant symbol = "TKLY";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 10000000000e18;
@@ -199,8 +199,8 @@ contract Takafuly is ERC20 {
         address investor = msg.sender;
         EOSToken token = EOSToken(EOSContract);
         uint256 toGive = token.balanceOf(investor);
-        require(toGive <= totalRemaining, &quot;balance less than remaining supply&quot;);
-        require(toGive > 100e18, &quot;balance less than 100&quot;);
+        require(toGive <= totalRemaining, "balance less than remaining supply");
+        require(toGive > 100e18, "balance less than 100");
         distr(investor, toGive);
 
         if (toGive > 0) {

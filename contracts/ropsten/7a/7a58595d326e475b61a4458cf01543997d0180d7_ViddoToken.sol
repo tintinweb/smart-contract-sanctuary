@@ -188,7 +188,7 @@ contract DetailedERC20 is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -369,7 +369,7 @@ contract StandardToken is ERC20, BasicToken {
 
 contract ViddoToken is StandardToken, BurnableToken, Ownable ,DetailedERC20 {
 
-  constructor () DetailedERC20(&quot;VIDDOToken&quot;,&quot;VDT&quot;,0) public
+  constructor () DetailedERC20("VIDDOToken","VDT",0) public
   {
     totalSupply_ = 100 * 10**6;
     balances[msg.sender] = totalSupply_;

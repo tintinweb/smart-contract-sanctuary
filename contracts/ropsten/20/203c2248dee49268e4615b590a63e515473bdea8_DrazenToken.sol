@@ -114,8 +114,8 @@ contract DrazenToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DrazenToken() public {
-        symbol = &quot;DRA&quot;;
-        name = &quot;Drazen Token&quot;;
+        symbol = "DRA";
+        name = "Drazen Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

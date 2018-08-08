@@ -7,7 +7,7 @@ pragma solidity ^0.4.23;
  * @Version 1.0.0
  */
 contract TrustBet {
-    string      public matchInfo = &quot;2018 Russia World Cup Quarter-finals Sweden VS England  (Sat, 7/7, 10:00 AM)&quot;;//比赛信息
+    string      public matchInfo = "2018 Russia World Cup Quarter-finals Sweden VS England  (Sat, 7/7, 10:00 AM)";//比赛信息
     address     public owner;//合约所有者
     bool        public stop     = false;//是否停止竞猜
     int8        public winTeam  = -1;//比赛结果：-1未开奖；0:1队胜；1:2队胜；2:2队平

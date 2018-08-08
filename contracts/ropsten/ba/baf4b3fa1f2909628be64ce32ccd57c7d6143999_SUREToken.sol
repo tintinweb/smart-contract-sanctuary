@@ -63,7 +63,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -330,8 +330,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract SUREToken is MintableToken {
     address private deployedAddress = 0x8816541fcfb42c5e6fb686c1995def3838258b1e; //Replace this address by the Ethereum main net
-    string public name = &quot;SURE12&quot;;
-    string public symbol = &quot;SURE12 Token&quot;;    
+    string public name = "SURE12";
+    string public symbol = "SURE12 Token";    
     uint public decimals = 6;
     uint public totalSupplyToken = 500000000;  
 
@@ -365,12 +365,12 @@ contract SUREToken is MintableToken {
 
         if(!released) {
             if(!transferAgents[_sender]) {
-                revert(&quot;The token is in the locking period&quot;);
+                revert("The token is in the locking period");
             }
         }
         else if (!releasedTeam && teamMembers[_sender])
         {
-            revert(&quot;Team members/advisors cannot trade during this period.&quot;);
+            revert("Team members/advisors cannot trade during this period.");
         }    
         _;
     }
@@ -386,7 +386,7 @@ contract SUREToken is MintableToken {
     * Owner can allow a particular address (a crowdsale contract) to transfer tokens despite the lock up period.
     */
     function setTransferAgent(address addr, bool state) onlyOwner inReleaseState(false) public {
-        require (!teamMembers[addr], &quot;Error! This address is a team member/advisor address.&quot;);
+        require (!teamMembers[addr], "Error! This address is a team member/advisor address.");
         transferAgents[addr] = state;       
     }
 
@@ -394,7 +394,7 @@ contract SUREToken is MintableToken {
     * Owner can add the team member/advisor address.
     */
     function setTeamMember(address addr, bool state) onlyOwner inReleaseState(false) public {
-        require (!transferAgents[addr], &quot;Error! This address is in the transfer agent list.&quot;);
+        require (!transferAgents[addr], "Error! This address is in the transfer agent list.");
         teamMembers[addr] = state;            
     }
 

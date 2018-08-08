@@ -63,7 +63,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -163,9 +163,9 @@ contract PaoToken is ERC20, Lockable {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     uint256 totalSupply_ = 10000000000 * 1000000000000000000;
-    string public name = &quot;PA0Token&quot;;
+    string public name = "PA0Token";
     uint8 public decimals = 18;
-    string public symbol = &quot;PA0&quot;;
+    string public symbol = "PA0";
 
     uint256 public sellPrice;
     uint256 public buyPrice;

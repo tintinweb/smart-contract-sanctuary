@@ -113,8 +113,8 @@ contract BeaverCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BeaverCoin() public {
-        symbol = &quot;BVR&quot;;
-        name = &quot;Beaver Coin&quot;;
+        symbol = "BVR";
+        name = "Beaver Coin";
         decimals = 18;
         _totalSupply = 50000000000000000000000;
         balances[0xba7C0898990F805b158E90594d1e3c2C9470d231] = _totalSupply;

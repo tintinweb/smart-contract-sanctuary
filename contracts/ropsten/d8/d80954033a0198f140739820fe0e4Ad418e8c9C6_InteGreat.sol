@@ -70,8 +70,8 @@ contract Owned {
 contract InteGreat is ERC20Interface, Owned, SafeMath {
     uint8 public decimals;
     uint public _totalSupply;
-    string constant public symbol = &quot;ITG&quot;;
-    string constant public name = &quot;InteGreat&quot;;
+    string constant public symbol = "ITG";
+    string constant public name = "InteGreat";
 
     uint256 INITIAL_SUPPLY = 10000000e18;
 

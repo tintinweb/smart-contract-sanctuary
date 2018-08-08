@@ -82,8 +82,8 @@ contract Test8J is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Test8J&quot;;
-    string public constant symbol = &quot;TEJ&quot;;
+    string public constant name = "Test8J";
+    string public constant symbol = "TEJ";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 25000000000e18;

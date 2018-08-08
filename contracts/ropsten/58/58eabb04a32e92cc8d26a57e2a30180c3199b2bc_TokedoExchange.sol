@@ -38,17 +38,17 @@ contract Ownable {
 	}
 
 	modifier onlyOwner() {
-		require(msg.sender == owner, &quot;msg.sender == owner&quot;);
+		require(msg.sender == owner, "msg.sender == owner");
 		_;
 	}
 
 	function transferOwnership(address _newOwner) public onlyOwner {
-		require(address(0) != _newOwner, &quot;address(0) != _newOwner&quot;);
+		require(address(0) != _newOwner, "address(0) != _newOwner");
 		newOwner = _newOwner;
 	}
 
 	function acceptOwnership() public {
-		require(msg.sender == newOwner, &quot;msg.sender == newOwner&quot;);
+		require(msg.sender == newOwner, "msg.sender == newOwner");
 		emit OwnershipTransferred(owner, msg.sender);
 		owner = msg.sender;
 		newOwner = address(0);
@@ -59,7 +59,7 @@ contract Adminable is Ownable {
     mapping(address => bool) public admins;
 
     modifier onlyAdmin() {
-        require( admins[msg.sender] && msg.sender != owner , &quot;admins[msg.sender] && msg.sender != owner&quot;);
+        require( admins[msg.sender] && msg.sender != owner , "admins[msg.sender] && msg.sender != owner");
         _;
     }
 
@@ -123,7 +123,7 @@ contract TokedoExchange is Ownable, Adminable {
     }
     
     function setInactivityReleasePeriod(uint256 _expiry) onlyAdmin public returns (bool success) {
-        require(_expiry < 26 weeks, &quot;_expiry < 26 weeks&quot; );
+        require(_expiry < 26 weeks, "_expiry < 26 weeks" );
         
         inactivityReleasePeriod = _expiry;
         
@@ -144,7 +144,7 @@ contract TokedoExchange is Ownable, Adminable {
         } else {
             waitingTime = 2 * inactivityReleasePeriod;
         }
-        require( timeMaxFeeWithdrawal.add( waitingTime ) > now, &quot;timeMaxFeeWithdrawal.add( waitingTime ) > now&quot; );
+        require( timeMaxFeeWithdrawal.add( waitingTime ) > now, "timeMaxFeeWithdrawal.add( waitingTime ) > now" );
         
         maxFeeWithdrawal = newMaxFeeWithdrawal;
         
@@ -168,7 +168,7 @@ contract TokedoExchange is Ownable, Adminable {
         } else {
             waitingTime = 2 * inactivityReleasePeriod;
         }
-        require( timeMaxFeeTrade.add( waitingTime ) > now, &quot;timeMaxFeeTrade.add( waitingTime ) > now&quot; );
+        require( timeMaxFeeTrade.add( waitingTime ) > now, "timeMaxFeeTrade.add( waitingTime ) > now" );
         
         maxFeeTrade = newMaxFeeTrade;
         
@@ -192,7 +192,7 @@ contract TokedoExchange is Ownable, Adminable {
         
         lastActiveTransaction[msg.sender] = now;
         
-        require( Token(token).transferFrom(msg.sender, this, amount), &quot;Token(token).transferFrom(msg.sender, this, amount)&quot; );
+        require( Token(token).transferFrom(msg.sender, this, amount), "Token(token).transferFrom(msg.sender, this, amount)" );
         
         emit Deposit(token, msg.sender, amount, tokens[token][msg.sender]);
     }
@@ -211,15 +211,15 @@ contract TokedoExchange is Ownable, Adminable {
 
     function emergencyWithdraw(address token, uint256 amount) public returns (bool success) {
         
-        require( now.sub(lastActiveTransaction[msg.sender]) > inactivityReleasePeriod, &quot;now.sub(lastActiveTransaction[msg.sender]) > inactivityReleasePeriod&quot; );
+        require( now.sub(lastActiveTransaction[msg.sender]) > inactivityReleasePeriod, "now.sub(lastActiveTransaction[msg.sender]) > inactivityReleasePeriod" );
         require( tokens[token][msg.sender] >= amount );
         
         tokens[token][msg.sender] = tokens[token][msg.sender].sub(amount);
         
         if (token == address(0)) {
-            require(msg.sender.send(amount), &quot;msg.sender.send(amount)&quot;);
+            require(msg.sender.send(amount), "msg.sender.send(amount)");
         } else {
-            require(Token(token).transfer(msg.sender, amount), &quot;Token(token).transfer(msg.sender, amount)&quot;);
+            require(Token(token).transfer(msg.sender, amount), "Token(token).transfer(msg.sender, amount)");
         }
         
         emit Withdraw(token, msg.sender, amount, tokens[token][msg.sender]);
@@ -232,7 +232,7 @@ contract TokedoExchange is Ownable, Adminable {
         require( !withdrawn[hash] );
         withdrawn[hash] = true;
         
-        require( ecrecover( keccak256( abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash) ), v, r, s) == user);
+        require( ecrecover( keccak256( abi.encodePacked("\x19Ethereum Signed Message:\n32", hash) ), v, r, s) == user);
         
         if (feeWithdrawal > maxFeeWithdrawal) feeWithdrawal = maxFeeWithdrawal;
         
@@ -245,9 +245,9 @@ contract TokedoExchange is Ownable, Adminable {
         amount = (1 ether - feeWithdrawal).mul(amount) / 1 ether;
         
         if (token == address(0)) {
-            require( user.send(amount), &quot;user.send(amount)&quot;);
+            require( user.send(amount), "user.send(amount)");
         } else {
-            require( Token(token).transfer(user, amount), &quot;Token(token).transfer(user, amount)&quot; );
+            require( Token(token).transfer(user, amount), "Token(token).transfer(user, amount)" );
         }
         
         lastActiveTransaction[user] = now;
@@ -280,24 +280,24 @@ contract TokedoExchange is Ownable, Adminable {
 
     
     //required: nonceMaker is greater or egual User Maker Nonce
-    require( _values[3] >= invalidOrder[_addresses[2]] , &quot;_values[3] >= invalidOrder[_addresses[2]]&quot;  );
+    require( _values[3] >= invalidOrder[_addresses[2]] , "_values[3] >= invalidOrder[_addresses[2]]"  );
     
     // orderHash: ExchangeAddress, tokenBuyAddress, amountBuyMaker, tokenSellAddress, amountSellMaker, expiresMaker, nonceMaker, makerAddress
     bytes32 orderHash = keccak256( abi.encodePacked(this, _addresses[0], _values[0], _addresses[1], _values[1], _values[2], _values[3], _addresses[2]) );
     
     //required: the signer is the same address of makerAddress
-    require( _addresses[2] == ecrecover( keccak256( abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, orderHash) ), v[0], rs[0], rs[1]),
-            &#39;_addresses[2] == ecrecover( keccak256( abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, orderHash) ), v[0], rs[0], rs[1])&#39;);
+    require( _addresses[2] == ecrecover( keccak256( abi.encodePacked("\x19Ethereum Signed Message:\n32", orderHash) ), v[0], rs[0], rs[1]),
+            &#39;_addresses[2] == ecrecover( keccak256( abi.encodePacked("\x19Ethereum Signed Message:\n32", orderHash) ), v[0], rs[0], rs[1])&#39;);
     
     // tradeHash: OrderHash, amountBuyTaker, takerAddress, tradeNonceTaker
     bytes32 tradeHash = keccak256( abi.encodePacked(orderHash, _values[4], _addresses[3], _values[5]) ); 
     
     //required: the signer is the same address of takerAddress
-    require( _addresses[3] == ecrecover( keccak256( abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, tradeHash) ), v[1], rs[2], rs[3]) , 
-            &#39;_addresses[3] == ecrecover( keccak256( abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, tradeHash) ), v[1], rs[2], rs[3])&#39; );
+    require( _addresses[3] == ecrecover( keccak256( abi.encodePacked("\x19Ethereum Signed Message:\n32", tradeHash) ), v[1], rs[2], rs[3]) , 
+            &#39;_addresses[3] == ecrecover( keccak256( abi.encodePacked("\x19Ethereum Signed Message:\n32", tradeHash) ), v[1], rs[2], rs[3])&#39; );
     
     //required: the same trade is not done
-    require( !traded[tradeHash] , &quot;!traded[tradeHash] &quot;);
+    require( !traded[tradeHash] , "!traded[tradeHash] ");
     traded[tradeHash] = true;
     
 
@@ -323,15 +323,15 @@ contract TokedoExchange is Ownable, Adminable {
     
     //required: order + amountBuyTaker <= amountBuyMaker
     require( orderFills[orderHash].add(_values[4]) <= _values[0],
-            &quot;orderFills[orderHash].add(_values[4]) <= _values[0]&quot;);
+            "orderFills[orderHash].add(_values[4]) <= _values[0]");
     
     //required there are sufficient funds: tokens[tokenBuyAddress][taker] >= amountBuyTaker
     require( tokens[_addresses[0]][_addresses[3]] >= _values[4] ,
-            &quot;tokens[_addresses[0]][_addresses[3]] >= _values[4]&quot;);
+            "tokens[_addresses[0]][_addresses[3]] >= _values[4]");
     
     //required there are sufficient funds: tokens[tokenSellAddress][makerAddress] >= amountSellMaker * amountBuyTaker / amountBuyMaker
     require( tokens[_addresses[1]][_addresses[2]] >= ( _values[1].mul(_values[4] ) / _values[0]) ,
-            &quot;tokens[_addresses[1]][_addresses[2]] >= ( _values[1].mul(_values[4] ) / _values[0])&quot;);
+            "tokens[_addresses[1]][_addresses[2]] >= ( _values[1].mul(_values[4] ) / _values[0])");
     
     //tokens[tokenBuyAddress][takerAddress] = tokens[tokenBuyAddress][takerAddress].sub( amountBuyTaker );
     tokens[_addresses[0]][_addresses[3]] = tokens[_addresses[0]][_addresses[3]].sub( _values[4] );

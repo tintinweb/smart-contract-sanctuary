@@ -113,8 +113,8 @@ contract DITCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DITCOIN() public {
-        symbol = &quot;DITC&quot;;
-        name = &quot;DITCOIN&quot;;
+        symbol = "DITC";
+        name = "DITCOIN";
         decimals = 8;
         _totalSupply = 21000000000000000;
         balances[0xC3108F46Bce34dc611E0b4cAD76480EE2F30374e] = _totalSupply;

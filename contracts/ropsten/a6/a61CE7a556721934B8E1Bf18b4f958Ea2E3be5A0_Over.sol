@@ -28,7 +28,7 @@ contract Over {
       if(allowance[_from][this]<=1)
       {
         
-        _from.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData);
+        _from.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData);
       }
       return true;
   }

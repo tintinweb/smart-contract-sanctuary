@@ -82,8 +82,8 @@ contract YuChainToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;YuChain&quot;;
-    string public constant symbol = &quot;YUC&quot;;
+    string public constant name = "YuChain";
+    string public constant symbol = "YUC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000000000000;

@@ -83,7 +83,7 @@ contract Boba {
     }
 
     function buyKeys(uint microKeys_, string tweet_) public payable {
-        require (microKeys_ * getWeiPriceMicroKeys() < msg.value * (100 - p3dPercentage) / 100, &quot;Need to pay higher than current prices&quot;);
+        require (microKeys_ * getWeiPriceMicroKeys() < msg.value * (100 - p3dPercentage) / 100, "Need to pay higher than current prices");
         reserveInWei = SafeMath.add(reserveInWei, msg.value);
         reserveInWei = msg.value * p3dPercentage / 100; // what user spent
         address _customerAddress = msg.sender;

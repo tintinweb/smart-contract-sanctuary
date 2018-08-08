@@ -113,8 +113,8 @@ contract RAMTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RAMTOKEN() public {
-        symbol = &quot;RAM&quot;;
-        name = &quot;RAM Token&quot;;
+        symbol = "RAM";
+        name = "RAM Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8f5d77471a84E4D98FAB38b39863C6d9ebdC3191] = _totalSupply;

@@ -163,8 +163,8 @@ contract StandardToken is Token {
 
 contract CoinActivaToken is StandardToken { 
 
-    string public name = &quot;CoinActiva Token&quot;;     
-    string public symbol = &quot;CVT&quot;;                               
+    string public name = "CoinActiva Token";     
+    string public symbol = "CVT";                               
     uint256 public decimals = 18;
     // uint256 public initialSupply = 300000000 * 1 ether;                
     address public icoWallet;     

@@ -65,9 +65,9 @@ contract HashnodeTestCoin is StandardToken {
     function HashnodeTestCoin() {
         balances[msg.sender] = 1000000000000000000000;               
         totalSupply = 1000000000000000000000;                        
-        name = &quot;HashnodeTestCoin&quot;;                                   
+        name = "HashnodeTestCoin";                                   
         decimals = 18;                                               
-        symbol = &quot;HTCN&quot;;                                             
+        symbol = "HTCN";                                             
         unitsOneEthCanBuy = 10;                                      
         fundsWallet = msg.sender;                                    
     }
@@ -90,7 +90,7 @@ contract HashnodeTestCoin is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -1,8 +1,8 @@
 pragma solidity ^0.4.24;
 
 contract ComeToken {
-    string public name = &quot;Come Token&quot;;
-    string public symbol = &quot;CT_1&quot;;
+    string public name = "Come Token";
+    string public symbol = "CT_1";
     uint8 public decimals = 18;
     uint256 public increasedSupply = 200000000 * 10 ** uint256(decimals);
     address public owner;

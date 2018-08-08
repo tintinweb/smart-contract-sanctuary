@@ -110,8 +110,8 @@ contract YogeshRTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;YRTT&quot;;
-        name = &quot;YogeshRTestToken&quot;;
+        symbol = "YRTT";
+        name = "YogeshRTestToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x68c7E0b4D2099Eb61ce78Fd26d925c980B022AAD] = _totalSupply;

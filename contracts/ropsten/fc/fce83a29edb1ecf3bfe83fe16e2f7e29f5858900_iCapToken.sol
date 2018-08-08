@@ -113,8 +113,8 @@ contract iCapToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function iCapToken() public {
-        symbol = &quot;ICAP&quot;;
-        name = &quot;iCap Token&quot;;
+        symbol = "ICAP";
+        name = "iCap Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2D9169486ba16eD99B9618A1F5A4bECd41A2aF7c] = _totalSupply;

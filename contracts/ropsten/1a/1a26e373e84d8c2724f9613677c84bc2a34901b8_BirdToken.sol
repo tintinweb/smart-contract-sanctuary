@@ -65,8 +65,8 @@ contract BirdToken is ERC20Interface, Owned, SafeMath {
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
     function BirdToken() public {
-        symbol = &quot;BIRD&quot;;
-        name = &quot;Big Bird Token&quot;;
+        symbol = "BIRD";
+        name = "Big Bird Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2bBA69cb80280d195436C7894cE670F7b02d9C27] = _totalSupply;

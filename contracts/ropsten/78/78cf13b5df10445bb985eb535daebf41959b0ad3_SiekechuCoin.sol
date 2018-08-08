@@ -113,8 +113,8 @@ contract SiekechuCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SiekechuCoin() public {
-        symbol = &quot;CHU&quot;;
-        name = &quot;Siekechu Coin&quot;;
+        symbol = "CHU";
+        name = "Siekechu Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x390435624C79C315A89ab12116233033e4B0Cf8F] = _totalSupply;

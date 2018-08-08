@@ -116,8 +116,8 @@ contract JYKToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JYKToken() public {
-        symbol = &quot;JYK&quot;;
-        name = &quot;JYK Token&quot;;
+        symbol = "JYK";
+        name = "JYK Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

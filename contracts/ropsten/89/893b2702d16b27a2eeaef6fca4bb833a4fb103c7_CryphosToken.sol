@@ -195,8 +195,8 @@ contract StandardToken is BasicToken, ERC20
  */
 contract CryphosToken is StandardToken
 {
-    string public name = &quot;Cryptosoph&quot;;
-    string public symbol = &quot;XCPS&quot;;
+    string public name = "Cryptosoph";
+    string public symbol = "XCPS";
     uint public decimals = 8 ;
 
     // Initial supply is 30,000,000.00000000

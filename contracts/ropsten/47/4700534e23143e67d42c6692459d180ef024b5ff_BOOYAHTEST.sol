@@ -113,8 +113,8 @@ contract BOOYAHTEST is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BOOYAHTEST() public {
-        symbol = &quot;BOOTEST&quot;;
-        name = &quot;Booyah Test Coin&quot;;
+        symbol = "BOOTEST";
+        name = "Booyah Test Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf96b970fC8F510169bfF98Ac740707C82b8533d6] = _totalSupply;

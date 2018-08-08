@@ -2,7 +2,7 @@ pragma solidity ^0.4.24;
 
 
 contract MultiSender {
-    string public constant name = &quot;MultiSender&quot;;
+    string public constant name = "MultiSender";
     
     function() public payable {
         // validation

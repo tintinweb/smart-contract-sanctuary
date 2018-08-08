@@ -135,7 +135,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -201,9 +201,9 @@ library SafeMath {
 // It is a ERC20 token
 contract MagnaChain is StandardToken, Ownable{
     
-    string public version = &quot;1.0&quot;;
-    string public name = &quot;MagnaChain&quot;;
-    string public symbol = &quot;MGC&quot;;
+    string public version = "1.0";
+    string public name = "MagnaChain";
+    string public symbol = "MGC";
     uint8 public  decimals = 18;
 
     mapping(address=>uint256)  lockedBalance;

@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -318,8 +318,8 @@ contract Token101B is Pausable, StandardToken, BlackList {
 
     function TetherToken() public {
         _totalSupply = 6 * 10000 * 10000;
-        name = &quot;101BitEx Token&quot;;
-        symbol = &quot;101B&quot;;
+        name = "101BitEx Token";
+        symbol = "101B";
         decimals = 18;
         balances[owner] = _totalSupply;
         deprecated = false;

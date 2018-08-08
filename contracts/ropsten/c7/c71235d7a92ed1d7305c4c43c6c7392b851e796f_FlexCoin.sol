@@ -116,8 +116,8 @@ contract FlexCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FlexCoin() public {
-        symbol = &quot;FWD&quot;;
-        name = &quot;FlexCoinToken&quot;;
+        symbol = "FWD";
+        name = "FlexCoinToken";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

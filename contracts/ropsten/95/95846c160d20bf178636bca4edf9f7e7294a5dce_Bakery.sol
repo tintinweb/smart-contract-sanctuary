@@ -38,6 +38,6 @@ contract Cookie {
     constant
     returns (string)
   {
-    return &quot;mmm ... chocolate chip&quot;;
+    return "mmm ... chocolate chip";
   }
 }

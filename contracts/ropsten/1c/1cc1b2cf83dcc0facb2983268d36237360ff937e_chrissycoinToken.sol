@@ -116,8 +116,8 @@ contract chrissycoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function chrissycoinToken() public {
-        symbol = &quot;CCT&quot;;
-        name = &quot;chrissycoin Token&quot;;
+        symbol = "CCT";
+        name = "chrissycoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

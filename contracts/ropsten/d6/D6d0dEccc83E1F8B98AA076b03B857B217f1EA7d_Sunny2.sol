@@ -149,8 +149,8 @@ contract Sunny2 {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;Sunny2&quot;;
-    string public symbol = &quot;SY2&quot;;
+    string public name = "Sunny2";
+    string public symbol = "SY2";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 14; // 14% dividend fee on each buy and sell
     uint8 constant internal devFee_ =3 ; // 3% development fee on each buy and sell
@@ -268,7 +268,7 @@ contract Sunny2 {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
 
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
 
         // fire event
@@ -689,7 +689,7 @@ contract Sunny2 {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
 
         // is the user referred by a masternode?

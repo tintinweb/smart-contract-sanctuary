@@ -113,8 +113,8 @@ contract Salome is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Salome() public {
-        symbol = &quot;Salome&quot;;
-        name = &quot;Salome Token&quot;;
+        symbol = "Salome";
+        name = "Salome Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xcFa702AE06F6B5e5Fe71Fc1CfBe056bF06D3a5D0] = _totalSupply;

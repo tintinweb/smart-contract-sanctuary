@@ -113,8 +113,8 @@ contract CashToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CashToken() public {
-        symbol = &quot;CASH&quot;;
-        name = &quot;Cash Token&quot;;
+        symbol = "CASH";
+        name = "Cash Token";
         decimals = 11;
         _totalSupply = 2222222222222200000000000;
         balances[0xEf44fe41C43eeD7E487351190629E70De8230438] = _totalSupply;

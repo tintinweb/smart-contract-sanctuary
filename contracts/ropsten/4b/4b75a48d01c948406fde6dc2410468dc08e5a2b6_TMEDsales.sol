@@ -116,8 +116,8 @@ contract TMEDsales is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TMEDsalesToken() public {
-        symbol = &quot;TMED&quot;;
-        name = &quot;TMEDsales Token&quot;;
+        symbol = "TMED";
+        name = "TMEDsales Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -113,8 +113,8 @@ contract GBCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GBCoin() public {
-        symbol = &quot;GBC&quot;;
-        name = &quot;GBCoin&quot;;
+        symbol = "GBC";
+        name = "GBCoin";
         decimals = 18;
         _totalSupply = 100000000000 ;
         balances[0x8AD8F550969C737b4c2df92F9E0537F34D53be4E] = _totalSupply; //MEW address here

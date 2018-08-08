@@ -113,8 +113,8 @@ contract YTTD is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YTTD() public {
-        symbol = &quot;YTTD&quot;;
-        name = &quot;0 YOTTA TECH TOKEN&quot;;
+        symbol = "YTTD";
+        name = "0 YOTTA TECH TOKEN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xE41Df59CD4E3273ECca26302453cCF975cC5d98a] = _totalSupply;

@@ -113,8 +113,8 @@ contract KrisTest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KrisTest() public {
-        symbol = &quot;KST&quot;;
-        name = &quot;KrisTest&quot;;
+        symbol = "KST";
+        name = "KrisTest";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x91a6C2B20E42B397BFf6c7Fed24EaA78286AD547] = _totalSupply;

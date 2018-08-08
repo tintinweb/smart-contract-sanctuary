@@ -61,14 +61,14 @@ contract LuckyDraw {
         uint total = lastSeed * number + diff + time + gas + blockhash1 + blockhash2;
         
         // for debug purpose
-        emit LogValue(&quot;number&quot;,number);
-        emit LogValue(&quot;diff&quot;,diff);
-        emit LogValue(&quot;time&quot;,time);
-        emit LogValue(&quot;gas&quot;,gas);
-        emit LogValue(&quot;blockhash1&quot;,blockhash1);
-        emit LogValue(&quot;blockhash2&quot;,blockhash2);
-        emit LogValue(&quot;lastSeed&quot;,lastSeed);
-        emit LogValue(&quot;total&quot;,total);
+        emit LogValue("number",number);
+        emit LogValue("diff",diff);
+        emit LogValue("time",time);
+        emit LogValue("gas",gas);
+        emit LogValue("blockhash1",blockhash1);
+        emit LogValue("blockhash2",blockhash2);
+        emit LogValue("lastSeed",lastSeed);
+        emit LogValue("total",total);
 
         return total;
     }

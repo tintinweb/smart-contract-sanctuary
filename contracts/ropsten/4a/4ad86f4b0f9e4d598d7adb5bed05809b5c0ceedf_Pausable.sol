@@ -124,7 +124,7 @@ library Roles {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -269,7 +269,7 @@ contract RBAC {
  * @dev A superuser can transfer his role to a new address. 
  */
 contract Superuser is Ownable, RBAC {
-    string public constant ROLE_SUPERUSER = &quot;superuser&quot;;
+    string public constant ROLE_SUPERUSER = "superuser";
 
     constructor() public {
         addRole(msg.sender, ROLE_SUPERUSER);
@@ -324,10 +324,10 @@ contract RBACWithRoles is Superuser {
     /**
      * A constant role name for indicating admins.
      */
-    string public constant ROLE_ADMIN = &quot;admin&quot;;
-    string public constant ROLE_WHITELISTER = &quot;whitelister&quot;;
-    string public constant ROLE_LOCKER = &quot;locker&quot;;
-    string public constant ROLE_CORRECTOR = &quot;corrector&quot;;
+    string public constant ROLE_ADMIN = "admin";
+    string public constant ROLE_WHITELISTER = "whitelister";
+    string public constant ROLE_LOCKER = "locker";
+    string public constant ROLE_CORRECTOR = "corrector";
 
     /**
      * @dev modifier to scope access to roles
@@ -407,8 +407,8 @@ contract ISF6040 is Superuser {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     uint256 totalSupply_;
-    string public constant name = &quot;ISF640&quot;;
-    string public constant symbol = &quot;640&quot;;
+    string public constant name = "ISF640";
+    string public constant symbol = "640";
     uint8 public constant decimals = 0;
     bool public mintingFinished = false;
 

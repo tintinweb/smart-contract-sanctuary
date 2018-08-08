@@ -47,7 +47,7 @@ contract MFC {
     constructor(uint _BOX_PRICE) public{
         owner = msg.sender;
         BOX_PRICE = _BOX_PRICE;
-        attachments.push(&quot;&quot;);
+        attachments.push("");
         // The zero index is not used and must be reserved so the indexes used will start from index 1
     }
 
@@ -145,9 +145,9 @@ contract MFC {
     locationIsValid(start_x, start_y)
     public {
         strings.slice memory _charsSlice = _chars.toSlice();
-        uint cnt = _charsSlice.count(&quot;\n&quot;.toSlice()) + 1;
+        uint cnt = _charsSlice.count("\n".toSlice()) + 1;
         for (uint y = 0; y < cnt; y++) {
-            publishLine( start_x,  start_y, _charsSlice.split(&quot;\n&quot;.toSlice()), y,  attachment,  colour);
+            publishLine( start_x,  start_y, _charsSlice.split("\n".toSlice()), y,  attachment,  colour);
         }
     }
 
@@ -172,12 +172,12 @@ contract MFC {
     // Use by the publish block to handle one line of the input string
     function publishLine(uint16 start_x, uint16 start_y, strings.slice memory line, uint y, string attachment, bytes3 colour) private {
 
-        uint cnt = line.count(&quot;\t&quot;.toSlice()) + 1;
+        uint cnt = line.count("\t".toSlice()) + 1;
 
         for (uint x = 0; x < cnt; x ++) {
             uint index = getIndexAndCheckIfAllowedToPublish(x.add(start_x), y.add(start_y));
 
-            strings.slice memory onechar = line.split(&quot;\t&quot;.toSlice());
+            strings.slice memory onechar = line.split("\t".toSlice());
             bytes4 char = bytes4(stringToBytes32(onechar.toString()));
 
             require(StringUtils.utfStringLength(char) <= 1);
@@ -266,11 +266,11 @@ library SafeMath {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -950,7 +950,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for (uint i = 0; i < parts.length; i++)

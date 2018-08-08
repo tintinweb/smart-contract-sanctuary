@@ -72,8 +72,8 @@ contract LuckyDrawLite {
         uint total = lastSeed * number + diff + time + gas + blockhash1 + blockhash2;
         
         // for debug purpose
-        emit LogValue(&quot;Seed&quot;,lastSeed);
-        emit LogValue(&quot;total&quot;,total);
+        emit LogValue("Seed",lastSeed);
+        emit LogValue("total",total);
         return total;
     }
 

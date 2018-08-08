@@ -50,8 +50,8 @@ contract ShyneTokens {
         //initialSupply = 900000000000000000000000000;
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;ShyneTokens&quot;;                                   // Set the name for display purposes
-        symbol = &quot;SHT&quot;;                               // Set the symbol for display purposes
+        name = "ShyneTokens";                                   // Set the name for display purposes
+        symbol = "SHT";                               // Set the symbol for display purposes
     }
 
     // function () payable public {

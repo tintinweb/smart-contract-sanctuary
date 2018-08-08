@@ -27,8 +27,8 @@ contract TokenFaucet {
      */
     function tap() public {
         recipients[msg.sender] = true;
-        require(token.balanceOf(address(this)) >= tokensPerAddress, &quot;Not enough tokens on faucet to give away&quot;);
-        require(!recipients[msg.sender], &quot;Address already received faucet payout&quot;);
+        require(token.balanceOf(address(this)) >= tokensPerAddress, "Not enough tokens on faucet to give away");
+        require(!recipients[msg.sender], "Address already received faucet payout");
         token.safeTransfer(msg.sender, tokensPerAddress);
     }
 }

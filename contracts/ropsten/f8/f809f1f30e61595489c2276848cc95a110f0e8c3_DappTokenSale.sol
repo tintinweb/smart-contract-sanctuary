@@ -6,11 +6,11 @@ contract DappToken {
   //read the total number of tokens
   uint256 public totalSupply;
   //Name
-  string public name = &quot;DApp Token&quot;;
+  string public name = "DApp Token";
   //Symbol
-  string public symbol = &quot;DAPP&quot;;
+  string public symbol = "DAPP";
   //standard
-  string public standard = &quot;DApp Token v1.0&quot;;
+  string public standard = "DApp Token v1.0";
 
   event Transfer(
       address indexed _from,

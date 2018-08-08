@@ -25,8 +25,8 @@ contract Sophia {
     constructor() public {
        balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
        nowSupply = initialSupply;
-       name = &quot;Sophia coin&quot;;
-       symbol = &quot;Sophia&quot;;         
+       name = "Sophia coin";
+       symbol = "Sophia";         
     }
    
    function _transfer(address _from, address _to, uint _value) internal {

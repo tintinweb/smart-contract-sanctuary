@@ -113,8 +113,8 @@ contract iconcontract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function iconcontract() public {
-        symbol = &quot;ICC&quot;;
-        name = &quot;ICONCOIN&quot;;
+        symbol = "ICC";
+        name = "ICONCOIN";
         decimals = 18;
         _totalSupply = 100000000;
         balances[0x11E97659417B52A164597Dc9717598C48793C649] = _totalSupply; //MEW address here

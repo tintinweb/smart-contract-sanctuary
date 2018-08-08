@@ -116,8 +116,8 @@ contract buyme is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function buyme() public {
-        symbol = &quot;BUYME&quot;;
-        name = &quot;buyme&quot;;
+        symbol = "BUYME";
+        name = "buyme";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

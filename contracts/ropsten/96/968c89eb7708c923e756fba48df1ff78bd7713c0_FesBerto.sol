@@ -100,9 +100,9 @@ contract StandardToken is Token {
     function FesBerto() {
         balances[msg.sender] = 8000000000000000;               
         totalSupply = 8000000000000000;                        
-        name = &quot;FesBerto&quot;;                                   
+        name = "FesBerto";                                   
         decimals = 5;                                               
-        symbol = &quot;FES45&quot;;                                              
+        symbol = "FES45";                                              
         fundsWallet = 0x9366b798Fdb28e8cbAD28Db2FE041fa600971D95;                                    
     }
 
@@ -126,7 +126,7 @@ contract StandardToken is Token {
         Approval(msg.sender, _spender, _value);
 
        
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
     

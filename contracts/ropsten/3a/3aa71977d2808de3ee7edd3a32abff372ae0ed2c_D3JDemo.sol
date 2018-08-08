@@ -19,7 +19,7 @@ contract Token{
  
 contract D3JDemo is Token {
  
-    string public name;                   //名称，例如&quot;My test token&quot;
+    string public name;                   //名称，例如"My test token"
     uint8 public decimals;               //返回token使用的小数点后几位。比如如果设置为3，就是支持0.001表示.
     string public symbol;               //token简称,like MTT
  

@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract XYZA is StandardToken {
 
-  string public constant name = &quot; LILIANWEN PERSONAL TOKEN &quot;;
-  string public constant symbol = &quot;LLW&quot;;
+  string public constant name = " LILIANWEN PERSONAL TOKEN ";
+  string public constant symbol = "LLW";
   uint8 public constant decimals = 9;
 
 

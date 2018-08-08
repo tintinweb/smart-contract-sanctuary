@@ -121,7 +121,7 @@ contract BatchTokenSender {
 
 /**
  * EIP-20 standard token interface, as defined
- * <a href=&quot;https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md&quot;>here</a>.
+ * <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md">here</a>.
  */
 contract Token {
     /**

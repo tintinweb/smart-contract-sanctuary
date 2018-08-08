@@ -113,8 +113,8 @@ contract YoonContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YoonContract() public {
-        symbol = &quot;YKN&quot;;
-        name = &quot;Yoken&quot;;
+        symbol = "YKN";
+        name = "Yoken";
         decimals = 18;
         _totalSupply = 5000000000000000000000000;
         balances[0x50D445877A4B85C170e8aeE7FCD3791Bd6d7f9Cf] = _totalSupply; //MEW address here

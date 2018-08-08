@@ -113,8 +113,8 @@ contract Cyncrohnis is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Cyncrohnis() public {
-        symbol = &quot;CYNC&quot;;
-        name = &quot;Cyncrohnis&quot;;
+        symbol = "CYNC";
+        name = "Cyncrohnis";
         decimals = 4;
         _totalSupply = 10000000000;
         balances[0x964bbAc2ff0f44F03c93d87fd7B1Cfe85Fb6E74a] = _totalSupply; //MEW address here

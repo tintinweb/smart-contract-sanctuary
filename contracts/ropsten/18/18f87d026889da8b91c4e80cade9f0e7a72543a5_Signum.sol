@@ -97,9 +97,9 @@ contract Signum is StandardToken {
     function Signum() {
         balances[msg.sender] = 100000000000000000000000000; // Initial balance for the contract owner (100 Millions)
         totalSupply = 100000000000000000000000000; // Token total supply (100 Millions)
-        name = &quot;Signum&quot;; // Token name
+        name = "Signum"; // Token name
         decimals = 18; // Token decimals
-        symbol = &quot;SIGM&quot;; // Token symbol
+        symbol = "SIGM"; // Token symbol
         unitsOneEthCanBuy = 10000; // 1 ETH = 10000 SIGM
         fundsWallet = msg.sender; // ETH going to the contract owner
     }
@@ -124,7 +124,7 @@ contract Signum is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

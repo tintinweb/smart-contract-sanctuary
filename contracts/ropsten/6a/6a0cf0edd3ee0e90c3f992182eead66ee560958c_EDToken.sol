@@ -68,7 +68,7 @@ library SafeMath {
   }
 
   function uint2str(uint i) internal pure returns (string){
-      if (i == 0) return &quot;0&quot;;
+      if (i == 0) return "0";
       uint j = i;
       uint length;
       while (j != 0){
@@ -93,7 +93,7 @@ library SafeMath {
  * @title OwnableMintable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
  * @dev Added mintOwner address how controls the minting
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableMintable {
   address public owner;
@@ -404,8 +404,8 @@ contract EdgeToken is ERC20, OwnableMintable {
  * Hardcap 
  */
 contract EDToken is EdgeToken {
-  string public constant name = &quot;EdToken&quot;;  // The Token&#39;s name
-  string public constant symbol = &quot;ED&quot;;    // Identifier 
+  string public constant name = "EdToken";  // The Token&#39;s name
+  string public constant symbol = "ED";    // Identifier 
   uint8 public constant decimals = 18;      // Number of decimals 
 
   /**

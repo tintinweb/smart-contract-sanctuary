@@ -30,38 +30,38 @@ contract quiniela{
     
     
     constructor() public{
-        teams[1]= &quot;Germany&quot;;
-        teams[2]= &quot;Argentina&quot;;
-        teams[3]= &quot;Australia&quot;;
-        teams[4]= &quot;Belgium&quot;;
-        teams[5]= &quot;Brazil&quot;;
-        teams[6]= &quot;Colombia&quot;;
-        teams[7]= &quot;Costa Rica&quot;;
-        teams[8]= &quot;Croatia&quot;;
-        teams[9]= &quot;Denmark&quot;;
-        teams[10]= &quot;Egypt&quot;;
-        teams[11]= &quot;England&quot;;
-        teams[12]= &quot;France&quot;;
-        teams[13]= &quot;Iceland&quot;;
-        teams[14]= &quot;Ir Iran&quot;;
-        teams[15]= &quot;Japan&quot;;
-        teams[16]= &quot;Korea Republic&quot;;
-        teams[17]= &quot;Mexico&quot;;
-        teams[18]= &quot;Morocco&quot;;
-        teams[19]= &quot;Nigeria&quot;;
-        teams[20]= &quot;Panama&quot;;
-        teams[21]= &quot;Peru&quot;;
-        teams[22]= &quot;Poland&quot;;
-        teams[23]= &quot;Portugal&quot;;
-        teams[24]= &quot;Russia&quot;;
-        teams[25]= &quot;Saudi Arabia&quot;;
-        teams[26]= &quot;Senegal&quot;;
-        teams[27]= &quot;Serbia&quot;;
-        teams[28]= &quot;Spain&quot;;
-        teams[29]= &quot;Sweden&quot;;
-        teams[30]= &quot;Switzerland&quot;;
-        teams[31]= &quot;Tunisia&quot;;
-        teams[32]= &quot;Uruguay&quot;;
+        teams[1]= "Germany";
+        teams[2]= "Argentina";
+        teams[3]= "Australia";
+        teams[4]= "Belgium";
+        teams[5]= "Brazil";
+        teams[6]= "Colombia";
+        teams[7]= "Costa Rica";
+        teams[8]= "Croatia";
+        teams[9]= "Denmark";
+        teams[10]= "Egypt";
+        teams[11]= "England";
+        teams[12]= "France";
+        teams[13]= "Iceland";
+        teams[14]= "Ir Iran";
+        teams[15]= "Japan";
+        teams[16]= "Korea Republic";
+        teams[17]= "Mexico";
+        teams[18]= "Morocco";
+        teams[19]= "Nigeria";
+        teams[20]= "Panama";
+        teams[21]= "Peru";
+        teams[22]= "Poland";
+        teams[23]= "Portugal";
+        teams[24]= "Russia";
+        teams[25]= "Saudi Arabia";
+        teams[26]= "Senegal";
+        teams[27]= "Serbia";
+        teams[28]= "Spain";
+        teams[29]= "Sweden";
+        teams[30]= "Switzerland";
+        teams[31]= "Tunisia";
+        teams[32]= "Uruguay";
     }
     
     modifier onlyAdmin() {

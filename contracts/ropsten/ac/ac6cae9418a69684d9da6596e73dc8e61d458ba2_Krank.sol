@@ -17,8 +17,8 @@ contract Token is ERC20{
     uint8 public constant TOKEN_DECIMAL      = 18;
     uint public constant TOKEN_ESCALE       = 1 * 10 ** uint(TOKEN_DECIMAL);
     uint public constant TOTAL_SUPPLY       = 1000000000000 * TOKEN_ESCALE; 
-    string public constant TOKEN_NAME       = &quot;Prod&quot;;
-    string public constant TOKEN_SYMBOL     = &quot;PRD&quot;;
+    string public constant TOKEN_NAME       = "Prod";
+    string public constant TOKEN_SYMBOL     = "PRD";
     uint256 public totalSupply              = TOTAL_SUPPLY;
     mapping(address => uint256) public balances;    
     mapping(address => mapping (address => uint256)) public allowed;

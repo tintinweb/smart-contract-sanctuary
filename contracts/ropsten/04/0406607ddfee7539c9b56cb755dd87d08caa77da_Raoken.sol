@@ -113,8 +113,8 @@ contract Raoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;RKN&quot;;
-        name = &quot;Raoken&quot;;
+        symbol = "RKN";
+        name = "Raoken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf9Fdc02FF26E72cc6e7928F2Cd4092D6a760831c] = _totalSupply;

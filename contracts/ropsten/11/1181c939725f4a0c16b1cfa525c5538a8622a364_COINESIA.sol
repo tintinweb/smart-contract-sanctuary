@@ -113,8 +113,8 @@ contract COINESIA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function COINESIA() public {
-        symbol = &quot;CIA&quot;;
-        name = &quot;COINESIA&quot;;
+        symbol = "CIA";
+        name = "COINESIA";
         decimals = 0;
         _totalSupply = 1000000000;
         balances[0x78B038f8C2C4d48C41c2918a8C30bD84952E8b9D] = _totalSupply;

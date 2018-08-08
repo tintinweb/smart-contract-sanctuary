@@ -2,14 +2,14 @@
 
   Copyright 2017 ZeroEx Intl.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -21,14 +21,14 @@ pragma solidity 0.4.24;
 
   Copyright 2017 ZeroEx Inc.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -244,7 +244,7 @@ contract Exchange is SafeMath {
         INSUFFICIENT_BALANCE_OR_ALLOWANCE // Insufficient balance or allowance for token transfer
     }
 
-    string constant public VERSION = &quot;1.0.0&quot;;
+    string constant public VERSION = "1.0.0";
     uint16 constant public EXTERNAL_QUERY_GAS_LIMIT = 4999;    // Changes to state require at least 5000 gas
 
     address public ZRX_TOKEN_CONTRACT;
@@ -672,7 +672,7 @@ contract Exchange is SafeMath {
         returns (bool)
     {
         return signer == ecrecover(
-            keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),
+            keccak256("\x19Ethereum Signed Message:\n32", hash),
             v,
             r,
             s
@@ -812,8 +812,8 @@ contract Exchange is SafeMath {
 }
 
 contract WETH9 {
-    string public name     = &quot;Wrapped Ether&quot;;
-    string public symbol   = &quot;WETH&quot;;
+    string public name     = "Wrapped Ether";
+    string public symbol   = "WETH";
     uint8  public decimals = 18;
 
     event  Approval(address indexed src, address indexed guy, uint wad);
@@ -910,8 +910,8 @@ contract Forwarder is SafeMath {
         payable
         returns (uint256 takerTokenFilledAmount)
     {
-        require(msg.value > 0, &quot;need value&quot;);
-        require(orderAddresses[3] == address(etherToken), &quot;not match&quot;);
+        require(msg.value > 0, "need value");
+        require(orderAddresses[3] == address(etherToken), "not match");
 
         etherToken.deposit.value(msg.value)();
 
@@ -923,7 +923,7 @@ contract Forwarder is SafeMath {
             v,
             r,
             s
-        ) == msg.value, &quot;not equal&quot;);
+        ) == msg.value, "not equal");
 
         uint256 makerTokenFilledAmount = getPartialAmount(orderValues[0], orderValues[1], msg.value);    // makerTokenAmount * takerTokenFillAmount / takerTokenAmount
         transferToken(orderAddresses[2], msg.sender, makerTokenFilledAmount);

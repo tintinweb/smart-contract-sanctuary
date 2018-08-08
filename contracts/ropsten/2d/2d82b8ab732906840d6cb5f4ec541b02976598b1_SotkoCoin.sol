@@ -113,8 +113,8 @@ contract SotkoCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SotkoCoin() public {
-        symbol = &quot;Sotko&quot;;
-        name = &quot;SotkoCoin&quot;;
+        symbol = "Sotko";
+        name = "SotkoCoin";
         decimals = 8;
         _totalSupply = 100000000000000;
         balances[0xfcc75CC556025a14E599C0027447AE68aE3dB04b] = _totalSupply;

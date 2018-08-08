@@ -113,8 +113,8 @@ contract StupidityToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function StupidityToken() public {
-        symbol = &quot;STPD&quot;;
-        name = &quot;StupidityToken&quot;;
+        symbol = "STPD";
+        name = "StupidityToken";
         decimals = 7;
         _totalSupply = 1000000000;
         balances[0x00c65b160c233f90c9a57e59b42c8ae9c0a041f7] = _totalSupply;

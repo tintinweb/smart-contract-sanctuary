@@ -114,8 +114,8 @@ contract OkkamiToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OkkamiToken() public {
-        symbol = &quot;OKKAMI&quot;;
-        name = &quot;OKKAMI Loyalty Token&quot;;
+        symbol = "OKKAMI";
+        name = "OKKAMI Loyalty Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0xe033Ae0804060c43660E8f952aA41F82f0a3ABF2] = _totalSupply;

@@ -103,8 +103,8 @@ contract Multiownable {
     * @dev Allows to perform method only after some owners call it with the same arguments
     */
     modifier onlySomeOwners(uint howMany) {
-        require(howMany > 0, &quot;onlySomeOwners: howMany argument is zero&quot;);
-        require(howMany <= owners.length, &quot;onlySomeOwners: howMany argument exceeds the number of owners&quot;);
+        require(howMany > 0, "onlySomeOwners: howMany argument is zero");
+        require(howMany <= owners.length, "onlySomeOwners: howMany argument exceeds the number of owners");
         
         if (checkHowManyOwners(howMany)) {
             bool update = (insideCallSender == address(0));
@@ -135,15 +135,15 @@ contract Multiownable {
      */
     function checkHowManyOwners(uint howMany) internal returns(bool) {
         if (insideCallSender == msg.sender) {
-            require(howMany <= insideCallCount, &quot;checkHowManyOwners: nested owners modifier check require more owners&quot;);
+            require(howMany <= insideCallCount, "checkHowManyOwners: nested owners modifier check require more owners");
             return true;
         }
 
         uint ownerIndex = ownersIndices[msg.sender] - 1;
-        require(ownerIndex < owners.length, &quot;checkHowManyOwners: msg.sender is not an owner&quot;);
+        require(ownerIndex < owners.length, "checkHowManyOwners: msg.sender is not an owner");
         bytes32 operation = keccak256(msg.data, ownersGeneration);
 
-        require((votesMaskByOperation[operation] & (2 ** ownerIndex)) == 0, &quot;checkHowManyOwners: owner already voted for the operation&quot;);
+        require((votesMaskByOperation[operation] & (2 ** ownerIndex)) == 0, "checkHowManyOwners: owner already voted for the operation");
         votesMaskByOperation[operation] |= (2 ** ownerIndex);
         uint operationVotesCount = votesCountByOperation[operation] + 1;
         votesCountByOperation[operation] = operationVotesCount;
@@ -189,7 +189,7 @@ contract Multiownable {
     */
     function cancelPending(bytes32 operation) public onlyAnyOwner {
         uint ownerIndex = ownersIndices[msg.sender] - 1;
-        require((votesMaskByOperation[operation] & (2 ** ownerIndex)) != 0, &quot;cancelPending: operation not found for this user&quot;);
+        require((votesMaskByOperation[operation] & (2 ** ownerIndex)) != 0, "cancelPending: operation not found for this user");
         votesMaskByOperation[operation] &= ~(2 ** ownerIndex);
         uint operationVotesCount = votesCountByOperation[operation] - 1;
         votesCountByOperation[operation] = operationVotesCount;
@@ -214,18 +214,18 @@ contract Multiownable {
     * @param newHowManyOwnersDecide defines how many owners can decide
     */
     function transferOwnershipWithHowMany(address[] newOwners, uint256 newHowManyOwnersDecide) public onlyManyOwners {
-        require(newOwners.length > 0, &quot;transferOwnershipWithHowMany: owners array is empty&quot;);
-        require(newOwners.length <= 256, &quot;transferOwnershipWithHowMany: owners count is greater then 256&quot;);
-        require(newHowManyOwnersDecide > 0, &quot;transferOwnershipWithHowMany: newHowManyOwnersDecide equal to 0&quot;);
-        require(newHowManyOwnersDecide <= newOwners.length, &quot;transferOwnershipWithHowMany: newHowManyOwnersDecide exceeds the number of owners&quot;);
+        require(newOwners.length > 0, "transferOwnershipWithHowMany: owners array is empty");
+        require(newOwners.length <= 256, "transferOwnershipWithHowMany: owners count is greater then 256");
+        require(newHowManyOwnersDecide > 0, "transferOwnershipWithHowMany: newHowManyOwnersDecide equal to 0");
+        require(newHowManyOwnersDecide <= newOwners.length, "transferOwnershipWithHowMany: newHowManyOwnersDecide exceeds the number of owners");
 
         // Reset owners reverse lookup table
         for (uint j = 0; j < owners.length; j++) {
             delete ownersIndices[owners[j]];
         }
         for (uint i = 0; i < newOwners.length; i++) {
-            require(newOwners[i] != address(0), &quot;transferOwnershipWithHowMany: owners array contains zero&quot;);
-            require(ownersIndices[newOwners[i]] == 0, &quot;transferOwnershipWithHowMany: owners array contains duplicates&quot;);
+            require(newOwners[i] != address(0), "transferOwnershipWithHowMany: owners array contains zero");
+            require(ownersIndices[newOwners[i]] == 0, "transferOwnershipWithHowMany: owners array contains duplicates");
             ownersIndices[newOwners[i]] = i + 1;
         }
         

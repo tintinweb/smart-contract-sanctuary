@@ -184,8 +184,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract IGTToken is StandardToken {
 
-  string public constant name = &quot;International Gaming Token&quot;;
-  string public constant symbol = &quot;IGT&quot;;
+  string public constant name = "International Gaming Token";
+  string public constant symbol = "IGT";
   uint8 public constant decimals = 2; // only two deciminals, token cannot be divided past 1/100th
 
   uint256 public constant INITIAL_SUPPLY =  100000000000;

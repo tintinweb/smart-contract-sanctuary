@@ -113,8 +113,8 @@ contract CGCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CGCToken() public {
-        symbol = &quot;CGCT&quot;;
-        name = &quot;CGC Token&quot;;
+        symbol = "CGCT";
+        name = "CGC Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x91556f2CB7367b3047347a29C1FC854b26A580f4] = _totalSupply;

@@ -259,8 +259,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract DemoToken is StandardToken {
 
-  string public constant name = &quot;Demo Token 01&quot;;
-  string public constant symbol = &quot;TK01&quot;;
+  string public constant name = "Demo Token 01";
+  string public constant symbol = "TK01";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = (10 ** 9) * (10 ** uint256(decimals));

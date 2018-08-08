@@ -89,8 +89,8 @@ contract SofiaToken is ERC20Interface,Controlled {
 
 
     constructor(uint _totalSupply) public {
-      symbol = &quot;SFX&quot;;
-      name = &quot;SofiaToken&quot;;
+      symbol = "SFX";
+      name = "SofiaToken";
       decimals = 18;
       totalSupply = _totalSupply;
       balances[msg.sender] = _totalSupply;

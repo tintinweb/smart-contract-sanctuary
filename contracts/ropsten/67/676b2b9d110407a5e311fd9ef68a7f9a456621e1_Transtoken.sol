@@ -72,8 +72,8 @@ contract Transtoken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Transtoken&quot;;
-    string public constant symbol = &quot;TRT2&quot;;
+    string public constant name = "Transtoken";
+    string public constant symbol = "TRT2";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

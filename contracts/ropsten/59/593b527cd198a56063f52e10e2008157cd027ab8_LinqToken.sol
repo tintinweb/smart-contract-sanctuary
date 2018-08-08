@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract LinqToken is PausableToken {
-    string public name = &quot;Linq&quot;;
-    string public symbol = &quot;LQT&quot;;
+    string public name = "Linq";
+    string public symbol = "LQT";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 8000000000000000000000000000;
 

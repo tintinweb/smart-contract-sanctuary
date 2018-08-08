@@ -373,8 +373,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract PTRTToken is MintableToken, BurnableToken {
 
-    string public constant name = &quot;PlaceToRent&quot;;
-    string public constant symbol = &quot;PTRT&quot;;
+    string public constant name = "PlaceToRent";
+    string public constant symbol = "PTRT";
     uint32 public constant decimals = 14;
 
     constructor() public {

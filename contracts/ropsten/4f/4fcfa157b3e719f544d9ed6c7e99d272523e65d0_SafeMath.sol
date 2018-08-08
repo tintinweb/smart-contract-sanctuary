@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -84,8 +84,8 @@ contract UpdateTokenStandard {
 contract UpdateToken is ERC20,UpdateTokenStandard,Ownable {
     using SafeMath for uint256;
 
-    string public symbol = &quot;UPT&quot;;
-    string public name = &quot;Update Token&quot;;
+    string public symbol = "UPT";
+    string public name = "Update Token";
     uint public decimals = 18;
 
     uint public chainStartTime; 
@@ -270,10 +270,10 @@ contract UpdateToken is ERC20,UpdateTokenStandard,Ownable {
     }
     
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],
-    /// &quot;name&quot;:&quot;burnUpdateToken&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"_value","type":"uint256"}],
+    /// "name":"burnUpdateToken",
+    /// "outputs": []
     /// }]
     
     // OK
@@ -310,10 +310,10 @@ contract UpdateToken is ERC20,UpdateTokenStandard,Ownable {
     event FrozenFunds(address target, bool frozen);
 
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;target&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;freeze&quot;,&quot;type&quot;:&quot;bool&quot;}],
-    /// &quot;name&quot;:&quot;lockUpdateTokenAccount&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"target","type":"address"},{"name":"freeze","type":"bool"}],
+    /// "name":"lockUpdateTokenAccount",
+    /// "outputs": []
     /// }]
     
     /// OK
@@ -324,10 +324,10 @@ contract UpdateToken is ERC20,UpdateTokenStandard,Ownable {
     }
     
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;ammount&quot;,&quot;type&quot;:&quot;uint256&quot;}],
-    /// &quot;name&quot;:&quot;airdropUpdateToken&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"to","type":"address"},{"name":"ammount","type":"uint256"}],
+    /// "name":"airdropUpdateToken",
+    /// "outputs": []
     /// }]
     
     // BUG
@@ -345,10 +345,10 @@ contract UpdateToken is ERC20,UpdateTokenStandard,Ownable {
     }
     
         /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;_from&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],
-    /// &quot;name&quot;:&quot;transferFromToUpdateToken&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],
+    /// "name":"transferFromToUpdateToken",
+    /// "outputs": []
     /// }]
     
     //BUG
@@ -362,10 +362,10 @@ contract UpdateToken is ERC20,UpdateTokenStandard,Ownable {
     }
     
     /// [{
-    /// &quot;type&quot;:&quot;function&quot;,
-    /// &quot;inputs&quot;: [{&quot;name&quot;:&quot;_from&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],
-    /// &quot;name&quot;:&quot;burnUpdateTokenFrom&quot;,
-    /// &quot;outputs&quot;: []
+    /// "type":"function",
+    /// "inputs": [{"name":"_from","type":"address"},{"name":"_value","type":"uint256"}],
+    /// "name":"burnUpdateTokenFrom",
+    /// "outputs": []
     /// }]
     
     //BUG

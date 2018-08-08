@@ -102,8 +102,8 @@ contract adtToken is ERC20Interface, Owned, SafeMath {
   // Constructor
   // ------------------------------------------------------------------------
   constructor() public {
-    symbol = &quot;adt&quot;;
-    name = &quot;adttoken&quot;;
+    symbol = "adt";
+    name = "adttoken";
     decimals = 18;
 
   }

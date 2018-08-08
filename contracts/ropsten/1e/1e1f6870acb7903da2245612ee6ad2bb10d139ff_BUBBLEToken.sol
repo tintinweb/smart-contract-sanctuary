@@ -113,8 +113,8 @@ contract BUBBLEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BUBBLEToken() public {
-        symbol = &quot;BUB&quot;;
-        name = &quot;BUBBLE Token&quot;;
+        symbol = "BUB";
+        name = "BUBBLE Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8396439236184057aE2efc2578F08be96691C530] = _totalSupply;

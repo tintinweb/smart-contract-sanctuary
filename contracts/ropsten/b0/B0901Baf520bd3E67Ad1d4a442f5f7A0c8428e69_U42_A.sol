@@ -54,7 +54,7 @@ library SafeMath {
   }
 }
 
-// Implementation of the U42 Token Specification (&quot;A&quot; version) -- see &quot;U42 Token Specification (version A).md&quot;
+// Implementation of the U42 Token Specification ("A" version) -- see "U42 Token Specification (version A).md"
 //
 // Standard ERC-20 methods and the SafeMath library are adapated from OpenZeppelin&#39;s standard contract types
 // as at https://github.com/OpenZeppelin/openzeppelin-solidity/commit/5daaf60d11ee2075260d0f3adfb22b1c536db983
@@ -64,8 +64,8 @@ contract U42_A {
 	//use OZ SafeMath to avoid uint256 overflows
 	using SafeMath for uint256;
 
-	string public constant name = &quot;U42_A&quot;;
-	string public constant symbol = &quot;U42A&quot;;
+	string public constant name = "U42_A";
+	string public constant symbol = "U42A";
 	uint8 public constant decimals = 18;
 	uint256 public constant initialSupply = 525000000 * (10 ** uint256(decimals));
 	uint256 public totalSupply_ = initialSupply;
@@ -99,7 +99,7 @@ contract U42_A {
 	mapping (address => uint32[]) servicesRemovedLists;
 
 	//methods emit the following events (note that these are a subset 
-	// -- the &quot;A&quot; version -- of the full U42 token specification)
+	// -- the "A" version -- of the full U42 token specification)
 	event Transfer (
 		address indexed from, 
 		address indexed to, 

@@ -95,9 +95,9 @@ contract CryptocurrencyRaz is Ownable {
         maxBetsForEachRaz[2] = 20;
         maxBetsForEachRaz[3] = 10;
         
-        razName[1] = &quot;Mighty genesis&quot;;
-        razName[2] = &quot;Second titan&quot;;
-        razName[3] = &quot;Trinity affair&quot;;
+        razName[1] = "Mighty genesis";
+        razName[2] = "Second titan";
+        razName[3] = "Trinity affair";
         
         participationFeeForEachRaz[1] = 3 * 10 ** 16;
         participationFeeForEachRaz[2] = 1 * 10 ** 16;

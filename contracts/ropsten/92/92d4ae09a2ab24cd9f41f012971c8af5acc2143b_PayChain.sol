@@ -58,8 +58,8 @@ contract PayChain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;PayChain&quot;;
-    string public constant symbol = &quot;PChain&quot;;
+    string public constant name = "PayChain";
+    string public constant symbol = "PChain";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

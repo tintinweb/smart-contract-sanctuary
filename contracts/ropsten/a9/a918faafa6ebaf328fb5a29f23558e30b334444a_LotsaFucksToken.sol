@@ -113,8 +113,8 @@ contract LotsaFucksToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LotsaFucksToken() public {
-        symbol = &quot;LOTSAFUCKS&quot;;
-        name = &quot;LotsaFucks Token&quot;;
+        symbol = "LOTSAFUCKS";
+        name = "LotsaFucks Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb3c8aAae0a0428e61E80215a0ca233fd43028A1F] = _totalSupply;

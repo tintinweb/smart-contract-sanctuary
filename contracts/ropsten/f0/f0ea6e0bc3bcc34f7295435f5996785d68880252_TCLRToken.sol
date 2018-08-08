@@ -87,9 +87,9 @@ contract IERC20Token {
     ERC20 Standard Token implementation
 */
 contract ERC20Token is IERC20Token, Utils {
-    string public standard = &quot;Token 0.1&quot;;
-    string public name = &quot;&quot;;
-    string public symbol = &quot;&quot;;
+    string public standard = "Token 0.1";
+    string public name = "";
+    string public symbol = "";
     uint8 public decimals = 0;
     uint256 public totalSupply = 0;
     mapping (address => uint256) public balanceOf;
@@ -413,7 +413,7 @@ uint256 public totalAllocated = 0;             // Counter to keep track of overa
 
     
     function TCLRToken()
-    ERC20Token(&quot;TCLR&quot;, &quot;TCLR&quot;, 18)
+    ERC20Token("TCLR", "TCLR", 18)
      {
         
                        

@@ -113,8 +113,8 @@ contract CoinNext is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CoinNext() public {
-        symbol = &quot;CNXT&quot;;
-        name = &quot;CoinNext&quot;;
+        symbol = "CNXT";
+        name = "CoinNext";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0x5a202e2f409A5C8E998C501a8844e9a274548eB1] = _totalSupply;

@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -106,12 +106,12 @@ contract Stateable is Ownable {
     }
 
     function getKeyByValue(State _state) public pure returns (string) {
-        if (State.Unknown == _state) return &quot;Unknown&quot;;
-        if (State.Preparing == _state) return &quot;Preparing&quot;;
-        if (State.Starting == _state) return &quot;Starting&quot;;
-        if (State.Pausing == _state) return &quot;Pausing&quot;;
-        if (State.Finished == _state) return &quot;Finished&quot;;
-        return &quot;&quot;;
+        if (State.Unknown == _state) return "Unknown";
+        if (State.Preparing == _state) return "Preparing";
+        if (State.Starting == _state) return "Starting";
+        if (State.Pausing == _state) return "Pausing";
+        if (State.Finished == _state) return "Finished";
+        return "";
     }
 }
 
@@ -700,13 +700,13 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
 
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if called by any account that&#39;s not whitelisted.
@@ -867,7 +867,7 @@ contract Sale is Stateable {
 
         setState(State.Preparing);
 
-        emit ChangeExternalAddress(_product, &quot;Product&quot;);
+        emit ChangeExternalAddress(_product, "Product");
     }
 
     function setTokenDistributor(address _tokenDistributor)
@@ -876,7 +876,7 @@ contract Sale is Stateable {
         validAddress(_tokenDistributor)
     {
         tokenDistributor = TokenDistributor(_tokenDistributor);
-        emit ChangeExternalAddress(_tokenDistributor, &quot;TokenDistributor&quot;);
+        emit ChangeExternalAddress(_tokenDistributor, "TokenDistributor");
     }
 
     function setWhitelist(address _whitelist)
@@ -885,7 +885,7 @@ contract Sale is Stateable {
         validAddress(_whitelist)
     {
         whiteList = Whitelist(_whitelist);
-        emit ChangeExternalAddress(_whitelist, &quot;Whitelist&quot;);
+        emit ChangeExternalAddress(_whitelist, "Whitelist");
     }
 
     function setWallet(address _wallet)
@@ -894,7 +894,7 @@ contract Sale is Stateable {
         validAddress(_wallet)
     {
         wallet = _wallet;
-        emit ChangeExternalAddress(_wallet, &quot;Wallet&quot;);
+        emit ChangeExternalAddress(_wallet, "Wallet");
     }
 
     function pause() external onlyOwner {

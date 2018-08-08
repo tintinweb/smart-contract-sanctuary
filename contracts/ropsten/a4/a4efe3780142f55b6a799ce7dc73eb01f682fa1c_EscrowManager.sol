@@ -54,7 +54,7 @@ contract EscrowManager {
     modifier onlyValidEscrowId(address _tokenAddressSell, address _tokenAddressBuy, uint escrowId){
         require(
             sellToBuyToEscrows[_tokenAddressSell][_tokenAddressBuy].length > escrowId,
-            &quot;Invalid EscrowId!&quot;
+            "Invalid EscrowId!"
         );
         _;
     }
@@ -62,7 +62,7 @@ contract EscrowManager {
     modifier onlyNonZeroAmts(uint amt1, uint amt2){
         require(
             amt1 > 0 && amt2 > 0,
-            &quot;Escrow amounts are 0!&quot;
+            "Escrow amounts are 0!"
         );
         _;
     }
@@ -70,7 +70,7 @@ contract EscrowManager {
     modifier onlyEscrowCreator(address sender){
         require(
             sender == msg.sender,
-            &quot;Not Escrow Owner!&quot;
+            "Not Escrow Owner!"
         );
         _;
     }

@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -156,7 +156,7 @@ contract BasicAssetToken is Ownable {
 
     string public symbol;               //An identifier
 
-    string public version = &quot;CRWD_0.1_alpha&quot;; //An arbitrary versioning scheme
+    string public version = "CRWD_0.1_alpha"; //An arbitrary versioning scheme
 
     // defines the baseCurrency of the token
     address public baseCurrency;

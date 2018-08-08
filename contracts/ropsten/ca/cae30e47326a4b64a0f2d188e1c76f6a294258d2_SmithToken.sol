@@ -113,8 +113,8 @@ contract SmithToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SmithToken() public {
-        symbol = &quot;0SMITH&quot;;
-        name = &quot;0 SMITH Token&quot;;
+        symbol = "0SMITH";
+        name = "0 SMITH Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2343CCB23d4f72BbE7Dd9E3F945ECf810fc317A8] = _totalSupply;

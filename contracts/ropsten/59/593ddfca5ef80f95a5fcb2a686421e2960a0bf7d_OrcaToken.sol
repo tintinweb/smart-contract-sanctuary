@@ -211,8 +211,8 @@ contract OrcaToken is TokenRecoverable, ERC20Token, ERC777Token, ERC820Implement
 
     enum State { Minting, Trading, Burning }
 
-    string private constant name_ = &quot;ORCA Token&quot;;
-    string private constant symbol_ = &quot;ORCA&quot;;
+    string private constant name_ = "ORCA Token";
+    string private constant symbol_ = "ORCA";
 
     uint256 private constant granularity_ = 1;
     uint256 private totalSupply_;
@@ -229,22 +229,22 @@ contract OrcaToken is TokenRecoverable, ERC20Token, ERC777Token, ERC820Implement
 
     /// @notice Constructor to create a OrcaToken
     constructor() public {
-        setInterfaceImplementation(&quot;ERC20Token&quot;, address(this));
-        setInterfaceImplementation(&quot;ERC777Token&quot;, address(this));
+        setInterfaceImplementation("ERC20Token", address(this));
+        setInterfaceImplementation("ERC777Token", address(this));
     }
 
     modifier canMint() {
-        require(state == State.Minting, &quot;Not in &#39;Minting&#39; state!&quot;);
+        require(state == State.Minting, "Not in &#39;Minting&#39; state!");
       _;
     }
 
     modifier canTrade() {
-        require(state == State.Trading || state == State.Burning, &quot;Not in &#39;Trading&#39; or &#39;Burning&#39; state!&quot;);
+        require(state == State.Trading || state == State.Burning, "Not in &#39;Trading&#39; or &#39;Burning&#39; state!");
         _;
     }
 
     modifier canBurn() {
-        require(state == State.Burning, &quot;Not in &#39;Burning&#39; state!&quot;);
+        require(state == State.Burning, "Not in &#39;Burning&#39; state!");
         _;
     }
 
@@ -271,7 +271,7 @@ contract OrcaToken is TokenRecoverable, ERC20Token, ERC777Token, ERC820Implement
     /// @param _to The address of the recipient
     /// @param _amount The number of tokens to be sent
     function send(address _to, uint256 _amount, bytes _userData) public {
-        doSend(msg.sender, _to, _amount, _userData, msg.sender, &quot;&quot;, true);
+        doSend(msg.sender, _to, _amount, _userData, msg.sender, "", true);
     }
 
     /// @notice Authorize a third party `_operator` to manage (send) `msg.sender`&#39;s tokens.
@@ -320,9 +320,9 @@ contract OrcaToken is TokenRecoverable, ERC20Token, ERC777Token, ERC820Implement
         totalSupply_ = totalSupply_.add(_amount);
         balances[_tokenHolder] = balances[_tokenHolder].add(_amount);
 
-        callRecipient(msg.sender, address(0), _tokenHolder, _amount, &quot;&quot;, &quot;&quot;, true);
+        callRecipient(msg.sender, address(0), _tokenHolder, _amount, "", "", true);
 
-        emit Minted(msg.sender, _tokenHolder, _amount, &quot;&quot;);
+        emit Minted(msg.sender, _tokenHolder, _amount, "");
         if (erc20compatible) { emit Transfer(address(0), _tokenHolder, _amount); }
     }
 
@@ -357,14 +357,14 @@ contract OrcaToken is TokenRecoverable, ERC20Token, ERC777Token, ERC820Implement
     ///  by the owner.
     function disableERC20() public onlyOwner {
         erc20compatible = false;
-        setInterfaceImplementation(&quot;ERC20Token&quot;, address(0));
+        setInterfaceImplementation("ERC20Token", address(0));
     }
 
     /// @notice Re enables the ERC20 interface. This function can only be called
     ///  by the owner.
     function enableERC20() public onlyOwner {
         erc20compatible = true;
-        setInterfaceImplementation(&quot;ERC20Token&quot;, address(this));
+        setInterfaceImplementation("ERC20Token", address(this));
     }
 
     /// @notice For Backwards compatibility
@@ -376,7 +376,7 @@ contract OrcaToken is TokenRecoverable, ERC20Token, ERC777Token, ERC820Implement
     /// @param _amount The number of tokens to be transferred
     /// @return `true`, if the transfer can&#39;t be done, it should fail.
     function transfer(address _to, uint256 _amount) public erc20 returns (bool success) {
-        doSend(msg.sender, _to, _amount, &quot;&quot;, msg.sender, &quot;&quot;, false);
+        doSend(msg.sender, _to, _amount, "", msg.sender, "", false);
         return true;
     }
 
@@ -390,7 +390,7 @@ contract OrcaToken is TokenRecoverable, ERC20Token, ERC777Token, ERC820Implement
 
         // Cannot be after doSend because of tokensReceived re-entry
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_amount);
-        doSend(_from, _to, _amount, &quot;&quot;, msg.sender, &quot;&quot;, false);
+        doSend(_from, _to, _amount, "", msg.sender, "", false);
         return true;
     }
 
@@ -510,7 +510,7 @@ contract OrcaToken is TokenRecoverable, ERC20Token, ERC777Token, ERC820Implement
         bytes _operatorData,
         bool _preventLocking
     ) private {
-        address recipientImplementation = interfaceAddr(_to, &quot;ERC777TokensRecipient&quot;);
+        address recipientImplementation = interfaceAddr(_to, "ERC777TokensRecipient");
         if (recipientImplementation != address(0)) {
             ERC777TokensRecipient(recipientImplementation).tokensReceived(
                 _operator, _from, _to, _amount, _userData, _operatorData);
@@ -537,7 +537,7 @@ contract OrcaToken is TokenRecoverable, ERC20Token, ERC777Token, ERC820Implement
         bytes _userData,
         bytes _operatorData
     ) private {
-        address senderImplementation = interfaceAddr(_from, &quot;ERC777TokensSender&quot;);
+        address senderImplementation = interfaceAddr(_from, "ERC777TokensSender");
         if (senderImplementation != address(0)) {
             ERC777TokensSender(senderImplementation).tokensToSend(
                 _operator, _from, _to, _amount, _userData, _operatorData);

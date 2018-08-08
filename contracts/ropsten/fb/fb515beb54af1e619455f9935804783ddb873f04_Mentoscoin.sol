@@ -113,8 +113,8 @@ contract Mentoscoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Mentoscoin() public {
-        symbol = &quot;MENTO&quot;;
-        name = &quot;Mentos Coin&quot;;
+        symbol = "MENTO";
+        name = "Mentos Coin";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x9464D69dbB6C590fb42c08e4192Cc2d9D1f0f5fA] = _totalSupply; //MEW address here

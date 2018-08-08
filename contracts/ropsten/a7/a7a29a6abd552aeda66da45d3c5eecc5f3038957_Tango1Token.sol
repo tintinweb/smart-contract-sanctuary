@@ -113,8 +113,8 @@ contract Tango1Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Tango1Token() public {
-        symbol = &quot;T1T&quot;;
-        name = &quot;Tango 1 Token&quot;;
+        symbol = "T1T";
+        name = "Tango 1 Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x763700246173B7d3e3b340555dd6ee7A5C8a4F00] = _totalSupply;

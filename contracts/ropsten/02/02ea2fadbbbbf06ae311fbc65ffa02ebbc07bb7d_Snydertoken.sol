@@ -113,8 +113,8 @@ contract Snydertoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Snydertoken() public {
-        symbol = &quot;SNYDER&quot;;
-        name = &quot;Snydertoken&quot;;
+        symbol = "SNYDER";
+        name = "Snydertoken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x24847bA4c6BA33f8465ca553E522a4415772746B] = _totalSupply;

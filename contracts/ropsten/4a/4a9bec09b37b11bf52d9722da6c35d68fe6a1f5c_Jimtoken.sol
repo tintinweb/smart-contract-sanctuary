@@ -116,8 +116,8 @@ contract Jimtoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Jimtoken() public {
-        symbol = &quot;JIM&quot;;
-        name = &quot;Jimtoken Token&quot;;
+        symbol = "JIM";
+        name = "Jimtoken Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

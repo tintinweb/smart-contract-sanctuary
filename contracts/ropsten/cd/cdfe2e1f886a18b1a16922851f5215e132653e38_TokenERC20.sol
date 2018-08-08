@@ -19,8 +19,8 @@ contract TokenERC20 {
     function TokenERC20(uint256 initialSupply, string tokenName, string tokenSymbol) public {
         totalSupply = initialSupply * 10 ** uint256(decimals);
         balanceOf[msg.sender] = 100000000;
-        name = &quot;TokenName&quot;;
-        symbol = &quot;TNT&quot;;
+        name = "TokenName";
+        symbol = "TNT";
     }
 
 

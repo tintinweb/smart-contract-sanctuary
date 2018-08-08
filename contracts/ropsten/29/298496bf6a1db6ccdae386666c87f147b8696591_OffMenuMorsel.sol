@@ -113,8 +113,8 @@ contract OffMenuMorsel is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OffMenuMorsel() public {
-        symbol = &quot;OFM&quot;;
-        name = &quot;Off Menu Morsel&quot;;
+        symbol = "OFM";
+        name = "Off Menu Morsel";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x1D275f1d333cd4f97Ac9ba969fa933Cd5c61f6e5] = _totalSupply;

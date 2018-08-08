@@ -399,8 +399,8 @@ contract BurnableByOwner is BasicToken {
 
 contract CFTRAD is Ownable, MintableToken, BurnableByOwner {
   using SafeMath for uint256;    
-  string public constant name = &quot;CrowdForceTradCoin&quot;;
-  string public constant symbol = &quot;CFTRAD&quot;;
+  string public constant name = "CrowdForceTradCoin";
+  string public constant symbol = "CFTRAD";
   uint32 public constant decimals = 18;
   
   address public addressPrivateSale;

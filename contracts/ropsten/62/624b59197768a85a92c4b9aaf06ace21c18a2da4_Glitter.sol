@@ -40,7 +40,7 @@ contract ERC20TokenInterface is BasicTokenInterface, ApproveAndCallFallBack{
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 }
 
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 
 
 
@@ -107,7 +107,7 @@ contract BasicToken is BasicTokenInterface{
 contract ManagedToken is BasicToken {
     address manager;
     modifier restricted(){
-        require(msg.sender == manager,&quot;Function can only be used by manager&quot;);
+        require(msg.sender == manager,"Function can only be used by manager");
         _;
     }
 
@@ -203,14 +203,14 @@ contract Glitter is ERC20Token {
     }
     
     constructor() public {
-        name = &quot;Green Light Rewards &quot;;
-        symbol = &quot;GLITTER&quot;;
+        name = "Green Light Rewards ";
+        symbol = "GLITTER";
         decimals = 8;
         totalSupply = 1000000 * (uint(10) ** decimals);
         tokenPrice = 10000000000000000; //0.01 ETH
         manager = 0xa70091DD81bD0c6d54326A973dC0d7b3f47c6dFd;
         balances[manager] = totalSupply;
-        URL = &quot;https://www.icosuccess.com/&quot;;
+        URL = "https://www.icosuccess.com/";
         emit Transfer(address(this),manager,balances[manager]);
     }
 

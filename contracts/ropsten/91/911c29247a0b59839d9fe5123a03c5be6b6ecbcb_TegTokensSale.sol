@@ -58,8 +58,8 @@ contract TegTokens {
         //initialSupply = 900000000000000000000000000;
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;TegTokens&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TET&quot;;                               // Set the symbol for display purposes
+        name = "TegTokens";                                   // Set the name for display purposes
+        symbol = "TET";                               // Set the symbol for display purposes
         unitsOneEthCanBuy = 10;                                      // Set the price of your token for the ICO (CHANGE THIS)
         fundsWallet = msg.sender;                                    // The owner of the contract gets ETH
     }

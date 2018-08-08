@@ -116,8 +116,8 @@ contract STCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STCToken() public {
-        symbol = &quot;STC&quot;;
-        name = &quot;STC Token&quot;;
+        symbol = "STC";
+        name = "STC Token";
         decimals = 18;
 		_totalSupply = 50000000000000000000000000;
         bonusEnds = now + 4 weeks;

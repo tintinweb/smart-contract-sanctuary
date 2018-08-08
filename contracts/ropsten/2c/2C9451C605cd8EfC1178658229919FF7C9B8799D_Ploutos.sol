@@ -112,8 +112,8 @@ contract Ploutos is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Ploutos() public {
-        symbol = &quot;PLST&quot;;
-        name = &quot;Ploutos&quot;;
+        symbol = "PLST";
+        name = "Ploutos";
         decimals = 18;
         _totalSupply = 20000000000000000000000000;
         balances[0x6863b20fce8159f60aa8be669970881ac673a5d1] = _totalSupply;

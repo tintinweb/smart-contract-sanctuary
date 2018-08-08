@@ -113,8 +113,8 @@ contract RTeamCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RTeamCoin() public {
-        symbol = &quot;RTC&quot;;
-        name = &quot;RTeamCoin&quot;;
+        symbol = "RTC";
+        name = "RTeamCoin";
         decimals = 18;
         _totalSupply = 20000000000000000000000000000;
         balances[0x606d0a92FF392F928804b7816e69a5d90E40B3dd] = _totalSupply;

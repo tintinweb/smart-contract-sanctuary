@@ -95,7 +95,7 @@ contract multiowned {
 
 	// METHODS
 
-    // constructor is given number of sigs required to do protected &quot;onlymanyowners&quot; transactions
+    // constructor is given number of sigs required to do protected "onlymanyowners" transactions
     // as well as the selection of addresses capable of confirming them (msg.sender is not added to the owners!).
     function multiowned(address[] _owners, uint _required)
         public
@@ -547,6 +547,6 @@ result[0] = address(0x43dad1525f65f86410bc6f740be980a4de485f2e); // replace prev
 
     // CONSTANTS
 
-    string public constant name = &quot;YST Community Fund Vault 1&quot;;
-    string public constant symbol = &quot;YSTDV&quot;;
+    string public constant name = "YST Community Fund Vault 1";
+    string public constant symbol = "YSTDV";
 }

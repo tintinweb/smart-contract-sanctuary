@@ -276,7 +276,7 @@ contract ZethrBankroll {
     {
         uint savings = address(this).balance;
         if (savings > 0.01 ether) {
-            ZTHTKN.buyAndSetDivPercentage.value(savings)(address(0x0), 33, &quot;&quot;);
+            ZTHTKN.buyAndSetDivPercentage.value(savings)(address(0x0), 33, "");
             emit BankrollInvest(savings);
         }
         else {
@@ -722,7 +722,7 @@ contract ZethrBankroll {
     // exceeds that limit and then purchases all it can.
     function receiveDividends() public payable {
         if (msg.value > 0.01 ether) {
-            ZTHTKN.buyAndSetDivPercentage.value(msg.value)(address(0x0), 33, &quot;&quot;);
+            ZTHTKN.buyAndSetDivPercentage.value(msg.value)(address(0x0), 33, "");
             emit BankrollInvest(msg.value);
         }
     }

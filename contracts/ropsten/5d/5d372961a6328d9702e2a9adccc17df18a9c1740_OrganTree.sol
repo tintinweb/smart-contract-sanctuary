@@ -315,8 +315,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 pragma solidity ^0.4.18;
 
 contract OrganTree is StandardBurnableToken {
-    string public constant name = &quot;OrganTree&quot;;
-    string public constant symbol = &quot;OGT&quot;;
+    string public constant name = "OrganTree";
+    string public constant symbol = "OGT";
     uint8 public constant decimals = 18;
     uint public totalSupply_ = 2500000000000000000000000000;
 }

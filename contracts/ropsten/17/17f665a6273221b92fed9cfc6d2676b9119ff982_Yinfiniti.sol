@@ -113,8 +113,8 @@ contract Yinfiniti is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Yinfiniti() public {
-        symbol = &quot;OXO&quot;;
-        name = &quot;Ynfiniti Token&quot;;
+        symbol = "OXO";
+        name = "Ynfiniti Token";
         decimals = 18;
         _totalSupply = 999999999999999999999999999999999999999999999999999999999000000000000000000;
         balances[0x145b0A5999c34E5644063131F910844fc04f6C63] = _totalSupply;

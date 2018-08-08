@@ -1,24 +1,24 @@
 pragma solidity ^0.4.18;
 
-/*           _.-,=_&quot;&quot;&quot;--,_
-        .-&quot; =/7&quot;   _  .3#&quot;=.
-      ,#7  &quot; &quot;  ,//)#d#######=.
-    ,/ &quot;      # ,i-/###########=
+/*           _.-,=_"""--,_
+        .-" =/7"   _  .3#"=.
+      ,#7  " "  ,//)#d#######=.
+    ,/ "      # ,i-/###########=
    /         _)#sm###=#=# #######\
-  /         (#/&quot;_`;\//#=#\-#######\
+  /         (#/"_`;\//#=#\-#######\
  /         ,d####-_.._.)##P########\
-,        ,&quot;############\\##bi- `\| Y.
+,        ,"############\\##bi- `\| Y.
 |       .d##############b\##P&#39;   V  |
-|\      &#39;#################!&quot;,       |
+|\      &#39;#################!",       |
 |C.       \###=############7        |
 &#39;###.           )#########/         &#39;
  \#(             \#######|         /
   \B             /#######7 /      /
-   \             \######&quot; /&quot;     /
+   \             \######" /"     /
     `.            \###7&#39;       ,&#39;
-      &quot;-_          `&quot;&#39;      ,-&#39;
-         &quot;-._           _.-&quot;
-             &quot;&quot;&quot;&quot;---&quot;&quot;&quot;&quot;
+      "-_          `"&#39;      ,-&#39;
+         "-._           _.-"
+             """"---""""
 
 
  WorldStage. A no-bullshit, transparent, self-sustaining pyramid scheme.
@@ -58,8 +58,8 @@ contract WorldStage {
 	int constant price_coeff = -0x296ABF784A358468C;
 
 	// Typical values that we have to declare.
-	string constant public name = &quot;WorldStage&quot;;
-	string constant public symbol = &quot;EPY&quot;;
+	string constant public name = "WorldStage";
+	string constant public symbol = "EPY";
 	uint8 constant public decimals = 18;
 
 	// Array between each address and their number of tokens.

@@ -114,8 +114,8 @@ contract OjuToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;OJUT&quot;;
-        name = &quot;Oju Token&quot;;
+        symbol = "OJUT";
+        name = "Oju Token";
         decimals = 18;
         totalSupply = 969 * 10 ** 26;
         ownerAddress = 0x789633520e8160b2bA4AA64cE66A0cC874059806;

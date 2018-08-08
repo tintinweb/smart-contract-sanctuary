@@ -78,8 +78,8 @@ contract ERC20Standard is BasicToken {
   }
 }
 contract Plasma is ERC20Standard {
-    string public constant name = &quot;Plasma&quot;;
-    string public constant symbol = &quot;PLM&quot;;
+    string public constant name = "Plasma";
+    string public constant symbol = "PLM";
     uint8 public constant decimals = 18;
     uint256 public constant maxSupply = 1000000000 * (10 ** uint256(decimals));
     uint256 public PLMToEth;

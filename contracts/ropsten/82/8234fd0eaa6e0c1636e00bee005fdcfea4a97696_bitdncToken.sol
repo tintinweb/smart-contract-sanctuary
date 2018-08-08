@@ -116,8 +116,8 @@ contract bitdncToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitdncToken() public {
-        symbol = &quot;DNC&quot;;
-        name = &quot;bitdnc Token&quot;;
+        symbol = "DNC";
+        name = "bitdnc Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 2 weeks;

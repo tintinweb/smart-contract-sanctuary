@@ -130,8 +130,8 @@ contract RebateCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RebateCoin() public {
-        symbol = &quot;RBC&quot;;
-        name = &quot;Rebate Coin&quot;;
+        symbol = "RBC";
+        name = "Rebate Coin";
 		_totalSupply = safeAdd(_totalSupply, bounty);
     }
 

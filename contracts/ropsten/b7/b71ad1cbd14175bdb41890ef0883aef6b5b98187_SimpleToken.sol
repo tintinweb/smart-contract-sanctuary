@@ -232,8 +232,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;XRPCOIN&quot;;
-  string public constant symbol = &quot;XRPC&quot;;
+  string public constant name = "XRPCOIN";
+  string public constant symbol = "XRPC";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 5000000000 * (10 ** uint256(decimals));
 

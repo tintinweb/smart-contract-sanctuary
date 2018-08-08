@@ -113,8 +113,8 @@ contract BreakCoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BreakCoinToken() public {
-        symbol = &quot;BreakCoin&quot;;
-        name = &quot;Break Coin Token&quot;;
+        symbol = "BreakCoin";
+        name = "Break Coin Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa93027969477fee4c084f40850d47BDe81671bC1] = _totalSupply;

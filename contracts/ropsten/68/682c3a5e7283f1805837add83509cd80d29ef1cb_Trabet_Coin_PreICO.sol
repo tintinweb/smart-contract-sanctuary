@@ -21,8 +21,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract Trabet_Coin is owned {
     // Public variables of the token
-    string public name = &quot;Trabet Coin&quot;;
-    string public symbol = &quot;TC&quot;;
+    string public name = "Trabet Coin";
+    string public symbol = "TC";
     uint8 public decimals = 4;
     uint256 public totalSupply = 7000000 * 10 ** uint256(decimals);
 

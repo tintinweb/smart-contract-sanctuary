@@ -282,8 +282,8 @@ contract MintableToken is BurnableToken, Ownable {
 
 contract MintyMcCringleToken is MintableToken
 {
-    string public name = &quot;Minty McCringle Token&quot;;
-    string public symbol = &quot;Mingle&quot;;
+    string public name = "Minty McCringle Token";
+    string public symbol = "Mingle";
 
     uint public decimals = 2;
 

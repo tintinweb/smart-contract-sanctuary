@@ -114,8 +114,8 @@ contract MICKEYtoken is ERC20Interface, Owned{
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;D0D&quot;;
-        name = &quot;MICKEY Token&quot;;
+        symbol = "D0D";
+        name = "MICKEY Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

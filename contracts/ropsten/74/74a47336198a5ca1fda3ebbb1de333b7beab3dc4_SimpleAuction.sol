@@ -88,8 +88,8 @@ contract SimpleAuction {
         // external contracts.
 
         // 1. Conditions
-        require(now >= auctionEnd, &quot;Auction not yet ended.&quot;);
-        require(!ended, &quot;auctionEnd has already been called.&quot;);
+        require(now >= auctionEnd, "Auction not yet ended.");
+        require(!ended, "auctionEnd has already been called.");
 
         // 2. Effects
         ended = true;
@@ -114,14 +114,14 @@ contract SimpleAuction {
         // period is over.
         require(
             now <= auctionEnd,
-            &quot;Auction already ended.&quot;
+            "Auction already ended."
         );
 
         // If the bid is not higher, send the
         // money back.
         require(
             msg.value > highestBid,
-            &quot;There already is a higher bid.&quot;
+            "There already is a higher bid."
         );
 
         if (highestBid != 0) {

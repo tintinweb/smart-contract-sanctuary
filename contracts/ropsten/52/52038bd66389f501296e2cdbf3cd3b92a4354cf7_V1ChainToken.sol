@@ -82,8 +82,8 @@ contract V1ChainToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;V1Chain&quot;;
-    string public constant symbol = &quot;V1C&quot;;
+    string public constant name = "V1Chain";
+    string public constant symbol = "V1C";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000000000000;

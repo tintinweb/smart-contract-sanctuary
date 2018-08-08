@@ -151,7 +151,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -229,8 +229,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract INV is Ownable, MintableToken {
   using SafeMath for uint256;
-  string public constant name = &quot;Invest&quot;;
-  string public constant symbol = &quot;INV&quot;;
+  string public constant name = "Invest";
+  string public constant symbol = "INV";
   uint32 public constant decimals = 18;
 
   address public addressTeam; // address of vesting smart contract

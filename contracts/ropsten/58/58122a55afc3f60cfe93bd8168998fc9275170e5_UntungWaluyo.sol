@@ -230,8 +230,8 @@ contract UntungWaluyo is MintableToken {
   event TokensBurned(address initiatior, address indexed _partner, uint256 _tokens);
  
     function UntungWaluyo() public {
-        name = &quot;UntungWaluyo&quot;;
-        symbol = &quot;LUYO&quot;;
+        name = "UntungWaluyo";
+        symbol = "LUYO";
         decimals = 18;
         totalSupply = 342e24;
         founder = 0xCb21cDFFa72364B5CaAEaAfBbF120C5C8a98614A;

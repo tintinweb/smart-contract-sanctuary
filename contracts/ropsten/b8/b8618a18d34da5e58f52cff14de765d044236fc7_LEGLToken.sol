@@ -1,9 +1,9 @@
 pragma solidity ^0.4.19;
 
 contract LEGLToken {
-    string  public name = &quot;AltCourt Gold Token&quot;;
-    string  public symbol = &quot;LEGL&quot;;
-    string  public standard = &quot;LEGL Token v1.0&quot;;
+    string  public name = "AltCourt Gold Token";
+    string  public symbol = "LEGL";
+    string  public standard = "LEGL Token v1.0";
     uint8 public constant decimals = 18;
     uint256 public totalSupply;
 
@@ -91,7 +91,7 @@ contract LEGLToken {
 
 //pragma solidity ^0.4.19;
 
-//import &quot;./LEGLToken.sol&quot;;
+//import "./LEGLToken.sol";
 
 contract LEGLTokenSale {
     address admin;

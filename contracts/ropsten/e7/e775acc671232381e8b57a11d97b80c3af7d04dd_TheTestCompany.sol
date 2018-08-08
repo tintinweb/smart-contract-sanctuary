@@ -116,8 +116,8 @@ contract TheTestCompany is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheTestCompany() public {
-        symbol = &quot;TST&quot;;
-        name = &quot;TheTestCompany&quot;;
+        symbol = "TST";
+        name = "TheTestCompany";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

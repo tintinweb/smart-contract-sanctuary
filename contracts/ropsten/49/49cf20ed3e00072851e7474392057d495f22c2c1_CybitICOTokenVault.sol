@@ -40,7 +40,7 @@ contract owned {
     }
 
     modifier onlyOwner {
-        require(msg.sender == owner , &quot;Unauthorized Access&quot;);
+        require(msg.sender == owner , "Unauthorized Access");
         _;
     }
 
@@ -157,7 +157,7 @@ contract CybitICOTokenVault is ERC223ReceivingContract, owned{
       tkn.data = _data;
       //uint32 u = uint32(_data[3]) + (uint32(_data[2]) << 8) + (uint32(_data[1]) << 16) + (uint32(_data[0]) << 24);
       //tkn.sig = bytes4(u);
-      //require( tkn.sender == owner , &quot;Only Owner can send&quot; );
+      //require( tkn.sender == owner , "Only Owner can send" );
       emit TokenReceived(tkn.sender,tkn.value,CybitToken.name());
      
      }

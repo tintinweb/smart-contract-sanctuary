@@ -113,8 +113,8 @@ contract EmilToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EmilToken() public {
-        symbol = &quot;EMIL&quot;;
-        name = &quot;Emil Token&quot;;
+        symbol = "EMIL";
+        name = "Emil Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x650E73ccD5E403275E7fbEdD1573BDDF2b43d02c] = _totalSupply;

@@ -113,8 +113,8 @@ contract BazhanovToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bazzhtoken() public {
-        symbol = &quot;BZZH&quot;;
-        name = &quot;Bazzhtoken&quot;;
+        symbol = "BZZH";
+        name = "Bazzhtoken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xF9aedc522F14f316Af2bFE359C217cf194C7e517] = _totalSupply;

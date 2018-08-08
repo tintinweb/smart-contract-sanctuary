@@ -8,7 +8,7 @@ of the dispense() function. The dispensed amount is dependant on the
 transaction&#39;s gas price. This means a transaction sent at 4 gwei will dispense
 twice as many tokens as a transaction sent at 2 gwei.
 
-The dispensing &quot;rate&quot; is changable by the contract owner and allows the rate to
+The dispensing "rate" is changable by the contract owner and allows the rate to
 be changed over time to follow the token&#39;s price. The intention of this ratio is
 to ensure that the value of ether spent as gas is roughly equal to the value of
 the tokens received.

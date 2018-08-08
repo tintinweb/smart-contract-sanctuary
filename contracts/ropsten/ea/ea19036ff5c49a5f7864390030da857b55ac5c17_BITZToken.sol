@@ -13,7 +13,7 @@ contract ReceivingContractCallback {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -366,9 +366,9 @@ contract CommonToken is StandardToken, WalletsPercents {
 
 contract BITTToken is CommonToken {
 
-  string public constant name = &quot;BITT&quot;;
+  string public constant name = "BITT";
 
-  string public constant symbol = &quot;BITT&quot;;
+  string public constant symbol = "BITT";
 
 }
 
@@ -376,9 +376,9 @@ contract BITTToken is CommonToken {
 
 contract BITZToken is CommonToken {
 
-  string public constant name = &quot;BITZ&quot;;
+  string public constant name = "BITZ";
 
-  string public constant symbol = &quot;BITZ&quot;;
+  string public constant symbol = "BITZ";
 
 }
 

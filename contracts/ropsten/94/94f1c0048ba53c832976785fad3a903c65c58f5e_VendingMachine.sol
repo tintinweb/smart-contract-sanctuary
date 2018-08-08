@@ -116,9 +116,9 @@ contract VendingMachine is Token {
     constructor() public {
         balances[msg.sender] = 50000000;  
         totalSupply = 50000000;            
-        name = &quot;VendingMachineToken&quot;;		
+        name = "VendingMachineToken";		
         decimals = 2;                      	
-        symbol = &quot;VMT&quot;;                 
+        symbol = "VMT";                 
         owner= msg.sender;
         price=100000000000000000;
     }

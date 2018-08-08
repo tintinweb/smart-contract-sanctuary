@@ -116,8 +116,8 @@ contract PenaQuantumLeapToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PenaQuantumLeapToken() public {
-        symbol = &quot;PNA&quot;;
-        name = &quot;Quantum Leap Coin&quot;;
+        symbol = "PNA";
+        name = "Quantum Leap Coin";
         decimals = 18;
         bonusEnds = now + 6 weeks;
         endDate = now + 12 weeks;

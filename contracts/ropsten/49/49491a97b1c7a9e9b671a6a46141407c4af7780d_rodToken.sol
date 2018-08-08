@@ -106,8 +106,8 @@ contract rodToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function rodToken() public {
-        symbol = &quot;ROD&quot;;
-        name = &quot;Reign or Die Token&quot;;
+        symbol = "ROD";
+        name = "Reign or Die Token";
         decimals = 18;
         bonusEnds = now + 8 weeks;
         endDate = now + 26 weeks;

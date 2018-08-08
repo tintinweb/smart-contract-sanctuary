@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract LLX is StandardToken {
 
-  string public constant name = &quot; LILIANXIN PERSONAL TOKEN &quot;;
-  string public constant symbol = &quot;LLX&quot;;
+  string public constant name = " LILIANXIN PERSONAL TOKEN ";
+  string public constant symbol = "LLX";
   uint8 public constant decimals = 9;
 
 

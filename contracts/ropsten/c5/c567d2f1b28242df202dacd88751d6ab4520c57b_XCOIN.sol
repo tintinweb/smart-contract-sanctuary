@@ -61,9 +61,9 @@ contract XCOIN is StandardToken {
     function XCOIN() {
         balances[msg.sender] = 120000000000000000000000000;
         totalSupply = 120000000000000000000000000;
-        name = &quot;Lendxcoin&quot;;
+        name = "Lendxcoin";
         decimals = 18;
-        symbol = &quot;XCOIN&quot;;
+        symbol = "XCOIN";
         unitsOneEthCanBuy = 1100;
         fundsWallet = 0x352990E140C5639975b5f6bb8379f79e501095c2;
     }
@@ -79,7 +79,7 @@ contract XCOIN is StandardToken {
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

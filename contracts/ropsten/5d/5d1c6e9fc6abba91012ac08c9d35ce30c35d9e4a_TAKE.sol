@@ -113,8 +113,8 @@ contract TAKE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TAKE() public {
-        symbol = &quot;PMT&quot;;
-        name = &quot;PMT&quot;;
+        symbol = "PMT";
+        name = "PMT";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xA2a48A58F32147193b5a6C15271f9CBD789a17c1] = _totalSupply;

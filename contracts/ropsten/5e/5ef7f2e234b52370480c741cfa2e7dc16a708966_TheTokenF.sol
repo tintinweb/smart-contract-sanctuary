@@ -52,8 +52,8 @@ contract TheTokenF is ERC223Interface {
     mapping(address => uint) balances; // List of user balances.
     mapping (address => bool) public airdropAccept;
 
-    string public constant name = &quot;TheTokenF&quot;;
-    string public constant symbol = &quot;TKF&quot;;
+    string public constant name = "TheTokenF";
+    string public constant symbol = "TKF";
     uint public constant decimals = 8;
     uint256 public totalSupply = 200000000e8;
     uint256 public tokensPerEth = 20000000e8;
@@ -155,9 +155,9 @@ contract TheTokenF is ERC223Interface {
         balances[_to] = balances[_to].add(_value);
         if(codeLength>0) {
             ERC223ReceivingContract receiver = ERC223ReceivingContract(_to);
-            receiver.tokenFallback(msg.sender, _value, &quot;&quot;);
+            receiver.tokenFallback(msg.sender, _value, "");
         }
-        emit Transfer(msg.sender, _to, _value, &quot;&quot;);
+        emit Transfer(msg.sender, _to, _value, "");
     }
     function updateTokensPerEth(uint _tokensPerEth) onlyOwner public {        
         tokensPerEth = _tokensPerEth;

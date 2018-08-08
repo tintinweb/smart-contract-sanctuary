@@ -62,7 +62,7 @@ contract AtomaxKyc {
         bytes32 hash = hasher ( _buyerAddress,  _buyerId,  _maxAmount );
         address signer = ecrecover(hash, _v, _r, _s);
 		
-		require( isKycSigner[signer], &quot;isKycSigner[signer]&quot;);
+		require( isKycSigner[signer], "isKycSigner[signer]");
         
 		uint256 totalPayed = alreadyPayed[_buyerId].add(msg.value);
 		require(totalPayed <= _maxAmount);
@@ -74,7 +74,7 @@ contract AtomaxKyc {
     }
     
     function hasher (address _buyerAddress, bytes32 _buyerId, uint256 _maxAmount) public view returns ( bytes32 hash ) {
-        hash = keccak256(abi.encodePacked(&quot;Atomax authorization:&quot;, this, _buyerAddress, _buyerId, _maxAmount));
+        hash = keccak256(abi.encodePacked("Atomax authorization:", this, _buyerAddress, _buyerId, _maxAmount));
     }
 }
 
@@ -92,10 +92,10 @@ contract CoinCrowdReservedContract is AtomaxKyc {
     } 
 
     function releaseTokensTo(address _buyer) internal returns(bool) {
-        require ( msg.sender == tx.origin, &quot;msg.sender == tx.orgin&quot; );
+        require ( msg.sender == tx.origin, "msg.sender == tx.orgin" );
 		
 		uint256 xcc_amount = xcc.balanceOf(msg.sender);
-		require( xcc_amount > 0, &quot;xcc_amount > 0&quot; );
+		require( xcc_amount > 0, "xcc_amount > 0" );
 		
 		xcc.originBurn(xcc_amount);
 		tokenSaleContract.sendTokens(_buyer, xcc_amount);

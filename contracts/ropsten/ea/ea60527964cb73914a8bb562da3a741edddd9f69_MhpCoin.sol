@@ -11,8 +11,8 @@ contract MhpCoin{
     mapping (address => mapping (address => uint256)) allowed;
     function MhpCoin() public { 
         owner = msg.sender;                                         // Set owner of contract 
-        name = &quot;MhpCoin&quot;;                                         // Set the name for display purposes
-        symbol = &quot;MHP&quot;;                                             // Set the symbol for display purposes
+        name = "MhpCoin";                                         // Set the name for display purposes
+        symbol = "MHP";                                             // Set the symbol for display purposes
         decimals = 18;                                               // Amount of decimals for display purposes
 		totalSupply = 100000000;                            // Total supply
 		balances[owner] = totalSupply;                              // Set owner balance equal totalsupply 

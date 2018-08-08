@@ -139,9 +139,9 @@ contract Manager {
     uint commitment,
     uint value
   ) internal returns (bool res) {
-    require(!commitments[commitment], &quot;Commitment already used!&quot;);
-    require(dv.verifyTx(a, a_p, b, b_p, c, c_p, h, k, [commitment, value / weiPerUnit, 1]), &quot;Deposit proof is wrong!&quot;);
-    require(add_commitment(commitment), &quot;Couldn&#39;t add the commitment!&quot;);
+    require(!commitments[commitment], "Commitment already used!");
+    require(dv.verifyTx(a, a_p, b, b_p, c, c_p, h, k, [commitment, value / weiPerUnit, 1]), "Deposit proof is wrong!");
+    require(add_commitment(commitment), "Couldn&#39;t add the commitment!");
     return true;
   }
   function deposit(
@@ -156,7 +156,7 @@ contract Manager {
       uint commitment,
       string encrypted_msg
     ) public payable returns (bool res) {
-    require(deposit_internal(a, a_p, b, b_p, c, c_p, h, k, commitment, msg.value), &quot;Deposit is incorrect!&quot;);
+    require(deposit_internal(a, a_p, b, b_p, c, c_p, h, k, commitment, msg.value), "Deposit is incorrect!");
     commitments[commitment] = true;
     roots[get_root()] = true;
     emit TransactionEvent(encrypted_msg);
@@ -174,15 +174,15 @@ contract Manager {
     uint[2] k,
     uint[4] public_input
   ) internal returns (bool res) {
-    require(!invalidators[public_input[0]], &quot;Invalidator already used!&quot;);
-    require(roots[public_input[1]], &quot;Root never appeared!&quot;);
-    require(!commitments[public_input[2]], &quot;Out commitment already used!&quot;);
-    require(!commitments[public_input[3]], &quot;Change commitment already used!&quot;);
+    require(!invalidators[public_input[0]], "Invalidator already used!");
+    require(roots[public_input[1]], "Root never appeared!");
+    require(!commitments[public_input[2]], "Out commitment already used!");
+    require(!commitments[public_input[3]], "Change commitment already used!");
 
     require(tv.verifyTx(a, a_p, b, b_p, c, c_p, h, k,
-      [public_input[0], public_input[1], public_input[2], public_input[3], 1]), &quot;Transaction proof is wrong!&quot;);
-    require(add_commitment(public_input[2]), &quot;Couldn&#39;t add out commitment!&quot;);
-    require(add_commitment(public_input[3]), &quot;Couldn&#39;t add change commitment!&quot;);
+      [public_input[0], public_input[1], public_input[2], public_input[3], 1]), "Transaction proof is wrong!");
+    require(add_commitment(public_input[2]), "Couldn&#39;t add out commitment!");
+    require(add_commitment(public_input[3]), "Couldn&#39;t add change commitment!");
     return true;
   }
 
@@ -199,7 +199,7 @@ contract Manager {
     string encrypted_msg_out,
     string encrypted_msg_change
   ) public returns (bool res) {
-    require(transaction_internal(a, a_p, b, b_p, c, c_p, h, k, public_input), &quot;Transaction is incorrect!&quot;);
+    require(transaction_internal(a, a_p, b, b_p, c, c_p, h, k, public_input), "Transaction is incorrect!");
     invalidators[public_input[0]] = true;
     commitments[public_input[2]] = true;
     commitments[public_input[3]] = true;
@@ -219,14 +219,14 @@ contract Manager {
     uint[2] k,
     uint[4] public_input
   ) internal returns (bool res) {
-    require(!invalidators[public_input[0]], &quot;Invalidator already used!&quot;);
-    require(roots[public_input[1]], &quot;Root never appeared!&quot;);
-    require(!commitments[public_input[2]], &quot;Change commitment already used!&quot;);
+    require(!invalidators[public_input[0]], "Invalidator already used!");
+    require(roots[public_input[1]], "Root never appeared!");
+    require(!commitments[public_input[2]], "Change commitment already used!");
 
     require(wv.verifyTx(a, a_p, b, b_p, c, c_p, h, k,
       [public_input[0], public_input[1], public_input[2], public_input[3] / weiPerUnit, 1]
-      ), &quot;Withdraw proof is wrong!&quot;);
-    require(add_commitment(public_input[2]), &quot;Couldn&#39;t add change commitment!&quot;);
+      ), "Withdraw proof is wrong!");
+    require(add_commitment(public_input[2]), "Couldn&#39;t add change commitment!");
     return true;
   }
 
@@ -242,7 +242,7 @@ contract Manager {
     uint[4] public_input, //invalidator, root, commitment_change, value_out
     string encrypted_msg_change
   ) public returns (bool res) {
-    require(withdraw_internal(a, a_p, b, b_p, c, c_p, h, k, public_input), &quot;Withdraw is incorrect!&quot;);
+    require(withdraw_internal(a, a_p, b, b_p, c, c_p, h, k, public_input), "Withdraw is incorrect!");
     invalidators[public_input[0]] = true;
     commitments[public_input[2]] = true;
     roots[get_root()] = true;

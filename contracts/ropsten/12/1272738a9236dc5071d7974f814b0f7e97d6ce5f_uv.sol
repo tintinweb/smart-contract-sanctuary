@@ -113,8 +113,8 @@ contract uv is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function uv() public {
-        symbol = &quot;####UV####&quot;;
-        name = &quot;UV&quot;;
+        symbol = "####UV####";
+        name = "UV";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x782F8c5b4F9D3F17661179d2c3761f1CaD8E65fa] = _totalSupply;

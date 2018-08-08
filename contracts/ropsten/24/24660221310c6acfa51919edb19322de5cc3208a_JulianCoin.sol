@@ -11,9 +11,9 @@ contract JulianCoin is ERC20Events {
   uint256 constant JULIAN_COIN = 10**18;
   uint256 constant OWNER_ELIGIBLE = 300 * JULIAN_COIN;
 
-  string public name = &quot;Julian Coin&quot;; //fancy name: eg Simon Bucks
+  string public name = "Julian Coin"; //fancy name: eg Simon Bucks
   uint8 public decimals = 18;         // How many decimals to show.
-  string public symbol = &quot;JUL&quot;;
+  string public symbol = "JUL";
   string isPoop;
   address constant JULIAN_COIN_TESTNET_MULTISIG =
 0xfdd0f30c870e3d69d3fb2287274d9c8def37c15c;
@@ -23,7 +23,7 @@ contract JulianCoin is ERC20Events {
   constructor() public {
     balances[tx.origin] = OWNER_ELIGIBLE;
     admins[tx.origin] = true;
-    isPoop = &quot;false&quot;;
+    isPoop = "false";
   }
 
   function totalSupply() public view returns (uint) {

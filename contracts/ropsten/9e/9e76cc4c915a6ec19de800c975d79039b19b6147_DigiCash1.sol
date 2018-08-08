@@ -113,8 +113,8 @@ contract DigiCash1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DigiCash1() public {
-        symbol = &quot;DC1&quot;;
-        name = &quot;Digital Cash 1&quot;;
+        symbol = "DC1";
+        name = "Digital Cash 1";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0xb33097B9cDe3afE3cF1073fbc6df1A3C8a8c7C9a] = _totalSupply;

@@ -113,8 +113,8 @@ contract Magzia is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Magzia() public {
-        symbol = &quot;magzi&quot;;
-        name = &quot;Magzia&quot;;
+        symbol = "magzi";
+        name = "Magzia";
         decimals = 8;
         _totalSupply = 100000000000000;
         balances[0x0FF449b0C5e69Aa2E6b833F1F44539228E4426d5] = _totalSupply;

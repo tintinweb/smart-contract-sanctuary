@@ -145,8 +145,8 @@ contract AWAToken is StandardToken {
     // UM
     uint8 public constant decimals = 6;
     uint256 public totalSupply = 500000000*10**6;
-    string public constant symbol = &quot;TTT&quot;;
-    string public constant name = &quot;TTT&quot;;
+    string public constant symbol = "TTT";
+    string public constant name = "TTT";
 
     // Inited in constructor
     address public contractOwner; // Can stop the allocation of delayed tokens and can allocate delayed tokens.

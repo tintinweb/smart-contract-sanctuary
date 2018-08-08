@@ -80,8 +80,8 @@ contract QLANCEGO is ERC20Interface, Owned, SafeMath {
 
  
     function QLANCEGO() public {
-        symbol = &quot;qla&quot;;
-        name = &quot;qlance Token&quot;;
+        symbol = "qla";
+        name = "qlance Token";
         decimals = 18;
         _totalSupply = 800000000000000000000000000;
         balances[

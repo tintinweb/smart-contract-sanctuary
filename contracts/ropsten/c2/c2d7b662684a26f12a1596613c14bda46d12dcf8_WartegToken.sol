@@ -113,8 +113,8 @@ contract WartegToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WartegToken() public {
-        symbol = &quot;WRTG&quot;;
-        name = &quot;Warteg Token&quot;;
+        symbol = "WRTG";
+        name = "Warteg Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8f957818168CDB6Bec62e3097C98262AecAd5428] = _totalSupply;

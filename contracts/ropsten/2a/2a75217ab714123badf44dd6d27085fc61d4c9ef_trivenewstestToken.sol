@@ -116,8 +116,8 @@ contract trivenewstestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function trivenewstestToken() public {
-        symbol = &quot;TNT&quot;;
-        name = &quot;trivenewstest Token&quot;;
+        symbol = "TNT";
+        name = "trivenewstest Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

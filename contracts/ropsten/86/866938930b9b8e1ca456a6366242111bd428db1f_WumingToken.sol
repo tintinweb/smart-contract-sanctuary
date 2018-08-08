@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract WumingToken {
 
-    string public name = &quot;Wuming&quot;;      //  token name
-    string public symbol = &quot;WMB&quot;;           //  token symbol
+    string public name = "Wuming";      //  token name
+    string public symbol = "WMB";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

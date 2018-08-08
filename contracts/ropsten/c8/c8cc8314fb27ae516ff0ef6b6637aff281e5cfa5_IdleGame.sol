@@ -141,7 +141,7 @@ contract IdleGame is Ownable{
         {
             idsOwnedByAUser.push(packagesOwner[i].investmentOptionId);
         }
-        emit Information2(&quot;Ids owner by user&quot;,idsOwnedByAUser);
+        emit Information2("Ids owner by user",idsOwnedByAUser);
         return idsOwnedByAUser;
     }
     
@@ -151,7 +151,7 @@ contract IdleGame is Ownable{
         {
             if (packagesOwner[i].investmentOptionId == id)
             {
-                emit Information(&quot;The number of instances of a package that user holds&quot;,packagesOwner[i].investmentOptionNumber);
+                emit Information("The number of instances of a package that user holds",packagesOwner[i].investmentOptionNumber);
                 return packagesOwner[i].investmentOptionNumber;
             }
         }

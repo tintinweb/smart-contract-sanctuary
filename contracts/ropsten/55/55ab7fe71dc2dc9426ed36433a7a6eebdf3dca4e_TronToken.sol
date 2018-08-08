@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract TronToken {
 
-    string public name = &quot;Tronix&quot;;      //  token name
-    string public symbol = &quot;TRX&quot;;       //  token symbol
+    string public name = "Tronix";      //  token name
+    string public symbol = "TRX";       //  token symbol
     uint256 public decimals = 18;        //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -113,8 +113,8 @@ contract denemekontrat is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function denemekontrat() public {
-        symbol = &quot;TOP&quot;;
-        name = &quot;Topic Token&quot;;
+        symbol = "TOP";
+        name = "Topic Token";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0x4cCcFaB54f7923308E469F3A5f0126bd6ead8c23] = _totalSupply; //MEW address here

@@ -42,8 +42,8 @@ interface ChickenTokenDelegate {
 contract ChickenTokenDelegator is ERC20Interface {
 
   ChickenTokenDelegate public chickenHunt;
-  string public name = &quot;Chicken&quot;;
-  string public symbol = &quot;CHICKEN&quot;;
+  string public name = "Chicken";
+  string public symbol = "CHICKEN";
   uint8 public decimals = 0;
   mapping (address => mapping (address => uint256)) internal allowed;
   address manager;

@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -264,7 +264,7 @@ library ECRecovery {
 
   /**
    * toEthSignedMessageHash
-   * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+   * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
    * and hash the result
    */
   function toEthSignedMessageHash(bytes32 hash)
@@ -275,7 +275,7 @@ library ECRecovery {
     // 32 is the length in bytes of hash,
     // enforced by the type signature above
     return keccak256(
-      abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash)
+      abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)
     );
   }
   function toEthSignedMessageHashBytes(bytes hash)
@@ -287,12 +287,12 @@ library ECRecovery {
     // enforced by the type signature above
 
     return keccak256(
-      abi.encodePacked(&quot;\x19Ethereum Signed Message:\n&quot;, uint2str(hash.length), hash)
+      abi.encodePacked("\x19Ethereum Signed Message:\n", uint2str(hash.length), hash)
     );
   }
 
   function uint2str(uint i) internal pure returns (string){
-    if (i == 0) return &quot;0&quot;;
+    if (i == 0) return "0";
     uint j = i;
     uint length;
     while (j != 0){
@@ -345,7 +345,7 @@ event Debug(address addr);
       else
       addresses[i] = bbs.getAddress(keccak256(abi.encodePacked(bboDocHash,&#39;address&#39;, i)));
 
-      status[i] = (keccak256(bbs.getBytes(keccak256(abi.encodePacked(bboDocHash,&#39;signature&#39;, addresses[i]))))!=keccak256(&quot;&quot;));
+      status[i] = (keccak256(bbs.getBytes(keccak256(abi.encodePacked(bboDocHash,&#39;signature&#39;, addresses[i]))))!=keccak256(""));
     }
     return (addresses, status);
   }

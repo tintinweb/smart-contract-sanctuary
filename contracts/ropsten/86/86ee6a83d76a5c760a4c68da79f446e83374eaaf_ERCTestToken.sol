@@ -116,8 +116,8 @@ contract ERCTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ERCTestToken() public {
-        symbol = &quot;ERCT&quot;;
-        name = &quot;ERCTest Token&quot;;
+        symbol = "ERCT";
+        name = "ERCTest Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 100 weeks;

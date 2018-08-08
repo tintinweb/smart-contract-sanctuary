@@ -207,8 +207,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract BlockcloudToken is StandardToken {
-  string public name    = &quot;Blockcloud Token&quot;;
-  string public symbol  = &quot;BLOC&quot;;
+  string public name    = "Blockcloud Token";
+  string public symbol  = "BLOC";
   uint8 public decimals = 18;
 
 

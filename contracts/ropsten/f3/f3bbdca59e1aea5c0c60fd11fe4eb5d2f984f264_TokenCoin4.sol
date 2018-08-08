@@ -116,8 +116,8 @@ contract TokenCoin4 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TokenCoin4() public {
-        symbol = &quot;TKC4&quot;;
-        name = &quot;TokenCoin4 Token&quot;;
+        symbol = "TKC4";
+        name = "TokenCoin4 Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract CryptSureToken is StandardToken {
-  string public name    = &quot;CryptSureToken&quot;;
-  string public symbol  = &quot;CPST&quot;;
+  string public name    = "CryptSureToken";
+  string public symbol  = "CPST";
   uint8 public decimals = 18;
 
   // one billion in initial supply

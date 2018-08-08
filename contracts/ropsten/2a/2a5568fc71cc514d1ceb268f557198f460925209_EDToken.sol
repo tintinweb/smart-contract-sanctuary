@@ -70,7 +70,7 @@ library SafeMath {
  * @title Ownable && Mintable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
  * @dev Added mintOwner address how controls the minting
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -382,8 +382,8 @@ contract EdgeToken is ERC20, Ownable {
  * HarCap - 1,000,000,000 - One billion tokens + 18 decimals
  */
 contract EDToken is EdgeToken {
-  string public constant name = &quot;EdToken&quot;;  // The Token&#39;s name
-  string public constant symbol = &quot;ET&quot;;    // Identifier 
+  string public constant name = "EdToken";  // The Token&#39;s name
+  string public constant symbol = "ET";    // Identifier 
   uint8 public constant decimals = 18;      // Number of decimals 
 
   /**

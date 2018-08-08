@@ -138,7 +138,7 @@ contract Balancer is RpSafeMath, Ownable, HasWorkers {
     }
 
     /*
-        @return All the &quot;hotwallet&quot; accounts, it must have at least one.
+        @return All the "hotwallet" accounts, it must have at least one.
     */
     function allAccounts() public view returns (address[]) {
         return accounts;
@@ -189,7 +189,7 @@ contract Balancer is RpSafeMath, Ownable, HasWorkers {
     }
 
     /*
-        @notice Adds an account to the &quot;hotwallet&quot; group
+        @notice Adds an account to the "hotwallet" group
 
         @param account Address of the account
     */

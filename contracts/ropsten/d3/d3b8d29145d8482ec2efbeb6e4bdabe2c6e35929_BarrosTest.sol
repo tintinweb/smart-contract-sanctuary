@@ -116,8 +116,8 @@ contract BarrosTest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BarrosTest() public {
-        symbol = &quot;GBT&quot;;
-        name = &quot;GBTest&quot;;
+        symbol = "GBT";
+        name = "GBTest";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

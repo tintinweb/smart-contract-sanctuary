@@ -66,8 +66,8 @@ contract CHStock is ERC20Interface {
 
   /* STORAGE */
 
-  string public name = &quot;ChickenHuntStock&quot;;
-  string public symbol = &quot;CHS&quot;;
+  string public name = "ChickenHuntStock";
+  string public symbol = "CHS";
   uint8 public decimals = 18;
   uint256 public totalShares;
   uint256 public dividendsPerShare;
@@ -350,7 +350,7 @@ contract CHHunter is CHGameBase {
     _house.huntingPower = _house.huntingPower.add(_increment);
     _house.offensePower = _house.offensePower.add(_increment);
 
-    emit Upgrade(msg.sender, &quot;strength&quot;, _to);
+    emit Upgrade(msg.sender, "strength", _to);
   }
 
   function upgradeDexterity(uint256 _to) external payable {
@@ -364,7 +364,7 @@ contract CHHunter is CHGameBase {
     _house.huntingPower = _house.huntingPower.add(_increment);
     _house.offensePower = _house.offensePower.add(_increment);
 
-    emit Upgrade(msg.sender, &quot;dexterity&quot;, _to);
+    emit Upgrade(msg.sender, "dexterity", _to);
   }
 
   function upgradeStructure(uint256 _to) external payable {
@@ -377,7 +377,7 @@ contract CHHunter is CHGameBase {
     _house.barrier.structure = _to;
     _house.defensePower = _house.defensePower.add(_increment);
 
-    emit Upgrade(msg.sender, &quot;structure&quot;, _to);
+    emit Upgrade(msg.sender, "structure", _to);
   }
 
   function upgradeMaterial(uint256 _to) external payable {
@@ -390,7 +390,7 @@ contract CHHunter is CHGameBase {
     _house.barrier.material = _to;
     _house.defensePower = _house.defensePower.add(_increment);
 
-    emit Upgrade(msg.sender, &quot;material&quot;, _to);
+    emit Upgrade(msg.sender, "material", _to);
   }
 
   /* INTERNAL FUNCTION */

@@ -113,9 +113,9 @@ contract RenaS is StandardToken {
     function RenaS() {
         balances[msg.sender] = 1000000000000000000000000;               // Give the creator all initial tokens (100000 for example)
         totalSupply = 1000000000000000000000000;                        // Update total supply (100000 for example)
-        name = &quot;RenaS&quot;;                                   // Set the name for display purposes
+        name = "RenaS";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;RTS&quot;;                               // Set the symbol for display purposes
+        symbol = "RTS";                               // Set the symbol for display purposes
     }
 
     event Sold(address _to, uint256 _value);

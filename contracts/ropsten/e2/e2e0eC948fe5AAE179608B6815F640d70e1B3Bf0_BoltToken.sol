@@ -30,13 +30,13 @@ contract BoltToken is ERC20{
     uint public roundFunds = 0;
     uint public roundReward = 200200000000000000000000;
     
-    string public name = &quot;BOLT funding token&quot;;
-    string public symbol = &quot;BOLT&quot;;
+    string public name = "BOLT funding token";
+    string public symbol = "BOLT";
     uint8 public decimals = 18;
     
     bool public isToken = true;
     
-    string public tokenSaleAgreement = &quot;https://bolt-project.net/tsa.pdf&quot;;
+    string public tokenSaleAgreement = "https://bolt-project.net/tsa.pdf";
     
     uint contributionsDistribStep = 0;
     

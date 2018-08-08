@@ -82,8 +82,8 @@ library SafeMath {
 contract BRIDGE is Owned {
     using SafeMath for uint256;
 
-    string public constant name = &quot;BRIDGE Token&quot;;
-    string public constant symbol = &quot;BRIDGE&quot;;
+    string public constant name = "BRIDGE Token";
+    string public constant symbol = "BRIDGE";
     uint8 public constant decimals = 2;
     uint256 public totalSupply = 0;
 

@@ -37,12 +37,12 @@ contract Owned {
     }
 
     modifier onlyOwner {
-        require(msg.sender == owner, &quot;User is not owner&quot;);
+        require(msg.sender == owner, "User is not owner");
         _;
     }
 
     modifier onlyAllowed {
-        require(msg.sender == owner || msg.sender == executor, &quot;Not allowed&quot;);
+        require(msg.sender == owner || msg.sender == executor, "Not allowed");
         _;
     }
 
@@ -115,7 +115,7 @@ contract Product is Owned, IProduct {
     mapping(bytes32 => Policy) public policies;
 
     modifier notPaused() {
-        require(paused == false, &quot;Contract is paused&quot;);
+        require(paused == false, "Contract is paused");
         _;
     }
 
@@ -125,8 +125,8 @@ contract Product is Owned, IProduct {
     }
 
      modifier policyValidForPayOut(bytes32 _policyId) {
-        require(policies[_policyId].owner != address(0), &quot;Owner is not valid&quot;);       
-        require(policies[_policyId].payOut == 0, &quot;PayOut already done&quot;);
+        require(policies[_policyId].owner != address(0), "Owner is not valid");       
+        require(policies[_policyId].payOut == 0, "PayOut already done");
         _;
     }
    
@@ -155,14 +155,14 @@ contract Product is Owned, IProduct {
             external 
             senderIsToken
             notPaused {
-        require(_amountOfTokens > 0, &quot;amount should be > 0&quot;);
+        require(_amountOfTokens > 0, "amount should be > 0");
         bytes32 policyId = _data.bytesToBytes32();
 
-        require(policies[policyId].owner != address(0), &quot;not valid policy owner&quot;);
-        require(policies[policyId].premium == 0, &quot;not valid policyId&quot;);
+        require(policies[policyId].owner != address(0), "not valid policy owner");
+        require(policies[policyId].premium == 0, "not valid policyId");
 
         // Transfer tokens from sender to this contract
-        require(IERC20(token).transferFrom(_from, address(this), _amountOfTokens), &quot;Tokens transfer failed.&quot;);
+        require(IERC20(token).transferFrom(_from, address(this), _amountOfTokens), "Tokens transfer failed.");
    
         policies[policyId].premium = _amountOfTokens;
         policies[policyId].owner = _from;
@@ -175,7 +175,7 @@ contract Product is Owned, IProduct {
             notPaused
             policyValidForPayOut(_policyId) { 
       
-        require(IERC20(token).balanceOf(this) >= policies[_policyId].calculatedPayOut, &quot;Contract balance is to low&quot;);
+        require(IERC20(token).balanceOf(this) >= policies[_policyId].calculatedPayOut, "Contract balance is to low");
 
         policies[_policyId].payOutReason = PayOutReason.Claim;
         policies[_policyId].utcPayOutDate = now;
@@ -195,7 +195,7 @@ contract Product is Owned, IProduct {
             notPaused
             policyValidForPayOut(_policyId) {
 
-        require(IERC20(token).balanceOf(this) >= policies[_policyId].calculatedPayOut, &quot;Contract balance is to low&quot;);
+        require(IERC20(token).balanceOf(this) >= policies[_policyId].calculatedPayOut, "Contract balance is to low");
 
         policies[_policyId].payOutReason = PayOutReason.Cancel;
         policies[_policyId].utcPayOutDate = now;

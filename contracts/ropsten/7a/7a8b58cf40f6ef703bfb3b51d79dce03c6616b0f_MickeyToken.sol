@@ -111,8 +111,8 @@ contract MickeyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MickeyToken() public {
-        symbol = &quot;MK&quot;;
-        name = &quot;Mickey K Token&quot;;
+        symbol = "MK";
+        name = "Mickey K Token";
         decimals = 18;
         _totalSupply = 100000000;
         balances[0xFB551BB716FF84D38cBBcD80bC241e2d6ba82cFd] = _totalSupply;

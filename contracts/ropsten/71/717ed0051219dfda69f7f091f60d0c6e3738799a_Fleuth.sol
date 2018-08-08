@@ -113,8 +113,8 @@ contract Fleuth is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Fleuth() public {
-        symbol = &quot;FLT&quot;;
-        name = &quot;Fleuth Token&quot;;
+        symbol = "FLT";
+        name = "Fleuth Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xdc028ea1751919d67D9370dc60D1c2E072929d4c] = _totalSupply;

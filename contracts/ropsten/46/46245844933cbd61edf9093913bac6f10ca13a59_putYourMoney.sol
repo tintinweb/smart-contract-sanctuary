@@ -2,13 +2,13 @@ pragma solidity^0.4.24;
 
 //authors:dcipher.io
 //july-2018
-//dcipher.io - &quot;put your money where you mouth is&quot; - escrow solution
+//dcipher.io - "put your money where you mouth is" - escrow solution
 
 
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

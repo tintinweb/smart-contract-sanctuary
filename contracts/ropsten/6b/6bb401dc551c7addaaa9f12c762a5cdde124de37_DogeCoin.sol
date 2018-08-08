@@ -113,8 +113,8 @@ contract DogeCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DogeCoin() public {
-        symbol = &quot;DGC&quot;;
-        name = &quot;Doge Coin&quot;;
+        symbol = "DGC";
+        name = "Doge Coin";
         decimals = 5;
         _totalSupply = 500000000;
         balances[0x8C89C2605EAeb38f5EA2aD7062cCB2e71c8d5eab] = _totalSupply;

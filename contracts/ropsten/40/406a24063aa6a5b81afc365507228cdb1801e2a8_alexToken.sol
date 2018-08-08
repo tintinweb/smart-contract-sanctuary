@@ -116,8 +116,8 @@ contract alexToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function alexToken() public {
-        symbol = &quot;ALEX&quot;;
-        name = &quot;alex Token&quot;;
+        symbol = "ALEX";
+        name = "alex Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

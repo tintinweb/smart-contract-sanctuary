@@ -113,8 +113,8 @@ contract HamidToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EBIToken() public {
-        symbol = &quot;Hamid&quot;;
-        name = &quot;Hamid Token&quot;;
+        symbol = "Hamid";
+        name = "Hamid Token";
         decimals = 3;
         _totalSupply = 1000000;
         balances[0xc242de90939a0b5F1733bfa9604bd5966DBaC81e] = _totalSupply;

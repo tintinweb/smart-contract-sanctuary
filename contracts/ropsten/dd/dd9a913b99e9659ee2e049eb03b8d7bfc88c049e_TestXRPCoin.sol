@@ -113,8 +113,8 @@ contract TestXRPCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestXRPCoin() public {
-        symbol = &quot;XRP&quot;;
-        name = &quot;TestXRPCoin&quot;;
+        symbol = "XRP";
+        name = "TestXRPCoin";
         decimals = 8;
         _totalSupply = 1000000000000000000;
         balances[0x3886267bef7FB5EB7fAB270aFb998DE7c54C64dD] = _totalSupply;

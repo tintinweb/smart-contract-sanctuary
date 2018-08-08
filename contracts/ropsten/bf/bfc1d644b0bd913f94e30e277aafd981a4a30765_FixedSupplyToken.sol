@@ -154,8 +154,8 @@ contract FixedSupplyToken is ERC20, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;FIXED&quot;;
-        name = &quot;Example Fixed Supply Token&quot;;
+        symbol = "FIXED";
+        name = "Example Fixed Supply Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint256(decimals);
         balances[owner] = _totalSupply;

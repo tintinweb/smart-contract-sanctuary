@@ -299,7 +299,7 @@ contract Utils2 is Utils {
         } else {
             uint[1] memory value;
 
-            if (!address(token).call(bytes4(keccak256(&quot;decimals()&quot;)))) {/* solhint-disable-line avoid-low-level-calls */
+            if (!address(token).call(bytes4(keccak256("decimals()")))) {/* solhint-disable-line avoid-low-level-calls */
                 // call failed
                 decimal = 18;
             } else {

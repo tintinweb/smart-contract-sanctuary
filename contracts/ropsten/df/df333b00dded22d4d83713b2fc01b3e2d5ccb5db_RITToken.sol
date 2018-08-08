@@ -116,8 +116,8 @@ contract RITToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RITToken() public {
-        symbol = &quot;RIT&quot;;
-        name = &quot;Rocket Integration Token&quot;;
+        symbol = "RIT";
+        name = "Rocket Integration Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

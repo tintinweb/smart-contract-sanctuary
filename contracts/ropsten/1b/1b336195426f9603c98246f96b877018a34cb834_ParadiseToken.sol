@@ -18,7 +18,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -292,8 +292,8 @@ contract StandardToken is ERC20, BasicToken {
 contract ParadiseToken is StandardToken, Ownable {
     
     // Constants
-    string public constant symbol = &quot;PDT&quot;;
-    string public constant name = &quot;Paradise Token&quot;;
+    string public constant symbol = "PDT";
+    string public constant name = "Paradise Token";
     uint8 public constant decimals = 18;
     uint256 public constant InitialSupplyCup = 300000000 * (10 ** uint256(decimals)); // 300 mil tokens minted
     uint256 public constant TokenAllowance = 210000000 * (10 ** uint256(decimals));   // 210 mil tokens public allowed 
@@ -636,7 +636,7 @@ contract ParadiseTokenSale is Pausable {
 
     /**
      * Returns the current time.
-     * Useful to abstract calls to &quot;now&quot; for tests.
+     * Useful to abstract calls to "now" for tests.
     */
     function currentTime() constant returns (uint _currentTime) {
         return now;

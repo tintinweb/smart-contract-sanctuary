@@ -46,8 +46,8 @@ contract test222 is StandToken {
         totalSupply = 3 * 1000 * 1000 * 1000;   // totalSupply
         balances[msg.sender] = totalSupply;               
         
-        name = &quot;test222&quot;;                       // coin name
+        name = "test222";                       // coin name
         decimals = 18;                          // decimals
-        symbol = &quot;TS&quot;;                          // symbol
+        symbol = "TS";                          // symbol
     }
 }

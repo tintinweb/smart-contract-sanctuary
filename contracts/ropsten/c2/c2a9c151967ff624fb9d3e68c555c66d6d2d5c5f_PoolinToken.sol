@@ -288,7 +288,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  * See https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/ownership/Ownable.sol
  */
 contract Ownable {
@@ -507,8 +507,8 @@ contract PoolinToken is PausableToken {
   uint8  public decimals;
 
   constructor() public {
-    name     = &quot;Poolin Miner Token&quot;;
-    symbol   = &quot;POOLIN&quot;;
+    name     = "Poolin Miner Token";
+    symbol   = "POOLIN";
     decimals = 18;
 
     // total supply: 21*10^8

@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract TroyToken {
 
-    string public name = &quot;TroyToken&quot;;      //  token name
-    string public symbol = &quot;TYX&quot;;           //  token symbol
+    string public name = "TroyToken";      //  token name
+    string public symbol = "TYX";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

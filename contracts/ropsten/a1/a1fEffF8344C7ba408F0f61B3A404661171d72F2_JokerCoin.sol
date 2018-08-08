@@ -113,8 +113,8 @@ contract JokerCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JokerCoin() public {
-        symbol = &quot;JYH&quot;;
-        name = &quot;JokerCoin&quot;;
+        symbol = "JYH";
+        name = "JokerCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x58abb8f3A4f33822A2E4022aDa6399Cc56b296e7] = _totalSupply;

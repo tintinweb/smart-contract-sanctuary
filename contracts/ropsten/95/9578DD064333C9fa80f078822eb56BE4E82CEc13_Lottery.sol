@@ -10,7 +10,7 @@ contract Lottery {
     }
     
     function enter() public payable {
-        require(msg.value == 1 ether, &quot;Require 1 ether&quot;);
+        require(msg.value == 1 ether, "Require 1 ether");
         
         players.push(msg.sender);
     }
@@ -29,7 +29,7 @@ contract Lottery {
     }
     
     modifier onlyManagerCanCall() {
-        require(msg.sender == manager, &quot;Only manager can call&quot;);
+        require(msg.sender == manager, "Only manager can call");
         _;
     }
     

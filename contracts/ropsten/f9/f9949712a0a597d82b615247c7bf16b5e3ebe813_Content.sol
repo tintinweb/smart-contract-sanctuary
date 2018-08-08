@@ -86,9 +86,9 @@ library SafeMath {
 
 // File: contracts/contents/Content.sol
 
-//import &quot;contracts/contents/Episode.sol&quot;;
-//import &quot;contracts/supporter/Fundraising.sol&quot;;
-//import &quot;contracts/supporter/Supporters.sol&quot;;
+//import "contracts/contents/Episode.sol";
+//import "contracts/supporter/Fundraising.sol";
+//import "contracts/supporter/Supporters.sol";
 
 contract Content is ExtendsOwnable {
     using SafeMath for uint256;
@@ -141,7 +141,7 @@ contract Content is ExtendsOwnable {
         marketerRate = _marketerRate;
         translatorRate = _translatorRate;
 
-        emit RegisterContents(msg.sender, &quot;initializing content&quot;);
+        emit RegisterContents(msg.sender, "initializing content");
     }
 
     function resetContent(
@@ -163,62 +163,62 @@ contract Content is ExtendsOwnable {
         marketerRate = _marketerRate;
         translatorRate = _translatorRate;
 
-        emit RegisterContents(msg.sender, &quot;reset content&quot;);
+        emit RegisterContents(msg.sender, "reset content");
     }
 /*
     function addSupporter(address _supporterAddr) external contentOwner validAddress(_supporterAddr) {
         supporters.push(Supporters(_supporterAddr));
-        emit ChangeExternalAddress(_supporterAddr, &quot;add supporter address&quot;);
+        emit ChangeExternalAddress(_supporterAddr, "add supporter address");
     } */
 
     function setWriter(address _writerAddr) external contentOwner validAddress(_writerAddr) {
         writer = _writerAddr;
-        emit ChangeExternalAddress(writer, &quot;writer&quot;);
+        emit ChangeExternalAddress(writer, "writer");
     }
 
     /* function setFundraising(address _funraisingAddr) external contentOwner validAddress(_writerAddr) {
         fundraising = Fundraising(_funraisingAddr);
-        emit ChangeExternalAddress(_funraisingAddr, &quot;fundraising&quot;);
+        emit ChangeExternalAddress(_funraisingAddr, "fundraising");
     } */
 
     function setContentName(string _name) external contentOwner validString(_name) {
         name = _name;
-        emit ChangeContentDescription(msg.sender, &quot;content name&quot;);
+        emit ChangeContentDescription(msg.sender, "content name");
     }
 
     function setSynopsis(string _synopsis) external contentOwner validString(_synopsis) {
         synopsis = _synopsis;
-        emit ChangeContentDescription(msg.sender, &quot;synopsis&quot;);
+        emit ChangeContentDescription(msg.sender, "synopsis");
     }
 
     function setGenres(string _genres) external contentOwner validString(_genres) {
         genres = _genres;
-        emit ChangeContentDescription(msg.sender, &quot;genres&quot;);
+        emit ChangeContentDescription(msg.sender, "genres");
     }
 
     function setTitleImage(string _imagePath) external contentOwner validString(_imagePath) {
         titleImage = _imagePath;
-        emit ChangeContentDescription(msg.sender, &quot;title image&quot;);
+        emit ChangeContentDescription(msg.sender, "title image");
     }
 
     function setMarketerRate(uint256 _marketerRate) external contentOwner {
         marketerRate = _marketerRate;
-        emit ChangeDistributionRate(msg.sender, &quot;marketer rate&quot;);
+        emit ChangeDistributionRate(msg.sender, "marketer rate");
     }
 
     function setTranslatorRate(uint256 _translatorRate) external contentOwner {
         translatorRate = _translatorRate;
-        emit ChangeDistributionRate(msg.sender, &quot;translator rate&quot;);
+        emit ChangeDistributionRate(msg.sender, "translator rate");
     }
 
     /* function addEpisode(address _episodeAddr) external contentOwner {
         episodes.push(Episode(_episodeAddr));
-        emit RegisterContents(msg.sender, &quot;episode&quot;);
+        emit RegisterContents(msg.sender, "episode");
     }
 
     function addTranslatorContent(address _translatorAddr) external contentOwner {
         translators.push(TranslatorContent(_translatorAddr));
-        emit RegisterContents(msg.sender, &quot;translator contents&quot;);
+        emit RegisterContents(msg.sender, "translator contents");
     }
 
     function getSupportersAddress() public view return (address) {

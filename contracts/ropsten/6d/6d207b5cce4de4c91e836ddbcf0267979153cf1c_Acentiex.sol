@@ -113,8 +113,8 @@ contract Acentiex is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Acentiex() public {
-        symbol = &quot;ACTX&quot;;
-        name = &quot;Acentiex&quot;;
+        symbol = "ACTX";
+        name = "Acentiex";
         decimals = 8;
         _totalSupply = 50000000000000000;
         balances[0x8cc6D6792c11c2aC877988F84C2434cF19107655] = _totalSupply; //MEW address here

@@ -86,8 +86,8 @@ contract Pausable is Owned {
 }
  contract BitgeneToken is ERC20Interface, Pausable {
     using SafeMath for uint256;
-    string public constant NAME = &quot;Bitgene Token&quot;;
-    string public constant SYMBOL = &quot;BGT&quot;;
+    string public constant NAME = "Bitgene Token";
+    string public constant SYMBOL = "BGT";
     uint8 public constant decimals = 18;
     uint256 public totalSupply = 10 ** 10 * 10**uint(decimals);
 

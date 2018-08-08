@@ -72,8 +72,8 @@ contract ATS is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;ATS&quot;;
-        name = &quot;The Atts&quot;;
+        symbol = "ATS";
+        name = "The Atts";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

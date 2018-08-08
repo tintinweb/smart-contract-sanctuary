@@ -82,8 +82,8 @@ contract PegasusToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;PEGASUS&quot;;
-    string public constant symbol = &quot;PGS&quot;;
+    string public constant name = "PEGASUS";
+    string public constant symbol = "PGS";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 30000000000e8;

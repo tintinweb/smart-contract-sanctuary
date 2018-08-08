@@ -212,30 +212,30 @@ contract ExchangeImplementation is StorageStateful, SafeMath {
     }
   
     function withdraw(uint256 _amount) public {
-        if (tokens[address(0)][msg.sender] < _amount) revert(&quot;User does not have enough Eth to withdraw&quot;);
+        if (tokens[address(0)][msg.sender] < _amount) revert("User does not have enough Eth to withdraw");
         tokens[address(0)][msg.sender] = sub(tokens[address(0)][msg.sender], _amount);
-        if (!msg.sender.call.value(_amount)()) revert(&quot;User did not provide enough eth&quot;);
+        if (!msg.sender.call.value(_amount)()) revert("User did not provide enough eth");
         emit Withdraw(address(0), msg.sender, _amount, tokens[address(0)][msg.sender]);
     }
     
     function withdrawToken(address _token, uint256 _amount) public {
-        if (tokens[_token][msg.sender] < _amount) revert(&quot;User does not have enough Eth to withdraw&quot;);
+        if (tokens[_token][msg.sender] < _amount) revert("User does not have enough Eth to withdraw");
         tokens[_token][msg.sender] = sub(tokens[_token][msg.sender], _amount);
-        if (!Token(_token).transfer(msg.sender, _amount)) revert(&quot;User did allow transfer of tokensh&quot;);
+        if (!Token(_token).transfer(msg.sender, _amount)) revert("User did allow transfer of tokensh");
         emit Withdraw(_token, msg.sender, _amount, tokens[_token][msg.sender]);
     }
     
     function withdrawEthMaker(uint256 _amount, address _maker) internal {
-        if (tokens[address(0)][_maker] < _amount) revert(&quot;User does not have enough Eth to withdraw&quot;);
+        if (tokens[address(0)][_maker] < _amount) revert("User does not have enough Eth to withdraw");
         tokens[address(0)][_maker] = sub(tokens[address(0)][_maker], _amount);
-        if (!msg.sender.call.value(_amount)()) revert(&quot;User did not provide enough eth&quot;);
+        if (!msg.sender.call.value(_amount)()) revert("User did not provide enough eth");
         emit Withdraw(address(0), _maker, _amount, tokens[address(0)][_maker]);
     }
     
     function withdrawTokenMaker(address _token, uint256 _amount, address _maker) internal {
-        if (tokens[_token][_maker] < _amount) revert(&quot;User does not have enough Eth to withdraw&quot;);
+        if (tokens[_token][_maker] < _amount) revert("User does not have enough Eth to withdraw");
         tokens[_token][_maker] = sub(tokens[_token][_maker], _amount);
-        if (!Token(_token).transfer(_maker, _amount)) revert(&quot;User did allow transfer of tokens&quot;);
+        if (!Token(_token).transfer(_maker, _amount)) revert("User did allow transfer of tokens");
         emit Withdraw(_token, _maker, _amount, tokens[_token][_maker]);
     }
     
@@ -270,8 +270,8 @@ contract ExchangeImplementation is StorageStateful, SafeMath {
     function cancelOrder(address _tokenBuy, uint256 _amountBuy, address _tokenSell, 
                          uint256 _amountSell, uint256 _nonce, uint8 _v, bytes32 _r, bytes32 _s) public {
         bytes32 orderHash = keccak256(abi.encodePacked(this, _tokenBuy, _amountBuy, _tokenSell, _amountSell, _nonce));
-        if (!orders[msg.sender][orderHash]) revert(&quot;Order does not exist&quot;);
-        if (!verifySignature(_v, _r, _s, msg.sender, orderHash)) revert(&quot;Signature is invalid&quot;);
+        if (!orders[msg.sender][orderHash]) revert("Order does not exist");
+        if (!verifySignature(_v, _r, _s, msg.sender, orderHash)) revert("Signature is invalid");
         if (_tokenSell == address(0)) {
             withdraw(sub(_amountSell, orderFills[msg.sender][orderHash]));
         } else {
@@ -291,9 +291,9 @@ contract ExchangeImplementation is StorageStateful, SafeMath {
                     bytes32 _r, bytes32 _s, uint256 _amount) public payable {
         processDeposit(_tokenBuy, mul(_amountBuy, _amount) / _amountSell);
         bytes32 orderHash = keccak256(abi.encodePacked(this, _tokenBuy, _amountBuy, _tokenSell, _amountSell, _nonce));
-        if (!verifySignature(_v, _r, _s, _user, orderHash)) revert(&quot;Order hash signature is not valid&quot;);
-        if (!orders[_user][orderHash]) revert(&quot;Owner of order never created order&quot;);
-        if (!(add(orderFills[_user][orderHash], _amount) <= _amountBuy)) revert(&quot;Order filled&quot;);
+        if (!verifySignature(_v, _r, _s, _user, orderHash)) revert("Order hash signature is not valid");
+        if (!orders[_user][orderHash]) revert("Owner of order never created order");
+        if (!(add(orderFills[_user][orderHash], _amount) <= _amountBuy)) revert("Order filled");
         
         _trade(_tokenBuy, _amountBuy, _tokenSell, _amountSell, _user, _amount);
         withdrawTaker(_tokenSell, mul(_amountSell, _amount) / _amountBuy);

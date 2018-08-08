@@ -128,8 +128,8 @@ contract DETF is ERC20, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DETF&quot;;
-        name = &quot;DETF&quot;;
+        symbol = "DETF";
+        name = "DETF";
         decimals = 18;
         _totalSupply = 0;
         balances[owner] = _totalSupply;

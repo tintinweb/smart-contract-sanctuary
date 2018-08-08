@@ -1,8 +1,8 @@
 pragma solidity ^0.4.11;
  
 contract Token {
-    string public symbol = &quot;&quot;;
-    string public name = &quot;&quot;;
+    string public symbol = "";
+    string public name = "";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
     address owner = 0;
@@ -16,8 +16,8 @@ contract Token {
  
     function Token(address adr) {
         owner = adr;        
-        symbol = &quot;FITP&quot;;
-        name = &quot;FitPact&quot;;
+        symbol = "FITP";
+        name = "FitPact";
         _totalSupply = 10000000 * 1000000000000000000;
         balances[owner] = _totalSupply;
 

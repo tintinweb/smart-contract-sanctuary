@@ -231,8 +231,8 @@ contract ContractReceiver {
 contract ropYUKI is ERC223, Ownable, Pausable {
     using SafeMath for uint256;
 
-    string public name = &quot;ropYUKI&quot;;
-    string public symbol = &quot;ropYUKI&quot;;
+    string public name = "ropYUKI";
+    string public symbol = "ropYUKI";
     uint8 public decimals = 8;
     uint256 public totalSupply = 20e9 * 1e8;
     uint256 public codeSize = 0;

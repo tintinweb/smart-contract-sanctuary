@@ -230,11 +230,11 @@ contract BexProContract is TokenERC20Standart{
     event FrozenFunds(address target, bool frozen);
 
     constructor () public {
-        name = &quot;BexPro_test&quot;;                        // Set the name for display purposes
+        name = "BexPro_test";                        // Set the name for display purposes
         decimals = 18;                          // Amount of decimals for display purposes
-        symbol = &quot;BPRO_test&quot;;                        // Set the symbol for display purposes
+        symbol = "BPRO_test";                        // Set the symbol for display purposes
         owner = msg.sender;                     // Set contract owner
-        version = &quot;1&quot;;               // Set contract version 
+        version = "1";               // Set contract version 
         totalSupply = 502000000 * 10 ** uint256(decimals);
         balances[msg.sender] = totalSupply; // Give the creator all initial tokens
         emit Transfer(address(0x0), msg.sender, totalSupply);

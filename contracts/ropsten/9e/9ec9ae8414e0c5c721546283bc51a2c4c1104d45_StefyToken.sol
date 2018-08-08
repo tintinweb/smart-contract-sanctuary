@@ -111,8 +111,8 @@ contract StefyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function StefyToken() public {
-        symbol = &quot;XX&quot;;
-        name = &quot;StefyToken&quot;;
+        symbol = "XX";
+        name = "StefyToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x27B3ec5BD82a53776f802F2993f0828E229Ba925] = _totalSupply;

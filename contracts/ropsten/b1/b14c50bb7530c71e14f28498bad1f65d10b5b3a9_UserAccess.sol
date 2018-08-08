@@ -27,9 +27,9 @@ contract Database {
     // --------------------------------------------------------------------------------------
     constructor(address _ownerOne, address _ownerTwo, address _ownerThree)
     public {
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerOne))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerTwo))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerThree))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerOne))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerTwo))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerThree))] = true;
         emit LogInitialized(_ownerOne, _ownerTwo, _ownerThree);
     }
 
@@ -42,10 +42,10 @@ contract Database {
     function setContractManager(address _contractManager)
     external {
         require(_contractManager != address(0));
-        require(boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, msg.sender))]);
-        // require(addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] == address(0));   TODO: Allow swapping of CM for testing
-        addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] = _contractManager;
-        boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, _contractManager))] = true;
+        require(boolStorage[keccak256(abi.encodePacked("owner", msg.sender))]);
+        // require(addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] == address(0));   TODO: Allow swapping of CM for testing
+        addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] = _contractManager;
+        boolStorage[keccak256(abi.encodePacked("contract", _contractManager))] = true;
         emit LogContractManager(_contractManager, msg.sender); 
     }
 
@@ -148,7 +148,7 @@ contract Database {
     // Caller must be registered as a contract within the MyBit Dapp through ContractManager.sol
     // --------------------------------------------------------------------------------------
     modifier onlyMyBitContract() {
-        require(boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, msg.sender))]);
+        require(boolStorage[keccak256(abi.encodePacked("contract", msg.sender))]);
         _;
     }
 
@@ -189,10 +189,10 @@ contract UserAccess{
   external
   returns (bool) {
     require(_accessLevel < uint(4) && _accessLevel != uint(0));
-    database.setUint(keccak256(abi.encodePacked(&quot;userAccess&quot;, _newUser)), _accessLevel);
+    database.setUint(keccak256(abi.encodePacked("userAccess", _newUser)), _accessLevel);
     uint expiry = now + oneYear;
     assert (expiry > now && expiry > oneYear);   // Check for overflow
-    database.setUint(keccak256(abi.encodePacked(&quot;userAccessExpiration&quot;, _newUser)), expiry);
+    database.setUint(keccak256(abi.encodePacked("userAccessExpiration", _newUser)), expiry);
     emit LogUserApproved(_newUser, _accessLevel);
     return true;
   }
@@ -206,9 +206,9 @@ contract UserAccess{
   anyOwner
   external
   returns (bool) {
-    uint accessLevel = database.uintStorage(keccak256(abi.encodePacked(&quot;userAccess&quot;, _user)));
-    database.deleteUint(keccak256(abi.encodePacked(&quot;userAccess&quot;, _user)));
-    database.deleteUint(keccak256(abi.encodePacked(&quot;userAccessExpiration&quot;, _user)));
+    uint accessLevel = database.uintStorage(keccak256(abi.encodePacked("userAccess", _user)));
+    database.deleteUint(keccak256(abi.encodePacked("userAccess", _user)));
+    database.deleteUint(keccak256(abi.encodePacked("userAccessExpiration", _user)));
     emit LogUserRemoved(_user, accessLevel);
     return true;
   }
@@ -220,7 +220,7 @@ contract UserAccess{
   anyOwner
   external
   returns (bool) {
-    database.setBool(keccak256(abi.encodePacked(&quot;kycApproved&quot;, msg.sender)), true);
+    database.setBool(keccak256(abi.encodePacked("kycApproved", msg.sender)), true);
     emit LogKYCApproved(msg.sender, _user);
   }
 
@@ -236,7 +236,7 @@ contract UserAccess{
   // Only owners can call these functions
   //------------------------------------------------------------------------------------------------------------------
   modifier anyOwner {
-    require(database.boolStorage(keccak256(abi.encodePacked(&quot;owner&quot;, msg.sender))));
+    require(database.boolStorage(keccak256(abi.encodePacked("owner", msg.sender))));
     _;
   }
 

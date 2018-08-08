@@ -58,8 +58,8 @@ contract Dodol is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Dodol&quot;;
-    string public constant symbol = &quot;DDL&quot;;
+    string public constant name = "Dodol";
+    string public constant symbol = "DDL";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

@@ -113,8 +113,8 @@ contract TESTBRB is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TESTBRB() public {
-        symbol = &quot;TESTBRB&quot;;
-        name = &quot;TEST BRB&quot;;
+        symbol = "TESTBRB";
+        name = "TEST BRB";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222] = _totalSupply;

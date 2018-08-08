@@ -305,8 +305,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 
 contract BilalaToken is StandardBurnableToken{
-    string public constant name = &quot;Bilala Token&quot;; 
-    string public constant symbol = &quot;BET&quot;; 
+    string public constant name = "Bilala Token"; 
+    string public constant symbol = "BET"; 
     uint8 public constant decimals = 18; 
 
     uint256 public constant MAX_SUPPLY = 100 * 10000 * 10000 * (10 ** uint256(decimals));

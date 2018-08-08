@@ -3,8 +3,8 @@ pragma solidity ^0.4.23;
 // File: contracts/metadata/MetadataHolderBase.sol
 
 contract MetadataHolderBase {
-  bytes4 constant public GET_METADATA = bytes4(keccak256(&quot;getMetadata(uint256)&quot;));
-  bytes4 constant public ERC165_SUPPORT = bytes4(keccak256(&quot;supportsInterface(bytes4)&quot;));
+  bytes4 constant public GET_METADATA = bytes4(keccak256("getMetadata(uint256)"));
+  bytes4 constant public ERC165_SUPPORT = bytes4(keccak256("supportsInterface(bytes4)"));
 
   function supportsInterface(bytes4 _interfaceId) external pure returns (bool) {
     return ((_interfaceId == ERC165_SUPPORT) ||
@@ -119,7 +119,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -300,7 +300,7 @@ library AddressUtils {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -315,7 +315,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _from,
@@ -336,7 +336,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -488,7 +488,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -504,14 +504,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -878,17 +878,17 @@ contract EstateRegistry is ERC721Token, Ownable, MetadataHolderBase, IEstateRegi
     Ownable()
     public
   {
-    require(_registry != 0, &quot;The registry should be a valid address&quot;);
+    require(_registry != 0, "The registry should be a valid address");
     registry = LandRegistry(_registry);
   }
 
   modifier onlyRegistry() {
-    require(msg.sender == address(registry), &quot;Only the registry can make this operation&quot;);
+    require(msg.sender == address(registry), "Only the registry can make this operation");
     _;
   }
 
   modifier onlyUpdateAuthorized(uint256 estateId) {
-    require(_isUpdateAuthorized(msg.sender, estateId), &quot;Unauthorized user&quot;);
+    require(_isUpdateAuthorized(msg.sender, estateId), "Unauthorized user");
     _;
   }
 
@@ -898,7 +898,7 @@ contract EstateRegistry is ERC721Token, Ownable, MetadataHolderBase, IEstateRegi
    * @return An uint256 representing the new token id
    */
   function mint(address to) external onlyRegistry returns (uint256) {
-    return _mintEstate(to, &quot;&quot;);
+    return _mintEstate(to, "");
   }
 
   /**
@@ -919,7 +919,7 @@ contract EstateRegistry is ERC721Token, Ownable, MetadataHolderBase, IEstateRegi
    *  which will be present on the extra bytes.
    * @param tokenId The NFT identifier which is being transfered
    * @param estateTokenIdBytes Additional data, should represent a uint256 estate id
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(
     address /* oldOwner */,
@@ -931,7 +931,7 @@ contract EstateRegistry is ERC721Token, Ownable, MetadataHolderBase, IEstateRegi
     returns (bytes4)
   {
     uint256 estateId = _bytesToUint(estateTokenIdBytes);
-    require(exists(estateId), &quot;The estate id should exist&quot;);
+    require(exists(estateId), "The estate id should exist");
     _pushLandId(estateId, tokenId);
     return bytes4(0xf0b9e5ba);
   }
@@ -996,7 +996,7 @@ contract EstateRegistry is ERC721Token, Ownable, MetadataHolderBase, IEstateRegi
   }
 
   function setLandRegistry(address _registry) external onlyOwner {
-    require(_registry != 0, &quot;The land registry address should be valid&quot;);
+    require(_registry != 0, "The land registry address should be valid");
     registry = LandRegistry(_registry);
     emit SetPingableDAR(registry);
   }
@@ -1063,7 +1063,7 @@ contract EstateRegistry is ERC721Token, Ownable, MetadataHolderBase, IEstateRegi
       from,
       to,
       estateIds,
-      &quot;&quot;
+      ""
     );
   }
 
@@ -1133,9 +1133,9 @@ contract EstateRegistry is ERC721Token, Ownable, MetadataHolderBase, IEstateRegi
    * @param landId Transfered Land
    */
   function _pushLandId(uint256 estateId, uint256 landId) internal {
-    require(exists(estateId), &quot;The estate id should exist&quot;);
-    require(landIdEstate[landId] == 0, &quot;The land is already owned a estate&quot;);
-    require(registry.ownerOf(landId) == address(this), &quot;The Estate Registry cant manage this land&quot;);
+    require(exists(estateId), "The estate id should exist");
+    require(landIdEstate[landId] == 0, "The land is already owned a estate");
+    require(registry.ownerOf(landId) == address(this), "The Estate Registry cant manage this land");
 
     estateLandIds[estateId].push(landId);
 
@@ -1165,7 +1165,7 @@ contract EstateRegistry is ERC721Token, Ownable, MetadataHolderBase, IEstateRegi
     /**
      * Using 1-based indexing to be able to make this check
      */
-    require(landIndex[landId] != 0, &quot;The land is already owned by the estate&quot;);
+    require(landIndex[landId] != 0, "The land is already owned by the estate");
 
     uint lastIndexInArray = landIds.length - 1;
 

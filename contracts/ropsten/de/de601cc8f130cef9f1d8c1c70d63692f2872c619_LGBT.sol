@@ -112,7 +112,7 @@ require((_value == 0) || (allowed[msg.sender][_spender] == 0)); allowed[msg.send
 function allowance(address _owner, address _spender) public constant returns (uint256 remaining) {return allowed[_owner][_spender];}}
 /*	========================================================================================	*/ 
 /*  The Ownable contract has an owner address, and provides basic authorization control
-    functions, this simplifies the implementation of &quot;user permissions&quot;.    */
+    functions, this simplifies the implementation of "user permissions".    */
 contract Ownable {address public owner;
 /*  Throws if called by any account other than the owner.                   */
 function Ownable() public {owner = msg.sender;} modifier onlyOwner() {require(msg.sender == owner);_;}
@@ -121,8 +121,8 @@ function Ownable() public {owner = msg.sender;} modifier onlyOwner() {require(ms
 function transferOwnership(address newOwner) public onlyOwner {require(newOwner != address(0)); owner = newOwner;}}
 /*	========================================================================================	*/
 contract LGBT is StandardToken, Ownable {
-    string public constant name = &quot;Rainbow$&quot;;
-        string public constant symbol = &quot;LGBT&quot;;
+    string public constant name = "Rainbow$";
+        string public constant symbol = "LGBT";
             string public version = &#39;V1.04.07.2018&#39;;
             uint public constant decimals = 18;
         uint256 public initialSupply;
@@ -149,7 +149,7 @@ function approveAndCall(address _spender, uint256 _value, bytes _extraData) publ
 /*  call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
     receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
     it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.  */
-if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { return; } return true;}
+if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { return; } return true;}
 /*	Owner can transfer out any accidentally sent ERC20 tokens	*/
 function transferAnyERC20Token(address tokenAddress, uint tokens) public onlyOwner returns (bool success) {return LGBT(tokenAddress).transfer(owner, tokens);}
 }

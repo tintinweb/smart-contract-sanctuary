@@ -4,7 +4,7 @@ contract Greeter{
     string public yourName;
     
     function constructors()public{
-        yourName=&quot;World&quot;;
+        yourName="World";
     }
     
     function set(string name)public{

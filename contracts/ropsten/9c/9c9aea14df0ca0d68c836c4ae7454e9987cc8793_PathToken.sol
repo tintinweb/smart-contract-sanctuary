@@ -164,7 +164,7 @@ contract TransferAndCallback is BasicToken, TransferAndCallbackInterface {
             codeLength := extcodesize(_to)
         }
 
-        require(codeLength > 0, &quot;&#39;_to&#39; address must be a contract&quot;);
+        require(codeLength > 0, "&#39;_to&#39; address must be a contract");
 
         // transfer funds
         super.transfer(_to, _value);
@@ -231,7 +231,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -520,8 +520,8 @@ contract PathToken is StandardToken, TransferAndCallback, Claimable, CanReclaimT
     uint8 public decimals;
 
     constructor() public {
-        name = &quot;Path Token&quot;;
-        symbol = &quot;PATH&quot;;
+        name = "Path Token";
+        symbol = "PATH";
         decimals = 6;
         totalSupply_ = 500000000 * 10 ** uint(decimals);
         balances[owner] = totalSupply_;

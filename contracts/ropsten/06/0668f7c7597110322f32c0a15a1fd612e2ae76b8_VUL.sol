@@ -100,8 +100,8 @@ contract ERC20Token is ERC20 {
 
 contract VUL is ERC20Token, Owned {
 
-  string  public constant name     = &quot;Vul Token&quot;;
-  string  public constant symbol   = &quot;VUL&quot;;
+  string  public constant name     = "Vul Token";
+  string  public constant symbol   = "VUL";
   uint256 public constant decimals = 18;
   uint256 public constant initialToken      = 100000000 * (10 ** decimals);
   

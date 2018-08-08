@@ -124,8 +124,8 @@ contract Start is Owned {
 // ----------------------------------------------------------------------------
 contract TestNLC is ERC20Interface, Owned, SafeMath {
     //Public vars of the token
-    string public constant symbol = &quot;TNLC&quot;;
-    string public constant name = &quot;TestNLC&quot;;
+    string public constant symbol = "TNLC";
+    string public constant name = "TestNLC";
     uint256 public constant decimals = 18;
     
     //Total supply and _devTokens

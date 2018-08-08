@@ -103,9 +103,9 @@ contract TokenController is OwnerHelper
         countAddresses[0] = msg.sender;
         payTokens[msg.sender] = 0;
         
-        name = &quot;SafeShareOne&quot;;
+        name = "SafeShareOne";
         decimals = 18;
-        symbol = &quot;SSO&quot;;
+        symbol = "SSO";
         
         totalSupply = 0;
         maxSupply = 50.5 ether;

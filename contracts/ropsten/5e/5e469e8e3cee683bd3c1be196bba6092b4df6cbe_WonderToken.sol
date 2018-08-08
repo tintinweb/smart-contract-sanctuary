@@ -207,7 +207,7 @@ contract TokenERC20 is ERC20 {
 
 contract WonderToken is TokenERC20 {
 
-    constructor() TokenERC20(100000, &quot;WonderToken&quot;, &quot;WOT&quot;, 18) public {
+    constructor() TokenERC20(100000, "WonderToken", "WOT", 18) public {
 
     }
 }

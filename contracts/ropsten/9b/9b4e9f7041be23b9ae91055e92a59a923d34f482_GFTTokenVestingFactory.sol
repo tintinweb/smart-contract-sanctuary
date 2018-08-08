@@ -40,7 +40,7 @@ contract owned {
     }
 
     modifier onlyOwner {
-        require(msg.sender == owner , &quot;Unauthorized Access&quot;);
+        require(msg.sender == owner , "Unauthorized Access");
         _;
     }
 
@@ -294,13 +294,13 @@ contract GFTTokenVestingFactory is owned {
     }
     
     function callRealeseVestedAmount(address _beneficiary,TokenVesting _vested) public {
-        require((TrusteeBoard[_beneficiary].benificiary == _beneficiary && TrusteeBoard[_beneficiary].vestingForThisTrustee == _vested),&quot;Member Not Found&quot;);
+        require((TrusteeBoard[_beneficiary].benificiary == _beneficiary && TrusteeBoard[_beneficiary].vestingForThisTrustee == _vested),"Member Not Found");
         _vested.release(GFTToken);
     }
 
    function optionalRevoke(address _beneficiary,TokenVesting _vested) public onlyOwner{
-       require((TrusteeBoard[_beneficiary].benificiary == _beneficiary && TrusteeBoard[_beneficiary].vestingForThisTrustee == _vested),&quot;Member Not Found&quot;);
-       require(TrusteeBoard[_beneficiary].revokable ,&quot;Revoke not allowed&quot;);
+       require((TrusteeBoard[_beneficiary].benificiary == _beneficiary && TrusteeBoard[_beneficiary].vestingForThisTrustee == _vested),"Member Not Found");
+       require(TrusteeBoard[_beneficiary].revokable ,"Revoke not allowed");
       _vested.revoke(GFTToken);
        
    }

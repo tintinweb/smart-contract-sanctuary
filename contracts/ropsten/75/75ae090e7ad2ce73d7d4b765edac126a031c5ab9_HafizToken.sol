@@ -113,8 +113,8 @@ contract HafizToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HafizToken() public {
-        symbol = &quot;BNB&quot;;
-        name = &quot;Binance Hafiz&quot;;
+        symbol = "BNB";
+        name = "Binance Hafiz";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0x03b58d74B1d114955222a1c63981756293D98364] = _totalSupply;

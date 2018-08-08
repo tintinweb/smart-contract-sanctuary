@@ -23,14 +23,14 @@ contract AInProxy {
     event AinProxyAddressUpdated(string name, address newAddress);
 
     modifier addressNotNull(address _address) {
-        require(_address != 0, &quot;address is empty&quot;);
+        require(_address != 0, "address is empty");
         _;
     }
 
     modifier onlyWhenAllowedToUpdateProxy() {
         require(
             isAllowedToUpdateProxy(msg.sender),
-            &quot;sender is not allowed to update proxy addresses&quot;
+            "sender is not allowed to update proxy addresses"
         );
         _;
     }
@@ -56,7 +56,7 @@ contract AInProxy {
     onlyWhenAllowedToUpdateProxy()
     {
         aquiferInstituteCoinAdd = _aquiferInstituteCoinAdd;
-        emit AinProxyAddressUpdated(&quot;aquiferInstituteCoinAdd&quot;, _aquiferInstituteCoinAdd);
+        emit AinProxyAddressUpdated("aquiferInstituteCoinAdd", _aquiferInstituteCoinAdd);
     }
 
     function setFinancierParticipationAdd(address _financierParticipationAdd)
@@ -65,7 +65,7 @@ contract AInProxy {
     onlyWhenAllowedToUpdateProxy()
     {
         financierParticipationAdd = _financierParticipationAdd;
-        emit AinProxyAddressUpdated(&quot;financierParticipationAdd&quot;, _financierParticipationAdd);
+        emit AinProxyAddressUpdated("financierParticipationAdd", _financierParticipationAdd);
     }
 
     function setBidSubmissionProofsAdd(address _bidSubmissionProofsAdd)
@@ -74,7 +74,7 @@ contract AInProxy {
     onlyWhenAllowedToUpdateProxy()
     {
         bidSubmissionProofsAdd = _bidSubmissionProofsAdd;
-        emit AinProxyAddressUpdated(&quot;bidSubmissionProofsAdd&quot;, _bidSubmissionProofsAdd);
+        emit AinProxyAddressUpdated("bidSubmissionProofsAdd", _bidSubmissionProofsAdd);
     }
 
     function setRFFSessionsAdd(address _rffSessionsAdd)
@@ -83,7 +83,7 @@ contract AInProxy {
     onlyWhenAllowedToUpdateProxy()
     {
         rffSessionsAdd = _rffSessionsAdd;
-        emit AinProxyAddressUpdated(&quot;rffSessionAdd&quot;, _rffSessionsAdd);
+        emit AinProxyAddressUpdated("rffSessionAdd", _rffSessionsAdd);
     }
 
     function setFinancingsAdd(address _financingsAdd)
@@ -92,7 +92,7 @@ contract AInProxy {
     onlyWhenAllowedToUpdateProxy()
     {
         financingsAdd = _financingsAdd;
-        emit AinProxyAddressUpdated(&quot;financingsAdd&quot;, _financingsAdd);
+        emit AinProxyAddressUpdated("financingsAdd", _financingsAdd);
     }
 
     function setAllowedAdd(address _allowedAdd)
@@ -103,7 +103,7 @@ contract AInProxy {
         // check if we also are allowed in the new allowed contract
         require(Allowed(_allowedAdd).isAllowed(ACTION_UPDATE_PROXY, msg.sender));
         allowedAdd = _allowedAdd;
-        emit AinProxyAddressUpdated(&quot;allowedAdd&quot;, _allowedAdd);
+        emit AinProxyAddressUpdated("allowedAdd", _allowedAdd);
     }
 
 }

@@ -103,8 +103,8 @@ contract JULY is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JULY() public {
-        symbol = &quot;JULY&quot;;
-        name = &quot;JULY&quot;;
+        symbol = "JULY";
+        name = "JULY";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 8 weeks;

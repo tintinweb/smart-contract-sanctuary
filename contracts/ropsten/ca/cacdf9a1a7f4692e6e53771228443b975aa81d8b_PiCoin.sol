@@ -113,8 +113,8 @@ contract PiCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;PiC&quot;;
-        name = &quot;Pi-coin&quot;;
+        symbol = "PiC";
+        name = "Pi-coin";
         decimals = 0;
         _totalSupply = 100000000;
         balances[0x7d715c835B6b7D1EAcE195C8B41383B2104c752d] = _totalSupply;

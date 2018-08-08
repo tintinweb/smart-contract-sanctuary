@@ -193,8 +193,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract TokenXGroup is StandardToken {
 
-  string public constant name = &quot;TokenXGroup&quot;;
-  string public constant symbol = &quot;TDCC&quot;;
+  string public constant name = "TokenXGroup";
+  string public constant symbol = "TDCC";
   uint8 public constant decimals = 18; // only two deciminals, token cannot be divided past 1/100th
 
   uint256 public constant INITIAL_SUPPLY =  100000000000000000000000000; // 100 million + 18 decimals

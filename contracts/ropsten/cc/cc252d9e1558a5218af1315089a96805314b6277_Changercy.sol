@@ -251,8 +251,8 @@ contract BurnableToken is BasicToken {
 contract Changercy is CappedToken, PausableToken, BurnableToken {
 
   uint256 private constant TOKEN_CAP = 114 * 10**24;
-  string public constant name = &quot;Changercy&quot;;
-  string public constant symbol = &quot;XCY&quot;;
+  string public constant name = "Changercy";
+  string public constant symbol = "XCY";
   uint8 public constant decimals = 18;
 
   constructor() public CappedToken(TOKEN_CAP) {

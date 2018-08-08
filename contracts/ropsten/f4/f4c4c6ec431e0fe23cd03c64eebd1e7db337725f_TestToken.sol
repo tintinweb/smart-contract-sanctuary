@@ -61,8 +61,8 @@ contract TestToken is ERC20 {
 
 	/* Initializes contract with initial supply tokens to the creator of the contract */
 	constructor() public {
-		name = &quot;TestToken&quot;;                                   	// Set the name for display purposes
-		symbol = &quot;TEST&quot;;                               				// Set the symbol for display purposes
+		name = "TestToken";                                   	// Set the name for display purposes
+		symbol = "TEST";                               				// Set the symbol for display purposes
 		decimals = 18;                            					// Amount of decimals for display purposes
 		_totalSupply = 10000000000000000000000000000 ;     			
 		balances[msg.sender] = _totalSupply;

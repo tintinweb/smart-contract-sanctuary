@@ -13,7 +13,7 @@ contract owned {
   }
 
   modifier onlyOwner {
-    require(msg.sender == owner,&quot;Your know the owner of this smart contract. Bad account&quot;);
+    require(msg.sender == owner,"Your know the owner of this smart contract. Bad account");
     _;
   }
 

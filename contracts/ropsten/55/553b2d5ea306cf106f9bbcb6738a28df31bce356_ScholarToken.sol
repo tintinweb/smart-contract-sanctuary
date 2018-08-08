@@ -113,8 +113,8 @@ contract ScholarToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ScholarToken() public {
-        symbol = &quot;Scholar&quot;;
-        name = &quot;Scholar Token&quot;;
+        symbol = "Scholar";
+        name = "Scholar Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDC242cB5393C45567618aD72be56d720AD7fC892] = _totalSupply;

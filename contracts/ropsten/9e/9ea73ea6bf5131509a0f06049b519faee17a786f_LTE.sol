@@ -247,7 +247,7 @@ contract standardToken is ERC20Token, Controlled {
         approve(_spender, _value);                          // Set approval to contract for _value
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { 
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { 
             revert();
         }
         return true;
@@ -274,8 +274,8 @@ contract standardToken is ERC20Token, Controlled {
 
 contract LTE is Owned, standardToken {
 
-    string constant public name   = &quot;LTEChainToken&quot;;
-    string constant public symbol = &quot;LTE&quot;;
+    string constant public name   = "LTEChainToken";
+    string constant public symbol = "LTE";
     uint constant public decimals = 18;
 
     mapping(address => uint256) public ethBalances;

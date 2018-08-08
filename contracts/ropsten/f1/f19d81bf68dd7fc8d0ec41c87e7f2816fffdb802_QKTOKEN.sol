@@ -32,8 +32,8 @@ contract QKTOKEN {
     ) public {
         totalSupply = 10000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;QKTOKEN&quot;;                                   // Set the name for display purposes
-        symbol = &quot;QKT&quot;;                               // Set the symbol for display purposes
+        name = "QKTOKEN";                                   // Set the name for display purposes
+        symbol = "QKT";                               // Set the symbol for display purposes
     }
 
     /**

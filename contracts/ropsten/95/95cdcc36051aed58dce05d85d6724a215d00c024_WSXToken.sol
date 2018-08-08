@@ -46,8 +46,8 @@ contract WSXToken is Ownable, Token{
     function WSXToken() {
         totalSupply = 210000000000000000;
         balances[msg.sender] = totalSupply;
-        name = &quot;WSXTOKEN&quot;;
-        symbol = &quot;WSX&quot;;
+        name = "WSXTOKEN";
+        symbol = "WSX";
         decimals = 8;
 
     }

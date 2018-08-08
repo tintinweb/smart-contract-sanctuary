@@ -138,9 +138,9 @@ contract SimpleToken is ERC20Interface, OwnerHelper // SimpleToken이 ERC20Inter
 
     function SimpleToken () public
     {
-        name = &quot;PinkCherryToken&quot;; // 토큰의 이름 PinkCherryToken
+        name = "PinkCherryToken"; // 토큰의 이름 PinkCherryToken
         decimals = 18; // 토큰의 소숫점 아래 자리 수는 18자리
-        symbol = &quot;PCT&quot;; // 토큰 이름의 줄임말은 PCT
+        symbol = "PCT"; // 토큰 이름의 줄임말은 PCT
         totalSupply = 0; // 토큰의 총발행량을 0으로 초기화
 	
     	owner = msg.sender; //saleEtherReceived 컨트래트를 실행하는 사람이 관리자

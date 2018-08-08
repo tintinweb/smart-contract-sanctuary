@@ -102,8 +102,8 @@ contract BurnableToken is BasicToken {
   }
 }
 contract PXXToken is StandardToken, BurnableToken {
-  string public constant name = &quot;patrixsk&quot;; 
-  string public constant symbol = &quot;PXX&quot;; 
+  string public constant name = "patrixsk"; 
+  string public constant symbol = "PXX"; 
   uint8 public constant decimals = 18; 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));
   function PXXToken() public {

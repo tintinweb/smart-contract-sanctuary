@@ -111,8 +111,8 @@ contract bacancyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bacancyToken() public {
-        symbol = &quot;BAC&quot;;
-        name = &quot;bacancy Token&quot;;
+        symbol = "BAC";
+        name = "bacancy Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

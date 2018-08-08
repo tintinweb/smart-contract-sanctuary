@@ -196,9 +196,9 @@ contract ERC20Token is Token, Accessible {
 
 contract EduScienceToken is ERC20Token {
 
-    string public name = &quot;EduScience&quot;;
-    string public symbol = &quot;ESc&quot;;
-    string public version = &quot;EduScience Token v1.0&quot;; 
+    string public name = "EduScience";
+    string public symbol = "ESc";
+    string public version = "EduScience Token v1.0"; 
 
 	// Set the total number of tokens.
 	constructor (uint256 _initialSupply) public {

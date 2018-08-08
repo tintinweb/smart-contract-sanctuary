@@ -82,8 +82,8 @@ contract LOVEYOUToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;LOVEYOU&quot;;
-    string public constant symbol = &quot;LVY&quot;;
+    string public constant name = "LOVEYOU";
+    string public constant symbol = "LVY";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 30000000000000000000000000000;

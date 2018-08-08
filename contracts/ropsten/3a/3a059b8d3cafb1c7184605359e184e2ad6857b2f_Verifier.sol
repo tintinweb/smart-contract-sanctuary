@@ -1,9 +1,9 @@
 // This file is MIT Licensed.
 //
 // Copyright 2017 Christian Reitwiessner
-// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 // The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 pragma solidity ^0.4.14;
 library Pairing {
@@ -47,7 +47,7 @@ library Pairing {
         bool success;
         assembly {
             success := call(sub(gas, 2000), 6, 0, input, 0xc0, r, 0x60)
-            // Use &quot;invalid&quot; to make gas estimation work
+            // Use "invalid" to make gas estimation work
             switch success case 0 { invalid() }
         }
         require(success);
@@ -62,7 +62,7 @@ library Pairing {
         bool success;
         assembly {
             success := call(sub(gas, 2000), 7, 0, input, 0x80, r, 0x60)
-            // Use &quot;invalid&quot; to make gas estimation work
+            // Use "invalid" to make gas estimation work
             switch success case 0 { invalid() }
         }
         require (success);
@@ -89,7 +89,7 @@ library Pairing {
         bool success;
         assembly {
             success := call(sub(gas, 2000), 8, 0, add(input, 0x20), mul(inputSize, 0x20), out, 0x20)
-            // Use &quot;invalid&quot; to make gas estimation work
+            // Use "invalid" to make gas estimation work
             switch success case 0 { invalid() }
         }
         require(success);
@@ -228,7 +228,7 @@ contract Verifier {
             inputValues[i] = input[i];
         }
         if (verify(inputValues, proof) == 0) {
-            emit Verified(&quot;Transaction successfully verified.&quot;);
+            emit Verified("Transaction successfully verified.");
             return true;
         } else {
             return false;

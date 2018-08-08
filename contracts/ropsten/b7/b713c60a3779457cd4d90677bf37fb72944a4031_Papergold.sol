@@ -78,8 +78,8 @@ contract Papergold is ERC20Interface, Owned {
 
 
     function Papergold() public {
-        symbol = &quot;PGD&quot;;
-        name = &quot;Papergold&quot;;
+        symbol = "PGD";
+        name = "Papergold";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;
@@ -142,7 +142,7 @@ contract Papergold is ERC20Interface, Owned {
     }
     
     function goldRate() returns(string) {
-        return &quot;34 rs Killo&quot;;
+        return "34 rs Killo";
     }
 }
 

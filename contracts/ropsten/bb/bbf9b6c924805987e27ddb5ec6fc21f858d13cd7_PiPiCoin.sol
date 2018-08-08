@@ -107,9 +107,9 @@ contract PiPiCoin is StandardToken { // CHANGE THIS. Update the contract name.
     function PiPiCoin() {
         balances[msg.sender] = 10000000000000000000000000;               // Give the creator all initial tokens. This is set to 10000000 for example. If you want your initial tokens to be X and your decimal is 5, set this value to X * 100000. (CHANGE THIS)
         totalSupply = 10000000000000000000000000;                        // Update total supply (10000000 for example) (CHANGE THIS)
-        name = &quot;PiPiCoin&quot;;                                   // Set the name for display purposes (CHANGE THIS)
+        name = "PiPiCoin";                                   // Set the name for display purposes (CHANGE THIS)
         decimals = 18;                                               // Amount of decimals for display purposes (CHANGE THIS)
-        symbol = &quot;PiPi&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "PiPi";                                             // Set the symbol for display purposes (CHANGE THIS)
         unitsOneEthCanBuy = 100;                                      // Set the price of your token for the ICO (CHANGE THIS)
         fundsWallet = msg.sender;                                    // The owner of the contract gets ETH
     }
@@ -136,7 +136,7 @@ contract PiPiCoin is StandardToken { // CHANGE THIS. Update the contract name.
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

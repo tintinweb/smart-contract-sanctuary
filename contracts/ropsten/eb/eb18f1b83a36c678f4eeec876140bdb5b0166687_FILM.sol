@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -312,10 +312,10 @@ contract FILM is CappedToken(FILM.TOKEN_SUPPLY) {
 
   using SafeMath for uint256;
 
-  string public constant name = &quot;FILMTOKEN&quot;;
-  string public constant symbol = &quot;FILM&quot;;
+  string public constant name = "FILMTOKEN";
+  string public constant symbol = "FILM";
   uint8 public constant decimals = 18;
-  string public constant version = &quot;1.0&quot;;
+  string public constant version = "1.0";
   uint256 public constant TOKEN_SUPPLY  = 1500000000 * (10 ** uint256(decimals)); // 1500 Million FILM
 
 }

@@ -9,8 +9,8 @@ The Spectrum Network is a global decentralized GIS ecosystem. Our ultility token
 pragma solidity 0.4.18;
 
 contract SpectrumNetwork {
-    string public symbol = &quot;SPEC&quot;;
-    string public name = &quot;Spectrum Network&quot;;
+    string public symbol = "SPEC";
+    string public name = "Spectrum Network";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
     uint256 _MaxDistribPublicSupply = 0;

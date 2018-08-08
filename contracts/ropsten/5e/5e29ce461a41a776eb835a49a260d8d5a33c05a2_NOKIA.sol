@@ -113,8 +113,8 @@ contract NOKIA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NOKIA() public {
-        symbol = &quot;NOKIA&quot;;
-        name = &quot;NOKIA Token&quot;;
+        symbol = "NOKIA";
+        name = "NOKIA Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000;
         balances[0xBe18F705178410D1386D7Bc4f5d2eb6DB5344b8a] = _totalSupply;

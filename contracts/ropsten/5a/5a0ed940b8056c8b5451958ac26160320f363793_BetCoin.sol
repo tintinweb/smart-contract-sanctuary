@@ -113,8 +113,8 @@ contract BetCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BetCoin() public {
-        symbol = &quot;BTX&quot;;
-        name = &quot;BetCoin&quot;;
+        symbol = "BTX";
+        name = "BetCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc2043833e70aECE0822313AC226bb51e40d6af44] = _totalSupply;

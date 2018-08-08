@@ -58,7 +58,7 @@ contract Cession_Bien_Immobilier {
     function register(bytes32 houseAddress) atStage(Stages.Lifecycle) public {
         uint houseAtAddress;
         /* Check variables values */
-        houseAtAddress = findIndexWhereHouseProperty(houseList, &quot;address&quot;, &quot;==&quot;, &quot;houseAddress&quot;);
+        houseAtAddress = findIndexWhereHouseProperty(houseList, "address", "==", "houseAddress");
         if (houseAtAddress < 0 && houseList[houseAtAddress].owner != msg.sender) {
             revert();
         }
@@ -79,7 +79,7 @@ contract Cession_Bien_Immobilier {
     function listForSale(uint amount, bytes32 houseAddress) atStage(Stages.Lifecycle) public {
         uint houseIndex;
         /* Check variables values */
-        houseIndex = findIndexWhereHouseProperty(houseList, &quot;address&quot;, &quot;==&quot;, &quot;houseAddress&quot;);
+        houseIndex = findIndexWhereHouseProperty(houseList, "address", "==", "houseAddress");
         if (houseIndex < 0) {
             revert();
         }
@@ -101,7 +101,7 @@ contract Cession_Bien_Immobilier {
         address oldOwner;
         uint houseIndex;
         /* Check variables values */
-        houseIndex = findIndexWhereHouseProperty(houseList, &quot;address&quot;, &quot;==&quot;, &quot;houseAddress&quot;);
+        houseIndex = findIndexWhereHouseProperty(houseList, "address", "==", "houseAddress");
         if (!houseList[houseIndex].isForSale) {
             revert();
         }

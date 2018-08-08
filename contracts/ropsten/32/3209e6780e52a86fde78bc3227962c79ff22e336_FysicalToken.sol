@@ -113,8 +113,8 @@ contract FysicalToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FysicalToken() public {
-        symbol = &quot;FYS&quot;;
-        name = &quot;Fysical&quot;;
+        symbol = "FYS";
+        name = "Fysical";
         decimals = 9;
         _totalSupply = 100000000000000000000000000;
         balances[0x3Cf628d49Ae46b49b210F0521Fbd9F82B461A9E1] = _totalSupply;

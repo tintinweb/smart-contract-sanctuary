@@ -369,6 +369,6 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract JustToken is StandardBurnableToken, CappedToken, DetailedERC20, PausableToken  {
-    constructor() CappedToken(10**27) DetailedERC20(&quot;Just Token&quot;, &quot;JST&quot;, 18) public {
+    constructor() CappedToken(10**27) DetailedERC20("Just Token", "JST", 18) public {
     }
 }

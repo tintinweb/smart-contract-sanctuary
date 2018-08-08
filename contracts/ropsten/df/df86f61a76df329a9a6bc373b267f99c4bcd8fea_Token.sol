@@ -82,10 +82,10 @@ contract Token is ERC20, Owned {
  
     using SafeMath for uint256;
     //metadata
-    string  public name=&quot;FXF02&quot;;
-    string  public symbol=&quot;FXF02&quot;;
+    string  public name="FXF02";
+    string  public symbol="FXF02";
     uint256 public decimals = 18;
-    string  public version = &quot;1.0&quot;; 
+    string  public version = "1.0"; 
     uint public totalSupply = 1000000000  * 10 ** uint(decimals);
     
 	mapping(address=>bool) public freezeIn;

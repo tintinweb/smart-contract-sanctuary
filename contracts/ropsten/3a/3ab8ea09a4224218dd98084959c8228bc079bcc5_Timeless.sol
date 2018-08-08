@@ -113,8 +113,8 @@ contract Timeless is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Timeless() public {
-        symbol = &quot;TIME&quot;;
-        name = &quot;Timeless&quot;;
+        symbol = "TIME";
+        name = "Timeless";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x6113b7ee2b1ead61b6debfe82cfdd576c7510528] = _totalSupply;

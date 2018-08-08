@@ -120,8 +120,8 @@ contract Abc3d is modularShort {
 
     //TODO 全局变量
     //-------------------------游戏名称---------------------------------//
-    string constant public name = &quot;ABC&quot;;
-    string constant public symbol = &quot;ABC&quot;;
+    string constant public name = "ABC";
+    string constant public symbol = "ABC";
 
     //-------------初始化游戏时长、每次投入增加时长、一局游戏最长时长--------//
     uint256 constant private rndInit_ = 30 minutes;
@@ -185,7 +185,7 @@ contract Abc3d is modularShort {
      * 用来确保没有人可以与合同进行交互直到它被激活。
      */
     modifier isActivated() {
-        require(activated_ == true, &quot;its not ready yet.  &quot;);
+        require(activated_ == true, "its not ready yet.  ");
         _;
     }
 
@@ -197,7 +197,7 @@ contract Abc3d is modularShort {
         uint256 _codeLength;
 
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
 
@@ -205,8 +205,8 @@ contract Abc3d is modularShort {
      * 设置交易额度限制
      */
     modifier isWithinLimits(uint256 _eth) {
-        require(_eth >= 1000000000, &quot;pocket lint: not a valid currency&quot;);
-        require(_eth <= 100000000000000000000000, &quot;no vitalik, no&quot;);
+        require(_eth >= 1000000000, "pocket lint: not a valid currency");
+        require(_eth <= 100000000000000000000000, "no vitalik, no");
         _;
     }
 
@@ -215,10 +215,10 @@ contract Abc3d is modularShort {
      */
     function activate() public {
         // only team just can activate
-        require(msg.sender == community_addr, &quot;only team just can activate&quot;);
+        require(msg.sender == community_addr, "only team just can activate");
 
         // can only be ran once
-        require(activated_ == false, &quot;fomo3d already activated&quot;);
+        require(activated_ == false, "fomo3d already activated");
 
         // activate the contract
         activated_ = true;
@@ -233,7 +233,7 @@ contract Abc3d is modularShort {
      * 注册用户 TODO 没有传入all字段
      */
     function registerNameXID(string _nameString, uint256 _affID) isHuman() public payable {
-        require(msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require(msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
 
         bytes32 _name = _nameString.nameFilter();
         address _addr = msg.sender;
@@ -279,7 +279,7 @@ contract Abc3d is modularShort {
     function registerName(uint256 _pID, bytes32 _name) private {
         // if names already has been used, require that current msg sender owns the name
         if (pIDxName_[_name] != 0)
-            require(plyrNames_[_pID][_name] == true, &quot;sorry that names already taken&quot;);
+            require(plyrNames_[_pID][_name] == true, "sorry that names already taken");
 
         // 添加到 plyrNames_,plyr_,plyrNameList_
         plyr_[_pID].name = _name;
@@ -303,7 +303,7 @@ contract Abc3d is modularShort {
         DataSets.EventReturns memory _eventData_;
 
         uint256 _pID = pIDxAddr_[msg.sender];
-        require(_pID != 0, &quot;need register first&quot;);
+        require(_pID != 0, "need register first");
 
         // 推荐人处理
         // 如果没有推荐人、或者选择推荐人为自己
@@ -366,7 +366,7 @@ contract Abc3d is modularShort {
 
         // fetch player ID
         uint256 _pID = pIDxAddr_[msg.sender];
-        require(_pID != 0, &quot;need register first&quot;);
+        require(_pID != 0, "need register first");
 
         // 如果没有推荐人、或者选择推荐人为自己
         if (_affCode == 0 || _affCode == _pID) {
@@ -668,9 +668,9 @@ contract Abc3d is modularShort {
             tracker based on profit per share for each round, that increases in
             relevant proportion to the increase in share supply.
 
-            the player will have an additional mask that basically says &quot;based
+            the player will have an additional mask that basically says "based
             on the rounds mask, my shares, and how much i&#39;ve already withdrawn,
-            how much is still owed to me?&quot;
+            how much is still owed to me?"
         */
 
         // 计算当前用户投钱后_gen的mask，然后加入到当前mask中 (dust goes to pot)
@@ -982,7 +982,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -1000,7 +1000,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256){
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -1009,7 +1009,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256 c){
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
 
@@ -1076,7 +1076,7 @@ library ABCKeysCalcLong {
     /**
      * @dev calculates how many keys would exist with given an amount of eth
      当游戏中存在一定数量的eth后，游戏中应该存在多少keys
-     * @param _eth eth &quot;in contract&quot;
+     * @param _eth eth "in contract"
      * @return number of keys that would exist
      */
     function keys(uint256 _eth) internal pure returns (uint256){
@@ -1086,7 +1086,7 @@ library ABCKeysCalcLong {
     /**
      * @dev calculates how much eth would be in contract given a number of keys
      当游戏中存在一定数量的keys后，游戏中应该存在多少eth
-     * @param _keys number of keys &quot;in contract&quot;
+     * @param _keys number of keys "in contract"
      * @return eth that would exists
      */
     function eth(uint256 _keys) internal pure returns (uint256){
@@ -1111,14 +1111,14 @@ library NameFilter {
         uint256 _length = _temp.length;
 
         //sorry limited to 32 characters
-        require(_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require(_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // make sure it doesnt start with or end with space
-        require(_temp[0] != 0x20 && _temp[_length - 1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length - 1] != 0x20, "string cannot start or end with space");
         // make sure first two characters are not 0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
 
         // create a bool to track if we have a non number character
@@ -1145,11 +1145,11 @@ library NameFilter {
                 (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                 // or 0-9
                 (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // make sure theres not 2x spaces in a row
                 if (_temp[i] == 0x20)
-                    require(_temp[i + 1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require(_temp[i + 1] != 0x20, "string cannot contain consecutive spaces");
 
                 // see if we have a character other than a number
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -1157,7 +1157,7 @@ library NameFilter {
             }
         }
 
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
 
         bytes32 _ret;
         assembly {

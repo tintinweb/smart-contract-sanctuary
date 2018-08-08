@@ -113,8 +113,8 @@ contract Bodcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bodcoin() public {
-        symbol = &quot;BDCN&quot;;
-        name = &quot;Bodcoin&quot;;
+        symbol = "BDCN";
+        name = "Bodcoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x47CE4dDEc90850b2aD3407bE43791c83Bd3D3885] = _totalSupply;

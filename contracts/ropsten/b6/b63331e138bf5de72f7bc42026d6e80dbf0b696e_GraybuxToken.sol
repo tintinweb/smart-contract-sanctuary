@@ -112,8 +112,8 @@ contract GraybuxToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GraybuxToken() public {
-        symbol = &quot;GBX&quot;;
-        name = &quot;Graybux Token&quot;;
+        symbol = "GBX";
+        name = "Graybux Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb0505b4cf49F2f7cEAA114A921Ef73C1859B7FC4] = _totalSupply;

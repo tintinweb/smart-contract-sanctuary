@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -494,9 +494,9 @@ contract LeadcoinSmartToken is TokenHolder, LimitedTransferBancorSmartToken {
     //                                         Members
     // =================================================================================================================
 
-    string public name = &quot;LEADCOIN&quot;;
+    string public name = "LEADCOIN";
 
-    string public symbol = &quot;LDC&quot;;
+    string public symbol = "LDC";
 
     uint8 public decimals = 18;
 

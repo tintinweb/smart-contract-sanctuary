@@ -376,8 +376,8 @@ contract ContractSpendToken is WithdrawTrack {
 
 contract ContractiumToken is TokenOffering, WithdrawTrack, ContractSpendToken {
 
-    string public constant name = &quot;Contractium&quot;;
-    string public constant symbol = &quot;CTU&quot;;
+    string public constant name = "Contractium";
+    string public constant symbol = "CTU";
     uint8 public constant decimals = 18;
   
     uint256 public constant INITIAL_SUPPLY = 3000000000 * (10 ** uint256(decimals));

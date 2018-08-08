@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract AngelTestToken {
 
-    string public name = &quot;AngelToken&quot;;
-    string public symbol = &quot;ATK&quot;;
+    string public name = "AngelToken";
+    string public symbol = "ATK";
     uint256 public decimals = 18;
     uint256 public totalSupply = 100000000000000000000000000;
     address owner;

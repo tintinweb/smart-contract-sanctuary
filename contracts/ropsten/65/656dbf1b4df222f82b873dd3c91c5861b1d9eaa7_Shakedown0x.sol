@@ -116,8 +116,8 @@ contract Shakedown0x is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Shakedown0x() public {
-        symbol = &quot;SHAKE&quot;;
-        name = &quot;Shakedown0x&quot;;
+        symbol = "SHAKE";
+        name = "Shakedown0x";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 8 weeks;

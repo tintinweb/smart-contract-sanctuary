@@ -89,10 +89,10 @@ contract VALLE_ERC20 is Ownable {
 
 
     // Public variables for the VALLE ERC20 ESS token contract
-    string public constant standard = &quot;VALLE erc20 and Genesis&quot;;
+    string public constant standard = "VALLE erc20 and Genesis";
     uint256 public constant decimals = 18;   // hardcoded to be a constant
-    string public name = &quot;VALLE&quot;;
-    string public symbol = &quot;ESS&quot;;
+    string public name = "VALLE";
+    string public symbol = "ESS";
     uint256 public totalSupply;
 
     event Transfer(address indexed from, address indexed to, uint256 value);

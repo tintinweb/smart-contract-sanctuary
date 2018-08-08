@@ -116,8 +116,8 @@ contract FINX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FINX() public {
-        symbol = &quot;FINX&quot;;
-        name = &quot;FINX Token&quot;;
+        symbol = "FINX";
+        name = "FINX Token";
         decimals = 18;
         bonusEnds = now + 52 weeks;
         endDate = now + 104 weeks;

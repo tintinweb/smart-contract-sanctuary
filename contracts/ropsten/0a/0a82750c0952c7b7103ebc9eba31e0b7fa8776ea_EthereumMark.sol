@@ -111,8 +111,8 @@ contract EthereumMark is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EthereumMark() public {
-        symbol = &quot;MAK&quot;;
-        name = &quot;EthererumMark&quot;;
+        symbol = "MAK";
+        name = "EthererumMark";
         decimals = 18;
         _totalSupply = 25000000000000000000000000;
         balances[0x77a1CeEc9E797C89Ced0785cC95AD0fE0335e892] = _totalSupply;

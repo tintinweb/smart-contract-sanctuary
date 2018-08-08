@@ -113,8 +113,8 @@ contract IBM is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IBM() public {
-        symbol = &quot;IBM&quot;;
-        name = &quot;IBM Token&quot;;
+        symbol = "IBM";
+        name = "IBM Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x19826cB8E4894B7B8cf69eF2d8402F5893C5E821] = _totalSupply;

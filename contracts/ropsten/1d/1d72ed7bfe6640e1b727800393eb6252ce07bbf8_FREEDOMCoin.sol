@@ -113,8 +113,8 @@ contract FREEDOMCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FREEDOMCoin() public {
-        symbol = &quot;3DOM&quot;;
-        name = &quot;3DOM Coin&quot;;
+        symbol = "3DOM";
+        name = "3DOM Coin";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0x75379748cE0E6e1a48bDFFEb2aB9115d3958eC8E] = _totalSupply;

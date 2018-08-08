@@ -113,8 +113,8 @@ contract CVDToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CVDToken() public {
-        symbol = &quot;CVD&quot;;
-        name = &quot;CVD Token&quot;;
+        symbol = "CVD";
+        name = "CVD Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4fceb23c12F04384ad9374A208980086c5548252] = _totalSupply;

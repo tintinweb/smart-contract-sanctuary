@@ -250,10 +250,10 @@ contract BlockchainBank is SafeMath {
             }
             ));
 
-// Prevent people using &quot;password&quot; or &quot;Password&quot; sha3 hash for the Security_AddPasswordSha3HashToBankAccount() function
-        bytes32 passwordHash_ = keccak256(&quot;password&quot;);
+// Prevent people using "password" or "Password" sha3 hash for the Security_AddPasswordSha3HashToBankAccount() function
+        bytes32 passwordHash_ = keccak256("password");
         _bankAccountsArray[newBankAccountNumber].passwordSha3HashesUsed[passwordHash_] = true;
-        passwordHash_ = keccak256(&quot;Password&quot;);
+        passwordHash_ = keccak256("Password");
         _bankAccountsArray[newBankAccountNumber].passwordSha3HashesUsed[passwordHash_] = true;
 
 // Add the new account
@@ -600,7 +600,7 @@ contract BlockchainBank is SafeMath {
 
 // Reset password sha3 hash
         _bankAccountsArray[bankAccountNumber].passwordSha3HashSet = false;
-        _bankAccountsArray[bankAccountNumber].passwordSha3Hash = &quot;0&quot;;
+        _bankAccountsArray[bankAccountNumber].passwordSha3Hash = "0";
        
 // Reset password attempts
         _bankAccountsArray[bankAccountNumber].passwordAttempts = 0;

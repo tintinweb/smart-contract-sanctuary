@@ -113,8 +113,8 @@ contract BarmatzTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BarmatzTestToken() public {
-        symbol = &quot;BARTST&quot;;
-        name = &quot;Barmatz Test Token&quot;;
+        symbol = "BARTST";
+        name = "Barmatz Test Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5790c53da0c5ec030D98bB91B97e797F846f3294] = _totalSupply;

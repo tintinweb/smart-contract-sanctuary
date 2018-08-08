@@ -84,8 +84,8 @@ contract AAACoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;TeC4&quot;;
-        name = &quot;TestCoin4&quot;;
+        symbol = "TeC4";
+        name = "TestCoin4";
         decimals = 8;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

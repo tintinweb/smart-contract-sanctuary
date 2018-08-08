@@ -8,7 +8,7 @@
     pragma solidity ^0.4.24;
     
     contract owned {
-        string Version = &quot;Version 3&quot;;
+        string Version = "Version 3";
         
         address public owner;
     
@@ -193,7 +193,7 @@
         event FrozenFunds(address target, bool frozen);
     
         /* Initializes contract with initial supply tokens to the creator of the contract */
-        constructor() TokenERC20(100000000000, &quot;CAPTOZ Token&quot;, &quot;CAPTOZ&quot;) public {
+        constructor() TokenERC20(100000000000, "CAPTOZ Token", "CAPTOZ") public {
             buyPrice = 186800000000000;
             sellPrice = 186800000000000;
         }

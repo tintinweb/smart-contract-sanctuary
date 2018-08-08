@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract DariumToken is StandardToken {
 
-    string public constant name = &quot;Darium Token&quot;;
-    string public constant symbol = &quot;DAR&quot;;
+    string public constant name = "Darium Token";
+    string public constant symbol = "DAR";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 850 * 10**6 * (10**uint256(decimals));
     uint256 public weiRaised;

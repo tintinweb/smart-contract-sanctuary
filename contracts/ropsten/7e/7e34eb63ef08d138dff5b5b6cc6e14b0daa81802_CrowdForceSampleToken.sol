@@ -191,8 +191,8 @@ contract CrowdForceSampleToken is ERC20Token {
   
   /* Basic token data */
 
-  string public  name     = &quot;CrowdForce Sample Token&quot;;
-  string public  symbol   = &quot;CFST&quot;;
+  string public  name     = "CrowdForce Sample Token";
+  string public  symbol   = "CFST";
   uint8  public  decimals = 0;
 
   /* Wallet addresses - initially set to owner at deployment */
@@ -446,7 +446,7 @@ contract CrowdForceSampleToken is ERC20Token {
   
   // ERC20 functions ------------------
 
-  /* Override &quot;transfer&quot; (ERC20) */
+  /* Override "transfer" (ERC20) */
 
   function transfer(address _to, uint _amount) returns (bool success) {
     require( isTransferable() );
@@ -455,7 +455,7 @@ contract CrowdForceSampleToken is ERC20Token {
     return super.transfer(_to, _amount);
   }
   
-  /* Override &quot;transferFrom&quot; (ERC20) */
+  /* Override "transferFrom" (ERC20) */
 
   function transferFrom(address _from, address _to, uint _amount) returns (bool success) {
     require( isTransferable() );
@@ -503,7 +503,7 @@ contract CrowdForceSampleToken is ERC20Token {
     Refund(msg.sender, amount, tokens);
   }
 
-  /* Claiming of &quot;airdropped&quot; tokens in case of successful crowdsale */
+  /* Claiming of "airdropped" tokens in case of successful crowdsale */
   /* Can be done by token holder, or by adminWallet */ 
 
   function claimAirdrop() external {

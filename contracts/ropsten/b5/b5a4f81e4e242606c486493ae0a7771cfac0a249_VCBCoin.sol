@@ -34,7 +34,7 @@ contract ContractReceiver {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -133,8 +133,8 @@ contract ERC223 {
 contract VCBCoin is ERC223, Ownable {
   using SafeMath for uint256;
 
-  string public name = &quot;VCBCoin&quot;;
-  string public symbol = &quot;VCB&quot;;
+  string public name = "VCBCoin";
+  string public symbol = "VCB";
   uint8 public decimals = 7;
   uint256 public initialSupply = 10e8 * 1e8;
   uint256 public totalSupply;

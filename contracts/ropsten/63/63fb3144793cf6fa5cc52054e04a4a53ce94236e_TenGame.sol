@@ -24,7 +24,7 @@ contract TenGame {
 	function addIn(address referr) public payable returns (bool){
 		require(
 			msg.value == 100 * count,
-			&quot;ETH count is wrong!&quot;
+			"ETH count is wrong!"
 		);
 		if(lastGame[msg.sender] == 0){
 			referrer[msg.sender] = referr;
@@ -49,7 +49,7 @@ contract TenGame {
 	function withdraw(uint amount) public {
 		require(
 			funderBalance[msg.sender] >= amount,
-			&quot;ETH Out of balance!&quot;
+			"ETH Out of balance!"
 		);
 		funderBalance[msg.sender] += -amount;
         msg.sender.transfer(amount);

@@ -63,8 +63,8 @@ contract PGD is SafeMath{
         ) {
         balanceOf[msg.sender] = 8000000000000000000000000;              // Give the creator all initial tokens
         totalSupply =8000000000000000000000000;                        // Update total supply
-        name = &quot;PGOLD&quot;;                                   // Set the name for display purposes
-        symbol = &quot;PGD&quot;;                               // Set the symbol for display purposes
+        name = "PGOLD";                                   // Set the name for display purposes
+        symbol = "PGD";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
 		owner = msg.sender;
     }

@@ -36,8 +36,8 @@ contract TokenERC20 {
     constructor () public {
         totalSupply = 100000000000000000000000000;  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;TokenProva&quot;;                                 
-        symbol = &quot;TDP&quot;;                             
+        name = "TokenProva";                                 
+        symbol = "TDP";                             
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

@@ -11,8 +11,8 @@ contract PalavraCoin{
     mapping (address => mapping (address => uint256)) allowed;
     function PalavraCoin() public { 
         owner = msg.sender;                                         // Set owner of contract 
-        name = &quot;PalavraCoin&quot;;                                         // Set the name for display purposes
-        symbol = &quot;PLV&quot;;                                             // Set the symbol for display purposes
+        name = "PalavraCoin";                                         // Set the name for display purposes
+        symbol = "PLV";                                             // Set the symbol for display purposes
         decimals = 18;                                               // Amount of decimals for display purposes
 		totalSupply = 100000000;                            // Total supply
 		balances[owner] = totalSupply;                              // Set owner balance equal totalsupply 

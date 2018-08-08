@@ -25,8 +25,8 @@ contract owned {
 contract TokenERC20 is owned {
     address public deployer;
     // Public variables of the token
-    string public name =&quot;Lucas CreditCooperative&quot;;
-    string public symbol = &quot;LUSDt&quot;;
+    string public name ="Lucas CreditCooperative";
+    string public symbol = "LUSDt";
     uint8 public decimals = 4;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 1000000000000;

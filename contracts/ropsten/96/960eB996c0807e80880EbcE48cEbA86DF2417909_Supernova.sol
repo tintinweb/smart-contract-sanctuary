@@ -113,8 +113,8 @@ contract Supernova is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Supernova() public {
-        symbol = &quot;SUPERNOVA&quot;;
-        name = &quot;Supernova Token&quot;;
+        symbol = "SUPERNOVA";
+        name = "Supernova Token";
         decimals = 18;
         _totalSupply = 3000000000000000000;
         balances[0x9ac2e121cA12D49cC10497E7bF8C45F574e16eA0] = _totalSupply;

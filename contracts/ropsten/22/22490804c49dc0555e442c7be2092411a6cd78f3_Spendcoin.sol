@@ -191,9 +191,9 @@ contract Spendcoin is ERC20Interface, Tokenlock {
 
     function Spendcoin() public {
 
-        symbol = &quot;SPND&quot;;
+        symbol = "SPND";
 
-        name = &quot;Spendcoin&quot;;
+        name = "Spendcoin";
 
         decimals = 18;
 

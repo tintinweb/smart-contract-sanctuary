@@ -18,8 +18,8 @@ contract TheTokenA {
     ) public {
         totalSupply = 250000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;TheToken A&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TKA&quot;;                               // Set the symbol for display purposes
+        name = "TheToken A";                                   // Set the name for display purposes
+        symbol = "TKA";                               // Set the symbol for display purposes
     }
     function _transfer(address _from, address _to, uint _value) internal {
         require(_to != 0x0);

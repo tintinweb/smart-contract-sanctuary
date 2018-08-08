@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -436,8 +436,8 @@ contract BoxNetToken is ERC20, MintableToken, BurnableToken, Destructible {
   uint8 public decimals;
 
   constructor() public {
-    name = &quot;BoxNetToken&quot;;
-    symbol = &quot;BNT&quot;;
+    name = "BoxNetToken";
+    symbol = "BNT";
     decimals = 18;
   }
   
@@ -459,6 +459,6 @@ contract BoxNetToken is ERC20, MintableToken, BurnableToken, Destructible {
   }
 
   function() external payable {
-      revert(&quot;This contract does not accept Ethereum!&quot;);
+      revert("This contract does not accept Ethereum!");
     }
 }

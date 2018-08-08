@@ -151,7 +151,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -231,9 +231,9 @@ contract MintableToken is StandardToken, Ownable {
 
 contract RNTDTokenCoin is MintableToken {
 
-    string public constant name = &quot;RNTD for Bitrent-Decenturion Development&quot;;
+    string public constant name = "RNTD for Bitrent-Decenturion Development";
 
-    string public constant symbol = &quot;RNTD&quot;;
+    string public constant symbol = "RNTD";
 
     uint32 public constant decimals = 18;
 

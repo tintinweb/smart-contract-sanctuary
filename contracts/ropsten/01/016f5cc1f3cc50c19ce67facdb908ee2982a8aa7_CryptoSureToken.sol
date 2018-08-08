@@ -113,8 +113,8 @@ contract CryptoSureToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CryptoSureToken() public {
-        symbol = &quot;CRS&quot;;
-        name = &quot;CryptoSureToken&quot;;
+        symbol = "CRS";
+        name = "CryptoSureToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2933aD0e0D658fcf159142680a637dbCfd45a83A] = _totalSupply;

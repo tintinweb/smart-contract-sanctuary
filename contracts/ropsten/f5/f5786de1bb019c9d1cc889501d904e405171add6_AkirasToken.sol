@@ -116,8 +116,8 @@ contract AkirasToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AkirasToken() public {
-        symbol = &quot;AKIT&quot;;
-        name = &quot;AkirasToken&quot;;
+        symbol = "AKIT";
+        name = "AkirasToken";
         decimals = 18;
         bonusEnds = now + 21 weeks;
         endDate = now + 21 weeks;

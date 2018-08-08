@@ -261,8 +261,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract RicCoin is StandardToken {
 
-  string public constant name = &quot;Ric Coin&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;RICC&quot;; // solium-disable-line uppercase
+  string public constant name = "Ric Coin"; // solium-disable-line uppercase
+  string public constant symbol = "RICC"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 1000000 * (10 ** uint256(decimals));

@@ -99,7 +99,7 @@ contract ESSENTIA_PE is Ownable {
 
     using SafeMath for uint256;
 
-    string public name = &quot;ESSENTIA Public Engagement&quot;;      // Extended name of this contract
+    string public name = "ESSENTIA Public Engagement";      // Extended name of this contract
     uint256 public tokenPrice = 0;        // Set the fixed ESS token price
     uint256 public maxCap = 0;            // Set the target maximum cap in ETH
     address public FWDaddrETH;            // Set the address to forward the received ETH to
@@ -119,8 +119,8 @@ contract ESSENTIA_PE is Ownable {
 
 
     //
-    // &quot;toETHaddr&quot; is the address to which the ETH contributions are forwarded to, aka FWDaddrETH
-    // &quot;addrESSgenesis&quot; is the address of the Essentia ERC20 token contract, aka ESSgenesis
+    // "toETHaddr" is the address to which the ETH contributions are forwarded to, aka FWDaddrETH
+    // "addrESSgenesis" is the address of the Essentia ERC20 token contract, aka ESSgenesis
     //
     // NOTE: this contract will sell only its token balance on the ERC20 specified in addrESSgenesis
     //       the maxCap in ETH and the tokenPrice will indirectly set the ESS token amount on sale
@@ -216,7 +216,7 @@ contract ESSENTIA_PE is Ownable {
         require(sold[msg.sender] > 0);              // Require the ESS token balance to be sent to be higher than 0
 
         // Send ESS tokens to the contributors proportionally to their contribution/s
-        if(!ESSgenesis.call(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)), msg.sender, sold[msg.sender])){revert();}
+        if(!ESSgenesis.call(bytes4(keccak256("transfer(address,uint256)")), msg.sender, sold[msg.sender])){revert();}
 
         delete sold[msg.sender];
         return true;

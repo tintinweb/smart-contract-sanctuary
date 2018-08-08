@@ -113,8 +113,8 @@ contract Paradime01 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Paradime01() public {
-        symbol = &quot;ParaD01&quot;;
-        name = &quot;ParaD01&quot;;
+        symbol = "ParaD01";
+        name = "ParaD01";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x44Ef8ccC249320cdE14b6b84dFFC83010890909f] = _totalSupply;

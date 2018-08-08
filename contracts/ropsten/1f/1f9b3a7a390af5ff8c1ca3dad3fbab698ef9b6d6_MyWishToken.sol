@@ -45,8 +45,8 @@ contract usingMyWishConsts {
     address constant PREICO_ADDRESS = 0x195610851A43E9685643A8F3b49F0F8a019204f1;
     address constant COLD_WALLET = 0x80826b5b717aDd3E840343364EC9d971FBa3955C;
 
-    string constant TOKEN_NAME = &quot;MyWish Token&quot;;
-    bytes32 constant TOKEN_SYMBOL = &quot;WISH&quot;;
+    string constant TOKEN_NAME = "MyWish Token";
+    bytes32 constant TOKEN_SYMBOL = "WISH";
 }
 
 library SafeMath {

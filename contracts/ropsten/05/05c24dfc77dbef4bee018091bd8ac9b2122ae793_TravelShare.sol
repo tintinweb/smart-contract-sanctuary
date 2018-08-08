@@ -108,8 +108,8 @@ contract TravelShare is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TravelShare() public {
-        symbol = &quot;TRV&quot;;
-        name = &quot;TravelShare Token&quot;;
+        symbol = "TRV";
+        name = "TravelShare Token";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0xcfbe93e2083a3401EEEc2E78843F7Bd3D748CE0f] = _totalSupply;

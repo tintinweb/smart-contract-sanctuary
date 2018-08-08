@@ -32,8 +32,8 @@ contract TokenERC20 {
     ) public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[0xC2eAd97a83288771F10Ae359a45cc813d665594e] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;test1&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TEST&quot;;                               // Set the symbol for display purposes
+        name = "test1";                                   // Set the name for display purposes
+        symbol = "TEST";                               // Set the symbol for display purposes
     }
 
     /**

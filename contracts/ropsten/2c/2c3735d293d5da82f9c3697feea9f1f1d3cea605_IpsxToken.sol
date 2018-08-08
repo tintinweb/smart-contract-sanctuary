@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -312,9 +312,9 @@ contract IpsxToken is StandardToken, Recoverable {
 
 
   // Public variables of the Token.
-  string public name = &quot;RPSX&quot;;
+  string public name = "RPSX";
   uint8 public decimals = 18;
-  string public symbol = &quot;RPSX&quot;;
+  string public symbol = "RPSX";
 
   // The totalSupply is constant, no more tokens will be issued
   // after the contract will be initialized.

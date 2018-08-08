@@ -116,8 +116,8 @@ contract NOXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;NOX&quot;;
-        name = &quot;NOX Token&quot;;
+        symbol = "NOX";
+        name = "NOX Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

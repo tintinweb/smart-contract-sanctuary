@@ -73,8 +73,8 @@ contract Labtorum is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Labtorum&quot;;
-    string public constant symbol = &quot;LTR&quot;;
+    string public constant name = "Labtorum";
+    string public constant symbol = "LTR";
     uint public constant decimals = 8;
     uint public deadline = now + 15 * 1 minutes;
     uint public presaledeadline = now + 7 * 1 minutes;

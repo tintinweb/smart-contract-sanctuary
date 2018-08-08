@@ -113,8 +113,8 @@ contract SVET is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SVET() public {
-        symbol = &quot;SVET&quot;;
-        name = &quot;Silicon Valley Enlistment Token&quot;;
+        symbol = "SVET";
+        name = "Silicon Valley Enlistment Token";
         decimals = 18;
         _totalSupply = 120000000000000000000000;
         balances[0x9cf6bbb0b59cb5b297842278dEd836d8D243C759] = _totalSupply;

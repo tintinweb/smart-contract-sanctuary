@@ -130,8 +130,8 @@ contract StandardToken is ERC20 {
 }
 
 contract TEACToken is StandardToken {
-    string public constant name = &quot;TeaChain&quot;;
-    string public constant symbol = &quot;TEAC&quot;;
+    string public constant name = "TeaChain";
+    string public constant symbol = "TEAC";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 300000000 * (10 ** uint256(decimals));
 

@@ -73,7 +73,7 @@ contract MonaLease {
         });
         renters[_renter.addr] = _renter;
         renterList.push(_renter.addr);
-        newLogEntry(&quot;Signed lease&quot;);
+        newLogEntry("Signed lease");
     }
 
 
@@ -130,7 +130,7 @@ contract MonaLease {
 
     //See if any rent is due, and if so, pay it.
     function run() public {
-        newLogEntry(&quot;Run()&quot;);
+        newLogEntry("Run()");
         //For each renter, getAmountDue and pay it
         for(uint i = 0; i < renterList.length; i++) {
             takeRent(renterList[i]);
@@ -172,7 +172,7 @@ contract MonaLease {
                     fromAddr: _renterAddress
                 }));
 
-                newLogEntry(&quot;sent&quot;);
+                newLogEntry("sent");
             }
             return true;
         }
@@ -183,7 +183,7 @@ contract MonaLease {
     }
 
     function giveExchangeRateAdvice(uint256 exchangeRate) onlyOracle public {
-        newLogEntry(&quot;Received Oracle advice&quot;);
+        newLogEntry("Received Oracle advice");
         lastEthPriceAsFiat = exchangeRate;
         lastWeiPerFiat = weiPerEther / lastEthPriceAsFiat;
         run(); //Do a rent run

@@ -127,8 +127,8 @@ contract Start is Owned {
 // ----------------------------------------------------------------------------
 contract PaNaKeMu is ERC20Interface, Owned, Start, SafeMath {
     //Public vars of the token
-    string public constant symbol = &quot;PNKM&quot;;
-    string public constant name = &quot;PaNaKeMu&quot;;
+    string public constant symbol = "PNKM";
+    string public constant name = "PaNaKeMu";
     uint256 public constant decimals = 18;
     
     //Token sellPrice 1 ETH = 1000 Tokens
@@ -308,7 +308,7 @@ contract PaNaKeMu is ERC20Interface, Owned, Start, SafeMath {
     function sellToken(uint256 amount) public {
         uint balance = address(this).balance;
         uint etherToSend = amount / sellPrice;
-        require(balance >= etherToSend, &quot;nicht gen&#252;gend Ether im Smartcontract&quot;);      // checks if the contract has enough ether to buy
+        require(balance >= etherToSend, "nicht gen&#252;gend Ether im Smartcontract");      // checks if the contract has enough ether to buy
         transferFrom(msg.sender, address(this), amount);              // makes the transfers
         
         msg.sender.transfer(etherToSend);          // sends ether to the seller. It&#39;s important to do this last to avoid recursion attacks
@@ -318,6 +318,6 @@ contract PaNaKeMu is ERC20Interface, Owned, Start, SafeMath {
     // Kill contract and send funds to Owner
     function kill() onlyOwner public {
         selfdestruct(owner);
-        emit Kill(&quot;Contract is dead&quot;);
+        emit Kill("Contract is dead");
     }
 }

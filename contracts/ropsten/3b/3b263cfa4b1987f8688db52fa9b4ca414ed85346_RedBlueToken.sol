@@ -97,8 +97,8 @@ contract RedBlueToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RedBlueToken() public {
-        symbol = &quot;RB1&quot;;
-        name = &quot;RedBlueToken1&quot;;
+        symbol = "RB1";
+        name = "RedBlueToken1";
         decimals = 18;
         _totalSupply = 78000000000000000000000;
         balances[msg.sender] = _totalSupply;

@@ -287,7 +287,7 @@ contract Crowdsale {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -705,7 +705,7 @@ contract TimedCrowdsale is Crowdsale {
 
 //import &#39;openzeppelin-solidity/contracts/crowdsale/distribution/RefundableCrowdsale.sol&#39;;
 
-//import &quot;openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol&quot;;
+//import "openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol";
 
 
 interface MintableERC20 {
@@ -736,7 +736,7 @@ contract WeatherCrowdsale is Crowdsale, TimedCrowdsale, CappedCrowdsale, MintedC
     }
 
 //    function forwardFunds() internal {
-//        EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+//        EthTransferred("forwarding funds to refundable vault");
 //        super.forwardFunds();
 //    }
 

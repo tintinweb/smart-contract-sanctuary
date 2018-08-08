@@ -57,7 +57,7 @@ contract MultiSigWallet {
     modifier onlyWallet() {
         require(
             msg.sender == address(this),
-            &quot;only wallet itself can call this method&quot;
+            "only wallet itself can call this method"
         );
         _;
     }
@@ -65,7 +65,7 @@ contract MultiSigWallet {
     modifier ownerDoesNotExist(address _owner) {
         require(
             !isOwner[_owner],
-            &quot;owner can not call this method&quot;
+            "owner can not call this method"
         );
         _;
     }
@@ -73,7 +73,7 @@ contract MultiSigWallet {
     modifier ownerExists(address _owner) {
         require(
             isOwner[_owner],
-            &quot;only owner can call this method&quot;
+            "only owner can call this method"
         );
         _;
     }
@@ -81,7 +81,7 @@ contract MultiSigWallet {
     modifier transactionExists(uint _transactionId) {
         require(
             transactions[_transactionId].destination != 0,
-            &quot;tx does not exist / address 0x0 can not be dest&quot;
+            "tx does not exist / address 0x0 can not be dest"
         );
         _;
     }
@@ -89,7 +89,7 @@ contract MultiSigWallet {
     modifier txConfirmedByOwner(uint _transactionId, address _owner) {
         require(
             confirmations[_transactionId][_owner],
-            &quot;this tx has not been confirmed by this owner&quot;
+            "this tx has not been confirmed by this owner"
         );
         _;
     }
@@ -97,7 +97,7 @@ contract MultiSigWallet {
     modifier txNotConfirmedByOwner(uint _transactionId, address _owner) {
         require(
             !confirmations[_transactionId][_owner],
-            &quot;this tx has already been confirmed by this owner&quot;
+            "this tx has already been confirmed by this owner"
         );
         _;
     }
@@ -105,7 +105,7 @@ contract MultiSigWallet {
     modifier notExecuted(uint _transactionId) {
         require(
             !transactions[_transactionId].executed,
-            &quot;this tx has already been executed&quot;
+            "this tx has already been executed"
         );
         _;
     }
@@ -113,7 +113,7 @@ contract MultiSigWallet {
     modifier notNull(address _address) {
         require(
             _address != 0,
-            &quot;address can not be 0x0&quot;
+            "address can not be 0x0"
         );
         _;
     }
@@ -124,7 +124,7 @@ contract MultiSigWallet {
             _required <= _ownerCount &&
         _required != 0 &&
         _ownerCount != 0,
-            &quot;invalid requirement / _required can not be 0 / _ownerCount can not be 0&quot;
+            "invalid requirement / _required can not be 0 / _ownerCount can not be 0"
         );
         _;
     }
@@ -287,7 +287,7 @@ contract MultiSigWallet {
     function external_call(address _destination, uint _value, uint _dataLength, bytes _data) private returns (bool) {
         bool result;
         assembly {
-            let x := mload(0x40)   // &quot;Allocate&quot; memory for output (0x40 is where &quot;free memory&quot; pointer is stored by convention)
+            let x := mload(0x40)   // "Allocate" memory for output (0x40 is where "free memory" pointer is stored by convention)
             let d := add(_data, 32) // First 32 bytes are the padded length of data, so exclude that
             result := call(
             sub(gas, 34710), // 34710 is the value that solidity is currently emitting
@@ -422,7 +422,7 @@ contract MultiSigWallet {
     {
         require(
             _from < _to,
-            &quot;from should be less than to&quot;
+            "from should be less than to"
         );
 
         uint[] memory transactionIdsTemp = new uint[](transactionCount);

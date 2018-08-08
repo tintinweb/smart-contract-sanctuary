@@ -114,8 +114,8 @@ contract biotorBiomassToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function biotorBiomassToken() public {
-        symbol = &quot;BBT&quot;;
-        name = &quot;Biotor Biomass Token&quot;;
+        symbol = "BBT";
+        name = "Biotor Biomass Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 15 weeks;

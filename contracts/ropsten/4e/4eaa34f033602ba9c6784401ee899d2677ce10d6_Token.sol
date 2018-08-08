@@ -61,7 +61,7 @@ contract ERC223ReceivingContract {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -118,8 +118,8 @@ contract Token is MintableToken{
     bool public canChangeHardCap;
 
     constructor() public {
-        name = &quot;GTC00001&quot;;
-        symbol = &quot;GTC&quot;;
+        name = "GTC00001";
+        symbol = "GTC";
         decimals = 9;
         hardCap = 20000000000000;
         canChangeHardCap = true;

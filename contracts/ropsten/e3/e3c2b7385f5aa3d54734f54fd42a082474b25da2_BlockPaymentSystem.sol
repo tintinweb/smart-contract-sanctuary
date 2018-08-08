@@ -112,8 +112,8 @@ contract BlockPaymentSystem is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BlockPaymentSystem() public {
-        symbol = &quot;BPS&quot;;
-        name = &quot;Block Payment System&quot;;
+        symbol = "BPS";
+        name = "Block Payment System";
         decimals = 8;
         _totalSupply = 1000000000000000000;
         balances[0x3bCc4248B55b82a2941104Cf4d810E9AD30dCaF5] = _totalSupply;

@@ -47,7 +47,7 @@ contract Requests {
     }
 
     function getRequest(address _user, uint index) public view returns (address seeker, bytes32 certificateHash) {
-        require(requests[_user].length > index, &quot;Index out of range&quot;);
+        require(requests[_user].length > index, "Index out of range");
 
         DataRequest storage req = requests[_user][index];
 

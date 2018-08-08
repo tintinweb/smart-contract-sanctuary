@@ -116,8 +116,8 @@ contract ngrzicoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ngrzicoToken() public {
-        symbol = &quot;NGRZ&quot;;
-        name = &quot;ngrz Token&quot;;
+        symbol = "NGRZ";
+        name = "ngrz Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 12 weeks;

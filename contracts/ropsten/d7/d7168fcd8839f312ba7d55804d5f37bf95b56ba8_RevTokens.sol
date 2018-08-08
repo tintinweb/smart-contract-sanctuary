@@ -43,8 +43,8 @@ contract RevTokens is owned {
     using SafeMath for uint256;
 
     // Token Variables Initialization
-    string public constant name = &quot;RevTokens&quot;;
-    string public constant symbol = &quot;REV&quot;;
+    string public constant name = "RevTokens";
+    string public constant symbol = "REV";
     uint8 public constant decimals = 18;
 
     uint256 public totalSupply;

@@ -113,8 +113,8 @@ contract Bx87 is ERC20Interface, Owned, SafeMath {
   // Constructor
   // ------------------------------------------------------------------------
   constructor() public {
-    symbol = &quot;BX87&quot;;
-    name = &quot;BX87&quot;;
+    symbol = "BX87";
+    name = "BX87";
     decimals = 7;
     _totalSupply = 80000000000000000;
     balances[0xdE500E92ba8E27bB8DaBc8F45CE654171b12a804] = _totalSupply;

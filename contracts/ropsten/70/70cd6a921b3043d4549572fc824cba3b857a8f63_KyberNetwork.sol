@@ -286,7 +286,7 @@ contract Utils2 is Utils {
         } else {
             uint[1] memory value;
 
-            if (!address(token).call(bytes4(keccak256(&quot;decimals()&quot;)))) {/* solhint-disable-line avoid-low-level-calls */
+            if (!address(token).call(bytes4(keccak256("decimals()")))) {/* solhint-disable-line avoid-low-level-calls */
                 // call failed
                 decimal = 18;
             } else {
@@ -680,7 +680,7 @@ contract KyberNetwork is Withdrawable, Utils2, KyberNetworkInterface {
             rateResult);
 
         if (actualSrcAmount < tradeInput.srcAmount) {
-            //if there is &quot;change&quot; send back to trader
+            //if there is "change" send back to trader
             if (tradeInput.src == ETH_TOKEN_ADDRESS) {
                 tradeInput.trader.transfer(tradeInput.srcAmount - actualSrcAmount);
             } else {
@@ -714,8 +714,8 @@ contract KyberNetwork is Withdrawable, Utils2, KyberNetworkInterface {
                 rateResult.rateEthToDest,
                 true));
 
-        //when src is ether, reserve1 is doing a &quot;fake&quot; trade. (ether to ether) - don&#39;t burn.
-        //when dest is ether, reserve2 is doing a &quot;fake&quot; trade. (ether to ether) - don&#39;t burn.
+        //when src is ether, reserve1 is doing a "fake" trade. (ether to ether) - don&#39;t burn.
+        //when dest is ether, reserve2 is doing a "fake" trade. (ether to ether) - don&#39;t burn.
         if (tradeInput.src != ETH_TOKEN_ADDRESS)
             require(feeBurnerContract.handleFees(ethAmount, rateResult.reserve1, tradeInput.walletId));
         if (tradeInput.dest != ETH_TOKEN_ADDRESS)
@@ -821,7 +821,7 @@ contract KyberNetwork is Withdrawable, Utils2, KyberNetworkInterface {
         uint callValue = 0;
 
         if (src == dest) {
-            //this is for a &quot;fake&quot; trade when both src and dest are ethers.
+            //this is for a "fake" trade when both src and dest are ethers.
             if (destAddress != (address(this)))
                 destAddress.transfer(amount);
             return true;

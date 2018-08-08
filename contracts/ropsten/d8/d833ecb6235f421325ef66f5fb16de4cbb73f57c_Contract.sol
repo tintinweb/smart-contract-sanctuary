@@ -72,8 +72,8 @@ contract Contract is ERC20Interface, Owned, SafeMath {
 
 
     function Contract() public {
-        symbol = &quot;&quot;;
-        name = &quot;&quot;;
+        symbol = "";
+        name = "";
         decimals = 8;
         _totalSupply = 100000000000000;
         balances[0x2DA1E68Fb8A3aC3eD4834f9c035029a9328C2F6e] = _totalSupply; 

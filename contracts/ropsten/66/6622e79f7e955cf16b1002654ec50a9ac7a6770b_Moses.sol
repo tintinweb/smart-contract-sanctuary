@@ -54,8 +54,8 @@ contract Moses is Basic{
   * @param _attendHash prediction event participation information hash value
   */
   function attend(uint32 _id,string _attendHash) public onlyOwner returns (bool) {
-    require(moseEvents[_id].id == uint32(0),&quot;The event exists&quot;);
-    moseEvents[_id] = MoseEvent({id:_id, attendHash:_attendHash, result: &quot;&quot;, finish:false});
+    require(moseEvents[_id].id == uint32(0),"The event exists");
+    moseEvents[_id] = MoseEvent({id:_id, attendHash:_attendHash, result: "", finish:false});
     emit Attend(_id, _attendHash);
     return true;
   }
@@ -66,8 +66,8 @@ contract Moses is Basic{
    * @param _result prediction result information
    */
   function publishResult(uint32 _id,string _result) public onlyOwner returns (bool) {
-    require(moseEvents[_id].id != uint32(0),&quot;The event not exists&quot;);
-    require(!moseEvents[_id].finish,&quot;The event has been completed&quot;);
+    require(moseEvents[_id].id != uint32(0),"The event not exists");
+    require(!moseEvents[_id].finish,"The event has been completed");
     moseEvents[_id].result = _result;
     moseEvents[_id].finish = true;
     emit PublishResult(_id, _result, true);

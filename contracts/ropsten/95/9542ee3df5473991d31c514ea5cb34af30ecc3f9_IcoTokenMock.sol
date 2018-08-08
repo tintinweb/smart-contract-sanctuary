@@ -145,7 +145,7 @@ interface MintableToken {
 
 /**
  * @title Exchangeable Token
- * @dev This token can be exchanged for the same amount of another &quot;target&quot; token.
+ * @dev This token can be exchanged for the same amount of another "target" token.
  */
 contract ExchangeableToken is BurnableToken {
 
@@ -163,8 +163,8 @@ contract ExchangeableToken is BurnableToken {
     }
 
     /**
-    * @dev Burns all of sender&#39;s &quot;this&quot; token balance in exchange for the same
-    * amount of newly minted &quot;target&quot; token.
+    * @dev Burns all of sender&#39;s "this" token balance in exchange for the same
+    * amount of newly minted "target" token.
     * @return A boolean that indicates if the operation was successful.
     */
     function exchange() public returns (bool) {
@@ -186,7 +186,7 @@ contract ExchangeableToken is BurnableToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -340,8 +340,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract IcoTokenMock is ExchangeableToken, StandardToken, Ownable {
 
-    string public constant name = &quot;Ico Token Mock&quot;;
-    string public constant symbol = &quot;MICO&quot;;
+    string public constant name = "Ico Token Mock";
+    string public constant symbol = "MICO";
     uint8 public constant decimals = 8;
 
     uint256 public constant INITIAL_SUPPLY = 65000000; // also hardcap

@@ -26,7 +26,7 @@ contract TokenFaucet {
      * @dev Transfer `tokensPerAddress` to `msg.sender` and prevent it from collecting more.
      */
     function tap() public {
-        require(!recipients[msg.sender], &quot;Address already received faucet payout&quot;);
+        require(!recipients[msg.sender], "Address already received faucet payout");
         recipients[msg.sender] = true;
         token.safeTransfer(msg.sender, tokensPerAddress);
     }

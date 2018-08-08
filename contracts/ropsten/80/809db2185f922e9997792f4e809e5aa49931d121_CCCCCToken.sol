@@ -105,8 +105,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 
 contract CCCCCToken is StandardToken {
-	string public constant symbol = &quot;CCCCC&quot;;
-	string public constant name = &quot;Chain Coin Circle Coffee College&quot;;
+	string public constant symbol = "CCCCC";
+	string public constant name = "Chain Coin Circle Coffee College";
 	uint8 public constant decimals = 18;
 	address public target;
 	

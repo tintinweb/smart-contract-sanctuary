@@ -280,8 +280,8 @@ contract StandardToken is ERC20, BasicToken {
 contract AromaTest1 is StandardToken,Ownable {
    using SafeMath for uint256;
 
-   string public name = &quot;Aroma Token Test&quot;;
-   string public symbol = &quot;ART-1&quot;;
+   string public name = "Aroma Token Test";
+   string public symbol = "ART-1";
    uint public decimals = 18;
    uint public totalSupply_ = 21 * 100000000 * 10 ** decimals;
    address public funder = 0x14723a09acFF6d2a60dcdf7aa4aff308fddc160c; // test 0x569be1c8CC4a0B9B3276E0b8e9259A1AB5c783FE;  //投资基金
@@ -312,7 +312,7 @@ contract AromaTest1 is StandardToken,Ownable {
     function buy() payable  public returns(uint amount)  {
 
         amount = msg.value / buyPrice;                    // calculates the amount
-        require(balances[this] >= amount,&quot; not  balances&quot;);               // checks if it has enough to sell
+        require(balances[this] >= amount," not  balances");               // checks if it has enough to sell
         balances[msg.sender] += amount;                  // adds the amount to buyer&#39;s balance
         balances[this] -= amount;                        // subtracts amount from seller&#39;s balance
         emit Transfer(this, msg.sender, amount);               // execute an event reflecting the change

@@ -113,8 +113,8 @@ contract Mesut is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Mesut() public {
-        symbol = &quot;MST&quot;;
-        name = &quot;Mesut&quot;;
+        symbol = "MST";
+        name = "Mesut";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xfF9072A51eD0f3907C99aBECA6c20498f0F079B5] = _totalSupply;

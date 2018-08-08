@@ -113,8 +113,8 @@ contract ZeroReturnProfit is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZeroReturnProfit() public {
-        symbol = &quot;ZRP&quot;;
-        name = &quot;ZeroReturnProfit&quot;;
+        symbol = "ZRP";
+        name = "ZeroReturnProfit";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDc7A1fEe0508fBE1eF0621128662E12b4dA4a713] = _totalSupply;

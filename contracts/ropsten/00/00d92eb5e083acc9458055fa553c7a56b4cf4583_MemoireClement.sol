@@ -116,8 +116,8 @@ contract MemoireClement is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MemoireClement() public {
-        symbol = &quot;DPLM&quot;;
-        name = &quot;Diploma&quot;;
+        symbol = "DPLM";
+        name = "Diploma";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -116,8 +116,8 @@ contract medsupply is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function medsupply() public {
-        symbol = &quot;MSTN&quot;;
-        name = &quot;Medsupply Token&quot;;
+        symbol = "MSTN";
+        name = "Medsupply Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

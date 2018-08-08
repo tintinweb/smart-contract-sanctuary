@@ -30,8 +30,8 @@ contract TxdToken {
     balanceOf[controller_addr] = _val; 
     usedSupply = _val;
     totalSupply = 10 ** 13 * 6;
-    name = &quot;Txd Bit&quot;;
-    symbol = &quot;TXD&quot;;
+    name = "Txd Bit";
+    symbol = "TXD";
     
     peradd = _val;
     

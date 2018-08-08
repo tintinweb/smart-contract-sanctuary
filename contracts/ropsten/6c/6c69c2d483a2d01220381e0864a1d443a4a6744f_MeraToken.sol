@@ -113,8 +113,8 @@ contract MeraToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MeraToken() public {
-        symbol = &quot;merasikka&quot;;
-        name = &quot;Mera Sikka&quot;;
+        symbol = "merasikka";
+        name = "Mera Sikka";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xAd4F927263Dc00D0C957E426Dd0256CbBF635567] = _totalSupply;

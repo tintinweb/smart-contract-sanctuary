@@ -113,8 +113,8 @@ contract iceToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function iceToken() public {
-        symbol = &quot;iceTea&quot;;
-        name = &quot;ice Token&quot;;
+        symbol = "iceTea";
+        name = "ice Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x627306090abaB3A6e1400e9345bC60c78a8BEf57] = _totalSupply;

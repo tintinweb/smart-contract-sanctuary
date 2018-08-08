@@ -181,7 +181,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract TestToken is MintableToken {
-  string public name = &quot;Test Tokenz&quot;;
-  string public symbol = &quot;TzT&quot;;
+  string public name = "Test Tokenz";
+  string public symbol = "TzT";
   uint8 public decimals = 18;
 }

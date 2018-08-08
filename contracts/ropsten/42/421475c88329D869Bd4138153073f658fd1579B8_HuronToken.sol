@@ -232,8 +232,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract HuronToken is StandardToken, Ownable {
-    string public name = &quot;HURON&quot;;
-    string public symbol = &quot;HNT&quot;;
+    string public name = "HURON";
+    string public symbol = "HNT";
     uint8 public decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 2000000 * (10 ** uint256(decimals));

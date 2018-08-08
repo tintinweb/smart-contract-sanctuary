@@ -113,8 +113,8 @@ contract Exilium is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Exilium() public {
-        symbol = &quot;EXI&quot;;
-        name = &quot;Exilium&quot;;
+        symbol = "EXI";
+        name = "Exilium";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0x05E86E3820B56A2133Dc3Cd8eF46D96C34F9c247] = _totalSupply;

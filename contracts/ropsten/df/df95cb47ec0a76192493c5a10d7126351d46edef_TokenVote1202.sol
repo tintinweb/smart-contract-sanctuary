@@ -35,9 +35,9 @@ interface InterfaceErc1202 {
 contract SampleToken {
 
     /* Public variables of the token */
-    string public standard = &quot;Token 0.1&quot;;
-    string public name = &quot;ZToken&quot;;
-    string public symbol = &quot;ZTK&quot;;
+    string public standard = "Token 0.1";
+    string public name = "ZToken";
+    string public symbol = "ZTK";
     uint8 public decimals = 0;
     uint256 public totalSupply;
     address public owner;
@@ -197,9 +197,9 @@ contract TokenVote1202 {
             weights[voter] = token.balanceOf(voter);
         }
 
-        optionDescMap[1] = &quot;No&quot;;
-        optionDescMap[2] = &quot;Issue 100 more token&quot;;
-        optionDescMap[3] = &quot;Issue 200 more token&quot;;
+        optionDescMap[1] = "No";
+        optionDescMap[2] = "Issue 100 more token";
+        optionDescMap[3] = "Issue 200 more token";
     }
 
     function vote(uint option) public returns (bool success) {
@@ -249,7 +249,7 @@ contract TokenVote1202 {
     }
 
     function issueDescription() public pure returns (string desc) {
-        return &quot;Should we issue 100 more token?&quot;;
+        return "Should we issue 100 more token?";
     }
 
     function availableOptions() public view returns (uint[] options_) {

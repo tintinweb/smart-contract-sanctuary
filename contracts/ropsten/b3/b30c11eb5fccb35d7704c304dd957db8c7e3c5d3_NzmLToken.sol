@@ -113,8 +113,8 @@ contract NzmLToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NzmLToken() public {
-        symbol = &quot;NzmL&quot;;
-        name = &quot;NzmL Token&quot;;
+        symbol = "NzmL";
+        name = "NzmL Token";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0xbf6fA7120dC348821ca904F2518595816774be91] = _totalSupply;

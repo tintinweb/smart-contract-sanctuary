@@ -2,8 +2,8 @@ pragma solidity ^0.4.16;
 
 contract MininumViableToken{
     
-    string public constant name = &quot;test1&quot;;
-    string public constant symbol =&quot;test&quot;;
+    string public constant name = "test1";
+    string public constant symbol ="test";
     uint8 public constant decimals = 18;
     
     address creator = 0x6FdcF3b30abffc803476374f590ccf6c6ef12820;

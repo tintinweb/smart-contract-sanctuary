@@ -113,8 +113,8 @@ contract DreamTeam is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DreamTeam() public {
-        symbol = &quot;DT&quot;;
-        name = &quot;Dream Team&quot;;
+        symbol = "DT";
+        name = "Dream Team";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x155713Df2032972145537e4e05B178bB6fDaDf70] = _totalSupply;

@@ -15,7 +15,7 @@ contract SimpleStorage {
 
     function getPhoto(uint index) public view returns (uint, string){
         if(photoArr.length==0){
-            return (0, &quot;&quot;);
+            return (0, "");
         }else{
            return (photoArr.length, photoArr[index]);
         }

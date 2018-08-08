@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -392,8 +392,8 @@ contract MakioV5 is ERC223Token , Ownable
     event Burn(address indexed from, uint256 amount);
     event Mint(address indexed to, uint256 amount);
 
-    string public name = &quot;MakioCoin V5&quot;;
-    string public symbol = &quot;MKV&quot;;
+    string public name = "MakioCoin V5";
+    string public symbol = "MKV";
     uint8 public decimals = 18;
     
     constructor() public{

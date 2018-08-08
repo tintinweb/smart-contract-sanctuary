@@ -77,10 +77,10 @@ contract TestERC721 is RpSafeMath, ERC721 {
     function totalSupply() public view returns (uint256){ return nfts.length; }
     function balanceOf(address _owner) public view returns (uint) { return ownerNftCount[_owner]; }
     function ownerOf(uint _nftId) public view returns (address) { return nftToOwner[_nftId]; }
-    function name() public view returns (string){ return &quot;test_erc721&quot;; }
-    function symbol() public view returns (string){ return &quot;TEST&quot;; }
+    function name() public view returns (string){ return "test_erc721"; }
+    function symbol() public view returns (string){ return "TEST"; }
     function getApproved(uint _nftId) public view returns (address) { return nftIdToApproved[_nftId]; }
-    function tokenMetadata(uint256) public view returns (string) { return &quot;&quot;; }
+    function tokenMetadata(uint256) public view returns (string) { return ""; }
 
     function setApprovalForAll(address, bool) public returns (bool) { return false; }
     function isApprovedForAll(address, address) public view returns (bool) { return false; }

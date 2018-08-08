@@ -47,7 +47,7 @@ library SafeMath {
 	*/
 
 contract SimpleERC721 {
-    using SafeMath for uint256; // SafeMath methods will be available for the type &quot;unit256&quot;
+    using SafeMath for uint256; // SafeMath methods will be available for the type "unit256"
 
     // ------------- Variables 
 
@@ -211,10 +211,10 @@ contract SimpleERC721 {
 
 contract colorplat is SimpleERC721{  //defines a colorplat collectible as an ERC721 token
 
-	using SafeMath for uint256; // SafeMath methods will be available for the type &quot;unit256&quot;
+	using SafeMath for uint256; // SafeMath methods will be available for the type "unit256"
 
-	string public constant name = &quot;Colorplat&quot;;
-  	string public constant symbol = &quot;CLRPLAT&quot;;
+	string public constant name = "Colorplat";
+  	string public constant symbol = "CLRPLAT";
 
  
 
@@ -236,7 +236,7 @@ contract colorplat is SimpleERC721{  //defines a colorplat collectible as an ERC
 	function colorplat() public {  //the constructor
 		totalSupply=0; //set initial supply
 		deployer=msg.sender;
-		mint(deployer,0,&quot;000000,2.5&quot;); //create first colorplat with index 0
+		mint(deployer,0,"000000,2.5"); //create first colorplat with index 0
 	}
 
 }

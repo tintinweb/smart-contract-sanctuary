@@ -178,7 +178,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -284,8 +284,8 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract JTEBIT is PausableToken {
-    string  public  constant name = &quot;JTEBIT&quot;;
-    string  public  constant symbol = &quot;JTE&quot;;
+    string  public  constant name = "JTEBIT";
+    string  public  constant symbol = "JTE";
     uint8   public  constant decimals = 18;
 
     modifier validDestination( address to )

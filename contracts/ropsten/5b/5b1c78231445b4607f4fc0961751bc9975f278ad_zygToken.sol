@@ -102,8 +102,8 @@ contract zygToken is ERC20Interface, Owned, SafeMath {
   // Constructor
   // ------------------------------------------------------------------------
  constructor() public {
-    symbol = &quot;ZYG&quot;;
-    name = &quot;ZGFAMILLEToken&quot;;
+    symbol = "ZYG";
+    name = "ZGFAMILLEToken";
     decimals = 18;
     bonusEnds = now + 7 weeks;
     endDate = now + 365 days;

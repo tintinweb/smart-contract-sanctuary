@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract RISHABHToken {
 
-    string public name = &quot;RISHABH&quot;;      //  token name
-    string public symbol = &quot;RSH&quot;;           //  token symbol
+    string public name = "RISHABH";      //  token name
+    string public symbol = "RSH";           //  token symbol
     uint256 public decimals = 5;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -113,8 +113,8 @@ contract EVenToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EVenToken() public {
-        symbol = &quot;EVTi&quot;;
-        name = &quot;EVenToken&quot;;
+        symbol = "EVTi";
+        name = "EVenToken";
         decimals = 18;
         _totalSupply = 100000000000000000;
         balances[0x9B217041ebca298e64695886d60F63f8325c446a] = _totalSupply;

@@ -58,8 +58,8 @@ contract BitcoinSilver is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;BitcoinSilver&quot;;
-    string public constant symbol = &quot;BTCS&quot;;
+    string public constant name = "BitcoinSilver";
+    string public constant symbol = "BTCS";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 100000000e18;

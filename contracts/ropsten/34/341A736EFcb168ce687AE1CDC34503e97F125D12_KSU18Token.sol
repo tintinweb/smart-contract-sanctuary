@@ -112,8 +112,8 @@ contract KSU18Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;KSU18&quot;;
-        name = &quot;KSU18 Token&quot;;
+        symbol = "KSU18";
+        name = "KSU18 Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xC430aDEF36f0A572468DA9D2118BF8613CCD4D89] = _totalSupply;

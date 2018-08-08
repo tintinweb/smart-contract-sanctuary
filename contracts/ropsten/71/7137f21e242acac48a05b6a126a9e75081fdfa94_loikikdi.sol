@@ -114,8 +114,8 @@ contract loikikdi is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function loikikdi() public {
-        symbol = &quot;loikikdi&quot;;
-        name = &quot;loikikdi Token&quot;;
+        symbol = "loikikdi";
+        name = "loikikdi Token";
         decimals = 1;
         _totalSupply = 80000000000;
         bonusEnds = now + 1 hours;

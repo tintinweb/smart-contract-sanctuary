@@ -76,7 +76,7 @@ contract RuletkaTestIo {
 
     allRooms.push(_room);
     for(int i=0; i<5; i++){
-        address(this).call.value(_entryPrice).gas(200000)(abi.encodeWithSignature(&quot;enter(uint256)&quot;,  allRooms.length-1));
+        address(this).call.value(_entryPrice).gas(200000)(abi.encodeWithSignature("enter(uint256)",  allRooms.length-1));
     }
   }
     
@@ -151,7 +151,7 @@ contract RuletkaTestIo {
         delete room.players;
         
         for(int i=0; i<5; i++){
-            address(this).call.value(room.entryPrice).gas(200000)(abi.encodeWithSignature(&quot;enter(uint256)&quot;,  _roomId));
+            address(this).call.value(room.entryPrice).gas(200000)(abi.encodeWithSignature("enter(uint256)",  _roomId));
         }
     }
     

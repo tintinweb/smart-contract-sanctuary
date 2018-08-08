@@ -60,8 +60,8 @@ contract RedBlueToken2 is ERC20, ERC223 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     function constructor() public {
-        _symbol = &quot;RB2&quot;;
-        _name = &quot;RedBlueToken2&quot;;
+        _symbol = "RB2";
+        _name = "RedBlueToken2";
         _decimals = 8;
         _totalSupply = 10000000000;
         balances[msg.sender] = 10000000000;

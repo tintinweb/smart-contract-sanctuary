@@ -113,8 +113,8 @@ contract Hubble is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Hubble() public {
-        symbol = &quot;HUB&quot;;
-        name = &quot;Hubble&quot;;
+        symbol = "HUB";
+        name = "Hubble";
         decimals = 6;
         _totalSupply = 498500123000000;
         balances[0x7a4a5d33642b1561686d915fF25d26b14a2e83FB] = _totalSupply;

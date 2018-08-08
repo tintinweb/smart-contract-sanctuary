@@ -235,8 +235,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TutorialToken is StandardToken {
   
-  string public name = &quot;PruebaToken&quot;;
-  string public symbol = &quot;PTC&quot;;
+  string public name = "PruebaToken";
+  string public symbol = "PTC";
   uint8 public decimals = 4;
   uint public INITIAL_SUPPLY = 12000;
 

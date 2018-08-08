@@ -217,9 +217,9 @@ contract Database {
     // --------------------------------------------------------------------------------------
     constructor(address _ownerOne, address _ownerTwo, address _ownerThree)
     public {
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerOne))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerTwo))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerThree))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerOne))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerTwo))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerThree))] = true;
         emit LogInitialized(_ownerOne, _ownerTwo, _ownerThree);
     }
 
@@ -232,10 +232,10 @@ contract Database {
     function setContractManager(address _contractManager)
     external {
         require(_contractManager != address(0));
-        require(boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, msg.sender))]);
-        // require(addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] == address(0));   TODO: Allow swapping of CM for testing
-        addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] = _contractManager;
-        boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, _contractManager))] = true;
+        require(boolStorage[keccak256(abi.encodePacked("owner", msg.sender))]);
+        // require(addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] == address(0));   TODO: Allow swapping of CM for testing
+        addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] = _contractManager;
+        boolStorage[keccak256(abi.encodePacked("contract", _contractManager))] = true;
         emit LogContractManager(_contractManager, msg.sender); 
     }
 
@@ -338,7 +338,7 @@ contract Database {
     // Caller must be registered as a contract within the MyBit Dapp through ContractManager.sol
     // --------------------------------------------------------------------------------------
     modifier onlyMyBitContract() {
-        require(boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, msg.sender))]);
+        require(boolStorage[keccak256(abi.encodePacked("contract", msg.sender))]);
         _;
     }
 
@@ -469,10 +469,10 @@ contract TokenFaucet {
   external {
     require (keccak256(abi.encodePacked(_pass)) == accessPass); 
     uint expiry = now.add(oneYear);
-    uint accessLevel = database.uintStorage(keccak256(abi.encodePacked(&quot;userAccess&quot;, msg.sender))); 
+    uint accessLevel = database.uintStorage(keccak256(abi.encodePacked("userAccess", msg.sender))); 
     if (accessLevel < 1){ 
-      database.setUint(keccak256(abi.encodePacked(&quot;userAccess&quot;, msg.sender)), 1);   
-      database.setUint(keccak256(abi.encodePacked(&quot;userAccessExpiration&quot;, msg.sender)), expiry);
+      database.setUint(keccak256(abi.encodePacked("userAccess", msg.sender)), 1);   
+      database.setUint(keccak256(abi.encodePacked("userAccessExpiration", msg.sender)), expiry);
       emit LogNewUser(msg.sender);
     }
     if (mybToken.balanceOf(msg.sender) < basicIncomeMYB) { 
@@ -499,8 +499,8 @@ contract TokenFaucet {
   // Verifies that desired access level is allowed. No user can downgrade access by burning mybTokens
   //------------------------------------------------------------------------------------------------------------------
   modifier basicVerification(uint _newAccessLevel) {
-  uint currentLevel = database.uintStorage(keccak256(abi.encodePacked(&quot;userAccess&quot;, msg.sender)));
-  require(currentLevel < _newAccessLevel || database.uintStorage(keccak256(abi.encodePacked(&quot;userAccessExpiration&quot;, msg.sender))) < now);       // Dont allow burning to downgrade access level unless access has expired
+  uint currentLevel = database.uintStorage(keccak256(abi.encodePacked("userAccess", msg.sender)));
+  require(currentLevel < _newAccessLevel || database.uintStorage(keccak256(abi.encodePacked("userAccessExpiration", msg.sender))) < now);       // Dont allow burning to downgrade access level unless access has expired
   require (_newAccessLevel < uint(4) && _newAccessLevel > uint(0));      // Must be 1, 2 or 3
   _;
 }
@@ -509,7 +509,7 @@ contract TokenFaucet {
   // Verify that the sender is a registered owner
   //------------------------------------------------------------------------------------------------------------------
   modifier anyOwner {
-    require(database.boolStorage(keccak256(abi.encodePacked(&quot;owner&quot;, msg.sender))));
+    require(database.boolStorage(keccak256(abi.encodePacked("owner", msg.sender))));
     _;
   }
 

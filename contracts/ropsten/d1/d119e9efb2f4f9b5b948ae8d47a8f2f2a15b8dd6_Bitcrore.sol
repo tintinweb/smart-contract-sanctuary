@@ -122,7 +122,7 @@ using SafeMath for uint256;
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
-        require(now >= releaseTime, &quot;You are not allowed to transfer now wait until ICO complete&quot;);
+        require(now >= releaseTime, "You are not allowed to transfer now wait until ICO complete");
         require(!frozenAccount[_to]);
         _transfer(msg.sender, _to, _value);
         return true;
@@ -134,7 +134,7 @@ using SafeMath for uint256;
     }
   
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(now >= releaseTime, &quot;You are not allowed to transfer now wait until ICO complete&quot;);
+        require(now >= releaseTime, "You are not allowed to transfer now wait until ICO complete");
         require(!frozenAccount[_from]);
         require(!frozenAccount[_to]);
         require(_value <= allowance[_from][msg.sender]);     // Check allowance

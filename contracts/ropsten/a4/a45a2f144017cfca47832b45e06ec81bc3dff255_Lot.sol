@@ -23,14 +23,14 @@ contract Lot {
 	}
 
 	function startLottery() public {
-		 require(msg.sender == owner, &quot;You don’t have a permission.&quot;);
-		 require(state == 0, &quot;The lottery was already started.&quot;);
+		 require(msg.sender == owner, "You don’t have a permission.");
+		 require(state == 0, "The lottery was already started.");
 		 state = 1;
 	}
 
 	function participate() public returns(uint256) {
-		 require(state == 1, &quot;The lottery isn’t running.&quot;);
-		 require(!voted[msg.sender], &quot;You already participated.&quot;);
+		 require(state == 1, "The lottery isn’t running.");
+		 require(!voted[msg.sender], "You already participated.");
 		 uint32 divisor = preferred_participant_count * preferred_selection_count / winner_count;
 		 uint256 vote_number = uint256(msg.sender) % divisor;
 		 votes[vote_number].push(msg.sender);
@@ -55,20 +55,20 @@ contract Lot {
 	}
 
 	function close() public {
-		 require(msg.sender == owner, &quot;You don’t have a permission.&quot;);
-		 require(state == 1, &quot;The lottery isn’t running.&quot;);
+		 require(msg.sender == owner, "You don’t have a permission.");
+		 require(state == 1, "The lottery isn’t running.");
 		 state = 2;
 	}
 
 	function startSelection() public{
-		 require(state == 2, &quot;The lottery hasn’t finished.&quot;);
-		 require(msg.sender == owner, &quot;You don’t have a permission.&quot;);
+		 require(state == 2, "The lottery hasn’t finished.");
+		 require(msg.sender == owner, "You don’t have a permission.");
 		 win_seed = uint256(blockhash(block.number - 1));
 		 start_selection = true;
 	}
 
 	function selectWinners(uint256 previous_win_num) view public returns(uint256, address[]) {
-		 require(state == 2, &quot;The lottery hasn’t finished.&quot;);
+		 require(state == 2, "The lottery hasn’t finished.");
 		 uint256 win_num = generateRand(previous_win_num);
 		 return (win_num, votes[win_num]);
 	}

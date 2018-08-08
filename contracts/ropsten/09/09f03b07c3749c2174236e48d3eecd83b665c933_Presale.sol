@@ -296,7 +296,7 @@ contract CommonToken is StandardToken, MultiOwnable {
     function sell(address _to, uint256 _value)  public returns (bool) {
         // Check that we are not out of limit and still can sell tokens:
         //require(tokensSold.add(_value) <= saleLimit);
-        //require(msg.sender == seller, &quot;User not authorized&quot;);
+        //require(msg.sender == seller, "User not authorized");
 
         require(_to != address(0));
         require(_value > 0);

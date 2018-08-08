@@ -5,7 +5,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -250,7 +250,7 @@ contract Ships is Ownable
   constructor()
     public
   {
-    setDnsDomains(&quot;urbit.org&quot;, &quot;urbit.org&quot;, &quot;urbit.org&quot;);
+    setDnsDomains("urbit.org", "urbit.org", "urbit.org");
   }
 
   //
@@ -1901,7 +1901,7 @@ contract ERC721 is ERC721Basic, ERC721Enumerable, ERC721Metadata {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -1916,7 +1916,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) public returns(bytes4);
 }
@@ -1976,7 +1976,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
                        bool _approved);
 
   // erc721Received: equal to:
-  //               bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  //               bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   //                 which can be also obtained as:
   //               ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant erc721Received = 0xf0b9e5ba;
@@ -2060,7 +2060,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
     {
       //  transfer with empty data
       //
-      safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+      safeTransferFrom(_from, _to, _tokenId, "");
     }
 
     //  safeTransferFrom(): transfer ship _tokenId from _from to _to,
@@ -2150,7 +2150,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
       view
       returns (string)
     {
-      return &quot;Urbit Ship&quot;;
+      return "Urbit Ship";
     }
 
     function symbol()
@@ -2158,7 +2158,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
       view
       returns (string)
     {
-      return &quot;URS&quot;;
+      return "URS";
     }
 
     //  tokenURI(): produce a URL to a standard JSON file
@@ -2169,7 +2169,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
       validShipId(_tokenId)
       returns (string _tokenURI)
     {
-      _tokenURI = &quot;https://eth.urbit.org/erc721/0000000000.json&quot;;
+      _tokenURI = "https://eth.urbit.org/erc721/0000000000.json";
       bytes memory _tokenURIBytes = bytes(_tokenURI);
       _tokenURIBytes[29] = byte(48+(_tokenId / 1000000000) % 10);
       _tokenURIBytes[30] = byte(48+(_tokenId / 100000000) % 10);
@@ -2253,7 +2253,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
 
       //  the owner of a prefix can always spawn its children;
       //  other addresses need explicit permission (the role
-      //  of &quot;spawnProxy&quot; in the Ships contract)
+      //  of "spawnProxy" in the Ships contract)
       //
       require( ships.isOwner(prefix, msg.sender) ||
                ships.isSpawnProxy(prefix, msg.sender) );
@@ -2271,7 +2271,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
         emit Transfer(0x0, _target, uint256(_ship));
       }
       //
-      //  when sending to a &quot;foreign&quot; address, enforce a withdraw pattern
+      //  when sending to a "foreign" address, enforce a withdraw pattern
       //  by approving the _target for transfer of the _ship.
       //  we make the parent&#39;s owner the owner of this _ship in the mean time,
       //  so that it may cancel the transfer (un-approve) if _target flakes.
@@ -2368,7 +2368,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
               || ships.isTransferProxy(_ship, msg.sender));
 
       //  if the ship wasn&#39;t active yet, that means transferring it
-      //  is part of the &quot;spawn&quot; flow, so we need to activate it
+      //  is part of the "spawn" flow, so we need to activate it
       //
       if ( !ships.isActive(_ship) )
       {
@@ -2477,7 +2477,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
       //  then transferring it to your friend.
       //
       //  These planets can, in turn, sponsor other unbooted planets,
-      //  so the &quot;planet sponsorship chain&quot; can grow to arbitrary
+      //  so the "planet sponsorship chain" can grow to arbitrary
       //  length. Most users, especially deep down the chain, will
       //  want to improve their performance by switching to direct
       //  star sponsors eventually.
@@ -2537,7 +2537,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
       require(ships.isRequestingEscapeTo(_escapee, _sponsor));
 
       //  _sponsor becomes _escapee&#39;s sponsor
-      //  its escape request is reset to &quot;not escaping&quot;
+      //  its escape request is reset to "not escaping"
       //
       ships.doEscape(_escapee);
     }
@@ -2554,7 +2554,7 @@ contract Constitution is ConstitutionBase, ERC165Mapping, ERC721Metadata
     {
       require(ships.isRequestingEscapeTo(_escapee, _sponsor));
 
-      //  reset the _escapee&#39;s escape request to &quot;not escaping&quot;
+      //  reset the _escapee&#39;s escape request to "not escaping"
       //
       ships.cancelEscape(_escapee);
     }
@@ -2728,7 +2728,7 @@ pragma solidity 0.4.24;
 //    This contract allows planet owners to gift planets to their friends,
 //    if their prefix has allowed it.
 //
-//    Star owners can set a limit, the amount of &quot;invite planets&quot; each of
+//    Star owners can set a limit, the amount of "invite planets" each of
 //    their planets is allowed to send. Enabling this by setting the limit
 //    to a value higher than zero can help the network grow by providing
 //    regular users with a way to get their friends and family onto it.

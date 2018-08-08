@@ -193,8 +193,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract LIANGToken is StandardToken {
 
-  string public constant name = &quot;LIANGCoin&quot;;
-  string public constant symbol = &quot;LIANG&quot;;
+  string public constant name = "LIANGCoin";
+  string public constant symbol = "LIANG";
   uint8 public constant decimals = 18; // only two deciminals, token cannot be divided past 1/100th
 
   uint256 public constant INITIAL_SUPPLY =  10000000000000000000000000; // 50 million + 18 decimals

@@ -110,8 +110,8 @@ contract HELIX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HELIX() public {
-        symbol = &quot;HIX&quot;;
-        name = &quot;HELIX Token&quot;;
+        symbol = "HIX";
+        name = "HELIX Token";
         decimals = 18;
         _totalSupply = 5000000000000000000000000000;
         balances[0x000bCEAae09f3131f83b808cD02dE786bD853679] = _totalSupply;

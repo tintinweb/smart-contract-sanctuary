@@ -46,8 +46,8 @@ contract TokenERC20 is SafeM{
     function TokenERC20() public {
         totalSupply = 200000000* 10 ** uint256(decimals);  // Updating total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Giving the creator all initial tokens
-        name = &quot;BEST&quot;;                                   // Setting the name for display purposes
-        symbol = &quot;BST&quot;;   
+        name = "BEST";                                   // Setting the name for display purposes
+        symbol = "BST";   
             }
     
     function _transfer(address _from, address _to, uint _value) internal {

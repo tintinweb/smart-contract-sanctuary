@@ -86,8 +86,8 @@ contract Pausable is Owned {
 }
  contract HahahahahToken is ERC20Interface, Pausable {
     using SafeMath for uint256;
-    string public constant NAME = &quot;Hahahahah Token&quot;;
-    string public constant SYMBOL = &quot;HAT&quot;;
+    string public constant NAME = "Hahahahah Token";
+    string public constant SYMBOL = "HAT";
     uint8 public constant decimals = 18;
     uint256 public totalSupply = 10 ** 10 * 10**uint(decimals);
 

@@ -98,8 +98,8 @@ contract MatContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MatContract() public {
-        symbol = &quot;ATOM&quot;;
-        name = &quot;Atom&quot;;
+        symbol = "ATOM";
+        name = "Atom";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xD21DB3A0508f4c6EF632ebC8d4786733e2c67Cd0] = _totalSupply; //MEW address here

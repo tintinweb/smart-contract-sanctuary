@@ -116,8 +116,8 @@ contract Carpati is StandardToken {
         ) {
         balances[msg.sender] = 500000000000000000000;               // Give the creator all initial tokens (100000 for example)
         totalSupply = 500000000000000000000;                        // Update total supply (100000 for example)
-        name = &quot;Carpati&quot;;                                   // Set the name for display purposes
+        name = "Carpati";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;CPT&quot;;                               // Set the symbol for display purposes
+        symbol = "CPT";                               // Set the symbol for display purposes
     }
 }

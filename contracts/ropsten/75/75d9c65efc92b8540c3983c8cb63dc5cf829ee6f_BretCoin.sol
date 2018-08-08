@@ -75,8 +75,8 @@ contract BretCoin is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function BretCoin() public {
-        symbol = &quot;BRET&quot;;
-        name = &quot;BretCoin&quot;;
+        symbol = "BRET";
+        name = "BretCoin";
         decimals = 18;
         _totalSupply = 31337000 * 1000000000000000000;
         balances[0xb4d2050B87df1F41AeD33714b4B6d17e3D180F50] = _totalSupply;

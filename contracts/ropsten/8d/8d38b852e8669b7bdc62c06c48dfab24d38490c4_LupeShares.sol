@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract LupeShares {
 
-    string public name = &quot;Lupe Shares&quot;;      //  token name
-    string public symbol = &quot;LPX&quot;;           //  token symbol
+    string public name = "Lupe Shares";      //  token name
+    string public symbol = "LPX";           //  token symbol
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -85,7 +85,7 @@ contract EtherDEX {
     }
 
     function() public payable {
-        revert(&quot;Cannot send ETH directly to the Contract&quot;);
+        revert("Cannot send ETH directly to the Contract");
     }
 
     function changeAdmin(address admin_) public onlyAdmin {
@@ -98,12 +98,12 @@ contract EtherDEX {
     }
 
     function changeFeeMake(uint feeMake_) public onlyAdmin {
-        if (feeMake_ > feeMake) revert(&quot;New fee cannot be higher than the old one&quot;);
+        if (feeMake_ > feeMake) revert("New fee cannot be higher than the old one");
         feeMake = feeMake_;
     }
 
     function changeFeeTake(uint feeTake_) public onlyAdmin {
-        if (feeTake_ > feeTake) revert(&quot;New fee cannot be higher than the old one&quot;);
+        if (feeTake_ > feeTake) revert("New fee cannot be higher than the old one");
         feeTake = feeTake_;
     }
 
@@ -118,7 +118,7 @@ contract EtherDEX {
     }
 
     function withdraw(uint amount) public {
-        if (tokens[0][msg.sender] < amount) revert(&quot;Cannot withdraw more than you have&quot;);
+        if (tokens[0][msg.sender] < amount) revert("Cannot withdraw more than you have");
         tokens[0][msg.sender] = SafeMath.sub(tokens[0][msg.sender], amount);
         msg.sender.transfer(amount);
         //or .send() and check if https://ethereum.stackexchange.com/a/38642
@@ -127,17 +127,17 @@ contract EtherDEX {
 
     function depositToken(address token, uint amount) public {
         //remember to call ERC20Token(address).approve(this, amount) or this contract will not be able to do the transfer on your behalf.
-        if (token == 0) revert(&quot;Cannot deposit ETH with depositToken method&quot;);
-        if (!ERC20(token).transferFrom(msg.sender, this, amount)) revert(&quot;You didn&#39;t call approve method on Token contract&quot;);
+        if (token == 0) revert("Cannot deposit ETH with depositToken method");
+        if (!ERC20(token).transferFrom(msg.sender, this, amount)) revert("You didn&#39;t call approve method on Token contract");
         tokens[token][msg.sender] = SafeMath.add(tokens[token][msg.sender], amount);
         emit Deposit(token, msg.sender, amount, tokens[token][msg.sender]);
     }
 
     function withdrawToken(address token, uint amount) public {
-        if (token == 0) revert(&quot;Cannot withdraw ETH with withdrawToken method&quot;);
-        if (tokens[token][msg.sender] < amount) revert(&quot;Cannot withdraw more than you have&quot;);
+        if (token == 0) revert("Cannot withdraw ETH with withdrawToken method");
+        if (tokens[token][msg.sender] < amount) revert("Cannot withdraw more than you have");
         tokens[token][msg.sender] = SafeMath.sub(tokens[token][msg.sender], amount);
-        if (!ERC20(token).transfer(msg.sender, amount)) revert(&quot;Error while transfering tokens&quot;);
+        if (!ERC20(token).transfer(msg.sender, amount)) revert("Error while transfering tokens");
         emit Withdraw(token, msg.sender, amount, tokens[token][msg.sender]);
     }
 
@@ -155,10 +155,10 @@ contract EtherDEX {
         //amount is in amountGet terms
         bytes32 hash = sha256(abi.encodePacked(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce));
         if (!(
-        (orders[user][hash] || ecrecover(keccak256(abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash)), v, r, s) == user) &&
+        (orders[user][hash] || ecrecover(keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)), v, r, s) == user) &&
         block.number <= expires &&
         SafeMath.add(orderFills[user][hash], amount) <= amountGet
-        ))  revert(&quot;Validation error or order expired or not enough volume to trade&quot;);
+        ))  revert("Validation error or order expired or not enough volume to trade");
         tradeBalances(tokenGet, amountGet, tokenGive, amountGive, user, amount);
         orderFills[user][hash] = SafeMath.add(orderFills[user][hash], amount);
         emit Trade(tokenGet, amount, tokenGive, amountGive * amount / amountGet, user, msg.sender);
@@ -170,7 +170,7 @@ contract EtherDEX {
 
     function availableVolume(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s) public view returns (uint) {
         bytes32 hash = sha256(abi.encodePacked(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce));
-        if (!((orders[user][hash] || ecrecover(keccak256(abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash)), v, r, s) == user) && block.number <= expires)) return 0;
+        if (!((orders[user][hash] || ecrecover(keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)), v, r, s) == user) && block.number <= expires)) return 0;
         uint available1 = SafeMath.sub(amountGet, orderFills[user][hash]);
         uint available2 = SafeMath.mul(tokens[tokenGive][user], amountGet) / amountGive;
         if (available1 < available2) return available1;
@@ -184,7 +184,7 @@ contract EtherDEX {
 
     function cancelOrder(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, uint8 v, bytes32 r, bytes32 s) public {
         bytes32 hash = sha256(abi.encodePacked(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce));
-        if (!(orders[msg.sender][hash] || ecrecover(keccak256(abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash)), v, r, s) == msg.sender)) revert(&quot;Validation error&quot;);
+        if (!(orders[msg.sender][hash] || ecrecover(keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)), v, r, s) == msg.sender)) revert("Validation error");
         orderFills[msg.sender][hash] = amountGet;
         emit Cancel(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, msg.sender, v, r, s);
     }

@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -351,8 +351,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract BLC3 is StandardBurnableToken, MintableToken{
-    string public name = &quot;BLC3&quot;;
-    string public symbol = &quot;BLC3&quot;;
+    string public name = "BLC3";
+    string public symbol = "BLC3";
     uint8 public decimals = 18;    
     uint public initialSupply = 100000000;
     bool public frozenAccountAll = true;

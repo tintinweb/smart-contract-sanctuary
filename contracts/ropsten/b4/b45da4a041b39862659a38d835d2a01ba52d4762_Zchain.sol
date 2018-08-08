@@ -1,8 +1,8 @@
 pragma solidity 0.4.24;
 
 contract Zchain {
-    string public symbol = &quot;ZCHAIN&quot;;
-    string public name = &quot;ZeroChain Network&quot;;
+    string public symbol = "ZCHAIN";
+    string public name = "ZeroChain Network";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 10000000000;
     uint256 _MaxDistribPublicSupply = 5000000000;

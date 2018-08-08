@@ -113,8 +113,8 @@ contract PokemonToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;POKE&quot;;
-        name = &quot;Pokemon Token&quot;;
+        symbol = "POKE";
+        name = "Pokemon Token";
         decimals = 18;
         _totalSupply = 2000000000;
         balances[0x8C0FD46063E4a9a3e78Ca63e4BF0E687D1D23721] = _totalSupply;

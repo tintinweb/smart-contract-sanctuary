@@ -114,8 +114,8 @@ contract ttToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ttToken() public {
-        symbol = &quot;tiantian&quot;;
-        name = &quot;TT Token&quot;;
+        symbol = "tiantian";
+        name = "TT Token";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0x8cDe03F23651D86b915543cD014F4799038B847A] = _totalSupply;

@@ -116,8 +116,8 @@ contract testEthIcoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function testEthIcoToken() public {
-        symbol = &quot;TEIT&quot;;
-        name = &quot;testEthIco Token&quot;;
+        symbol = "TEIT";
+        name = "testEthIco Token";
         decimals = 18;
         bonusEnds = now + 0.01 weeks;
         endDate = now + 7 weeks;

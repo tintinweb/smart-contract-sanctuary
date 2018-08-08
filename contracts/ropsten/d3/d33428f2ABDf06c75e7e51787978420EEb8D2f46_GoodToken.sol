@@ -104,8 +104,8 @@ contract Owned {
 contract GoodToken is ERC20Interface, Owned {
     using SafeMath for uint;
 
-    string public symbol = &quot;GOOD&quot;;
-    string public  name = &quot;Good&quot;;
+    string public symbol = "GOOD";
+    string public  name = "Good";
     uint8 public constant decimals = 18;
     uint constant _totalSupply = 100000000 * 10**uint(decimals);
 

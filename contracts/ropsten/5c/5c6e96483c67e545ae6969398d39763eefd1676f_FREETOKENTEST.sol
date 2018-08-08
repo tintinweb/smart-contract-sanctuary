@@ -58,8 +58,8 @@ contract FREETOKENTEST is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;FREETOKENTEST&quot;;
-    string public constant symbol = &quot;FTT&quot;;
+    string public constant name = "FREETOKENTEST";
+    string public constant symbol = "FTT";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 10000000000e8;

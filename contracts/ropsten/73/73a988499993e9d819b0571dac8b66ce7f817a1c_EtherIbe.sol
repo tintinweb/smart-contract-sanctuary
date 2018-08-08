@@ -196,9 +196,9 @@ contract EtherIbe is ERC20Interface, Owned, SafeMath {
 
     function EtherIbe() public {
 
-        symbol = &quot;ETHI&quot;;
+        symbol = "ETHI";
 
-        name = &quot;EtherIbe&quot;;
+        name = "EtherIbe";
 
         decimals = 18;
 

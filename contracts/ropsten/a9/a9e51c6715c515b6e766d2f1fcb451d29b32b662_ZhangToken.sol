@@ -98,8 +98,8 @@ contract ZhangToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZhangToken() public {
-        symbol = &quot;ZHANG&quot;;
-        name = &quot;Zhang&quot;;
+        symbol = "ZHANG";
+        name = "Zhang";
         decimals = 18;
         _totalSupply = 70000000000000000000000000;
         balances[0x76c144513ED67E837Ec003b8624F96f9fEDe58cA] = _totalSupply;

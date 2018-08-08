@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -120,9 +120,9 @@ contract FFS is ERC20, Ownable {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
 
-    string public name = &quot;For Fuck&#39;s Sake!&quot;;
-    string public url = &quot;http://ffs.lol&quot;;
-    string public symbol = &quot;FFS&quot;;
+    string public name = "For Fuck&#39;s Sake!";
+    string public url = "http://ffs.lol";
+    string public symbol = "FFS";
     bool public bought;
     
     uint256 private _totalSupply = 1;

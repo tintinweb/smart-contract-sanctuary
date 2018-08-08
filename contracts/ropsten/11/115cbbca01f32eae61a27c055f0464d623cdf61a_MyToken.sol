@@ -254,8 +254,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract MyToken is StandardToken, BurnableToken {
-    string public name = &quot;Bingo&quot;;
-    string public symbol = &quot;Bi&quot;;
+    string public name = "Bingo";
+    string public symbol = "Bi";
     uint8 public decimals = 18;
     uint256 public initialSupply = 1000000000 * 10 ** uint256(decimals);
 

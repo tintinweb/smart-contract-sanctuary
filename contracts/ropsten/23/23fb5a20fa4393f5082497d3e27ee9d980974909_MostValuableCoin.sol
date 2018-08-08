@@ -113,8 +113,8 @@ contract MostValuableCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MostValuableCoin() public {
-        symbol = &quot;MVC&quot;;
-        name = &quot;Most Valuable Coin&quot;;
+        symbol = "MVC";
+        name = "Most Valuable Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb96C92505B5f03B64Fe88c3165b46E2d817Fc210] = _totalSupply;

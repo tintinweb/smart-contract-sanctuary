@@ -153,8 +153,8 @@ contract Whitelist {
 contract Token is ERC20 {
 
     //some ERC20 definitions
-    string public constant name = &quot;Array.io Token&quot;;
-    string public constant symbol = &quot;eRAY&quot;;
+    string public constant name = "Array.io Token";
+    string public constant symbol = "eRAY";
     uint8 public constant decimals = 18;
 
     //these are settings, i.e. the values set by the initiator at the beginning of each token generation round

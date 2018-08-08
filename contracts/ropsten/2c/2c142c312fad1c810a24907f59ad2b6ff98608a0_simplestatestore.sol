@@ -6,7 +6,7 @@ contract simplestatestore {
     
     constructor() public {
         
-        captainsname = &quot;default captn&quot;;
+        captainsname = "default captn";
         
     }
 

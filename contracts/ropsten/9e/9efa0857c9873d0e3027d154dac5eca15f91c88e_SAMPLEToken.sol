@@ -116,8 +116,8 @@ contract SAMPLEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SAMPLEToken() public {
-        symbol = &quot;SMPLE&quot;;
-        name = &quot;SAMPLE TOKEN&quot;;
+        symbol = "SMPLE";
+        name = "SAMPLE TOKEN";
         decimals = 18;
         _totalSupply = 25500000000000000000000000000;
         balances[0x8a13bd2586328f0bca1e36eabd9e17929db487f1] = _totalSupply;

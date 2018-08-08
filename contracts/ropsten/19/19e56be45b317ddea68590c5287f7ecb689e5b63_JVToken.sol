@@ -112,8 +112,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 contract JVToken is StandardToken {
 
-  string public constant name = &quot;JVToken&quot;;
-  string public constant symbol = &quot;JVT&quot;;
+  string public constant name = "JVToken";
+  string public constant symbol = "JVT";
   uint8 public constant decimals = 18;
 
   uint256 public constant TOTAL_SUPPLY = 2 ** 31 * (10 ** uint256(decimals));

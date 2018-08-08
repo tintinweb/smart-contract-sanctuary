@@ -199,9 +199,9 @@ contract FTV is StandardToken {
 
     uint256 public soldTokens;
 
-    string public constant name = &quot;FTV Coin Deluxe&quot;;
+    string public constant name = "FTV Coin Deluxe";
 
-    string public constant symbol = &quot;FTV&quot;;
+    string public constant symbol = "FTV";
 
     uint8 public constant decimals = 18;
 
@@ -294,7 +294,7 @@ contract FTV is StandardToken {
     {
         issueTokensToUser(beneficiary, amount);
         if (referral[beneficiary] != 0x0) {
-            // Send 5% referral bonus to the &quot;parent&quot;.
+            // Send 5% referral bonus to the "parent".
             issueTokensToUser(referral[beneficiary], amount.mul(5).div(100));
         }
     }

@@ -114,8 +114,8 @@ contract HedeCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HedeCoin() public {
-        symbol = &quot;Hede&quot;;
-        name = &quot;HedeCoin&quot;;
+        symbol = "Hede";
+        name = "HedeCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc7d7C63B6dBddC4CBEBb974245C83e45E635546d] = _totalSupply;

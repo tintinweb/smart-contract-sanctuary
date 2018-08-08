@@ -116,8 +116,8 @@ contract bitfwdToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitfwdToken() public {
-        symbol = &quot;TDXT&quot;;
-        name = &quot;Tradetex Token&quot;;
+        symbol = "TDXT";
+        name = "Tradetex Token";
         decimals = 8;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

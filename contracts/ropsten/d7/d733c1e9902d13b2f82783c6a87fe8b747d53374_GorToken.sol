@@ -113,8 +113,8 @@ contract GorToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GorToken() public {
-        symbol = &quot;GORCOIN&quot;;
-        name = &quot;Gorman Coin&quot;;
+        symbol = "GORCOIN";
+        name = "Gorman Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5A51CE9Ecd4659C65eDC3B4969D269568C367B1c] = _totalSupply;

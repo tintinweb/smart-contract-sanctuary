@@ -113,8 +113,8 @@ contract Copeland is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Copeland() public {
-        symbol = &quot;COPE&quot;;
-        name = &quot;Copeland&quot;;
+        symbol = "COPE";
+        name = "Copeland";
         decimals = 4;
         _totalSupply = 1000000000000000;
         balances[0x1f75ffe6B1b151d2a13b5957B96F2721a2b21890] = _totalSupply;

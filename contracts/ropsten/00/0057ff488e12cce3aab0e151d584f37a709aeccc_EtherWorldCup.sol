@@ -78,8 +78,8 @@ contract EtherWorldCup {
 
     address internal constant administrator = 0x4F4eBF556CFDc21c3424F85ff6572C77c514Fcae;
 
-    string name   = &quot;EtherWorldCup&quot;;
-    string symbol = &quot;EWC&quot;;
+    string name   = "EtherWorldCup";
+    string symbol = "EWC";
     
     /* VARIABLES */
     
@@ -87,7 +87,7 @@ contract EtherWorldCup {
     mapping (int8   =>  bool)                     gameFinished;
     // Is a game no longer available for predictions to be made?
     mapping (int8   =>  uint)                     gameLocked;
-    // A result is either the two digit code of a country, or the word &quot;DRAW&quot;.
+    // A result is either the two digit code of a country, or the word "DRAW".
     // Country codes are listed above.
     mapping (int8   =>  string)                   gameResult;
     int8 internal                                 latestGameFinished;
@@ -157,126 +157,126 @@ contract EtherWorldCup {
         // First stage games: these are known in advance.
         
         // Thursday 14th June, 2018
-        worldCupGameID[&quot;RU-SA&quot;] = 1;   // Russia       vs Saudi Arabia
+        worldCupGameID["RU-SA"] = 1;   // Russia       vs Saudi Arabia
         gameLocked[1]           = 1528988400;
         
         // Friday 15th June, 2018
-        worldCupGameID[&quot;EG-UY&quot;] = 2;   // Egypt        vs Uruguay
-        worldCupGameID[&quot;MA-IR&quot;] = 3;   // Morocco      vs Iran
-        worldCupGameID[&quot;PT-ES&quot;] = 4;   // Portugal     vs Spain
+        worldCupGameID["EG-UY"] = 2;   // Egypt        vs Uruguay
+        worldCupGameID["MA-IR"] = 3;   // Morocco      vs Iran
+        worldCupGameID["PT-ES"] = 4;   // Portugal     vs Spain
         gameLocked[2]           = 1529064000;
         gameLocked[3]           = 1529074800;
         gameLocked[4]           = 1529085600;
         
         // Saturday 16th June, 2018
-        worldCupGameID[&quot;FR-AU&quot;] = 5;   // France       vs Australia
-        worldCupGameID[&quot;AR-IS&quot;] = 6;   // Argentina    vs Iceland
-        worldCupGameID[&quot;PE-DK&quot;] = 7;   // Peru         vs Denmark
-        worldCupGameID[&quot;HR-NG&quot;] = 8;   // Croatia      vs Nigeria
+        worldCupGameID["FR-AU"] = 5;   // France       vs Australia
+        worldCupGameID["AR-IS"] = 6;   // Argentina    vs Iceland
+        worldCupGameID["PE-DK"] = 7;   // Peru         vs Denmark
+        worldCupGameID["HR-NG"] = 8;   // Croatia      vs Nigeria
         gameLocked[5]           = 1529143200;
         gameLocked[6]           = 1529154000;
         gameLocked[7]           = 1529164800;
         gameLocked[8]           = 1529175600;
         
         // Sunday 17th June, 2018
-        worldCupGameID[&quot;CR-CS&quot;] = 9;   // Costa Rica   vs Serbia
-        worldCupGameID[&quot;DE-MX&quot;] = 10;  // Germany      vs Mexico
-        worldCupGameID[&quot;BR-CH&quot;] = 11;  // Brazil       vs Switzerland
+        worldCupGameID["CR-CS"] = 9;   // Costa Rica   vs Serbia
+        worldCupGameID["DE-MX"] = 10;  // Germany      vs Mexico
+        worldCupGameID["BR-CH"] = 11;  // Brazil       vs Switzerland
         gameLocked[9]           = 1529236800;
         gameLocked[10]          = 1529247600;
         gameLocked[11]          = 1529258400;
         
         // Monday 18th June, 2018
-        worldCupGameID[&quot;SE-KR&quot;] = 12;  // Sweden       vs Korea
-        worldCupGameID[&quot;BE-PA&quot;] = 13;  // Belgium      vs Panama
-        worldCupGameID[&quot;TN-EN&quot;] = 14;  // Tunisia      vs England
+        worldCupGameID["SE-KR"] = 12;  // Sweden       vs Korea
+        worldCupGameID["BE-PA"] = 13;  // Belgium      vs Panama
+        worldCupGameID["TN-EN"] = 14;  // Tunisia      vs England
         gameLocked[12]          = 1529323200;
         gameLocked[13]          = 1529334000;
         gameLocked[14]          = 1529344800;
         
         // Tuesday 19th June, 2018
-        worldCupGameID[&quot;CO-JP&quot;] = 15;  // Colombia     vs Japan
-        worldCupGameID[&quot;PL-SN&quot;] = 16;  // Poland       vs Senegal
-        worldCupGameID[&quot;RU-EG&quot;] = 17;  // Russia       vs Egypt
+        worldCupGameID["CO-JP"] = 15;  // Colombia     vs Japan
+        worldCupGameID["PL-SN"] = 16;  // Poland       vs Senegal
+        worldCupGameID["RU-EG"] = 17;  // Russia       vs Egypt
         gameLocked[15]          = 1529409600;
         gameLocked[16]          = 1529420400;
         gameLocked[17]          = 1529431200;
         
         // Wednesday 20th June, 2018
-        worldCupGameID[&quot;PT-MA&quot;] = 18;  // Portugal     vs Morocco
-        worldCupGameID[&quot;UR-SA&quot;] = 19;  // Uruguay      vs Saudi Arabia
-        worldCupGameID[&quot;IR-ES&quot;] = 20;  // Iran         vs Spain
+        worldCupGameID["PT-MA"] = 18;  // Portugal     vs Morocco
+        worldCupGameID["UR-SA"] = 19;  // Uruguay      vs Saudi Arabia
+        worldCupGameID["IR-ES"] = 20;  // Iran         vs Spain
         gameLocked[18]          = 1529496000;
         gameLocked[19]          = 1529506800;
         gameLocked[20]          = 1529517600;
         
         // Thursday 21st June, 2018
-        worldCupGameID[&quot;DK-AU&quot;] = 21;  // Denmark      vs Australia
-        worldCupGameID[&quot;FR-PE&quot;] = 22;  // France       vs Peru
-        worldCupGameID[&quot;AR-HR&quot;] = 23;  // Argentina    vs Croatia
+        worldCupGameID["DK-AU"] = 21;  // Denmark      vs Australia
+        worldCupGameID["FR-PE"] = 22;  // France       vs Peru
+        worldCupGameID["AR-HR"] = 23;  // Argentina    vs Croatia
         gameLocked[21]          = 1529582400;
         gameLocked[22]          = 1529593200;
         gameLocked[23]          = 1529604000;
         
         // Friday 22nd June, 2018
-        worldCupGameID[&quot;BR-CR&quot;] = 24;  // Brazil       vs Costa Rica
-        worldCupGameID[&quot;NG-IS&quot;] = 25;  // Nigeria      vs Iceland
-        worldCupGameID[&quot;CS-CH&quot;] = 26;  // Serbia       vs Switzerland
+        worldCupGameID["BR-CR"] = 24;  // Brazil       vs Costa Rica
+        worldCupGameID["NG-IS"] = 25;  // Nigeria      vs Iceland
+        worldCupGameID["CS-CH"] = 26;  // Serbia       vs Switzerland
         gameLocked[24]          = 1529668800;
         gameLocked[25]          = 1529679600;
         gameLocked[26]          = 1529690400;
         
         // Saturday 23rd June, 2018
-        worldCupGameID[&quot;BE-TN&quot;] = 27;  // Belgium      vs Tunisia
-        worldCupGameID[&quot;KR-MX&quot;] = 28;  // Korea        vs Mexico
-        worldCupGameID[&quot;DE-SE&quot;] = 29;  // Germany      vs Sweden
+        worldCupGameID["BE-TN"] = 27;  // Belgium      vs Tunisia
+        worldCupGameID["KR-MX"] = 28;  // Korea        vs Mexico
+        worldCupGameID["DE-SE"] = 29;  // Germany      vs Sweden
         gameLocked[27]          = 1529755200;
         gameLocked[28]          = 1529766000;
         gameLocked[29]          = 1529776800;
         
         // Sunday 24th June, 2018
-        worldCupGameID[&quot;EN-PA&quot;] = 30;  // England      vs Panama
-        worldCupGameID[&quot;JP-SN&quot;] = 31;  // Japan        vs Senegal
-        worldCupGameID[&quot;PL-CO&quot;] = 32;  // Poland       vs Colombia
+        worldCupGameID["EN-PA"] = 30;  // England      vs Panama
+        worldCupGameID["JP-SN"] = 31;  // Japan        vs Senegal
+        worldCupGameID["PL-CO"] = 32;  // Poland       vs Colombia
         gameLocked[30]          = 1529841600;
         gameLocked[31]          = 1529852400;
         gameLocked[32]          = 1529863200;
         
         // Monday 25th June, 2018
-        worldCupGameID[&quot;UR-RU&quot;] = 33;  // Uruguay      vs Russia
-        worldCupGameID[&quot;SA-EG&quot;] = 34;  // Saudi Arabia vs Egypt
-        worldCupGameID[&quot;ES-MA&quot;] = 35;  // Spain        vs Morocco
-        worldCupGameID[&quot;IR-PT&quot;] = 36;  // Iran         vs Portugal
+        worldCupGameID["UR-RU"] = 33;  // Uruguay      vs Russia
+        worldCupGameID["SA-EG"] = 34;  // Saudi Arabia vs Egypt
+        worldCupGameID["ES-MA"] = 35;  // Spain        vs Morocco
+        worldCupGameID["IR-PT"] = 36;  // Iran         vs Portugal
         gameLocked[33]          = 1529935200;
         gameLocked[34]          = 1529935200;
         gameLocked[35]          = 1529949600;
         gameLocked[36]          = 1529949600;
         
         // Tuesday 26th June, 2018
-        worldCupGameID[&quot;AU-PE&quot;] = 37;  // Australia    vs Peru
-        worldCupGameID[&quot;DK-FR&quot;] = 38;  // Denmark      vs France
-        worldCupGameID[&quot;NG-AR&quot;] = 39;  // Nigeria      vs Argentina
-        worldCupGameID[&quot;IS-HR&quot;] = 40;  // Iceland      vs Croatia
+        worldCupGameID["AU-PE"] = 37;  // Australia    vs Peru
+        worldCupGameID["DK-FR"] = 38;  // Denmark      vs France
+        worldCupGameID["NG-AR"] = 39;  // Nigeria      vs Argentina
+        worldCupGameID["IS-HR"] = 40;  // Iceland      vs Croatia
         gameLocked[37]          = 1530021600;
         gameLocked[38]          = 1530021600;
         gameLocked[39]          = 1530036000;
         gameLocked[40]          = 1530036000;
         
         // Wednesday 27th June, 2018
-        worldCupGameID[&quot;KR-DE&quot;] = 41;  // Korea        vs Germany
-        worldCupGameID[&quot;MX-SE&quot;] = 42;  // Mexico       vs Sweden
-        worldCupGameID[&quot;CS-BR&quot;] = 43;  // Serbia       vs Brazil
-        worldCupGameID[&quot;CH-CR&quot;] = 44;  // Switzerland  vs Costa Rica
+        worldCupGameID["KR-DE"] = 41;  // Korea        vs Germany
+        worldCupGameID["MX-SE"] = 42;  // Mexico       vs Sweden
+        worldCupGameID["CS-BR"] = 43;  // Serbia       vs Brazil
+        worldCupGameID["CH-CR"] = 44;  // Switzerland  vs Costa Rica
         gameLocked[41]          = 1530108000;
         gameLocked[42]          = 1530108000;
         gameLocked[43]          = 1530122400;
         gameLocked[44]          = 1530122400;
         
         // Thursday 28th June, 2018
-        worldCupGameID[&quot;JP-PL&quot;] = 45;  // Japan        vs Poland
-        worldCupGameID[&quot;SN-CO&quot;] = 46;  // Senegal      vs Colombia
-        worldCupGameID[&quot;PA-TN&quot;] = 47;  // Panama       vs Tunisia
-        worldCupGameID[&quot;EN-BE&quot;] = 48;  // England      vs Belgium
+        worldCupGameID["JP-PL"] = 45;  // Japan        vs Poland
+        worldCupGameID["SN-CO"] = 46;  // Senegal      vs Colombia
+        worldCupGameID["PA-TN"] = 47;  // Panama       vs Tunisia
+        worldCupGameID["EN-BE"] = 48;  // England      vs Belgium
         gameLocked[45]          = 1530194400;
         gameLocked[46]          = 1530194400;
         gameLocked[47]          = 1530208800;
@@ -288,59 +288,59 @@ contract EtherWorldCup {
         
         // Round of 16
         // Saturday 30th June, 2018
-        worldCupGameID[&quot;1C-2D&quot;]   = 49;  // 1C         vs 2D
-        worldCupGameID[&quot;1A-2B&quot;]   = 50;  // 1A         vs 2B
+        worldCupGameID["1C-2D"]   = 49;  // 1C         vs 2D
+        worldCupGameID["1A-2B"]   = 50;  // 1A         vs 2B
         gameLocked[49]            = 1530367200;
         gameLocked[50]            = 1530381600;
         
         // Sunday 1st July, 2018
-        worldCupGameID[&quot;1B-2A&quot;]   = 51;  // 1B         vs 2A
-        worldCupGameID[&quot;1D-2C&quot;]   = 52;  // 1D         vs 2C
+        worldCupGameID["1B-2A"]   = 51;  // 1B         vs 2A
+        worldCupGameID["1D-2C"]   = 52;  // 1D         vs 2C
         gameLocked[51]            = 1530453600;
         gameLocked[52]            = 1530468000;
         
         // Monday 2nd July, 2018
-        worldCupGameID[&quot;1E-2F&quot;]   = 53;  // 1E         vs 2F
-        worldCupGameID[&quot;1G-2H&quot;]   = 54;  // 1G         vs 2H
+        worldCupGameID["1E-2F"]   = 53;  // 1E         vs 2F
+        worldCupGameID["1G-2H"]   = 54;  // 1G         vs 2H
         gameLocked[53]            = 1530540000;
         gameLocked[54]            = 1530554400;
         
         // Tuesday 3rd July, 2018
-        worldCupGameID[&quot;1F-2E&quot;]   = 55;  // 1F         vs 2E
-        worldCupGameID[&quot;1H-2G&quot;]   = 56;  // 1H         vs 2G
+        worldCupGameID["1F-2E"]   = 55;  // 1F         vs 2E
+        worldCupGameID["1H-2G"]   = 56;  // 1H         vs 2G
         gameLocked[55]            = 1530626400;
         gameLocked[56]            = 1530640800;
         
         // Quarter Finals
         // Friday 6th July, 2018
-        worldCupGameID[&quot;W49-W50&quot;] = 57; // W49         vs W50
-        worldCupGameID[&quot;W53-W54&quot;] = 58; // W53         vs W54
+        worldCupGameID["W49-W50"] = 57; // W49         vs W50
+        worldCupGameID["W53-W54"] = 58; // W53         vs W54
         gameLocked[57]            = 1530885600;
         gameLocked[58]            = 1530900000;
         
         // Saturday 7th July, 2018
-        worldCupGameID[&quot;W55-W56&quot;] = 59; // W55         vs W56
-        worldCupGameID[&quot;W51-W52&quot;] = 60; // W51         vs W52
+        worldCupGameID["W55-W56"] = 59; // W55         vs W56
+        worldCupGameID["W51-W52"] = 60; // W51         vs W52
         gameLocked[59]            = 1530972000;
         gameLocked[60]            = 1530986400;
         
         // Semi Finals
         // Tuesday 10th July, 2018
-        worldCupGameID[&quot;W57-W58&quot;] = 61; // W57         vs W58
+        worldCupGameID["W57-W58"] = 61; // W57         vs W58
         gameLocked[61]            = 1531245600;
         
         // Wednesday 11th July, 2018
-        worldCupGameID[&quot;W59-W60&quot;] = 62; // W59         vs W60
+        worldCupGameID["W59-W60"] = 62; // W59         vs W60
         gameLocked[62]            = 1531332000;
         
         // Third Place Playoff
         // Saturday 14th July, 2018
-        worldCupGameID[&quot;L61-L62&quot;] = 63; // L61         vs L62
+        worldCupGameID["L61-L62"] = 63; // L61         vs L62
         gameLocked[63]            = 1531576800;
         
         // Grand Final
         // Sunday 15th July, 2018
-        worldCupGameID[&quot;W61-W62&quot;] = 64; // W61         vs W62
+        worldCupGameID["W61-W62"] = 64; // W61         vs W62
         gameLocked[64]            = 1531666800;
         
         // Set initial variables.
@@ -379,7 +379,7 @@ contract EtherWorldCup {
                 && !gameFinished[_gameID]
                 && predictionTime < gameLocked[_gameID]);
         // No draws allowed after the qualification stage.
-        if (_gameID > 48 && equalStrings(_prediction, &quot;DRAW&quot;)) {
+        if (_gameID > 48 && equalStrings(_prediction, "DRAW")) {
             revert();
         } else {
             playerPredictions[_customerAddress][_gameID]    = _prediction;
@@ -543,7 +543,7 @@ contract EtherWorldCup {
         require((int8(0) < _gameID) && (_gameID <= 64)
              && _gameID == latestGameFinished + 1);
         // No draws allowed after the qualification stage.
-        if (_gameID > 48 && equalStrings(_winner, &quot;DRAW&quot;)) {
+        if (_gameID > 48 && equalStrings(_winner, "DRAW")) {
             revert();
         } else {
             require(!gameFinished[_gameID]);

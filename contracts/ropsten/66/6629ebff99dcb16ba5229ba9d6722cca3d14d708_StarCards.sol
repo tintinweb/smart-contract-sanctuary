@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -98,7 +98,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -236,7 +236,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -252,14 +252,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -508,7 +508,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -523,14 +523,14 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) public returns(bytes4);
 }
 
 contract ERC165 {
 
-    bytes4 constant ERC165InterfaceId = bytes4(keccak256(&quot;supportsInterface(bytes4)&quot;));
+    bytes4 constant ERC165InterfaceId = bytes4(keccak256("supportsInterface(bytes4)"));
     bytes4 constant ERC721InterfaceId = 0x80ac58cd;
     bytes4 constant ERC721EnumerableInterfaceId = 0x780e9d63;
     bytes4 constant ERC721MetadataInterfaceId = 0x5b5e139f;
@@ -629,11 +629,11 @@ library SafeMath {
 contract StarCards is Ownable, ERC721Token, ERC165 {
 
     // The card database can be verified using these checksums.
-    string constant public dataset_md5checksum = &quot;696fa8ba0f25d6d6f8391e37251736bc&quot;;
-    string constant public dataset_sha256checksum = &quot;ba3178b5d13ec7b05cf3ebaae2be797cc0eb6756eac455426f2b1d70f17cefae&quot;;
+    string constant public dataset_md5checksum = "696fa8ba0f25d6d6f8391e37251736bc";
+    string constant public dataset_sha256checksum = "ba3178b5d13ec7b05cf3ebaae2be797cc0eb6756eac455426f2b1d70f17cefae";
 
     // The card database can be downloaded at this URL.
-    string public databaseDownloadUrl = &quot;ftp://starcards.my/starCardsDataset.json&quot;;
+    string public databaseDownloadUrl = "ftp://starcards.my/starCardsDataset.json";
     
     uint256 constant public editionSize = 345;
     uint256 constant public minimumBid = 0.001 ether;
@@ -659,7 +659,7 @@ contract StarCards is Ownable, ERC721Token, ERC165 {
 
     uint256 public contractInitializationTime;
 
-    constructor() ERC721Token(&quot;Star Cards&quot;, &quot;STAR&quot;, 586155) public payable {
+    constructor() ERC721Token("Star Cards", "STAR", 586155) public payable {
         owner = msg.sender;
         contractInitializationTime = now + initializationDelay;
     }

@@ -113,8 +113,8 @@ contract XK360Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;XK360&quot;;
-        name = &quot;XK 360 Token&quot;;
+        symbol = "XK360";
+        name = "XK 360 Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDfDeD4E5caAC700e17Ff6F1F5E24a3E74ea1AAb1] = _totalSupply;

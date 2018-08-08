@@ -124,9 +124,9 @@ contract StandardToken is ERC20Token {
 }
 contract ATMToken is StandardToken, Owned {
     // metadata
-    string public constant name = &quot;Attention Token of Media&quot;;
-    string public constant symbol = &quot;ATM&quot;;
-    string public version = &quot;1.0&quot;;
+    string public constant name = "Attention Token of Media";
+    string public constant symbol = "ATM";
+    string public version = "1.0";
     uint256 public constant decimals = 8;
     bool public disabled = false;
     uint256 public constant MILLION = (10**6 * 10**decimals);

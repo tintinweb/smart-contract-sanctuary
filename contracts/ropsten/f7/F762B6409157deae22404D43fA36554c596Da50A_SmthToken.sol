@@ -113,8 +113,8 @@ contract SmthToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SmthToken() public {
-        symbol = &quot;smc&quot;;
-        name = &quot;smth coin&quot;;
+        symbol = "smc";
+        name = "smth coin";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0x136bD36B8BB8965C272121FA8A899D898079FB69] = _totalSupply;

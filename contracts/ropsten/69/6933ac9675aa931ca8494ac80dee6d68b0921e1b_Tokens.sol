@@ -34,11 +34,11 @@ contract Tokens {
     }
     
     function name() public pure returns (string) {
-        return &quot;Tokens&quot;;
+        return "Tokens";
     }
 
     function symbol() public pure returns (string) {
-        return &quot;TKN&quot;;
+        return "TKN";
     }
 
     function totalSupply() public view returns (uint256) {

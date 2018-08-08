@@ -113,8 +113,8 @@ contract CruzeiroToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CruzeiroToken() public {
-        symbol = &quot;CRUZEIRO&quot;;
-        name = &quot;Cruzeiro Token&quot;;
+        symbol = "CRUZEIRO";
+        name = "Cruzeiro Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf4af7B5D52dF3a5db3271ca7b458e2D9276e2c30] = _totalSupply;

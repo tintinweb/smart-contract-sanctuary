@@ -115,8 +115,8 @@ contract TSToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TSToken() public {
-        symbol = &quot;TS&quot;;
-        name = &quot;0 TS Token&quot;;
+        symbol = "TS";
+        name = "0 TS Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x9784C4799dbc08bd7E46A394473cc59CAD6270E5] = _totalSupply;

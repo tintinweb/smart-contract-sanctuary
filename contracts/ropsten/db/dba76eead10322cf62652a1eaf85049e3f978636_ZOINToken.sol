@@ -113,8 +113,8 @@ contract ZOINToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZOINToken() public {
-        symbol = &quot;ZOIN&quot;;
-        name = &quot;ZOIN Token&quot;;
+        symbol = "ZOIN";
+        name = "ZOIN Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x1e311e9a91e9909669dd41b60f02812840a616aa] = _totalSupply;

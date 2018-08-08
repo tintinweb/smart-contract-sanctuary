@@ -22,8 +22,8 @@ contract Election{
     
     function Election() public{
         
-        setCandidate(0,&quot;Kim&quot;,&quot;Keep The Rule!&quot;);
-        setCandidate(1,&quot;Lee&quot;,&quot;Be Free!&quot;);
+        setCandidate(0,"Kim","Keep The Rule!");
+        setCandidate(1,"Lee","Be Free!");
         
         for (uint i=0; i< 50; i++) {
             uint8 randomNumber = random(i);

@@ -113,8 +113,8 @@ contract sachin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function sachin() public {
-        symbol = &quot;sachin&quot;;
-        name = &quot;sachin&quot;;
+        symbol = "sachin";
+        name = "sachin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa5F529B75a2BF84E4592C7E066f0F68060C65E11] = _totalSupply;

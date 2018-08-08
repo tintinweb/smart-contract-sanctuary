@@ -55,11 +55,11 @@ contract SafeMath {
 /*-------------------------------------------------------------------------*/
 contract Medis is owned, SafeMath {
 	
-	string 	public MedisWebsite	= &quot;https://medis.io&quot;;
+	string 	public MedisWebsite	= "https://medis.io";
 	address public MedisAddress 	= this;
 	address public creator 				= msg.sender;
-    string 	public name 				= &quot;Medis&quot;;
-    string 	public symbol 				= &quot;MDS&quot;;
+    string 	public name 				= "Medis";
+    string 	public symbol 				= "MDS";
     uint8 	public decimals 			= 8;											    
     uint256 public totalSupply 			= 75000000000000000;
     uint256 public buyPrice 			= 18000;

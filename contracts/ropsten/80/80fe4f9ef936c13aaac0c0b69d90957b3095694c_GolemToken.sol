@@ -113,8 +113,8 @@ contract GolemToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GolemToken() public {
-        symbol = &quot;0GOLEM&quot;;
-        name = &quot;0 Golem Token&quot;;
+        symbol = "0GOLEM";
+        name = "0 Golem Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf5D9018fF9b29fAC2d406Da4E497E28a6886bD27] = _totalSupply;

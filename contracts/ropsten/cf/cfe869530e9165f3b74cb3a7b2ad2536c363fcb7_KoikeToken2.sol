@@ -267,11 +267,11 @@ contract StandardToken is ERC20, BasicToken {
 
 }
 
-//import &quot;./KoikeToken.sol&quot;;
+//import "./KoikeToken.sol";
 
 contract KoikeToken2 is StandardToken {
-    string public name = &quot;KOIKE3&quot;;
-    string public symbol = &quot;KOIKE3&quot;;
+    string public name = "KOIKE3";
+    string public symbol = "KOIKE3";
     uint public decimals = 18;
     mapping (uint => User) public users;
     uint id;

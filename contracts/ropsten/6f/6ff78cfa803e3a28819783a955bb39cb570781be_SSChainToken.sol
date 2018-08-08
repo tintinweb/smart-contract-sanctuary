@@ -82,8 +82,8 @@ contract SSChainToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;SSChain&quot;;
-    string public constant symbol = &quot;SSC&quot;;
+    string public constant name = "SSChain";
+    string public constant symbol = "SSC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000000000000;

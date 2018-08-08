@@ -113,8 +113,8 @@ contract TheCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheCoin() public {
-        symbol = &quot;TC&quot;;
-        name = &quot;TheCoin Token&quot;;
+        symbol = "TC";
+        name = "TheCoin Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x049034A71c04A9EEffd289470D3D1C88c1f3eb61] = _totalSupply;

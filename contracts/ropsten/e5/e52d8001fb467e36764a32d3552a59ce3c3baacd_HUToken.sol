@@ -83,8 +83,8 @@ contract HUToken is ERC20Interface, Owned, SafeMath {
     mapping(address => uint256[]) licenses; // Templates owned by user.
     
     function HUToken() public {
-        symbol = &quot;HU&quot;;
-        name = &quot;HUToken&quot;;
+        symbol = "HU";
+        name = "HUToken";
         decimals = 18;
         _totalSupply = 31337357 * 1000000000000000000;
         _owner = 0xb4d2050B87df1F41AeD33714b4B6d17e3D180F50;

@@ -199,9 +199,9 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract SAIToken is MintableToken, PausableToken{
-	string public name=&quot;Sophon Capital  Token&quot;;
-	string public symbol=&quot;SAIT&quot;;
-	string public standard=&quot;ERC20&quot;;	
+	string public name="Sophon Capital  Token";
+	string public symbol="SAIT";
+	string public standard="ERC20";	
 	uint8 public decimals=18;
 
 	uint256 public totalSupply=0;

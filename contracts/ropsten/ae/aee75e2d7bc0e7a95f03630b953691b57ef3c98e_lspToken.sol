@@ -116,8 +116,8 @@ contract lspToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function lspToken() public {
-        symbol = &quot;LSP&quot;;
-        name = &quot;lsp Token&quot;;
+        symbol = "LSP";
+        name = "lsp Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

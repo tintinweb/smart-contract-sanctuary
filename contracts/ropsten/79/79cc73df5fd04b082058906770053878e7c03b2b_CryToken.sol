@@ -139,8 +139,8 @@ library SafeMath {
 
 contract CryToken is StandardToken {
   // public variables
-  string public name = &quot;Cry Token&quot;;
-  string public symbol = &quot;&#128514;&quot;;
+  string public name = "Cry Token";
+  string public symbol = "&#128514;";
   uint8 public decimals = 18;
 
   // public functions

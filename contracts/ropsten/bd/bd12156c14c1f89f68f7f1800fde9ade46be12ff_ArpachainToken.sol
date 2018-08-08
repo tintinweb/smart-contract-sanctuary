@@ -51,8 +51,8 @@ contract ArpachainToken is ERC20 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     constructor() public {
-      _symbol = &quot;YWOT&quot;;
-      _name = &quot;OceanTestCoin&quot;;
+      _symbol = "YWOT";
+      _name = "OceanTestCoin";
       _totalSupply = 100 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
       balances[msg.sender] = _totalSupply;
       emit Transfer(address(0), 0x9a87F7Ff03df05f932bDD0B93A317b799Cc77424, _totalSupply);

@@ -116,8 +116,8 @@ contract OxChainNetwork is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OxChainNetwork() public {
-        symbol = &quot;OxCN&quot;;
-        name = &quot;OxChain Network&quot;;
+        symbol = "OxCN";
+        name = "OxChain Network";
         decimals = 18;
         bonusEnds = now + 1500 weeks;
         endDate = now + 7500 weeks;

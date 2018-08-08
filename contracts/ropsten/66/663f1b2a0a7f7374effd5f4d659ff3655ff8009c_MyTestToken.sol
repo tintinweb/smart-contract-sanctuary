@@ -113,8 +113,8 @@ contract MyTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;MTT&quot;;
-        name = &quot;MY test token&quot;;
+        symbol = "MTT";
+        name = "MY test token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x02304781a99Da5e686914b0FD0ce0c45bb884bdf] = _totalSupply;

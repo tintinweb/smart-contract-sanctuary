@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -383,8 +383,8 @@ contract BurnableToken is BasicToken {
 //CCH is a capped token with a max supply of 75250000 tokenSupply
 //It is a burnable token as well
 contract CareerChainToken is CappedToken(75250000000000000000000000), BurnableToken  {
-    string public name = &quot;CareerChain Token&quot;;
-    string public symbol = &quot;CCH&quot;;
+    string public name = "CareerChain Token";
+    string public symbol = "CCH";
     uint8 public decimals = 18;
 
     //only the owner is allowed to burn tokens

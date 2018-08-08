@@ -113,8 +113,8 @@ contract GelatoCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GEL&quot;;
-        name = &quot;GelatoCoin&quot;;
+        symbol = "GEL";
+        name = "GelatoCoin";
         decimals = 18;
         balances[msg.sender] = 100000000;               // Give the creator all initial tokens (100000 for example)
         totalSupply = 100000000;                        // Update total supply (100000 for example)

@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract SampleERC20 {
 
-  string public name = &quot;Sample ERC20&quot;;
-  string public symbol = &quot;ERC20&quot;;
+  string public name = "Sample ERC20";
+  string public symbol = "ERC20";
   uint256 public decimals = 18;
   uint256 public totalSupply = 20000000000000000000000000;
 

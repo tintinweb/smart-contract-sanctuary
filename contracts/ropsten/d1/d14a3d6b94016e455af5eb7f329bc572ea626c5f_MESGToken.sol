@@ -98,8 +98,8 @@ contract MESGToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MESG&quot;;
-        name = &quot;MESG Token&quot;;
+        symbol = "MESG";
+        name = "MESG Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xfDE8b69e8eEe1c116BC678602A752c909189F955] = _totalSupply;

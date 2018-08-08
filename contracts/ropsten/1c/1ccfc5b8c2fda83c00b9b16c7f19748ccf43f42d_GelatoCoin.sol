@@ -116,8 +116,8 @@ contract GelatoCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GelatoCoin() public {
-        symbol = &quot;GEL&quot;;
-        name = &quot;GelatoCoin&quot;;
+        symbol = "GEL";
+        name = "GelatoCoin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

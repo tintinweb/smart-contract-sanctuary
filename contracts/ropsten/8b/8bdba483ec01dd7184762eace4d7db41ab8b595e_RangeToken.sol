@@ -113,8 +113,8 @@ contract RangeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RangeToken() public {
-        symbol = &quot;0RANGE&quot;;
-        name = &quot;0 Range Token&quot;;
+        symbol = "0RANGE";
+        name = "0 Range Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6273AC8D4945de032084e9a7CB6655aBb63feaEC] = _totalSupply;

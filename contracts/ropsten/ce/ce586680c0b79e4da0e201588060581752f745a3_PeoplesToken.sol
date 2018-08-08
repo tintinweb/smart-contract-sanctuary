@@ -51,9 +51,9 @@ contract PeoplesToken is token {
         ) public {
         totalSupply =8*10**7*10**8;               
         balances [msg.sender] = totalSupply;         
-        name = &quot;PeoplesToken&quot;;
+        name = "PeoplesToken";
         decimals = 8;                               
-        symbol = &quot;PPL&quot;;
+        symbol = "PPL";
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

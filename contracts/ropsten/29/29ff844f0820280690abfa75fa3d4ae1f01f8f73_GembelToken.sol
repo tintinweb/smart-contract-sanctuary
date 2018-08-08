@@ -73,8 +73,8 @@ contract GembelToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;GEMBEL&quot;;
-    string public constant symbol = &quot;GMBL&quot;;
+    string public constant name = "GEMBEL";
+    string public constant symbol = "GMBL";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 3000000000000000e8;

@@ -379,8 +379,8 @@ contract BITToken is MintableToken, PausableToken {
     event BITTransfer(address indexed _from, address indexed _to, uint256 _value, bytes32 data);
 
     uint256 public constant decimals = 18;
-    string public constant name = &quot;BitRewards Token&quot;;
-    string public constant symbol = &quot;BIT&quot;;
+    string public constant name = "BitRewards Token";
+    string public constant symbol = "BIT";
 
     function BITToken () public MintableToken() {
 

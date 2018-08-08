@@ -113,8 +113,8 @@ contract RavneetToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RavneetToken() public {
-        symbol = &quot;Ravneet&quot;;
-        name = &quot;Ravneet Token&quot;;
+        symbol = "Ravneet";
+        name = "Ravneet Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x62A0C14F1E3E34377c228d38ACa0064360a336dE] = _totalSupply;

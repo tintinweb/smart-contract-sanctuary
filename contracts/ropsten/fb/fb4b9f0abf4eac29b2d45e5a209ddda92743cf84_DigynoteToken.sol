@@ -82,8 +82,8 @@ contract DigynoteToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Digynote&quot;;
-    string public constant symbol = &quot;Dgt&quot;;
+    string public constant name = "Digynote";
+    string public constant symbol = "Dgt";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 30000000000e8;

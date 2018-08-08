@@ -113,8 +113,8 @@ contract NatureSeedToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NatureSeedToken() public {
-        symbol = &quot;NATURESEED&quot;;
-        name = &quot;Nature Seed Token&quot;;
+        symbol = "NATURESEED";
+        name = "Nature Seed Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x73bACB3f9E48E5FeEF68678b7e9EE28F85827aeB] = _totalSupply;

@@ -89,10 +89,10 @@ contract StandardToken is Token {
 contract UnityToken is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;Unity&quot;;
-    string  public constant symbol = &quot;U3D&quot;;
+    string  public constant name = "Unity";
+    string  public constant symbol = "U3D";
     uint256 public constant decimals = 3;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // ETH存放地址

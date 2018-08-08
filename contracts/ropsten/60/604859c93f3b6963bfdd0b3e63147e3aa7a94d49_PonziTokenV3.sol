@@ -17,8 +17,8 @@ contract PonziTokenV3 {
 	// the reserve is 0.8 ether and price 1 ether/token.
 	int constant LOGC = -0x296ABF784A358468C;
 	
-	string constant public name = &quot;ProofOfWeakHands&quot;;
-	string constant public symbol = &quot;POWH&quot;;
+	string constant public name = "ProofOfWeakHands";
+	string constant public symbol = "POWH";
 	uint8 constant public decimals = 18;
 	uint256 public totalSupply;
 	// amount of shares for each address (scaled number)

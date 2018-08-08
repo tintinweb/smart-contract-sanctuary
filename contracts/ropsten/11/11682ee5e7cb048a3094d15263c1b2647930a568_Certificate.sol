@@ -21,9 +21,9 @@ contract Certificate {
 
     function Certificate() public {
     
-        addStudent(&quot;maria&quot;, &quot;weltec001&quot;, &quot;ece&quot;);
-        addStudent(&quot;saroniya&quot;, &quot;weltec002&quot;, &quot;soc&quot;);
-        addStudent(&quot;steve&quot;, &quot;weltec003&quot;, &quot;hrm&quot;);
+        addStudent("maria", "weltec001", "ece");
+        addStudent("saroniya", "weltec002", "soc");
+        addStudent("steve", "weltec003", "hrm");
     }
 
     function addStudent(string _name, bytes32 _id, string _course) public {

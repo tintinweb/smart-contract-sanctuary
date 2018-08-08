@@ -68,7 +68,7 @@ contract BlockchainDevCoin is StandardToken {
 
     string public  name;
     uint8 public decimals;
-    string public version = &quot;H1.0&quot;;
+    string public version = "H1.0";
     string public symbol;
     uint256 public unitsOneEthCanBuy;
     uint256 public totalEthInWei;
@@ -79,9 +79,9 @@ contract BlockchainDevCoin is StandardToken {
         _totalSupply = 100000000000000000000000000;
         balances[msg.sender] = _totalSupply;
 
-        name = &quot;BlockchainDevCoin&quot;;
+        name = "BlockchainDevCoin";
         decimals = 18;
-        symbol = &quot;BDC&quot;;
+        symbol = "BDC";
         unitsOneEthCanBuy = 10;
         fundsWallet = msg.sender;
 
@@ -106,7 +106,7 @@ contract BlockchainDevCoin is StandardToken {
         allowed[msg.sender][spender] = tokens;
         emit Approval(msg.sender, spender, tokens);
 
-        if (!spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))),
+        if (!spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))),
             msg.sender, tokens, this, data)) {
             throw;
         }

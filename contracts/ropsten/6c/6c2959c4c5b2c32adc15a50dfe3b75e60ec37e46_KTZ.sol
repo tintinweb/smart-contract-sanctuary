@@ -113,8 +113,8 @@ contract KTZ is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KTZ() public {
-        symbol = &quot;KTZ&quot;;
-        name = &quot;KTZ inc.&quot;;
+        symbol = "KTZ";
+        name = "KTZ inc.";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xC901158D5aA798d864b622c54673bA42740b3dec] = _totalSupply;

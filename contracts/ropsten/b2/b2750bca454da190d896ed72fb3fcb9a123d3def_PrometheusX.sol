@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract PrometheusX  {
 
-    string public name = &quot;PrometheusX&quot;;      //  token name
-    string public symbol = &quot;PRMX&quot;;           //  token symbol
+    string public name = "PrometheusX";      //  token name
+    string public symbol = "PRMX";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

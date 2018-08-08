@@ -1,8 +1,8 @@
 pragma solidity ^0.4.24;
 
 contract HhjToken {
-    string public constant name = &quot;Hhj Token&quot;;
-    string public constant symbol = &quot;H&quot;;
+    string public constant name = "Hhj Token";
+    string public constant symbol = "H";
     uint8 public constant decimals = 10;
     uint256 _totalSupply = 1000 * (10**(uint256(decimals)));
     
@@ -55,7 +55,7 @@ contract HhjToken {
  
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:

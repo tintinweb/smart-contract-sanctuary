@@ -7,7 +7,7 @@ pragma solidity ^0.4.21;
  * Helper contract to support intialization and migration schemes between
  * different implementations of a contract in the context of upgradeability.
  * To use it, replace the constructor with a function that has the
- * `isInitializer` modifier starting with `&quot;0&quot;` as `migrationId`.
+ * `isInitializer` modifier starting with `"0"` as `migrationId`.
  * When you want to apply some migration code during an upgrade, increase
  * the `migrationId`. Or, if the migration code must be applied only after
  * another migration has been already applied, use the `isMigration` modifier.
@@ -347,9 +347,9 @@ contract _0xEthereumToken is ERC20Interface, Owned {
 
     constructor(address _powContractAddress) public onlyOwner {
 
-        symbol = &quot;0xBTC&quot;;
+        symbol = "0xBTC";
 
-        name = &quot;0xBitcoin Token&quot;;
+        name = "0xBitcoin Token";
 
         decimals = 8;
 

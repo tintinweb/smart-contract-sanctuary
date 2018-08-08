@@ -56,8 +56,8 @@ contract owned {
 contract Mytoken is owned{
     using SafeMathLib for uint256;
     // Public variables of the token
-    string public constant name = &quot;AK63 Coin&quot;;
-    string public constant symbol = &quot;AK63&quot;;
+    string public constant name = "AK63 Coin";
+    string public constant symbol = "AK63";
     uint8 public constant decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;

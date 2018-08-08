@@ -25,8 +25,8 @@ contract Daphne {
     constructor() public {
        balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
        nowSupply = initialSupply;
-       name = &quot;Daphne coin&quot;;
-       symbol = &quot;Daphne&quot;;         
+       name = "Daphne coin";
+       symbol = "Daphne";         
     }
    
    function _transfer(address _from, address _to, uint _value) internal {

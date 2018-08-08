@@ -37,7 +37,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -112,38 +112,38 @@ contract BethingWorldCup is Ownable {
 
 	// Teams participating in the competition
 	string[TOTAL_TEAMS] public TEAMS = [
-		&quot;Russia&quot;,
-		&quot;Brazil&quot;,
-		&quot;Iran&quot;,
-		&quot;Japan&quot;,
-		&quot;Mexico&quot;,
-		&quot;Belgium&quot;,
-		&quot;South Korea&quot;,
-		&quot;Saudi Arabia&quot;,
-		&quot;Germany&quot;,
-		&quot;England&quot;,
-		&quot;Spain&quot;,
-		&quot;Nigeria&quot;,
-		&quot;Costa Rica&quot;,
-		&quot;Poland&quot;,
-		&quot;Egypt&quot;,
-		&quot;Iceland&quot;,
-		&quot;Serbia&quot;,
-		&quot;Portugal&quot;,
-		&quot;France&quot;,
-		&quot;Uruguay&quot;,
-		&quot;Argentina&quot;,
-		&quot;Colombia&quot;,
-		&quot;Panama&quot;,
-		&quot;Senegal&quot;,
-		&quot;Morocco&quot;,
-		&quot;Tunisia&quot;,
-		&quot;Switzerland&quot;,
-		&quot;Croatia&quot;,
-		&quot;Sweden&quot;,
-		&quot;Denmark&quot;,
-		&quot;Australia&quot;,
-		&quot;Peru&quot;
+		"Russia",
+		"Brazil",
+		"Iran",
+		"Japan",
+		"Mexico",
+		"Belgium",
+		"South Korea",
+		"Saudi Arabia",
+		"Germany",
+		"England",
+		"Spain",
+		"Nigeria",
+		"Costa Rica",
+		"Poland",
+		"Egypt",
+		"Iceland",
+		"Serbia",
+		"Portugal",
+		"France",
+		"Uruguay",
+		"Argentina",
+		"Colombia",
+		"Panama",
+		"Senegal",
+		"Morocco",
+		"Tunisia",
+		"Switzerland",
+		"Croatia",
+		"Sweden",
+		"Denmark",
+		"Australia",
+		"Peru"
 	];
 
     // ============ State Variables ============	

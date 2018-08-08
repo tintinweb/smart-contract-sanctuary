@@ -308,7 +308,7 @@ library ECRecovery {
 
   /**
    * toEthSignedMessageHash
-   * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+   * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
    * and hash the result
    */
   function toEthSignedMessageHash(bytes32 hash)
@@ -319,14 +319,14 @@ library ECRecovery {
     // 32 is the length in bytes of hash,
     // enforced by the type signature above
     return keccak256(
-      abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash)
+      abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)
     );
   }
 }
 
 contract TRTToken is StandardToken{
-  string public constant name = &quot;BincentiveToken&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;TRT&quot;; // solium-disable-line uppercase
+  string public constant name = "BincentiveToken"; // solium-disable-line uppercase
+  string public constant symbol = "TRT"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
   uint256 public constant INITIAL_SUPPLY = 10000000 * (10 ** uint256(decimals));
   mapping(bytes => bool) internal signatures;
@@ -390,7 +390,7 @@ contract TRTToken is StandardToken{
         pure
         returns (bytes32)
     {
-        /* &quot;48664c16&quot;: transferPreSignedHashing(address,address,address,uint256,uint256,uint256) */
+        /* "48664c16": transferPreSignedHashing(address,address,address,uint256,uint256,uint256) */
         return keccak256(bytes4(0x48664c16), _token, _to, _value, _fee, _nonce);
     }
   constructor() public {

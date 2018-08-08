@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract ArcBlockToken is PausableToken {
-    string public name = &quot;ArcBlock&quot;;
-    string public symbol = &quot;ABT&quot;;
+    string public name = "ArcBlock";
+    string public symbol = "ABT";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 186000000000000000000000000;
 

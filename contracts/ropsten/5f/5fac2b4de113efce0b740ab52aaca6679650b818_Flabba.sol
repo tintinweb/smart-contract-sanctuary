@@ -16,9 +16,9 @@ contract Flabba {
     function Flabba() {
 
          initialSupply = 5000;
-         name =&quot;flabba&quot;;
+         name ="flabba";
         decimals = 2;
-         symbol = &quot;FL&quot;;
+         symbol = "FL";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

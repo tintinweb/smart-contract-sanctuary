@@ -113,8 +113,8 @@ contract TestKToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestKToken() public {
-        symbol = &quot;TestK&quot;;
-        name = &quot;10 TestK Token&quot;;
+        symbol = "TestK";
+        name = "10 TestK Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x41Ce1632b3e592eeF31086aC015d0Ba2bb6f2cD8] = _totalSupply;

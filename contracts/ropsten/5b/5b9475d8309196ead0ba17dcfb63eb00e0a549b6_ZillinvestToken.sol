@@ -120,8 +120,8 @@ contract ZillinvestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ZLLNVST&quot;;
-        name = &quot;Zillinvest Token&quot;;
+        symbol = "ZLLNVST";
+        name = "Zillinvest Token";
         decimals = 18;
         bonusEnds = now + 10 weeks;
         endDate = now + 21 weeks;

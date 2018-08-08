@@ -1,6 +1,6 @@
 pragma solidity ^0.4.0;
 
-// import &quot;./ERC20.sol&quot;;
+// import "./ERC20.sol";
 
 contract ERC20 {
   function totalSupply() view public returns (uint _totalSupply);
@@ -14,8 +14,8 @@ contract ERC20 {
 }
 
 contract MyFirstToken is ERC20 {
-  string public constant symbol = &quot;SCT&quot;;
-  string public constant name = &quot;My Second Token&quot;;
+  string public constant symbol = "SCT";
+  string public constant name = "My Second Token";
   uint8 public constant decimals = 10;
   
   uint private constant __totalSupply = 10000;

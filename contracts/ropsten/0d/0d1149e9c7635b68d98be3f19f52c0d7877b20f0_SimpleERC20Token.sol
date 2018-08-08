@@ -74,8 +74,8 @@ contract SimpleERC20Token is owned {
   mapping(address => mapping(address => uint256)) public allowance;
 
   // Token parameters
-  string  public name        = &quot;Savitar Token&quot;;
-  string  public symbol      = &quot;SAT&quot;;
+  string  public name        = "Savitar Token";
+  string  public symbol      = "SAT";
   uint8   public decimals    = 8;
   uint256 public totalSupply = 50000000 * (uint256(10) ** decimals);
 

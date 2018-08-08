@@ -149,8 +149,8 @@ library SafeMath {
  */
 contract YeedToken is ERC20, Lockable {
 
-    string public constant name = &quot;YGGDRASH&quot;;
-    string public constant symbol = &quot;YEED&quot;;
+    string public constant name = "YGGDRASH";
+    string public constant symbol = "YEED";
     uint8 public constant decimals = 18;
 
     /**

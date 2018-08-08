@@ -58,8 +58,8 @@ contract DigitalEnthusiasts is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;DigitalEnthusiasts&quot;;
-    string public constant symbol = &quot;GDE&quot;;
+    string public constant name = "DigitalEnthusiasts";
+    string public constant symbol = "GDE";
     uint public constant decimals = 18;
     
     uint256 public decimalsValue = 1e18;

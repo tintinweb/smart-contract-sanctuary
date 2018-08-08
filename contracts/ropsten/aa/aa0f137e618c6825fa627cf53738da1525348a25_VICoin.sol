@@ -177,7 +177,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -261,8 +261,8 @@ contract RestrictedCaller is Ownable {
 */
 contract VICoin is StandardToken, RestrictedCaller {
 
-	string public constant name = &quot;Virtonomics Token - VICoin&quot;;
-	string public constant symbol = &quot;VIC&quot;;
+	string public constant name = "Virtonomics Token - VICoin";
+	string public constant symbol = "VIC";
 	uint8 public constant decimals = 18;
 
 	event Mint(address to, uint256 amount);

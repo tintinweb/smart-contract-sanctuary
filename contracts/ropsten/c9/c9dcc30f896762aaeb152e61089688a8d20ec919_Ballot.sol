@@ -313,8 +313,8 @@ contract Ballot is Owned {
     }
     
     uint256 public totalSupply;
-    string public name = &quot;Ecotech Ballot Token&quot;;
-    string public symbol = &quot;STAR&quot;;
+    string public name = "Ecotech Ballot Token";
+    string public symbol = "STAR";
     uint8 public decimals = 0;
 
     // 候选人

@@ -57,11 +57,11 @@ contract T is ERC20 {
 		decimals = 18;
 		totalSupply = 2 * uint(10)**(decimals + 9);
 		balances[owner] = totalSupply;
-		name = &quot;Token&quot;;
-		symbol = &quot;TKN&quot;;
+		name = "Token";
+		symbol = "TKN";
 		emit Transfer(address(0), owner, totalSupply);
-		lastSig1 = bytes4(keccak256(&quot;tokenFallback(address,uint256,bytes)&quot;));
-		lastSig2 = bytes4(bytes32(keccak256(&quot;tokenFallback(address,uint256,bytes)&quot;)));
+		lastSig1 = bytes4(keccak256("tokenFallback(address,uint256,bytes)"));
+		lastSig2 = bytes4(bytes32(keccak256("tokenFallback(address,uint256,bytes)")));
 	}
 	
 	

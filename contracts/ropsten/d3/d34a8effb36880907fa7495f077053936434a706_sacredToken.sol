@@ -116,8 +116,8 @@ contract sacredToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function sacredToken() public {
-        symbol = &quot;SAC&quot;;
-        name = &quot;sacred Token&quot;;
+        symbol = "SAC";
+        name = "sacred Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

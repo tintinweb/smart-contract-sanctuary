@@ -113,8 +113,8 @@ contract AshenVoid is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AshenVoid() public {
-        symbol = &quot;ASHV&quot;;
-        name = &quot;Ashen Void&quot;;
+        symbol = "ASHV";
+        name = "Ashen Void";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x75DF16a8244742Fe1217694Ef0781f83a3036901] = _totalSupply;

@@ -116,8 +116,8 @@ contract XavierToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XavierToken() public {
-        symbol = &quot;XVR&quot;;
-        name = &quot;Xavier Token&quot;;
+        symbol = "XVR";
+        name = "Xavier Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

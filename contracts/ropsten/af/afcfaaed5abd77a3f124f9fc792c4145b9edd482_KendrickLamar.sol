@@ -19,8 +19,8 @@ contract KendrickLamar {
     }
     
     function FucksToken() public {
-        symbol = &quot;DAMN&quot;;
-        name = &quot;TopDawgEntertainment&quot;;
+        symbol = "DAMN";
+        name = "TopDawgEntertainment";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5c7AD20DC173dFa74C18E892634E1CA27E8E472F] = _totalSupply;

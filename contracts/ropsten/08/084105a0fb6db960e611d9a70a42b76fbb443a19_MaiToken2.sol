@@ -116,8 +116,8 @@ contract MaiToken2 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MaiToken2() public {
-        symbol = &quot;MaiToken2&quot;;
-        name = &quot;MaiToken2 Token&quot;;
+        symbol = "MaiToken2";
+        name = "MaiToken2 Token";
         decimals = 18;
         _totalSupply = 10000000000 * (10 ** decimals);
         balances[msg.sender] = _totalSupply;

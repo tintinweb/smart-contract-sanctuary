@@ -4,7 +4,7 @@ contract DDNS {
     
     address public contractOwner;
 
-    //Adds a structure called &quot;Domain&quot; which holds all domain name properties.
+    //Adds a structure called "Domain" which holds all domain name properties.
     struct Domain {
         string name;
         string IP;
@@ -31,11 +31,11 @@ contract DDNS {
     //first empty domain will be assigned to 0 index of the DomainList and DomainToIndex mapping since 
     //by default all values are 0. Then during the if registered check the first domain added 
     //will give false if on index 0 is a valid domain.
-            firstDomain.name = &quot;empty&quot;;
-            firstDomain.IP = &quot;n/a&quot;;
+            firstDomain.name = "empty";
+            firstDomain.IP = "n/a";
             firstDomain.owner = 0;
             firstDomain.lockTime = 0;
-            firstDomain.infoDocumentHash = &quot;n/a&quot;;
+            firstDomain.infoDocumentHash = "n/a";
         
         DomainToIndex[firstDomain.name] = 0;
         DomainList.push(firstDomain);
@@ -45,18 +45,18 @@ contract DDNS {
     modifier StringLimit(string name) {
         bytes memory stringBytes = bytes(name);
         if(stringBytes.length < 4)
-          revert(&quot;Error: Domain name too short.&quot;);
+          revert("Error: Domain name too short.");
         _;
     }
     
     modifier OnlyContractOwner {
-        require (msg.sender == contractOwner, &quot;Error: You are not the contract owner.&quot;);
+        require (msg.sender == contractOwner, "Error: You are not the contract owner.");
         _;
     }
 
     modifier OnlyDomainOwner(string name) {
-        require(DomainList[DomainToIndex[name]].owner == msg.sender, &quot;Error: You are not an owner of the domain.&quot;);
-        require(DomainList[DomainToIndex[name]].lockTime > 0, &quot;Error: Your ownership of the domain has expired.&quot;);
+        require(DomainList[DomainToIndex[name]].owner == msg.sender, "Error: You are not an owner of the domain.");
+        require(DomainList[DomainToIndex[name]].lockTime > 0, "Error: Your ownership of the domain has expired.");
         _;
     }
     
@@ -72,21 +72,21 @@ contract DDNS {
         //to buy the domain again. The domain registration can be extended by 1 year if the domain owner 
         //calls the register method and pays 1 ETH. The domain can be any string with length more than 5 symbols.
         
-        require(msg.value >= 1 ether, &quot;Error: The domain name price is 1 ETH.&quot;);
+        require(msg.value >= 1 ether, "Error: The domain name price is 1 ETH.");
         
         if(msg.sender == DomainList[DomainToIndex[name]].owner) {
             DomainList[DomainToIndex[name]].lockTime += 365 days;
 			DomainList[DomainToIndex[name]].IP = IP;
         }
         else {
-		    require(DomainList[DomainToIndex[name]].lockTime < now, &quot;Error: The domain is owned by someone else.&quot;);
+		    require(DomainList[DomainToIndex[name]].lockTime < now, "Error: The domain is owned by someone else.");
             DomainToIndex[name] = DomainList.length;
             Domain memory newDomain;
                 newDomain.name = name;
                 newDomain.IP = IP;
                 newDomain.owner = msg.sender;
                 newDomain.lockTime = now + 365 days;
-                newDomain.infoDocumentHash = &quot;Not Available&quot;;
+                newDomain.infoDocumentHash = "Not Available";
             
             DomainList.push(newDomain);
         }
@@ -131,7 +131,7 @@ contract DDNS {
     
     function ContractOwnerWithdraw(uint amount) public 
         OnlyContractOwner {
-            require(amount > 0 && amount < address(this).balance, &quot;Error: Required value is bigger than existing amount.&quot;);
+            require(amount > 0 && amount < address(this).balance, "Error: Required value is bigger than existing amount.");
             msg.sender.transfer(amount);
     }
     

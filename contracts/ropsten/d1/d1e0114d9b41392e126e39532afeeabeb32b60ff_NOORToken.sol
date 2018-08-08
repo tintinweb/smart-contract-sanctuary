@@ -113,8 +113,8 @@ contract NOORToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NOORToken() public {
-        symbol = &quot;NOOR&quot;;
-        name = &quot;NOOR Token&quot;;
+        symbol = "NOOR";
+        name = "NOOR Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x387A10CeE009287606DcC8ADbf876331BAA2126C] = _totalSupply;

@@ -113,8 +113,8 @@ contract NKCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NKCToken() public {
-        symbol = &quot;0NKC&quot;;
-        name = &quot;0 NKC Token&quot;;
+        symbol = "0NKC";
+        name = "0 NKC Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x7Fe8a872B08e2cF160ee6914F77d66632db35586] = _totalSupply;

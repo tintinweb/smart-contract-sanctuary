@@ -120,7 +120,7 @@ contract SWEC is Owned, StandardToken{
     uint256 public sellPrice;
     uint256 public buyPrice;
 
-    constructor() StandardToken(1000, &quot;StandardWeClick&quot;, &quot;SWEC&quot;) public {}
+    constructor() StandardToken(1000, "StandardWeClick", "SWEC") public {}
 
     function mintToken(address target, uint256 mintedAmount) onlyOwner public {
         balances[target] += mintedAmount;
@@ -160,7 +160,7 @@ contract SWEC is Owned, StandardToken{
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

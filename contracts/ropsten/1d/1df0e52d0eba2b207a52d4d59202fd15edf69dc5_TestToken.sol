@@ -259,8 +259,8 @@ library SafeMath {
  */
 contract TestToken is StandardToken {
 
-    string public constant name = &quot;Testing Token&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;TEST&quot;; // solium-disable-line uppercase
+    string public constant name = "Testing Token"; // solium-disable-line uppercase
+    string public constant symbol = "TEST"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     uint256 public constant INITIAL_SUPPLY = 800000000 * (10 ** uint256(decimals)); // Total supply = 800,000,000 (800 million)

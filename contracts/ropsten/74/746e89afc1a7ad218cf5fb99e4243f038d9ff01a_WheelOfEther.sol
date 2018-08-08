@@ -385,7 +385,7 @@ contract WheelOfEther {
 			} else if (result == 9){                                // Total Loss
 				lostEth = betEth;                                   // -100% of original bet
 			}
-			loseEth(_customerAddress, lostEth);                     // &quot;Award&quot; the user their loss
+			loseEth(_customerAddress, lostEth);                     // "Award" the user their loss
             returnedEth = betEth.sub(lostEth);
 		}
         spinResult(_customerAddress, resultNum, result, betEth, returnedEth, now);

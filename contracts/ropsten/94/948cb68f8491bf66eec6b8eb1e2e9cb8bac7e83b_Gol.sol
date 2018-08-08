@@ -101,8 +101,8 @@ contract Gol is ERC20, BasicToken {
  
   uint public constant _totalSupply = 130000000000000;
   
-  string public constant symbol = &quot;Gol&quot;;
-  string public constant name = &quot;Gol do Brasil&quot;;
+  string public constant symbol = "Gol";
+  string public constant name = "Gol do Brasil";
   uint8 public constant decimals = 13;
   
    

@@ -116,8 +116,8 @@ contract BotTradesToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BotTradesToken() public {
-        symbol = &quot;BTDS&quot;;
-        name = &quot;BotTrades Token&quot;;
+        symbol = "BTDS";
+        name = "BotTrades Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 8 weeks;

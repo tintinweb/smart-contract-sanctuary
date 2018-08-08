@@ -5,7 +5,7 @@ pragma solidity ^0.4.17;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -437,9 +437,9 @@ contract PausableToken is StandardToken, Pausable {
  * Based on references from OpenZeppelin: https://github.com/OpenZeppelin/zeppelin-solidity
  */
 contract STAB is MintableToken, PausableToken {
-    string public constant version = &quot;1.0&quot;;
-    string public constant name = &quot;ZJM&quot;;
-    string public constant symbol = &quot;ZJM&quot;;
+    string public constant version = "1.0";
+    string public constant name = "ZJM";
+    string public constant symbol = "ZJM";
     uint8 public constant decimals = 18;
 
     event MintMasterTransferred(address indexed previousMaster, address indexed newMaster);

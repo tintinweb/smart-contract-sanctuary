@@ -301,8 +301,8 @@ contract MeToken is StandardToken,TokenDestructible
     //
     //--------------------------------------------------------------------------
 
-    string public name = &quot;Me Token&quot;;
-    string public symbol = &quot;MET&quot;;
+    string public name = "Me Token";
+    string public symbol = "MET";
 
     uint public decimals = 18;
     uint256 public INITIAL_SUPPLY = 350000000 * (10 ** decimals); // 350 000 000

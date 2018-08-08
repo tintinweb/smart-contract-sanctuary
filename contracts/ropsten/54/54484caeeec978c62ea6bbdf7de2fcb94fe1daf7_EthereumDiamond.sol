@@ -70,8 +70,8 @@ contract EthereumDiamond is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Ethereum Diamond&quot;;
-    string public constant symbol = &quot;ETD&quot;;
+    string public constant name = "Ethereum Diamond";
+    string public constant symbol = "ETD";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 99000000000000e8;

@@ -230,7 +230,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -268,8 +268,8 @@ contract vxtest is StandardToken, Ownable {
 	address public marketingAccount = address(0x83313B9c27668b41151509a46C1e2a8140187362);  // Marketing Token holder
 	address public advisorAccount   = address(0xB6763FeC658338A7574a796Aeda45eb6D81E69B9);  // Advisor Token holder
 	
-	string public name   = &quot;vxtest&quot;;  // set Token name
-	string public symbol = &quot;vxt&quot;;            // set Token symbol
+	string public name   = "vxtest";  // set Token name
+	string public symbol = "vxt";            // set Token symbol
 	uint public decimals = 18;
 	bool public released = false;
 	uint public INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));  // set Token total supply

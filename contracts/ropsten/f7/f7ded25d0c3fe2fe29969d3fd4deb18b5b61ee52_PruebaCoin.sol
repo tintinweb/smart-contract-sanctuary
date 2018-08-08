@@ -116,8 +116,8 @@ contract PruebaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PruebaCoin() public {
-        symbol = &quot;PRU&quot;;
-        name = &quot;PruebaCoin&quot;;
+        symbol = "PRU";
+        name = "PruebaCoin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

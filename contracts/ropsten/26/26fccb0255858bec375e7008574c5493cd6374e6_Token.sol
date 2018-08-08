@@ -113,8 +113,8 @@ contract Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Token() public {
-        symbol = &quot;DTA&quot;;
-        name = &quot;Token&quot;;
+        symbol = "DTA";
+        name = "Token";
         decimals = 18;
         _totalSupply = 696969696969;
         balances[0x75e7211A6ad87949BBfc39bFE9944F2bE07809Ef] = _totalSupply;

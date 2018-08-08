@@ -116,8 +116,8 @@ contract wtech2 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function wtech2() public {
-        symbol = &quot;WTC2&quot;;
-        name = &quot;Wtech Token2&quot;;
+        symbol = "WTC2";
+        name = "Wtech Token2";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 5 weeks;

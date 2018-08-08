@@ -113,8 +113,8 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;0GUBAT&quot;;
-        name = &quot;0 Gubat Token&quot;;
+        symbol = "0GUBAT";
+        name = "0 Gubat Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[msg.sender] = _totalSupply;

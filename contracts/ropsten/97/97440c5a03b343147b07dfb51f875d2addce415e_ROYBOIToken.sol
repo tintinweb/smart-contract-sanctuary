@@ -113,8 +113,8 @@ contract ROYBOIToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ROYBOITokenIToken() public {
-        symbol = &quot;ROYBOI&quot;;
-        name = &quot;ROYBOI Token&quot;;
+        symbol = "ROYBOI";
+        name = "ROYBOI Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0Efd470fB7D2fF3DeCF22AE532C34F2979F33836] = _totalSupply;

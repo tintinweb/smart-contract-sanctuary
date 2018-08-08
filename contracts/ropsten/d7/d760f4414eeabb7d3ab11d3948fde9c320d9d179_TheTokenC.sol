@@ -52,8 +52,8 @@ contract TheTokenC is ERC223Interface {
     mapping(address => uint) balances; // List of user balances.
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;TheTokenC&quot;;
-    string public constant symbol = &quot;TKC&quot;;
+    string public constant name = "TheTokenC";
+    string public constant symbol = "TKC";
     uint public constant decimals = 8;
     uint256 public totalSupply = 200000000e8;
     uint256 public tokensPerEth = 200000000e8;

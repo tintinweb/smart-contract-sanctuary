@@ -237,9 +237,9 @@ contract StandardToken is IERC20,DateTimeLib {
 
     mapping(address => mapping(address => uint256)) allowed;
     
-    string public constant symbol = &quot;NMCTEST&quot;;
+    string public constant symbol = "NMCTEST";
     
-    string public constant name = &quot;NamyChainTestCoin&quot;;
+    string public constant name = "NamyChainTestCoin";
     
     uint _totalSupply = 1000000000 * 10 ** 18;
     

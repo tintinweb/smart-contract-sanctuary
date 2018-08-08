@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract EthereumTestToken is PausableToken {
-    string public name = &quot;Ethereum Test Token&quot;;
-    string public symbol = &quot;ETH T T&quot;;
+    string public name = "Ethereum Test Token";
+    string public symbol = "ETH T T";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 100000000000000000000000;
 

@@ -147,7 +147,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -530,10 +530,10 @@ contract PausableToken is StandardToken, Pausable {
  */
 contract LifTokenTest is StandardToken, BurnableToken, MintableToken, PausableToken {
   // Token Name
-  string public constant NAME = &quot;L&#237;f&quot;;
+  string public constant NAME = "L&#237;f";
 
   // Token Symbol
-  string public constant SYMBOL = &quot;LIF&quot;;
+  string public constant SYMBOL = "LIF";
 
   // Token decimals
   uint public constant DECIMALS = 18;

@@ -99,8 +99,8 @@ contract GorGToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GORG&quot;;
-        name = &quot;GorG Token&quot;;
+        symbol = "GORG";
+        name = "GorG Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

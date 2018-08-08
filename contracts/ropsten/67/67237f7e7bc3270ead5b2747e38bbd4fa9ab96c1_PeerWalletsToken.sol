@@ -113,8 +113,8 @@ contract PeerWalletsToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PeerWalletsToken() public {
-        symbol = &quot;PWT&quot;;
-        name = &quot;PeerWalletsToken&quot;;
+        symbol = "PWT";
+        name = "PeerWalletsToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x08317498D3756Ce62A2E35322352e8022d221c86] = _totalSupply;

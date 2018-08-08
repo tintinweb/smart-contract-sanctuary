@@ -116,8 +116,8 @@ contract KTESTToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;KTEST&quot;;
-        name = &quot;KTEST Token&quot;;
+        symbol = "KTEST";
+        name = "KTEST Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 8 weeks;

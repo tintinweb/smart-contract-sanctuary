@@ -116,8 +116,8 @@ contract MartiniumToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MartiniumToken() public {
-        symbol = &quot;MRT&quot;;
-        name = &quot;Martinium Token&quot;;
+        symbol = "MRT";
+        name = "Martinium Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

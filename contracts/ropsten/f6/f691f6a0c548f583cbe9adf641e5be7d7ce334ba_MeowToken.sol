@@ -113,8 +113,8 @@ contract MeowToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MeowToken() public {
-        symbol = &quot;MEOW&quot;;
-        name = &quot;Meow Token&quot;;
+        symbol = "MEOW";
+        name = "Meow Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x52b7014aCDa7d2ae09683D4d9fc0a3376bb95001] = _totalSupply;

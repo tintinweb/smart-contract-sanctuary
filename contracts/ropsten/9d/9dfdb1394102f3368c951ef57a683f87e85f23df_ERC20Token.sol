@@ -120,8 +120,8 @@ contract FraCoin is Token{
     
     function FraCoin() public  
     {
-        Str_Name = &quot;FraCoin&quot; ;
-        Str_Symbol = &quot;FC&quot; ; 
+        Str_Name = "FraCoin" ;
+        Str_Symbol = "FC" ; 
         int_ExCoins = 0 ; 
         owner = msg.sender ;
         balanceOf[owner] = 1000; 

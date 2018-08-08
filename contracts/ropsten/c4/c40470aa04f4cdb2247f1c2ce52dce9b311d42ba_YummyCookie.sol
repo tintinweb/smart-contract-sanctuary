@@ -329,8 +329,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract YummyCookie is StandardToken, MintableToken {
 
-    string public constant name = &quot;Yummy Cookie&quot;;
-    string public constant symbol = &quot;YC&quot;;
+    string public constant name = "Yummy Cookie";
+    string public constant symbol = "YC";
     uint8 public constant decimals = 2;
 
     uint256 public cap = 10000000;

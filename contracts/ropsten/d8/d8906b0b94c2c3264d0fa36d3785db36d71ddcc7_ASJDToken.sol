@@ -99,8 +99,8 @@ contract ASJDToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ASJD&quot;;
-        name = &quot;ASJD Token&quot;;
+        symbol = "ASJD";
+        name = "ASJD Token";
         decimals = 18;
         _totalSupply = 500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

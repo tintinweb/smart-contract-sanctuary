@@ -113,8 +113,8 @@ contract DoggyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DoggyToken() public {
-        symbol = &quot;DOGG&quot;;
-        name = &quot;DoggyToken&quot;;
+        symbol = "DOGG";
+        name = "DoggyToken";
         decimals = 8;
         _totalSupply = 500000000;
         balances[0xd2446d49d50B374E29f448372841034Bb8111dA9] = _totalSupply;

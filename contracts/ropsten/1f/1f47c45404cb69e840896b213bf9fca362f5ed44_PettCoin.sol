@@ -113,8 +113,8 @@ contract PettCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PETTCOIN() public {
-        symbol = &quot;PETT&quot;;
-        name = &quot;PettCoin&quot;;
+        symbol = "PETT";
+        name = "PettCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x462173820285039BF67e12979fb206d91a4BE304] = _totalSupply;

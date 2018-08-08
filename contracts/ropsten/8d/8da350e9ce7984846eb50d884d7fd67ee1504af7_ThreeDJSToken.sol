@@ -1,9 +1,9 @@
 pragma solidity ^0.4.2;
 
 contract ThreeDJSToken {
-    string  public name = &quot;ThreeDJS Token&quot;;
-    string  public symbol = &quot;ThreeDJS&quot;;
-    string  public standard = &quot;ThreeDJS Token v1.0&quot;;
+    string  public name = "ThreeDJS Token";
+    string  public symbol = "ThreeDJS";
+    string  public standard = "ThreeDJS Token v1.0";
     uint256 public totalSupply;
 
     event Transfer(

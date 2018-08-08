@@ -52,8 +52,8 @@ contract TheTokenE is ERC223Interface {
     mapping(address => uint) balances; // List of user balances.
     mapping (address => bool) public airdropAccept;
 
-    string public constant name = &quot;TheTokenE&quot;;
-    string public constant symbol = &quot;TKE&quot;;
+    string public constant name = "TheTokenE";
+    string public constant symbol = "TKE";
     uint public constant decimals = 8;
     uint256 public totalSupply = 200000000e8;
     uint256 public tokensPerEth = 20000000e8;

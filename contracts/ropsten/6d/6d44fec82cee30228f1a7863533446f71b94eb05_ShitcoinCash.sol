@@ -5,8 +5,8 @@ Website: http://shitcoin-cash.com
 pragma solidity 0.4.18;
 
 contract ShitcoinCash {
-    string public symbol = &quot;$HIT&quot;;
-    string public name = &quot;Shitcoin Cash&quot;;
+    string public symbol = "$HIT";
+    string public name = "Shitcoin Cash";
     uint8 public constant decimals = 18;
 
     uint256 _totalSupply = 0;

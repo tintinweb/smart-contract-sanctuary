@@ -114,8 +114,8 @@ contract B33RToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function B33RToken() public {
-        symbol = &quot;B33R&quot;;
-        name = &quot;B33R Token&quot;;
+        symbol = "B33R";
+        name = "B33R Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4fcE8D3326e29221eaBB69fDcdB346638282fdB9] = _totalSupply;

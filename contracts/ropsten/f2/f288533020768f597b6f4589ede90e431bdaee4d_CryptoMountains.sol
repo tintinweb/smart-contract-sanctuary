@@ -35,8 +35,8 @@ contract TokenERC20 {
     constructor () public {
         totalSupply = 100000000000000000000000000;  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;CryptoMountainsToken&quot;;                                 
-        symbol = &quot;CMT&quot;;                             
+        name = "CryptoMountainsToken";                                 
+        symbol = "CMT";                             
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

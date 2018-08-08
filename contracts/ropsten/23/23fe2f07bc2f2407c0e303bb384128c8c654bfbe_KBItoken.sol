@@ -72,8 +72,8 @@ contract KBItoken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Komunitas Blockchain Indonesia&quot;;
-    string public constant symbol = &quot;KBI&quot;;
+    string public constant name = "Komunitas Blockchain Indonesia";
+    string public constant symbol = "KBI";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

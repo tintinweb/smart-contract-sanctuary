@@ -113,8 +113,8 @@ contract MDIToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MDIToken() public {
-        symbol = &quot;MDI&quot;;
-        name = &quot;MDI Token&quot;;
+        symbol = "MDI";
+        name = "MDI Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3299AEab9Dc4b4Cb1900320095860781C607c2Bf] = _totalSupply;

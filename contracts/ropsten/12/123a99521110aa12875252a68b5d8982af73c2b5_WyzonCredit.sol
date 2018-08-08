@@ -2,8 +2,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract WyzonCredit {
     // Public variables of the token
-    string public name = &quot;WyzonCredit&quot;;
-    string public symbol = &quot;WYZC&quot;;
+    string public name = "WyzonCredit";
+    string public symbol = "WYZC";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

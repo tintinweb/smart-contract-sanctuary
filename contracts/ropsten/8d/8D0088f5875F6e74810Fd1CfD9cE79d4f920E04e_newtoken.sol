@@ -35,8 +35,8 @@ contract newtoken {
     ) public {
         totalSupply = 2018668800;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;newtoken&quot;;                                   // Set the name for display purposes
-        symbol = &quot;npj&quot;;                               // Set the symbol for display purposes
+        name = "newtoken";                                   // Set the name for display purposes
+        symbol = "npj";                               // Set the symbol for display purposes
     }
 
     /**

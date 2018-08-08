@@ -1,6 +1,6 @@
 pragma solidity ^0.4.10;
 
-/// 0xC6Bad17b6A073BE1C829205681918B41018cD102 - contract addr [&quot;0xc0283dd6b7fa878abd12209e053130f632487ab9&quot;,&quot;0x3fdd90af0197827d24581c889d051124300ff3ed&quot;,&quot;0x9529b994d0b30e5788ece6a6b03d9adca919951c&quot;]
+/// 0xC6Bad17b6A073BE1C829205681918B41018cD102 - contract addr ["0xc0283dd6b7fa878abd12209e053130f632487ab9","0x3fdd90af0197827d24581c889d051124300ff3ed","0x9529b994d0b30e5788ece6a6b03d9adca919951c"]
 /// @title Multisignature wallet - Allows multiple parties to agree on transactions before execution.
 /// @author Stefan George - <stefan.george@consensys.net>
 contract MultiSigWallet {

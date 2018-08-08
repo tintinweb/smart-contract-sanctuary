@@ -113,8 +113,8 @@ contract WHYPHY is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WHYPHY() public {
-        symbol = &quot;WHYPHY&quot;;
-        name = &quot;WHYPHY&quot;;
+        symbol = "WHYPHY";
+        name = "WHYPHY";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000000000;
         balances[0x0000000000000000000000000000000000000001] = _totalSupply;

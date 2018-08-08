@@ -113,8 +113,8 @@ contract GershTokenTest is ERC20Interface, OwnedTest, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GershToken() public {
-        symbol = &quot;5GERSH&quot;;
-        name = &quot;5 Gersh Token&quot;;
+        symbol = "5GERSH";
+        name = "5 Gersh Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x766b2caa8BEDe4087d33f1244FdeB59d15183E23] = _totalSupply;

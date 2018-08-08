@@ -113,8 +113,8 @@ contract BitcoinBlackToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinBlackToken() public {
-    symbol = &quot;BTCB&quot;;
-        name = &quot;0 BitcoinBlack Token&quot;;
+    symbol = "BTCB";
+        name = "0 BitcoinBlack Token";
         decimals = 12;
         _totalSupply = 36000000000000000000000;
         balances[0x8efA8cE4339Eb28d1476DB2B68e07174E1114a0F] = _totalSupply;

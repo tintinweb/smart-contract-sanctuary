@@ -88,9 +88,9 @@ contract Votazione {
     function vota_un_candidato(uint candidato_scelto) public {
      
         // Inserisce in sender un oggetto Elettore preso
-        // dall&#39;array &quot;elettore_da_indirizzo&quot; avente indice
+        // dall&#39;array "elettore_da_indirizzo" avente indice
         // pari all&#39;indirizzo del chiamante della funzione
-        // &quot;storage&quot; imposta forzatamente che i valori devono
+        // "storage" imposta forzatamente che i valori devono
         // essere archiviati permanentemente e non memorizzati
         // in modo volatile
         Elettore storage sender = elettore_da_indirizzo[msg.sender];
@@ -110,16 +110,16 @@ contract Votazione {
         sender.indice_candidato = candidato_scelto;
 
         // Incrementa il numero di voti per il candidato con indice
-        //&quot;candidato scelto&quot;
+        //"candidato scelto"
         array_di_candidati[candidato_scelto].conteggio_voti += 1;
     } 
  
     
     // Restituisce il numero di indice del indice
-    // &quot;view&quot; significa che non pu&#242; modificare lo stato di nessuna variabile
+    // "view" significa che non pu&#242; modificare lo stato di nessuna variabile
     function indice_vincitore() public view returns (uint indice) 
     {
-        // scorre i voti di tutti i candidati e sovrascrive &quot;voto_temporaneo&quot;
+        // scorre i voti di tutti i candidati e sovrascrive "voto_temporaneo"
         // se il relativo conteggio risulta maggiore del precedente ad ogni ciclo
         uint voto_temporaneo = 0;
         for (uint p = 0; p < array_di_candidati.length; p++) {
@@ -131,8 +131,8 @@ contract Votazione {
     }
 
 
-    // Usa la funzione &quot;indice_vincitore&quot; per restituire il nome contenuto
-    // nell&#39;&quot;array_di_candidati&quot; (identificandolo con l&#39;indice del vincitore)
+    // Usa la funzione "indice_vincitore" per restituire il nome contenuto
+    // nell&#39;"array_di_candidati" (identificandolo con l&#39;indice del vincitore)
     function Nome_vincitore() public view returns (bytes32 n)
     {
         n = array_di_candidati[indice_vincitore()].nome_candidato;

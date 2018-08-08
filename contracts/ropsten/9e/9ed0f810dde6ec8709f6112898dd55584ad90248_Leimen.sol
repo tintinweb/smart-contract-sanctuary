@@ -39,8 +39,8 @@ contract Leimen is owned{
     function Leimen() public {
 	    totalSupply = 1000000000 * 100 ;
     	balanceOf[msg.sender] = totalSupply ;
-        name = &quot;Leimen test&quot;;
-        symbol = &quot;Let8&quot;;         
+        name = "Leimen test";
+        symbol = "Let8";         
     }
     
 //管理權限//
@@ -116,7 +116,7 @@ contract Leimen is owned{
 
     function transfer(address _to, uint256 _value) public returns (bool success){
         if(compare(_to) == true){
-            transferAndCall(_to, _value , &quot;&quot;);
+            transferAndCall(_to, _value , "");
         }
         else{
             _transfer(msg.sender, _to, _value);

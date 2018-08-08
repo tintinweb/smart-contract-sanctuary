@@ -113,8 +113,8 @@ contract EPAYCLUB is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EPAYCLUB() public {
-        symbol = &quot;EPC&quot;;
-        name = &quot;EPAY CLUB&quot;;
+        symbol = "EPC";
+        name = "EPAY CLUB";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xe7f74b6836253834daEeaB609144Daec0c3E8A5C] = _totalSupply;

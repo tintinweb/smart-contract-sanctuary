@@ -33,9 +33,9 @@ contract EuroGoldTest {
 	}
 
 	function EuroGoldTest(uint256 _initialSupply) public {
-		name = &quot;EuroGoldTest&quot;;
+		name = "EuroGoldTest";
 		decimals = 18;
-		symbol = &quot;‎€GE&quot;;
+		symbol = "‎€GE";
 		mintingFinished = false;
 
 		totalSupply = _initialSupply * 10 ** uint256(decimals);

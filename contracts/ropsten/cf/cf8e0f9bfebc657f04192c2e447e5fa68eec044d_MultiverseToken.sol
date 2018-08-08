@@ -113,8 +113,8 @@ contract MultiverseToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MultiverseToken() public {
-        symbol = &quot;Multiverse&quot;;
-        name = &quot;Multiverse Token&quot;;
+        symbol = "Multiverse";
+        name = "Multiverse Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xAE1Ef052A3521b1D83af2940a196eAdC1EBa43F1] = _totalSupply;

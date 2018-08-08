@@ -116,8 +116,8 @@ contract uraniumplus is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function uraniumplusToken() public {
-        symbol = &quot;URP&quot;;
-        name = &quot;uraniumplus Token&quot;;
+        symbol = "URP";
+        name = "uraniumplus Token";
         decimals = 18;
         bonusEnds = now + 8 weeks;
         endDate = now + 10 weeks;

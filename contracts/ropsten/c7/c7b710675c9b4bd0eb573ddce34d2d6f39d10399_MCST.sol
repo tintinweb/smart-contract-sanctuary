@@ -98,8 +98,8 @@ contract MCST is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MCST() public {
-        symbol = &quot;0MCS0&quot;;
-        name = &quot;0Mercurius Token&quot;;
+        symbol = "0MCS0";
+        name = "0Mercurius Token";
         decimals = 8;
         _totalSupply = 1000000000000000000000;
         balances[0x4A3380a48C4F97f4f6a54aB22E536Cd5957f0CC2] = _totalSupply;

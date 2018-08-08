@@ -29,7 +29,7 @@ contract Impossible {
         require(validSignature(v, r, s));
         invalidateSignature(v, r, s);
         
-        if (ecrecover(keccak256(&quot;emergency ownership transfer&quot;), v, r, s) == owner) {
+        if (ecrecover(keccak256("emergency ownership transfer"), v, r, s) == owner) {
             address oldOwner = owner;
             owner = msg.sender;
             

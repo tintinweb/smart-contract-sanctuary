@@ -22,7 +22,7 @@ contract ProofOfExistence {
     }
 
     modifier noHashExistsYet(uint256 id) {
-        require(hashesById[id] == &quot;&quot;);
+        require(hashesById[id] == "");
         _;
     }
 

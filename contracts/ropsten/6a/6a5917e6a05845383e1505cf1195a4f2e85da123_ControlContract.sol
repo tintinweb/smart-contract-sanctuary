@@ -48,7 +48,7 @@ contract ControlContract {
 	function writeMessage(string _message) public{
 
 		dataContract.wirteData(_message);
-		// dataContractAddr.delegatecall( bytes4(sha3(&quot;wirteData(string)&quot;)), _message );
+		// dataContractAddr.delegatecall( bytes4(sha3("wirteData(string)")), _message );
 
 	}
 
@@ -59,7 +59,7 @@ contract ControlContract {
 		string memory message =  dataContract.readData();
 		return message;
 
-		// string  message = dataContractAddr.delegatecall( bytes4(sha3(&quot;readData()&quot;)) );
+		// string  message = dataContractAddr.delegatecall( bytes4(sha3("readData()")) );
 		// return message;
 
 	}

@@ -113,8 +113,8 @@ contract B3nsToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function B3nsToken() public {
-        symbol = &quot;B3N&quot;;
-        name = &quot;Bens token&quot;;
+        symbol = "B3N";
+        name = "Bens token";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0x238C70e5Cb991a1576676B8fF424AcFBB7C97eCf] = _totalSupply;

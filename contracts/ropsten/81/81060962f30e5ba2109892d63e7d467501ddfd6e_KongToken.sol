@@ -116,8 +116,8 @@ contract KongToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KongToken() public {
-        symbol = &quot;KNG&quot;;
-        name = &quot;Kong Token&quot;;
+        symbol = "KNG";
+        name = "Kong Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 12 weeks;

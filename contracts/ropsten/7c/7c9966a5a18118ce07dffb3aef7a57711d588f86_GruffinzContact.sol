@@ -113,8 +113,8 @@ contract GruffinzContact is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GruffinzContact() public {
-        symbol = &quot;DIM&quot;;
-        name = &quot;Deloper Is Mine&quot;;
+        symbol = "DIM";
+        name = "Deloper Is Mine";
         decimals = 18;
         _totalSupply = 10000000000;
         balances[0x8554b5B62E646cbF1f154505Aa5709D345e3c097] = _totalSupply; //MEW address here

@@ -116,8 +116,8 @@ contract CrowdSaleTest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CrowdSaleTest() public {
-        symbol = &quot;CRWTCC&quot;;
-        name = &quot;Crowd TestCoin Token&quot;;
+        symbol = "CRWTCC";
+        name = "Crowd TestCoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

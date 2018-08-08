@@ -2,7 +2,7 @@ pragma solidity ^0.4.2;
 
 /**************************************
  * @title ERC721
- * @dev ethereum &quot;standard&quot; interface
+ * @dev ethereum "standard" interface
  **************************************/ 
 contract ERC721 {
     event Transfer(address _from, address _to, uint256 _tokenId);
@@ -25,7 +25,7 @@ contract ERC721 {
 /**************************************
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  **************************************/ 
 contract Ownable {
   address public owner;
@@ -67,7 +67,7 @@ contract Config is Ownable {
     uint128  internal levelUp = 4 * 10 ** 16; // 0.04 ether + levelUp
     uint128 internal levelUpVIP =2 * 10 **16; // 0.02 ether
 	uint128 internal VIPCost = 99 * 10 ** 16; // 0.99 ether
-	string internal URL = &quot;https://www.etherchicks.com/card/&quot;;
+	string internal URL = "https://www.etherchicks.com/card/";
     
 
    struct User{
@@ -294,10 +294,10 @@ contract CardOwnership is CardCore, ERC721 {
         _transfer(msg.sender, _to, _tokenId);
     }
       function name() constant returns (string name){
-        return &quot;Deto card&quot;;
+        return "Deto card";
       }
        function symbol() constant returns (string symbol){
-        return &quot;Det&quot;;
+        return "Det";
       }
       
   

@@ -194,27 +194,27 @@ contract Booking {
     
     function currentStatus() external view returns(string) {
         if(status == Status.New)
-            return &quot;New&quot;;
+            return "New";
             
         if(status == Status.Requested)
-            return &quot;Requested&quot;;
+            return "Requested";
             
         if(status == Status.Confirmed)
-            return &quot;Confirmed&quot;;
+            return "Confirmed";
 
         if(status == Status.Rejected)
-            return &quot;Rejected&quot;;
+            return "Rejected";
             
         if(status == Status.Cancelled)
-            return &quot;Cancelled&quot;;
+            return "Cancelled";
             
         if(status == Status.Booked)
-            return &quot;Booked&quot;;
+            return "Booked";
             
         if(status == Status.Started)
-            return &quot;Started&quot;;
+            return "Started";
             
         if(status == Status.Finished)
-            return &quot;Finished&quot;;
+            return "Finished";
     }
 }

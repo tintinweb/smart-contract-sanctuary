@@ -116,8 +116,8 @@ contract InitialTreeICO is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function InitialTreeICO() public {
-        symbol = &quot;TREC&quot;;
-        name = &quot;TreeCoin Token&quot;;
+        symbol = "TREC";
+        name = "TreeCoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

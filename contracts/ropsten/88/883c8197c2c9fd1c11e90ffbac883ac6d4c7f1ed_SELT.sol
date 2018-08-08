@@ -113,7 +113,7 @@ contract SELT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor (string _name) public {
-        symbol = &quot;SELT&quot;;
+        symbol = "SELT";
         name = _name;
         decimals = 0;
         _totalSupply = 10000000;

@@ -57,7 +57,7 @@ library ECRecovery {
 
   /**
   * toEthSignedMessageHash
-  * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+  * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
   * @dev and hash the result
   */
   function toEthSignedMessageHash(bytes32 hash)
@@ -67,7 +67,7 @@ library ECRecovery {
   {
     // 32 is the length in bytes of hash,
     // enforced by the type signature above
-    return keccak256(abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash));
+    return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash));
   }
 }
 
@@ -129,7 +129,7 @@ library Roles {
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
   address public owner;
@@ -270,7 +270,7 @@ contract RBAC {
 contract SignatureBouncer is Ownable, RBAC {
   using ECRecovery for bytes32;
 
-  bytes32 public constant ROLE_BOUNCER = keccak256(&quot;bouncer&quot;);
+  bytes32 public constant ROLE_BOUNCER = keccak256("bouncer");
 
   /**
   * @dev requires that a valid signature of a bouncer was provided
@@ -344,9 +344,9 @@ contract SignatureBouncer is Ownable, RBAC {
 
 
 contract AccountRoles {
-  bytes32 public constant ROLE_TRANSFER_ETHER = keccak256(&quot;transfer_ether&quot;);
-  bytes32 public constant ROLE_TRANSFER_TOKEN = keccak256(&quot;transfer_token&quot;);
-  bytes32 public constant ROLE_TRANSFER_OWNERSHIP = keccak256(&quot;transfer_ownership&quot;);	
+  bytes32 public constant ROLE_TRANSFER_ETHER = keccak256("transfer_ether");
+  bytes32 public constant ROLE_TRANSFER_TOKEN = keccak256("transfer_token");
+  bytes32 public constant ROLE_TRANSFER_OWNERSHIP = keccak256("transfer_ownership");	
   
   /**
   * @dev modifier to validate the roles 
@@ -357,7 +357,7 @@ contract AccountRoles {
     for (uint8 i = 0; i < roles.length; i++) {
       require(roles[i] == ROLE_TRANSFER_ETHER 
       || roles[i] == ROLE_TRANSFER_TOKEN
-      || roles[i] == ROLE_TRANSFER_OWNERSHIP, &quot;Invalid account role&quot;);
+      || roles[i] == ROLE_TRANSFER_OWNERSHIP, "Invalid account role");
     }
     _;
   }
@@ -404,11 +404,11 @@ contract IExtension {
 
 
 contract SmartAccount is SignatureAccount {
-  string public version = &quot;0.0.1&quot;;
+  string public version = "0.0.1";
 
-  bytes4 public constant TRANSFER_TOKEN = bytes4(keccak256(&quot;transfer(address,uint256)&quot;)); //ERC20
-  bytes4 public constant TRANSFER_TOKEN_DATA = bytes4(keccak256(&quot;transfer(address,uint256,bytes)&quot;)); //ERC223
-  bytes4 public constant TRANSFER_TOKEN_CUSTOM = bytes4(keccak256(&quot;transfer(address,uint256,bytes,string)&quot;)); //ERC223
+  bytes4 public constant TRANSFER_TOKEN = bytes4(keccak256("transfer(address,uint256)")); //ERC20
+  bytes4 public constant TRANSFER_TOKEN_DATA = bytes4(keccak256("transfer(address,uint256,bytes)")); //ERC223
+  bytes4 public constant TRANSFER_TOKEN_CUSTOM = bytes4(keccak256("transfer(address,uint256,bytes,string)")); //ERC223
   
   struct Extension {
     address extension;
@@ -583,7 +583,7 @@ contract SmartAccount is SignatureAccount {
     private 
   {
     for (uint256 i = 0; i < extensions.length; ++i) {
-      require(extensions[i].extension != _extension, &quot;Extension already added&quot;);
+      require(extensions[i].extension != _extension, "Extension already added");
     }
     bytes32[] memory roles = IExtension(_extension).getRoles();
     addRoles(roles, _extension);

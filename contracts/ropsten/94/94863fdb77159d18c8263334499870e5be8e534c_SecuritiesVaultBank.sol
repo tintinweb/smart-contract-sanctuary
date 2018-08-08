@@ -105,8 +105,8 @@ contract SecuritiesVaultBank is ERC20, Regulated, Nonpayable {
   mapping(address => mapping(address => uint)) allowed;
 
   function SecuritiesVaultBank() public {
-    symbol = &quot;YST&quot;;                                 // Create the Sucurities Token Symbol Here
-    name = &quot;Your Sucerities Token&quot;;                 // Description of the Securetized Tokens
+    symbol = "YST";                                 // Create the Sucurities Token Symbol Here
+    name = "Your Sucerities Token";                 // Description of the Securetized Tokens
     decimals = 8;                                   // Number of Digits
     _totalSupply = 1000000 * 10**uint(decimals);    // Total Number of Securities Issued (example 1,000,000 Shares of YST)
     balances[owner] = _totalSupply;

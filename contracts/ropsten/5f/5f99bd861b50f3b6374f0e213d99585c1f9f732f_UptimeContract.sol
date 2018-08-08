@@ -22,12 +22,12 @@ contract UptimeContract {
     }
     
     modifier onlyBy(uint16 _deviceId) {
-        require(msg.sender == _registeredDevices[_deviceId].payoutAddress, &quot;Sender is not authorized&quot;);
+        require(msg.sender == _registeredDevices[_deviceId].payoutAddress, "Sender is not authorized");
         _;
     }
     
     modifier enoughBalance() {
-        require(address(this).balance >= monthlyCompensation, &quot;Contract does not contain enough funds please contact owner&quot;);
+        require(address(this).balance >= monthlyCompensation, "Contract does not contain enough funds please contact owner");
         _;
     }
     
@@ -36,7 +36,7 @@ contract UptimeContract {
         if(deviceToReport.deviceId == 0) {
             deviceToReport = iotDevice(_deviceId, new uint16[](12), msg.sender);
         }
-        require(msg.sender == deviceToReport.payoutAddress, &quot;Sender is not authorized&quot;);
+        require(msg.sender == deviceToReport.payoutAddress, "Sender is not authorized");
         deviceToReport.monthlyReport[_currentMonth] += uptime;
         _registeredDevices[_deviceId] = deviceToReport;
     }

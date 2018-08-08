@@ -19,7 +19,7 @@ contract ConsoToken {
         decimals = 0;
         totalSupply = 100000;
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Conso Coin&quot;;
+        name = "Conso Coin";
         symbol = &#39;CCN&#39;;
     }
 

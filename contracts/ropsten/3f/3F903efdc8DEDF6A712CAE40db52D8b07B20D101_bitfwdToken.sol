@@ -116,8 +116,8 @@ contract bitfwdToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitfwdToken() public {
-        symbol = &quot;DUN&quot;;
-        name = &quot;Dunamis&quot;;
+        symbol = "DUN";
+        name = "Dunamis";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 12 weeks;

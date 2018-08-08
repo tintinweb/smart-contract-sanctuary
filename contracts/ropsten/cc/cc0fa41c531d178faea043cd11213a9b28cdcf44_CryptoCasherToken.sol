@@ -214,7 +214,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -238,8 +238,8 @@ contract Ownable {
  */
 
 contract CryptoCasherToken is StandardToken, Ownable {
-    string public constant name = &quot;CryptoCasher&quot;;
-    string public constant symbol = &quot;CRR&quot;;
+    string public constant name = "CryptoCasher";
+    string public constant symbol = "CRR";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 75 * 10**6 * (10 ** uint256(decimals));
 

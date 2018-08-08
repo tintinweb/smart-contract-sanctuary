@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract DiminishToken {
 
-    string public name = &quot;Diminish&quot;;      //  token name
-    string public symbol = &quot;DMS&quot;;           //  token symbol
+    string public name = "Diminish";      //  token name
+    string public symbol = "DMS";           //  token symbol
     uint256 public decimals = 2;            //  token digit
 
     mapping (address => uint256) public balanceOf;

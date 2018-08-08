@@ -113,8 +113,8 @@ contract CSToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function CSToken() public {
-        symbol = &quot;4Cs&quot;;
-        name = &quot;4Cs&quot;;
+        symbol = "4Cs";
+        name = "4Cs";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

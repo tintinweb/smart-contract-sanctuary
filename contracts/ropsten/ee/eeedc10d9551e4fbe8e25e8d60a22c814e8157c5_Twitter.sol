@@ -191,8 +191,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract TwitterToken is PausableToken {
-    string public name = &quot;Twitter Token&quot;;
-    string public symbol = &quot;TTN&quot;;
+    string public name = "Twitter Token";
+    string public symbol = "TTN";
     uint256 public decimals = 18;
     uint256 public constant decimalFactor = 10 ** 18;
     uint256 public constant INITIAL_SUPPLY = 10000000 * decimalFactor;

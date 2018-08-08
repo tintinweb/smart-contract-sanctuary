@@ -98,7 +98,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -148,11 +148,11 @@ contract Ownable {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -831,7 +831,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -856,9 +856,9 @@ library strings {
 
 
 pragma solidity ^0.4.20;
-//import &quot;./Ownable.sol&quot;;
-//import &quot;./strings.sol&quot;;
-//import &quot;./Integers.sol&quot;;
+//import "./Ownable.sol";
+//import "./strings.sol";
+//import "./Integers.sol";
 
 /**
  * @title Guess Main contract 
@@ -976,10 +976,10 @@ contract Guesses is Ownable{
      * @return  成功
      */
     function guess(string bet) public payable returns(bool){
-        var splits=splitStr(bet,&quot;;&quot;);
+        var splits=splitStr(bet,";");
         //TODO 还没扣钱。。。
         for(uint i=0;i<splits.length;i++){
-            var singleBet=splitStr2Int(splits[i],&quot;,&quot;);
+            var singleBet=splitStr2Int(splits[i],",");
             innerGuess(uint32(singleBet[0]),uint16(singleBet[1]),uint32(singleBet[2]),msg.sender);
         }
         return true;
@@ -1042,12 +1042,12 @@ contract Guesses is Ownable{
      * 
      */ 
     function getGuessInfo(string ids) public view returns(string){
-        var splits=splitStr2Int(ids,&quot;;&quot;);
+        var splits=splitStr2Int(ids,";");
         var result=new strings.slice[](splits.length);
         for(uint i=0;i<splits.length;i++){
             result[i]=getSingleGuessInfo(uint32(splits[i])).toSlice();
         }
-        return strings.join(&quot;;&quot;.toSlice(),result);
+        return strings.join(";".toSlice(),result);
     }
     
     /**
@@ -1063,7 +1063,7 @@ contract Guesses is Ownable{
          for(uint16 i=1;i<=num;i++){
              result[i]=Integers.toString(options[i].totNum).toSlice();
          }
-         return strings.join(&quot;,&quot;.toSlice(),result);
+         return strings.join(",".toSlice(),result);
     }
 
 }

@@ -116,8 +116,8 @@ contract denaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function denaToken() public {
-        symbol = &quot;FWD&quot;;
-        name = &quot;dena Token&quot;;
+        symbol = "FWD";
+        name = "dena Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

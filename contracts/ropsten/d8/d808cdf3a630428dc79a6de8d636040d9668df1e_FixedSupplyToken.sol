@@ -139,8 +139,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;YHC2.1&quot;;
-        name = &quot;YH Coin 2.1&quot;;
+        symbol = "YHC2.1";
+        name = "YH Coin 2.1";
         decimals = 8;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

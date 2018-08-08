@@ -40,7 +40,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -663,8 +663,8 @@ contract BurnableToken is BasicToken {
 // File: contracts/SilcToken.sol
 
 contract SilcToken is MintableToken, BurnableToken {
-	string public name = &quot;SILC Token Test 11&quot;;
-	string public symbol = &quot;SILC&quot;;
+	string public name = "SILC Token Test 11";
+	string public symbol = "SILC";
 	uint8 public decimals = 18;
 
 	function burn(address burner, uint256 _value) public {
@@ -819,7 +819,7 @@ contract SilcCrowdsale is CappedCrowdsale, MyRefundableCrowdsale {
       //uint256 tokensThatWillBeMintedAfterPurchase = msg.value.mul(rate);
       //if ((stage == CrowdsaleStage.phase1) && (token.totalSupply() + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringpreSale)) {
       //  msg.sender.transfer(msg.value); // Refund them
-      //  EthRefunded(&quot;phase1 Limit Hit&quot;);
+      //  EthRefunded("phase1 Limit Hit");
       //  return;
       //}
       require(msg.value >= 100000000000000000); // 0.1 ETH
@@ -857,14 +857,14 @@ contract SilcCrowdsale is CappedCrowdsale, MyRefundableCrowdsale {
   function forwardFunds() internal {
       if (stage == CrowdsaleStage.phase1) {
           //wallet.transfer(msg.value);
-          //EthTransferred(&quot;forwarding funds to wallet&quot;);
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          //EthTransferred("forwarding funds to wallet");
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       } else if (stage == CrowdsaleStage.phase2) {
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       } else if (stage == CrowdsaleStage.phase3) {
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       }
   }
@@ -899,10 +899,10 @@ contract SilcCrowdsale is CappedCrowdsale, MyRefundableCrowdsale {
     uint256 tokenValance = token.balanceOf(contributor);
     require(tokenValance != 0);
     require(tokenValance == tokenIssued[contributor]);
-    //LogEvent(&quot;StartBurn&quot;, tokenValance);
+    //LogEvent("StartBurn", tokenValance);
     silcToken.burn(contributor, tokenValance);  // burn all balance
     tokenIssued[contributor] = 0;
-    //LogEvent(&quot;StartRefund&quot;, token.balanceOf(contributor));
+    //LogEvent("StartRefund", token.balanceOf(contributor));
     uint256 weiRefunded = vault.refundWhenNotClosed(contributor);
     weiRaised = weiRaised.sub(weiRefunded);
 

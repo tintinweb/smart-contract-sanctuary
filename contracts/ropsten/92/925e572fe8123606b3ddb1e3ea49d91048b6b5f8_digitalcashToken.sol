@@ -116,8 +116,8 @@ contract digitalcashToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function digitalcashToken() public {
-        symbol = &quot;DCT&quot;;
-        name = &quot;digitalcash Token&quot;;
+        symbol = "DCT";
+        name = "digitalcash Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

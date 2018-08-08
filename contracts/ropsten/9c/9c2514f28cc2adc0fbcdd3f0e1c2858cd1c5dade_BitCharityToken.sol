@@ -116,8 +116,8 @@ contract BitCharityToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitCharityToken() public {
-        symbol = &quot;BTY&quot;;
-        name = &quot;BitCharity Token&quot;;
+        symbol = "BTY";
+        name = "BitCharity Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 14 weeks;

@@ -82,10 +82,10 @@ contract BananaToken is ERC20, Owned {
  
     using SafeMath for uint256;
     //metadata
-    string  public name=&quot;Banana Token&quot;;
-    string  public symbol=&quot;BANA&quot;;
+    string  public name="Banana Token";
+    string  public symbol="BANA";
     uint256 public decimals = 18;
-    string  public version = &quot;1.0&quot;; 
+    string  public version = "1.0"; 
     uint public totalSupply = 21000000  * 10 ** uint(decimals);
     
 

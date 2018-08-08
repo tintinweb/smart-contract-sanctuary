@@ -113,8 +113,8 @@ contract BlockChainCourse is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BlockChainCourse() public {
-        symbol = &quot;TT&quot;;
-        name = &quot;Taylor Token&quot;;
+        symbol = "TT";
+        name = "Taylor Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3e16c7f0b7c3d01580d04cf2fe3c7e452c66b2a0] = _totalSupply;

@@ -409,12 +409,12 @@ contract VariableTaxToken is StandardToken, Ownable {
     event Tax(address from, address to, uint256 amount, uint256 fee);
 
     function updateTax(uint256 _value) public onlyOwner {
-        require(tax != _value, &quot;Tax value is unchanged&quot;);
+        require(tax != _value, "Tax value is unchanged");
         tax = _value;
     }
 
     function taxTo(address _to) public onlyOwner {
-        require(taxMan != _to, &quot;Tax recipient is unchanged.&quot;);
+        require(taxMan != _to, "Tax recipient is unchanged.");
         taxMan = _to;
     }
 
@@ -441,8 +441,8 @@ contract VariableTaxToken is StandardToken, Ownable {
 contract UtilityToken is StandardToken, Ownable, BurnableToken, VariableTaxToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;GoldBackedToken&quot;;
-    string public constant symbol = &quot;GBT&quot;;
+    string public constant name = "GoldBackedToken";
+    string public constant symbol = "GBT";
     uint8 public constant decimals = 0;
 
     event Mint(address indexed to, uint256 amount);
@@ -529,8 +529,8 @@ contract MintableToken is StandardToken, Ownable {
 contract SecurityToken is StandardToken, MintableToken, BurnableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;MMintToken&quot;;
-    string public constant symbol = &quot;MMT&quot;;
+    string public constant name = "MMintToken";
+    string public constant symbol = "MMT";
     uint8 public constant decimals = 0;
 
     SupplyManager supplyManager;

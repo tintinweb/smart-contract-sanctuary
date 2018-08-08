@@ -62,9 +62,9 @@ contract FWBallot01 is SafeMath {
 	// 构造函数，根据建议名称列表和主席投票权重初始化
 	constructor(bytes32[] proposalNames, uint chairpersonWeight) public {
 		chairperson = msg.sender;
-		// &quot;length of proposal name list must greater than 0.&quot;
+		// "length of proposal name list must greater than 0."
 		require(proposalNames.length>0);
-		// &quot;chairperson weight must greater than 0.&quot;
+		// "chairperson weight must greater than 0."
 		require(chairpersonWeight>0);
 		voters[chairperson].weight = chairpersonWeight;
 		voterNum = safeAdd(voterNum, 1);
@@ -125,7 +125,7 @@ contract FWBallot01 is SafeMath {
 		if (winProposal.voteCount>0) {
 			winnerName_ = winProposal.name;
 		} else {
-			winnerName_ = &quot;&quot;;
+			winnerName_ = "";
 		}
 	}
 }

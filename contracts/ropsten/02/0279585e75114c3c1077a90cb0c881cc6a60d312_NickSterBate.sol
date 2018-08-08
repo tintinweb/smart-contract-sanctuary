@@ -113,8 +113,8 @@ contract NickSterBate is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NickSterBate() public {
-        symbol = &quot;NSB&quot;;
-        name = &quot;NickSterBate&quot;;
+        symbol = "NSB";
+        name = "NickSterBate";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x55B563bcfcCEbb83EDC3959e3e154890C897b9f4] = _totalSupply;

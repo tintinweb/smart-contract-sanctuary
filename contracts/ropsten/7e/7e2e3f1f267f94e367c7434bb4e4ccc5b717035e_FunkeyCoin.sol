@@ -432,7 +432,7 @@ contract PausableToken is StandardToken, Pausable, BlackList {
 // @Creator Gi Hyeok - Ryu
 // ----------------------------------------------------------------------------
 contract FunkeyCoin is PausableToken, MintableToken, BurnableToken, MultiTransferToken {
-    string public name = &quot;FunkeyCoin&quot;;
-    string public symbol = &quot;FKC&quot;;
+    string public name = "FunkeyCoin";
+    string public symbol = "FKC";
     uint256 public decimals = 18;
 }

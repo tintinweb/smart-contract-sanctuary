@@ -406,8 +406,8 @@ contract NamiCrowdSale {
      *  Constants
     /*/
 
-    string public name = &quot;Nami ICO&quot;;
-    string public  symbol = &quot;NAC&quot;;
+    string public name = "Nami ICO";
+    string public  symbol = "NAC";
     uint   public decimals = 18;
 
     bool public TRANSFERABLE = false; // default not transferable
@@ -1000,7 +1000,7 @@ contract NamiSale{
         }
     }
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    string public name = &quot;Nami Sale&quot;;
+    string public name = "Nami Sale";
 
     // if 1 ETH = 5000 NAC => price_NAC = 5000
     uint256 public price_NAC;

@@ -139,8 +139,8 @@ library SafeMath {
 
 contract ArmorsToken is StandardToken {
   // public variables
-  string public name = &quot;Armors Token&quot;;
-  string public symbol = &quot;ARM&quot;;
+  string public name = "Armors Token";
+  string public symbol = "ARM";
   uint8 public decimals = 18;
 
   // public functions

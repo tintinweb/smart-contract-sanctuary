@@ -112,8 +112,8 @@ contract Webrypto is BasicToken,Ownable {
 
    using SafeMath for uint256;
    
-   string public constant name = &quot;Webrypto&quot;;
-   string public constant symbol = &quot;WBT&quot;;
+   string public constant name = "Webrypto";
+   string public constant symbol = "WBT";
    uint256 public constant decimals = 18;
    uint256 public preIcoBuyPrice = 222222222222222;   // per token the price is 2.2222*10^-4 eth, this price is equivalent in wei
    uint256 public IcoPrice = 1000000000000000;
@@ -159,7 +159,7 @@ contract Webrypto is BasicToken,Ownable {
                 tokensYouCanGive = 4500000 - TOKENS_SOLD;
                 returnAmount = tokensRequired - tokensYouCanGive;
                 returnAmount = returnAmount.mul(preIcoBuyPrice);
-                log(&quot;Tokens being bought exceed the limit of pre-ico. Returning remaining amount&quot;,returnAmount);
+                log("Tokens being bought exceed the limit of pre-ico. Returning remaining amount",returnAmount);
             }
             else
             {
@@ -184,7 +184,7 @@ contract Webrypto is BasicToken,Ownable {
                 priceCharged = tokensWithoutBonus.mul(IcoPrice); 
                 returnAmount = amt - priceCharged;
                 
-                log(&quot;Tokens being bought exceed the limit of ico phase 1. Returning remaining amount&quot;,returnAmount);
+                log("Tokens being bought exceed the limit of ico phase 1. Returning remaining amount",returnAmount);
              }
              else
             {
@@ -208,7 +208,7 @@ contract Webrypto is BasicToken,Ownable {
                 
                 priceCharged = tokensWithoutBonus.mul(IcoPrice); 
                 returnAmount = amt - priceCharged;
-                log(&quot;Tokens being bought exceed the limit of ico phase 2. Returning remaining amount&quot;,returnAmount);
+                log("Tokens being bought exceed the limit of ico phase 2. Returning remaining amount",returnAmount);
              }
               else
             {
@@ -232,7 +232,7 @@ contract Webrypto is BasicToken,Ownable {
                 
                 priceCharged = tokensWithoutBonus.mul(IcoPrice); 
                 returnAmount = amt - priceCharged;
-                log(&quot;Tokens being bought exceed the limit of ico phase 3. Returning remaining amount&quot;,returnAmount);
+                log("Tokens being bought exceed the limit of ico phase 3. Returning remaining amount",returnAmount);
              }
             else
             {
@@ -243,7 +243,7 @@ contract Webrypto is BasicToken,Ownable {
         }
         if (TOKENS_SOLD == 58500000)
         {
-            log(&quot;ICO has ended. All tokens sold.&quot;, 58500000);
+            log("ICO has ended. All tokens sold.", 58500000);
             tokensYouCanGive = 0;
             returnAmount = amt;
         }

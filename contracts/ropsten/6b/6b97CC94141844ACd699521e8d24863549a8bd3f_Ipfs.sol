@@ -15,7 +15,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -161,7 +161,7 @@ contract Ipfs is Galleasset {
 
   string public ipfs;
 
-  function setIpfs(string _ipfs) public isGalleasset(&quot;Ipfs&quot;) onlyOwner returns (bool) {
+  function setIpfs(string _ipfs) public isGalleasset("Ipfs") onlyOwner returns (bool) {
     ipfs=_ipfs;
     emit Update(msg.sender,ipfs,now);
     return true;

@@ -116,8 +116,8 @@ contract TheDeadShitCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheDeadShitCoin() public {
-        symbol = &quot;TDSC&quot;;
-        name = &quot;The Dead Shit Coin&quot;;
+        symbol = "TDSC";
+        name = "The Dead Shit Coin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

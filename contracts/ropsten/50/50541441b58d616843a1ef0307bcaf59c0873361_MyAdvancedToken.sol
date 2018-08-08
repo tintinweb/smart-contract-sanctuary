@@ -16,7 +16,7 @@ contract owned{
 
 contract tokenRecipient {function receiveApproval(address _from, uint256 _value, address _token, byte _extraData);}
 
-// &quot;21000000&quot;,&quot;JSCoin&quot;,&quot;18&quot;,&quot;JSC&quot;
+// "21000000","JSCoin","18","JSC"
 contract token{
     //虛擬幣 公共變數
     string public standard = &#39;Token 0.1&#39;;
@@ -32,25 +32,25 @@ contract token{
     //在區塊鏈上產生一個公共事件提示用戶
     event Transfer (address indexed from, address indexed to,uint256 value);
 
-    //為合約建立者設定&quot;虛擬幣&quot;初始值
+    //為合約建立者設定"虛擬幣"初始值
     function token (uint256 initialSupply, string tokenName, uint8 decimalUnits, string tokenSymbol ){
-        //為合約建立者設定&quot;虛擬幣&quot;初始值
+        //為合約建立者設定"虛擬幣"初始值
         balanceOf[msg.sender]=initialSupply;
 
-        //更新&quot;虛擬幣&quot;總量
+        //更新"虛擬幣"總量
         totalSupply=initialSupply;
 
-        //為&quot;虛擬幣&quot;命名
+        //為"虛擬幣"命名
         name = tokenName;
 
-        //為&quot;虛擬幣&quot;設定符號
+        //為"虛擬幣"設定符號
         symbol = tokenSymbol;
 
-        //為&quot;虛擬幣&quot;設定小數位
+        //為"虛擬幣"設定小數位
         decimals = decimalUnits;
     }
 
-    //發送&quot;虛擬幣&quot;
+    //發送"虛擬幣"
     function transfer(address _to, uint256 _value){
         // 檢查發送者的餘額是否足夠
         if(balanceOf[msg.sender]<_value) throw;
@@ -68,7 +68,7 @@ contract token{
         Transfer (msg.sender,_to,_value);
     }
 
-    //允許其他合約以你的名義發送&quot;虛擬幣&quot;
+    //允許其他合約以你的名義發送"虛擬幣"
     function approve(address _spender, uint256 _value) returns (bool success){
         allowance[msg.sender][_spender]=_value;
         return true;
@@ -83,7 +83,7 @@ contract token{
         }
     }
 
-    //一個試圖獲得&quot;虛擬幣&quot;的合約
+    //一個試圖獲得"虛擬幣"的合約
     function transferFrom(address _from, address _to,uint256 _value) returns (bool success){
         // 檢查發送者的餘額是否足夠
         if(balanceOf[_from]<_value) throw;
@@ -105,7 +105,7 @@ contract token{
     }
 
     function(){
-        // 防止被錯誤發送&quot;虛擬幣&quot;
+        // 防止被錯誤發送"虛擬幣"
         throw;
     }
 }
@@ -118,14 +118,14 @@ contract MyAdvancedToken is owned,token {
     //產生一個提示用戶的共用事件
     event FrozenFunds(address target,bool frozen);
 
-    //為合約建立者設定&quot;虛擬幣&quot;初始值
+    //為合約建立者設定"虛擬幣"初始值
     function MyAdvancedToken(uint256 initialSupply,
         string tokenName,
         uint8 decimalUnits,
         string tokenSymbol
     ) token (initialSupply,tokenName,decimalUnits,tokenSymbol){}
 
-    //發送&quot;虛擬幣&quot;
+    //發送"虛擬幣"
     function transfer(address _to, uint256 _value){
         // 檢查發送者的餘額是否足夠
         if(balanceOf[msg.sender]<_value) throw;
@@ -147,7 +147,7 @@ contract MyAdvancedToken is owned,token {
     }
 
 
-    //一個試圖獲得&quot;虛擬幣&quot;的合約
+    //一個試圖獲得"虛擬幣"的合約
     function transferFrom(address _from, address _to,uint256 _value) returns (bool success){
         //檢查帳戶是否凍結
         if(frozenAccount[_from]) throw;

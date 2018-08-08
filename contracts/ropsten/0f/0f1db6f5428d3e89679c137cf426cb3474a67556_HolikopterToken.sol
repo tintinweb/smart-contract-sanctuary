@@ -82,8 +82,8 @@ contract HolikopterToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;HolikopterToken&quot;;
-    string public constant symbol = &quot;HLKP&quot;;
+    string public constant name = "HolikopterToken";
+    string public constant symbol = "HLKP";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

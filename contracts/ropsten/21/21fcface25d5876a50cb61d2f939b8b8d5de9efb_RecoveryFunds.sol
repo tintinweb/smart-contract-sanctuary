@@ -49,9 +49,9 @@ library SafeMath {
 
 
 contract AccountRoles {
-    bytes32 public constant ROLE_TRANSFER_ETHER = keccak256(&quot;transfer_ether&quot;);
-    bytes32 public constant ROLE_TRANSFER_TOKEN = keccak256(&quot;transfer_token&quot;);
-    bytes32 public constant ROLE_TRANSFER_OWNERSHIP = keccak256(&quot;transfer_ownership&quot;);	
+    bytes32 public constant ROLE_TRANSFER_ETHER = keccak256("transfer_ether");
+    bytes32 public constant ROLE_TRANSFER_TOKEN = keccak256("transfer_token");
+    bytes32 public constant ROLE_TRANSFER_OWNERSHIP = keccak256("transfer_ownership");	
     
     /**
     * @dev modifier to validate the roles 
@@ -62,7 +62,7 @@ contract AccountRoles {
         for (uint8 i = 0; i < roles.length; i++) {
             require(roles[i] == ROLE_TRANSFER_ETHER 
             || roles[i] == ROLE_TRANSFER_TOKEN
-            || roles[i] == ROLE_TRANSFER_OWNERSHIP, &quot;Invalid account role&quot;);
+            || roles[i] == ROLE_TRANSFER_OWNERSHIP, "Invalid account role");
         }
         _;
     }
@@ -76,7 +76,7 @@ contract ISmartAccount {
 
 
 contract UIExtension {
-    string public uiExtensionVersion = &quot;0.0.1&quot;;
+    string public uiExtensionVersion = "0.0.1";
 	
     uint256 constant INTEGER = 1;
     uint256 constant FLOAT = 2;
@@ -290,7 +290,7 @@ contract UIExtension {
         private 
     {
         require(_setup.createFunctionSignature != _setup.updateFunctionSignature);
-        require(_setup.createFunctionSignature != &quot;&quot; && _setup.updateFunctionSignature != &quot;&quot;);
+        require(_setup.createFunctionSignature != "" && _setup.updateFunctionSignature != "");
             
         setupParameters.createFunctionSignature = _setup.createFunctionSignature;
         setupParameters.updateFunctionSignature = _setup.updateFunctionSignature;
@@ -324,7 +324,7 @@ contract UIExtension {
             validateTypeReference(_viewDatas[i].output.typeReference, _viewDatas[i].output.isArray);
             validateDescription(_viewDatas[i].output.description);
             Storage memory s;
-            s.baseData = setBaseStorage(_viewDatas[i].functionSignature, 1, &quot;&quot;);
+            s.baseData = setBaseStorage(_viewDatas[i].functionSignature, 1, "");
             viewDatas.push(s);
             viewDatas[i].parameters[0] = _viewDatas[i].output;
         }
@@ -339,7 +339,7 @@ contract UIExtension {
         pure 
         returns (BaseStorage) 
     {
-        require(_functionSignature != &quot;&quot;);
+        require(_functionSignature != "");
         BaseStorage memory s;
         s.functionSignature = _functionSignature;
         s.parametersCount = _parametersCount;
@@ -350,7 +350,7 @@ contract UIExtension {
 
 
 contract ManagerExtension {
-    string public managerExtensionVersion = &quot;0.0.1&quot;;
+    string public managerExtensionVersion = "0.0.1";
 
     mapping(address => bytes32[]) private identifier; //all extensions should define the identifier, it is necessary because the smart account can add the extension more than once
     mapping(bytes32 => uint256) private indexes;
@@ -406,12 +406,12 @@ contract ManagerExtension {
     }
     
     function transferTokenFrom(address _smartAccount, address _tokenAddress, address _to, uint256 _amount) internal {
-        bytes memory data = abi.encodePacked(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)), bytes32(_to), _amount);
+        bytes memory data = abi.encodePacked(bytes4(keccak256("transfer(address,uint256)")), bytes32(_to), _amount);
         ISmartAccount(_smartAccount).executeCall(_tokenAddress, 0, 0, data);
     }
     
     function transferEtherFrom(address _smartAccount, address _to, uint256 _amount) internal {
-        ISmartAccount(_smartAccount).executeCall(_to, _amount, 0, &quot;&quot;);
+        ISmartAccount(_smartAccount).executeCall(_to, _amount, 0, "");
     }
 }
 
@@ -453,56 +453,56 @@ contract RecoveryFunds is IExtension {
     }
     
     function getName() pure external returns(string) {
-        return &quot;Recovery Funds&quot;;
+        return "Recovery Funds";
     }
     
     function getDescription() pure external returns(string) {
-        return &quot;Define a list of providers to recover your funds from a lost smart account.&quot;;
+        return "Define a list of providers to recover your funds from a lost smart account.";
     }
     
     function getSetupParameters() pure internal returns(Setup) {
         ConfigParameter[] memory parameters = new ConfigParameter[](3);
-        parameters[0] = ConfigParameter(true, Parameter(false, false, INTEGER, 86400, &quot;Time to disprove in days&quot;));
-        parameters[1] = ConfigParameter(true, Parameter(false, false, INTEGER, 1, &quot;Number of confirmations&quot;));
-        parameters[2] = ConfigParameter(true, Parameter(true, false, ADDRESS, 0, &quot;Providers addresses&quot;));
-        return Setup(bytes4(keccak256(&quot;createSetup(uint256,uint256,address[])&quot;)),
-            bytes4(keccak256(&quot;updateSetup(bytes32,uint256,uint256,address[])&quot;)), parameters);
+        parameters[0] = ConfigParameter(true, Parameter(false, false, INTEGER, 86400, "Time to disprove in days"));
+        parameters[1] = ConfigParameter(true, Parameter(false, false, INTEGER, 1, "Number of confirmations"));
+        parameters[2] = ConfigParameter(true, Parameter(true, false, ADDRESS, 0, "Providers addresses"));
+        return Setup(bytes4(keccak256("createSetup(uint256,uint256,address[])")),
+            bytes4(keccak256("updateSetup(bytes32,uint256,uint256,address[])")), parameters);
     }
     
     function getActions() pure internal returns(Action[]) {
         Parameter[] memory parameters1 = new Parameter[](2);
-        parameters1[0] = Parameter(false, false, SMARTACCOUNTADDRESS, 0, &quot;Smart account&quot;);
-        parameters1[1] = Parameter(false, false, ADDRESS, 0, &quot;Destination&quot;);
+        parameters1[0] = Parameter(false, false, SMARTACCOUNTADDRESS, 0, "Smart account");
+        parameters1[1] = Parameter(false, false, ADDRESS, 0, "Destination");
         Parameter[] memory parameters2 = new Parameter[](1);
-        parameters2[0] = Parameter(false, false, SMARTACCOUNTADDRESS, 0, &quot;Smart account&quot;);
+        parameters2[0] = Parameter(false, false, SMARTACCOUNTADDRESS, 0, "Smart account");
         Action[] memory action = new Action[](5);
-        action[0].description = &quot;Start recovery process&quot;;
+        action[0].description = "Start recovery process";
         action[0].parameters = parameters1;
-        action[0].functionSignature = bytes4(keccak256(&quot;startRecovery(address,address)&quot;));
-        action[1].description = &quot;Confirm recovery&quot;;
+        action[0].functionSignature = bytes4(keccak256("startRecovery(address,address)"));
+        action[1].description = "Confirm recovery";
         action[1].parameters = parameters2;
-        action[1].functionSignature = bytes4(keccak256(&quot;confirm(address)&quot;));
-        action[2].description = &quot;Cancel recovery&quot;;
+        action[1].functionSignature = bytes4(keccak256("confirm(address)"));
+        action[2].description = "Cancel recovery";
         action[2].parameters = parameters2;
-        action[2].functionSignature = bytes4(keccak256(&quot;cancel(address)&quot;));
-        action[3].description = &quot;Disprove recovery process&quot;;
-        action[3].functionSignature = bytes4(keccak256(&quot;disprove()&quot;));
-        action[4].description = &quot;Complete recovery&quot;;
+        action[2].functionSignature = bytes4(keccak256("cancel(address)"));
+        action[3].description = "Disprove recovery process";
+        action[3].functionSignature = bytes4(keccak256("disprove()"));
+        action[4].description = "Complete recovery";
         action[4].parameters = parameters2;
-        action[4].functionSignature = bytes4(keccak256(&quot;complete(address)&quot;));
+        action[4].functionSignature = bytes4(keccak256("complete(address)"));
         return action;
     }
     
     function getViewDatas() pure internal returns(ViewData[]) {
         ViewData[] memory viewData = new ViewData[](4);
-        viewData[0].functionSignature = bytes4(keccak256(&quot;isStarted(address,bytes32)&quot;));
-        viewData[0].output = Parameter(false, false, BOOL, 0, &quot;Recovery process is started&quot;);
-        viewData[1].functionSignature = bytes4(keccak256(&quot;destinationAddress(address,bytes32)&quot;));
-        viewData[1].output = Parameter(false, true, ADDRESS, 0, &quot;Destination address&quot;);
-        viewData[2].functionSignature = bytes4(keccak256(&quot;getConfirmations(address,bytes32)&quot;));
-        viewData[2].output = Parameter(true, true, ADDRESS, 0, &quot;Confirmations&quot;);
-        viewData[3].functionSignature = bytes4(keccak256(&quot;timeToDisprove(address,bytes32)&quot;));
-        viewData[3].output = Parameter(false, true, INTEGER, 86400, &quot;Time in seconds to disprove&quot;);
+        viewData[0].functionSignature = bytes4(keccak256("isStarted(address,bytes32)"));
+        viewData[0].output = Parameter(false, false, BOOL, 0, "Recovery process is started");
+        viewData[1].functionSignature = bytes4(keccak256("destinationAddress(address,bytes32)"));
+        viewData[1].output = Parameter(false, true, ADDRESS, 0, "Destination address");
+        viewData[2].functionSignature = bytes4(keccak256("getConfirmations(address,bytes32)"));
+        viewData[2].output = Parameter(true, true, ADDRESS, 0, "Confirmations");
+        viewData[3].functionSignature = bytes4(keccak256("timeToDisprove(address,bytes32)"));
+        viewData[3].output = Parameter(false, true, INTEGER, 86400, "Time in seconds to disprove");
         return viewData;
     }
     

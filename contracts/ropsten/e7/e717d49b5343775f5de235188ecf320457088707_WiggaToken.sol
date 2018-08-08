@@ -113,8 +113,8 @@ contract WiggaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WiggaToken() public {
-        symbol = &quot;WIGGA&quot;;
-        name = &quot;Wigga Token&quot;;
+        symbol = "WIGGA";
+        name = "Wigga Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xE9f41E1f93cdA7bb436C8DF19923452C62F37841] = _totalSupply;

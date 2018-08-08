@@ -113,8 +113,8 @@ contract YKToken is UnlimitedAllowanceToken {
 
     uint8 constant public decimals = 18;
     uint public totalSupply = 10**27; // 1 billion tokens, 18 decimal places
-    string constant public name = &quot;YK Token based on ZRX Token&quot;;
-    string constant public symbol = &quot;YK Token&quot;;
+    string constant public name = "YK Token based on ZRX Token";
+    string constant public symbol = "YK Token";
 
     function YKToken() {
         balances[msg.sender] = totalSupply;

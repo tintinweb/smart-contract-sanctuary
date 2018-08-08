@@ -463,5 +463,5 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract AsgardGold is DetailedERC20, StandardToken, PausableToken, MintableToken, BurnableToken {
-    constructor () DetailedERC20(&quot;Asgard Gold&quot;, &quot;ASG&quot;, 18) public {}
+    constructor () DetailedERC20("Asgard Gold", "ASG", 18) public {}
 }

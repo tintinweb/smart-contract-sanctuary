@@ -15,7 +15,7 @@ library Helpers {
     }
 
     // returns the digits of `inputValue` as a string.
-    // example: `uintToString(12345678)` returns `&quot;12345678&quot;`
+    // example: `uintToString(12345678)` returns `"12345678"`
     function uintToString(uint256 inputValue) internal pure returns (string) {
         // figure out the length of the resulting string
         uint256 length = 0;
@@ -101,7 +101,7 @@ library MessageSigning {
     }
 
     function hashMessage(bytes message) internal pure returns (bytes32) {
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n";
         return keccak256(prefix, Helpers.uintToString(message.length), message);
     }
 }
@@ -316,9 +316,9 @@ contract ForeignBridge {
 
     uint256 public totalSupply;
 
-    string public name = &quot;ForeignBridge&quot;;
+    string public name = "ForeignBridge";
     // BETH = bridged ether
-    string public symbol = &quot;BETH&quot;;
+    string public symbol = "BETH";
     // 1-1 mapping of ether to tokens
     uint8 public decimals = 18;
 

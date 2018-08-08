@@ -124,8 +124,8 @@ contract OxBioToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     function OxBioToken() public {
       
-        symbol = &quot;OXB&quot;;
-        name = &quot;OxBio&quot;;
+        symbol = "OXB";
+        name = "OxBio";
         decimals = 18;
         USDETH = 530;
 

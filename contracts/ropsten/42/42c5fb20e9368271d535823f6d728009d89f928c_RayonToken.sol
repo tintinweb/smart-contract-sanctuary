@@ -464,7 +464,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract RayonToken is MintableToken, TransferLimitedToken, BurnableToken {
-    string public name = &quot;RAYON&quot;;
-    string public symbol = &quot;RYN&quot;;
+    string public name = "RAYON";
+    string public symbol = "RYN";
     uint8 public decimals = 18;
 }

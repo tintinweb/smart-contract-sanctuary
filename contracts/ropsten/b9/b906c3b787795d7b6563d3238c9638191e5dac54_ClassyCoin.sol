@@ -21,7 +21,7 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract token {
     /* Public variables of the token */
-    string public standard = &quot;ClassyCoin 1.0&quot;;
+    string public standard = "ClassyCoin 1.0";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -106,8 +106,8 @@ contract ClassyCoin is owned, token {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     uint256 public constant initialSupply = 100000000 * 10**16;
     uint8 public constant decimalUnits = 16;
-    string public tokenName = &quot;ClassyCoin&quot;;
-    string public tokenSymbol = &quot;ClassyCoin&quot;;
+    string public tokenName = "ClassyCoin";
+    string public tokenSymbol = "ClassyCoin";
     function ClassyCoin() token (initialSupply, tokenName, decimalUnits, tokenSymbol) {}
      /* Send coins */
     function transfer(address _to, uint256 _value) {

@@ -113,8 +113,8 @@ contract PityToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PityToken() public {
-        symbol = &quot;PITY&quot;;
-        name = &quot;Pity Token&quot;;
+        symbol = "PITY";
+        name = "Pity Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xBD2aC6Efd334191Ae597467248b3e095273B1A8a] = _totalSupply;

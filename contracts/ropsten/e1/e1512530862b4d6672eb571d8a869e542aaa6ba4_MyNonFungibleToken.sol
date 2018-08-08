@@ -28,8 +28,8 @@ contract ERC721 {
 contract MyNonFungibleToken is ERC721 {
   /*** CONSTANTS ***/
 
-  string public constant name = &quot;MyNonFungibleToken&quot;;
-  string public constant symbol = &quot;MNFT&quot;;
+  string public constant name = "MyNonFungibleToken";
+  string public constant symbol = "MNFT";
 
   bytes4 constant InterfaceID_ERC165 =
     bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));

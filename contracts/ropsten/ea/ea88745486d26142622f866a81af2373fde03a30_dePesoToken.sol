@@ -113,8 +113,8 @@ contract dePesoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function dePesoToken() public {
-        symbol = &quot;deP&quot;;
-        name = &quot;dePeso&quot;;
+        symbol = "deP";
+        name = "dePeso";
         decimals = 8;
         _totalSupply = 21000000000000000;
         balances[0x62bf698aA34C07adFfc428eC2c70f35820251088] = _totalSupply;

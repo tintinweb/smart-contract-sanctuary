@@ -100,8 +100,8 @@ contract Neymar is ERC20, BasicToken {
  
   uint public constant _totalSupply = 210000000000000;
   
-  string public constant symbol = &quot;NEYMAR&quot;;
-  string public constant name = &quot;Neymar &#233; do Brasil&quot;;
+  string public constant symbol = "NEYMAR";
+  string public constant name = "Neymar &#233; do Brasil";
   uint8 public constant decimals = 6;
   
    

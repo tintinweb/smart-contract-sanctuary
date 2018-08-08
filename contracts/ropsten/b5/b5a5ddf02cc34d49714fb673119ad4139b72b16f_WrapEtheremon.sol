@@ -277,7 +277,7 @@ contract WrapEtheremon is BasicAccessControl, Utils2 {
     (,tokenPrice) = getMonsterPriceInTokens(_kyber, _etheremon, token, _classId);
 
     // Swap player&#39;s token to ETH to send to Etheremon payments contract
-    uint destAmount = _kyber.tradeWithHint(token, tokenQty, ETH_TOKEN_ADDRESS, address(this), maxDestQty, minRate, walletId, &quot;&quot;);
+    uint destAmount = _kyber.tradeWithHint(token, tokenQty, ETH_TOKEN_ADDRESS, address(this), maxDestQty, minRate, walletId, "");
 
     // Check that destAmount >= tokenPrice
     require(destAmount >= tokenPrice);

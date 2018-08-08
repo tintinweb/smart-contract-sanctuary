@@ -126,8 +126,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract FOG is StandardToken, Ownable {
-  string public constant name = &quot;Fog&quot;;
-  string public constant symbol = &quot;FOG&quot;;
+  string public constant name = "Fog";
+  string public constant symbol = "FOG";
   uint8 public constant decimals = 8;
   uint256 public constant INITIAL_SUPPLY = 20 * 10**6 * 10**8;
 

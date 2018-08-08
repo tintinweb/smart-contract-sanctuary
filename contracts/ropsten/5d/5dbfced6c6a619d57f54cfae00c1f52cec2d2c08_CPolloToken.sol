@@ -116,8 +116,8 @@ contract CPolloToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CPolloToken() public {
-        symbol = &quot;CPLO&quot;;
-        name = &quot;CPollo&quot;;
+        symbol = "CPLO";
+        name = "CPollo";
         decimals = 3;
         bonusEnds = now + 1 weeks;
         endDate = now + 4 weeks;

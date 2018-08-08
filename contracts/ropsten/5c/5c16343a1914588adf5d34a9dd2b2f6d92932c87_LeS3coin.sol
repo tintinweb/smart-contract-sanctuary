@@ -18,9 +18,9 @@ contract LeS3coin {
     function LeS3coin() {
 
          initialSupply = 150000000000000000000000000;
-         name =&quot;LeS3coin&quot;;
+         name ="LeS3coin";
         decimals = 18;
-         symbol = &quot;LeS3coin&quot;;
+         symbol = "LeS3coin";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

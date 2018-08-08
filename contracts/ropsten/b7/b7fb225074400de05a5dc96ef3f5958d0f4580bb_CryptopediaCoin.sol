@@ -113,8 +113,8 @@ contract CryptopediaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CryptopediaCoin() public {
-        symbol = &quot;CPC&quot;;
-        name = &quot;Cryptopedia Coin&quot;;
+        symbol = "CPC";
+        name = "Cryptopedia Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x9675752316fE4B0f79Dc43c8CD3710A100f6328a] = _totalSupply;

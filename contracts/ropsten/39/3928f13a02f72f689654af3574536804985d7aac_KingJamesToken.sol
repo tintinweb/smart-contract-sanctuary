@@ -113,8 +113,8 @@ contract KingJamesToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KingJamesToken() public {
-        symbol = &quot;KING&quot;;
-        name = &quot;King James Token&quot;;
+        symbol = "KING";
+        name = "King James Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0B5e1110c75a99DF8725109b26AB801f51d91BED] = _totalSupply;

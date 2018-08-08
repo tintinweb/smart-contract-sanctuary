@@ -5,8 +5,8 @@ contract Mejasa {
     using SafeMath for uint256;
     
     uint public constant _totalSupply = 500000000;
-    string public constant symbol = &quot;MJS&quot;;
-    string public constant name = &quot;Mejasa&quot;;
+    string public constant symbol = "MJS";
+    string public constant name = "Mejasa";
     uint8 public constant decimals = 2;
     
     mapping(address => uint256) balances;

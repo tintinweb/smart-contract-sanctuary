@@ -116,8 +116,8 @@ contract STTCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STTCToken() public {
-        symbol = &quot;STTC&quot;;
-        name = &quot;STTC Token&quot;;
+        symbol = "STTC";
+        name = "STTC Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 10 weeks;

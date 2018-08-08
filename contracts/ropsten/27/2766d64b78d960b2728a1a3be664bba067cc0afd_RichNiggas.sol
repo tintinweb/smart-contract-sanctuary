@@ -113,8 +113,8 @@ contract RichNiggas is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RichNiggas() public {
-        symbol = &quot;RING&quot;;
-        name = &quot;RichNiggas&quot;;
+        symbol = "RING";
+        name = "RichNiggas";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0xD915fB1d387452DF58Cd156318beeff5aAF1da33] = _totalSupply; //MEW address here

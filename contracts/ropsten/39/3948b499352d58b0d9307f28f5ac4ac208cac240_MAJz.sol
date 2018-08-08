@@ -67,8 +67,8 @@ contract MAJz is BasicToken, Ownership {
 
     //Constructor of the Token
     constructor() public{
-        _symbol = &quot;MAZ&quot;;
-        _name = &quot;MAJz&quot;;
+        _symbol = "MAZ";
+        _name = "MAJz";
         _decimals = 18;
         _totalSupply = 560000000000000000000000000;
         _balances[msg.sender] = _totalSupply;

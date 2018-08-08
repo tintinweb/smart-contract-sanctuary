@@ -113,8 +113,8 @@ contract SpecoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor () public {
-        symbol = &quot;SPECOINS&quot;;
-        name = &quot;Specoins Token&quot;;
+        symbol = "SPECOINS";
+        name = "Specoins Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDf7a3F9De150D42Df2c3b7c46939C0A8ee053BE0] = _totalSupply;

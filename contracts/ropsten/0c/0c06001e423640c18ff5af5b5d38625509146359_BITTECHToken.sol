@@ -189,8 +189,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract BITTECHToken is StandardToken {
 
-  string public constant name = &quot;BitTech Token&quot;;
-  string public constant symbol = &quot;BITTECH&quot;;
+  string public constant name = "BitTech Token";
+  string public constant symbol = "BITTECH";
   uint8 public constant decimals = 18; // only two deciminals, token cannot be divided past 1/100th
 
   uint256 public constant INITIAL_SUPPLY =  100000000000000000000000000; // 100 million + 18 decimals

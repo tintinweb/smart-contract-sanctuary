@@ -10,7 +10,7 @@ contract DemoPart2 {
     }
 
     function writeMessage(string _msg) public {
-      messagePool[msg.sender] = &quot;YES123測試OK>>再測一次&quot;;
+      messagePool[msg.sender] = "YES123測試OK>>再測一次";
     }
 
     function readMessage() returns(string){

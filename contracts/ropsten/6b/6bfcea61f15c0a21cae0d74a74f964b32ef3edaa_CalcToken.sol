@@ -113,8 +113,8 @@ contract CalcToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;CALC&quot;;
-        name = &quot;Calculator Token&quot;;
+        symbol = "CALC";
+        name = "Calculator Token";
         decimals = 18;
         _totalSupply = 100000000;
         balances[0x57B5CEe8038440F0bEd9386b956e2Cce393FbfAC] = _totalSupply;

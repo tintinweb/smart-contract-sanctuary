@@ -454,12 +454,12 @@ contract ethsoccer48{
         if(findpos!=nodata)
         {
             string memory cardidstr = uintToString(cardid);
-            string memory allstr2 = strConcat(cardidstr,&quot;,&quot;);
+            string memory allstr2 = strConcat(cardidstr,",");
     		allstr = strConcat(allstr2,allgamecard[findpos].cardname);
         }
         else
         {
-            allstr = &quot;nodata&quot;;
+            allstr = "nodata";
         }
         return allstr;
     }
@@ -472,12 +472,12 @@ contract ethsoccer48{
         if(findpos!=nodata)
         {
     		string memory cardidstr = uintToString(cardid);
-            string memory allstr2 = strConcat(cardidstr,&quot;,&quot;);
+            string memory allstr2 = strConcat(cardidstr,",");
     		allstr = strConcat(allstr2,allgamecard[findpos].cardintro);
         }
         else
         {
-            allstr = &quot;nodata&quot;;
+            allstr = "nodata";
         }
         return allstr;
     }

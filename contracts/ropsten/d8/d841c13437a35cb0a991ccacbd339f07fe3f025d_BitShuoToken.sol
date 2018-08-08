@@ -98,8 +98,8 @@ contract StandardToken is ERC20 {
 contract BitShuoToken is StandardToken {
     uint public totalSupply = 10000000000;
     uint8 constant public decimals =2;
-    string constant public name = &quot;IPv6 Token&quot;;
-    string constant public symbol = &quot;IPv6&quot;;
+    string constant public name = "IPv6 Token";
+    string constant public symbol = "IPv6";
 
     function FCoinToken() public {
         balances[msg.sender] = totalSupply;

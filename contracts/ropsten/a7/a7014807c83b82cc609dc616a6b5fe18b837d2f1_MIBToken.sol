@@ -151,8 +151,8 @@ contract MIBTokenbase is ERC20, MIBStop {
 
 contract MIBToken is MIBTokenbase {
     uint256 public _totalsupply;
-    string public constant name = &quot;Mobile Integrated Blockchain&quot;;
-    string public constant symbol = &quot;MIB&quot;;
+    string public constant name = "Mobile Integrated Blockchain";
+    string public constant symbol = "MIB";
     uint public constant decimals = 18;
 
     event Burn(address indexed from, uint256 value);  

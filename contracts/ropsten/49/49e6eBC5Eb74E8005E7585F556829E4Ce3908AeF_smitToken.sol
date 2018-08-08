@@ -111,8 +111,8 @@ contract smitToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function smitToken() public {
-        symbol = &quot;SR&quot;;
-        name = &quot;smit Token&quot;;
+        symbol = "SR";
+        name = "smit Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

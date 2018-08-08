@@ -45,11 +45,11 @@ contract Medipedia {
      
     function addMessageRequest(address _consumerAddress, address[] _providerAddresses, string _msgRequestHash) public{
         if(userStatus[_consumerAddress] == 1){
-            addMessage(_consumerAddress,  _msgRequestHash,  &quot;&quot;);
+            addMessage(_consumerAddress,  _msgRequestHash,  "");
             uint _noOfProviders = _providerAddresses.length;
             for (uint i = 0; i<_noOfProviders; i++) {
                 if(userStatus[_providerAddresses[i]] == 1){
-                    addMessage(_providerAddresses[i],  _msgRequestHash,  &quot;&quot;);
+                    addMessage(_providerAddresses[i],  _msgRequestHash,  "");
                 }
             }
         }
@@ -81,7 +81,7 @@ contract Medipedia {
             uint id = arrayLength + 1;
             message = Message(id, msgRequestHash, repHash);
             msgs.push(message);
-            emit addMessageRequestEvent(userAddress, &quot;New Message request added.&quot;);
+            emit addMessageRequestEvent(userAddress, "New Message request added.");
         }else{
             bool isMsgAvailable = false;
             for (uint i = 0; i<arrayLength; i++) {
@@ -97,7 +97,7 @@ contract Medipedia {
                 message = Message(id, msgRequestHash, repHash);
                 msgs.push(message);
             }
-            emit addMessageReplyEvent(userAddress, &quot;A new reply added&quot;);
+            emit addMessageReplyEvent(userAddress, "A new reply added");
         }
 
     }
@@ -118,7 +118,7 @@ contract Medipedia {
         string storage msgHash = msgs[id-1].replyHash;
 
         if(bytes(msgHash).length == 0){
-            return &quot;&quot;;
+            return "";
         }
 
         return msgHash;
@@ -133,7 +133,7 @@ contract Medipedia {
     
     function setUserStatus(address userAddress, uint status) public restricted{
         userStatus[userAddress] = status;
-        emit userStatusUpdated(userAddress, &quot;User status updated.&quot;);
+        emit userStatusUpdated(userAddress, "User status updated.");
     }
 
     function getUserStatus(address userAddress) public restricted view returns(uint){

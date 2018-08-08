@@ -107,9 +107,9 @@ contract SpectrumNetwork is StandardToken { // Token is Geo-spatially coded ECR2
     function SpectrumNetwork() {
         balances[msg.sender] = 1000000000000000000000000000;               // Give the creator all initial geo-spatially digitized tokens.(CHANGE THIS)
         totalSupply = 1000000000000000000000000000;                        // Update total supply and add updated location data from https://glovis.usgs.gov (1000 for example) (CHANGE THIS)
-        name = &quot;SpectrumNetwork&quot;;                                   // Set the name for display purposes (CHANGE THIS)
+        name = "SpectrumNetwork";                                   // Set the name for display purposes (CHANGE THIS)
         decimals = 18;                                               // Amount of decimals for display purposes (CHANGE THIS)
-        symbol = &quot;SPEC&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "SPEC";                                             // Set the symbol for display purposes (CHANGE THIS)
         unitsOneEthCanBuy = 100000;                                      // Set the price of your token for the ICO (CHANGE THIS)
         fundsWallet = msg.sender;                                    // The owner of the contract gets ETH
     }
@@ -136,7 +136,7 @@ contract SpectrumNetwork is StandardToken { // Token is Geo-spatially coded ECR2
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

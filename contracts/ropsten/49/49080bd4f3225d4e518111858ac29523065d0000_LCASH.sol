@@ -113,8 +113,8 @@ contract LCASH is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LCASH() public {
-        symbol = &quot;LCASH&quot;;
-        name = &quot;LCoin Cash&quot;;
+        symbol = "LCASH";
+        name = "LCoin Cash";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa704ca16D650a033Ba7D4F7E9C67500F2c3dfa2b] = _totalSupply;

@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -227,13 +227,13 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
 
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if called by any account that&#39;s not whitelisted.
@@ -574,9 +574,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract PixieToken is StandardToken, Whitelist {
 
-  string public constant name = &quot;Pixie Token&quot;;
+  string public constant name = "Pixie Token";
 
-  string public constant symbol = &quot;PXE&quot;;
+  string public constant symbol = "PXE";
 
   uint8 public constant decimals = 18;
 
@@ -608,7 +608,7 @@ contract PixieToken is StandardToken, Whitelist {
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(
       transfersEnabled || whitelist(msg.sender) || _to == bridge,
-      &quot;Unable to transfers locked or address not whitelisted or not sending to the bridge&quot;
+      "Unable to transfers locked or address not whitelisted or not sending to the bridge"
     );
 
     return super.transfer(_to, _value);
@@ -617,7 +617,7 @@ contract PixieToken is StandardToken, Whitelist {
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(
       transfersEnabled || whitelist(msg.sender) || _to == bridge,
-      &quot;Unable to transfers locked or address not whitelisted or not sending to the bridge&quot;
+      "Unable to transfers locked or address not whitelisted or not sending to the bridge"
     );
 
     return super.transferFrom(_from, _to, _value);
@@ -630,7 +630,7 @@ contract PixieToken is StandardToken, Whitelist {
    * @param _new the address to set
    */
   function changeBridge(address _new) external onlyOwner {
-    require(_new != address(0), &quot;Invalid address&quot;);
+    require(_new != address(0), "Invalid address");
     bridge = _new;
     emit BridgeChange(bridge);
   }

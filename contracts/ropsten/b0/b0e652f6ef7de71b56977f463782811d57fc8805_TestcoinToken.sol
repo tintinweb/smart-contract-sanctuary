@@ -114,8 +114,8 @@ contract TestcoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestcoinToken() public {
-        symbol = &quot;TSC&quot;;
-        name = &quot;Testcoin Token&quot;;
+        symbol = "TSC";
+        name = "Testcoin Token";
         decimals = 18;
         bonusEnds = now + 1 days;
         endDate = now + 2 days;

@@ -116,8 +116,8 @@ contract BagpackicoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BagpackicoToken() public {
-        symbol = &quot;BPKICO&quot;;
-        name = &quot;Bagpackico Token&quot;;
+        symbol = "BPKICO";
+        name = "Bagpackico Token";
         decimals = 2;
         bonusEnds = now + 1 weeks;
         endDate = now + 6 weeks;

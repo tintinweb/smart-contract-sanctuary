@@ -13,7 +13,7 @@ contract owned {
   }
 
   modifier onlyOwner {
-    require(msg.sender == owner,&quot;Your know the owner of this smart contract. Bad account&quot;);
+    require(msg.sender == owner,"Your know the owner of this smart contract. Bad account");
     _;
   }
 
@@ -31,7 +31,7 @@ contract owned {
   }
 
   function transferOwnership(address newOwner) public {
-    require(msg.sender == owner,&quot;Your are not the owner of this smart contract. Bad account&quot;);
+    require(msg.sender == owner,"Your are not the owner of this smart contract. Bad account");
     owner = newOwner;
   }
 }

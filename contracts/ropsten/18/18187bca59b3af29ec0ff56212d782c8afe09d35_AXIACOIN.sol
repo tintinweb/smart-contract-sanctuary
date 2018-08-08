@@ -102,8 +102,8 @@ contract ContractReceiver {
 contract AXIACOIN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;AXIACOIN&quot;;
-    string public symbol = &quot;AXIA&quot;;
+    string public name = "AXIACOIN";
+    string public symbol = "AXIA";
     uint8 public decimals = 8;
     uint private constant DECIMALS = 100000000;
     uint256 public totalSupply = 40000000000 * DECIMALS; // 400milion

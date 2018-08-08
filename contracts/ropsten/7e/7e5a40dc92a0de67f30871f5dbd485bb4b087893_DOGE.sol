@@ -608,8 +608,8 @@ contract DOGE is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;DOGE TOKEN&quot;;
-    string public constant symbol = &quot;DOGE&quot;;
+    string public constant name = "DOGE TOKEN";
+    string public constant symbol = "DOGE";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 999999999999999999100000000000e8;

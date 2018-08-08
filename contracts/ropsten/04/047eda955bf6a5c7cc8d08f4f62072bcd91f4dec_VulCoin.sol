@@ -100,8 +100,8 @@ contract VulCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;VC&quot;;  //our coin&#39;s symbol
-        name = &quot;VulCoin&quot;; //our coin&#39;s name
+        symbol = "VC";  //our coin&#39;s symbol
+        name = "VulCoin"; //our coin&#39;s name
         decimals = 18;
         _totalSupply = 10000000000000;
         balances[msg.sender] = _totalSupply;

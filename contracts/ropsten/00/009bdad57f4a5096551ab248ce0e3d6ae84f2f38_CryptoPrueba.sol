@@ -111,8 +111,8 @@ contract CryptoPrueba is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CryptoPrueba() public {
-        symbol = &quot;CPA&quot;;
-        name = &quot;CPA&quot;;
+        symbol = "CPA";
+        name = "CPA";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8fc6022f1163FF14eb54288dc5188aF6836B59B1] = _totalSupply;

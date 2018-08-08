@@ -113,8 +113,8 @@ contract Amberella is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Amberella() public {
-        symbol = &quot;amberella&quot;;
-        name = &quot;Amberella Token&quot;;
+        symbol = "amberella";
+        name = "Amberella Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x1d96B1EF76378582496D3E3Cf9fD194b4D9F7288] = _totalSupply;

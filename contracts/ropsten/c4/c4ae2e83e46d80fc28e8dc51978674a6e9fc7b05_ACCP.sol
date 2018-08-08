@@ -47,7 +47,7 @@ library SafeMath {
     }
 }
 
-/* &quot;Interfaces&quot; */
+/* "Interfaces" */
 
 //  this is expected from another contracts
 //  if it wants to spend tokens of behalf of the token owner in our contract
@@ -79,11 +79,11 @@ contract ACCP {
 
     // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md#name
     // function name() constant returns (string name)
-    string public name = &quot;ACCP&quot;;
+    string public name = "ACCP";
 
     // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md#symbol
     // function symbol() constant returns (string symbol)
-    string public symbol = &quot;ACCP&quot;;
+    string public symbol = "ACCP";
 
     // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md#decimals
     // function decimals() constant returns (uint8 decimals)

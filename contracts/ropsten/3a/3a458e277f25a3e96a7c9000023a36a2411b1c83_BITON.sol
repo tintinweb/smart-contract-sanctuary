@@ -113,8 +113,8 @@ contract BITON is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;BITON&quot;;
-        name = &quot;BITON&quot;;
+        symbol = "BITON";
+        name = "BITON";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x1530FC137f35b1b02299127696ed48BD1097B98d] = _totalSupply;

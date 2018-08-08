@@ -25,7 +25,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   /* Current Owner */
@@ -386,10 +386,10 @@ contract ZeonToken is UpgradeableToken, ReleasableToken {
   event UpdatedTokenInformation(string newName, string newSymbol); 
 
   /* name of the token */
-  string public name = &quot;ZeonToken&quot;; 
+  string public name = "ZeonToken"; 
 
   /* symbol of the token */
-  string public symbol = &quot;ZNC&quot;; 
+  string public symbol = "ZNC"; 
 
   /* token decimals to handle fractions */         
   uint public decimals = 18;

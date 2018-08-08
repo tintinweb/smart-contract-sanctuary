@@ -234,8 +234,8 @@ contract ERC20Token is ERC20 {
  */
 contract LVECoin is ERC20Token, Pausable, Dealershipable {
 
-    string public  constant name        = &quot;LVECoin&quot;;
-    string public  constant symbol      = &quot;LVE&quot;;
+    string public  constant name        = "LVECoin";
+    string public  constant symbol      = "LVE";
     uint256 public constant decimals    = 18;
     // issue all token(20億)
     uint256 private initialToken        = 2000000000 * (10 ** decimals);

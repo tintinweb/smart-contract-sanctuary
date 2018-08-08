@@ -113,8 +113,8 @@ contract ExpandCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ExpandCoin() public {
-        symbol = &quot;E&quot;;
-        name = &quot;ExpandCoin&quot;;
+        symbol = "E";
+        name = "ExpandCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x1276883256A3Ccf7EDb0b33D1dd6898bC669f85a] = _totalSupply;

@@ -10,8 +10,8 @@ contract SparkChainToken {
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;
     uint256 initialSupply = 10*1000*1000*1000;
-    string tokenName = &quot;Spark Chain Token&quot;;
-    string tokenSymbol = &quot;SPC&quot;;
+    string tokenName = "Spark Chain Token";
+    string tokenSymbol = "SPC";
       
     // This creates an array with all balances
     mapping (address => uint256) public balanceOf;

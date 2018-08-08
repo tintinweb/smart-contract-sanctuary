@@ -60,8 +60,8 @@ contract ForTester is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;ForTester&quot;;
-    string public constant symbol = &quot;4TT&quot;;
+    string public constant name = "ForTester";
+    string public constant symbol = "4TT";
     uint public constant decimals = 18;
     
 uint256 public totalSupply = 15000000000e18;

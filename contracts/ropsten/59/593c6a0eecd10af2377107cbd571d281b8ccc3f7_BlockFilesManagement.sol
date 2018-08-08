@@ -117,8 +117,8 @@ contract BlockFilesManagement is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BlockFilesManagement() public {
-        symbol = &quot;BFM&quot;;
-        name = &quot;Block Files Management&quot;;
+        symbol = "BFM";
+        name = "Block Files Management";
         decimals = 18;
         _totalSupply = 29000000000000000000000000000;
         balances[0x3bCc4248B55b82a2941104Cf4d810E9AD30dCaF5] = _totalSupply;

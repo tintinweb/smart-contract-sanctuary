@@ -80,8 +80,8 @@ contract YAP is ERC20Interface, Owned, SafeMath {
 
     
     function YAP() public {
-        symbol = &quot;YAP&quot;;
-        name = &quot;YAP&quot;;
+        symbol = "YAP";
+        name = "YAP";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0xE6985bF59cD18e4cE22AE40100378011Ee908365] = _totalSupply;

@@ -56,8 +56,8 @@ contract Crusher is Ownable{
     
     using SafeMath for uint256;
     
-    string public constant name       = &quot;CRUSHER&quot;;
-    string public constant symbol     = &quot;CRSH&quot;;
+    string public constant name       = "CRUSHER";
+    string public constant symbol     = "CRSH";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply        = 21000000 ether;
     uint256 public currentTotalSupply = 0;

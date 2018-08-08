@@ -83,7 +83,7 @@ pragma solidity^0.4.17;
 	    constructor (string _creator) public {
 	      creatorName = _creator;
 	      creatorAddress = msg.sender;
-	      emit Log(&quot;Contract deployed successfully&quot;);
+	      emit Log("Contract deployed successfully");
 	    }
 	    
 	    //function returns the owner
@@ -114,7 +114,7 @@ pragma solidity^0.4.17;
 	            app.exists = true;
 	            applications[_govtId].push(app);
 	            applicationIndex[_govtId][_applicationId] = app;
-	            emit Log(&quot;New application added successfully&quot;);
+	            emit Log("New application added successfully");
 	            return true;
 	        }
 	            return false;
@@ -141,7 +141,7 @@ pragma solidity^0.4.17;
 	             submitter: _submitter,
 	             action: _action
 	        }));
-	        emit Log(&quot;Submitted application by vendor&quot;);
+	        emit Log("Submitted application by vendor");
 	        return true;
 	    }
 	    
@@ -162,7 +162,7 @@ pragma solidity^0.4.17;
 	             submitter: _submitter,
 	             action: _action
 	        }));
-	        emit Log(&quot;updated vendor application status&quot;);
+	        emit Log("updated vendor application status");
 	        return true;
 	    }
 	    
@@ -194,7 +194,7 @@ pragma solidity^0.4.17;
 	             action: _action
 	        }));
 	        
-	        emit Log(&quot;Scoring created successfully&quot;);
+	        emit Log("Scoring created successfully");
 	        return true;
 	    }
 	    

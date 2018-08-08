@@ -113,8 +113,8 @@ contract CPollo is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CPollo() public {
-        symbol = &quot;CPLO&quot;;
-        name = &quot;CPollo&quot;;
+        symbol = "CPLO";
+        name = "CPollo";
         decimals = 3;
         _totalSupply = 20000000000000;
         balances[0x3374EB92854FF40c1E74a8FE2114d99b38214070] = _totalSupply;

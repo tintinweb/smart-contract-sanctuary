@@ -107,9 +107,9 @@ contract ZyryanovKubSU2018 is StandardToken {
     function ZyryanovKubSU2018() {
         balances[msg.sender] = 500000;
         totalSupply = 500000; 
-        name = &quot;ZyryanovKubSU2018&quot;;
+        name = "ZyryanovKubSU2018";
         decimals = 4;                                               
-        symbol = &quot;ZKSU&quot;;                                             
+        symbol = "ZKSU";                                             
         unitsOneEthCanBuy = 25;                                      
         fundsWallet = msg.sender;                                    
     }
@@ -136,7 +136,7 @@ contract ZyryanovKubSU2018 is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

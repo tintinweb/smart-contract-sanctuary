@@ -69,7 +69,7 @@ contract RocketBase {
     * @dev Throws if called by any account other than the owner.
     */
     modifier onlyOwner() {
-        roleCheck(&quot;owner&quot;, msg.sender);
+        roleCheck("owner", msg.sender);
         _;
     }
 
@@ -77,7 +77,7 @@ contract RocketBase {
     * @dev Modifier to scope access to admins
     */
     modifier onlyAdmin() {
-        roleCheck(&quot;admin&quot;, msg.sender);
+        roleCheck("admin", msg.sender);
         _;
     }
 
@@ -85,7 +85,7 @@ contract RocketBase {
     * @dev Modifier to scope access to admins
     */
     modifier onlySuperUser() {
-        require(roleHas(&quot;owner&quot;, msg.sender) || roleHas(&quot;admin&quot;, msg.sender));
+        require(roleHas("owner", msg.sender) || roleHas("admin", msg.sender));
         _;
     }
 
@@ -114,7 +114,7 @@ contract RocketBase {
     * @return bool
     */
     function isOwner(address _address) public view returns (bool) {
-        return rocketStorage.getBool(keccak256(&quot;access.role&quot;, &quot;owner&quot;, _address));
+        return rocketStorage.getBool(keccak256("access.role", "owner", _address));
     }
 
     /**
@@ -122,7 +122,7 @@ contract RocketBase {
     * @return bool
     */
     function roleHas(string _role, address _address) internal view returns (bool) {
-        return rocketStorage.getBool(keccak256(&quot;access.role&quot;, _role, _address));
+        return rocketStorage.getBool(keccak256("access.role", _role, _address));
     }
 
      /**
@@ -139,7 +139,7 @@ contract RocketBase {
 /**
  * @title Authorized
  * @dev The Authorized contract has an issuer, depository, and auditor address, and provides basic 
- * authorization control functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * authorization control functions, this simplifies the implementation of "user permissions".
  */
 contract Authorized is RocketBase {
 
@@ -188,7 +188,7 @@ contract Authorized is RocketBase {
    */
   function setIssuer(address newIssuer) public onlyOwner {
     require(newIssuer != address(0));
-    rocketStorage.setAddress(keccak256(&quot;token.issuer&quot;), newIssuer);
+    rocketStorage.setAddress(keccak256("token.issuer"), newIssuer);
     emit IssuerTransferred(issuer(), newIssuer);
   }
 
@@ -196,7 +196,7 @@ contract Authorized is RocketBase {
    * @dev Get the current issuer address from storage.
    */
   function issuer() public view returns (address) {
-    return rocketStorage.getAddress(keccak256(&quot;token.issuer&quot;));
+    return rocketStorage.getAddress(keccak256("token.issuer"));
   }
 
   /**
@@ -205,7 +205,7 @@ contract Authorized is RocketBase {
    */
   function setAuditor(address newAuditor) public onlyOwner {
     require(newAuditor != address(0));
-    rocketStorage.setAddress(keccak256(&quot;token.auditor&quot;), newAuditor);
+    rocketStorage.setAddress(keccak256("token.auditor"), newAuditor);
     emit AuditorTransferred(auditor(), newAuditor);
   }
 
@@ -213,7 +213,7 @@ contract Authorized is RocketBase {
    * @dev Get the current auditor address from storage.
    */
   function auditor() public view returns (address) {
-    return rocketStorage.getAddress(keccak256(&quot;token.auditor&quot;));
+    return rocketStorage.getAddress(keccak256("token.auditor"));
   }
 
   /**
@@ -222,7 +222,7 @@ contract Authorized is RocketBase {
    */
   function setDepository(address newDepository) public onlyOwner {
     require(newDepository != address(0));
-    rocketStorage.setAddress(keccak256(&quot;token.depository&quot;), newDepository);
+    rocketStorage.setAddress(keccak256("token.depository"), newDepository);
     emit DepositoryTransferred(depository(), newDepository);
   }
 
@@ -230,7 +230,7 @@ contract Authorized is RocketBase {
    * @dev Get the current depository address from storage.
    */
   function depository() public view returns (address) {
-    return rocketStorage.getAddress(keccak256(&quot;token.depository&quot;));
+    return rocketStorage.getAddress(keccak256("token.depository"));
   }
 
 }
@@ -241,7 +241,7 @@ contract Authorized is RocketBase {
  * @title Delegated
  * @dev The Delegated contract allows the issuer, depository, and auditor the ability to 
  * delegate certain tasks to other signers, providing authorization control functions,
- * this further simplifies the implementation of &quot;user permissions&quot;.
+ * this further simplifies the implementation of "user permissions".
  */
 contract Delegated is Authorized {
 
@@ -291,7 +291,7 @@ contract Delegated is Authorized {
   function setIssuerDelegate(address newDelegate) public onlyIssuer {
     require(newDelegate != address(0));
     address oldDelegate_ = issuerDelegate();
-    rocketStorage.setAddress(keccak256(&quot;token.issuerDelegate&quot;), newDelegate);
+    rocketStorage.setAddress(keccak256("token.issuerDelegate"), newDelegate);
     emit IssuerDelegated(oldDelegate_, newDelegate);
   }
 
@@ -299,7 +299,7 @@ contract Delegated is Authorized {
    * @dev Get the current issuer delegate address from storage.
    */
   function issuerDelegate() public view returns (address) {
-    return rocketStorage.getAddress(keccak256(&quot;token.issuerDelegate&quot;));
+    return rocketStorage.getAddress(keccak256("token.issuerDelegate"));
   }
 
   /**
@@ -309,7 +309,7 @@ contract Delegated is Authorized {
   function setAuditorDelegate(address newDelegate) public onlyAuditor {
     require(newDelegate != address(0));
     address oldDelegate_ = auditorDelegate();
-    rocketStorage.setAddress(keccak256(&quot;token.auditorDelegate&quot;), newDelegate);
+    rocketStorage.setAddress(keccak256("token.auditorDelegate"), newDelegate);
     emit AuditorDelegated(oldDelegate_, newDelegate);
   }
 
@@ -317,7 +317,7 @@ contract Delegated is Authorized {
    * @dev Get the current auditor delegate address from storage.
    */
   function auditorDelegate() public view returns (address) {
-    return rocketStorage.getAddress(keccak256(&quot;token.auditorDelegate&quot;));
+    return rocketStorage.getAddress(keccak256("token.auditorDelegate"));
   }
 
   /**
@@ -327,7 +327,7 @@ contract Delegated is Authorized {
   function setDepositoryDelegate(address newDelegate) public onlyDepository {
     require(newDelegate != address(0));
     address oldDelegate_ = depositoryDelegate();
-    rocketStorage.setAddress(keccak256(&quot;token.depositoryDelegate&quot;), newDelegate);
+    rocketStorage.setAddress(keccak256("token.depositoryDelegate"), newDelegate);
     emit DepositoryDelegated(oldDelegate_, newDelegate);
   }
 
@@ -335,7 +335,7 @@ contract Delegated is Authorized {
    * @dev Get the current depository delegate address from storage.
    */
   function depositoryDelegate() public view returns (address) {
-    return rocketStorage.getAddress(keccak256(&quot;token.depositoryDelegate&quot;));
+    return rocketStorage.getAddress(keccak256("token.depositoryDelegate"));
   }
 
 }
@@ -374,14 +374,14 @@ contract PausableRedemption is RocketBase {
    * @dev returns the redemptionPaused status from contract storage
    */
   function redemptionPaused() public view returns (bool) {
-    return rocketStorage.getBool(keccak256(&quot;token.redemptionPaused&quot;));
+    return rocketStorage.getBool(keccak256("token.redemptionPaused"));
   }
 
   /**
    * @dev called by the owner to pause, triggers stopped state
    */
   function pauseRedemption() onlyOwner whenRedemptionNotPaused public {
-    rocketStorage.setBool(keccak256(&quot;token.redemptionPaused&quot;), true);
+    rocketStorage.setBool(keccak256("token.redemptionPaused"), true);
     emit PauseRedemption();
   }
 
@@ -389,7 +389,7 @@ contract PausableRedemption is RocketBase {
    * @dev called by the owner to unpause redemption, returns to normal state
    */
   function unpauseRedemption() onlyOwner whenRedemptionPaused public {
-    rocketStorage.setBool(keccak256(&quot;token.redemptionPaused&quot;), false);
+    rocketStorage.setBool(keccak256("token.redemptionPaused"), false);
     emit UnpauseRedemption();
   }
 }
@@ -534,7 +534,7 @@ contract Redeemable is RocketBase, PausableRedemption, Delegated {
         _redeem(_amount);
 
         // Send event, but without a hash
-        //emit Redemption(msg.sender, bytes32(&quot;&quot;), _amount);
+        //emit Redemption(msg.sender, bytes32(""), _amount);
     }
 
     // The internal functionality for redeem
@@ -566,11 +566,11 @@ contract Redeemable is RocketBase, PausableRedemption, Delegated {
 
 
         //   - decrease totalSupply_
-        rocketStorage.setUint(keccak256(&quot;token.totalSupply&quot;), totalSupply_.sub(_amount));
+        rocketStorage.setUint(keccak256("token.totalSupply"), totalSupply_.sub(_amount));
         //   - decrease assetsOnDeposit_
-        rocketStorage.setUint(keccak256(&quot;issuable.assetsOnDeposit&quot;), assetsOnDeposit_.sub(_amount));
+        rocketStorage.setUint(keccak256("issuable.assetsOnDeposit"), assetsOnDeposit_.sub(_amount));
         //   - decrease assetsCertified_
-        rocketStorage.setUint(keccak256(&quot;issuable.assetsCertified&quot;), assetsCertified_.sub(_amount));
+        rocketStorage.setUint(keccak256("issuable.assetsCertified"), assetsCertified_.sub(_amount));
         
         //   - burn token(s) (the ONLY place this should happen)
         setBalanceOf(msg.sender, balanceOf(msg.sender).sub(_amount));
@@ -588,7 +588,7 @@ contract Redeemable is RocketBase, PausableRedemption, Delegated {
 
     // Mark the redemption hash as fulfilled/used to prevent reuse (internal)
     function _markRedemptionFulfilled(bytes32 _hash) internal {
-      rocketStorage.setBool(keccak256(&quot;token.redemptionFulfilled&quot;,_hash), true);
+      rocketStorage.setBool(keccak256("token.redemptionFulfilled",_hash), true);
     }
 
     // Mark the redemption hash as fulfilled/used to prevent reuse (Depository)
@@ -601,7 +601,7 @@ contract Redeemable is RocketBase, PausableRedemption, Delegated {
     }
 
     function checkRedemptionFulfilled(bytes32 _hash) public view returns (bool) {
-      return rocketStorage.getBool(keccak256(&quot;token.redemptionFulfilled&quot;,_hash));
+      return rocketStorage.getBool(keccak256("token.redemptionFulfilled",_hash));
     }
 
     /**
@@ -610,7 +610,7 @@ contract Redeemable is RocketBase, PausableRedemption, Delegated {
     * @return An uint256 representing the amount owned by the passed address.
     */
     function balanceOf(address _owner) public view returns (uint256 balance) {
-      return rocketStorage.getUint(keccak256(&quot;token.balances&quot;,_owner));
+      return rocketStorage.getUint(keccak256("token.balances",_owner));
     }
 
     /**
@@ -619,7 +619,7 @@ contract Redeemable is RocketBase, PausableRedemption, Delegated {
     * @param _balance An uint256 representing the amount owned by the passed address.
     */
     function setBalanceOf(address _owner, uint256 _balance) internal {
-      rocketStorage.setUint(keccak256(&quot;token.balances&quot;,_owner), _balance);
+      rocketStorage.setUint(keccak256("token.balances",_owner), _balance);
     }
 
     function ecverify(bytes32 hash_, bytes sig_, address signer_) public pure returns (bool) {
@@ -639,25 +639,25 @@ contract Redeemable is RocketBase, PausableRedemption, Delegated {
     * @dev total number of tokens in existence
     */
     function totalSupply() public view returns (uint256) {
-      return rocketStorage.getUint(keccak256(&quot;token.totalSupply&quot;));
+      return rocketStorage.getUint(keccak256("token.totalSupply"));
     }
 
     /**
     * @dev total number of tokens in the valut, per the depository record
     */
     function assetsOnDeposit() public view returns (uint256) {
-        return rocketStorage.getUint(keccak256(&quot;issuable.assetsOnDeposit&quot;));
+        return rocketStorage.getUint(keccak256("issuable.assetsOnDeposit"));
     }
 
     /**
     * @dev total number of tokens certified in vault by auditor
     */
     function assetsCertified() public view returns (uint256) {
-        return rocketStorage.getUint(keccak256(&quot;issuable.assetsCertified&quot;));
+        return rocketStorage.getUint(keccak256("issuable.assetsCertified"));
     }
 
     function decimals() public view returns (uint8) {
-      return uint8(rocketStorage.getUint(keccak256(&quot;token.decimals&quot;)));
+      return uint8(rocketStorage.getUint(keccak256("token.decimals")));
     }
 
 

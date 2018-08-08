@@ -114,8 +114,8 @@ contract Signum is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Signum() public {
-        symbol = &quot;SGM&quot;;
-        name = &quot;Signum&quot;;
+        symbol = "SGM";
+        name = "Signum";
         decimals = 0;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

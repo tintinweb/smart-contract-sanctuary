@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract Lupecoin {
 
-    string public name = &quot;Lupecoin&quot;;      //  token name
-    string public symbol = &quot;LUPX&quot;;           //  token symbol
+    string public name = "Lupecoin";      //  token name
+    string public symbol = "LUPX";           //  token symbol
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;

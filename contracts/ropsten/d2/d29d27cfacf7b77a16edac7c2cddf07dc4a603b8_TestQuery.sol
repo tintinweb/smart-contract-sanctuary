@@ -4,7 +4,7 @@ pragma solidity ^0.4.19;
 //.8 Ether stored under transNonce 1
 //This one works:
 //json(https://ropsten.infura.io/).result
-// {&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:3,&quot;method&quot;:&quot;eth_call&quot;,&quot;params&quot;:[{&quot;to&quot;:&quot;0xd29d27cfacf7b77a16edac7c2cddf07dc4a603b8&quot;,&quot;data&quot;:&quot;0xc16fe9070000000000000000000000000000000000000000000000000000000000000001&quot;}, &quot;latest&quot;]}
+// {"jsonrpc":"2.0","id":3,"method":"eth_call","params":[{"to":"0xd29d27cfacf7b77a16edac7c2cddf07dc4a603b8","data":"0xc16fe9070000000000000000000000000000000000000000000000000000000000000001"}, "latest"]}
 contract TestQuery{
   struct Details{
     uint amount;

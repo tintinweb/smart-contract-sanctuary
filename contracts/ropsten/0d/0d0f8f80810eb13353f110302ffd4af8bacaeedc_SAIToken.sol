@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -492,7 +492,7 @@ contract PausableToken is StandardToken, Pausable {
 // Copyright (c) 2018 TokenStars
 // Made by Maggie Samoyed
 // Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the &quot;Software&quot;), to deal
+// of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
@@ -501,7 +501,7 @@ contract PausableToken is StandardToken, Pausable {
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
 
-// THE SOFTWARE IS PROVIDED &quot;Sophon Capital&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// THE SOFTWARE IS PROVIDED "Sophon Capital", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -515,9 +515,9 @@ pragma solidity ^0.4.17;
 
 contract SAIToken is MintableToken, PausableToken{
 	// ERC20 constants
-	string public name=&quot;Sophon Capital Token&quot;;
-	string public symbol=&quot;SAI4&quot;;
-	string public standard=&quot;ERC20&quot;;	
+	string public name="Sophon Capital Token";
+	string public symbol="SAI4";
+	string public standard="ERC20";	
 	uint8 public decimals=18;
 
 	/*Publish Constants*/

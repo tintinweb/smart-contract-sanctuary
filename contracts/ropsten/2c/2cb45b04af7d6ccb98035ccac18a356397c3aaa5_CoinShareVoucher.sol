@@ -25,7 +25,7 @@ contract BaseAuthorizable is Authorizable{
     }
 
     modifier onlyAuthorized() {
-        require(authorized[msg.sender], &quot;Only authorized addresses&quot;);
+        require(authorized[msg.sender], "Only authorized addresses");
         _;
     }
 
@@ -214,7 +214,7 @@ contract Ownable {
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner, &quot;Only owner can call this function.&quot;);
+        require(msg.sender == owner, "Only owner can call this function.");
         _;
     }
 
@@ -247,7 +247,7 @@ contract Startable {
     }
 
     modifier whenStarted() {
-        require(_started, &quot;This function can only be called when the contract is started.&quot;);
+        require(_started, "This function can only be called when the contract is started.");
         _;
     }
 
@@ -273,7 +273,7 @@ contract Stoppable is Startable {
     }
 
     modifier whenStopped() {
-        require(!_started,&quot;This function can be called only when contract is stopped.&quot;);
+        require(!_started,"This function can be called only when contract is stopped.");
         _;
     }
 
@@ -319,7 +319,7 @@ contract CoinShareVoucher is CoinShareVoucherInterface, BaseERC223Token, BaseAut
 
     modifier whenAuthorizedOrStartedAndAddressValid(address to) {
         require(_isAuthorizedOrOwner(msg.sender)||(started() && _isValidAddress(to)),
-            &quot;This function may be called only if tranferring to a valid address, or you are otherwise authorized.&quot;);
+            "This function may be called only if tranferring to a valid address, or you are otherwise authorized.");
         _;
     }
 

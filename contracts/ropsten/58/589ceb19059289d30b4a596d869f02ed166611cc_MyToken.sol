@@ -32,8 +32,8 @@ contract MyToken {
     ) public {
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        tokenName = &quot;TokenDeTeste&quot;;                                   // Set the name for display purposes
-        tokenSymbol = &quot;TDT&quot;;                               // Set the symbol for display purposes
+        tokenName = "TokenDeTeste";                                   // Set the name for display purposes
+        tokenSymbol = "TDT";                               // Set the symbol for display purposes
     }
 
     /**

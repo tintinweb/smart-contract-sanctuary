@@ -115,8 +115,8 @@ contract StandardToken is ERC20 {
 contract KCoinToken is StandardToken {
 	uint8 constant public decimals = 18;
     uint public totalSupply = 100 * 10000 * 10000 * (10 ** uint256(decimals));
-    string constant public name = &quot;KCoin Token&quot;;
-    string constant public symbol = &quot;KT&quot;;
+    string constant public name = "KCoin Token";
+    string constant public symbol = "KT";
 
     function KCoinToken() public {
         balances[msg.sender] = totalSupply;

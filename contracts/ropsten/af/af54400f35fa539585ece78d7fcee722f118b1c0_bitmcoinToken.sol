@@ -116,8 +116,8 @@ contract bitmcoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitmcoinToken() public {
-        symbol = &quot;FWD&quot;;
-        name = &quot;bitfwd Token&quot;;
+        symbol = "FWD";
+        name = "bitfwd Token";
         decimals = 18;
         bonusEnds = now + 10 weeks;
         endDate = now + 15 weeks;

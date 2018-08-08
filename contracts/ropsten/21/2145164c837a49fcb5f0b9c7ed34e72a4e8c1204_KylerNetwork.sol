@@ -230,8 +230,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract KylerNetwork is StandardToken {
 
-  string public constant name = &quot;KYLER OPTION&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;KNP&quot;; // solium-disable-line uppercase
+  string public constant name = "KYLER OPTION"; // solium-disable-line uppercase
+  string public constant symbol = "KNP"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 1300000000 * (10 ** uint256(decimals));

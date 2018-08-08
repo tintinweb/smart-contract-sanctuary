@@ -82,8 +82,8 @@ contract KudanilToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Kudanil&quot;;
-    string public constant symbol = &quot;KDN Token&quot;;
+    string public constant name = "Kudanil";
+    string public constant symbol = "KDN Token";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 30000000000e8;

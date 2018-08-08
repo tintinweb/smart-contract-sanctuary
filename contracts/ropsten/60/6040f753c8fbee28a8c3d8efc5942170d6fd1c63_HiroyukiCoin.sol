@@ -117,8 +117,8 @@ contract HiroyukiCoin is ERC20Interface, Owned {
     function HiroyukiCoin() public {
         owner = msg.sender;
 
-        symbol = &quot;HRYK&quot;;
-        name = &quot;HiroyukiCoin&quot;;
+        symbol = "HRYK";
+        name = "HiroyukiCoin";
         decimals = 18;
 
         _totalSupply = 100000000000000000000000000000;

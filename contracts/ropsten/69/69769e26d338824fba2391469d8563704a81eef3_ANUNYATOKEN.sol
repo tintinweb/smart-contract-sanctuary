@@ -82,8 +82,8 @@ contract ANUNYATOKEN is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;ANUNYATOKEN&quot;;
-    string public constant symbol = &quot;ANY&quot;;
+    string public constant name = "ANUNYATOKEN";
+    string public constant symbol = "ANY";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

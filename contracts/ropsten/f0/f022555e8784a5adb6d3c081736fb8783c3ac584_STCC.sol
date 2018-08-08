@@ -113,8 +113,8 @@ contract STCC is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STCC() public {
-        symbol = &quot;$STCC&quot;;
-        name = &quot;STCC Corp&quot;;
+        symbol = "$STCC";
+        name = "STCC Corp";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xB4e6Ad087a9F98a8D3F73126fdde1515f77f76a7] = _totalSupply;

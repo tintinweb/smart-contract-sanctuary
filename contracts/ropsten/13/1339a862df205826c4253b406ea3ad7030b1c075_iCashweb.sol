@@ -431,8 +431,8 @@ contract iCashwebToken is iERC20, ICWToken {
 }
 
 contract iCashweb is iCashwebToken {
-    string public constant name = &quot;iCashweb&quot;;
-    string public constant symbol = &quot;ICWeb&quot;;
+    string public constant name = "iCashweb";
+    string public constant symbol = "ICWeb";
     constructor() 
     public {
         _mintingStarted = false;

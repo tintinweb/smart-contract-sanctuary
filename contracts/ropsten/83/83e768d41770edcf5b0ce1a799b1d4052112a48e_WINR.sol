@@ -62,8 +62,8 @@ contract WINR is SafeMath{
     function WINR() {
         balanceOf[msg.sender] = 1000000000000000000000000000;              // Give the creator all initial tokens
         totalSupply = 1000000000000000000000000000;                        // Update total supply
-        name = &quot;Winner Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;WINR&quot;;                               // Set the symbol for display purposes
+        name = "Winner Token";                                   // Set the name for display purposes
+        symbol = "WINR";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
 		owner = msg.sender;
     }

@@ -99,8 +99,8 @@ contract DCSToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DCSToken() public {
-        symbol = &quot;DCS&quot;;
-        name = &quot;DCS Token&quot;;
+        symbol = "DCS";
+        name = "DCS Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000000;
         balances[0x921b15759C9d297c497D192bfeb6449d8F7D89d2] = _totalSupply;

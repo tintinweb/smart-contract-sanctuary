@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -504,8 +504,8 @@ contract ConsentiumCoin is Pausable, BlackList, UpgradeableToken {
     uint public decimals;
     
     constructor() public {
-        name = &quot;Consentium Coin&quot;;
-        symbol = &quot;CSM&quot;;
+        name = "Consentium Coin";
+        symbol = "CSM";
         decimals = 18;
         _totalSupply = 240000000 * (10**decimals);
         balances[owner] = _totalSupply;

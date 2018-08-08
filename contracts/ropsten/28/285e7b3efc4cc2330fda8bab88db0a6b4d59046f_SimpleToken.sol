@@ -165,8 +165,8 @@ pragma solidity ^0.4.21;
      * `StandardToken` functions.
      */
     contract SimpleToken is StandardToken {
-        string public constant name = &quot;MMMTTT&quot;; // solium-disable-line uppercase
-        string public constant symbol = &quot;MMM&quot;; // solium-disable-line uppercase
+        string public constant name = "MMMTTT"; // solium-disable-line uppercase
+        string public constant symbol = "MMM"; // solium-disable-line uppercase
         uint8 public constant decimals = 3; // solium-disable-line uppercase
 
         uint256 public constant INITIAL_SUPPLY = 1000000 * (10 ** uint256(decimals));

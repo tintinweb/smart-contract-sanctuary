@@ -62,7 +62,7 @@ contract ControlContract {
 	
   	// 寫入留言 for 數據合約
 	function writeMessage(string _message) public{
-		string memory combineStr = &quot;==>改變控制合約，不改變數據合約&quot;;
+		string memory combineStr = "==>改變控制合約，不改變數據合約";
 		_message = strConcat(_message, combineStr);
 		dataContract.wirteData(_message);
 

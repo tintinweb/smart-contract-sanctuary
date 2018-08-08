@@ -32,10 +32,10 @@ contract Ownable {
     of the insurance and the cost of the given are defined by the cosigner. 
 
     The lender will decide what cosigner to use, if any; the address of the cosigner and the valid data provided by the
-    agent should be passed as params when the lender calls the &quot;lend&quot; method on the engine.
+    agent should be passed as params when the lender calls the "lend" method on the engine.
     
     When the default conditions defined by the cosigner aligns with the status of the loan, the lender of the engine
-    should be able to call the &quot;claim&quot; method to receive the benefit; the cosigner can define aditional requirements to
+    should be able to call the "claim" method to receive the benefit; the cosigner can define aditional requirements to
     call this method, like the transfer of the ownership of the loan.
 */
 contract Cosigner {
@@ -55,7 +55,7 @@ contract Cosigner {
     
     /**
         @dev The engine calls this method for confirmation of the conditions, if the cosigner accepts the liability of
-        the insurance it must call the method &quot;cosign&quot; of the engine. If the cosigner does not call that method, or
+        the insurance it must call the method "cosign" of the engine. If the cosigner does not call that method, or
         does not return true to this method, the operation fails.
 
         @return true if the cosigner accepts the liability
@@ -86,7 +86,7 @@ contract Oracle is Ownable {
     bytes32[] public currencies;
 
     /**
-        @dev Returns the url where the oracle exposes a valid &quot;oracleData&quot; if needed
+        @dev Returns the url where the oracle exposes a valid "oracleData" if needed
     */
     function url() public view returns (string);
 
@@ -232,7 +232,7 @@ interface ERC721 /* is ERC165 */ {
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
     ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
-    ///  `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`.
+    ///  `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`.
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -241,7 +241,7 @@ interface ERC721 /* is ERC165 */ {
 
     /// @notice Transfers the ownership of an NFT from one address to another address
     /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to &quot;&quot;.
+    ///  except this function just sets data to "".
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -267,7 +267,7 @@ interface ERC721 /* is ERC165 */ {
     /// @param _tokenId The NFT to approve
     function approve(address _approved, uint256 _tokenId) external payable returns(bool);
 
-    /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+    /// @notice Enable or disable approval for a third party ("operator") to manage
     ///  all of `msg.sender`&#39;s assets
     /// @dev Emits the ApprovalForAll event. The contract MUST allow
     ///  multiple operators per owner.
@@ -589,7 +589,7 @@ contract ERC721Base {
      * @param assetId uint256 ID of the asset to be transferred
      */
     function safeTransferFrom(address from, address to, uint256 assetId) external returns (bool) {
-        return _doTransferFrom(from, to, assetId, &quot;&quot;, true);
+        return _doTransferFrom(from, to, assetId, "", true);
     }
 
     /**
@@ -616,7 +616,7 @@ contract ERC721Base {
      * @param assetId uint256 ID of the asset to be transferred
      */
     function transferFrom(address from, address to, uint256 assetId) external returns (bool) {
-        return _doTransferFrom(from, to, assetId, &quot;&quot;, false);
+        return _doTransferFrom(from, to, assetId, "", false);
     }
 
     function _doTransferFrom(
@@ -650,7 +650,7 @@ contract ERC721Base {
         _addAssetTo(to, assetId);
 
         if (doCheck && _isContract(to)) {
-            // Equals to bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))
+            // Equals to bytes4(keccak256("onERC721Received(address,uint256,bytes)"))
             bytes4 ERC721_RECEIVED = bytes4(0xf0b9e5ba);
             require(
                 IERC721Receiver(to).onERC721Received(
@@ -994,8 +994,8 @@ contract PawnManager is Cosigner, ERC721Base, BytesUtils, Ownable {
         Pawn storage pawn = pawns[_pawnId];
 
         // Only the owner of the pawn and if the pawn is pending
-        require(msg.sender == pawn.owner, &quot;Only the owner can cancel the pawn&quot;);
-        require(pawn.status == Status.Pending, &quot;The pawn is not pending&quot;);
+        require(msg.sender == pawn.owner, "Only the owner can cancel the pawn");
+        require(pawn.status == Status.Pending, "The pawn is not pending");
 
         pawn.status = Status.Canceled;
 
@@ -1039,15 +1039,15 @@ contract PawnManager is Cosigner, ERC721Base, BytesUtils, Ownable {
         @return True if the cosign was performed
     */
     function requestCosign(Engine _engine, uint256 _index, bytes _data, bytes ) public returns (bool) {
-        require(msg.sender == address(_engine), &quot;the sender its not the Engine&quot;);
+        require(msg.sender == address(_engine), "the sender its not the Engine");
         uint256 pawnId = uint256(readBytes32(_data, I_PAWN_ID));
         Pawn storage pawn = pawns[pawnId];
 
         // Validate that the loan matches with the pawn
         // and the pawn is still pending
-        require(pawn.engine == _engine, &quot;Engine does not match&quot;);
-        require(pawn.loanId == _index, &quot;Loan id does not match&quot;);
-        require(pawn.status == Status.Pending, &quot;Pawn is not pending&quot;);
+        require(pawn.engine == _engine, "Engine does not match");
+        require(pawn.loanId == _index, "Loan id does not match");
+        require(pawn.status == Status.Pending, "Pawn is not pending");
 
         pawn.status = Status.Ongoing;
 
@@ -1055,7 +1055,7 @@ contract PawnManager is Cosigner, ERC721Base, BytesUtils, Ownable {
         _generate(pawnId, pawn.owner);
 
         // Cosign contract
-        require(_engine.cosign(_index, 0), &quot;Error performing cosign&quot;);
+        require(_engine.cosign(_index, 0), "Error performing cosign");
 
         // Save pawn id registry
         pawnByPackageId[pawn.packageId] = pawnId;
@@ -1067,7 +1067,7 @@ contract PawnManager is Cosigner, ERC721Base, BytesUtils, Ownable {
     }
 
     function url() public view returns (string) {
-        return &quot;&quot;;
+        return "";
     }
 
     /**
@@ -1125,12 +1125,12 @@ contract PawnManager is Cosigner, ERC721Base, BytesUtils, Ownable {
         uint256 pawnId = loanToLiability[_engine][_loanId];
         Pawn storage pawn = pawns[pawnId];
         // Validate that the pawn wasn&#39;t claimed
-        require(pawn.status == Status.Ongoing, &quot;Pawn not ongoing&quot;);
-        require(pawn.loanId == _loanId, &quot;Pawn don&#39;t match loan id&quot;);
+        require(pawn.status == Status.Ongoing, "Pawn not ongoing");
+        require(pawn.loanId == _loanId, "Pawn don&#39;t match loan id");
 
         if (pawn.engine.getStatus(_loanId) == Engine.Status.paid || pawn.engine.getStatus(_loanId) == Engine.Status.destroyed) {
             // The pawn is paid
-            require(_isAuthorized(msg.sender, pawnId), &quot;Sender not authorized&quot;);
+            require(_isAuthorized(msg.sender, pawnId), "Sender not authorized");
 
             pawn.status = Status.Paid;
 
@@ -1140,7 +1140,7 @@ contract PawnManager is Cosigner, ERC721Base, BytesUtils, Ownable {
         } else {
             if (isDefaulted(pawn.engine, _loanId)) {
                 // The pawn is defaulted
-                require(msg.sender == pawn.engine.ownerOf(_loanId), &quot;Sender not lender&quot;);
+                require(msg.sender == pawn.engine.ownerOf(_loanId), "Sender not lender");
 
                 pawn.status = Status.Defaulted;
 
@@ -1148,7 +1148,7 @@ contract PawnManager is Cosigner, ERC721Base, BytesUtils, Ownable {
 
                 emit DefaultedPawn(pawnId);
             } else {
-                revert(&quot;Pawn not defaulted/paid&quot;);
+                revert("Pawn not defaulted/paid");
             }
         }
 
@@ -1199,7 +1199,7 @@ contract PawnManager is Cosigner, ERC721Base, BytesUtils, Ownable {
             } else { // for a ERC20 token
                 bundle.withdraw(_packageId, ERC721(tokens[i]), ids[i], address(this));
                 (addr, amount,) = poach.getPair(ids[i]);
-                require(poach.destroy(ids[i]), &quot;Fail destroy&quot;);
+                require(poach.destroy(ids[i]), "Fail destroy");
                 if (addr != ETH)
                     require(Token(addr).transfer(_beneficiary, amount));
                 else

@@ -118,7 +118,7 @@ library Addresses {
 }
 
 
-contract FGCToken is Token(&quot;FGC&quot;, &quot;FGC Token&quot;, 0, 1000000000), ERC20, ERC223 {
+contract FGCToken is Token("FGC", "FGC Token", 0, 1000000000), ERC20, ERC223 {
 
     using SafeMath for uint;
     using Addresses for address;
@@ -145,7 +145,7 @@ contract FGCToken is Token(&quot;FGC&quot;, &quot;FGC Token&quot;, 0, 1000000000
     function transfer(address _to, uint _value)
         public
         returns (bool) {
-        return transfer(_to, _value, &quot;&quot;);
+        return transfer(_to, _value, "");
     }
 
     function transfer(address _to, uint _value, bytes _data)
@@ -170,7 +170,7 @@ contract FGCToken is Token(&quot;FGC&quot;, &quot;FGC Token&quot;, 0, 1000000000
     function transferFrom(address _from, address _to, uint _value)
         public
         returns (bool) {
-        return transferFrom(_from, _to, _value, &quot;&quot;);
+        return transferFrom(_from, _to, _value, "");
     }
 
     function transferFrom(address _from, address _to, uint _value, bytes _data)

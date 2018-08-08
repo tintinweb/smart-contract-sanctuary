@@ -113,8 +113,8 @@ contract DayByDayToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DayByDayToken() public {
-        symbol = &quot;DBD&quot;;
-        name = &quot;Day By Day Token&quot;;
+        symbol = "DBD";
+        name = "Day By Day Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x727A33F7Ab2dc4927846CCBB56039ef96630F1dd] = _totalSupply;

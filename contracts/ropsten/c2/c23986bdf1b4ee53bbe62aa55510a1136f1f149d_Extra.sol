@@ -91,8 +91,8 @@ contract Extra is StandardToken {
     constructor() public {
         balances[msg.sender] = 100000;               // Give the creator all initial tokens (100000 for example)
         totalSupply = 100000;                        // Update total supply (100000 for example)
-        name = &quot;Extra Credits Coin v2.81&quot;;                                   // Set the name for display purposes
+        name = "Extra Credits Coin v2.81";                                   // Set the name for display purposes
         decimals = 2;                            // Amount of decimals for display purposes
-        symbol = &quot;EXC v2.81&quot;;                               // Set the symbol for display purposes
+        symbol = "EXC v2.81";                               // Set the symbol for display purposes
     }
 }

@@ -19,11 +19,11 @@ contract Exchange {
         zAddress = 0x479CC461fEcd078F766eCc58533D6F69580CF3AC;
         zUint256  = 1234567890;
         zBool    = true;
-        zBytes32       = &quot;HelloBytes32&quot;;
+        zBytes32       = "HelloBytes32";
         //0x48656c6c6f427974657333320000000000000000000000000000000000000000
         zAddressesArray = [0xc778417E063141139Fce010982780140Aa0cD5Ab,0x0d0F936Ee4c93e25944694D6C121de94D9760F11];
         zUint256Array  = [7777777777,8888888888];
-        //exchangeContractAddress = &quot;0x479cc461fecd078f766ecc58533d6f69580cf3ac&quot;;
+        //exchangeContractAddress = "0x479cc461fecd078f766ecc58533d6f69580cf3ac";
     }
     function getVariables() view public returns (string, address, uint, bool, bytes32, address[2], uint[2]) {
         return (zString, zAddress, zUint256, zBool, zBytes32, zAddressesArray, zUint256Array);

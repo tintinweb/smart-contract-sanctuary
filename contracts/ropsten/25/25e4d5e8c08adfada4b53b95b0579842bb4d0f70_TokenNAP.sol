@@ -34,8 +34,8 @@ interface tokenRecipient
 
 contract TokenERC20 
 {
-	string  public name = &quot;HoneyNaps Token&quot;;
-	string  public symbol = &quot;NAP&quot;;
+	string  public name = "HoneyNaps Token";
+	string  public symbol = "NAP";
 	uint256 public totalSupply;
 	uint8   public decimals = 6;
 
@@ -56,10 +56,10 @@ contract TokenERC20
 
 	function _transfer(address _from, address _to, uint256 _amount) internal
 	{
-		require(_amount > 0, &quot;_amount is zero!!!&quot;);
-		require(_to != 0x0, &quot;_to address invalid!!!&quot;);
-		require(balanceOf[_from] >= _amount, &quot;_from&#39;s tokens are smaller than _amount!!!&quot;);
-		require(balanceOf[_to] + _amount >= balanceOf[_to], &quot;_to&#39;s account overflow!!!&quot;);
+		require(_amount > 0, "_amount is zero!!!");
+		require(_to != 0x0, "_to address invalid!!!");
+		require(balanceOf[_from] >= _amount, "_from&#39;s tokens are smaller than _amount!!!");
+		require(balanceOf[_to] + _amount >= balanceOf[_to], "_to&#39;s account overflow!!!");
 		
 		uint prevBalances = balanceOf[_from] + balanceOf[_to];
 		balanceOf[_from] -= _amount;
@@ -144,18 +144,18 @@ contract TokenNAP is Ownable, TokenERC20
 	/* Internal transfer, only can be called by this contract */
 	function _transfer(address _from, address _to, uint _amount) internal 
 	{
-		require(_amount > 0, &quot;_amount is zero!!!&quot;);
+		require(_amount > 0, "_amount is zero!!!");
 		// Prevent transfer to 0x0 address. Use burn() instead
-		require(_to != 0x0, &quot;_to address invalid!!!&quot;);
+		require(_to != 0x0, "_to address invalid!!!");
 		// Check if the sender has enough
-		require(balanceOf[_from] >= _amount, &quot;_from&#39;s tokens are smaller than _amount!!!&quot;);
+		require(balanceOf[_from] >= _amount, "_from&#39;s tokens are smaller than _amount!!!");
 		// Check for overflows
-		require(balanceOf[_to] + _amount >= balanceOf[_to], &quot;_to&#39;s account overflow!!!&quot;);
+		require(balanceOf[_to] + _amount >= balanceOf[_to], "_to&#39;s account overflow!!!");
 		
 		// Check if sender is frozen
-		require(!frozenAccount[_from], &quot;_from&#39;s account is frozen!!!&quot;);
+		require(!frozenAccount[_from], "_from&#39;s account is frozen!!!");
 		// Check if recipient is frozen
-		require(!frozenAccount[_to], &quot;_to&#39;s account is frozen!!!&quot;);
+		require(!frozenAccount[_to], "_to&#39;s account is frozen!!!");
 
 		balanceOf[_from] -= _amount;	// Subtract from the sender
 		balanceOf[_to]   += _amount;	// Add the same to the recipient
@@ -219,7 +219,7 @@ contract TokenNAP is Ownable, TokenERC20
 
 		// checks if the contract has enough ether to buy
 		uint weis = amount * units * sellPrice;
-		require(address(this).balance >= weis, &quot;balance of this is less than amount&quot;);
+		require(address(this).balance >= weis, "balance of this is less than amount");
 
 		// makes the transfers
 		_transfer(msg.sender, this, amount);

@@ -113,8 +113,8 @@ contract ADMOToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ADMOToken() public {
-        symbol = &quot;ADM&quot;;
-        name = &quot;ADMO Token&quot;;
+        symbol = "ADM";
+        name = "ADMO Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xA8487C685aB29AE3a15A1CF07c35a78653f91728] = _totalSupply;

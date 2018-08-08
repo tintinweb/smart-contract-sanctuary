@@ -385,7 +385,7 @@ contract WinnerWinner is Core, Internal, ExternalView {
     endTime = startTime + maxTime;
     addressOfCaptain = addressOfOwner;
 
-    _registerReferral(&quot;owner&quot;, addressOfOwner);
+    _registerReferral("owner", addressOfOwner);
 
     emit Started(startTime);
   }

@@ -110,8 +110,8 @@ contract INNOToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function INNOToken() public {
-        symbol = &quot;INNO&quot;;
-        name = &quot;INNO Token&quot;;
+        symbol = "INNO";
+        name = "INNO Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xcE268E68e0528906E5fC4FfAaD37acB410612457] = _totalSupply;

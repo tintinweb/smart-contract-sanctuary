@@ -113,8 +113,8 @@ contract X4BToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function X4BToken() public {
-        symbol = &quot;X4B&quot;;
-        name = &quot;X4B Token&quot;;
+        symbol = "X4B";
+        name = "X4B Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xc5A7c91d1179f4c55EF4605BB306A449D0373C84] = _totalSupply;

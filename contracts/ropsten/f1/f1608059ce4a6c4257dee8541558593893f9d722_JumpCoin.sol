@@ -116,8 +116,8 @@ contract JumpCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JumpCoin() public {
-        symbol = &quot;JUMP&quot;;
-        name = &quot;Jump Coin&quot;;
+        symbol = "JUMP";
+        name = "Jump Coin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

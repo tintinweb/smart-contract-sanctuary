@@ -113,8 +113,8 @@ contract ZHORA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZHORA() public {
-        symbol = &quot;ZHORA&quot;;
-        name = &quot;0 ZHORA T0ken&quot;;
+        symbol = "ZHORA";
+        name = "0 ZHORA T0ken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x218E98F3cc75dA00C1b46A8B70d58363f799268c] = _totalSupply;

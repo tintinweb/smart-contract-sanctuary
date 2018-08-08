@@ -109,8 +109,8 @@ contract WSKYToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function WSKYToken() public {
-        symbol = &quot;WSKY&quot;;
-        name = &quot;Whiskey Token&quot;;
+        symbol = "WSKY";
+        name = "Whiskey Token";
         decimals = 6;
         _totalSupply = 9600000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

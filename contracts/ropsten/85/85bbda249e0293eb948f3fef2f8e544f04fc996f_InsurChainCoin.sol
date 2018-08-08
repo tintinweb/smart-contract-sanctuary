@@ -80,8 +80,8 @@ contract InsurChainCoin is BasicToken {
   uint8 public decimals;
 
   constructor() public {
-    name = &quot;InsurChain2.0&quot;;
-    symbol = &quot;INSUR&quot;;
+    name = "InsurChain2.0";
+    symbol = "INSUR";
     decimals = 18;
     totalSupply_ = 2e28;
     balances[msg.sender]=totalSupply_;

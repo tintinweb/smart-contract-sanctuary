@@ -60,8 +60,8 @@ contract CentralizedExchangeToken is ERC20Interface, Owned {
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
     constructor () public {
-        symbol = &quot;CEXT&quot;;
-        name = &quot;Centralized Exchange Token&quot;;
+        symbol = "CEXT";
+        name = "Centralized Exchange Token";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

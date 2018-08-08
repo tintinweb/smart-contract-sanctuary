@@ -334,7 +334,7 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract Rondo is PausableToken, MintableToken, BurnableToken {
-    string public constant name = &quot;Rondo&quot;;
-    string public constant symbol = &quot;Rondo&quot;;
+    string public constant name = "Rondo";
+    string public constant symbol = "Rondo";
     uint8 public constant decimals = 2;
 }

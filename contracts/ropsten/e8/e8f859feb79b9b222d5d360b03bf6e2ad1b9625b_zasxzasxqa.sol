@@ -114,8 +114,8 @@ contract zasxzasxqa is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function zasxzasxqa() public {
-        symbol = &quot;zasxqa&quot;;
-        name = &quot;zasxzasxqa Token&quot;;
+        symbol = "zasxqa";
+        name = "zasxzasxqa Token";
         decimals = 18;
         endDate = now + 110 weeks;
         balances[0xDFeF3773657fb0e092130AaE8D479AD0D5Fc7bd2] = 100000000000000000000000000000000000000;

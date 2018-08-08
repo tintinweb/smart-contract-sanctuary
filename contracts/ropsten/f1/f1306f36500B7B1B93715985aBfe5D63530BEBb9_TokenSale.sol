@@ -43,8 +43,8 @@ contract GoldBackedToken {
     // TODO DOC ERC20 vars
     address public owner;
 
-    string public name = &quot;GoldBackedToken&quot;;
-    string public symbol = &quot;GBT&quot;;
+    string public name = "GoldBackedToken";
+    string public symbol = "GBT";
     uint8 public decimals = 0;
 
     uint256 totalSupply_ = 0;

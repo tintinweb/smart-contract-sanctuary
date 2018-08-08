@@ -113,8 +113,8 @@ contract OSTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OSTestToken() public {
-        symbol = &quot;OSTest&quot;;
-        name = &quot;OSTest Token&quot;;
+        symbol = "OSTest";
+        name = "OSTest Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x92361FD0098223891CAd7324001975e98387b66e] = _totalSupply;

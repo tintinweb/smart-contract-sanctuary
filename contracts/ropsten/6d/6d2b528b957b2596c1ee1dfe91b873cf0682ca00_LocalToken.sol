@@ -114,8 +114,8 @@ contract LocalToken is ERC20Interface, Owned, SafeMath {
     // 2 billion tokens, divisible up to 18 decimal places
     // ------------------------------------------------------------------------
     function LocalToken() public {
-        symbol = &quot;LOT&quot;;
-        name = &quot;Local Token&quot;;
+        symbol = "LOT";
+        name = "Local Token";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         balances[0xceb584ee9b7e1568acc0ecfb5a23b590e64551cd] = _totalSupply;

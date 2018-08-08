@@ -134,7 +134,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -375,8 +375,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract EthereumMonero is StandardToken {
-  string public name = &quot;EthereumMonero&quot;; 
-  string public symbol = &quot;exmr&quot;;
+  string public name = "EthereumMonero"; 
+  string public symbol = "exmr";
   uint public decimals = 2;
   uint public INITIAL_SUPPLY = 10000 * (10 ** decimals);
 

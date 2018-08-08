@@ -73,8 +73,8 @@ contract NebbexToken {
 
    ERC20Lib.TokenStorage token;
 
-   string public name = &quot;Nebbex&quot;;
-   string public symbol = &quot;NBBX&quot;;
+   string public name = "Nebbex";
+   string public symbol = "NBBX";
    uint8 public decimals = 8;
 
    function NebbexToken(uint initialSupply, address owner) public {

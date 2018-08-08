@@ -58,8 +58,8 @@ contract InternationalPaymentToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;InternationalPaymentToken&quot;;
-    string public constant symbol = &quot;IPT&quot;;
+    string public constant name = "InternationalPaymentToken";
+    string public constant symbol = "IPT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 250000000000e8;

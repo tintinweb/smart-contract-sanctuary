@@ -113,8 +113,8 @@ contract Giveafuck is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Giveafuck() public {
-        symbol = &quot;GAF&quot;;
-        name = &quot;GAF Token&quot;;
+        symbol = "GAF";
+        name = "GAF Token";
         decimals = 18;
         _totalSupply = 10000;
         balances[0xe5112437e33b22564d1dcC671f8c2CA07C1b602f] = _totalSupply;

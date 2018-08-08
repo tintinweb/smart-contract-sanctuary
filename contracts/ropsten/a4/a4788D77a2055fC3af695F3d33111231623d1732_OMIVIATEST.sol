@@ -113,8 +113,8 @@ contract OMIVIATEST is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OMIVIATEST() public {
-        symbol = &quot;OMIVIA&quot;;
-        name = &quot; OMIVIA TEST&quot;;
+        symbol = "OMIVIA";
+        name = " OMIVIA TEST";
         decimals = 8;
         _totalSupply = 1000000000000000;
         balances[0xd1574C1EDf6fcE4D9735e989364dd17937806816] = _totalSupply;

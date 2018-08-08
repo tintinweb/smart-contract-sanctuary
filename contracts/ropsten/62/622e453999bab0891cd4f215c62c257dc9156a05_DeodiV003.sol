@@ -115,8 +115,8 @@ contract DeodiV003 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DODV003&quot;;
-        name = &quot;DeodiV003 Token&quot;;
+        symbol = "DODV003";
+        name = "DeodiV003 Token";
         decimals = 18;
         _totalSupply = 150000000000000000000000000;
         bonusEnds = now + 1 weeks;

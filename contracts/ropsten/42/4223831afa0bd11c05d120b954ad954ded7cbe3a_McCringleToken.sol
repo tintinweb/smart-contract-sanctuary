@@ -174,8 +174,8 @@ contract Ownable {
 
 contract McCringleToken is BurnableToken, Ownable
 {
-    string public name = &quot;McCringle Token&quot;;
-    string public symbol = &quot;Hingle&quot;;
+    string public name = "McCringle Token";
+    string public symbol = "Hingle";
 
     uint public decimals = 2;
 

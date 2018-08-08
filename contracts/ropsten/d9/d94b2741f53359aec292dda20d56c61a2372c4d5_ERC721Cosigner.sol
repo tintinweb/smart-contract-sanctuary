@@ -49,7 +49,7 @@ contract Oracle is Ownable {
     bytes32[] public currencies;
 
     /**
-        @dev Returns the url where the oracle exposes a valid &quot;oracleData&quot; if needed
+        @dev Returns the url where the oracle exposes a valid "oracleData" if needed
     */
     function url() public view returns (string);
 
@@ -164,10 +164,10 @@ contract ERC721 {
     of the insurance and the cost of the given are defined by the cosigner. 
 
     The lender will decide what cosigner to use, if any; the address of the cosigner and the valid data provided by the
-    agent should be passed as params when the lender calls the &quot;lend&quot; method on the engine.
+    agent should be passed as params when the lender calls the "lend" method on the engine.
     
     When the default conditions defined by the cosigner aligns with the status of the loan, the lender of the engine
-    should be able to call the &quot;claim&quot; method to receive the benefit; the cosigner can define aditional requirements to
+    should be able to call the "claim" method to receive the benefit; the cosigner can define aditional requirements to
     call this method, like the transfer of the ownership of the loan.
 */
 contract Cosigner {
@@ -187,7 +187,7 @@ contract Cosigner {
     
     /**
         @dev The engine calls this method for confirmation of the conditions, if the cosigner accepts the liability of
-        the insurance it must call the method &quot;cosign&quot; of the engine. If the cosigner does not call that method, or
+        the insurance it must call the method "cosign" of the engine. If the cosigner does not call that method, or
         does not return true to this method, the operation fails.
 
         @return true if the cosigner accepts the liability
@@ -234,13 +234,13 @@ contract ERC721Cosigner is Cosigner, BytesUtils, Ownable {
         require(erc721.takeOwnership(nft));
         loanIdToERC721Data[_index] = ERC721Data(erc721, nft);
 
-        require(_engine.cosign(_index, 0), &quot;fail cosing&quot;);
+        require(_engine.cosign(_index, 0), "fail cosing");
 
         return true;
     }
 
     function url() public view returns (string) {
-        return &quot;&quot;;
+        return "";
     }
 
     /**

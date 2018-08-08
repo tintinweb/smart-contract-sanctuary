@@ -113,8 +113,8 @@ contract TestCoin2 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestCoin2() public {
-        symbol = &quot;0FUCKS&quot;;
-        name = &quot;TestCoin2 Token&quot;;
+        symbol = "0FUCKS";
+        name = "TestCoin2 Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x03A5e66193E08424440941562FC81bCE3Fee9944] = _totalSupply;

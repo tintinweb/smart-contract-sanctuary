@@ -274,7 +274,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
     public
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   function safeTransferFrom(
@@ -490,7 +490,7 @@ contract ERC721Token is SupportsInterfaceWithLookup, ERC721BasicToken, ERC721 {
 
 contract lettertoken207 is ERC721Token {
 
-  constructor() public ERC721Token(&quot;lettertoken207&quot;,&quot;lettertoken207&quot;) { }
+  constructor() public ERC721Token("lettertoken207","lettertoken207") { }
 
   struct Token{
     uint8 data1;
@@ -564,7 +564,7 @@ contract lettertoken207 is ERC721Token {
     _tokenId = tokens.push(_newToken) - 1;
     _mint(msg.sender,_tokenId);
     _setTokenURI(_tokenId, tokenUri);
-    tokenUri=strConcat(tokenUri,&quot;-&quot;);
+    tokenUri=strConcat(tokenUri,"-");
     string memory tokenIdb=uint2str(_tokenId);
     tokenUri=strConcat(tokenUri, tokenIdb);
     emit Create(_tokenId,msg.sender,data1,data2,data3,data4,data5,_newToken.startBlock,tokenUri);
@@ -602,23 +602,23 @@ contract lettertoken207 is ERC721Token {
   }
 
   function createTokenUri(uint8 data1,uint8 data2,uint64 data3,uint64 data4,uint64 data5) internal pure returns (string){
-    string memory uri = &quot;https://www.millionetherwords.com/exchange/displaytoken/?s=&quot;;
+    string memory uri = "https://www.millionetherwords.com/exchange/displaytoken/?s=";
     uri = appendUint8ToString(uri,data1);
-    uri = strConcat(uri,&quot;-&quot;);
+    uri = strConcat(uri,"-");
     uri = appendUint8ToString(uri,data2);
-    uri = strConcat(uri,&quot;-&quot;);
+    uri = strConcat(uri,"-");
     string memory data3b=uint2str(data3);
     uri = strConcat(uri,data3b);
-    uri = strConcat(uri,&quot;-&quot;);
+    uri = strConcat(uri,"-");
     string memory data4b=uint2str(data4);
     uri = strConcat(uri,data4b);
    
-    uri = strConcat(uri,&quot;.png&quot;);
+    uri = strConcat(uri,".png");
     return uri;
   }
 
 function uint2str(uint i) internal pure returns (string){
-    if (i == 0) return &quot;0&quot;;
+    if (i == 0) return "0";
     uint j = i;
     uint length;
     while (j != 0){

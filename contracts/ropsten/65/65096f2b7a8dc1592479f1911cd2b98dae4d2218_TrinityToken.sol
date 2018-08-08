@@ -248,8 +248,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract TrinityToken is PausableToken {
-    string  public  constant name = &quot;Trinity&quot;;
-    string  public  constant symbol = &quot;TNC&quot;;
+    string  public  constant name = "Trinity";
+    string  public  constant symbol = "TNC";
     uint8   public  constant decimals = 8;
     bool    private  changed;
 

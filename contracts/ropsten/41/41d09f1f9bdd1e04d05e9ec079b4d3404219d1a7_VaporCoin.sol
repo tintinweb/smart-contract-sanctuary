@@ -113,8 +113,8 @@ contract VaporCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VaporCoin() public {
-        symbol = &quot;VAPOR&quot;;
-        name = &quot;VaporCoin&quot;;
+        symbol = "VAPOR";
+        name = "VaporCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xdFcD892E985A083df9bd82906c935041D5df0e44] = _totalSupply;

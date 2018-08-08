@@ -155,8 +155,8 @@ contract Token is owned, TokenERC20  {
 
 	//Modify these variables
 	uint256 _initialSupply=420000000; 
-	string _tokenName=&quot;CMEXTEST&quot;;  
-	string _tokenSymbol=&quot;MXTEST&quot;;
+	string _tokenName="CMEXTEST";  
+	string _tokenSymbol="MXTEST";
 	address wallet1 = 0x6896E8bCfB0163a81B58bE5f639BA5A2E3499E9a;
 	address wallet2 = 0x1B8878c01eb3B89B17400b2AD06DEd37C0bF44F3;
 	address wallet3 = 0x2A569d023EBB89ccF3376e2949cc47cb5b3444DD;

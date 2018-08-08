@@ -247,7 +247,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -296,8 +296,8 @@ contract Ownable {
 }
 
 contract XDMC is StandardToken, Ownable {
-  string public constant name = &quot;XDMC token&quot;;
-  string public constant symbol = &quot;XDMC&quot;;
+  string public constant name = "XDMC token";
+  string public constant symbol = "XDMC";
   uint32 public constant decimals = 18;
   bool public isActivated = false;
   uint256 tokensToSaleContract = uint256(865461673).mul(1 ether);

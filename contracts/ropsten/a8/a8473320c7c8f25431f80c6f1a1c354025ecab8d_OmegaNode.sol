@@ -113,8 +113,8 @@ contract OmegaNode is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OmegaNode() public {
-        symbol = &quot;OMGN&quot;;
-        name = &quot;OmegaNode&quot;;
+        symbol = "OMGN";
+        name = "OmegaNode";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x3b8609b56da5292e6e690f70bdae688f684a5e76] = _totalSupply;

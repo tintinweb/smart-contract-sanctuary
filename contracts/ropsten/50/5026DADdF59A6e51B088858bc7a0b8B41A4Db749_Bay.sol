@@ -17,7 +17,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -214,7 +214,7 @@ contract Bay is Galleasset {
   // stock the bay with a specific species
   //
   uint256 nonce;
-  function stock(uint16 _x, uint16 _y,address _species,uint256 _amount) public isGalleasset(&quot;Bay&quot;) returns (bool) {
+  function stock(uint16 _x, uint16 _y,address _species,uint256 _amount) public isGalleasset("Bay") returns (bool) {
     //not an empty address
     require( _species != address(0) );
     //_species allowed in this Bay
@@ -240,11 +240,11 @@ contract Bay is Galleasset {
   //
   // transfer your ship to the bay to sail
   //
-  function embark(uint16 _x, uint16 _y,uint256 shipId) public isGalleasset(&quot;Bay&quot;) returns (bool) {
+  function embark(uint16 _x, uint16 _y,uint256 shipId) public isGalleasset("Bay") returns (bool) {
     //any given address can only have one dogger in any given bay at a time
     require( !ships[_x][_y][msg.sender].floating );
     //make sure this address owns the shipId
-    NFT shipsContract = NFT(getContract(&quot;Dogger&quot;));
+    NFT shipsContract = NFT(getContract("Dogger"));
     require( shipsContract.ownerOf(shipId)==msg.sender );
     //transfer the ship to the bay
     shipsContract.galleassetTransferFrom(msg.sender,address(this),shipId);
@@ -269,7 +269,7 @@ contract Bay is Galleasset {
   //
   // transfer your ship back to you from the bay
   //
-  function disembark(uint16 _x, uint16 _y,uint256 shipId) public isGalleasset(&quot;Bay&quot;) returns (bool) {
+  function disembark(uint16 _x, uint16 _y,uint256 shipId) public isGalleasset("Bay") returns (bool) {
     //make sure the ship for this address is the same id they passed in
     require( ships[_x][_y][msg.sender].id==shipId );
     // make sure the ship is floating
@@ -277,7 +277,7 @@ contract Bay is Galleasset {
     //make sure they are in range to disembark
     require( inRangeToDisembark(_x,_y,msg.sender) );
     //transfer the ship back to the address
-    NFT shipsContract = NFT(getContract(&quot;Dogger&quot;));
+    NFT shipsContract = NFT(getContract("Dogger"));
     require( shipsContract.ownerOf(shipId)==address(this) );
     shipsContract.galleassetTransferFrom(address(this),msg.sender,shipId);
     require( shipsContract.ownerOf(shipId)==msg.sender );
@@ -299,7 +299,7 @@ contract Bay is Galleasset {
   //
   // sail east (true) or west (false)
   //
-  function setSail(uint16 _x, uint16 _y,bool direction) public isGalleasset(&quot;Bay&quot;) returns (bool) {
+  function setSail(uint16 _x, uint16 _y,bool direction) public isGalleasset("Bay") returns (bool) {
 
     Ship thisShip = ships[_x][_y][msg.sender];
 
@@ -320,7 +320,7 @@ contract Bay is Galleasset {
   //
   // drop anchor to stop the ship
   //
-  function dropAnchor(uint16 _x, uint16 _y) public isGalleasset(&quot;Bay&quot;) returns (bool) {
+  function dropAnchor(uint16 _x, uint16 _y) public isGalleasset("Bay") returns (bool) {
 
     Ship thisShip = ships[_x][_y][msg.sender];
 
@@ -338,7 +338,7 @@ contract Bay is Galleasset {
   //
   // bait the hook and cast the line
   //
-  function castLine(uint16 _x, uint16 _y,bytes32 baitHash) public isGalleasset(&quot;Bay&quot;) returns (bool) {
+  function castLine(uint16 _x, uint16 _y,bytes32 baitHash) public isGalleasset("Bay") returns (bool) {
 
     Ship thisShip = ships[_x][_y][msg.sender];
 
@@ -358,7 +358,7 @@ contract Bay is Galleasset {
   //
   //  try to catch a fish with your bait
   //
-  function reelIn(uint16 _x, uint16 _y,bytes32 _fish, bytes32 _bait) public isGalleasset(&quot;Bay&quot;) returns (bool) {
+  function reelIn(uint16 _x, uint16 _y,bytes32 _fish, bytes32 _bait) public isGalleasset("Bay") returns (bool) {
 
     Ship thisShip = ships[_x][_y][msg.sender];
 
@@ -397,7 +397,7 @@ contract Bay is Galleasset {
 
     fish[_x][_y][_fish] = address(0);
 
-    address experienceContractAddress = getContract(&quot;Experience&quot;);
+    address experienceContractAddress = getContract("Experience");
     require( experienceContractAddress!=address(0) );
     Experience experienceContract = Experience(experienceContractAddress);
     experienceContract.update(msg.sender,2,true);//milestone 2: Catch a fish
@@ -479,9 +479,9 @@ contract Bay is Galleasset {
   }
 
   function getHarborLocation(uint16 _x, uint16 _y) public constant returns (uint16) {
-    Land landContract = Land(getContract(&quot;Land&quot;));
-    //uint16 harborLocation = landContract.getTileLocation(landContract.mainX(),landContract.mainY(),getContract(&quot;Harbor&quot;));
-    uint16 harborLocation = landContract.getTileLocation(_x,_y,getContract(&quot;Harbor&quot;));
+    Land landContract = Land(getContract("Land"));
+    //uint16 harborLocation = landContract.getTileLocation(landContract.mainX(),landContract.mainY(),getContract("Harbor"));
+    uint16 harborLocation = landContract.getTileLocation(_x,_y,getContract("Harbor"));
     return uint16((65535 * uint256(harborLocation)) / 4000);
   }
 

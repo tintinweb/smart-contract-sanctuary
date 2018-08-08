@@ -113,8 +113,8 @@ contract U42Token is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function U42Token() public {
-        symbol = &quot;U42&quot;;
-        name = &quot;U42 Token&quot;;
+        symbol = "U42";
+        name = "U42 Token";
         decimals = 18;
         _totalSupply = 525000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

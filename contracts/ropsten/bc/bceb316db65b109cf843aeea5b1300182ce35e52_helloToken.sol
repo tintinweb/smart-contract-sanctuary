@@ -116,8 +116,8 @@ contract helloToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function helloToken() public {
-        symbol = &quot;HELLO&quot;;
-        name = &quot;Hello Token&quot;;
+        symbol = "HELLO";
+        name = "Hello Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

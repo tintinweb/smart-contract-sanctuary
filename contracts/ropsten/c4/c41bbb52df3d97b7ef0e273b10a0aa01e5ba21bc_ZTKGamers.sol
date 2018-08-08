@@ -105,8 +105,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract ZTKGamers is Ownable, StandardToken {
 
-    string public name = &quot;ZTKGamers&quot;;                     // name of the token
-    string public symbol = &quot;ZTK&quot;;                         // ERC20 compliant 4 digit token code
+    string public name = "ZTKGamers";                     // name of the token
+    string public symbol = "ZTK";                         // ERC20 compliant 4 digit token code
     uint public decimals = 18;                            // 18 digit precision
 
     uint256 public totalSupply =  5000000000 * (10**decimals); // 5B INITIAL SUPPLY

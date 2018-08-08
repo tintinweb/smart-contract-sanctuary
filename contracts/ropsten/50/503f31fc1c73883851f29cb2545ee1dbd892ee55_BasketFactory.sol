@@ -78,8 +78,8 @@ contract BasicToken is ERC20Basic {
   * @param _value The amount to be transferred.
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
-    require(_to != address(0));               // &quot;Recipient addess is 0x0&quot;
-    require(_value <= balances[msg.sender]);  // &quot;Insufficient token balance&quot;
+    require(_to != address(0));               // "Recipient addess is 0x0"
+    require(_value <= balances[msg.sender]);  // "Insufficient token balance"
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -112,9 +112,9 @@ contract StandardToken is ERC20, BasicToken {
    * @param _value uint256 the amount of tokens to be transferred
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-    require(_to != address(0));                       // &quot;Can not transfer to 0x0&quot;
-    require(_value <= balances[_from]);               // &quot;Insufficient balance&quot;
-    require(_value <= allowed[_from][msg.sender]);    // &quot;Insufficient allowance&quot;
+    require(_to != address(0));                       // "Can not transfer to 0x0"
+    require(_value <= balances[_from]);               // "Insufficient balance"
+    require(_value <= allowed[_from][msg.sender]);    // "Insufficient allowance"
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -214,7 +214,7 @@ contract Basket is StandardToken {
 
   // Modifiers
   modifier onlyArranger {
-    require(msg.sender == arranger);                // Check: &quot;Only the Arranger can call this function&quot;
+    require(msg.sender == arranger);                // Check: "Only the Arranger can call this function"
     _;
   }
 
@@ -245,7 +245,7 @@ contract Basket is StandardToken {
     address   _arrangerFeeRecipient,
     uint      _arrangerFee                         // in wei, i.e. 1e18 = 1 ETH
   ) public {
-    // Check: &quot;Constructor: invalid number of tokens and weights&quot;
+    // Check: "Constructor: invalid number of tokens and weights"
     require(_tokens.length > 0 && _tokens.length == _weights.length);
 
     name = _name;
@@ -275,7 +275,7 @@ contract Basket is StandardToken {
     // charging suppliers a fee for every new basket minted
     // skip fees if tokens are minted through swaps
     if (arrangerFee > 0) {
-      // Check: &quot;Insufficient ETH for arranger fee to bundle&quot;
+      // Check: "Insufficient ETH for arranger fee to bundle"
       require(msg.value >= arrangerFee.mul(_quantity).div(10 ** decimals));
       arrangerFeeRecipient.transfer(msg.value);
     } else {
@@ -310,7 +310,7 @@ contract Basket is StandardToken {
     address   _sender,
     address   _recipient
   ) internal returns (bool success) {
-    require(balances[_sender] >= _quantity);      // Check: &quot;Insufficient basket balance to debundle&quot;
+    require(balances[_sender] >= _quantity);      // Check: "Insufficient basket balance to debundle"
     // decrease holder balance and total supply by _quantity
     balances[_sender] = balances[_sender].sub(_quantity);
     totalSupply_ = totalSupply_.sub(_quantity);
@@ -361,7 +361,7 @@ contract Basket is StandardToken {
   /// @param  _newRecipient                        New fee recipient
   /// @return success                              Operation successful
   function changeArrangerFeeRecipient(address _newRecipient) public onlyArranger returns (bool success) {
-    // Check: &quot;New receipient can not be 0x0 or the same as the current recipient&quot;
+    // Check: "New receipient can not be 0x0 or the same as the current recipient"
     require(_newRecipient != address(0) && _newRecipient != arrangerFeeRecipient);
     address oldRecipient = arrangerFeeRecipient;
     arrangerFeeRecipient = _newRecipient;
@@ -382,7 +382,7 @@ contract Basket is StandardToken {
   }
 
   /// @dev Fallback to reject any ether sent to contract
-  //  Check: &quot;Baskets do not accept ETH transfers&quot;
+  //  Check: "Baskets do not accept ETH transfers"
   function () public payable { revert(); }
 }
 
@@ -429,11 +429,11 @@ contract BasketRegistry {
 
   // Modifiers
   modifier onlyBasket {
-    require(basketIndexFromAddress[msg.sender] > 0); // Check: &quot;Only a basket can call this function&quot;
+    require(basketIndexFromAddress[msg.sender] > 0); // Check: "Only a basket can call this function"
     _;
   }
   modifier onlyBasketFactory {
-    require(basketFactoryMap[msg.sender] == true);   // Check: &quot;Only a basket factory can call this function&quot;
+    require(basketFactoryMap[msg.sender] == true);   // Check: "Only a basket factory can call this function"
     _;
   }
 
@@ -454,7 +454,7 @@ contract BasketRegistry {
   /// @param  _basketFactory                       Basket factory address
   /// @return success                              Operation successful
   function whitelistBasketFactory(address _basketFactory) public returns (bool success) {
-    require(msg.sender == admin);                  // Check: &quot;Only an admin can call this function&quot;
+    require(msg.sender == admin);                  // Check: "Only an admin can call this function"
     basketFactoryMap[_basketFactory] = true;
     emit LogWhitelistBasketFactory(_basketFactory);
     return true;
@@ -554,7 +554,7 @@ contract BasketRegistry {
   }
 
   /// @dev Fallback to reject any ether sent to contract
-  //  CHeck: &quot;BasketRegistry does not accept ETH transfers&quot;
+  //  CHeck: "BasketRegistry does not accept ETH transfers"
   function () public payable { revert(); }
 }
 
@@ -577,7 +577,7 @@ contract BasketFactory {
 
   // Modifiers
   modifier onlyAdmin {
-    require(msg.sender == admin);                   // Check: &quot;Only the admin can call this function&quot;
+    require(msg.sender == admin);                   // Check: "Only the admin can call this function"
     _;
   }
 
@@ -623,7 +623,7 @@ contract BasketFactory {
     returns (address newBasket)
   {
     // charging arrangers a fee to deploy new basket
-    require(msg.value >= productionFee);           // Check: &quot;Insufficient ETH for basket creation fee&quot;
+    require(msg.value >= productionFee);           // Check: "Insufficient ETH for basket creation fee"
     productionFeeRecipient.transfer(msg.value);
 
     Basket b = new Basket(
@@ -668,6 +668,6 @@ contract BasketFactory {
   }
 
   /// @dev Fallback to reject any ether sent to contract
-  //  Check: &quot;BasketFactory does not accept ETH transfers&quot;
+  //  Check: "BasketFactory does not accept ETH transfers"
   function () public payable { revert(); }
 }

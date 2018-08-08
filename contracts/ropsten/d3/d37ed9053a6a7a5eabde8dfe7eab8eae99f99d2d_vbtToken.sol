@@ -116,8 +116,8 @@ contract vbtToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function vbtToken() public {
-        symbol = &quot;VBT&quot;;
-        name = &quot;vbt Token&quot;;
+        symbol = "VBT";
+        name = "vbt Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

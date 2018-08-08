@@ -116,8 +116,8 @@ contract Diploma is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Diploma() public {
-        symbol = &quot;DPLM&quot;;
-        name = &quot;Diploma&quot;;
+        symbol = "DPLM";
+        name = "Diploma";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

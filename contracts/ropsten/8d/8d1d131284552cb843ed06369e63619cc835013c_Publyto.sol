@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -265,8 +265,8 @@ contract Publyto is StandardToken, Ownable {
     event MintFinished();
     event BurnFinished();
 
-    string public constant name = &quot;Publyto&quot;;
-    string public constant symbol = &quot;PUB&quot;;
+    string public constant name = "Publyto";
+    string public constant symbol = "PUB";
     uint8 public constant decimals = 18;
     uint256 public initialSupply = 1000000000; // 1 billion tokens
     uint256 public totalSupply =  initialSupply.mul(10 ** uint256(decimals));

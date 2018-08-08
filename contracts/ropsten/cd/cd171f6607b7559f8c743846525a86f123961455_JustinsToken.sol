@@ -113,8 +113,8 @@ contract JustinsToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JustinsToken() public {
-        symbol = &quot;JTK&quot;;
-        name = &quot;Justins Token&quot;;
+        symbol = "JTK";
+        name = "Justins Token";
         decimals = 0;
         _totalSupply = 100;
         balances[0xaAC2bd73b433C668945254c2A1B132cd171ADE04] = _totalSupply;

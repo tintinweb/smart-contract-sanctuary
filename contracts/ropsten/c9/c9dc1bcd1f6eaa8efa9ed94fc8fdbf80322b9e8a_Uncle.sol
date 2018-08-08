@@ -116,8 +116,8 @@ contract Uncle is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UncleToken() public {
-        symbol = &quot;4UNC&quot;;
-        name = &quot;4th Uncle Token&quot;;
+        symbol = "4UNC";
+        name = "4th Uncle Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

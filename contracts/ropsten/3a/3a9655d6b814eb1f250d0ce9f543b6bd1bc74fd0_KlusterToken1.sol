@@ -111,8 +111,8 @@ contract KlusterToken1 is BasicToken {
 	uint8 public decimals;
 	
 	constructor() public {
-		symbol = &quot;KLST1&quot;;
-		name = &quot;Kluster Token 1&quot;;
+		symbol = "KLST1";
+		name = "Kluster Token 1";
 		decimals = 18;
 		totalSupply_ = 100000000000000000000000;
 		balances[0x46AbaF771ef7Dc0E10FDDb1A417fBE2b91B08Af3] = totalSupply_;

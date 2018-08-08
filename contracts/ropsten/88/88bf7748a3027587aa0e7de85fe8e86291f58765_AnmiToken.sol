@@ -309,8 +309,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 // File: contracts/AnmiToken.sol
 
 contract AnmiToken is StandardBurnableToken {
-  string public name = &quot;AnmiToken&quot;;
-  string public symbol = &quot;AMT&quot;;
+  string public name = "AnmiToken";
+  string public symbol = "AMT";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 21000000 * (10 ** decimals);
 

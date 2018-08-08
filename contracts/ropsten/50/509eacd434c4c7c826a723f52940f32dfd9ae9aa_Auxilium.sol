@@ -228,9 +228,9 @@ contract Auxilium is ERC20Interface, Owned, SafeMath {
 
     function Auxilium() public {
 
-        symbol = &quot;AXLM&quot;;
+        symbol = "AXLM";
 
-        name = &quot;Auxilium&quot;;
+        name = "Auxilium";
 
         decimals = 0;
 

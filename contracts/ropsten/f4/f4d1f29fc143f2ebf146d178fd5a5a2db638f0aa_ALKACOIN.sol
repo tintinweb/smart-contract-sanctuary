@@ -113,8 +113,8 @@ contract ALKACOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ALKACOIN() public {
-        symbol = &quot;ALK&quot;;
-        name = &quot;ALKACOIN&quot;;
+        symbol = "ALK";
+        name = "ALKACOIN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x9332df0dceB7A9EA8F9B6a985607Fc3eb7c774d3] = _totalSupply;

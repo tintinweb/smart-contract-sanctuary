@@ -48,8 +48,8 @@ contract AutoCoin is ERC20 {
     uint256 private             summarySupply;
     uint256 public              weiPerMinToken;
 
-    string  public              name = &quot;Auto Token&quot;;
-    string  public              symbol = &quot;ATK&quot;;
+    string  public              name = "Auto Token";
+    string  public              symbol = "ATK";
     uint8   public              decimals = 2;
 
     bool    public              contractEnable = true;
@@ -119,7 +119,7 @@ contract AutoCoin is ERC20 {
         if (_weiPerMinToken > 0) {
             weiPerMinToken = _weiPerMinToken;
 
-            EvLoginfo(&quot;[weiPerMinToken]&quot;, &quot;changed&quot;);
+            EvLoginfo("[weiPerMinToken]", "changed");
         }
     }
 

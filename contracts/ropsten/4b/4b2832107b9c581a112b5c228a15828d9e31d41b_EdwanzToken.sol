@@ -112,8 +112,8 @@ contract EdwanzToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EdwanzToken() public {
-        symbol = &quot;EDWZ&quot;;
-        name = &quot;EdwanzToken&quot;;
+        symbol = "EDWZ";
+        name = "EdwanzToken";
         decimals = 18;
         _totalSupply = 1000000000000000000000;
         balances[0x0F85BC773CCF09f848E2A18c2DFcCd777adeBe5f] = _totalSupply;

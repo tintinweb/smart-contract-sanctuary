@@ -23,7 +23,7 @@ pragma solidity ^0.4.23;
 // Multi-sig, daily-limited account proxy/wallet.
 // @authors:
 // Gav Wood <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4b394b1a0bcb0b1a2fab7bbb9">[email&#160;protected]</a>>
-// inheritable &quot;property&quot; contract that enables methods to be protected by requiring the acquiescence of either a
+// inheritable "property" contract that enables methods to be protected by requiring the acquiescence of either a
 // single, or, crucially, each of a number of, designated owners.
 // usage:
 // use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by
@@ -57,7 +57,7 @@ contract WalletAbi {
 
 
 /**
- * Base logic for &quot;soft&quot; destruct contract. In other words - to return funds to the target user.
+ * Base logic for "soft" destruct contract. In other words - to return funds to the target user.
  */
 contract SoftDestruct {
   /**
@@ -123,7 +123,7 @@ contract SoftDestruct {
 // Multi-sig, daily-limited account proxy/wallet.
 // @authors:
 // Gav Wood <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="187f587d6c707c7d6e367b7775">[email&#160;protected]</a>>
-// inheritable &quot;property&quot; contract that enables methods to be protected by requiring the acquiescence of either a
+// inheritable "property" contract that enables methods to be protected by requiring the acquiescence of either a
 // single, or, crucially, each of a number of, designated owners.
 // usage:
 // use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by
@@ -590,7 +590,7 @@ library TxUtils {
 
   function isNull(Transaction self) internal pure returns (bool) {
     // solium-disable-next-line arg-overflow
-    return equals(self, Transaction(address(0), 0, &quot;&quot;, 0));
+    return equals(self, Transaction(address(0), 0, "", 0));
   }
 }
 
@@ -624,7 +624,7 @@ contract LostKeyERC20Wallet is LastWill, ERC20Wallet {
   }
 
   function sendFunds(uint _amount, address _receiver) public onlyTarget onlyAlive {
-    sendFundsInternal(_amount, _receiver, &quot;&quot;);
+    sendFundsInternal(_amount, _receiver, "");
   }
 
   function check() public payable {
@@ -724,7 +724,7 @@ library QueueUtils {
   }
 
   function push(Queue storage _self, TxUtils.Transaction _tx) internal {
-    require(_self.list[_tx.timestamp].data.isNull(), &quot;Cannot push transaction with same timestamp&quot;);
+    require(_self.list[_tx.timestamp].data.isNull(), "Cannot push transaction with same timestamp");
 
     Node memory node;
     if (_self.list[_self.tail].data.isNull()) {
@@ -743,13 +743,13 @@ library QueueUtils {
 
   function peek(Queue storage _self) internal view returns (TxUtils.Transaction) {
     // solium-disable-next-line arg-overflow
-    return isEmpty(_self) ? TxUtils.Transaction(0, 0, &quot;&quot;, 0) : _self.list[_self.head].data;
+    return isEmpty(_self) ? TxUtils.Transaction(0, 0, "", 0) : _self.list[_self.head].data;
   }
 
   function pop(Queue storage _self) internal returns (TxUtils.Transaction) {
     if (isEmpty(_self)) {
       // solium-disable-next-line arg-overflow
-      return TxUtils.Transaction(0, 0, &quot;&quot;, 0);
+      return TxUtils.Transaction(0, 0, "", 0);
     }
 
     if (size(_self) == 1) {
@@ -766,7 +766,7 @@ library QueueUtils {
   }
 
   function remove(Queue storage _self, TxUtils.Transaction _tx) internal returns (bool) {
-    require(size(_self) > 0, &quot;Queue is empty&quot;);
+    require(size(_self) > 0, "Queue is empty");
 
     uint iterator = _self.tail;
     while (iterator != 0) {
@@ -869,9 +869,9 @@ contract LostKeyDelayedPaymentWallet is Wallet, LostKeyERC20Wallet {
    * @param _data   Call data.
    */
   function sendFunds(address _to, uint _amount, bytes _data) public onlyTarget onlyAlive {
-    require(_to != address(0), &quot;Address should not be 0&quot;);
+    require(_to != address(0), "Address should not be 0");
     if (_data.length == 0) {
-      require(_amount != 0, &quot;Amount should not be 0&quot;);
+      require(_amount != 0, "Amount should not be 0");
     }
 
     if (_amount < transferThresholdWei || transferThresholdWei == 0) {
@@ -922,7 +922,7 @@ contract LostKeyDelayedPaymentWallet is Wallet, LostKeyERC20Wallet {
       _data,
       _timestamp
     );
-    require(queue.remove(transaction), &quot;Transaction not found in queue&quot;);
+    require(queue.remove(transaction), "Transaction not found in queue");
   }
 
   /**

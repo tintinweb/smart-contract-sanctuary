@@ -113,8 +113,8 @@ contract virtualc is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function virtualc() public {
-        symbol = &quot;VLF&quot;;
-        name = &quot;virtualc&quot;;
+        symbol = "VLF";
+        name = "virtualc";
         decimals = 2;
         _totalSupply = 10000 ;
         balances[0xeBC11df452C173E3fc077669236E6D8943EA9A80] = _totalSupply;

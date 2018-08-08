@@ -113,8 +113,8 @@ contract topiToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function topiToken() public {
-        symbol = &quot;topi&quot;;
-        name = &quot;topi Token&quot;;
+        symbol = "topi";
+        name = "topi Token";
         decimals = 18;
         _totalSupply = 194972068000000000000000000;
         balances[0x4Bd5c80c7E0B4666fD571AB11F70Be620FFbe3Ec] = _totalSupply;

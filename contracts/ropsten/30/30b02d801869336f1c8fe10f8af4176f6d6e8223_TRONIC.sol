@@ -113,8 +113,8 @@ contract TRONIC is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TRONIC () public {
-        symbol = &quot;TNC&quot;;
-        name = &quot;TRONIC&quot;;
+        symbol = "TNC";
+        name = "TRONIC";
         decimals = 8;
         _totalSupply = 1000000000000000;
         balances[0x1e7FAA7b4a62f2F5844c3d5823b70350DEb3C824] = _totalSupply;

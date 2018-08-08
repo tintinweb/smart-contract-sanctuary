@@ -1,8 +1,8 @@
 pragma solidity ^0.4.24; 
 
 contract ERC20TokenComplete {
-    string public constant name = &quot;KDS Token1&quot;;
-    string public constant symbol = &quot;KDS&quot;;
+    string public constant name = "KDS Token1";
+    string public constant symbol = "KDS";
     uint8 public constant decimals = 18;
 
     uint256 public totalSupply ;

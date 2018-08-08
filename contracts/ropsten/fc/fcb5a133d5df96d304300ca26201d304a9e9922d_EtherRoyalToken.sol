@@ -118,8 +118,8 @@ contract EtherRoyalToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EtherRoyalToken() public {
-        symbol = &quot;ERYL&quot;;
-        name = &quot;Ether Royal&quot;;
+        symbol = "ERYL";
+        name = "Ether Royal";
         decimals = 18;
         _totalSupply = 21000000000000000000000000000;
         balances[0x5b5547d79ca5163145d41d374f0c7fcfabe8cba1] = _totalSupply;

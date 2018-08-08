@@ -73,8 +73,8 @@ contract BumbleBee is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
     
     constructor() public {
-        symbol = &quot;BEE&quot;;
-        name = &quot;BumbleBee&quot;;
+        symbol = "BEE";
+        name = "BumbleBee";
         decimals = 18;
         _totalSupply = 21000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

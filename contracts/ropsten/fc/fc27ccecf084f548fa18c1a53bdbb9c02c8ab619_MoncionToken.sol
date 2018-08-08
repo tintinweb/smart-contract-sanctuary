@@ -113,8 +113,8 @@ contract MoncionToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MoncionToken() public {
-        symbol = &quot;MONCION&quot;;
-        name = &quot;Moncion Token&quot;;
+        symbol = "MONCION";
+        name = "Moncion Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000;
         balances[0xc3D8f55193b8db2201104a8676d2565c45373299] = _totalSupply;

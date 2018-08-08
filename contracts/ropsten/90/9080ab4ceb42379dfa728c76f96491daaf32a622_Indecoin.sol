@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -611,9 +611,9 @@ contract Indecoin is Ownable, Target, StandardToken, Dividend {
     */
 
     // Expected of ERC20
-    string public constant name     = &quot;LaunchCoinTest v0.2&quot;;
+    string public constant name     = "LaunchCoinTest v0.2";
     // TODO: Refactor once done with testnet
-    string public constant symbol   = &quot;LC_t&quot;;
+    string public constant symbol   = "LC_t";
     uint8  public constant decimals = 18;
 
     bool public compromised; // In testing, true means the contract was breached

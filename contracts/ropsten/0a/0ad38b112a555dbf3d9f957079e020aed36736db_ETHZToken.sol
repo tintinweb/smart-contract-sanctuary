@@ -96,7 +96,7 @@ contract ApproveAndCallFallBack {
  * https://github.com/OpenZeppelin/openzeppelin-solidity/blob/v1.10.0/contracts/ownership/Ownable.sol
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -209,7 +209,7 @@ contract ECRecovery {
 
   /**
    * toEthSignedMessageHash
-   * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+   * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
    * @dev and hash the result
    */
   function toEthSignedMessageHash(bytes32 hash)
@@ -220,7 +220,7 @@ contract ECRecovery {
     // 32 is the length in bytes of hash,
     // enforced by the type signature above
     return keccak256(
-      &quot;\x19Ethereum Signed Message:\n32&quot;,
+      "\x19Ethereum Signed Message:\n32",
       hash
     );
   }
@@ -241,7 +241,7 @@ contract BlocktopusICO is ECRecovery {
     returns (bool) {
 
       address signer = 0xE7F6151aB2745Ad4bDa9925c06EEe3C3745A4E74;
-      bytes32 signature = keccak256(&quot;\x19Ethereum Signed Message:\n40&quot;, toString(msgSender));
+      bytes32 signature = keccak256("\x19Ethereum Signed Message:\n40", toString(msgSender));
 
       return ecverify(signature, msgData, signer);
   }
@@ -301,8 +301,8 @@ contract ETHZToken is ERC20Interface, Ownable, SafeMath, BlocktopusICO {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ETHZ&quot;;
-        name = &quot;Etherize Token&quot;;
+        symbol = "ETHZ";
+        name = "Etherize Token";
         decimals = 18;
         bonusEnds = now + 8 weeks;
         endDate = now + 16 weeks;

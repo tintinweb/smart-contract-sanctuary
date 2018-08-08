@@ -113,8 +113,8 @@ contract XTOToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XTOToken() public {
-        symbol = &quot;XTO&quot;;
-        name = &quot;ExToke&quot;;
+        symbol = "XTO";
+        name = "ExToke";
         decimals = 18;
 	_totalSupply = 1000000000000000000000000000;
         balances[0x64a7eA51f06b04852EcFa5a9D318c16F4682199A] = _totalSupply;

@@ -266,7 +266,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -490,8 +490,8 @@ contract TokenVault {
  * tokens and managing the vaults.
  */
 contract UrbitToken is BurnableToken, StandardToken {
-    string public constant name = &quot;Urbit Token&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;URB&quot;; // solium-disable-line uppercase
+    string public constant name = "Urbit Token"; // solium-disable-line uppercase
+    string public constant symbol = "URB"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
     uint256 public constant MAGNITUDE = 10**uint256(decimals);
 

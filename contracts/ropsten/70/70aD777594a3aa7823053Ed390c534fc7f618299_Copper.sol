@@ -7,7 +7,7 @@ pragma solidity ^0.4.15;
 
   Copper is the main currency in Galleass.
 
-  It is considered a &quot;hard&quot; asset versus &quot;soft&quot; assets like Timber
+  It is considered a "hard" asset versus "soft" assets like Timber
     where some contracts have full permission to move them around
     it is a better store of value, but it can still be minted 
 
@@ -19,7 +19,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -528,8 +528,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract Copper is Galleasset, MintableToken, ERC677Token {
 
-  string public constant name = &quot;Galleass Copper&quot;;
-  string public constant symbol = &quot;G_COPPER&quot;;
+  string public constant name = "Galleass Copper";
+  string public constant symbol = "G_COPPER";
   uint8 public constant decimals = 0;
 
   uint256 public constant INITIAL_SUPPLY = 0;

@@ -116,8 +116,8 @@ contract jasontestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function jasontestToken() public {
-        symbol = &quot;JST&quot;;
-        name = &quot;jasontest Token&quot;;
+        symbol = "JST";
+        name = "jasontest Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

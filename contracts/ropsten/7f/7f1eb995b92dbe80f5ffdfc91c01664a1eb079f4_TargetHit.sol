@@ -1,9 +1,9 @@
 pragma solidity ^0.4.16;
 
 contract TargetHit {
-    string public name = &quot;Target Hit&quot;;      //  token name
-    string public symbol = &quot;TGH&quot;;           //  token symbol
-    string public version = &quot;2.0&quot;;
+    string public name = "Target Hit";      //  token name
+    string public symbol = "TGH";           //  token symbol
+    string public version = "2.0";
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -113,8 +113,8 @@ contract Sudosucks is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Sudosucks() public {
-        symbol = &quot;SUDO&quot;;
-        name = &quot;Sudo Sucks&quot;;
+        symbol = "SUDO";
+        name = "Sudo Sucks";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x94213908c24Cd19d72CC20F4daCB89976DfCb55a] = _totalSupply;

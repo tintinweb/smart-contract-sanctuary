@@ -21,7 +21,7 @@ contract ERC20Basic {
 
   This is a token extension to allow porting a Bitcoin or Bitcoin-fork sourced UTXO set to an ERC20 token through redemption of individual UTXOs in the token contract.
     
-  Owners of UTXOs in a chosen final set (where &quot;owner&quot; is simply anyone who could have spent the UTXO) are allowed to redeem (mint) a number of tokens proportional to the satoshi amount of the UTXO.
+  Owners of UTXOs in a chosen final set (where "owner" is simply anyone who could have spent the UTXO) are allowed to redeem (mint) a number of tokens proportional to the satoshi amount of the UTXO.
 
   Notes
 
@@ -907,8 +907,8 @@ contract StakeableToken is UTXORedeemableToken {
 
 
 contract BitcoinHex is StakeableToken {
-    string public name = &quot;BitcoinHex&quot;; 
-    string public symbol = &quot;BHX&quot;;
+    string public name = "BitcoinHex"; 
+    string public symbol = "BHX";
     uint public decimals = 18;
 
     constructor (

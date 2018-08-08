@@ -230,8 +230,8 @@ contract Daxther is MintableToken {
   event TokensBurned(address initiatior, address indexed _partner, uint256 _tokens);
  
     function Daxther() public {
-        name = &quot;Daxther&quot;;
-        symbol = &quot;XTR&quot;;
+        name = "Daxther";
+        symbol = "XTR";
         decimals = 18;
         totalSupply = 2800000e18;
         founder = 0x35DCD7055D7586E1C6d67307EefDADDdc194f000;

@@ -28,7 +28,7 @@ pragma solidity 0.4.24;
 
 
 /**
- * @dev Implements &quot;hot potato mechanism&quot;, milk production, 
+ * @dev Implements "hot potato mechanism", milk production, 
  *  milk price calulation and milk selling.
  */
 contract MilkMachineHotPotato {

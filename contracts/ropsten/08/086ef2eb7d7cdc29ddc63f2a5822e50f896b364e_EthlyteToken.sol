@@ -116,8 +116,8 @@ contract EthlyteToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EthlyteToken() public {
-        symbol = &quot;Etlyte&quot;;
-        name = &quot;Ethlyte Token&quot;;
+        symbol = "Etlyte";
+        name = "Ethlyte Token";
         decimals = 18;
         bonusEnds = now + 3 weeks;
         endDate = now + 6 weeks;

@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 
 /// @title Ownable
 /// @dev The Ownable contract has an owner address, and provides basic authorization control functions,
-/// this simplifies the implementation of &quot;user permissions&quot;.
+/// this simplifies the implementation of "user permissions".
 /// @dev Based on OpenZeppelin&#39;s Ownable.
 
 contract Ownable {
@@ -288,7 +288,7 @@ contract Flippitt is Ownable, Standard677Token, TokenHolder {
     /// @param _symbol string symbol for CC token that is created.
     /// @param _decimals uint8 percison for CC token that is created.
     /// @param _totalSupply uint256 total supply of the CC token that is created.
-    /// @param _tokenURI string the URI may point to a JSON file that conforms to the &quot;Metadata JSON Schema&quot;.
+    /// @param _tokenURI string the URI may point to a JSON file that conforms to the "Metadata JSON Schema".
     function Flippitt(string _name, string _symbol, uint8 _decimals, uint256 _totalSupply, string _tokenURI) public {
         require(_totalSupply != 0);
         require(bytes(_name).length != 0);
@@ -303,7 +303,7 @@ contract Flippitt is Ownable, Standard677Token, TokenHolder {
     }
 
     /// @dev Sets the tokenURI field, can be called by the owner only
-    /// @param _tokenURI string the URI may point to a JSON file that conforms to the &quot;Metadata JSON Schema&quot;.
+    /// @param _tokenURI string the URI may point to a JSON file that conforms to the "Metadata JSON Schema".
     function setTokenURI(string _tokenURI) public onlyOwner {
       tokenURI = _tokenURI;
       TokenURIChanged(_tokenURI);

@@ -98,8 +98,8 @@ contract StandardToken is ERC20 {
 contract FuckToken is StandardToken {
     uint public totalSupply = 10*10**26;
     uint8 constant public decimals = 10;
-    string constant public name = &quot;FUCk Tokenn&quot;;
-    string constant public symbol = &quot;FT&quot;;
+    string constant public name = "FUCk Tokenn";
+    string constant public symbol = "FT";
 
     function FCoinToken() public {
         balances[msg.sender] = totalSupply;

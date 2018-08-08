@@ -61,7 +61,7 @@ contract Storychain {
     // Constructor
     function Storychain() public {
         // Genesis block
-        string memory text = &quot;[Genesis Block]&quot;;
+        string memory text = "[Genesis Block]";
         nodes.push(Node(msg.sender, text, 0));
         Write(0, msg.sender, 0, text);
     }

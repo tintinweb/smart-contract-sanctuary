@@ -50,8 +50,8 @@ contract GolfCoin is IERC20{
 
 	bool public purchasingAllowed = true;
 
-	string public constant symbol = &quot;GOLF&quot;;
-	string public constant name = &quot;GolfCoin&quot;;
+	string public constant symbol = "GOLF";
+	string public constant name = "GolfCoin";
 	uint256 public constant decimals = 18;
 
 	uint256 private CREATOR_TOKEN = 31000000 * 10**decimals;

@@ -113,8 +113,8 @@ contract ChunksToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ChunksToken() public {
-        symbol = &quot;0CHUNKS&quot;;
-        name = &quot;0 Chunks Token&quot;;
+        symbol = "0CHUNKS";
+        name = "0 Chunks Token";
         decimals = 10;
         _totalSupply = 100000000000;
         balances[0x5dF598aF220924beadEaDB3Fa9DF1722310d4393] = _totalSupply;

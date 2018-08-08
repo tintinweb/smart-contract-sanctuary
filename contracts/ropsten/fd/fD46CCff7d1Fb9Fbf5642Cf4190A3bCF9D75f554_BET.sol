@@ -113,8 +113,8 @@ contract BET is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BEToken() public {
-        symbol = &quot;BET&quot;;
-        name = &quot;0xBitcoin Exchange Token&quot;;
+        symbol = "BET";
+        name = "0xBitcoin Exchange Token";
         decimals = 8;
         _totalSupply = 2500000000000000;
         balances[0x81b8c9b4d6bC11F465749e8AE002D0Bd525B8b02] = _totalSupply;

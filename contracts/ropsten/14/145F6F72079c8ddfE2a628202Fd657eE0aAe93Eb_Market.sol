@@ -24,7 +24,7 @@ The market facilitates the buying and selling of different tokens
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -257,7 +257,7 @@ contract StandardTile is Galleasset, DataParser{
   //standard tile interface
   //called when tile is purchased from Land contract
   function onPurchase(uint16 _x,uint16 _y,uint8 _tile,address _owner,uint _amount) public returns (bool) {
-    require(msg.sender==getContract(&quot;Land&quot;) || msg.sender==getContract(&quot;LandLib&quot;));
+    require(msg.sender==getContract("Land") || msg.sender==getContract("LandLib"));
     landOwners[_x][_y][_tile] = _owner;
     emit LandOwner(_x,_y,_tile,_owner);
     return true;
@@ -281,10 +281,10 @@ contract StandardTile is Galleasset, DataParser{
   ///////internal helpers to keep stack thin enough//////////////////////////////////////////////////////////
   function _incrementTokenBalance(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) internal {
     tokenBalance[_x][_y][_tile][_token]+=_amount;
-    require(tokenBalance[_x][_y][_tile][_token]>=_amount,&quot;Overflow?&quot;);
+    require(tokenBalance[_x][_y][_tile][_token]>=_amount,"Overflow?");
   }
   function _decrementTokenBalance(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) internal {
-    require(tokenBalance[_x][_y][_tile][_token]>=_amount,&quot;This tile does not have enough of this token&quot;);
+    require(tokenBalance[_x][_y][_tile][_token]>=_amount,"This tile does not have enough of this token");
     tokenBalance[_x][_y][_tile][_token]-=_amount;
   }
 }
@@ -298,29 +298,29 @@ contract Market is StandardTile {
   mapping(uint16 => mapping(uint16 => mapping(uint8 => mapping (address => uint)))) public buyPrices; //how much the market will buy items for
   mapping(uint16 => mapping(uint16 => mapping(uint8 => mapping (address => uint)))) public sellPrices; //how much the market will sell items for
 
-  function setBuyPrice(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _price) public isGalleasset(&quot;Market&quot;) isLandOwner(_x,_y,_tile) returns (bool) {
+  function setBuyPrice(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _price) public isGalleasset("Market") isLandOwner(_x,_y,_tile) returns (bool) {
     buyPrices[_x][_y][_tile][_token] = _price;
     return true;
   }
-  function setSellPrice(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _price) public isGalleasset(&quot;Market&quot;) isLandOwner(_x,_y,_tile) returns (bool) {
+  function setSellPrice(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _price) public isGalleasset("Market") isLandOwner(_x,_y,_tile) returns (bool) {
     sellPrices[_x][_y][_tile][_token] = _price;
     return true;
   }
 
   //if the market has permission to galleassTransferFrom your token you can call sell directly
   // it&#39;s better to 667 them in without special galeeass permission
-  /*function sell(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) public isGalleasset(&quot;Market&quot;) returns (bool) {
+  /*function sell(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) public isGalleasset("Market") returns (bool) {
     //token must have a buy price
     require(buyPrices[_x][_y][_tile][_token]>0);
     //move their tokens in
     StandardToken tokenContract = StandardToken(_token);
     require(tokenContract.galleassTransferFrom(msg.sender,address(this),_amount));
     //send them the correct amount of copper
-    StandardToken copperContract = StandardToken(getContract(&quot;Copper&quot;));
+    StandardToken copperContract = StandardToken(getContract("Copper"));
     require(copperContract.transfer(msg.sender,buyPrices[_x][_y][_tile][_token]*_amount));
   }*/
 
-  function onTokenTransfer(address _sender, uint _amount, bytes _data) public isGalleasset(&quot;Market&quot;) returns (bool){
+  function onTokenTransfer(address _sender, uint _amount, bytes _data) public isGalleasset("Market") returns (bool){
     emit TokenTransfer(msg.sender,_sender,_amount,_data);
     uint8 action = uint8(_data[0]);
     if(action==0){
@@ -330,14 +330,14 @@ contract Market is StandardTile {
     } else if(action==2){
       return _sell(_sender,_amount,_data);
     }else {
-      revert(&quot;unknown action&quot;);
+      revert("unknown action");
     }
   }
   event TokenTransfer(address token,address sender,uint amount,bytes data);
 
   function _buy(address _sender, uint _amount, bytes _data) internal returns (bool) {
     //you must be sending in copper
-    require(msg.sender == getContract(&quot;Copper&quot;));
+    require(msg.sender == getContract("Copper"));
     //increment tile&#39;s copper balance
     _incrementTokenBalance(_x,_y,_tile,msg.sender,_amount);
     //parse land location out of data
@@ -381,8 +381,8 @@ contract Market is StandardTile {
     
     uint amountOfCopperToSend = _amount*buyPrices[_x][_y][_tile][msg.sender];
     //make sure this tile has enough copper to buy the token
-    _decrementTokenBalance(_x,_y,_tile,getContract(&quot;Copper&quot;),amountOfCopperToSend);
-    StandardToken copperContract = StandardToken(getContract(&quot;Copper&quot;));
+    _decrementTokenBalance(_x,_y,_tile,getContract("Copper"),amountOfCopperToSend);
+    StandardToken copperContract = StandardToken(getContract("Copper"));
     require(copperContract.transfer(_sender,amountOfCopperToSend));
     return true;
   }

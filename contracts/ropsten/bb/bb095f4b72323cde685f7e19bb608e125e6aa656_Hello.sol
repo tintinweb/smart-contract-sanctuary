@@ -8,7 +8,7 @@ contract Hello {
     }
 
     function doSomething() returns (string) {
-        return &quot;Oye! Hello Hello&quot;;
+        return "Oye! Hello Hello";
     }
 
 }

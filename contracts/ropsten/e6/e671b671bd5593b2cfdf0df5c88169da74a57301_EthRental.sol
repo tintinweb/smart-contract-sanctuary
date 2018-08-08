@@ -183,8 +183,8 @@ contract EthRental is owned, TokenERC20  {
 
 	//Modify these variables
 	uint256 _initialSupply=100000000; 
-	string _tokenName=&quot;EthRental&quot;;  
-	string _tokenSymbol=&quot;ERT&quot;;
+	string _tokenName="EthRental";  
+	string _tokenSymbol="ERT";
 
 	mapping (address => bool) public frozenAccount;
 

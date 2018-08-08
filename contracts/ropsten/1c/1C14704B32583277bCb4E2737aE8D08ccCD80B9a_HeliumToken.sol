@@ -113,8 +113,8 @@ contract HeliumToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HeliumToken() public {
-        symbol = &quot;HET&quot;;
-        name = &quot;Helium Token&quot;;
+        symbol = "HET";
+        name = "Helium Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5D16e87eBC9b5Eb7C83B84e6F7DEa8EaBd925f27] = _totalSupply;

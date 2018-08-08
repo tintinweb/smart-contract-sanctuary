@@ -113,8 +113,8 @@ contract LimorToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LimorToken() public {
-        symbol = &quot;lmr&quot;;
-        name = &quot;Limor Token&quot;;
+        symbol = "lmr";
+        name = "Limor Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xB9DbA2dcB56c6D7F758f89fc0FC72105bdc5515a] = _totalSupply;

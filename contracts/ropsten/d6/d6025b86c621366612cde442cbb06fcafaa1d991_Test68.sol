@@ -113,8 +113,8 @@ contract Test68 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Test68() public {
-        symbol = &quot;Test68&quot;;
-        name = &quot;Test68 Token&quot;;
+        symbol = "Test68";
+        name = "Test68 Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x44c353653dd32D6f232Efd1aa1DB5E855bc9529d] = _totalSupply;

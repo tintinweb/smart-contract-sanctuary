@@ -33,18 +33,18 @@ contract Voting {
 	}
 
 	function giveRightToVote(address voter) public {
-		require(isOpen == true, &quot;This voting is already closed.&quot;);
-		require(msg.sender == chairperson, &quot;Only chairperson can give right to vote.&quot;);
-		require(!voters[voter].voted, &quot;The voter already voted.&quot;);
-		require(voters[voter].weight == 0, &quot;Already granted&quot;);
+		require(isOpen == true, "This voting is already closed.");
+		require(msg.sender == chairperson, "Only chairperson can give right to vote.");
+		require(!voters[voter].voted, "The voter already voted.");
+		require(voters[voter].weight == 0, "Already granted");
 		voters[voter].weight = 1;
 	}
 
 	function vote(uint proposal) public {
-		require(isOpen == true, &quot;This voting is already closed.&quot;);
+		require(isOpen == true, "This voting is already closed.");
 		Voter storage sender = voters[msg.sender];
-		require(sender.weight > 0, &quot;No voting right&quot;);
-		require(!sender.voted, &quot;Already voted.&quot;);
+		require(sender.weight > 0, "No voting right");
+		require(!sender.voted, "Already voted.");
 		sender.voted = true;
 
 		proposals[proposal].voteCount += sender.weight;
@@ -65,8 +65,8 @@ contract Voting {
 	}
 
 	function closeVoting() public {
-		require(isOpen == true, &quot;This voting is already closed.&quot;);
-		require(msg.sender == chairperson, &quot;Only chairperson can close voting.&quot;);
+		require(isOpen == true, "This voting is already closed.");
+		require(msg.sender == chairperson, "Only chairperson can close voting.");
 		isOpen = false;
 	}
 

@@ -116,8 +116,8 @@ contract JUNE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JUNE() public {
-        symbol = &quot;JUNE&quot;;
-        name = &quot;JUNE&quot;;
+        symbol = "JUNE";
+        name = "JUNE";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 8 weeks;

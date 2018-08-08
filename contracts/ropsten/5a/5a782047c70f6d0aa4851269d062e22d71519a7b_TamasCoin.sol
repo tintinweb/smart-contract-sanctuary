@@ -113,8 +113,8 @@ contract TamasCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TamasCoin() public {
-        symbol = &quot;TC&quot;;
-        name = &quot;TamasCoin&quot;;
+        symbol = "TC";
+        name = "TamasCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDb5E2f8E6b77fF076133DD9C1e9bd95FC59A4D08] = _totalSupply;

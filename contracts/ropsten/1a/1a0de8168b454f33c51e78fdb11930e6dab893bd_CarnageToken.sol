@@ -95,8 +95,8 @@ contract CarnageToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CarnageToken() public {
-        symbol = &quot;CRNG&quot;;
-        name = &quot;Carnage Token&quot;;
+        symbol = "CRNG";
+        name = "Carnage Token";
         decimals = 18;
         _totalSupply = 10000000e18;
         balances[0xDE4695EB7CD577e0224EF3De31feC41CbbBa211e] = _totalSupply;

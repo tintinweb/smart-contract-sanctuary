@@ -98,8 +98,8 @@ contract TWDTToken is ERC20,Ownable {
     event Error_No_Binding_Address(address _from, address _to);
 
 	constructor() public {  	
-		name=&quot;Taiwan Digital Token&quot;;
-		symbol=&quot;TWDT-ETH&quot;;
+		name="Taiwan Digital Token";
+		symbol="TWDT-ETH";
 		totalSupply = 100000000000*(10**decimals);
 		balanceOf[msg.sender] = totalSupply;	
 	    needVerified = false;

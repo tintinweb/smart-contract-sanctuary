@@ -113,8 +113,8 @@ contract InvestmentToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function InvestmentToken() public {
-        symbol = &quot;IVT&quot;;
-        name = &quot;Investment Token&quot;;
+        symbol = "IVT";
+        name = "Investment Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x396f1611C5007f7cE4D2C170C37D35C1E75f2465] = _totalSupply;

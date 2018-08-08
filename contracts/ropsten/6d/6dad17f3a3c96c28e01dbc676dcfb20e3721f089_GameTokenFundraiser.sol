@@ -1339,8 +1339,8 @@ contract PausableToken is StandardToken, HasOwner {
 contract GameToken is MintableToken, BurnableToken, PausableToken {
   constructor(address _owner, address _minter)
     StandardToken(
-      &quot;Game Token&quot;,   // Token name
-      &quot;GT&quot;, // Token symbol
+      "Game Token",   // Token name
+      "GT", // Token symbol
       18  // Token decimals
     )
     HasOwner(_owner)
@@ -1360,7 +1360,7 @@ contract GameTokenSafe is TokenSafe {
     TokenSafe(_token)
     public
   {
-    // Group &quot;Core&quot;
+    // Group "Core"
     init(
       0, // Group Id
       1532685600 // Release date = 27 Jul 2018 10:00 UTC

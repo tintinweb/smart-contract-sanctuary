@@ -102,9 +102,9 @@ contract TokenController is OwnerHelper
         owner = msg.sender;
         countAddresses[0] = msg.sender;
         
-        name = &quot;SafeShareOne&quot;;
+        name = "SafeShareOne";
         decimals = 18;
-        symbol = &quot;SSO&quot;;
+        symbol = "SSO";
         
         totalSupply = 0;
         maxSupply = 50.5 ether;

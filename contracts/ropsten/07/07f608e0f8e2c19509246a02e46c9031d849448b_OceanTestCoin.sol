@@ -51,8 +51,8 @@ contract OceanTestCoin is ERC20 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     constructor() public {
-      _symbol = &quot;YWOT0&quot;;
-      _name = &quot;OceanTestCoin0&quot;;
+      _symbol = "YWOT0";
+      _name = "OceanTestCoin0";
       _totalSupply = 100000000000000000000;
       balances[msg.sender] = _totalSupply;
       emit Transfer(address(0), msg.sender, _totalSupply);

@@ -266,8 +266,8 @@ contract GFT is StandardToken{
         decimals = 3;                            // Amount of decimals for display purposes
         _totalSupply = fulltoken.mul(10 ** uint256(decimals)); // Update total supply (100000 for example)
         balances[msg.sender] = _totalSupply;               // Give the creator all initial tokens (100000 for example)
-        name = &quot;GFT&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GFT&quot;;                               // Set the symbol for display purposes
+        name = "GFT";                                   // Set the name for display purposes
+        symbol = "GFT";                               // Set the symbol for display purposes
     }
      function() public {
          //not payable fallback function

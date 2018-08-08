@@ -364,8 +364,8 @@ contract PausableToken is ERC20Token, Ownable {
 contract SampleToken is MintableToken, PausableToken {
   using SafeMath for uint;
 
-  string public constant symbol = &quot;SMP&quot;; //Symbol of token
-  string public constant name = &quot;SampleToken&quot;; //Name of token
+  string public constant symbol = "SMP"; //Symbol of token
+  string public constant name = "SampleToken"; //Name of token
   uint public constant decimals = 3;
   uint256 public constant initialsupply = 10000* 10**(decimals); // Number of tokens available initially.
 

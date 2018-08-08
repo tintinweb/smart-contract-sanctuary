@@ -50,8 +50,8 @@ contract TokenERC20 {
     ) public {
         totalSupply = 1000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Player Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;PTOK&quot;;                               // Set the symbol for display purposes
+        name = "Player Token";                                   // Set the name for display purposes
+        symbol = "PTOK";                               // Set the symbol for display purposes
     }
 
     /**

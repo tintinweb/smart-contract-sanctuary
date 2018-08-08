@@ -237,8 +237,8 @@ pragma solidity 0.4.24;
             string tokenName,
             string tokenSymbol
         ) TokenERC20(initialSupply, tokenName, tokenSymbol) public {
-            symbol = &quot;PUMP&quot;;
-        name = &quot;Pumpkin Token&quot;;
+            symbol = "PUMP";
+        name = "Pumpkin Token";
         decimals = 18;
         totalSupply = 6666666666 * 10**uint(decimals);
         balanceOf[msg.sender] = totalSupply;

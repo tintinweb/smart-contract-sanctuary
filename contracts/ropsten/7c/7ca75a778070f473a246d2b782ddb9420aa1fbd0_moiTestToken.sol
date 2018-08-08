@@ -116,8 +116,8 @@ contract moiTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function moiTestToken() public {
-        symbol = &quot;MOIT&quot;;
-        name = &quot;MOI Test Token&quot;;
+        symbol = "MOIT";
+        name = "MOI Test Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;  //when bonus ends
         endDate = now + 7 weeks;    //when crowdsale ends

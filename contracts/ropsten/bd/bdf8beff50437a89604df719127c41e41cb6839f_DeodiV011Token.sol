@@ -113,8 +113,8 @@ contract DeodiV011Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DODV011&quot;;
-        name = &quot;DeodiV011 Token&quot;;
+        symbol = "DODV011";
+        name = "DeodiV011 Token";
         decimals = 18;
         _totalSupply = 150000000000000000000000000;
         balances[0x943733c755675d914c0de33e1fcb45d2c7093020] = _totalSupply;

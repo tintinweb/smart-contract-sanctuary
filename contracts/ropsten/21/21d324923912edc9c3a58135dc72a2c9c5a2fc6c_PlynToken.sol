@@ -113,8 +113,8 @@ contract PlynToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PlynToken() public {
-        symbol = &quot;PLY&#160;&quot;;
-        name = &quot;Plyn Token&quot;;
+        symbol = "PLY&#160;";
+        name = "Plyn Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xdb9154014eeF7A392c1A36e499b7C1FCD4Fa595d] = _totalSupply;

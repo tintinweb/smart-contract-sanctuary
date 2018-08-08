@@ -266,9 +266,9 @@ contract _0xBitcoinToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xBTC&quot;;
+        symbol = "0xBTC";
 
-        name = &quot;0xBitcoin Token&quot;;
+        name = "0xBitcoin Token";
 
         decimals = 8;
 

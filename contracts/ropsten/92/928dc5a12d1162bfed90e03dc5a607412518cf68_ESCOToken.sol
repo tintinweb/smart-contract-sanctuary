@@ -113,8 +113,8 @@ contract ESCOToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ESCOToken() public {
-        symbol = &quot;ESCO&quot;;
-        name = &quot;ESCO Token&quot;;
+        symbol = "ESCO";
+        name = "ESCO Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xab2048d794Ba0b633BaA2402Ad7dCf452d7dF010] = _totalSupply;

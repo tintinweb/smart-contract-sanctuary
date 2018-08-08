@@ -6,7 +6,7 @@ Copyright (c) 2016 Oraclize LTD
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -19,7 +19,7 @@ all copies or substantial portions of the Software.
 
 
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -373,21 +373,21 @@ library oraclizeLib {
     internal
     pure
     returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c)
     internal
     pure
     returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b)
     internal
     pure
     returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     // parseInt
@@ -424,7 +424,7 @@ library oraclizeLib {
     internal
     pure
     returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -501,11 +501,11 @@ library oraclizeLib {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -1182,7 +1182,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -1251,7 +1251,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -1338,7 +1338,7 @@ contract Pausable is Ownable {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Config is Pausable {
     // 配置信息
@@ -1366,7 +1366,7 @@ contract Config is Pausable {
         setNormalRoomMax(1 ether);
         setTripleRoomMin(1 ether);
         setTripleRoomMax(10 ether);
-        setRandomApiKey(&quot;50faa373-68a1-40ce-8da8-4523db62d42a&quot;);
+        setRandomApiKey("50faa373-68a1-40ce-8da8-4523db62d42a");
         referrelFund = 10;
     }
 
@@ -2066,30 +2066,30 @@ contract DiceOnline is DiceOffline {
     
     function doOraclize(bool isSystem) internal returns(bytes32) {
         randomQueryID += 1;
-        string memory queryString1 = &quot;[URL] [&#39;json(https://api.random.org/json-rpc/1/invoke).result.random[\&quot;data\&quot;]&#39;, &#39;\\n{\&quot;jsonrpc\&quot;:\&quot;2.0\&quot;,\&quot;method\&quot;:\&quot;generateSignedIntegers\&quot;,\&quot;params\&quot;:{\&quot;apiKey\&quot;:\&quot;&quot;;
+        string memory queryString1 = "[URL] [&#39;json(https://api.random.org/json-rpc/1/invoke).result.random[\"data\"]&#39;, &#39;\\n{\"jsonrpc\":\"2.0\",\"method\":\"generateSignedIntegers\",\"params\":{\"apiKey\":\"";
         string memory queryString2 = random_api_key;
-        string memory queryString3 = &quot;\&quot;,\&quot;n\&quot;:3,\&quot;min\&quot;:1,\&quot;max\&quot;:6},\&quot;id\&quot;:&quot;;
+        string memory queryString3 = "\",\"n\":3,\"min\":1,\"max\":6},\"id\":";
         string memory queryString4 = oraclizeLib.uint2str(randomQueryID);
-        string memory queryString5 = &quot;}&#39;]&quot;;
+        string memory queryString5 = "}&#39;]";
 
         string memory queryString1_2 = queryString1.toSlice().concat(queryString2.toSlice());
         string memory queryString1_2_3 = queryString1_2.toSlice().concat(queryString3.toSlice());
         string memory queryString1_2_3_4 = queryString1_2_3.toSlice().concat(queryString4.toSlice());
         string memory queryString1_2_3_4_5 = queryString1_2_3_4.toSlice().concat(queryString5.toSlice());
-        //emit logString(queryString1_2_3_4_5,&quot;queryString&quot;);
+        //emit logString(queryString1_2_3_4_5,"queryString");
         if(isSystem)
-            return oraclizeLib.oraclize_query(&quot;nested&quot;, queryString1_2_3_4_5,systemGasForOraclize);
+            return oraclizeLib.oraclize_query("nested", queryString1_2_3_4_5,systemGasForOraclize);
         else
-            return oraclizeLib.oraclize_query(&quot;nested&quot;, queryString1_2_3_4_5,gasForOraclize);
+            return oraclizeLib.oraclize_query("nested", queryString1_2_3_4_5,gasForOraclize);
     }
 
     /*TLSNotary for oraclize call */
     function __callback(bytes32 myid, string result, bytes proof) public onlyOraclize {
         /* keep oraclize honest by retrieving the serialNumber from random.org result */
         proof;
-        //emit logString(result,&quot;result&quot;);       
+        //emit logString(result,"result");       
         strings.slice memory sl_result = result.toSlice();
-        sl_result = sl_result.beyond(&quot;[&quot;.toSlice()).until(&quot;]&quot;.toSlice());        
+        sl_result = sl_result.beyond("[".toSlice()).until("]".toSlice());        
       
         string memory numString = sl_result.split(&#39;, &#39;.toSlice()).toString();
         uint num1 = oraclizeLib.parseInt(numString);

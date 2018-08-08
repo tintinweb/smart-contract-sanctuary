@@ -79,8 +79,8 @@ contract TokenDetails is owned {
     mapping (address => uint256) balances;
 
     constructor() public {
-        name = &quot;Bronix&quot;;
-        symbol = &quot;BRNX&quot;;
+        name = "Bronix";
+        symbol = "BRNX";
         decimals = 18;
         supply = 200000;
         initialSupply = supply * (10 ** uint256(decimals));

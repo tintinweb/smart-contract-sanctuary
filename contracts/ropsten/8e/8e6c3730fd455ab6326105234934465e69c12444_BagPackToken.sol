@@ -113,8 +113,8 @@ contract BagPackToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BagPackToken() public {
-        symbol = &quot;BPK&quot;;
-        name = &quot;Bag Pack Token&quot;;
+        symbol = "BPK";
+        name = "Bag Pack Token";
         decimals = 2;
         _totalSupply = 2000000000;
         balances[0x905B56f3cC9e8BF5013B077c58C7016e251e992e] = _totalSupply;

@@ -113,8 +113,8 @@ contract TildeCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TildeCoin() public {
-        symbol = &quot;TC0IN&quot;;
-        name = &quot;TildeCoin Token&quot;;
+        symbol = "TC0IN";
+        name = "TildeCoin Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xBFB2f6A95D276CB9c137dcd3Ca446b3766Cbe92c] = _totalSupply;

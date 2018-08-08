@@ -113,8 +113,8 @@ contract AgileToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;Agile&quot;;
-        name = &quot;Agile Token&quot;;
+        symbol = "Agile";
+        name = "Agile Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xBE26C03780AB080cdF5Af29aa9B8f4809Dd6d7Ae] = _totalSupply;

@@ -68,15 +68,15 @@ contract IDOToken is StandardToken {
     function IDOToken() {
         balances[msg.sender] = 10000000000000; 
         totalSupply = 10000000000000;         
-        name = &quot;I DO Token&quot;;                   
+        name = "I DO Token";                   
         decimals = 8;           
-        symbol = &quot;IDO&quot;;             
+        symbol = "IDO";             
     }
 
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 

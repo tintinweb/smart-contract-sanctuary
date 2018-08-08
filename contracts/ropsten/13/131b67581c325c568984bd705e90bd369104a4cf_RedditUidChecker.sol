@@ -13,7 +13,7 @@ pragma solidity ^0.4.18;
 contract RedditUidChecker
 {
 
-  string public version = &quot;1.5.0&quot;;
+  string public version = "1.5.0";
 
   function isUid(
     string _uid

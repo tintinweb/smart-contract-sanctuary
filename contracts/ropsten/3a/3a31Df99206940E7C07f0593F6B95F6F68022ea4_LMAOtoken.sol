@@ -113,8 +113,8 @@ contract LMAOtoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LMAOtoken() public {
-        symbol = &quot;LMAO&quot;;
-        name = &quot;LMAO token&quot;;
+        symbol = "LMAO";
+        name = "LMAO token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x04f6761Ab96D1a4BB70E61b7a198B8711f4f635e] = _totalSupply;

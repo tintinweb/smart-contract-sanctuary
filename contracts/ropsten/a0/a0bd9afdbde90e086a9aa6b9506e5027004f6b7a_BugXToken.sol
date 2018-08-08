@@ -87,10 +87,10 @@ contract StandardToken is Token {
 contract BugXToken is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;BugX Token&quot;;
-    string  public constant symbol = &quot;BXT&quot;;
+    string  public constant name = "BugX Token";
+    string  public constant symbol = "BXT";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // deposit address for ETH for Bugx Team.

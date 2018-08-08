@@ -348,7 +348,7 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract QUESADILLA is PausableToken, MintableToken, BurnableToken {
-    string public constant name = &quot;QUESADILLA&quot;;
-    string public constant symbol = &quot;QUESA&quot;;
+    string public constant name = "QUESADILLA";
+    string public constant symbol = "QUESA";
     uint8 public constant decimals = 2;
 }

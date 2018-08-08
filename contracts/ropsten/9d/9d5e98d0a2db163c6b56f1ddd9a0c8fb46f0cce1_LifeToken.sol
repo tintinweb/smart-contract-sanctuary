@@ -113,8 +113,8 @@ contract LifeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LifeToken() public {
-        symbol = &quot;Life&quot;;
-        name = &quot;LifeToken&quot;;
+        symbol = "Life";
+        name = "LifeToken";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0xeEd3A6aC8302ed1bC115eF8DD34FC7535117E0e1] = _totalSupply;

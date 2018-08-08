@@ -69,7 +69,7 @@ contract SIVAToken is StandardToken {
     string public name;                   
     uint8 public decimals;              
     string public symbol;                
-    string public version = &quot;H0.1&quot;;        
+    string public version = "H0.1";        
 
     constructor(uint256 _initialAmount, string _tokenName, uint8 _decimalUnits, string _tokenSymbol) public {
         balances[msg.sender] = _initialAmount;              

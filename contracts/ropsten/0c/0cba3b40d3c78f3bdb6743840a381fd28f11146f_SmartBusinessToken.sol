@@ -113,8 +113,8 @@ contract SmartBusinessToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SmartBusinessToken() public {
-        symbol = &quot;SBT&quot;;
-        name = &quot;Smart Business Token&quot;;
+        symbol = "SBT";
+        name = "Smart Business Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0c9a4ceDc9b4Fb4a3816e8F6045A0e561866FB0d] = _totalSupply;

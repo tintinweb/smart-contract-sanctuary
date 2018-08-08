@@ -22,14 +22,14 @@ contract OwnerableContract{
     modifier onlyOwner {
         require(
             msg.sender == owner,
-            &quot;Only owner can call this function.&quot;
+            "Only owner can call this function."
         );
         _;
     }
     modifier onlyAdmins() {
         require(
             admins[msg.sender],
-            &quot;Only owner can call this function.&quot;
+            "Only owner can call this function."
         );
         _;
     }    
@@ -99,11 +99,11 @@ contract ERC721 is ERC721Interface, OwnerableContract{
 
     /* ERC721 */
     function name() public view returns (string _name) {
-        return &quot;smartsignature.io&quot;;
+        return "smartsignature.io";
     }
 
     function symbol() public view returns (string _symbol) {
-        return &quot;&quot;;
+        return "";
     }
 
     function totalSupply() public view returns (uint256 _totalSupply) {

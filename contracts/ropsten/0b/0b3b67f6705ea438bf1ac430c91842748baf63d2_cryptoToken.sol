@@ -10,8 +10,8 @@ library SafeMath {
    function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b; assert(c >= a); return c; }}
 contract cryptoToken {
-   string public constant name = &quot;Crypto&quot;;
-   string public constant symbol =&quot;CPT&quot;;
+   string public constant name = "Crypto";
+   string public constant symbol ="CPT";
    uint32 public constant decimals = 2;
    uint32 public version = 1.0;   }
 contract ERC20 {

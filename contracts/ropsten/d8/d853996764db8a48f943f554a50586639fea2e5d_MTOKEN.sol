@@ -6,7 +6,7 @@ interface tokenRecipient {
 contract MTOKEN {
     // Public variables of the token
     string public name=&#39;MTOKEN&#39;;
-    string public symbol=&quot;MTN&quot;;
+    string public symbol="MTN";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 100000000000000000000000000; 

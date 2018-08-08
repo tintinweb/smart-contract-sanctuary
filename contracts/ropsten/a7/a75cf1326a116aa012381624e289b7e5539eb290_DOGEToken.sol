@@ -111,8 +111,8 @@ contract DOGEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DOGEToken() public {
-        symbol = &quot;DOGE&quot;;
-        name = &quot;DOGE Token&quot;;
+        symbol = "DOGE";
+        name = "DOGE Token";
         decimals = 18;
         bonusEnds = now + 7 weeks;
         endDate = now + 14 weeks;

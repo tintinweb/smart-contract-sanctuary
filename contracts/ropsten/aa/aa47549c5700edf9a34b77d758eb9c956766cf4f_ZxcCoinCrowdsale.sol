@@ -131,7 +131,7 @@ contract Migrations {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -452,8 +452,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 // 通过 is 关键字继承 StandardToken
 contract ZxcCoin is StandardBurnableToken, MintableToken {
 
-  string public name = &quot;ZandG&quot;; // Token 名称
-  string public symbol = &quot;ZG&quot;; // Token 标识 例如：ETH/EOS
+  string public name = "ZandG"; // Token 名称
+  string public symbol = "ZG"; // Token 标识 例如：ETH/EOS
   uint public decimals = 18; // 计量单位，和 ETH 保持一样就设置为 18
   uint public INITIAL_SUPPLY = 1000000000 * (10 ** decimals); // 初始供应量
   uint256 public totalSupply;

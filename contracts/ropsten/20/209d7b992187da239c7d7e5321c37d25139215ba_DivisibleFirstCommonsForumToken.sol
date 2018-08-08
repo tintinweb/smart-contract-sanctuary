@@ -57,7 +57,7 @@ contract DivisibleFirstCommonsForumToken is ERC721 {
     string public name;
     string public symbol;
     uint8 public decimals = 1;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     //Special participation token
     struct ParticipationToken {
@@ -67,8 +67,8 @@ contract DivisibleFirstCommonsForumToken is ERC721 {
     //@dev Constructor
     function DivisibleFirstCommonsForumToken() public {
         contractOwner = msg.sender;
-        name = &quot;FirstCommonsForum&quot;;
-        symbol = &quot;FCFT&quot;;
+        name = "FirstCommonsForum";
+        symbol = "FCFT";
 
         // Create First Commons Forum
         ParticipationToken memory newParticipation = ParticipationToken({

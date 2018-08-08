@@ -116,8 +116,8 @@ contract Goldic is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Goldic() public {
-        symbol = &quot;GDC&quot;;
-        name = &quot;Goldic&quot;;
+        symbol = "GDC";
+        name = "Goldic";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

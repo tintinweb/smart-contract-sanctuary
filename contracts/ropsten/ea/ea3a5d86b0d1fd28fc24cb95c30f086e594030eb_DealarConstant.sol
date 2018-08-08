@@ -17,24 +17,24 @@ library Strings {
     }
 }
 contract StateConstant {
-    string constant A = &quot;Perak&quot;;
-    string constant B = &quot;Selangor&quot;;
-    string constant C = &quot;Pahang&quot;;
-    string constant D = &quot;Kelantan&quot;;
-    string constant F = &quot;Putrajaya&quot;;
-    string constant J = &quot;Johor&quot;;
-    string constant K = &quot;Kedah&quot;;
-    string constant M = &quot;Malacca&quot;;
-    string constant N = &quot;Negeri Sembilan&quot;;
-    string constant P = &quot;Penang&quot;;
-    string constant R = &quot;Perlis&quot;;
-    string constant T = &quot;Terengganu&quot;;
-    string constant W = &quot;Kuala Lumpur&quot;;
+    string constant A = "Perak";
+    string constant B = "Selangor";
+    string constant C = "Pahang";
+    string constant D = "Kelantan";
+    string constant F = "Putrajaya";
+    string constant J = "Johor";
+    string constant K = "Kedah";
+    string constant M = "Malacca";
+    string constant N = "Negeri Sembilan";
+    string constant P = "Penang";
+    string constant R = "Perlis";
+    string constant T = "Terengganu";
+    string constant W = "Kuala Lumpur";
 }
 contract DealarConstant is StateConstant {
     using Strings for string;
     string dealerID;
     constructor() public {
-        dealerID = A.concat(&quot;0001&quot;);
+        dealerID = A.concat("0001");
     }
 }

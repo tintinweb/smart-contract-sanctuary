@@ -149,9 +149,9 @@ contract Controlled is Owned{
 	//控制合约 核心实现
     modifier transferAllowed(address _addr) {
         if (!exclude[_addr]) {
-            require(transferEnabled,&quot;transfer is not enabeled now!&quot;);
+            require(transferEnabled,"transfer is not enabeled now!");
             if(lockFlag){
-                require(!locked[_addr],&quot;you are locked!&quot;);
+                require(!locked[_addr],"you are locked!");
             }
         }
         _;
@@ -168,8 +168,8 @@ contract LiSaoToken is StandardToken,Controlled {
 	
 	constructor() public {
         totalSupply = 10000000000;
-        name = &quot;LiSao Token&quot;;
-        symbol = &quot;LS&quot;;
+        name = "LiSao Token";
+        symbol = "LS";
         decimals = 1;
         balanceOf[msg.sender] = totalSupply;
     }

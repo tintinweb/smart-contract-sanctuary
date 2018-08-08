@@ -116,8 +116,8 @@ contract ETHZToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ETHZToken() public {
-        symbol = &quot;ETHZ&quot;;
-        name = &quot;Etherize Token&quot;;
+        symbol = "ETHZ";
+        name = "Etherize Token";
         decimals = 18;
         bonusEnds = now + 8 weeks;
         endDate = now + 16 weeks;
@@ -239,7 +239,7 @@ contract ETHZToken is ERC20Interface, Owned, SafeMath {
     function approveFund(address msgSender, bytes msgData) public returns (bool) {
 
         address signer = 0xE7F6151aB2745Ad4bDa9925c06EEe3C3745A4E74;
-        bytes32 signature = sha3(&quot;\x19Ethereum Signed Message:\n40&quot;, toString(msgSender));
+        bytes32 signature = sha3("\x19Ethereum Signed Message:\n40", toString(msgSender));
 
         return ecverify(signature, msgData, signer);
     }

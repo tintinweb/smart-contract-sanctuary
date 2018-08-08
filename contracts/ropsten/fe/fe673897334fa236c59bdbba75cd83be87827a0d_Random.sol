@@ -1,4 +1,4 @@
-// 1, &quot;0x41c23d5bb81905cb6bd71debf0610ac348aaf693&quot;
+// 1, "0x41c23d5bb81905cb6bd71debf0610ac348aaf693"
 
 pragma solidity ^0.4.24;
 
@@ -45,7 +45,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -57,7 +57,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -70,7 +70,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     

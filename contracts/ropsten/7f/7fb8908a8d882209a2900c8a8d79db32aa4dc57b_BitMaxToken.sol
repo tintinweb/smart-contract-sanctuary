@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -437,8 +437,8 @@ contract PausableToken is StandardToken, Pausable {
 contract BitMaxToken is PausableToken {
     using SafeMath for uint256;
 
-    string  public  constant name = &quot;BitMax token&quot;;
-    string  public  constant symbol = &quot;BMAX&quot;;
+    string  public  constant name = "BitMax token";
+    string  public  constant symbol = "BMAX";
     uint8   public  constant decimals = 18;
     uint8   public  constant mintPct = 49; // 49%
     uint256 public mintSupply;

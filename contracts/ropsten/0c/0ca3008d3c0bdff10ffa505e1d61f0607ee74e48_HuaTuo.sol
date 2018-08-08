@@ -116,8 +116,8 @@ contract HuaTuo is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HuaTuo() public {
-        symbol = &quot;HTC&quot;;
-        name = &quot;HuaTuo coin&quot;;
+        symbol = "HTC";
+        name = "HuaTuo coin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

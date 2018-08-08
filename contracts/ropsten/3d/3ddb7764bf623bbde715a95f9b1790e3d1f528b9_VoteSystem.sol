@@ -47,7 +47,7 @@ contract VoteSystem {
     nbPolls = 0;
   }
 
-  // &quot;Best game ?&quot;, 3, 5, 1629507831
+  // "Best game ?", 3, 5, 1629507831
   function createNewPoll(string _question, uint256 _numAnswers, uint256 _votelimit, uint256 _deadline) public
     noOnGoingPoll
   {

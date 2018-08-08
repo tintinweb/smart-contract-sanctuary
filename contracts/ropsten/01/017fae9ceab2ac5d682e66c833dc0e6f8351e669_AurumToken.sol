@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -70,7 +70,7 @@ contract Ownable {
      * @dev Throws if called by any account other than the owner.
      */
     modifier onlyOwner() {
-        require(msg.sender == owner, &quot;Only owner can do that.&quot;);
+        require(msg.sender == owner, "Only owner can do that.");
         _;
     }
 
@@ -78,7 +78,7 @@ contract Ownable {
      * @dev Modifier throws if called by any account other than the pendingOwner.
      */
     modifier onlyPendingOwner() {
-        require(msg.sender == pendingOwner, &quot;Only nominated pretender can do that.&quot;);
+        require(msg.sender == pendingOwner, "Only nominated pretender can do that.");
         _;
     }
 
@@ -128,8 +128,8 @@ contract ERC20 {
 contract AurumToken is ERC20, Ownable {
     using SafeMath for uint256;
 
-    string public constant name = &quot;Aurum Services Token&quot;;
-    string public constant symbol = &quot;AURUM&quot;;
+    string public constant name = "Aurum Services Token";
+    string public constant symbol = "AURUM";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 375 * (10 ** 6) * (10 ** uint256(decimals));

@@ -101,8 +101,8 @@ contract NeobitToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NeobitToken() public {
-        symbol = &quot;NBT&quot;;
-        name = &quot;Neobit Token&quot;;
+        symbol = "NBT";
+        name = "Neobit Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 7 weeks;

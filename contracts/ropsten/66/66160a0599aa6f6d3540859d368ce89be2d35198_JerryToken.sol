@@ -113,8 +113,8 @@ contract JerryToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JerryToken() public {
-        symbol = &quot;JRT&quot;;
-        name = &quot;Jerry Token&quot;;
+        symbol = "JRT";
+        name = "Jerry Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x41b18b7549BBFB329201D5EAa21d5DC67ED872d7] = _totalSupply;

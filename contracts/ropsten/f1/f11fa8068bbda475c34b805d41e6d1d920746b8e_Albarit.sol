@@ -55,8 +55,8 @@ contract Albarit is SafeMath{
     function Albarit() {
         
         totalSupply = 170000000000000000000000000;                        // Update total supply
-        name = &quot;Albarit&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ALB&quot;;                               // Set the symbol for display purposes
+        name = "Albarit";                                   // Set the name for display purposes
+        symbol = "ALB";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
         balanceOf[msg.sender] = totalSupply;              // Give the creator all initial tokens
 		owner = msg.sender;

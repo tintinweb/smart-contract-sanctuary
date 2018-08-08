@@ -17,7 +17,7 @@ contract TrustGraph {
         string name;
     }
     
-    /// The name of the issue (e.g., &quot;SenateBill123&quot;).
+    /// The name of the issue (e.g., "SenateBill123").
     string m_issueName;
     /// The creator of the issue.
     address m_creator;

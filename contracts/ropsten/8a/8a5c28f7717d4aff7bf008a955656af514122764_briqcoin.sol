@@ -116,8 +116,8 @@ contract briqcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function briqcoin() public {
-        symbol = &quot;BRI&quot;;
-        name = &quot;briqcoin&quot;;
+        symbol = "BRI";
+        name = "briqcoin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

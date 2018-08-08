@@ -116,8 +116,8 @@ contract alicoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function alicoinToken() public {
-        symbol = &quot;Ali&quot;;
-        name = &quot;Alicoin Token&quot;;
+        symbol = "Ali";
+        name = "Alicoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

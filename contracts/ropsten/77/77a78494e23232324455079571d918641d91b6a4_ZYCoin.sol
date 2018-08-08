@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract ZYCoin {
     // Public variables of the token
-    string public name=&quot;ZYCoin&quot;;
-    string public symbol = &quot;ZYC&quot;;
+    string public name="ZYCoin";
+    string public symbol = "ZYC";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 150000000;

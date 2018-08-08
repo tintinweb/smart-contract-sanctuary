@@ -91,8 +91,8 @@ contract iCashwebToken {
 contract iCashweb is iCashwebToken {
     using iMath for uint256;
     
-    string public constant name = &quot;iCashweb&quot;;
-    string public constant symbol = &quot;ICWeb&quot;;
+    string public constant name = "iCashweb";
+    string public constant symbol = "ICWeb";
     uint256 public constant decimal = 18;
     uint256 _totalSupply;
     uint256 _rate;

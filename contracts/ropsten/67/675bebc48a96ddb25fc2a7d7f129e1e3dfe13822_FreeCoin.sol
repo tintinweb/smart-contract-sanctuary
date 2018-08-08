@@ -34,7 +34,7 @@ return c;
 
 /**
 * @title Ownable
-* @dev The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies the implementation of &quot;user permissions&quot;.
+* @dev The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
 address public owner;
@@ -212,8 +212,8 @@ contract FreeCoin is TokenERC20, Ownable {
 using SafeMath for uint256;
 
 // Token Info.
-string public constant name = &quot;FreeCoin&quot;;
-string public constant symbol = &quot;FRC&quot;;
+string public constant name = "FreeCoin";
+string public constant symbol = "FRC";
 uint8 public constant decimals = 18;
 
 // Sales period.

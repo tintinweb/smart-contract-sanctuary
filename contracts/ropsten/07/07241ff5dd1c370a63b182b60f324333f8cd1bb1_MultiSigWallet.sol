@@ -264,9 +264,9 @@ contract MultiSigWallet is RLPEncode{
       bytes[] memory rawTx = new bytes[](9);
       bytes[] memory bytesArray = new bytes[](9);
 
-      string memory nonce = &quot;09&quot;;
-      string memory gasPrice = &quot;09502f9000&quot;;
-      string memory gasLimit = &quot;5208&quot;;
+      string memory nonce = "09";
+      string memory gasPrice = "09502f9000";
+      string memory gasLimit = "5208";
 
       rawTx[0] = RLPEncode.strToBytes(nonce);
       rawTx[1] = RLPEncode.strToBytes(gasPrice);
@@ -274,7 +274,7 @@ contract MultiSigWallet is RLPEncode{
       rawTx[3] = RLPEncode.addressToBytes(_destination);
       rawTx[4] = RLPEncode.strToBytes(_value);
       rawTx[5] = RLPEncode.strToBytes(_expireTime);
-      rawTx[6] = hex&quot;03&quot;; //03=testnet,01=mainnet
+      rawTx[6] = hex"03"; //03=testnet,01=mainnet
 
       transactionValue = RLPEncode.bytesToUint(rawTx[4]);
     

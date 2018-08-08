@@ -113,8 +113,8 @@ contract RelentlessConscience2Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RelentlessConscience2Token() public {
-        symbol = &quot;RLTLS2&quot;;
-        name = &quot;RelentlessConscience2 Token&quot;;
+        symbol = "RLTLS2";
+        name = "RelentlessConscience2 Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xFf2Fb9081Ca2E66C8702c90Ece1857Ab312D313C] = _totalSupply;

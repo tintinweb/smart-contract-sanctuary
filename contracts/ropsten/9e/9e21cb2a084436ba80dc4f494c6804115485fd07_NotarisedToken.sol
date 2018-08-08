@@ -261,8 +261,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract NotarisedToken is StandardToken {
 
-    string public name = &quot;NotarisedToken&quot;;
-    string public symbol = &quot;NTS&quot;;
+    string public name = "NotarisedToken";
+    string public symbol = "NTS";
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 100000000;
 

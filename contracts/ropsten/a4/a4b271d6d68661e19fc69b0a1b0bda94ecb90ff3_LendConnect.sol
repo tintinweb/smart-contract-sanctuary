@@ -181,8 +181,8 @@ contract SafeStandardToken is ERC20, SafeBasicToken {
   }
 }
 contract LendConnect is SafeStandardToken{
-  string public constant name = &quot;LendConnect Token&quot;;
-  string public constant symbol = &quot;LCT&quot;;
+  string public constant name = "LendConnect Token";
+  string public constant symbol = "LCT";
   uint256 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 6500000 * (10 ** uint256(decimals));
   function LendConnect(address _ownerAddress) public {

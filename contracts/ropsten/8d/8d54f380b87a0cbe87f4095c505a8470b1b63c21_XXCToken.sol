@@ -207,9 +207,9 @@ contract StandardToken is Token ,XXCStop{
 }
 contract XXCToken is StandardToken{
 
-	string public name = &quot;XXC&quot;;                                   /// Set the full name of this contract
+	string public name = "XXC";                                   /// Set the full name of this contract
 	uint256 public decimals = 18;                                 /// Set the decimal
-	string public symbol = &quot;XXC&quot;;                                 /// Set the symbol of this contract
+	string public symbol = "XXC";                                 /// Set the symbol of this contract
 
 	constructor() public {                    /// Should have sth in this
 		owner = msg.sender;

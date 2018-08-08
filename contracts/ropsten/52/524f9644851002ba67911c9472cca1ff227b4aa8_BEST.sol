@@ -44,8 +44,8 @@ contract BEST is SafeM{
     function BEST() public {
         totalSupply = 2100000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        tname = &quot;BEST&quot;;                                   // Set the name for display purposes
-        tsymbol = &quot;BST&quot;;                               // Set the symbol for display purposes
+        tname = "BEST";                                   // Set the name for display purposes
+        tsymbol = "BST";                               // Set the symbol for display purposes
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

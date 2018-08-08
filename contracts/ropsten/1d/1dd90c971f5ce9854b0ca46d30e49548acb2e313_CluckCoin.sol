@@ -113,8 +113,8 @@ contract CluckCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CluckCoin() public {
-        symbol = &quot;CluckIt&quot;;
-        name = &quot;Cluck Coin&quot;;
+        symbol = "CluckIt";
+        name = "Cluck Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x733A99810625D85A1AB93F59De4A987563fa1a66] = _totalSupply;

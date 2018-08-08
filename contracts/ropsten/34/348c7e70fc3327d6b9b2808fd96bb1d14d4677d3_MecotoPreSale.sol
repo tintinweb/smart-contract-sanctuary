@@ -313,8 +313,8 @@ contract MecotoConstant {
     address constant FLOAT_WALLET = 0xb875ce361235d25B846ED487eFC1D14aC61B69C3;
 
     // Token Name and Symbol
-    string constant TOKEN_NAME = &quot;Mecoto Token&quot;;
-    string constant TOKEN_SYMBOL = &quot;XTK&quot;;
+    string constant TOKEN_NAME = "Mecoto Token";
+    string constant TOKEN_SYMBOL = "XTK";
 }
 
 
@@ -413,7 +413,7 @@ contract MecotoToken is MecotoConstant, StandardToken, Ownable {
     * @dev Function to mint tokens
     */
     function mint(address _to, uint256 _amount) onlyAllowedForMinting canMint public {
-        require(totalSupply_.add(_amount) <= TOKEN_HARDCAP, &quot;Token Hardcap Reached!&quot;);
+        require(totalSupply_.add(_amount) <= TOKEN_HARDCAP, "Token Hardcap Reached!");
         totalSupply_ = totalSupply_.add(_amount);
         balances[_to] = balances[_to].add(_amount);
         emit Mint(_to, _amount);
@@ -477,18 +477,18 @@ contract MecotoPreSale is MecotoConstant, Ownable {
     * @dev Reverts if not in crowdsale time range.
     */
     modifier onlyWhileOpen {
-        require(isSetupDone, &quot;Please call setup function first!&quot;);
-        require(!isFinalized, &quot;Sale is finalized!&quot;);
-        require(!isPaused, &quot;Sale is paused!&quot;);
+        require(isSetupDone, "Please call setup function first!");
+        require(!isFinalized, "Sale is finalized!");
+        require(!isPaused, "Sale is paused!");
         if(block.timestamp >= openingTime && block.timestamp <= closingTime) {
             _;
         } else {
             //deadline reached
             if(!isFinalized) {
                 isFinalized = true;
-                emit SaleEnded(&quot;Deadline Crossed&quot;, block.timestamp);
+                emit SaleEnded("Deadline Crossed", block.timestamp);
             }
-            revert(&quot;Outside the contract time!&quot;);
+            revert("Outside the contract time!");
         }
     }
 
@@ -569,8 +569,8 @@ contract MecotoPreSale is MecotoConstant, Ownable {
 
     // low level token purchase function
     function sellTokens(address _address, uint256 _tokenAmount)  public onlyOwner onlyWhileOpen {
-        require(_tokenAmount > 0, &quot;Minimum purchase amount should be greater then 0!&quot;);
-        require(soldTokens.add(_tokenAmount) <= PRESALE_HARDCAP, &quot;You can not purchase more then hard cap!&quot;);
+        require(_tokenAmount > 0, "Minimum purchase amount should be greater then 0!");
+        require(soldTokens.add(_tokenAmount) <= PRESALE_HARDCAP, "You can not purchase more then hard cap!");
         require(_address != 0x0);
 
         _distributeTokenToPurchaser(_address, _tokenAmount);
@@ -582,7 +582,7 @@ contract MecotoPreSale is MecotoConstant, Ownable {
         // Hard Cap is reached
         if(soldTokens == PRESALE_HARDCAP) {
             isFinalized = true;
-            emit SaleEnded(&quot;Hardcap Reached&quot;, block.timestamp);
+            emit SaleEnded("Hardcap Reached", block.timestamp);
         }
     }
 
@@ -622,6 +622,6 @@ contract MecotoPreSale is MecotoConstant, Ownable {
     function setSaleFinish() external onlyOwner {
         require(!isFinalized);
         isFinalized = true;
-        emit SaleEnded(&quot;Requested By Owner&quot;, block.timestamp);
+        emit SaleEnded("Requested By Owner", block.timestamp);
     }
 }

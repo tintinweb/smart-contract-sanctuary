@@ -116,8 +116,8 @@ contract bitfwdToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitfwdToken() public {
-        symbol = &quot;FWD&quot;;
-        name = &quot;bitfwd Token&quot;;
+        symbol = "FWD";
+        name = "bitfwd Token";
         decimals = 18;
         bonusEnds = now + 1 hours;
         endDate = now + 2 hours;

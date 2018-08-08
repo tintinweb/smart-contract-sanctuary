@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract BadTronToken {
 
-    string public name = &quot;BadTronToken&quot;;      //  token name
-    string public symbol = &quot;BadTronToken&quot;;           //  token symbol
+    string public name = "BadTronToken";      //  token name
+    string public symbol = "BadTronToken";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

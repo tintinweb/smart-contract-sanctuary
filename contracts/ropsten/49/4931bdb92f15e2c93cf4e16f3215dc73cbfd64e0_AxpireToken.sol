@@ -193,8 +193,8 @@ contract ContractReceiver {
 contract AxpireToken is ERC223,ERC20 {
 
     uint256 initialSupply= 350000000 * 10**8;
-    string tokenName=&quot;aXpire Token&quot;;
-    string tokenSymbol=&quot;AXP&quot;;
+    string tokenName="aXpire Token";
+    string tokenSymbol="AXP";
     uint8 decimalUnits=8;
 
     //Constructor
@@ -239,7 +239,7 @@ contract AxpireToken is ERC223,ERC20 {
     }
 
     function transferInternal(address from, address to, uint256 value, bytes data) internal returns (bool success) {
-        return transferInternal(from, to, value, data, false, &quot;&quot;);
+        return transferInternal(from, to, value, data, false, "");
     }
 
     function transferInternal(
@@ -276,7 +276,7 @@ contract AxpireToken is ERC223,ERC20 {
 
         bytes memory data;
 
-        return transferInternal(from, to, value, data, false, &quot;&quot;);
+        return transferInternal(from, to, value, data, false, "");
     }
 
     //assemble the given address bytecode. If bytecode exists then the _addr is a contract.

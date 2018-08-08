@@ -44,7 +44,7 @@ library ERC20AsmFn {
         isContract(_erc20Addr);
         
         // call return false when something wrong
-        require(_erc20Addr.call(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)), _to, _value));
+        require(_erc20Addr.call(bytes4(keccak256("transfer(address,uint256)")), _to, _value));
         
         // handle returndata
         return handleReturnData();
@@ -56,7 +56,7 @@ library ERC20AsmFn {
         isContract(_erc20Addr);
 
         // call return false when something wrong
-        require(_erc20Addr.call(bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;)), _from, _to, _value));
+        require(_erc20Addr.call(bytes4(keccak256("transferFrom(address,address,uint256)")), _from, _to, _value));
         
         // handle returndata
         return handleReturnData();
@@ -68,7 +68,7 @@ library ERC20AsmFn {
         isContract(_erc20Addr);
 
         // call return false when something wrong
-        require(_erc20Addr.call(bytes4(keccak256(&quot;approve(address,uint256)&quot;)), _spender, _value));
+        require(_erc20Addr.call(bytes4(keccak256("approve(address,uint256)")), _spender, _value));
         
         // handle returndata
         return handleReturnData();

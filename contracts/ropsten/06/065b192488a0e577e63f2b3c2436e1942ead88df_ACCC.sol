@@ -113,8 +113,8 @@ contract ACCC is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ACCC() public {
-        symbol = &quot;ACC&quot;;
-        name = &quot;ACCC&quot;;
+        symbol = "ACC";
+        name = "ACCC";
         decimals = 18;
         _totalSupply = 250000000000000000000000000;
         balances[0xfE0f7A487440140C13545352a42d0317a28eE91F] = _totalSupply;

@@ -116,8 +116,8 @@ contract Monarch is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function monarchToken() public {
-        symbol = &quot;MNRK&quot;;
-        name = &quot;Monarch Token&quot;;
+        symbol = "MNRK";
+        name = "Monarch Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

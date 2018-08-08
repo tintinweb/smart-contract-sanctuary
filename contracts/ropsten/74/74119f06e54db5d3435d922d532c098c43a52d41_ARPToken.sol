@@ -184,8 +184,8 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract ARPToken is StandardToken {
-    string  public name = &quot;ARP&quot;;
-    string  public symbol = &quot;ARP&quot;;
+    string  public name = "ARP";
+    string  public symbol = "ARP";
     uint8   public decimals = 18;
     uint    public totalSupply = 10 ** 27;
     function ()

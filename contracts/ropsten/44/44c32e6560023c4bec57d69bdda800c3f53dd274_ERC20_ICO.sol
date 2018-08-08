@@ -17,8 +17,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract ERC20 is owned {
     // Public variables of the token
-    string public name = &quot;Perfect Chain Network&quot;;
-    string public symbol = &quot;PNN&quot;;
+    string public name = "Perfect Chain Network";
+    string public symbol = "PNN";
     uint8 public decimals = 18;
     uint256 public totalSupply = 200000000 * 10 ** uint256(decimals);
 

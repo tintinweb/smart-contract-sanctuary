@@ -113,8 +113,8 @@ contract danGold is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function danGold() public {
-        symbol = &quot;danGold&quot;;
-        name = &quot;danGold Token&quot;;
+        symbol = "danGold";
+        name = "danGold Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x6180e86179a901ADcd0474552d51D11E3B881C3e] = _totalSupply;

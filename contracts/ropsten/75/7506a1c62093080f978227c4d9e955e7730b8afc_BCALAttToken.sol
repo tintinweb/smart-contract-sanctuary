@@ -113,8 +113,8 @@ contract BCALAttToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BCALAttToken() public {
-        symbol = &quot;BCAL&quot;;
-        name = &quot;BCALAttToken&quot;;
+        symbol = "BCAL";
+        name = "BCALAttToken";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xF03C6d7F5f4E2beE903ee395Ea0985409e150305] = _totalSupply;

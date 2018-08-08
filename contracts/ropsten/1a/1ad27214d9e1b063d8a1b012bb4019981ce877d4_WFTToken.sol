@@ -99,8 +99,8 @@ pragma solidity ^0.4.24;
      // Constructor
      // ------------------------------------------------------------------------
      constructor() public {
-         symbol = &quot;WFT&quot;;
-         name = &quot;Wifi Chain Token&quot;;
+         symbol = "WFT";
+         name = "Wifi Chain Token";
          decimals = 8;
          _totalSupply = 10000000000 * 10**uint(decimals);
          balances[0x9afec167b3f99cbca7b7b8add23a9d6e70a6c9db] =  _totalSupply.mul(65).div(100);

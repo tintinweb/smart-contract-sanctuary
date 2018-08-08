@@ -47,8 +47,8 @@ contract TokenERC20 {
     ) public {
         totalSupply = 10000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 1000000000 * 10 ** uint256(decimals);                // Give the creator all initial tokens
-        name = &quot;JupiterToken&quot;;                                   // Set the name for display purposes
-        symbol = &quot;Jup&quot;;                               // Set the symbol for display purposes
+        name = "JupiterToken";                                   // Set the name for display purposes
+        symbol = "Jup";                               // Set the symbol for display purposes
     }
 
     /**

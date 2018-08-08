@@ -98,8 +98,8 @@ contract FakeZRX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FakeZRX() public {
-        symbol = &quot;ZRX&quot;;
-        name = &quot;Fake ZRX&quot;;
+        symbol = "ZRX";
+        name = "Fake ZRX";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xebff76c18de8532b58bc983624ad748cc458fd62] = _totalSupply;

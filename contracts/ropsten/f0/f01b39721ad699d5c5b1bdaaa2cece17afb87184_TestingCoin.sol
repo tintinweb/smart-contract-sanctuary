@@ -164,8 +164,8 @@ contract Owned {
 }
 
 contract TestingCoin is StandardToken, Owned {
-    string public constant name = &quot;TestingCoin&quot;;
-    string public constant symbol = &quot;TeC&quot;;
+    string public constant name = "TestingCoin";
+    string public constant symbol = "TeC";
     uint8 public constant decimals = 18;
     uint256 public sellPrice = 0; // eth
     uint256 public buyPrice = 0; // eth

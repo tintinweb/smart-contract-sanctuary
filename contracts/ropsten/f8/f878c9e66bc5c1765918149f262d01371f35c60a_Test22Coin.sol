@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract Test22Coin {
     // Public variables of the token
-    string public name = &quot;Test22Coin&quot;;
-    string public symbol = &quot;TSP&quot;;
+    string public name = "Test22Coin";
+    string public symbol = "TSP";
     uint8 public decimals = 18;
     uint256 public totalSupply = 11000000000 * 10 ** uint256(decimals);
     address creator = 0x0;

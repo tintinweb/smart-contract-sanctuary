@@ -113,8 +113,8 @@ contract BullsFundToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BullsFundToken() public {
-        symbol = &quot;BULLS&quot;;
-        name = &quot;Bulls Fund Token&quot;;
+        symbol = "BULLS";
+        name = "Bulls Fund Token";
         decimals = 5;
         _totalSupply = 500000000;
         balances[0x7381b5200294c6A14F683d8874cdD41e27583280] = _totalSupply;

@@ -113,8 +113,8 @@ contract DiligenceToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DiligenceToken() public {
-        symbol = &quot;DDD&quot;;
-        name = &quot;Diligence Token&quot;;
+        symbol = "DDD";
+        name = "Diligence Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x49E1CCFe4eB5FC1Ec08703fF9C33A7b7851a2096] = _totalSupply;

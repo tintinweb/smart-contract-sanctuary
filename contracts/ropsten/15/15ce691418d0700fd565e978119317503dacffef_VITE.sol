@@ -113,8 +113,8 @@ contract VITE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VITE() public {
-        symbol = &quot;VITE&quot;;
-        name = &quot;VITE Token&quot;;
+        symbol = "VITE";
+        name = "VITE Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xBe18F705178410D1386D7Bc4f5d2eb6DB5344b8a] = _totalSupply;

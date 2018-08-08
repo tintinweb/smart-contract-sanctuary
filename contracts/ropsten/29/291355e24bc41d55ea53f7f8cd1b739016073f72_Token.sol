@@ -39,7 +39,7 @@ contract Burnable {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -320,7 +320,7 @@ contract ReleasableToken is Releasable, StandardToken {
   }
 
   //We restrict transferFrom by overriding it
-  //&quot;from&quot; must be an agent before released
+  //"from" must be an agent before released
   function transferFrom(address from, address to, uint value) public canOperate(from) returns (bool success) {
     return super.transferFrom(from, to, value);
   }
@@ -336,8 +336,8 @@ contract ReleasableToken is Releasable, StandardToken {
 
 contract Token is ReleasableToken {
 
-    string public name = &quot;PROTOAL&quot;;
-    string public symbol = &quot;pAL&quot;;
+    string public name = "PROTOAL";
+    string public symbol = "pAL";
 
     //    Constructor
     constructor(uint supply, uint token_decimals, address token_retriever) StandardToken(supply, token_decimals, token_retriever) public { }

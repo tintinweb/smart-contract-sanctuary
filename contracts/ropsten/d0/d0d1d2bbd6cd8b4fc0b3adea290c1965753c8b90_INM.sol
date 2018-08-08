@@ -113,8 +113,8 @@ contract INM is UnboundedRegularToken {
 
     uint public totalSupply = 1100000000;
     uint8 constant public decimals = 4;
-    string constant public name = &quot;Insurance medicine&quot;;
-    string constant public symbol = &quot;INM&quot;;
+    string constant public name = "Insurance medicine";
+    string constant public symbol = "INM";
 
     function INM() {
         balances[msg.sender] = totalSupply;

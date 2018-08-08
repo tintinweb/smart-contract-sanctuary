@@ -113,8 +113,8 @@ contract BD0Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BD0Token() public {
-        symbol = &quot;BD0&quot;;
-        name = &quot;B Genesis 1&quot;;
+        symbol = "BD0";
+        name = "B Genesis 1";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc26322Dd9774c36748332DA32A5D5583FfF70EB0] = _totalSupply;

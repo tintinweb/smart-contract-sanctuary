@@ -230,8 +230,8 @@ contract DeliveryTokenBasic is ERC20 {
 */
 contract TTDeliveryToken is DeliveryTokenBasic {
 
-  string public constant name = &quot;TTDeliveryToken&quot;;	// solium-disable-line uppercase
-  string public constant symbol = &quot;TTDLV&quot;;		    // solium-disable-line uppercase
+  string public constant name = "TTDeliveryToken";	// solium-disable-line uppercase
+  string public constant symbol = "TTDLV";		    // solium-disable-line uppercase
   uint8 public constant decimals = 18;			    // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 2200000000 * (10 ** uint256(decimals));

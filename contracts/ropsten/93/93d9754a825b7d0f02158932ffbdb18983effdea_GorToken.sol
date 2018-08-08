@@ -97,8 +97,8 @@ contract GorToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GOR&quot;;
-        name = &quot;Gor Token&quot;;
+        symbol = "GOR";
+        name = "Gor Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

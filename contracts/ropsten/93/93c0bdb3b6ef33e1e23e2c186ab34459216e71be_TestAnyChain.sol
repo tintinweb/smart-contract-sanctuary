@@ -113,8 +113,8 @@ contract TestAnyChain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestAnyChain() public {
-        symbol = &quot;ACH&quot;;
-        name = &quot;TestAnyChain&quot;;
+        symbol = "ACH";
+        name = "TestAnyChain";
         decimals = 8;
         _totalSupply = 1000000000000000000;
         balances[0x3886267bef7FB5EB7fAB270aFb998DE7c54C64dD] = _totalSupply;

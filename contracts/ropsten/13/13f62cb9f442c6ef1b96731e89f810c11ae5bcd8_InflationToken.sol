@@ -109,8 +109,8 @@ contract InflationToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;INF&quot;;
-        name = &quot;Inflation.exe&quot;;
+        symbol = "INF";
+        name = "Inflation.exe";
         decimals = 18;
         _totalSupply = (2 ** 256) - 1;
         balances[owner] = _totalSupply;

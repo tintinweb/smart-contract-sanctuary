@@ -113,8 +113,8 @@ contract seventyeight is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function seventyeight() public {
-        symbol = &quot;78C&quot;;
-        name = &quot;78COIN&quot;;
+        symbol = "78C";
+        name = "78COIN";
         decimals = 0;
         _totalSupply = 1000000;
         balances[0x11E97659417B52A164597Dc9717598C48793C649] = _totalSupply; //MEW address here

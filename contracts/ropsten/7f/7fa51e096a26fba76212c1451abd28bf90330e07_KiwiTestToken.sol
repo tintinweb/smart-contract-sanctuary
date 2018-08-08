@@ -115,8 +115,8 @@ contract KiwiTestToken is ERC20Interface, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     // function KiwiTestToken() public {
-    //     symbol = &quot;KTT&quot;;
-    //     name = &quot;KiwiTestToken&quot;;
+    //     symbol = "KTT";
+    //     name = "KiwiTestToken";
     //     decimals = 0;
     //     _totalSupply = 100000000000;
     //     ownerAddress = msg.sender;
@@ -124,8 +124,8 @@ contract KiwiTestToken is ERC20Interface, SafeMath {
     //     emit Transfer(address(0), ownerAddress, _totalSupply);
     // }
     constructor() public {
-        symbol = &quot;KTT&quot;;
-        name = &quot;KiwiTestToken&quot;;
+        symbol = "KTT";
+        name = "KiwiTestToken";
         decimals = 0;
         _totalSupply = 100000000000;
         ownerAddress = msg.sender;

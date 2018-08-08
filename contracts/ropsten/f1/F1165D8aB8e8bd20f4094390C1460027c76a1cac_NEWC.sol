@@ -21,8 +21,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract NEWC is owned {
     // Public variables of the token
-    string public name = &quot;NEWCOIN&quot;;
-    string public symbol = &quot;NEWC&quot;;
+    string public name = "NEWCOIN";
+    string public symbol = "NEWC";
     uint8 public decimals = 18;
     ///uint256 public totalSupply = 0;
 	uint256 public totalSupply = 3000000000;
@@ -200,7 +200,7 @@ contract NEWCICO is owned, Killable {
     NEWC public token;
 
     /// Current State Name
-    string public state = &quot;Pre ICO&quot;;
+    string public state = "Pre ICO";
 
     /// the UNIX timestamp start date of the crowdsale
     uint public startsAt = 1532692158;  /// Start DateTime

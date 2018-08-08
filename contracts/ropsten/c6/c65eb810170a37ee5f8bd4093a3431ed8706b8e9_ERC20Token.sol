@@ -127,8 +127,8 @@ contract Ownable {
 
 contract ERC20Token is StandardToken, Ownable
 {
-    string public name = &quot;Khaw ERC20Token&quot;;
-    string public symbol = &quot;KET&quot;;
+    string public name = "Khaw ERC20Token";
+    string public symbol = "KET";
 
     uint public decimals = 2;
 

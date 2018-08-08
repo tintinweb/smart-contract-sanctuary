@@ -115,8 +115,8 @@ contract TheMLMDemo is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheMLMDemo() public {
-        symbol = &quot;TMLMD&quot;;
-        name = &quot;The MLM Demo ICO&quot;;
+        symbol = "TMLMD";
+        name = "The MLM Demo ICO";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         startDate = now;

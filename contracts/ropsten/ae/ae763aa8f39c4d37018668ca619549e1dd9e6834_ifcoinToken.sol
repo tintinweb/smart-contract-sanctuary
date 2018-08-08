@@ -116,8 +116,8 @@ contract ifcoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ifcoinToken() public {
-        symbol = &quot;IFC&quot;;
-        name = &quot;ifcoin Token&quot;;
+        symbol = "IFC";
+        name = "ifcoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 4 weeks;

@@ -166,9 +166,9 @@ contract EtherTradex is SafeMath {
   event Withdraw(address token, address user, uint amount, uint balance);
 
   function EtherTradex() public {
-    admin = &quot;0xc62fd589CD9194D92B8996C26d8FD179150bE8c5&quot;;
-    feeAccount = &quot;0xc62fd589CD9194D92B8996C26d8FD179150bE8c5&quot;;
-    accountLevelsAddr = &quot;0x0000000000000000000000000000000000000000&quot;;
+    admin = "0xc62fd589CD9194D92B8996C26d8FD179150bE8c5";
+    feeAccount = "0xc62fd589CD9194D92B8996C26d8FD179150bE8c5";
+    accountLevelsAddr = "0x0000000000000000000000000000000000000000";
     feeMake = 0;
     feeTake = 3000000000000000;
     feeRebate = 0;
@@ -253,7 +253,7 @@ contract EtherTradex is SafeMath {
     //amount is in amountGet terms
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
     if (!(
-      (orders[user][hash] || ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &&
+      (orders[user][hash] || ecrecover(sha3("\x19Ethereum Signed Message:\n32", hash),v,r,s) == user) &&
       block.number <= expires &&
       safeAdd(orderFills[user][hash], amount) <= amountGet
     )) throw;
@@ -289,7 +289,7 @@ contract EtherTradex is SafeMath {
   function availableVolume(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s) constant returns(uint) {
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
     if (!(
-      (orders[user][hash] || ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &&
+      (orders[user][hash] || ecrecover(sha3("\x19Ethereum Signed Message:\n32", hash),v,r,s) == user) &&
       block.number <= expires
     )) return 0;
     uint available1 = safeSub(amountGet, orderFills[user][hash]);
@@ -305,7 +305,7 @@ contract EtherTradex is SafeMath {
 
   function cancelOrder(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, uint8 v, bytes32 r, bytes32 s) {
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
-    if (!(orders[msg.sender][hash] || ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == msg.sender)) throw;
+    if (!(orders[msg.sender][hash] || ecrecover(sha3("\x19Ethereum Signed Message:\n32", hash),v,r,s) == msg.sender)) throw;
     orderFills[msg.sender][hash] = amountGet;
     Cancel(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, msg.sender, v, r, s);
   }

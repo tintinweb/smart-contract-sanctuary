@@ -155,8 +155,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract NoBsCrypto is StandardToken {
 
-  string public constant name = &quot;No Bs Crypto&quot;;
-  string public constant symbol = &quot;NOBS&quot;;
+  string public constant name = "No Bs Crypto";
+  string public constant symbol = "NOBS";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 10000000000 * 10**18;

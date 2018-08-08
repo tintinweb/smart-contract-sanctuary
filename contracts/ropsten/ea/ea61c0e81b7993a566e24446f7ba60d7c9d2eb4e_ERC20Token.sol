@@ -79,8 +79,8 @@ contract ERC20Token is StandardTokenWithOverflowProtection {
 
     uint8 constant public decimals = 18;
     uint public totalSupply = 10**27; // 1 billion tokens, 18 decimal places
-    string constant public name = &quot;ERC20 Token&quot;;
-    string constant public symbol = &quot;ERC20&quot;;
+    string constant public name = "ERC20 Token";
+    string constant public symbol = "ERC20";
     uint constant MAX_UINT = 2**256 - 1;
 
     constructor() public {

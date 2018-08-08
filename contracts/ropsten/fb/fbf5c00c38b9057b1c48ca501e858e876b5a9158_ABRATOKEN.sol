@@ -113,8 +113,8 @@ contract ABRATOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ABRATOKEN() public {
-        symbol = &quot;ABRA&quot;;
-        name = &quot;ABRA Token&quot;;
+        symbol = "ABRA";
+        name = "ABRA Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x7c0ADEEE7695Bcba2270b556aF80607190Bd9F45] = _totalSupply;

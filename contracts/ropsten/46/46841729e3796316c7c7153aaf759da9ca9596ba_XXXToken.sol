@@ -116,8 +116,8 @@ contract XXXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;XXX&quot;;
-        name = &quot;XXX Token&quot;;
+        symbol = "XXX";
+        name = "XXX Token";
         decimals = 18;
         bonusEnds = now + 1 days;
         endDate = now + 30 days;

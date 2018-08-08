@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 contract NEOToken is StandardToken, BurnableToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;NEO&quot;;
-    string constant public name = &quot;NEO Coin&quot;;
+    string constant public symbol = "NEO";
+    string constant public name = "NEO Coin";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 1000000000e18;

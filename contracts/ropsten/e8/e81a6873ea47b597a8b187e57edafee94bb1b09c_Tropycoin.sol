@@ -113,8 +113,8 @@ contract Tropycoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Tropycoin() public {
-        symbol = &quot;TRC&quot;;
-        name = &quot;TRC&quot;;
+        symbol = "TRC";
+        name = "TRC";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000000;
         balances[0xED0aC19F540a3D92922178aFA28c7d986C3922f2] = _totalSupply;

@@ -105,8 +105,8 @@ contract UltimosData is SafeMath {
     
     constructor() public {
         dataIsSet = false;
-        name = &quot;ULTIMOS Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ULTIMOS&quot;;                               // Set the symbol for display purposes
+        name = "ULTIMOS Token";                                   // Set the name for display purposes
+        symbol = "ULTIMOS";                               // Set the symbol for display purposes
         decimals = 18;
         _totalSupply = safeMul(1000000000, 10 ** uint256(decimals));  // Update total supply with the decimal amount
     }
@@ -338,7 +338,7 @@ contract UltimosToken is TokenERC20 {
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
     constructor(address dataContract) TokenERC20(dataContract) public {
-        _version = &quot;1.0&quot;;
+        _version = "1.0";
         data.setBuyPrice(515350000000000);
         data.setSellPrice(0);
     }

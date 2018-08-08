@@ -40,7 +40,7 @@ contract rps {
         if (msg.sender == player[0].addr) player_num = 0;
         else if (msg.sender == player[1].addr) player_num = 1;
         else revert();
-        require (!player[player_num].isOpen, &quot;the commitment is open!&quot;);
+        require (!player[player_num].isOpen, "the commitment is open!");
         require (keccak256(_secret) == player[player_num].commitment);
         player[player_num].choice = int8(_secret % 3);
         player[player_num].isOpen = true;

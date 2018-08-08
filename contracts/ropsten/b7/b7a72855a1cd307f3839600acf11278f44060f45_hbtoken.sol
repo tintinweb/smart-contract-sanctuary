@@ -116,8 +116,8 @@ contract hbtoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function hbtoken() public {
-        symbol = &quot;HBTK&quot;;
-        name = &quot;HB Token&quot;;
+        symbol = "HBTK";
+        name = "HB Token";
         decimals = 10;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

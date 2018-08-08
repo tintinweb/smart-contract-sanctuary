@@ -663,8 +663,8 @@ contract MintableTokenFundraiser is BasicFundraiser {
 contract SimonsToken is MintableToken {
   constructor(address _minter)
     StandardToken(
-      &quot;Simons Token&quot;,   // Token name
-      &quot;SPH&quot;, // Token symbol
+      "Simons Token",   // Token name
+      "SPH", // Token symbol
       18  // Token decimals
     )
     

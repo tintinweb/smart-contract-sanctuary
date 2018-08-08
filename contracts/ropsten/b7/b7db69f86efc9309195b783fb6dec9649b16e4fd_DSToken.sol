@@ -113,8 +113,8 @@ contract DSToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DSToken() public {
-        symbol = &quot;0DS&quot;;
-        name = &quot;0 DS Token&quot;;
+        symbol = "0DS";
+        name = "0 DS Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6D0999907039AEa5171a3bc7a3C4B16D054a09BE] = _totalSupply;

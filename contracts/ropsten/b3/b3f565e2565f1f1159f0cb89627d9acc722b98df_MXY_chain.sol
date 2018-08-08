@@ -23,8 +23,8 @@ contract MXY_chain{
     function MXY_chain() {
         balanceOf[msg.sender] =  1800000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  1800000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;MXY_chain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MXY&quot;;                               // Set the symbol for display purposes
+        name = "MXY_chain";                                   // Set the name for display purposes
+        symbol = "MXY";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

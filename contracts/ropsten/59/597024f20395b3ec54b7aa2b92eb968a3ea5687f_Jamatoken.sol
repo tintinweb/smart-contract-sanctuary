@@ -4,8 +4,8 @@ contract Jamatoken {
     
     uint public constant _totalSupply = 100000;
     
-    string public constant symbol = &quot;JAM&quot;;
-    string public constant name = &quot;Jamatoken&quot;;
+    string public constant symbol = "JAM";
+    string public constant name = "Jamatoken";
     uint8 public constant decimals = 2;
     
     

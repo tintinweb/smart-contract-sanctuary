@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ABC&quot;;
-        name = &quot;ABC Token&quot;;
+        symbol = "ABC";
+        name = "ABC Token";
         decimals = 18;
         _totalSupply = 21000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

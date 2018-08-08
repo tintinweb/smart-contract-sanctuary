@@ -11,7 +11,7 @@ pragma solidity ^0.4.24;
 	recommended, then please be aware that they are non-refundable.
 
 	The day of 11 May 2001 would become one of the worst days of my life for that is the date on which Douglas Adams died of heart failure. My one
-	true hero ceased to exist as did my hope of a further H2G2 (HG2G) novel, although Eoin Colfer would eventually pen &quot;And Another Thing&quot;, it just
+	true hero ceased to exist as did my hope of a further H2G2 (HG2G) novel, although Eoin Colfer would eventually pen "And Another Thing", it just
 	wasn&#39;t the same. If your interest in this token is piqued, then you will no doubt know WHY the Total Supply is 42,000,000 Tokens. The original
 	intent was to have the total supply limited to only 42 Tokens with 18 decimal places resulting in the ability to acquire as little as
 	.000000000000000001 Hitchhiker&#39;s Guide to the Galaxy (H2G2) Tokens. Setting the maximum supply to only 42 would have severely limited the
@@ -19,7 +19,7 @@ pragma solidity ^0.4.24;
 	8 June 2018. To see the most recent version of this text, visit: https://en.wikipedia.org/wiki/Douglas_Adams
 
 	Douglas Noel Adams (11 March 1952 – 11 May 2001) was an English author, scriptwriter, essayist, humorist, satirist and dramatist. Adams was author
-	of The Hitchhiker&#39;s Guide to the Galaxy, which originated in 1978 as a BBC radio comedy before developing into a &quot;trilogy&quot; of five books that sold
+	of The Hitchhiker&#39;s Guide to the Galaxy, which originated in 1978 as a BBC radio comedy before developing into a "trilogy" of five books that sold
 	more than 15 million copies in his lifetime and generated a television series, several stage plays, comics, a computer game, and in 2005 a feature
 	film. Adams&#39;s contribution to UK radio is commemorated in The Radio Academy&#39;s Hall of Fame. Adams also wrote Dirk Gently&#39;s Holistic Detective
 	Agency (1987) and The Long Dark Tea-Time of the Soul (1988), and co-wrote The Meaning of Liff (1983), The Deeper Meaning of Liff (1990), Last
@@ -40,43 +40,43 @@ pragma solidity ^0.4.24;
 	block. Some of his earliest writing was published at the school, such as a report on its photography club in The Brentwoodian in 1962, or spoof
 	reviews in the school magazine Broadsheet, edited by Paul Neil Milne Johnstone, who later became a character in The Hitchhiker&#39;s Guide. He also
 	designed the cover of one issue of the Broadsheet, and had a letter and short story published in The Eagle, the boys&#39; comic, in 1965. A poem
-	entitled &quot;A Dissertation on the task of writing a poem on a candle and an account of some of the difficulties thereto pertaining&quot; written by Adams
+	entitled "A Dissertation on the task of writing a poem on a candle and an account of some of the difficulties thereto pertaining" written by Adams
 	in January 1970, at the age of 17, was discovered in a cupboard at the school in early 2014. On the strength of a bravura essay on religious
 	poetry that discussed the Beatles and William Blake, he was awarded an Exhibition in English at St John&#39;s College, Cambridge, going up in 1971. He
 	wanted to join the Footlights, an invitation-only student comedy club that has acted as a hothouse for comic talent. He was not elected
 	immediately as he had hoped, and started to write and perform in revues with Will Adams (no relation) and Martin Smith, forming a group called
-	&quot;Adams-Smith-Adams&quot;, but became a member of the Footlights by 1973. Despite doing very little work—he recalled having completed three essays in
+	"Adams-Smith-Adams", but became a member of the Footlights by 1973. Despite doing very little work—he recalled having completed three essays in
 	three years—he graduated in 1974 with a B.A. in English literature.
 
 	Career: Writing: After leaving university Adams moved back to London, determined to break into TV and radio as a writer. An edited version of the
 	Footlights Revue appeared on BBC2 television in 1974. A version of the Revue performed live in London&#39;s West End led to Adams being discovered by
 	Monty Python&#39;s Graham Chapman. The two formed a brief writing partnership, earning Adams a writing credit in episode 45 of Monty Python for a
-	sketch called &quot;Patient Abuse&quot;. The pair also co-wrote the &quot;Marilyn Monroe&quot; sketch which appeared on the soundtrack album of Monty Python and the
+	sketch called "Patient Abuse". The pair also co-wrote the "Marilyn Monroe" sketch which appeared on the soundtrack album of Monty Python and the
 	Holy Grail. Adams is one of only two people other than the original Python members to get a writing credit (the other being Neil Innes). Adams had
-	two brief appearances in the fourth series of Monty Python&#39;s Flying Circus. At the beginning of episode 42, &quot;The Light Entertainment War&quot;, Adams
+	two brief appearances in the fourth series of Monty Python&#39;s Flying Circus. At the beginning of episode 42, "The Light Entertainment War", Adams
 	is in a surgeon&#39;s mask (as Dr. Emile Koning, according to on-screen captions), pulling on gloves, while Michael Palin narrates a sketch that
-	introduces one person after another but never gets started. At the beginning of episode 44, &quot;Mr. Neutron&quot;, Adams is dressed in a pepper-pot outfit
-	and loads a missile onto a cart driven by Terry Jones, who is calling for scrap metal (&quot;Any old iron...&quot;). The two episodes were broadcast in
+	introduces one person after another but never gets started. At the beginning of episode 44, "Mr. Neutron", Adams is dressed in a pepper-pot outfit
+	and loads a missile onto a cart driven by Terry Jones, who is calling for scrap metal ("Any old iron..."). The two episodes were broadcast in
 	November 1974. Adams and Chapman also attempted non-Python projects, including Out of the Trees. At this point Adams&#39;s career stalled; his writing
 	style was unsuited to the then-current style of radio and TV comedy. To make ends meet he took a series of odd jobs, including as a hospital
 	porter, barn builder, and chicken shed cleaner. He was employed as a bodyguard by a Qatari family, who had made their fortune in oil. During this
 	time Adams continued to write and submit sketches, though few were accepted. In 1976 his career had a brief improvement when he wrote and
 	performed Unpleasantness at Brodie&#39;s Close at the Edinburgh Fringe festival. By Christmas, work had dried up again, and a depressed Adams moved to
-	live with his mother. The lack of writing work hit him hard and low confidence became a feature of Adams&#39;s life; &quot;I have terrible periods of lack
+	live with his mother. The lack of writing work hit him hard and low confidence became a feature of Adams&#39;s life; "I have terrible periods of lack
 	of confidence. I briefly did therapy, but after a while I realised it was like a farmer complaining about the weather. You can&#39;t fix the weather –
-	you just have to get on with it&quot;. Some of Adams&#39;s early radio work included sketches for The Burkiss Way in 1977 and The News Huddlines. He also
+	you just have to get on with it". Some of Adams&#39;s early radio work included sketches for The Burkiss Way in 1977 and The News Huddlines. He also
 	wrote, again with Chapman, the 20 February 1977 episode of Doctor on the Go, a sequel to the Doctor in the House television comedy series. After
 	the first radio series of The Hitchhiker&#39;s Guide became successful, Adams was made a BBC radio producer, working on Week Ending and a pantomime
 	called Black Cinderella Two Goes East. He left after six months to become the script editor for Doctor Who. In 1979 Adams and John Lloyd wrote
-	scripts for two half-hour episodes of Doctor Snuggles: &quot;The Remarkable Fidgety River&quot; and &quot;The Great Disappearing Mystery&quot; (episodes eight and
-	twelve). John Lloyd was also co-author of two episodes from the original Hitchhiker radio series (&quot;Fit the Fifth&quot; and &quot;Fit the Sixth&quot;, also known
-	as &quot;Episode Five&quot; and &quot;Episode Six&quot;), as well as The Meaning of Liff and The Deeper Meaning of Liff.
+	scripts for two half-hour episodes of Doctor Snuggles: "The Remarkable Fidgety River" and "The Great Disappearing Mystery" (episodes eight and
+	twelve). John Lloyd was also co-author of two episodes from the original Hitchhiker radio series ("Fit the Fifth" and "Fit the Sixth", also known
+	as "Episode Five" and "Episode Six"), as well as The Meaning of Liff and The Deeper Meaning of Liff.
 
 	The Hitchhiker&#39;s Guide to the Galaxy: The Hitchhiker&#39;s Guide to the Galaxy was a concept for a science-fiction comedy radio series pitched by
 	Adams and radio producer Simon Brett to BBC Radio 4 in 1977. Adams came up with an outline for a pilot episode, as well as a few other stories
 	(reprinted in Neil Gaiman&#39;s book Don&#39;t Panic: The Official Hitchhiker&#39;s Guide to the Galaxy Companion) that could be used in the series. According
 	to Adams, the idea for the title occurred to him while he lay drunk in a field in Innsbruck, Austria, gazing at the stars. He was carrying a copy
-	of the Hitch-hiker&#39;s Guide to Europe, and it occurred to him that &quot;somebody ought to write a Hitchhiker&#39;s Guide to the Galaxy&quot;. He later said that
+	of the Hitch-hiker&#39;s Guide to Europe, and it occurred to him that "somebody ought to write a Hitchhiker&#39;s Guide to the Galaxy". He later said that
 	the constant repetition of this anecdote had obliterated his memory of the actual event. Despite the original outline, Adams was said to make up
 	the stories as he wrote. He turned to John Lloyd for help with the final two episodes of the first series. Lloyd contributed bits from an
 	unpublished science fiction book of his own, called GiGax. Very little of Lloyd&#39;s material survived in later adaptations of Hitchhiker&#39;s, such as
@@ -86,8 +86,8 @@ pragma solidity ^0.4.24;
 	Episode. A second series of five episodes was broadcast one per night, during the week of 21–25 January 1980. While working on the radio series
 	(and with simultaneous projects such as The Pirate Planet) Adams developed problems keeping to writing deadlines that got worse as he published
 	novels. Adams was never a prolific writer and usually had to be forced by others to do any writing. This included being locked in a hotel suite
-	with his editor for three weeks to ensure that So Long, and Thanks for All the Fish was completed. He was quoted as saying, &quot;I love deadlines. I
-	love the whooshing noise they make as they go by.&quot; Despite the difficulty with deadlines, Adams wrote five novels in the series, published in
+	with his editor for three weeks to ensure that So Long, and Thanks for All the Fish was completed. He was quoted as saying, "I love deadlines. I
+	love the whooshing noise they make as they go by." Despite the difficulty with deadlines, Adams wrote five novels in the series, published in
 	1979, 1980, 1982, 1984, and 1992. The books formed the basis for other adaptations, such as three-part comic book adaptations for each of the
 	first three books, an interactive text-adventure computer game, and a photo-illustrated edition, published in 1994. This latter edition featured a
 	42 Puzzle designed by Adams, which was later incorporated into paperback covers of the first four Hitchhiker&#39;s novels (the paperback for the fifth
@@ -97,29 +97,29 @@ pragma solidity ^0.4.24;
 	Disney, which had bought the rights in 1998. The screenplay got a posthumous re-write by Karey Kirkpatrick, and the resulting film was released in
 	2005. Radio producer Dirk Maggs had consulted with Adams, first in 1993, and later in 1997 and 2000 about creating a third radio series, based on
 	the third novel in the Hitchhiker&#39;s series. They also discussed the possibilities of radio adaptations of the final two novels in the five-book
-	&quot;trilogy&quot;. As with the movie, this project was realised only after Adams&#39;s death. The third series, The Tertiary Phase, was broadcast on BBC Radio
+	"trilogy". As with the movie, this project was realised only after Adams&#39;s death. The third series, The Tertiary Phase, was broadcast on BBC Radio
 	4 in September 2004 and was subsequently released on audio CD. With the aid of a recording of his reading of Life, the Universe and Everything and
 	editing, Adams can be heard playing the part of Agrajag posthumously. So Long, and Thanks for All the Fish and Mostly Harmless made up the fourth
 	and fifth radio series, respectively (on radio they were titled The Quandary Phase and The Quintessential Phase) and these were broadcast in May
-	and June 2005, and also subsequently released on Audio CD. The last episode in the last series (with a new, &quot;more upbeat&quot; ending) concluded with,
-	&quot;The very final episode of The Hitchhiker&#39;s Guide to the Galaxy by Douglas Adams is affectionately dedicated to its author.&quot;
+	and June 2005, and also subsequently released on Audio CD. The last episode in the last series (with a new, "more upbeat" ending) concluded with,
+	"The very final episode of The Hitchhiker&#39;s Guide to the Galaxy by Douglas Adams is affectionately dedicated to its author."
 
 	Dirk Gently series: Between Adams&#39;s first trip to Madagascar with Mark Carwardine in 1985, and their series of travels that formed the basis for
 	the radio series and non-fiction book Last Chance to See, Adams wrote two other novels with a new cast of characters. Dirk Gently&#39;s Holistic
-	Detective Agency was published in 1987, and was described by its author as &quot;a kind of ghost-horror-detective-time-travel-romantic-comedy-epic,
-	mainly concerned with mud, music and quantum mechanics&quot;. It was derived from two Doctor Who serials Adams had written. A sequel, The Long Dark
+	Detective Agency was published in 1987, and was described by its author as "a kind of ghost-horror-detective-time-travel-romantic-comedy-epic,
+	mainly concerned with mud, music and quantum mechanics". It was derived from two Doctor Who serials Adams had written. A sequel, The Long Dark
 	Tea-Time of the Soul, was published a year later. This was an entirely original work, Adams&#39;s first since So Long, and Thanks for All the Fish.
 	After the book tour, Adams set off on his round-the-world excursion which supplied him with the material for Last Chance to See.
 
 	Doctor Who: Adams sent the script for the HHGG pilot radio programme to the Doctor Who production office in 1978, and was commissioned to write
-	The Pirate Planet (see below). He had also previously attempted to submit a potential movie script, called &quot;Doctor Who and the Krikkitmen&quot;, which
+	The Pirate Planet (see below). He had also previously attempted to submit a potential movie script, called "Doctor Who and the Krikkitmen", which
 	later became his novel Life, the Universe and Everything (which in turn became the third Hitchhiker&#39;s Guide radio series). Adams then went on to
 	serve as script editor on the show for its seventeenth season in 1979. Altogether, he wrote three Doctor Who serials starring Tom Baker as the
-	Doctor: &quot;The Pirate Planet&quot; (the second serial in the &quot;Key to Time&quot; arc, in season 16) &quot;City of Death&quot; (with producer Graham Williams, from an
-	original storyline by writer David Fisher. It was transmitted under the pseudonym &quot;David Agnew&quot;) &quot;Shada&quot; (only partially filmed; not televised due
+	Doctor: "The Pirate Planet" (the second serial in the "Key to Time" arc, in season 16) "City of Death" (with producer Graham Williams, from an
+	original storyline by writer David Fisher. It was transmitted under the pseudonym "David Agnew") "Shada" (only partially filmed; not televised due
 	to industry disputes) The episodes authored by Adams are some of the few that were not novelised as Adams would not allow anyone else to write
-	them, and asked for a higher price than the publishers were willing to pay. &quot;Shada&quot; was later adapted as a novel by Gareth Roberts in 2012 and
-	&quot;City of Death&quot; and &quot;The Pirate Planet&quot; by James Goss in 2015 and 2017 respectively. Elements of Shada and City of Death were reused in Adams&#39;s
+	them, and asked for a higher price than the publishers were willing to pay. "Shada" was later adapted as a novel by Gareth Roberts in 2012 and
+	"City of Death" and "The Pirate Planet" by James Goss in 2015 and 2017 respectively. Elements of Shada and City of Death were reused in Adams&#39;s
 	later novel Dirk Gently&#39;s Holistic Detective Agency, in particular the character of Professor Chronotis. Big Finish Productions eventually remade
 	Shada as an audio play starring Paul McGann as the Doctor. Accompanied by partially animated illustrations, it was webcast on the BBC website in
 	2003, and subsequently released as a two-CD set later that year. An omnibus edition of this version was broadcast on the digital radio station
@@ -130,10 +130,10 @@ pragma solidity ^0.4.24;
 	in 1964). He also studied piano in the 1960s with the same teacher as Paul Wickens, the pianist who plays in Paul McCartney&#39;s band (and composed
 	the music for the 2004–2005 editions of the Hitchhiker&#39;s Guide radio series). Pink Floyd and Procol Harum had important influence on Adams&#39; work.
 
-	Pink Floyd: Adams&#39;s official biography shares its name with the song &quot;Wish You Were Here&quot; by Pink Floyd. Adams was friends with Pink Floyd
+	Pink Floyd: Adams&#39;s official biography shares its name with the song "Wish You Were Here" by Pink Floyd. Adams was friends with Pink Floyd
 	guitarist David Gilmour and, on Adams&#39;s 42nd birthday, he was invited to make a guest appearance at Pink Floyd&#39;s concert of 28 October 1994 at
-	Earls Court in London, playing guitar on the songs &quot;Brain Damage&quot; and &quot;Eclipse&quot;. Adams chose the name for Pink Floyd&#39;s 1994 album, The Division
-	Bell, by picking the words from the lyrics to one of its tracks, &quot;High Hopes&quot;. Gilmour also performed at Adams&#39;s memorial service in 2001, and
+	Earls Court in London, playing guitar on the songs "Brain Damage" and "Eclipse". Adams chose the name for Pink Floyd&#39;s 1994 album, The Division
+	Bell, by picking the words from the lyrics to one of its tracks, "High Hopes". Gilmour also performed at Adams&#39;s memorial service in 2001, and
 	what would have been Adams&#39;s 60th birthday party in 2012.
 	
 	Computer games and projects: Douglas Adams created an interactive fiction version of HHGG with Steve Meretzky from Infocom in 1984. In 1986 he
@@ -143,19 +143,19 @@ pragma solidity ^0.4.24;
 	Simon & Schuster. Terry Jones wrote the accompanying book, entitled Douglas Adams&#39; Starship Titanic, since Adams was too busy with the computer
 	game to do both. In April 1999, Adams initiated the H2G2 collaborative writing project, an experimental attempt at making The Hitchhiker&#39;s Guide
 	to the Galaxy a reality, and at harnessing the collective brainpower of the internet community. It was hosted by BBC Online from 2001 to 2011. In
-	1990, Adams wrote and presented a television documentary programme Hyperland which featured Tom Baker as a &quot;software agent&quot; (similar to the
+	1990, Adams wrote and presented a television documentary programme Hyperland which featured Tom Baker as a "software agent" (similar to the
 	assistant pictured in Apple&#39;s Knowledge Navigator video of future concepts from 1987), and interviews with Ted Nelson, the co-inventor of
 	hypertext and the person who coined the term. Adams was an early adopter and advocate of hypertext.
 
-	Personal beliefs and activism: Atheism and views on religion: Adams described himself as a &quot;radical atheist&quot;, adding &quot;radical&quot; for emphasis so he
+	Personal beliefs and activism: Atheism and views on religion: Adams described himself as a "radical atheist", adding "radical" for emphasis so he
 	would not be asked if he meant agnostic. He told American Atheists that this conveyed the fact that he really meant it. He imagined a sentient
-	puddle who wakes up one morning and thinks, &quot;This is an interesting world I find myself in – an interesting hole I find myself in – fits me rather
-	neatly, doesn&#39;t it? In fact it fits me staggeringly well, must have been made to have me in it!&quot; to demonstrate his view that the fine-tuned
-	Universe argument for God was a fallacy. He remained fascinated by religion because of its effect on human affairs. &quot;I love to keep poking and
-	prodding at it. I&#39;ve thought about it so much over the years that that fascination is bound to spill over into my writing.&quot; The evolutionary
+	puddle who wakes up one morning and thinks, "This is an interesting world I find myself in – an interesting hole I find myself in – fits me rather
+	neatly, doesn&#39;t it? In fact it fits me staggeringly well, must have been made to have me in it!" to demonstrate his view that the fine-tuned
+	Universe argument for God was a fallacy. He remained fascinated by religion because of its effect on human affairs. "I love to keep poking and
+	prodding at it. I&#39;ve thought about it so much over the years that that fascination is bound to spill over into my writing." The evolutionary
 	biologist and atheist Richard Dawkins uses Adams&#39;s influence to exemplify arguments for non-belief in his 2006 book The God Delusion. Dawkins
-	dedicated the book to Adams, whom he jokingly called &quot;possibly [my] only convert&quot; to atheism and wrote on his death that &quot;Science has lost a
-	friend, literature has lost a luminary, the mountain gorilla and the black rhino have lost a gallant defender.&quot;
+	dedicated the book to Adams, whom he jokingly called "possibly [my] only convert" to atheism and wrote on his death that "Science has lost a
+	friend, literature has lost a luminary, the mountain gorilla and the black rhino have lost a gallant defender."
 
 	Environmental activism: Adams was also an environmental activist who campaigned on behalf of endangered species. This activism included the
 	production of the non-fiction radio series Last Chance to See, in which he and naturalist Mark Carwardine visited rare species such as the kakapo
@@ -174,14 +174,14 @@ pragma solidity ^0.4.24;
 	Micro and a Tandy 1000. In Last Chance to See Adams mentions his Cambridge Z88, which he had taken to Zaire on a quest to find the northern white
 	rhinoceros. Adams&#39;s posthumously published work, The Salmon of Doubt, features several articles by him on the subject of technology, including
 	reprints of articles that originally ran in MacUser magazine, and in The Independent on Sunday newspaper. In these Adams claims that one of the
-	first computers he ever saw was a Commodore PET, and that he had &quot;adored&quot; his Apple Macintosh (&quot;or rather my family of however many Macintoshes it
-	is that I&#39;ve recklessly accumulated over the years&quot;) since he first saw one at Infocom&#39;s offices in Boston in 1984. Adams was a Macintosh user
+	first computers he ever saw was a Commodore PET, and that he had "adored" his Apple Macintosh ("or rather my family of however many Macintoshes it
+	is that I&#39;ve recklessly accumulated over the years") since he first saw one at Infocom&#39;s offices in Boston in 1984. Adams was a Macintosh user
 	from the time they first came out in 1984 until his death in 2001. He was the first person to buy a Mac in Europe (the second being Stephen Fry
-	– though some accounts differ on this, saying Fry bought his Mac first. Fry claims he was second to Adams). Adams was also an &quot;Apple Master&quot;,
+	– though some accounts differ on this, saying Fry bought his Mac first. Fry claims he was second to Adams). Adams was also an "Apple Master",
 	celebrities whom Apple made into spokespeople for its products (others included John Cleese and Gregory Hines). Adams&#39;s contributions included a
 	rock video that he created using the first version of iMovie with footage featuring his daughter Polly. The video was available on Adams&#39;s .Mac
 	homepage. Adams installed and started using the first release of Mac OS X in the weeks leading up to his death. His very last post to his own
-	forum was in praise of Mac OS X and the possibilities of its Cocoa programming framework. He said it was &quot;awesome...&quot;, which was also the last
+	forum was in praise of Mac OS X and the possibilities of its Cocoa programming framework. He said it was "awesome...", which was also the last
 	word he wrote on his site. Adams used email to correspond with Steve Meretzky in the early 1980s, during their collaboration on Infocom&#39;s version
 	of The Hitchhiker&#39;s Guide to the Galaxy. While living in New Mexico in 1993 he set up another e-mail address and began posting to his own USENET
 	newsgroup, alt.fan.douglas-adams, and occasionally, when his computer was acting up, to the comp.sys.mac hierarchy. Challenges to the authenticity
@@ -194,10 +194,10 @@ pragma solidity ^0.4.24;
 	1980s Adams had an affair with novelist Sally Emerson, who was separated from her husband at that time. Adams later dedicated his book Life, the
 	Universe and Everything to Emerson. In 1981 Emerson returned to her husband, Peter Stothard, a contemporary of Adams&#39;s at Brentwood School, and
 	later editor of The Times. Adams was soon introduced by friends to Jane Belson, with whom he later became romantically involved. Belson was the
-	&quot;lady barrister&quot; mentioned in the jacket-flap biography printed in his books during the mid-1980s (&quot;He [Adams] lives in Islington with a lady
-	barrister and an Apple Macintosh&quot;). The two lived in Los Angeles together during 1983 while Adams worked on an early screenplay adaptation of
-	Hitchhiker&#39;s. When the deal fell through, they moved back to London, and after several separations (&quot;He is currently not certain where he lives,
-	or with whom&quot;) and a broken engagement, they married on 25 November 1991. Adams and Belson had one daughter together, Polly Jane Rocket Adams,
+	"lady barrister" mentioned in the jacket-flap biography printed in his books during the mid-1980s ("He [Adams] lives in Islington with a lady
+	barrister and an Apple Macintosh"). The two lived in Los Angeles together during 1983 while Adams worked on an early screenplay adaptation of
+	Hitchhiker&#39;s. When the deal fell through, they moved back to London, and after several separations ("He is currently not certain where he lives,
+	or with whom") and a broken engagement, they married on 25 November 1991. Adams and Belson had one daughter together, Polly Jane Rocket Adams,
 	born on 22 June 1994, shortly after Adams turned 42. In 1999 the family moved from London to Santa Barbara, California, where they lived until his
 	death. Following the funeral, Jane Belson and Polly Adams returned to London. Belson died on 7 September 2011 of cancer, aged 59.
 
@@ -249,48 +249,48 @@ pragma solidity ^0.4.24;
 	Android; and Trillian, formerly known as Tricia McMillan, a woman Arthur once met at a party in Islington and the only other human survivor of
 	Earth&#39;s destruction thanks to Beeblebrox&#39; intervention.
 
-	Background: The first radio series comes from a proposal called &quot;The Ends of the Earth&quot;: six self-contained episodes, all ending with Earth&#39;s
+	Background: The first radio series comes from a proposal called "The Ends of the Earth": six self-contained episodes, all ending with Earth&#39;s
 	being destroyed in a different way. While writing the first episode, Adams realized that he needed someone on the planet who was an alien to
 	provide some context, and that this alien needed a reason to be there. Adams finally settled on making the alien a roving researcher for a
-	&quot;wholly remarkable book&quot; named The Hitchhiker&#39;s Guide to the Galaxy. As the first radio episode&#39;s writing progressed, the Guide became the centre
+	"wholly remarkable book" named The Hitchhiker&#39;s Guide to the Galaxy. As the first radio episode&#39;s writing progressed, the Guide became the centre
 	of his story, and he decided to focus the series on it, with the destruction of Earth being the only hold-over. Adams claimed that the title came
 	from a 1971 incident while he was hitchhiking around Europe as a young man with a copy of the Hitch-hiker&#39;s Guide to Europe book: while lying
 	drunk in a field near Innsbruck with a copy of the book and looking up at the stars, he thought it would be a good idea for someone to write a
 	hitchhiker&#39;s guide to the galaxy as well. However, he later claimed that he had told this story so many times that he had forgotten the incident
-	itself, and only remembered himself telling the story. His friends are quoted as saying that Adams mentioned the idea of &quot;hitch-hiking around the
-	galaxy&quot; to them while on holiday in Greece in 1973. Adams&#39;s fictional Guide is an electronic guidebook to the entire universe, originally
+	itself, and only remembered himself telling the story. His friends are quoted as saying that Adams mentioned the idea of "hitch-hiking around the
+	galaxy" to them while on holiday in Greece in 1973. Adams&#39;s fictional Guide is an electronic guidebook to the entire universe, originally
 	published by Megadodo Publications, one of the great publishing houses of Ursa Minor Beta. The narrative of the various versions of the story are
 	frequently punctuated with excerpts from the Guide. The voice of the Guide (Peter Jones in the first two radio series and TV versions, later
 	William Franklyn in the third, fourth and fifth radio series, and Stephen Fry in the movie version), also provides general narration.
 
-	Original radio series: The first radio series of six episodes (called &quot;Fits&quot; after the names of the sections of Lewis Carroll&#39;s nonsense poem &quot;The
-	Hunting of the Snark&quot;) was broadcast in 1978 on BBC Radio 4. Despite a low-key launch of the series (the first episode was broadcast at 10:30 pm
-	on Wednesday, 8 March 1978), it received generally good reviews and a tremendous audience reaction for radio. A one-off episode (a &quot;Christmas
-	special&quot;) was broadcast later in the year. The BBC had a practice at the time of commissioning &quot;Christmas Special&quot; episodes for popular radio
-	series, and while an early draft of this episode of The Hitchhiker&#39;s Guide had a Christmas-related plotline, it was decided to be &quot;in slightly
-	poor taste&quot; and the episode as transmitted served as a bridge between the two series. This episode was released as part of the second radio series
+	Original radio series: The first radio series of six episodes (called "Fits" after the names of the sections of Lewis Carroll&#39;s nonsense poem "The
+	Hunting of the Snark") was broadcast in 1978 on BBC Radio 4. Despite a low-key launch of the series (the first episode was broadcast at 10:30 pm
+	on Wednesday, 8 March 1978), it received generally good reviews and a tremendous audience reaction for radio. A one-off episode (a "Christmas
+	special") was broadcast later in the year. The BBC had a practice at the time of commissioning "Christmas Special" episodes for popular radio
+	series, and while an early draft of this episode of The Hitchhiker&#39;s Guide had a Christmas-related plotline, it was decided to be "in slightly
+	poor taste" and the episode as transmitted served as a bridge between the two series. This episode was released as part of the second radio series
 	and, later, The Secondary Phase on cassettes and CDs. The Primary and Secondary Phases were aired, in a slightly edited version, in the United
 	States on NPR Playhouse. The first series was repeated twice in 1978 alone and many more times in the next few years. This led to an LP
 	re-recording, produced independently of the BBC for sale, and a further adaptation of the series as a book. A second radio series, which consisted
 	of a further six episodes, and bringing the total number of episodes to 12, was broadcast in 1980. The radio series (and the LP and TV versions)
-	greatly benefited from the narration of noted comedy actor Peter Jones as The Book. He was cast after it was decided that a &quot;Peter Jonesy&quot; sort of
+	greatly benefited from the narration of noted comedy actor Peter Jones as The Book. He was cast after it was decided that a "Peter Jonesy" sort of
 	voice was required. This led to a three-month search for an actor who sounded exactly like Peter Jones, which was unsuccessful. The producers then
-	hired Peter Jones as exactly the &quot;Peter Jonesy&quot; voice they were looking for. The series was also notable for its use of sound, being the first
+	hired Peter Jones as exactly the "Peter Jonesy" voice they were looking for. The series was also notable for its use of sound, being the first
 	comedy series to be produced in stereo. Adams said that he wanted the programme&#39;s production to be comparable to that of a modern rock album. Much
 	of the programme&#39;s budget was spent on sound effects, which were largely the work of Paddy Kingsland (for the pilot episode and the complete
 	second series) at the BBC Radiophonic Workshop and Dick Mills and Harry Parker (for the remaining episodes (2–6) of the first series). The fact
 	that they were at the forefront of modern radio production in 1978 and 1980 was reflected when the three new series of Hitchhiker&#39;s became some of
 	the first radio shows to be mixed into four-channel Dolby Surround. This mix was also featured on DVD releases of the third radio series. The
-	theme tune used for the radio, television, LP and film versions is &quot;Journey of the Sorcerer&quot;, an instrumental piece composed by Bernie Leadon and
+	theme tune used for the radio, television, LP and film versions is "Journey of the Sorcerer", an instrumental piece composed by Bernie Leadon and
 	recorded by The Eagles on their album One of These Nights. Only the transmitted radio series used the original recording; a sound-alike cover by
 	Tim Souster was used for the LP and TV series, another arrangement by Joby Talbot was used for the 2005 film, and still another arrangement, this
 	time by Philip Pope, was recorded to be released with the CDs of the last three radio series. Apparently, Adams chose this song for its
-	futuristic-sounding nature, but also for the fact that it had a banjo in it, which, as Geoffrey Perkins recalls, Adams said would give an &quot;on the
-	road, hitch-hiking feel&quot; to it. The twelve episodes were released (in a slightly edited form, removing the Pink Floyd music and two other tunes
-	&quot;hummed&quot; by Marvin when the team land on Magrathea) on CD and cassette in 1988, becoming the first CD release in the BBC Radio Collection. They
-	were re-released in 1992, and at this time Adams suggested that they could retitle Fits the First to Sixth as &quot;The Primary Phase&quot; and Fits the
-	Seventh to Twelfth as &quot;The Secondary Phase&quot; instead of just &quot;the first series&quot; and &quot;the second series&quot;. It was at about this time that a &quot;Tertiary
-	Phase&quot; was first discussed with Dirk Maggs, adapting Life, the Universe and Everything, but this series would not be recorded for another ten
+	futuristic-sounding nature, but also for the fact that it had a banjo in it, which, as Geoffrey Perkins recalls, Adams said would give an "on the
+	road, hitch-hiking feel" to it. The twelve episodes were released (in a slightly edited form, removing the Pink Floyd music and two other tunes
+	"hummed" by Marvin when the team land on Magrathea) on CD and cassette in 1988, becoming the first CD release in the BBC Radio Collection. They
+	were re-released in 1992, and at this time Adams suggested that they could retitle Fits the First to Sixth as "The Primary Phase" and Fits the
+	Seventh to Twelfth as "The Secondary Phase" instead of just "the first series" and "the second series". It was at about this time that a "Tertiary
+	Phase" was first discussed with Dirk Maggs, adapting Life, the Universe and Everything, but this series would not be recorded for another ten
 	years. Main cast:
 						Simon Jones as Arthur Dent
 						Geoffrey McGivern as Ford Prefect
@@ -300,19 +300,19 @@ pragma solidity ^0.4.24;
 						Richard Vernon as Slartibartfast
 						Peter Jones as The Book
 
-	Novels: The novels are described as &quot;a trilogy in five parts&quot;, having been described as a trilogy on the release of the third book, and then a
-	&quot;trilogy in four parts&quot; on the release of the fourth book. The US edition of the fifth book was originally released with the legend &quot;The fifth
-	book in the increasingly inaccurately named Hitchhiker&#39;s Trilogy&quot; on the cover. Subsequent re-releases of the other novels bore the legend &quot;The
-	[first, second, third, fourth] book in the increasingly inaccurately named Hitchhiker&#39;s Trilogy&quot;. In addition, the blurb on the fifth book
-	describes it as &quot;the book that gives a whole new meaning to the word &#39;trilogy&#39;&quot;. The plots of the television and radio series are more or less the
+	Novels: The novels are described as "a trilogy in five parts", having been described as a trilogy on the release of the third book, and then a
+	"trilogy in four parts" on the release of the fourth book. The US edition of the fifth book was originally released with the legend "The fifth
+	book in the increasingly inaccurately named Hitchhiker&#39;s Trilogy" on the cover. Subsequent re-releases of the other novels bore the legend "The
+	[first, second, third, fourth] book in the increasingly inaccurately named Hitchhiker&#39;s Trilogy". In addition, the blurb on the fifth book
+	describes it as "the book that gives a whole new meaning to the word &#39;trilogy&#39;". The plots of the television and radio series are more or less the
 	same as that of the first two novels, though some of the events occur in a different order and many of the details are changed. Much of parts five
 	and six of the radio series were written by John Lloyd, but his material did not make it into the other versions of the story and is not included
 	here. Many consider the books&#39; version of events to be definitive because they are the most readily accessible and widely distributed version of
 	the story. However, they are not the final version that Adams produced. Before his death from a heart attack on 11 May 2001, Adams was considering
 	writing a sixth novel in the Hitchhiker&#39;s series. He was working on a third Dirk Gently novel, under the working title The Salmon of Doubt, but
 	felt that the book was not working and abandoned it. In an interview, he said some of the ideas in the book might fit better in the Hitchhiker&#39;s
-	series, and suggested he might rework those ideas into a sixth book in that series. He described Mostly Harmless as &quot;a very bleak book&quot; and said
-	he &quot;would love to finish Hitchhiker on a slightly more upbeat note&quot;. Adams also remarked that if he were to write a sixth instalment, he would at
+	series, and suggested he might rework those ideas into a sixth book in that series. He described Mostly Harmless as "a very bleak book" and said
+	he "would love to finish Hitchhiker on a slightly more upbeat note". Adams also remarked that if he were to write a sixth instalment, he would at
 	least start with all the characters in the same place. Eoin Colfer, who wrote the sixth book in the Hitchhiker&#39;s series in 2008–09, used this
 	latter concept but none of the plot ideas from The Salmon of Doubt.
 	
@@ -328,7 +328,7 @@ pragma solidity ^0.4.24;
 	pan-dimensional beings who commissioned the Earth in the first place disguise themselves as Trillian&#39;s mice, and want to dissect Arthur&#39;s brain to
 	help reconstruct the question, since he was part of the Earth&#39;s matrix moments before it was destroyed, and so he is likely to have part of the
 	question buried in his brain. Trillian is also human but had left Earth six months previously with Zaphod Beeblebrox, President of the Galaxy. The
-	protagonists escape, setting the course for &quot;The Restaurant at the End of the Universe&quot;. The mice, in Arthur&#39;s absence, create a phony question
+	protagonists escape, setting the course for "The Restaurant at the End of the Universe". The mice, in Arthur&#39;s absence, create a phony question
 	since it is too troublesome for them to wait 10 million years again just to cash in on a lucrative deal. The book was adapted from the first four
 	radio episodes. It was first published in 1979, initially in paperback, by Pan Books, after BBC Publishing had turned down the offer of publishing
 	a novelization, an action they would later regret. The book reached number one on the book charts in only its second week, and sold over 250,000
@@ -347,8 +347,8 @@ pragma solidity ^0.4.24;
 	spacecraft full of the outcasts of the Golgafrinchan civilization. The ship crashes on prehistoric Earth; Ford and Arthur are stranded, and it
 	becomes clear that the inept Golgafrinchans are the ancestors of modern humans, having displaced the Earth&#39;s indigenous hominids. This has
 	disrupted the Earth&#39;s programming so that when Ford and Arthur manage to extract the final readout from Arthur&#39;s subconscious mind by pulling
-	lettered tiles from a Scrabble set, it is &quot;What do you get if you multiply six by nine?&quot; Arthur then comments, &quot;I&#39;ve always said there was
-	something fundamentally wrong with the universe.&quot; The book was adapted from the remaining material in the radio series—covering from the fifth
+	lettered tiles from a Scrabble set, it is "What do you get if you multiply six by nine?" Arthur then comments, "I&#39;ve always said there was
+	something fundamentally wrong with the universe." The book was adapted from the remaining material in the radio series—covering from the fifth
 	episode to the twelfth episode, although the ordering was greatly changed (in particular, the events of Fit the Sixth, with Ford and Arthur being
 	stranded on pre-historic Earth, end the book, and their rescue in Fit the Seventh is deleted), and most of the Brontitall incident was omitted,
 	instead of the Haggunenon sequence, co-written by John Loyd, the Disaster Area stunt ship was substituted—this having first been introduced in the
@@ -375,8 +375,8 @@ pragma solidity ^0.4.24;
 	despondently, Arthur&#39;s spaceship crashes on the planet Lamuella, where he settles in happily as the official sandwich-maker for a small village of
 	simple, peaceful people. Meanwhile, Ford Prefect breaks into The Guide&#39;s offices, gets himself an infinite expense account from the computer
 	system, and then meets The Hitchhiker&#39;s Guide to the Galaxy, Mark II, an artificially intelligent, multi-dimensional guide with vast power and a
-	hidden purpose. After he declines this dangerously powerful machine&#39;s aid (which he receives anyway), he sends it to Arthur Dent for safety (&quot;Oh
-	yes, whose?&quot;—Arthur). Trillian uses DNA that Arthur donated for traveling money to have a daughter, and when she goes to cover a war, she leaves
+	hidden purpose. After he declines this dangerously powerful machine&#39;s aid (which he receives anyway), he sends it to Arthur Dent for safety ("Oh
+	yes, whose?"—Arthur). Trillian uses DNA that Arthur donated for traveling money to have a daughter, and when she goes to cover a war, she leaves
 	her daughter Random Frequent Flyer Dent with Arthur. Random, a more than typically troubled teenager, steals The Guide Mark II and uses it to get
 	to Earth. Arthur, Ford, Trillian, and Tricia McMillan (Trillian in this alternate universe) follow her to a crowded club, where an anguished
 	Random becomes startled by a noise and inadvertently fires her gun at Arthur. The shot misses Arthur and kills a man (the ever-unfortunate
@@ -399,18 +399,18 @@ pragma solidity ^0.4.24;
 	And then the Vogons turn up again. In 2017 it was adapted for radio as the Hexagonal Phase of the radio series, with its premiere episode first
 	transmitted on 8 March 2018, (exactly forty years, to the day, from the first episode of the first series, the Primary Phase).
 
-	Omnibus editions: Two omnibus editions were created by Douglas Adams to combine the Hitchhiker series novels and to &quot;set the record straight&quot;. The
+	Omnibus editions: Two omnibus editions were created by Douglas Adams to combine the Hitchhiker series novels and to "set the record straight". The
 	stories came in so many different formats that Adams stated that every time he told it he would contradict himself. Therefore, he stated in the
-	introduction of The More Than Complete Hitchhiker&#39;s Guide that &quot;anything I put down wrong here is, as far as I&#39;m concerned, wrong for good.&quot; The
+	introduction of The More Than Complete Hitchhiker&#39;s Guide that "anything I put down wrong here is, as far as I&#39;m concerned, wrong for good." The
 	two omnibus editions were The More Than Complete Hitchhiker&#39;s Guide, Complete and Unabridged (published in 1987) and The Ultimate Hitchhiker&#39;s
 	Guide, Complete and Unabridged (published in 1997).
-	The More Than Complete Hitchhiker&#39;s Guide: Published in 1987, this 624-page leatherbound omnibus edition contains &quot;wrong for good&quot; versions of the
+	The More Than Complete Hitchhiker&#39;s Guide: Published in 1987, this 624-page leatherbound omnibus edition contains "wrong for good" versions of the
 	four Hitchhiker series novels at the time, and also includes one short story:
 		The Hitchhiker&#39;s Guide to the Galaxy
 		The Restaurant at the End of the Universe
 		Life, the Universe and Everything
 		So Long, and Thanks for All the Fish
-		&quot;Young Zaphod Plays it Safe&quot;
+		"Young Zaphod Plays it Safe"
 	The Ultimate Hitchhiker&#39;s Guide: Published in 1997, this 832-page leatherbound final omnibus edition contains five Hitchhiker series novels and
 	one short story:
 		The Hitchhiker&#39;s Guide to the Galaxy
@@ -418,23 +418,23 @@ pragma solidity ^0.4.24;
 		Life, the Universe and Everything
 		So Long, and Thanks for All the Fish
 		Mostly Harmless
-		&quot;Young Zaphod Plays it Safe&quot;
-	Also appearing in The Ultimate Hitchhiker&#39;s Guide, at the end of Adams&#39;s introduction, is a list of instructions on &quot;How to Leave the Planet&quot;,
+		"Young Zaphod Plays it Safe"
+	Also appearing in The Ultimate Hitchhiker&#39;s Guide, at the end of Adams&#39;s introduction, is a list of instructions on "How to Leave the Planet",
 	providing a humorous explanation of how one might replicate Arthur and Ford&#39;s feat at the beginning of Hitchhiker&#39;s.
 
 	Other Hitchhiker&#39;s-related books and stories:
 		Related stories:
-			A short story by Adams, &quot;Young Zaphod Plays It Safe&quot;, first appeared in The Utterly Utterly Merry Comic Relief Christmas Book, a special
+			A short story by Adams, "Young Zaphod Plays It Safe", first appeared in The Utterly Utterly Merry Comic Relief Christmas Book, a special
 			large-print compilation of different stories and pictures that raised money for the then-new Comic Relief charity in the UK. The story
 			also appears in some of the omnibus editions of the trilogy, and in The Salmon of Doubt. There are two 	versions of this story, one of
 			which is slightly more explicit in its political commentary.
 
 			A novel, Douglas Adams&#39; Starship Titanic: A Novel, written by Terry Jones, is based on Adams&#39;s computer game of the same name, Douglas
 			Adams&#39;s Starship Titanic, which in turn is based on an idea from Life, the Universe and Everything. The idea concerns a luxury passenger
-			starship that suffers &quot;sudden and gratuitous total existence failure&quot; on its maiden voyage.
+			starship that suffers "sudden and gratuitous total existence failure" on its maiden voyage.
 			
-			Wowbagger the Infinitely Prolonged, a character from Life, the Universe and Everything, also appears in a short story by Adams titled &quot;The
-			Private Life of Genghis Khan&quot; which appears in some early editions of The Salmon of Doubt.
+			Wowbagger the Infinitely Prolonged, a character from Life, the Universe and Everything, also appears in a short story by Adams titled "The
+			Private Life of Genghis Khan" which appears in some early editions of The Salmon of Doubt.
 
 	Published radio scripts: Douglas Adams and Geoffrey Perkins collaborated on The Hitchhiker&#39;s Guide to the Galaxy: The Original Radio Scripts,
 	first published in the United Kingdom and United States in 1985. A tenth-anniversary (of the script book publication) edition was printed in 1995,
@@ -472,10 +472,10 @@ pragma solidity ^0.4.24;
 	originally contained a rather bleak ending, Dirk Maggs created a different ending for the transmitted radio version, ending it on a much more
 	upbeat note, reuniting the cast one last time. The core cast for the third to fifth radio series remained the same, except for the replacement of
 	Peter Jones by William Franklyn as the Book, and Richard Vernon by Richard Griffiths as Slartibartfast, since both had died. (Homage to Jones&#39;
-	iconic portrayal of the Book was paid twice: the gradual shift of voices to a &quot;new&quot; version in episode 13, launching the new productions, and a
+	iconic portrayal of the Book was paid twice: the gradual shift of voices to a "new" version in episode 13, launching the new productions, and a
 	blend of Jones and Franklyn&#39;s voices at the end of the final episode, the first part of Maggs&#39; alternative ending.) Sandra Dickinson, who played
 	Trillian in the TV series, here played Tricia McMillan, an English-born, American-accented alternate-universe version of Trillian, while David
-	Dixon, the television series&#39; Ford Prefect, made a cameo appearance as the &quot;Ecological Man&quot;. Jane Horrocks appeared in the new semi-regular role
+	Dixon, the television series&#39; Ford Prefect, made a cameo appearance as the "Ecological Man". Jane Horrocks appeared in the new semi-regular role
 	of Fenchurch, Arthur&#39;s girlfriend, and Samantha B&#233;art joined in the final series as Arthur and Trillian&#39;s daughter, Random Dent. Also reprising
 	their roles from the original radio series were Jonathan Pryce as Zarniwoop (here blended with a character from the final novel to become
 	Zarniwoop Vann Harl), Rula Lenska as Lintilla and her clones (and also as the Voice of the Bird), and Roy Hudd as Milliways compere Max
@@ -499,8 +499,8 @@ pragma solidity ^0.4.24;
 		William Franklyn as The Book
 	
 	Radio series six: The first of six episodes in a sixth series, the Hexagonal Phase, was broadcast on BBC Radio 4 on 8 March 2018 and featured
-	Professor Stephen Hawking introducing himself as the voice of The Hitchhiker’s Guide to the Galaxy Mk II by saying: &quot;I have been quite popular in
-	my time. Some even read my books.&quot;
+	Professor Stephen Hawking introducing himself as the voice of The Hitchhiker’s Guide to the Galaxy Mk II by saying: "I have been quite popular in
+	my time. Some even read my books."
 
 	Film: After several years of setbacks and renewed efforts to start production and a quarter of a century after the first book was published, the
 	big-screen adaptation of The Hitchhiker&#39;s Guide to the Galaxy was finally shot. Pre-production began in 2003, filming began on 19 April 2004 and
@@ -514,8 +514,8 @@ pragma solidity ^0.4.24;
 	with the characters en route to the Restaurant at the End of the Universe, leaving the opportunity for a sequel open. A unique appearance is made
 	by the Point-of-View Gun, a device specifically created by Adams himself for the movie. Commercially the film was a modest success, taking $21
 	million in its opening weekend in the United States, and nearly &#163;3.3 million in its opening weekend in the United Kingdom. The film was released
-	on DVD (Region 2, PAL) in the UK on 5 September 2005. Both a standard double-disc edition and a UK-exclusive numbered limited edition &quot;Giftpack&quot;
-	were released on this date. The &quot;Giftpack&quot; edition includes a copy of the novel with a &quot;movie tie-in&quot; cover, and collectible prints from the film,
+	on DVD (Region 2, PAL) in the UK on 5 September 2005. Both a standard double-disc edition and a UK-exclusive numbered limited edition "Giftpack"
+	were released on this date. The "Giftpack" edition includes a copy of the novel with a "movie tie-in" cover, and collectible prints from the film,
 	packaged in a replica of the film&#39;s version of the Hitchhiker&#39;s Guide prop. A single-disc widescreen or full-screen edition (Region 1, NTSC) were
 	made available in the United States and Canada on 13 September 2005. Single-disc releases in the Blu-ray format and UMD format for the PlayStation
 	Portable were also released on the respective dates in these three countries.
@@ -526,7 +526,7 @@ pragma solidity ^0.4.24;
 	Tertiary Phase) and Richard Hope as Ford Prefect. This show was adapted from the first series&#39; scripts and was directed by Ken Campbell, who went
 	on to perform a character in the final episode of the second radio series. The show ran 90 minutes, but had an audience limited to eighty people
 	per night. Actors performed on a variety of ledges and platforms, and the audience was pushed around in a hovercar, 1/2000th of an inch above the
-	floor. This was the first time that Zaphod was represented by having two actors in one large costume. The narration of &quot;The Book&quot; was split
+	floor. This was the first time that Zaphod was represented by having two actors in one large costume. The narration of "The Book" was split
 	between two usherettes, an adaptation that has appeared in no other version of H2G2. One of these usherettes, Cindy Oswin, went on to voice
 	Trillian for the LP adaptation. The second stage show was performed throughout Wales between 15 January and 23 February 1980. This was a
 	production of Clwyd Theatr Cymru, and was directed by Jonathan Petherbridge. The company performed adaptations of complete radio episodes, at
@@ -535,16 +535,16 @@ pragma solidity ^0.4.24;
 	Belgrade Theatre, Coventry, in July 1983. The third and least successful stage show was held at the Rainbow Theatre in London, in July 1980. This
 	was the second production directed by Ken Campbell. The Rainbow Theatre had been adapted for stagings of rock operas in the 1970s, and both
 	reference books mentioned in footnotes indicate that this, coupled with incidental music throughout the performance, caused some reviewers to
-	label it as a &quot;musical&quot;. This was the first adaptation for which Adams wrote the &quot;Dish of the Day&quot; sequence. The production ran for over three
+	label it as a "musical". This was the first adaptation for which Adams wrote the "Dish of the Day" sequence. The production ran for over three
 	hours, and was widely panned for this, as well as for the music, laser effects, and the acting. Despite attempts to shorten the script, and make
 	other changes, it closed three or four weeks early (accounts differ), and lost a lot of money. Despite the bad reviews, there were at least two
 	stand-out performances: Michael Cule and David Learner both went on from this production to appearances in the TV adaptation. In December 2011 a
 	new stage production was announced to begin touring in June 2012. This included members of the original radio and TV casts such as Simon Jones,
 	Geoff McGivern, Susan Sheridan, Mark Wing-Davey and Stephen Moore with VIP guests playing the role of the Book. It was produced in the form of a
 	radio show which could be downloaded when the tour was completed. This production was based on the first four Fits in the first act, with the
-	second act covering material from the rest of the series. The show also featured a band, who performed the songs &quot;Share and Enjoy&quot;, the Krikkit
-	song &quot;Under the Ink Black Sky&quot;, Marvin&#39;s song &quot;How I Hate The Night&quot;, and &quot;Marvin&quot;, which was a minor hit in 1981. The production featured a
-	series of &quot;VIP guests&quot; as the voice of The Book including Billy Boyd, Phill Jupitus, Rory McGrath, Roger McGough, Jon Culshaw, Christopher
+	second act covering material from the rest of the series. The show also featured a band, who performed the songs "Share and Enjoy", the Krikkit
+	song "Under the Ink Black Sky", Marvin&#39;s song "How I Hate The Night", and "Marvin", which was a minor hit in 1981. The production featured a
+	series of "VIP guests" as the voice of The Book including Billy Boyd, Phill Jupitus, Rory McGrath, Roger McGough, Jon Culshaw, Christopher
 	Timothy, Andrew Sachs, John Challis, Hugh Dennis, John Lloyd, Terry Jones and Neil Gaiman. The tour started on 8 June 2012 at the Theatre Royal,
 	Glasgow and continued through the summer until 21 July when the final performance was at Playhouse Theatre, Edinburgh. The production started
 	touring again in September 2013, but the remaining dates of the tour were cancelled due to poor ticket sales.
@@ -555,7 +555,7 @@ pragma solidity ^0.4.24;
 	jokes. It formed part of Radio 4&#39;s Character Invasion series. 
 	
 	LP album adaptations: The first four radio episodes were adapted for a new double LP, also entitled The Hitchhiker&#39;s Guide to the Galaxy (appended
-	with &quot;Part One&quot; for the subsequent Canadian release), first by mail-order only, and later into stores. The double LP and its sequel were
+	with "Part One" for the subsequent Canadian release), first by mail-order only, and later into stores. The double LP and its sequel were
 	originally released by Original Records in the United Kingdom in 1979 and 1980, with the catalogue numbers ORA042 and ORA054 respectively. They
 	were first released by Hannibal Records in 1982 (as HNBL 2301 and HNBL 1307, respectively) in the United States and Canada, and later re-released
 	in a slightly abridged edition by Simon & Schuster&#39;s Audioworks in the mid-1980s. Both were produced by Geoffrey Perkins and featured cover
@@ -571,15 +571,15 @@ pragma solidity ^0.4.24;
 	contributing music as well), and Souster&#39;s version of the theme was the version also used for the eventual television series. The sequel LP was
 	released, singly, as The Hitchhiker&#39;s Guide to the Galaxy Part Two: The Restaurant at the End of the Universe in the UK, and simply as The
 	Restaurant at the End of the Universe in the USA. The script here mostly follows Fit the Fifth and Fit the Sixth, but includes a song by the
-	backup band in the restaurant (&quot;Reg Nullify and his Cataclysmic Combo&quot;), and changes the Haggunenon sequence to &quot;Disaster Area&quot;. As the result of
+	backup band in the restaurant ("Reg Nullify and his Cataclysmic Combo"), and changes the Haggunenon sequence to "Disaster Area". As the result of
 	a misunderstanding, the second record was released before being cut down in a final edit that Douglas Adams and Geoffrey Perkins had both intended
-	to make. Perkins has said, &quot;[I]t is far too long on each side. It&#39;s just a rough cut. [...] I felt it was flabby, and I wanted to speed it up.&quot;
+	to make. Perkins has said, "[I]t is far too long on each side. It&#39;s just a rough cut. [...] I felt it was flabby, and I wanted to speed it up."
 	The Simon & Schuster Audioworks re-release of this LP was also abridged slightly from its original release. The scene with Ford Prefect and
 	Hotblack Desiato&#39;s bodyguard is omitted. Sales for the first double-LP release were primarily through mail order. Total sales reached over 60,000
 	units, with half of those being mail order, and the other half through retail outlets. This is in spite of the facts that Original Records&#39;
 	warehouse ordered and stocked more copies than they were actually selling for quite some time, and that Paul Neil Milne Johnstone complained about
-	his name and then-current address being included in the recording. This was corrected for a later pressing of the double-LP by &quot;cut[ting] up that
-	part of the master tape and reassembl[ing] it in the wrong order&quot;. The second LP release (&quot;Part Two&quot;) also only sold a total of 60,000 units in
+	his name and then-current address being included in the recording. This was corrected for a later pressing of the double-LP by "cut[ting] up that
+	part of the master tape and reassembl[ing] it in the wrong order". The second LP release ("Part Two") also only sold a total of 60,000 units in
 	the UK. The distribution deals for the United States and Canada with Hannibal Records and Simon and Schuster were later negotiated by Douglas
 	Adams and his agent, Ed Victor, after gaining full rights to the recordings from Original Records, which went bankrupt.
 
@@ -597,23 +597,23 @@ pragma solidity ^0.4.24;
 	adventure game based on the book, which was released in versions for the Commodore PET and Commodore 64. One account states that there was a
 	dispute as to whether valid permission for publication had been granted, and following legal action the game was withdrawn and all remaining
 	copies were destroyed. Another account states that the programmer, Bob Chappell, rewrote the game to remove all Hitchhiker&#39;s references, and
-	republished it as &quot;Cosmic Capers&quot;. Officially, the TV series was followed in 1984 by a best-selling &quot;interactive fiction&quot;, or text-based adventure
+	republished it as "Cosmic Capers". Officially, the TV series was followed in 1984 by a best-selling "interactive fiction", or text-based adventure
 	game, distributed by Infocom. It was designed by Adams and Infocom regular Steve Meretzky and was one of Infocom&#39;s most successful games. As with
-	many Infocom games, the box contained a number of &quot;feelies&quot; including a &quot;Don&#39;t panic&quot; badge, some &quot;pocket fluff&quot;, a pair of peril-sensitive
-	sunglasses (made of cardboard), an order for the destruction of the Earth, a small, clear plastic bag containing &quot;a microscopic battle fleet&quot; and
+	many Infocom games, the box contained a number of "feelies" including a "Don&#39;t panic" badge, some "pocket fluff", a pair of peril-sensitive
+	sunglasses (made of cardboard), an order for the destruction of the Earth, a small, clear plastic bag containing "a microscopic battle fleet" and
 	an order for the destruction of Arthur Dent&#39;s house (signed by Adams and Meretzky). In September 2004, it was revived by the BBC on the
 	Hitchhiker&#39;s section of the Radio 4 website for the initial broadcast of the Tertiary Phase, and is still available to play online. This new
 	version uses an original Infocom datafile with a custom-written interpreter, by Sean Soll&#233;, and Flash programming by Shimon Young, both of whom
 	used to work at The Digital Village (TDV). The new version includes illustrations by Rod Lord, who was head of Pearce Animation Studios in 1980,
-	which produced the guide graphics for the TV series. On 2 March 2005 it won the Interactive BAFTA in the &quot;best online entertainment&quot; category. A
+	which produced the guide graphics for the TV series. On 2 March 2005 it won the Interactive BAFTA in the "best online entertainment" category. A
 	sequel to the original Infocom game was never made. An all-new, fully graphical game was designed and developed by a joint venture between The
 	Digital Village and PAN Interactive (no connection to Pan Books / Pan Mcmillan). This new game was planned and developed between 1998 and 2002,
 	but like the sequel to the Infocom game, it also never materialised. In April 2005, Starwave Mobile released two mobile games to accompany the
-	release of the film adaptation. The first, developed by Atatio, was called &quot;The Hitchhiker&#39;s Guide to the Galaxy: Vogon Planet Destructor&quot;. It was
+	release of the film adaptation. The first, developed by Atatio, was called "The Hitchhiker&#39;s Guide to the Galaxy: Vogon Planet Destructor". It was
 	a typical top-down shooter and except for the title had little to do with the actual story. The second game, developed by TKO Software, was a
-	graphical adventure game named &quot;The Hitchhiker&#39;s Guide to the Galaxy: Adventure Game&quot;. Despite its name, the newly designed puzzles by TKO
+	graphical adventure game named "The Hitchhiker&#39;s Guide to the Galaxy: Adventure Game". Despite its name, the newly designed puzzles by TKO
 	Software&#39;s Ireland studio were different from the Infocom ones, and the game followed the movie&#39;s script closely and included the new characters
-	and places. The &quot;Adventure Game&quot; won the IGN&#39;s &quot;Editors&#39; Choice Award&quot; in May 2005. On 25 May 2011, Hothead Games announced they were working on a
+	and places. The "Adventure Game" won the IGN&#39;s "Editors&#39; Choice Award" in May 2005. On 25 May 2011, Hothead Games announced they were working on a
 	new edition of The Guide. Along with the announcement, Hothead Games launched a teaser web site made to look like an announcement from Megadodo
 	Publications that The Guide will soon be available on Earth. It has since been revealed that they are developing an iOS app in the style of the
 	fictional Guide.
@@ -621,35 +621,35 @@ pragma solidity ^0.4.24;
 	Comic books: In 1993, DC Comics, in conjunction with Byron Preiss Visual Publications, published a three-part comic book adaptation of the
 	novelisation of The Hitchhiker&#39;s Guide to the Galaxy. This was followed up with three-part adaptations of The Restaurant at the End of the
 	Universe in 1994, and Life, the Universe and Everything in 1996. There was also a series of collectors&#39; cards with art from and inspired by the
-	comic adaptations of the first book, and a graphic novelisation (or &quot;collected edition&quot;) combining the three individual comic books from 1993,
+	comic adaptations of the first book, and a graphic novelisation (or "collected edition") combining the three individual comic books from 1993,
 	itself released in May 1997. Douglas Adams was deeply opposed to the use of American English spellings and idioms in what he felt was a very
 	British story, and had to be talked into it by the American publishers, although he remained very unhappy with the compromise. The adaptations
 	were scripted by John Carnell. Steve Leialoha provided the art for Hitchhiker&#39;s and the layouts for Restaurant. Shepherd Hendrix did the finished
 	art for Restaurant. Neil Vokes and John Nyberg did the finished artwork for Life, based on breakdowns by Paris Cullins (Book 1) and Christopher
 	Schenck (Books 2–3). The miniseries were edited by Howard Zimmerman and Ken Grobe.
 	
-	&quot;Hitch-Hikeriana&quot;: Many merchandising and spin-off items (or &quot;Hitch-Hikeriana&quot;) were produced in the early 1980s, including towels in different
+	"Hitch-Hikeriana": Many merchandising and spin-off items (or "Hitch-Hikeriana") were produced in the early 1980s, including towels in different
 	colours, all bearing the Guide entry for towels. Later runs of towels include those made for promotions by Pan Books, Touchstone Pictures / Disney
 	for the 2005 movie, and different towels made for ZZ9 Plural Z Alpha, the official Hitchhiker&#39;s Appreciation society. Other items that first
-	appeared in the mid-1980s were T-shirts, including those made for Infocom (such as one bearing the legend &quot;I got the Babel Fish&quot; for successfully
-	completing one of that game&#39;s most difficult puzzles), and a Disaster Area tour T-shirt. Other official items have included &quot;Beeblebears&quot; (teddy
+	appeared in the mid-1980s were T-shirts, including those made for Infocom (such as one bearing the legend "I got the Babel Fish" for successfully
+	completing one of that game&#39;s most difficult puzzles), and a Disaster Area tour T-shirt. Other official items have included "Beeblebears" (teddy
 	bears with an extra head and arm, named after Hitchhiker&#39;s character Zaphod Beeblebrox, sold by the official Appreciation Society), an assortment
-	of pin-on buttons and a number of novelty singles. Many of the above items are displayed throughout the 2004 &quot;25th Anniversary Illustrated
-	Edition&quot; of the novel, which used items from the personal collections of fans of the series. Stephen Moore recorded two novelty singles in
-	character as Marvin, the Paranoid Android: &quot;Marvin&quot;/&quot;Metal Man&quot; and &quot;Reasons To Be Miserable&quot;/&quot;Marvin I Love You&quot;. The last song has appeared on a
-	Dr. Demento compilation. Another single featured the re-recorded &quot;Journey of the Sorcerer&quot; (arranged by Tim Souster) backed with &quot;Reg Nullify In
-	Concert&quot; by Reg Nullify, and &quot;Only the End of the World Again&quot; by Disaster Area (including Douglas Adams on bass guitar). These discs have since
+	of pin-on buttons and a number of novelty singles. Many of the above items are displayed throughout the 2004 "25th Anniversary Illustrated
+	Edition" of the novel, which used items from the personal collections of fans of the series. Stephen Moore recorded two novelty singles in
+	character as Marvin, the Paranoid Android: "Marvin"/"Metal Man" and "Reasons To Be Miserable"/"Marvin I Love You". The last song has appeared on a
+	Dr. Demento compilation. Another single featured the re-recorded "Journey of the Sorcerer" (arranged by Tim Souster) backed with "Reg Nullify In
+	Concert" by Reg Nullify, and "Only the End of the World Again" by Disaster Area (including Douglas Adams on bass guitar). These discs have since
 	become collector&#39;s items. The 2005 movie also added quite a few collectibles, mostly through the National Entertainment Collectibles Association.
-	These included three prop replicas of objects seen on the Vogon ship and homeworld (a mug, a pen and a stapler), sets of &quot;action figures&quot; with a
+	These included three prop replicas of objects seen on the Vogon ship and homeworld (a mug, a pen and a stapler), sets of "action figures" with a
 	height of either 3 or 6 inches (76 or 150 mm), a gun—based on a prop used by Marvin, the Paranoid Android, that shoots foam darts, a crystal cube,
-	shot glasses, a ten-inch (254 mm) high version of Marvin with eyes that light up green, and &quot;yarn doll&quot; versions of Arthur Dent, Ford Prefect,
-	Trillian, Marvin and Zaphod Beeblebrox. Also, various audio tracks were released to coincide with the movie, notably re-recordings of &quot;Marvin&quot; and
-	&quot;Reasons To Be Miserable&quot;, sung by Stephen Fry, along with some of the &quot;Guide Entries&quot;, newly written material read in-character by Fry. SpaceX
+	shot glasses, a ten-inch (254 mm) high version of Marvin with eyes that light up green, and "yarn doll" versions of Arthur Dent, Ford Prefect,
+	Trillian, Marvin and Zaphod Beeblebrox. Also, various audio tracks were released to coincide with the movie, notably re-recordings of "Marvin" and
+	"Reasons To Be Miserable", sung by Stephen Fry, along with some of the "Guide Entries", newly written material read in-character by Fry. SpaceX
 	CEO Elon Musk launched his Tesla Roadster into an elliptical heliocentric orbit as part of the initial test launch of the Falcon Heavy. On the
-	car&#39;s dashboard, the phrase &quot;Don&#39;t Panic!&quot; appears, as a nod to the Hitchhiker&#39;s Guide.
+	car&#39;s dashboard, the phrase "Don&#39;t Panic!" appears, as a nod to the Hitchhiker&#39;s Guide.
 	
 	International phenomenon: Many science fiction fans and radio listeners outside the United Kingdom were first exposed to The Hitchhiker&#39;s Guide to
-	the Galaxy in one of two ways: shortwave radio broadcasts of the original radio series, or by Douglas Adams being &quot;Guest of Honour&quot; at the 1979
+	the Galaxy in one of two ways: shortwave radio broadcasts of the original radio series, or by Douglas Adams being "Guest of Honour" at the 1979
 	World Science Fiction Convention, Seacon, held in Brighton, England. It was there that the radio series was nominated for a Hugo Award (the first
 	radio series to receive a nomination) but lost to Superman. A convention exclusively for H2G2, Hitchercon I, was held in Glasgow, Scotland, in
 	September 1980, the year that the official fan club, ZZ9 Plural Z Alpha, was organised. In the early 1980s, versions of H2G2 became available in
@@ -668,14 +668,14 @@ pragma solidity ^0.4.24;
 	are used in different editions (US or UK), formats (audio or print) and compilations of the book, with some omitting the apostrophe. Some editions
 	used different spellings on the spine and title page. The h2g2&#39;s English Usage in Approved Entries claims that Hitchhiker&#39;s Guide is the spelling
 	Adams preferred. At least two reference works make note of the inconsistency in the titles. Both, however, repeat the statement that Adams decided
-	in 2000 that &quot;everyone should spell it the same way [one word, no hyphen] from then on.&quot;
+	in 2000 that "everyone should spell it the same way [one word, no hyphen] from then on."
 	
 	Bibliography:
 		Adams, Douglas (2002).
 		Guzzardi, Peter, ed. The Salmon of Doubt: Hitchhiking the Galaxy One Last Time (first UK ed.). Macmillan. ISBN 0-333-76657-1 (2003).
 		Perkins, Geoffrey, ed. The Hitchhiker&#39;s Guide to the Galaxy: The Original Radio Scripts. MJ Simpson, add. mater (25th Anniversary ed.).
 			Pan Books. ISBN 0-330-41957-9.
-		Gaiman, Neil (2003). Don&#39;t Panic: Douglas Adams and the &quot;Hitchhiker&#39;s Guide to the Galaxy&quot;. Titan Books. ISBN 1-84023-742-2.
+		Gaiman, Neil (2003). Don&#39;t Panic: Douglas Adams and the "Hitchhiker&#39;s Guide to the Galaxy". Titan Books. ISBN 1-84023-742-2.
 		Simpson, M. J. (2003). Hitchhiker: A Biography of Douglas Adams (first US ed.). Justin Charles & Co. ISBN 1-932112-17-0.
 		The Pocket Essential Hitchhiker&#39;s Guide (second ed.) (2005). Pocket Essentials. ISBN 1-904048-46-3.
 		Stamp, Robbie, editor (2005). The Making of The Hitchhiker&#39;s Guide to the Galaxy: The Filming of the Douglas Adams Classic. Boxtree.
@@ -684,7 +684,7 @@ pragma solidity ^0.4.24;
 
 	The following text has been lifted from WikiPedia on 19 June 2018. To see the most recent version of this text, visit:
 	https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy_(novel)
-	The Hitchhiker&#39;s Guide to the Galaxy is the first of five books in the Hitchhiker&#39;s Guide to the Galaxy comedy science fiction &quot;trilogy&quot; by
+	The Hitchhiker&#39;s Guide to the Galaxy is the first of five books in the Hitchhiker&#39;s Guide to the Galaxy comedy science fiction "trilogy" by
 	Douglas Adams. The novel is an adaptation of the first four parts of Adams&#39; radio series of the same name. The novel was first published in
 	London on 12 October 1979. It sold 250,000 copies in the first three months. The namesake of the novel is The Hitchhiker&#39;s Guide to the
 	Galaxy, a fictional guide book for hitchhikers (inspired by the Hitch-hiker&#39;s Guide to Europe) written in the form of an encyclopedia.
@@ -708,7 +708,7 @@ pragma solidity ^0.4.24;
 		
 	Illustrated edition: The Illustrated Hitchhiker&#39;s Guide to the Galaxy is a specially designed book made in 1994. It was first printed in the
 	United Kingdom by Weidenfeld & Nicolson and in the United States by Harmony Books (who sold it for $42.00). It is an oversized book, and came
-	in silver-foil &quot;holographic&quot; covers in both the UK and US markets. It features the first appearance of the 42 Puzzle, designed by Adams
+	in silver-foil "holographic" covers in both the UK and US markets. It features the first appearance of the 42 Puzzle, designed by Adams
 	himself, a photograph of Adams and his literary agent Ed Victor as the two space cops, and many other designs by Kevin Davies, who has
 	participated in many Hitchhiker&#39;s related projects since the stage productions in the late 1970s. Davies himself appears as Prosser. This
 	edition is out of print – Adams bought up many remainder copies and sold them, autographed, on his website.
@@ -733,7 +733,7 @@ pragma solidity ^0.4.24;
 	28 April 2005 in the UK, Australia and New Zealand, and on the following day in the United States and Canada. It was rolled out to cinemas
 	worldwide during May, June, July, August and September.
 	
-	Series: The deliberately misnamed Hitchhiker&#39;s Guide to the Galaxy &quot;Trilogy&quot; consists of six books, five written by Adams: The Hitchhiker&#39;s Guide
+	Series: The deliberately misnamed Hitchhiker&#39;s Guide to the Galaxy "Trilogy" consists of six books, five written by Adams: The Hitchhiker&#39;s Guide
 	to the Galaxy (1979), The Restaurant at the End of the Universe (1980), Life, the Universe and Everything (1982), So Long, and Thanks for All the
 	Fish (1984) and Mostly Harmless (1992). On 16 September 2008 it was announced that Irish author Eoin Colfer was to pen a sixth book. The book,
 	entitled And Another Thing..., was published in October 2009, on the 30th anniversary of the publication of the original novel.
@@ -743,9 +743,9 @@ pragma solidity ^0.4.24;
 	
 	Awards:
 		Number one on the Sunday Times best seller list (1979)
-		Author received the &quot;Golden Pan&quot; (From his publishers for reaching the 1,000,000th book sold) (1984)
+		Author received the "Golden Pan" (From his publishers for reaching the 1,000,000th book sold) (1984)
 		Waterstone&#39;s Books/Channel Four&#39;s list of the &#39;One Hundred Greatest Books of the Century&#39;, at number 24. (1996)
-		BBC&#39;s &quot;Big Read&quot;, an attempt to find the &quot;Nation&#39;s Best-loved book&quot;, ranked it number four. (2003)
+		BBC&#39;s "Big Read", an attempt to find the "Nation&#39;s Best-loved book", ranked it number four. (2003)
 		
 */
 
@@ -884,7 +884,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -917,8 +917,8 @@ contract Ownable {
 
     
 contract H2G2 is StandardToken, Ownable {
-  string public constant name = &quot;Hitchhiker&#39;s Guide to the Galaxy&quot;;
-  string public constant symbol = &quot;H2G2&quot;;
+  string public constant name = "Hitchhiker&#39;s Guide to the Galaxy";
+  string public constant symbol = "H2G2";
   uint public constant decimals = 18;
   uint256 public initialSupply;
     

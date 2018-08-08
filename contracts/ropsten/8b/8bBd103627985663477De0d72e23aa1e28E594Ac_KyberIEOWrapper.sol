@@ -312,7 +312,7 @@ contract KyberIEOWrapper is Withdrawable {
 
         require(amountWei == weiAfter.sub(weiBefore));
 
-        //emit event here where we still have valid &quot;change&quot; value
+        //emit event here where we still have valid "change" value
         emit ContributionByToken(
             msg.sender,
             data.userId,

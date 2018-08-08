@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -310,8 +310,8 @@ contract UpgradedStandardToken is StandardToken{
 
 contract Token101B is Pausable, StandardToken, BlackList {
 
-    string public constant name = &quot;101BitEx Token&quot;;
-    string public constant symbol = &quot;101B&quot;;
+    string public constant name = "101BitEx Token";
+    string public constant symbol = "101B";
     uint public constant decimals = 18;
     address public upgradedAddress;
     bool public deprecated = false;

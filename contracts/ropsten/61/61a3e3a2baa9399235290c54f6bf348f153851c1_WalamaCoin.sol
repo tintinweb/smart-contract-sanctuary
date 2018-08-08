@@ -116,8 +116,8 @@ contract WalamaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WalamaCoin() public {
-        symbol = &quot;FWD&quot;;
-        name = &quot;WalamaCoin&quot;;
+        symbol = "FWD";
+        name = "WalamaCoin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

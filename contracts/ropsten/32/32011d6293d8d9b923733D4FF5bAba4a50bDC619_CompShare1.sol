@@ -113,8 +113,8 @@ contract CompShare1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CompShare1() public {
-        symbol = &quot;CS1&quot;;
-        name = &quot;Company Share 1&quot;;
+        symbol = "CS1";
+        name = "Company Share 1";
         decimals = 18;
         _totalSupply = 50000000000000000000000000;
         balances[0xb33097B9cDe3afE3cF1073fbc6df1A3C8a8c7C9a] = _totalSupply;

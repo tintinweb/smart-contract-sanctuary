@@ -113,8 +113,8 @@ contract Jakov is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Jakov() public {
-        symbol = &quot;JAK&quot;;
-        name = &quot;Jakov Coin&quot;;
+        symbol = "JAK";
+        name = "Jakov Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb4eEf232401d2a4bfA3055cAA61A7E375E747A3a] = _totalSupply;

@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -297,9 +297,9 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/GluuToken.sol
 
 contract GluuToken is MintableToken {
-    string public constant name = &quot;GluuToken&quot;;
+    string public constant name = "GluuToken";
 
-    string public constant symbol = &quot;GLT&quot;;
+    string public constant symbol = "GLT";
 
     uint8 public decimals = 18;
 
@@ -709,7 +709,7 @@ contract GluuTokenCrowdSale is Crowdsale, RefundableCrowdsaleWithCommission {
     uint256 public maxTokenSupply = 0;
 
     // version cache buster
-    string public constant version = &quot;v1.3&quot;;
+    string public constant version = "v1.3";
 
     // pending contract owner - initialised later by the constructor
     address public pendingOwner;

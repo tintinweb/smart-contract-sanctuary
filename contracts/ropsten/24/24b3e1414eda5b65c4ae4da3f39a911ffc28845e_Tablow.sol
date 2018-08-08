@@ -229,8 +229,8 @@ contract ERC223Token is ERC223, SafeMath, Haltable {
 
  
 contract Tablow is ERC223Token {
-    string public symbol = &quot;TC&quot;;
-    string public name = &quot;Tablow Club&quot;;
+    string public symbol = "TC";
+    string public name = "Tablow Club";
     uint8 public   decimals = 18;
     uint256 _totalSupply = 0;
     uint256 _MaxDistribPublicSupply = 0;

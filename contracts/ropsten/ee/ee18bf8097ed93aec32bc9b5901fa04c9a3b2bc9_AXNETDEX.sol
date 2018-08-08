@@ -130,7 +130,7 @@ contract AXNETDEX is SafeMath, Owned {
     require(!withdrawn[hash]);
     withdrawn[hash] = true;
     
-    require(ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == user);
+    require(ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash), v, r, s) == user);
     
     if (feeWithdrawal > 50 finney) feeWithdrawal = 50 finney;
 
@@ -162,9 +162,9 @@ contract AXNETDEX is SafeMath, Owned {
      */
   function trade(uint[8] tradeValues, address[4] tradeAddresses, uint8[2] v, bytes32[4] rs) public onlyAdmin {
     bytes32 orderHash = sha256(this, tradeAddresses[0], tradeValues[0], tradeAddresses[1], tradeValues[1], tradeValues[2], tradeValues[3], tradeAddresses[2]);
-    require(ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, orderHash), v[0], rs[0], rs[1]) == tradeAddresses[2]);
+    require(ecrecover(keccak256("\x19Ethereum Signed Message:\n32", orderHash), v[0], rs[0], rs[1]) == tradeAddresses[2]);
     bytes32 tradeHash = sha256(orderHash, tradeValues[4], tradeAddresses[3], tradeValues[5]);
-    require(ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, tradeHash), v[1], rs[2], rs[3]) == tradeAddresses[3]);
+    require(ecrecover(keccak256("\x19Ethereum Signed Message:\n32", tradeHash), v[1], rs[2], rs[3]) == tradeAddresses[3]);
     
     require(!traded[tradeHash]);
     traded[tradeHash] = true;
@@ -185,7 +185,7 @@ contract AXNETDEX is SafeMath, Owned {
 
   function cancelOrder(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, uint8 v, bytes32 r, bytes32 s, address user) public onlyAdmin {
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce, msg.sender, user);
-    assert(ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user);
+    assert(ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash),v,r,s) == user);
     orderFills[hash] = amountGet;
     emit Cancel(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, user, v, r, s);
   }

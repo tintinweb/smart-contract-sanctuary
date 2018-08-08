@@ -113,8 +113,8 @@ contract medicaxess is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function medicaxess () public {
-        symbol = &quot;medicaxess&quot;;
-        name = &quot;medicaxess&quot;;
+        symbol = "medicaxess";
+        name = "medicaxess";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xD6d2beA0dcF8b64ddE3AD5170D4141be2E8ea821] = _totalSupply;

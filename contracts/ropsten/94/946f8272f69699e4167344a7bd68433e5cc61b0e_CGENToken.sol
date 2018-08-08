@@ -35,8 +35,8 @@ contract CGENToken is ERC223 {
 
 	// standard token metadata
 	// implements ERC20/ERC223 interface
-	string public constant name = &quot;Cryptanogen&quot;; 
-	string public constant symbol = &quot;CGN&quot; ;
+	string public constant name = "Cryptanogen"; 
+	string public constant symbol = "CGN" ;
 	uint8 public constant decimals = 18;
 
 	// amount of tokens vested
@@ -237,13 +237,13 @@ contract CGENToken is ERC223 {
 
 	// implements ERC20/ERC223 interface
 	function transfer(address _to, uint256 _value, bytes _data) public returns (bool) {
-		return transfer(_to, _value, _data, &quot;&quot;);
+		return transfer(_to, _value, _data, "");
 	}
 
 	// implements ERC20/ERC223 interface
 	function transfer(address _to, uint256 _value) public returns (bool) {
 		bytes memory empty;
-		return transfer(_to, _value, empty, &quot;&quot;);
+		return transfer(_to, _value, empty, "");
 	}
 
 	// not used for this token

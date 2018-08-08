@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -230,10 +230,10 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * This simplifies the implementation of &quot;user permissions&quot;.
+ * This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if operator is not whitelisted.
@@ -651,11 +651,11 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
  */
 contract INXToken is WhitelistedMintableToken, StandardBurnableToken {
 
-  string public constant name = &quot;INX Token&quot;;
-  string public constant symbol = &quot;INX&quot;;
+  string public constant name = "INX Token";
+  string public constant symbol = "INX";
   uint8 public constant decimals = 18;
 
-  // flag to control &quot;general&quot; transfers (outside of whitelisted and founders)
+  // flag to control "general" transfers (outside of whitelisted and founders)
   bool public transfersEnabled = false;
 
   // all the founders must be added to this mapping (with a true flag)
@@ -674,10 +674,10 @@ contract INXToken is WhitelistedMintableToken, StandardBurnableToken {
   }
 
   /**
-   * @dev Owner turn on &quot;general&quot; account-to-account transfers (once and only once)
+   * @dev Owner turn on "general" account-to-account transfers (once and only once)
    */
   function enableTransfers() onlyOwner public {
-    require(!transfersEnabled, &quot;Transfers already enabled&quot;);
+    require(!transfersEnabled, "Transfers already enabled");
 
     transfersEnabled = true;
   }
@@ -709,9 +709,9 @@ contract INXToken is WhitelistedMintableToken, StandardBurnableToken {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     // transfers will be disabled during the crowdfunding phase - unless on the whitelist
-    require(transfersEnabled || whitelist(msg.sender), &quot;INXToken transfers disabled&quot;);
+    require(transfersEnabled || whitelist(msg.sender), "INXToken transfers disabled");
 
-    require(!founders[msg.sender] || founderTokensLockedUntil < now || _to == investxPlatform, &quot;INXToken locked for founders for arbitrary time unless sending to investx platform&quot;);
+    require(!founders[msg.sender] || founderTokensLockedUntil < now || _to == investxPlatform, "INXToken locked for founders for arbitrary time unless sending to investx platform");
 
     return super.transfer(_to, _value);
   }
@@ -724,9 +724,9 @@ contract INXToken is WhitelistedMintableToken, StandardBurnableToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     // transfers will be disabled during the crowdfunding phase - unless on the whitelist
-    require(transfersEnabled || whitelist(msg.sender), &quot;INXToken transfers disabled&quot;);
+    require(transfersEnabled || whitelist(msg.sender), "INXToken transfers disabled");
 
-    require(!founders[msg.sender] || founderTokensLockedUntil < now || _to == investxPlatform, &quot;INXToken locked for founders for arbitrary time unless sending to investx platform&quot;);
+    require(!founders[msg.sender] || founderTokensLockedUntil < now || _to == investxPlatform, "INXToken locked for founders for arbitrary time unless sending to investx platform");
 
     return super.transferFrom(_from, _to, _value);
   }
@@ -1021,7 +1021,7 @@ contract MintedKYCCrowdsale is Crowdsale, Pausable {
    * @dev Throws if called by any account other than the owner or the someone in the management list.
    */
   modifier onlyInx() {
-    require(msg.sender == owner || inxWhitelist[msg.sender], &quot;Must be owner or in INX whitelist&quot;);
+    require(msg.sender == owner || inxWhitelist[msg.sender], "Must be owner or in INX whitelist");
     _;
   }
 
@@ -1212,10 +1212,10 @@ contract INXCrowdsale is MintedKYCCrowdsale {
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
     super._preValidatePurchase(_beneficiary, _weiAmount);
 
-    require(isCrowdsaleOpen(), &quot;INXCrowdsale not Open&quot;);
+    require(isCrowdsaleOpen(), "INXCrowdsale not Open");
 
-    require(_weiAmount >= minContribution, &quot;INXCrowdsale contribution below minimum&quot;);
+    require(_weiAmount >= minContribution, "INXCrowdsale contribution below minimum");
 
-    require(!paused, &quot;INXCrowdsale is paused&quot;);
+    require(!paused, "INXCrowdsale is paused");
   }
 }

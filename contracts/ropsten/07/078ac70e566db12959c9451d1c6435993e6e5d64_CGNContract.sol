@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
 	* @title Ownable
 	* @dev The Ownable contract has an owner address, and provides basic authorization control
-	* functions, this simplifies the implementation of &quot;user permissions&quot;.
+	* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
 	address public owner;
@@ -369,10 +369,10 @@ contract PhaseBonus is Ownable {
 contract CGNToken is ERC20BasicToken {
 	using SafeMath for uint256;
 	
-	string public constant name      = &quot;CGN&quot;; //tokens name
-	string public constant symbol    = &quot;CGN&quot;; //token symbol
+	string public constant name      = "CGN"; //tokens name
+	string public constant symbol    = "CGN"; //token symbol
 	uint256 public constant decimals = 18;    //token decimal
-	string public constant version   = &quot;1.0&quot;; //tokens version
+	string public constant version   = "1.0"; //tokens version
 	
 	address public icoContract;
 	

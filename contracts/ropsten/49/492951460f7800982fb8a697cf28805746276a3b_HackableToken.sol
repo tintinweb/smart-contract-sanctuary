@@ -5,8 +5,8 @@
 pragma solidity^0.4.0;
 
 contract HackableToken {
-    string constant name = &quot;HackableToken&quot;;
-    string constant symbol = &quot;HKT&quot;;
+    string constant name = "HackableToken";
+    string constant symbol = "HKT";
     uint8 constant decimals = 18;
     uint total;
 

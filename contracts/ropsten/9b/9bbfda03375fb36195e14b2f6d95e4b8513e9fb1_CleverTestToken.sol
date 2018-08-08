@@ -248,6 +248,6 @@ contract CleverTestToken is owned, TokenERC20 {
     uint256 public sellPrice = 0.0002 ether;
     uint256 public buyPrice = 0.0002 ether;
     uint256 initialSupply = 100000000;
-    string tokenName = &quot;Clever&quot;;
-    string tokenSymbol = &quot;CLVR&quot;;
+    string tokenName = "Clever";
+    string tokenSymbol = "CLVR";
 }

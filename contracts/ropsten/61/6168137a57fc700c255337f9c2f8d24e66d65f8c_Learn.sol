@@ -112,8 +112,8 @@ contract Learn is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Learn() public {
-        symbol = &quot;LEARN&quot;;
-        name = &quot;Learning Smart Contrats&quot;;
+        symbol = "LEARN";
+        name = "Learning Smart Contrats";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x3BfC5aaEF825bf4f308e9F9bF5b12B6b81f287BF] = _totalSupply;

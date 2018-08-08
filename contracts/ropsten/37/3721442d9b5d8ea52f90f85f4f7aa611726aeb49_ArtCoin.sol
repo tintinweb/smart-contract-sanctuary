@@ -336,8 +336,8 @@ interface ArtCollectableCaller {
 
 contract ArtCoin is MintableToken {
     // 仮
-    string public name = &quot;Artcoin&quot;;
-    string public symbol = &quot;ATC&quot;;
+    string public name = "Artcoin";
+    string public symbol = "ATC";
     uint8 public decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 0;
     uint256 public constant EXPECTED_SUPPLY = 10000000;

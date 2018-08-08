@@ -80,7 +80,7 @@ throw;
 string public name; 
 uint8 public decimals; 
 string public symbol; 
-string public version = &quot;H1.0&quot;; 
+string public version = "H1.0"; 
 uint256 public unitsOneEthCanBuy;     // How many units of your coin can be bought by 1 ETH?
     uint256 public totalEthInWei;         // WEI is the smallest unit of ETH (the equivalent of cent in USD or satoshi in BTC). We&#39;ll store the total ETH raised via our ICO here.
     address public fundsWallet; 
@@ -92,9 +92,9 @@ function ERC20Token(
 ) {
 balances[msg.sender] = 8000000000000000; 
 totalSupply = 8000000000000000; 
-name = &quot;Neo Cash&quot;; 
+name = "Neo Cash"; 
 decimals = 8; 
-symbol = &quot;NEOC&quot;; 
+symbol = "NEOC"; 
 unitsOneEthCanBuy = 444444444;                                      // Set the price of your token for the ICO (CHANGE THIS)
         fundsWallet = msg.sender;
 }
@@ -104,7 +104,7 @@ allowed[msg.sender][_spender] = _value;
 Approval(msg.sender, _spender, _value);
 
 
-if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
 return true;
 }
 }

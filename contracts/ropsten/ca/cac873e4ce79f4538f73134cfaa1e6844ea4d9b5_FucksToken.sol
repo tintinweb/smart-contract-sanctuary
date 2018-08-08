@@ -113,8 +113,8 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;9FUCKS&quot;;
-        name = &quot;9 Fucks Token&quot;;
+        symbol = "9FUCKS";
+        name = "9 Fucks Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[msg.sender] = _totalSupply;

@@ -113,8 +113,8 @@ contract BitMantas is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitMantas() public {
-        symbol = &quot;BTM&quot;;
-        name = &quot;BitMantas&quot;;
+        symbol = "BTM";
+        name = "BitMantas";
         decimals = 2;
         _totalSupply = 1000;
         balances[0x6Bdf1AAAD7a2fC64292a4c637252b2208A1fED77] = _totalSupply;

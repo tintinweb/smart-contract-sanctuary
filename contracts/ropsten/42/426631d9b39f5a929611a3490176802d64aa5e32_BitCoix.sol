@@ -113,8 +113,8 @@ contract BitCoix is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitCoix() public {
-        symbol = &quot;BTX&quot;;
-        name = &quot;BitCoix&quot;;
+        symbol = "BTX";
+        name = "BitCoix";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x738f42Cdaa582c643a623cb9a80e2149672A3A95] = _totalSupply;

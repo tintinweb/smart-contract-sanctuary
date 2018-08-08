@@ -116,8 +116,8 @@ contract shiggidyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function shiggidyToken() public {
-        symbol = &quot;FWD&quot;;
-        name = &quot;shiggidy&quot;;
+        symbol = "FWD";
+        name = "shiggidy";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

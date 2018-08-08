@@ -27,9 +27,9 @@ contract HasOwners {
         owners = _owners;
     }
 
-    modifier onlyOwner {require(isOwner[msg.sender], &quot;sender must be owner&quot;);
+    modifier onlyOwner {require(isOwner[msg.sender], "sender must be owner");
         _;}
-    modifier validAddress(address value) {require(value != address(0x0), &quot;invalid address&quot;);
+    modifier validAddress(address value) {require(value != address(0x0), "invalid address");
         _;}
 
     function getOwners() public view returns (address[]) {return owners;}
@@ -48,7 +48,7 @@ contract HasOwners {
 
     function removeOwner(address owner) external onlyOwner {
         if (isOwner[owner]) {
-            require(owners.length > 1, &quot;removing the last owner is not allowed&quot;);
+            require(owners.length > 1, "removing the last owner is not allowed");
             isOwner[owner] = false;
             for (uint i = 0; i < owners.length - 1; i++) {
                 if (owners[i] == owner) {

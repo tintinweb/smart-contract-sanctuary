@@ -113,8 +113,8 @@ contract ChrizzxToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ChrizzxToken() public {
-        symbol = &quot;CHZ&quot;;
-        name = &quot;Chrizzx Token&quot;;
+        symbol = "CHZ";
+        name = "Chrizzx Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb5659b50ab401092ad55B2A0Fa827B95BB290DE3] = _totalSupply;

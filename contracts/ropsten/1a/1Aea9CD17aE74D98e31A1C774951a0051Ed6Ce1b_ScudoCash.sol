@@ -50,8 +50,8 @@ contract ScudoCash is IERC20{
 
 	bool public purchasingAllowed = true;
 
-	string public constant symbol = &quot;SCH&quot;;
-	string public constant name = &quot;ScudoCash&quot;;
+	string public constant symbol = "SCH";
+	string public constant name = "ScudoCash";
 	uint256 public constant decimals = 18;
 
 	uint256 private CREATOR_TOKEN = 3100000000 * 10**decimals;

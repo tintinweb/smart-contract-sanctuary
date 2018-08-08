@@ -113,8 +113,8 @@ contract SupermarketKontrak is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SupermarketKontrak() public {
-        symbol = &quot;VDiskon&quot;;
-        name = &quot;Voucher Discount Supermarket&quot;;
+        symbol = "VDiskon";
+        name = "Voucher Discount Supermarket";
         decimals = 0;
         _totalSupply = 10000000;
         balances[0x342E3BdE726fc7Bf1E73724514b883A30932ffcd] = _totalSupply; //MEW address here

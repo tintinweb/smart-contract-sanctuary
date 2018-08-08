@@ -297,9 +297,9 @@ contract _0xLitecoinToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xLTC&quot;;
+        symbol = "0xLTC";
 
-        name = &quot;0xLitecoin Token&quot;;
+        name = "0xLitecoin Token";
 
         decimals = 8;
 
@@ -385,14 +385,14 @@ contract _0xLitecoinToken is ERC20Interface, Owned {
 
 
 
-            // hard code a reference to the &quot;Parent&quot; ERC918 Contract ( in this case 0xBitcoin)
+            // hard code a reference to the "Parent" ERC918 Contract ( in this case 0xBitcoin)
             // Verify that the Parent contract was minted in this block, by the same person calling this contract
             // then followthrough with the resulting mint logic
             // don&#39;t call revert, but return true or false based on success
-            // this method shouldn&#39;t revert because it will be calleed in the same transaction as a &quot;Parent&quot; mint attempt
+            // this method shouldn&#39;t revert because it will be calleed in the same transaction as a "Parent" mint attempt
 
             //ensure that mergeMint() can only be called once per Parent::mint()
-            //do this by ensuring that the &quot;new&quot; challenge number from Parent::challenge post mint can be called once
+            //do this by ensuring that the "new" challenge number from Parent::challenge post mint can be called once
             //and that this block time is the same as this mint, and the caller is msg.sender
 
 

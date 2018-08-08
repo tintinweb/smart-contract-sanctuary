@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -656,6 +656,6 @@ contract NoOwner is HasNoEther, HasNoTokens, HasNoContracts {
  */
 contract BackgammonToken is StandardToken, DetailedERC20, MintableToken, PausableToken, BurnableToken, NoOwner {
 
-    constructor() public DetailedERC20(&quot;Backgammon Token&quot;, &quot;BGT&quot;, 18) {
+    constructor() public DetailedERC20("Backgammon Token", "BGT", 18) {
     }
 }

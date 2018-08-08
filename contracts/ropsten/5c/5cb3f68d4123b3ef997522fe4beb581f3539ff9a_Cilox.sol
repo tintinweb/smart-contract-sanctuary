@@ -112,8 +112,8 @@ contract Cilox is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Cilox() public {
-        symbol = &quot;CLXT&quot;;
-        name = &quot;CiloxToken&quot;;
+        symbol = "CLXT";
+        name = "CiloxToken";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0xfD56158622fbb4a12c14d5D01688C545042E7A16] = _totalSupply;

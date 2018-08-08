@@ -264,8 +264,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract KillerCoinTest is StandardToken {
-  string public name = &quot;Killer&quot;;
-  string public symbol = &quot;KILL&quot;;
+  string public name = "Killer";
+  string public symbol = "KILL";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 100000000000 * (10 ** decimals);
 

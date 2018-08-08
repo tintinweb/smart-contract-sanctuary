@@ -17,7 +17,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -181,7 +181,7 @@ contract Land is Galleasset {
 
   function generateLand() onlyOwner isBuilding public returns (bool) {
 
-    LandLib landLib = LandLib(getContract(&quot;LandLib&quot;));
+    LandLib landLib = LandLib(getContract("LandLib"));
 
     //islands are procedurally generated based on a randomish hash
     bytes32 id = keccak256(nonce++,block.blockhash(block.number-1));
@@ -244,12 +244,12 @@ contract Land is Galleasset {
     ownerAt[_x][_y][_tile]=msg.sender;
   }
 
-  function buyTile(uint16 _x,uint16 _y,uint8 _tile) public isGalleasset(&quot;Land&quot;) returns (bool) {
+  function buyTile(uint16 _x,uint16 _y,uint8 _tile) public isGalleasset("Land") returns (bool) {
     require(priceAt[_x][_y][_tile]>0);//must be for sale
-    StandardToken copperContract = StandardToken(getContract(&quot;Copper&quot;));
+    StandardToken copperContract = StandardToken(getContract("Copper"));
     require(copperContract.transferFrom(msg.sender,ownerAt[_x][_y][_tile],priceAt[_x][_y][_tile]));
     ownerAt[_x][_y][_tile]=msg.sender;
-    //when a piece of land is purchased, an &quot;onPurchase&quot; function is called
+    //when a piece of land is purchased, an "onPurchase" function is called
     // on the contract to help the inner contract track events and owners etc
     if(contractAt[_x][_y][_tile]!=address(0)){
        StandardTile tileContract = StandardTile(contractAt[_x][_y][_tile]);
@@ -265,18 +265,18 @@ contract Land is Galleasset {
 
   MOVED TO LANDLIB
   
-  function buildTile(uint16 _x, uint16 _y,uint8 _tile,uint16 _newTileType) public isGalleasset(&quot;Land&quot;) returns (bool) {
+  function buildTile(uint16 _x, uint16 _y,uint8 _tile,uint16 _newTileType) public isGalleasset("Land") returns (bool) {
     require(msg.sender==ownerAt[_x][_y][_tile]);
-    LandLib landLib = LandLib(getContract(&quot;LandLib&quot;));
+    LandLib landLib = LandLib(getContract("LandLib"));
     uint16 tileType = tileTypeAt[_x][_y][_tile];
-    if(tileType==landLib.tileTypes(&quot;MainHills&quot;)||tileType==landLib.tileTypes(&quot;MainGrass&quot;)){
+    if(tileType==landLib.tileTypes("MainHills")||tileType==landLib.tileTypes("MainGrass")){
       //they want to build on a main, blank spot whether hills or grass
-      if(_newTileType==landLib.tileTypes(&quot;Village&quot;)){
-        //require( getTokens(msg.sender,&quot;Timber&quot;,6) );
-        StandardToken timberContract = StandardToken(getContract(&quot;Timber&quot;));
+      if(_newTileType==landLib.tileTypes("Village")){
+        //require( getTokens(msg.sender,"Timber",6) );
+        StandardToken timberContract = StandardToken(getContract("Timber"));
         require( timberContract.galleassTransferFrom(msg.sender,address(this),6) ); //charge 6 timber
         tileTypeAt[_x][_y][_tile] = _newTileType;
-        contractAt[_x][_y][_tile] = getContract(&quot;Village&quot;);
+        contractAt[_x][_y][_tile] = getContract("Village");
         StandardTile(contractAt[_x][_y][_tile]).onPurchase(_x,_y,_tile,msg.sender,0);
         return true;
       }else{
@@ -289,10 +289,10 @@ contract Land is Galleasset {
 */
 
   //erc677 receiver
-  function onTokenTransfer(address _sender, uint _amount, bytes _data) public isGalleasset(&quot;Land&quot;) returns (bool) {
+  function onTokenTransfer(address _sender, uint _amount, bytes _data) public isGalleasset("Land") returns (bool) {
     TokenTransfer(msg.sender,_sender,_amount,_data);
     //THIS HAS MOVED TO LANDLIB FOR FASTER DEV LOOP/UPGRADABILITY
-    //LandLib landLib = LandLib(getContract(&quot;LandLib&quot;));
+    //LandLib landLib = LandLib(getContract("LandLib"));
     //landLib.onTokenTransfer(_sender,_amount,_data)
     return false;
   }
@@ -301,41 +301,41 @@ contract Land is Galleasset {
   //allow LandLib to set storage on Land contract
   //this allows me to redeploy the LandLib as I need and leave the
   //generated land alone
-  function setTileTypeAt(uint16 _x, uint16 _y, uint8 _tile,uint16 _type) public isGalleasset(&quot;Land&quot;) returns (bool) {
-    require(msg.sender==getContract(&quot;LandLib&quot;));
+  function setTileTypeAt(uint16 _x, uint16 _y, uint8 _tile,uint16 _type) public isGalleasset("Land") returns (bool) {
+    require(msg.sender==getContract("LandLib"));
     tileTypeAt[_x][_y][_tile] = _type;
     return true;
   }
-  function setContractAt(uint16 _x, uint16 _y, uint8 _tile,address _address) public isGalleasset(&quot;Land&quot;) returns (bool) {
-    require(msg.sender==getContract(&quot;LandLib&quot;));
+  function setContractAt(uint16 _x, uint16 _y, uint8 _tile,address _address) public isGalleasset("Land") returns (bool) {
+    require(msg.sender==getContract("LandLib"));
     contractAt[_x][_y][_tile] = _address;
     return true;
   }
-  function setOwnerAt(uint16 _x, uint16 _y, uint8 _tile,address _owner) public isGalleasset(&quot;Land&quot;) returns (bool) {
-    require(msg.sender==getContract(&quot;LandLib&quot;));
+  function setOwnerAt(uint16 _x, uint16 _y, uint8 _tile,address _owner) public isGalleasset("Land") returns (bool) {
+    require(msg.sender==getContract("LandLib"));
     ownerAt[_x][_y][_tile] = _owner;
     return true;
   }
-  function setPriceAt(uint16 _x, uint16 _y, uint8 _tile,uint _price) public isGalleasset(&quot;Land&quot;) returns (bool) {
-    require(msg.sender==getContract(&quot;LandLib&quot;));
+  function setPriceAt(uint16 _x, uint16 _y, uint8 _tile,uint _price) public isGalleasset("Land") returns (bool) {
+    require(msg.sender==getContract("LandLib"));
     priceAt[_x][_y][_tile] = _price;
     return true;
   }
 
   //the land owner can also call setPrice directly
-  function setPrice(uint16 _x,uint16 _y,uint8 _tile,uint256 _price) public isGalleasset(&quot;Land&quot;) returns (bool) {
+  function setPrice(uint16 _x,uint16 _y,uint8 _tile,uint256 _price) public isGalleasset("Land") returns (bool) {
     require(msg.sender==ownerAt[_x][_y][_tile]);
     priceAt[_x][_y][_tile]=_price;
     return true;
   }
 
-  /* function setTileContract(uint16 _x,uint16 _y,uint8 _tile,address _contract) public isGalleasset(&quot;Land&quot;) returns (bool) {
+  /* function setTileContract(uint16 _x,uint16 _y,uint8 _tile,address _contract) public isGalleasset("Land") returns (bool) {
     require(msg.sender==ownerAt[_x][_y][_tile]);
     contractAt[_x][_y][_tile]=_contract;
     return true;
   } */
 
-  function transferTile(uint16 _x,uint16 _y,uint8 _tile,address _newOwner) public isGalleasset(&quot;Land&quot;) returns (bool) {
+  function transferTile(uint16 _x,uint16 _y,uint8 _tile,address _newOwner) public isGalleasset("Land") returns (bool) {
     require(msg.sender==ownerAt[_x][_y][_tile]);
     ownerAt[_x][_y][_tile]=_newOwner;
     priceAt[_x][_y][_tile]=0;
@@ -347,7 +347,7 @@ contract Land is Galleasset {
   }
 
   function getTileLocation(uint16 _x,uint16 _y,address _address) public constant returns (uint16) {
-    LandLib landLib = LandLib(getContract(&quot;LandLib&quot;));
+    LandLib landLib = LandLib(getContract("LandLib"));
     uint8 tileIndex = findTileByAddress(_x,_y,_address);
     if(tileIndex==255) return 0;
     uint16 widthOffset = 0;
@@ -372,7 +372,7 @@ contract Land is Galleasset {
   }
 
   function getTotalWidth(uint16 _x,uint16 _y) public constant returns (uint16){
-    LandLib landLib = LandLib(getContract(&quot;LandLib&quot;));
+    LandLib landLib = LandLib(getContract("LandLib"));
     uint16 totalWidth = 0;
     bool foundLand = false;
     for(uint8 t = 0;t<18;t++){

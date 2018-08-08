@@ -113,8 +113,8 @@ contract TCASHx is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TCASHx() public {
-        symbol = &quot;TCASH&quot;;
-        name = &quot;TCASHx&quot;;
+        symbol = "TCASH";
+        name = "TCASHx";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0xE6985bF59cD18e4cE22AE40100378011Ee908365] = _totalSupply;

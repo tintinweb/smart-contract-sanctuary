@@ -15,7 +15,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -524,8 +524,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract Greens is Galleasset, MintableToken, ERC677Token {
 
-  string public constant name = &quot;Galleass Greens&quot;;
-  string public constant symbol = &quot;G_GREENS&quot;;
+  string public constant name = "Galleass Greens";
+  string public constant symbol = "G_GREENS";
   uint8 public constant decimals = 0;
 
   uint256 public constant INITIAL_SUPPLY = 0;
@@ -535,7 +535,7 @@ contract Greens is Galleasset, MintableToken, ERC677Token {
   }
 
   function galleassMint(address _to,uint _amount) public returns (bool){
-    require(hasPermission(msg.sender,&quot;mintGreens&quot;));
+    require(hasPermission(msg.sender,"mintGreens"));
     totalSupply_ = totalSupply_.add(_amount);
     balances[_to] = balances[_to].add(_amount);
     Mint(_to, _amount);
@@ -546,7 +546,7 @@ contract Greens is Galleasset, MintableToken, ERC677Token {
   function galleassTransferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
     require(_value <= balances[_from]);
-    require(hasPermission(msg.sender,&quot;transferGreens&quot;) || hasPermission(msg.sender,&quot;transferFood&quot;));
+    require(hasPermission(msg.sender,"transferGreens") || hasPermission(msg.sender,"transferFood"));
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);

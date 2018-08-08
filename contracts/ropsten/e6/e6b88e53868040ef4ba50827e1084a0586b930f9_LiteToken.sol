@@ -113,8 +113,8 @@ contract LiteToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LiteToken() public {
-        symbol = &quot;LT&quot;;
-        name = &quot;LiteSpeed&quot;;
+        symbol = "LT";
+        name = "LiteSpeed";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xd551883C203068C54e0216Ca0E62856eB452D4C8] = _totalSupply;

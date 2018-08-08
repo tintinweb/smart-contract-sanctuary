@@ -113,8 +113,8 @@ contract AgriChain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AgriChain() public {
-        symbol = &quot;AgriChain&quot;;
-        name = &quot;AgriChain Token&quot;;
+        symbol = "AgriChain";
+        name = "AgriChain Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xbbB326d9CEa00881a474E0BAe4Bf667AE3A96F31] = _totalSupply;

@@ -113,8 +113,8 @@ contract NarniaUSDT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NarniaUSDT() public {
-        symbol = &quot;NUSD&quot;;
-        name = &quot;NarniaUSDT Token&quot;;
+        symbol = "NUSD";
+        name = "NarniaUSDT Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8db72cf07698959d97a7101a7ceb849d941041ca] = _totalSupply;

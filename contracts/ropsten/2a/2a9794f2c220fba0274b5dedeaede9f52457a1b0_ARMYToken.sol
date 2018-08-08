@@ -73,8 +73,8 @@ contract ARMYToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;ARMYToken&quot;;
-    string public constant symbol = &quot;ARMY&quot;;
+    string public constant name = "ARMYToken";
+    string public constant symbol = "ARMY";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 15000000000e8;

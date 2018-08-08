@@ -4,7 +4,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -138,7 +138,7 @@ contract IdentityStore is Ownable {
 
     function getUserTenantId(
         address _userAddress) view public returns(string) {
-        require(userAddressExists(_userAddress), &quot;There&#39;s no account tied to the address&quot;);
+        require(userAddressExists(_userAddress), "There&#39;s no account tied to the address");
         return tenantAddressMapping[_userAddress].tenantId;
     }
 
@@ -147,8 +147,8 @@ contract IdentityStore is Ownable {
         bytes32 _newHash, 
         uint256 _timestamp) internal {
 
-        require(userTenantHashExists(_oldHash), &quot;Old hash does not exist.&quot;);
-        require(!userTenantHashExists(_newHash), &quot;New hash is already registered.&quot;);
+        require(userTenantHashExists(_oldHash), "Old hash does not exist.");
+        require(!userTenantHashExists(_newHash), "New hash is already registered.");
         address currentAddress = tenantHashMapping[_oldHash];
         User memory oldUserInfo = tenantAddressMapping[currentAddress];
         User memory newUserInfo = User(_newHash, _timestamp, oldUserInfo.tenantId);
@@ -166,8 +166,8 @@ contract IdentityStore is Ownable {
     function updateAddress(address oldUserAddress, address newUserAddress) onlyOwner internal {
         User memory existingUser = tenantAddressMapping[oldUserAddress];
         
-        require(!userAddressExists(newUserAddress), &quot;There&#39;s already an account tied to this address&quot;);
-        require(userAddressExists(oldUserAddress), &quot;There&#39;s no account tied to the address origin&quot;);
+        require(!userAddressExists(newUserAddress), "There&#39;s already an account tied to this address");
+        require(userAddressExists(oldUserAddress), "There&#39;s no account tied to the address origin");
 
         tenantHashMapping[existingUser.tenantHash] = newUserAddress;
         tenantAddressMapping[newUserAddress] = existingUser;

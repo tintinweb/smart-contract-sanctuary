@@ -42,7 +42,7 @@ interface Token {
 }
 
 contract Utils {
-    string constant public contract_version = &quot;0.3._&quot;;
+    string constant public contract_version = "0.3._";
 
     /// @notice Check if a contract exists
     /// @param contract_address The address to check whether a contract is deployed or not
@@ -104,7 +104,7 @@ contract SecretRegistry {
      *  Data structures
      */
 
-    string constant public contract_version = &quot;0.3._&quot;;
+    string constant public contract_version = "0.3._";
 
     // secrethash => block number at which the secret was revealed
     mapping(bytes32 => uint256) public secrethash_to_block;
@@ -153,7 +153,7 @@ contract TokenNetwork is Utils {
      *  Data structures
      */
 
-    string constant public contract_version = &quot;0.3._&quot;;
+    string constant public contract_version = "0.3._";
 
     // Instance of the token used as digital currency by the channels
     Token public token;
@@ -329,7 +329,7 @@ contract TokenNetwork is Utils {
         require(token.totalSupply() > 0);
 
         // Try to get token decimals, otherwise assume 18
-        bool exists = address(token).call(bytes4(keccak256(&quot;decimals()&quot;)));
+        bool exists = address(token).call(bytes4(keccak256("decimals()")));
         uint8 decimals = 18;
         if (exists) {
             decimals = token.decimals();

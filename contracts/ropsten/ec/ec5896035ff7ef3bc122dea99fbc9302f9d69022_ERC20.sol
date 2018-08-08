@@ -22,7 +22,7 @@ contract ERC20 is ERC20Interface {
     
     constructor(string _name) public {
         name = _name ;
-        symbol = &quot;HT&quot;;
+        symbol = "HT";
         decimals = 0;
         totalSupply = 1000000;
         balanceOf[msg.sender] = totalSupply;

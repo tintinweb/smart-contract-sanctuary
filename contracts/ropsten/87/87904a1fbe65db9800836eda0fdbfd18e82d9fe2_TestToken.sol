@@ -32,17 +32,17 @@ contract TokenAllot is JtTsOwner{
  
   function initFrozenTokenMap() private{
       //shi mu ji gou
-      frozenTokenMap[&quot;SM&quot;] = 1;
+      frozenTokenMap["SM"] = 1;
       //shi chang tui guang
-      frozenTokenMap[&quot;SCTG&quot;] = 1;
+      frozenTokenMap["SCTG"] = 1;
       //chuang shi tuan dui
-      frozenTokenMap[&quot;CSTD&quot;] = 1;
+      frozenTokenMap["CSTD"] = 1;
       //WFT ji jin hui
-      frozenTokenMap[&quot;WFTJJ&quot;] = 0;
+      frozenTokenMap["WFTJJ"] = 0;
       //zao qi tou zi zhe
-      frozenTokenMap[&quot;ZQTZZ&quot;] = 1;
+      frozenTokenMap["ZQTZZ"] = 1;
       //sheng tai wang kuang 
-      frozenTokenMap[&quot;STWK&quot;] = 1;
+      frozenTokenMap["STWK"] = 1;
  }
  
   modifier frozenTypeCheck(string tokenType) {
@@ -53,17 +53,17 @@ contract TokenAllot is JtTsOwner{
   function allotToken(uint256 initialSupply) public{
       initFrozenTokenMap();
       //shi mu ji gou
-      tokenMap[&quot;SM&quot;] = initialSupply * 20 / 100;
+      tokenMap["SM"] = initialSupply * 20 / 100;
       //shi chang tui guang
-      tokenMap[&quot;SCTG&quot;] = initialSupply * 15 / 100;
+      tokenMap["SCTG"] = initialSupply * 15 / 100;
       //chuang shi tuan dui
-      tokenMap[&quot;CSTD&quot;] = initialSupply * 10 / 100;
+      tokenMap["CSTD"] = initialSupply * 10 / 100;
       //WFT ji jin hui
-      tokenMap[&quot;WFTJJ&quot;] = initialSupply * 10 / 100;
+      tokenMap["WFTJJ"] = initialSupply * 10 / 100;
       //zao qi tou zi zhe
-      tokenMap[&quot;ZQTZZ&quot;] = initialSupply * 10 / 100;
+      tokenMap["ZQTZZ"] = initialSupply * 10 / 100;
       //sheng tai wang kuang 
-      tokenMap[&quot;STWK&quot;] = initialSupply * 35 / 100;
+      tokenMap["STWK"] = initialSupply * 35 / 100;
       
   }
   
@@ -92,8 +92,8 @@ contract TokenAllot is JtTsOwner{
 
 contract TestToken is TokenAllot {
     
-    string public name = &quot;WFTTS&quot;;
-    string public symbol = &quot;WFTSB&quot;;
+    string public name = "WFTTS";
+    string public symbol = "WFTSB";
     uint8 public decimals = 0;  // 18 是建议的默认值
     uint256 public totalSupply = 1000000000;
     

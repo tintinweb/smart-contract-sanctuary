@@ -116,8 +116,8 @@ contract AMLToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AMLToken() public {
-        symbol = &quot;AML&quot;;
-        name = &quot;AML Token&quot;;
+        symbol = "AML";
+        name = "AML Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 4 weeks;

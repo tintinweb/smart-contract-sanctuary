@@ -116,8 +116,8 @@ contract MeowCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MeowCoin() public {
-        symbol = &quot;MEOWC&quot;;
-        name = &quot;Mepw Coin&quot;;
+        symbol = "MEOWC";
+        name = "Mepw Coin";
         decimals = 6;
         _totalSupply = 10000000000;
         balances[0x8C89C2605EAeb38f5EA2aD7062cCB2e71c8d5eab] = _totalSupply;

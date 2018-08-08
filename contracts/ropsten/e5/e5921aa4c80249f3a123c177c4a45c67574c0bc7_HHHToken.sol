@@ -248,8 +248,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract HHHToken is StandardToken {
-  string public name = &quot;HHH&quot;; 
-  string public symbol = &quot;HHH&quot;;
+  string public name = "HHH"; 
+  string public symbol = "HHH";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 200000000 * (10 ** decimals);
   constructor () public {

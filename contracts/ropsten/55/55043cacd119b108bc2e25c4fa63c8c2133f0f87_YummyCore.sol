@@ -235,8 +235,8 @@ contract YummyBase is YummyAccessControl {
 
 contract YummyOwnership is YummyBase, ERC721 {
 
-    string public constant name = &quot;Yummies&quot;;
-    string public constant symbol = &quot;YUMS&quot;;
+    string public constant name = "Yummies";
+    string public constant symbol = "YUMS";
 
     // TODO: ERC165 for ERC721
 

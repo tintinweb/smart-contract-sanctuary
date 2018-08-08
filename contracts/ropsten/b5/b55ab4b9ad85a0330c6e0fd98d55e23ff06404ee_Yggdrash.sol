@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract Yggdrash {
 
-    string public name = &quot;Yggdrash Token&quot;;      //  token name
-    string public symbol = &quot;YEED&quot;;           //  token symbol
+    string public name = "Yggdrash Token";      //  token name
+    string public symbol = "YEED";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -51,8 +51,8 @@ contract TheTokenH is ERC223Interface {
     address owner = msg.sender;
     mapping(address => uint) balances; // List of user balances.
 
-    string public constant name = &quot;The Token H&quot;;
-    string public constant symbol = &quot;TKH&quot;;
+    string public constant name = "The Token H";
+    string public constant symbol = "TKH";
     uint public constant decimals = 8;
     uint256 public totalSupply = 690000000e8;
     uint256 public tokensPerEth = 15000000e8;

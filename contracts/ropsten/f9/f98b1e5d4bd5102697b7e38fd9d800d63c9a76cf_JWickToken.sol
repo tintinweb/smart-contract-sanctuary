@@ -98,8 +98,8 @@ contract JWickToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;JHWK&quot;;
-        name = &quot;JWick Coin&quot;;
+        symbol = "JHWK";
+        name = "JWick Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa7898AFd8d12f24B93825F5b83ce557FDe39f9FD] = _totalSupply;

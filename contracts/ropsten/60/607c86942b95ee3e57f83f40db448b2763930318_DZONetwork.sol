@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 contract DZONetwork {
-    string public symbol = &quot;DZO&quot;;
-    string public name = &quot;DZO Network&quot;;
+    string public symbol = "DZO";
+    string public name = "DZO Network";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
     uint256 _MaxDistribPublicSupply = 0;

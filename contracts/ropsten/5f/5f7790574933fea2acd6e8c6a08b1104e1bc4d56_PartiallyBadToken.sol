@@ -56,8 +56,8 @@ contract Owned {
 // ----------------------------------------------------------------------------
 contract PartiallyBadToken is Owned {
 
-    string public symbol = &quot;PBAD&quot;;
-    string public  name = &quot;Partially Bad&quot;;
+    string public symbol = "PBAD";
+    string public  name = "Partially Bad";
     uint8 public constant decimals = 18;
     uint constant _totalSupply = 100000000 * 10**uint(decimals);
 

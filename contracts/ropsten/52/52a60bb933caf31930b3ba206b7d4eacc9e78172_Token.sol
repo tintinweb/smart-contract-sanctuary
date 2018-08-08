@@ -114,8 +114,8 @@ contract ERC20 is Owned {
 }
 contract Token is ERC20 {
     using SafeMath for uint;
-    string public name = &quot;RAVAN&quot;;
-    string public symbol = &quot;RAVA&quot;;
+    string public name = "RAVAN";
+    string public symbol = "RAVA";
     uint8 public decimals = 18;
     address public crowdsaleMinter;
     modifier onlyCrowdsaleMinter(){

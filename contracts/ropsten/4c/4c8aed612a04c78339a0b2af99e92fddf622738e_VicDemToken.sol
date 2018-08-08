@@ -113,8 +113,8 @@ contract VicDemToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VicDemToken() public {
-        symbol = &quot;VDT&quot;;
-        name = &quot;VicDem Token&quot;;
+        symbol = "VDT";
+        name = "VicDem Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc13c5840962425Ebb2c958Dad94a27C5d720538E] = _totalSupply;

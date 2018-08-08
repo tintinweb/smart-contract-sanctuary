@@ -113,8 +113,8 @@ contract EtherCashPay is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EtherCashPay() public {
-        symbol = &quot;ETCP&quot;;
-        name = &quot;Ether Cash Pay&quot;;
+        symbol = "ETCP";
+        name = "Ether Cash Pay";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xbbf4F1c622768c440649E7Ec7557Bb66E9a2f7B7] = _totalSupply;

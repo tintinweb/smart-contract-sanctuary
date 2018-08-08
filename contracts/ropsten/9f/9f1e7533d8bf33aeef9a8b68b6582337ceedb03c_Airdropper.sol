@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -63,7 +63,7 @@ contract ERC20 {
 
 /**
  * @title Airdropper
- * @dev An &quot;airdropper&quot; contract for bulk distribution of an ERC20 token.
+ * @dev An "airdropper" contract for bulk distribution of an ERC20 token.
  * @dev This contract does not hold any tokens. Instead, it transfers directly
  *   from a given source address to the recipients. Ensure that the source
  *   address has set a sufficient allowance for the address of this contract.

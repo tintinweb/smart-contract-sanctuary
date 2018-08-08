@@ -244,8 +244,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract CBDToken is StandardToken {
-    string public name = &quot;CBD Token&quot;;
-    string public symbol = &quot;CBD&quot;;
+    string public name = "CBD Token";
+    string public symbol = "CBD";
     uint8 public decimals = 8;
 
     constructor() public {

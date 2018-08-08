@@ -113,8 +113,8 @@ contract TotiMed is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TotiMed() public {
-        symbol = &quot;TTMD&quot;;
-        name = &quot;TotiMed&quot;;
+        symbol = "TTMD";
+        name = "TotiMed";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x7Bc5DAA426ABF9791acCE35BAc6EEB515E9b7745] = _totalSupply;

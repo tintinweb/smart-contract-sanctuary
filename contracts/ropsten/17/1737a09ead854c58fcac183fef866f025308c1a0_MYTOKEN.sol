@@ -99,8 +99,8 @@ contract MYTOKEN is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MYTN&quot;;
-        name = &quot;MYTN Token&quot;;
+        symbol = "MYTN";
+        name = "MYTN Token";
         decimals = 18;
         _totalSupply = 500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

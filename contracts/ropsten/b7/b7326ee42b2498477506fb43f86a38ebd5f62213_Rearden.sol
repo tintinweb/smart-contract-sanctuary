@@ -113,8 +113,8 @@ contract Rearden is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Rearden() public {
-        symbol = &quot;REA&quot;;
-        name = &quot;Rearden Token&quot;;
+        symbol = "REA";
+        name = "Rearden Token";
         decimals = 8;
         _totalSupply = 2100000000000000;
         balances[0xd8b2df79B9e2B535C324210b2f1a28542F3F6611] = _totalSupply;

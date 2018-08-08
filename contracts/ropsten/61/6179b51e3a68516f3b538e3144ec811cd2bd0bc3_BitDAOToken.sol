@@ -125,8 +125,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract BitDAOToken is PausableToken {
-    string public name = &quot;BitDAOToken&quot;;
-    string public symbol = &quot;BIT&quot;;
+    string public name = "BitDAOToken";
+    string public symbol = "BIT";
     string public version = &#39;1.0.0&#39;;
     uint8 public decimals = 18;
 

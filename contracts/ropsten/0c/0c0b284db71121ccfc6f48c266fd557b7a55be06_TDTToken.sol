@@ -193,8 +193,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract TDTToken is StandardToken {
 
-  string public constant name = &quot;TaoodaCoin&quot;;
-  string public constant symbol = &quot;TDT&quot;;
+  string public constant name = "TaoodaCoin";
+  string public constant symbol = "TDT";
   uint8 public constant decimals = 18; // only two deciminals, token cannot be divided past 1/100th
 
   uint256 public constant INITIAL_SUPPLY =  9876543212300000000000000000; // 50 million + 18 decimals

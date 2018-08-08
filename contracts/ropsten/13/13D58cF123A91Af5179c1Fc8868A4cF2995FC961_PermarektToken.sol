@@ -113,8 +113,8 @@ contract PermarektToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PermarektToken() public {
-        symbol = &quot;PERMAREKT&quot;;
-        name = &quot;Permarekt Token&quot;;
+        symbol = "PERMAREKT";
+        name = "Permarekt Token";
         decimals = 18;
         _totalSupply = 20000000000000000000000000;
         balances[0x3beCA3b46E8D9E5785342401A4F7DA3367C4cDBc] = _totalSupply;

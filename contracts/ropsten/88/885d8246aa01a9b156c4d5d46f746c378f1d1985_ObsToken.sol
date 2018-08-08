@@ -1,8 +1,8 @@
 pragma solidity ^0.4.24;
 contract ObsToken {
   mapping(address => uint256) balances;
-  string public constant NAME = &quot;ObsToken&quot;;
-  string public constant SYMBOL = &quot;OBT&quot;;
+  string public constant NAME = "ObsToken";
+  string public constant SYMBOL = "OBT";
   uint256 totalSupply_;
   event Transfer(address indexed from, address indexed to, uint256 value);
 

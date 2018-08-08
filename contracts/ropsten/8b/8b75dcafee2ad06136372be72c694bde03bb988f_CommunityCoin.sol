@@ -56,8 +56,8 @@ contract CommunityCoin is Ownable{
     
     using SafeMath for uint256;
     
-    string public constant name       = &quot;Community Coin&quot;;
-    string public constant symbol     = &quot;SQ&quot;;
+    string public constant name       = "Community Coin";
+    string public constant symbol     = "SQ";
     uint32 public constant decimals   = 4;
     uint256 public totalSupply        = 2100000000 * (10 ** uint256(decimals));
     uint256 public currentTotalSupply = 2000 * (10 ** uint256(decimals));

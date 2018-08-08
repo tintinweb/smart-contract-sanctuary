@@ -174,7 +174,7 @@ contract kyc {
         //  throw error if there is overflow in uint
         if(allCustomers.length < 1)
             return 1;
-        allCustomers[allCustomers.length-1] = Customer(Uname, DataHash, 100, 0, msg.sender, &quot;null&quot;);
+        allCustomers[allCustomers.length-1] = Customer(Uname, DataHash, 100, 0, msg.sender, "null");
         updateRating(msg.sender,true);
         return 0;
     }
@@ -226,13 +226,13 @@ contract kyc {
 
     function viewCustomer(string Uname) public payable returns(string) {
         if(!isPartOfOrg())
-            return &quot;Access denied!&quot;;
+            return "Access denied!";
         for(uint i = 0; i < allCustomers.length; ++ i) {
             if(stringsEqual(allCustomers[i].uname, Uname)) {
                 return allCustomers[i].dataHash;
             }
         }
-        return &quot;Customer not found in database!&quot;;
+        return "Customer not found in database!";
     }
 
     //  function to modify customer rating
@@ -297,10 +297,10 @@ contract kyc {
     function checkBank(string Uname, address password) public payable returns(string) {
         for(uint i = 0; i < allOrgs.length; ++ i) {
             if(allOrgs[i].ethAddress == password && stringsEqual(allOrgs[i].name, Uname)) {
-                return &quot;0&quot;;
+                return "0";
             }
         }
-        return &quot;null&quot;;
+        return "null";
     }
 
     function checkCustomer(string Uname, string password) public payable returns(bool) {
@@ -317,7 +317,7 @@ contract kyc {
 
     function setPassword(string Uname, string password) public payable returns(bool) {
         for(uint i=0;i < allCustomers.length; ++ i) {
-            if(stringsEqual(allCustomers[i].uname, Uname) && stringsEqual(allCustomers[i].password, &quot;null&quot;)) {
+            if(stringsEqual(allCustomers[i].uname, Uname) && stringsEqual(allCustomers[i].password, "null")) {
                 allCustomers[i].password = password;
                 return true;
             }
@@ -333,7 +333,7 @@ contract kyc {
                 return allOrgs[i].name;
             }
         }
-        return &quot;null&quot;;
+        return "null";
     }
 
     function getBankEth(string uname) public payable returns(address) {
@@ -359,7 +359,7 @@ contract kyc {
                 return allOrgs[i].regNumber;
             }
         }
-        return &quot;null&quot;;
+        return "null";
     }
 
     function getBankKYC(address ethAcc) public payable returns(uint) {

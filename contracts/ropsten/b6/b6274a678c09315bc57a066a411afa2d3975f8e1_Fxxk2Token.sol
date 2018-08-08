@@ -113,8 +113,8 @@ contract Fxxk2Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Fxxk2Token() public {
-        symbol = &quot;FXXK2&quot;;
-        name = &quot;Fxxk 2 Token&quot;;
+        symbol = "FXXK2";
+        name = "Fxxk 2 Token";
         decimals = 9;
         _totalSupply = 1000000000000000;
         balances[0xC878Ba92EFc29cad5551F032E53955fF6Ef63190] = _totalSupply;

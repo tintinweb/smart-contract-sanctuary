@@ -82,10 +82,10 @@ contract ArtBlockToken is ERC20, Owned {
  
     using SafeMath for uint256;
     //metadata
-    string  public name=&quot;ArtBlock Ecologica01l&quot;;
-    string  public symbol=&quot;AET01&quot;;
+    string  public name="ArtBlock Ecologica01l";
+    string  public symbol="AET01";
     uint256 public decimals = 18;
-    string  public version = &quot;1.0&quot;; 
+    string  public version = "1.0"; 
     uint public totalSupply = 4500000000  * 10 ** uint(decimals);
     
 

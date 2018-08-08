@@ -135,7 +135,7 @@ contract Proxy {
     }
     // If no returned message exists, emit a default error message. Otherwise, emit the error message
     if (bytes(message).length == 0)
-      emit StorageException(app_exec_id, &quot;No error recieved&quot;);
+      emit StorageException(app_exec_id, "No error recieved");
     else
       emit StorageException(app_exec_id, message);
   }

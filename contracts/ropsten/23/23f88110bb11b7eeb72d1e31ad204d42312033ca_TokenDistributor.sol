@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -171,7 +171,7 @@ contract TokenDistributor is Ownable {
     }
 
     function _setStakeHolder (address _stakeHolder) internal onlyOwner returns (bool) {
-        require(countStakeHolders() < maxStakeHolders, &quot;Max StakeHolders set&quot;);
+        require(countStakeHolders() < maxStakeHolders, "Max StakeHolders set");
         stakeHolders.push(_stakeHolder);
         return true;
     }

@@ -490,8 +490,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 contract TMToken is StandardBurnableToken, MintableToken, PausableToken {
 
-  string public constant name = &quot;Tokenmom&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;TM&quot;; // solium-disable-line uppercase
+  string public constant name = "Tokenmom"; // solium-disable-line uppercase
+  string public constant symbol = "TM"; // solium-disable-line uppercase
   uint8 public constant decimals = 18;
   event Burn(address indexed from, uint256 value);
   event Pause(address indexed from, uint256 value);

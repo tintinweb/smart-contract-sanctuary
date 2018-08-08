@@ -6,7 +6,7 @@ contract SecretRegistry {
      *  Data structures
      */
 
-    string constant public contract_version = &quot;0.3._&quot;;
+    string constant public contract_version = "0.3._";
 
     // secrethash => block number at which the secret was revealed
     mapping(bytes32 => uint256) public secrethash_to_block;

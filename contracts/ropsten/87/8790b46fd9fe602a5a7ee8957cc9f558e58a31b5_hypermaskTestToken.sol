@@ -113,8 +113,8 @@ contract hypermaskTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;HMTT&quot;;
-        name = &quot;HyperMask Test Token&quot;;
+        symbol = "HMTT";
+        name = "HyperMask Test Token";
         decimals = 18;
     }
 

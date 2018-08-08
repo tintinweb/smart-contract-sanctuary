@@ -1,6 +1,6 @@
 pragma solidity ^0.4.0;
 contract Helloworld{
-    string val = &quot;Vivek&quot;;
+    string val = "Vivek";
     function getValue() returns (string){
         return val;
     }

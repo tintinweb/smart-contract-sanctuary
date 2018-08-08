@@ -192,11 +192,11 @@ contract BeringiaContract is TokenERC20Standart{
     uint256 private thirdPeriodDis = 15;  
   
     constructor () public {
-        name = &quot;Beringia&quot;;                                          // Set the name for display purposes
+        name = "Beringia";                                          // Set the name for display purposes
         decimals = 0;                                               // Amount of decimals for display purposes
-        symbol = &quot;BER&quot;;                                             // Set the symbol for display purposes
+        symbol = "BER";                                             // Set the symbol for display purposes
         owner = 0x019E713834eed11644946E3123057Fb8759B7363;         // Set contract owner
-        version = &quot;0.0.1&quot;;                                          // Set contract version 
+        version = "0.0.1";                                          // Set contract version 
         tokenCreationCap = 510000000 * 10 ** uint256(decimals);
         balances[owner] = tokenCreationCap;                         // Give the creator all initial tokens
         emit Transfer(address(0x0), owner, tokenCreationCap);

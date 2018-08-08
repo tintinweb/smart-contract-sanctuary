@@ -94,9 +94,9 @@ contract Database {
     // --------------------------------------------------------------------------------------
     constructor(address _ownerOne, address _ownerTwo, address _ownerThree)
     public {
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerOne))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerTwo))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerThree))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerOne))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerTwo))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerThree))] = true;
         emit LogInitialized(_ownerOne, _ownerTwo, _ownerThree);
     }
 
@@ -109,10 +109,10 @@ contract Database {
     function setContractManager(address _contractManager)
     external {
         require(_contractManager != address(0));
-        require(boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, msg.sender))]);
-        // require(addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] == address(0));   TODO: Allow swapping of CM for testing
-        addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] = _contractManager;
-        boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, _contractManager))] = true;
+        require(boolStorage[keccak256(abi.encodePacked("owner", msg.sender))]);
+        // require(addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] == address(0));   TODO: Allow swapping of CM for testing
+        addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] = _contractManager;
+        boolStorage[keccak256(abi.encodePacked("contract", _contractManager))] = true;
         emit LogContractManager(_contractManager, msg.sender); 
     }
 
@@ -215,7 +215,7 @@ contract Database {
     // Caller must be registered as a contract within the MyBit Dapp through ContractManager.sol
     // --------------------------------------------------------------------------------------
     modifier onlyMyBitContract() {
-        require(boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, msg.sender))]);
+        require(boolStorage[keccak256(abi.encodePacked("contract", msg.sender))]);
         _;
     }
 
@@ -246,8 +246,8 @@ contract AssetCreation {
   // @Param: The amount of USD required for asset to achieve successfull funding
   // @Param: The percentage of revenue the asset manager will require to run the asset
   // @Param: The amount the asset manager has decided to escrow
-  // @Param: The ID of the installer of this asset  (ie. Sha3(&quot;ATMInstallersAG&quot;))
-  // @Param: The type of asset being created. (ie. Sha3(&quot;BitcoinATM&quot;)) 
+  // @Param: The ID of the installer of this asset  (ie. Sha3("ATMInstallersAG"))
+  // @Param: The type of asset being created. (ie. Sha3("BitcoinATM")) 
   // @Param: The block when the escrow request was created. If no escrow request was made, then any unique number will work
   //----------------------------------------------------------------------------------------------------------------------------------------
   function newAsset(uint _amountToBeRaised, uint _managerPercentage, uint _amountToEscrow, bytes32 _installerID, bytes32 _assetType, uint _blockAtCreation, bytes32 _ipfsHash)
@@ -257,23 +257,23 @@ contract AssetCreation {
   noEmptyBytes(_assetType)
   noEmptyBytes(_ipfsHash)
   returns (bool){
-    require(database.uintStorage(keccak256(abi.encodePacked(&quot;userAccess&quot;, msg.sender))) >= uint(1), &quot;user does not have high enough access level&quot;);
-    require(database.uintStorage(keccak256(abi.encodePacked(&quot;userAccessExpiration&quot;, msg.sender))) > now , &quot;User access has expired&quot;);
-    require(_managerPercentage < uint(100) && _managerPercentage > uint(0) , &quot;manager percentage is too high or too low&quot;);
-    require(_amountToBeRaised > uint(100), &quot;amountToBeRaised is too low&quot;);           // Minimum asset price
+    require(database.uintStorage(keccak256(abi.encodePacked("userAccess", msg.sender))) >= uint(1), "user does not have high enough access level");
+    require(database.uintStorage(keccak256(abi.encodePacked("userAccessExpiration", msg.sender))) > now , "User access has expired");
+    require(_managerPercentage < uint(100) && _managerPercentage > uint(0) , "manager percentage is too high or too low");
+    require(_amountToBeRaised > uint(100), "amountToBeRaised is too low");           // Minimum asset price
     bytes32 assetID = keccak256(abi.encodePacked(msg.sender, _amountToEscrow, _managerPercentage, _amountToBeRaised, _installerID, _assetType, _blockAtCreation));
-    require(database.uintStorage(keccak256(abi.encodePacked(&quot;fundingStage&quot;, assetID))) == uint(0), &quot;AssetID already exists.&quot;);    // This ensures the asset isn&#39;t currently live or being funded
-    database.setUint(keccak256(abi.encodePacked(&quot;fundingStage&quot;, assetID)), uint(1));       // Allow this asset to receive funding
-    address staker = database.addressStorage(keccak256(abi.encodePacked(&quot;assetStaker&quot;, assetID)));
+    require(database.uintStorage(keccak256(abi.encodePacked("fundingStage", assetID))) == uint(0), "AssetID already exists.");    // This ensures the asset isn&#39;t currently live or being funded
+    database.setUint(keccak256(abi.encodePacked("fundingStage", assetID)), uint(1));       // Allow this asset to receive funding
+    address staker = database.addressStorage(keccak256(abi.encodePacked("assetStaker", assetID)));
     if (staker != address(0)) { 
-      assert (database.uintStorage(keccak256(abi.encodePacked(&quot;stakingExpiration&quot;, assetID))) > now); 
-      database.deleteUint(keccak256(abi.encodePacked(&quot;stakingExpiration&quot;, assetID)));  
+      assert (database.uintStorage(keccak256(abi.encodePacked("stakingExpiration", assetID))) > now); 
+      database.deleteUint(keccak256(abi.encodePacked("stakingExpiration", assetID)));  
     }
-    else { require(lockAssetEscrow(assetID, _amountToEscrow, msg.sender), &quot;locking asset escrow failed&quot;); }
-    database.setUint(keccak256(abi.encodePacked(&quot;amountToBeRaised&quot;, assetID)), _amountToBeRaised);
-    database.setUint(keccak256(abi.encodePacked(&quot;managerPercentage&quot;, assetID)), _managerPercentage);
-    database.setAddress(keccak256(abi.encodePacked(&quot;assetManager&quot;, assetID)), msg.sender);
-    database.setUint(keccak256(abi.encodePacked(&quot;fundingDeadline&quot;, assetID)), fundingTime.add(now));
+    else { require(lockAssetEscrow(assetID, _amountToEscrow, msg.sender), "locking asset escrow failed"); }
+    database.setUint(keccak256(abi.encodePacked("amountToBeRaised", assetID)), _amountToBeRaised);
+    database.setUint(keccak256(abi.encodePacked("managerPercentage", assetID)), _managerPercentage);
+    database.setAddress(keccak256(abi.encodePacked("assetManager", assetID)), msg.sender);
+    database.setUint(keccak256(abi.encodePacked("fundingDeadline", assetID)), fundingTime.add(now));
     emit LogAssetFundingStarted(assetID, _installerID, _assetType, _ipfsHash);    // assetType and installer ID are already indexed
     return true;
   }
@@ -285,12 +285,12 @@ contract AssetCreation {
   internal
   returns (bool) {
     if (_amountToEscrow == 0) { return true; }
-    uint escrowedMYB = database.uintStorage(keccak256(abi.encodePacked(&quot;escrowedMYB&quot;, _escrowDepositer)));
-    uint depositedMYB = database.uintStorage(keccak256(abi.encodePacked(&quot;depositedMYB&quot;, _escrowDepositer)));
+    uint escrowedMYB = database.uintStorage(keccak256(abi.encodePacked("escrowedMYB", _escrowDepositer)));
+    uint depositedMYB = database.uintStorage(keccak256(abi.encodePacked("depositedMYB", _escrowDepositer)));
     // assert (_amountToEscrow <= depositedMYB);    // TODO: Safemath should throw here if this isn&#39;t the case
-    database.setUint(keccak256(abi.encodePacked(&quot;depositedMYB&quot;, _escrowDepositer)), depositedMYB.sub(_amountToEscrow)); 
-    database.setUint(keccak256(abi.encodePacked(&quot;escrowedMYB&quot;, _escrowDepositer)), escrowedMYB.add(_amountToEscrow));
-    database.setUint(keccak256(abi.encodePacked(&quot;escrowedForAsset&quot;, _assetID)), _amountToEscrow);
+    database.setUint(keccak256(abi.encodePacked("depositedMYB", _escrowDepositer)), depositedMYB.sub(_amountToEscrow)); 
+    database.setUint(keccak256(abi.encodePacked("escrowedMYB", _escrowDepositer)), escrowedMYB.add(_amountToEscrow));
+    database.setUint(keccak256(abi.encodePacked("escrowedForAsset", _assetID)), _amountToEscrow);
     emit LogLockAssetEscrow(_escrowDepositer, _assetID, _amountToEscrow);
     return true;
   }
@@ -306,11 +306,11 @@ contract AssetCreation {
   whenNotPaused
   returns(bool) {
     require (_functionSigner != msg.sender);
-    require(database.uintStorage(keccak256(abi.encodePacked(&quot;fundingStage&quot;, _assetID))) > uint(0));
-    bytes32 functionHash = keccak256(abi.encodePacked(address(this), _functionSigner, &quot;removeAsset&quot;, _assetID));
+    require(database.uintStorage(keccak256(abi.encodePacked("fundingStage", _assetID))) > uint(0));
+    bytes32 functionHash = keccak256(abi.encodePacked(address(this), _functionSigner, "removeAsset", _assetID));
     require(database.boolStorage(functionHash));
     database.setBool(functionHash, false);
-    database.setUint(keccak256(abi.encodePacked(&quot;fundingStage&quot;, _assetID)), uint(5));   // Asset won&#39;t receive income & ownership won&#39;t be able to be traded.
+    database.setUint(keccak256(abi.encodePacked("fundingStage", _assetID)), uint(5));   // Asset won&#39;t receive income & ownership won&#39;t be able to be traded.
     emit LogAssetRemoved(_assetID, msg.sender);
     return true;
   }
@@ -339,12 +339,12 @@ contract AssetCreation {
   notZero(_myBitFoundationPercentage)
   notZero(_installerPercentage)
   returns (bool) {
-    bytes32 functionHash = keccak256(abi.encodePacked(address(this), _functionSigner, &quot;changeFundingPercentages&quot;, keccak256(abi.encodePacked(_myBitFoundationPercentage, _installerPercentage))));
+    bytes32 functionHash = keccak256(abi.encodePacked(address(this), _functionSigner, "changeFundingPercentages", keccak256(abi.encodePacked(_myBitFoundationPercentage, _installerPercentage))));
     require(database.boolStorage(functionHash));
     require(_myBitFoundationPercentage.add(_installerPercentage) == uint(100));
     database.setBool(functionHash, false);
-    database.setUint(keccak256(abi.encodePacked(&quot;myBitFoundationPercentage&quot;)), _myBitFoundationPercentage);
-    database.setUint(keccak256(abi.encodePacked(&quot;installerPercentage&quot;)), _installerPercentage);
+    database.setUint(keccak256(abi.encodePacked("myBitFoundationPercentage")), _myBitFoundationPercentage);
+    database.setUint(keccak256(abi.encodePacked("installerPercentage")), _installerPercentage);
     emit LogFundingPercentageChanged(_myBitFoundationPercentage, _installerPercentage);
     return true;
   }
@@ -358,7 +358,7 @@ contract AssetCreation {
   anyOwner
   public {
     require(_functionInitiator != msg.sender);
-    bytes32 functionHash = keccak256(abi.encodePacked(address(this), _functionInitiator, &quot;destroy&quot;, keccak256(abi.encodePacked(_holdingAddress))));
+    bytes32 functionHash = keccak256(abi.encodePacked(address(this), _functionInitiator, "destroy", keccak256(abi.encodePacked(_holdingAddress))));
     require(database.boolStorage(functionHash));
     database.setBool(functionHash, false);
     emit LogDestruction(_holdingAddress, address(this).balance, msg.sender);
@@ -375,7 +375,7 @@ contract AssetCreation {
   // Makes sure function won&#39;t run when contract has been paused
   //------------------------------------------------------------------------------------------------------------------
   modifier whenNotPaused {
-    require(!database.boolStorage(keccak256(abi.encodePacked(&quot;pause&quot;, address(this)))));
+    require(!database.boolStorage(keccak256(abi.encodePacked("pause", address(this)))));
     _;
   }
 
@@ -399,7 +399,7 @@ contract AssetCreation {
   // Sender must be a registered owner
   //------------------------------------------------------------------------------------------------------------------
   modifier anyOwner {
-    require(database.boolStorage(keccak256(abi.encodePacked(&quot;owner&quot;, msg.sender))));
+    require(database.boolStorage(keccak256(abi.encodePacked("owner", msg.sender))));
     _;
   }
 

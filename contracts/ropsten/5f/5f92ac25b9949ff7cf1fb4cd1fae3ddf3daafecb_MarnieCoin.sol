@@ -113,8 +113,8 @@ contract MarnieCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MarnieCoin() public {
-        symbol = &quot;MARN&quot;;
-        name = &quot;MarnieCoin&quot;;
+        symbol = "MARN";
+        name = "MarnieCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xe5D0DBC25C91b390d5A6163E4b4126b16800790D] = _totalSupply;

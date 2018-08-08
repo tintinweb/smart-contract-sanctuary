@@ -113,8 +113,8 @@ contract WojakCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WojakCoin() public {
-        symbol = &quot;WJK&quot;;
-        name = &quot;Wojak Coin&quot;;
+        symbol = "WJK";
+        name = "Wojak Coin";
         decimals = 12;
         _totalSupply = 1000000000000000000000000;
         balances[0xB85667bD2f13FBF269Dfe51a016959BD21ec8C97] = _totalSupply;

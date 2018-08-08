@@ -113,8 +113,8 @@ contract BIDDED is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BIDDED() public {
-        symbol = &quot;BIDDED&quot;;
-        name = &quot;BIDALOT Token&quot;;
+        symbol = "BIDDED";
+        name = "BIDALOT Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x7f1097e17a58e6e2306a1f84097835be69d19296] = _totalSupply;

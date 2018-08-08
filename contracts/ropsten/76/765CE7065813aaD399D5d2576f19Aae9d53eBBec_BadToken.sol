@@ -55,8 +55,8 @@ contract Owned {
 // ----------------------------------------------------------------------------
 contract BadToken is Owned {
 
-    string public symbol = &quot;BAD&quot;;
-    string public  name = &quot;Bad&quot;;
+    string public symbol = "BAD";
+    string public  name = "Bad";
     uint8 public constant decimals = 18;
     uint constant _totalSupply = 100000000 * 10**uint(decimals);
 

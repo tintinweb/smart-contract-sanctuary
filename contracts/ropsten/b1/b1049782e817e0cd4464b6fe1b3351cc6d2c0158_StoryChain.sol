@@ -13,7 +13,7 @@ contract StoryChain {
 	constructor () public {
 	    uint maxInt = 0;
 	    maxInt -= 1;
-		stories.push(Story({publisher:msg.sender, story:&quot;昔々あるところに&quot;, price:0, prev: maxInt})); /* default prev: 2**256-1 */
+		stories.push(Story({publisher:msg.sender, story:"昔々あるところに", price:0, prev: maxInt})); /* default prev: 2**256-1 */
 	}
 
 	function addStory(uint _prev, string _story) public payable {

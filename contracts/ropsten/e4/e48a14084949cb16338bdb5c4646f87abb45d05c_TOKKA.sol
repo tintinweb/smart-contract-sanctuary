@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TOKKA is StandardToken {
-    string public name = &quot;New Comercial Token&quot;;
-    string public symbol = &quot;NCT&quot;;
+    string public name = "New Comercial Token";
+    string public symbol = "NCT";
     uint256 public decimals = 18;
 
     uint256 constant INITIAL_SUPPLY = 6000000 * 10**18;

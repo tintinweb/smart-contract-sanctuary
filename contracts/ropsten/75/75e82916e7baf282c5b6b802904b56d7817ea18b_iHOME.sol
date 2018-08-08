@@ -36,8 +36,8 @@ contract iHOME {
   event ApprovalForAll(address indexed owner,address indexed operator,bool _approved);
 
   address public owner = 0x3491542173Afe5cAc3e69934B17BDC26AD5073ee;
-  string public constant symbol = &quot;IHK&quot;;
-  string public constant name = &quot;iHOME Key&quot;;
+  string public constant symbol = "IHK";
+  string public constant name = "iHOME Key";
   // uint8 public constant decimals = 18;
   uint256 public totalSupply = 8000000000;
   uint256 public totalSold = 0;

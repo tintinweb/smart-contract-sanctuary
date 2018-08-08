@@ -196,8 +196,8 @@ contract StandardToken is ERC20, BasicToken {
 
 */
 contract jdaleveridgesyscoin is StandardToken {
-  string public name = &quot;jdaleveridgesyscoin&quot;;
-  string public symbol = &quot;JDLSYS&quot;;
+  string public name = "jdaleveridgesyscoin";
+  string public symbol = "JDLSYS";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 500000000 * (10 ** uint256(decimals));
 

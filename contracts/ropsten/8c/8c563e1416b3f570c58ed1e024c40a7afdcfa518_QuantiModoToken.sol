@@ -113,8 +113,8 @@ contract QuantiModoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QuantiModoToken() public {
-        symbol = &quot;QM&quot;;
-        name = &quot;QuantiModo Token&quot;;
+        symbol = "QM";
+        name = "QuantiModo Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf2090de5a5C50f38be9384A2aC7fDA4F494012fB] = _totalSupply;

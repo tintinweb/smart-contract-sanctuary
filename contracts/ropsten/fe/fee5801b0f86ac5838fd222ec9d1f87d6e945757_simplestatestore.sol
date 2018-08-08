@@ -7,12 +7,12 @@ contract simplestatestore {
     
     constructor() public {
         
-        captainsname = &quot;default captn&quot;;
+        captainsname = "default captn";
         
     }
 
     function setcapname(string _fullname) public {
-            captainsname = &quot; &quot;;
+            captainsname = " ";
             captainsname = _fullname;
         
         

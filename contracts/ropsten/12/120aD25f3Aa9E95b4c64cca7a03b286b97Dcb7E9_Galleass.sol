@@ -30,7 +30,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -183,8 +183,8 @@ contract Predecessor is Ownable, Staged{
 
 contract Galleass is Staged, Contactable, Predecessor{
 
-  string public constant name = &quot;Galleass&quot;;
-  string public constant author = &quot;Austin Thomas Griffith austin@concurrence.io&quot;;
+  string public constant name = "Galleass";
+  string public constant author = "Austin Thomas Griffith austin@concurrence.io";
 
   event UpgradeContract(address _contractAddress,address _descendant,address _whoDid);
   event SetContract(bytes32 _name,address _contractAddress,address _whoDid);

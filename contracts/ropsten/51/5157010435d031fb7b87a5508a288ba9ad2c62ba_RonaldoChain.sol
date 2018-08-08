@@ -62,8 +62,8 @@ contract RonaldoChain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;RonaldoCoin&quot;;
-    string public constant symbol = &quot;CR7&quot;;
+    string public constant name = "RonaldoCoin";
+    string public constant symbol = "CR7";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 100000000e18;

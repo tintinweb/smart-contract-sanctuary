@@ -135,9 +135,9 @@ contract HyunJaeToken is ERC20Interface, OwnerHelper // SimpleToken이 ERC20Inte
 
     function HyunJaeToken () public
     {
-        name = &quot;HyunJaeToken&quot;; // 토큰의 이름 HyunjaeToken
+        name = "HyunJaeToken"; // 토큰의 이름 HyunjaeToken
         decimals = 18; // 토큰의 소숫점 아래 자리 수는 18자리
-        symbol = &quot;HJ&quot;; // 토큰 이름의 줄임말은 HJ
+        symbol = "HJ"; // 토큰 이름의 줄임말은 HJ
         totalSupply = 0; // 토큰의 총발행량을 0으로 초기화
 	
     	owner = msg.sender; //컨트래트를 실행하는 사람이 관리자

@@ -983,8 +983,8 @@ contract RefundableFundraiser is FinalizableFundraiser {
 contract DCentralCapitalFundToken is MintableToken {
   constructor(address _minter)
     StandardToken(
-      &quot;D-Central Capital Fund&quot;,   // Token name
-      &quot;DCEN&quot;, // Token symbol
+      "D-Central Capital Fund",   // Token name
+      "DCEN", // Token symbol
       18  // Token decimals
     )
     
@@ -1004,7 +1004,7 @@ contract DCentralCapitalFundTokenSafe is TokenSafe {
     TokenSafe(_token)
     public
   {
-    // Group &quot;Bounty&quot;
+    // Group "Bounty"
     init(
       0, // Group Id
       1532595600 // Release date = 26 Jul 2018 09:00 UTC

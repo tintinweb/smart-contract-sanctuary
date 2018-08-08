@@ -2,14 +2,14 @@
 
   Copyright 2018 bZeroX, LLC
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -21,7 +21,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -276,8 +276,8 @@ contract Proxiable {
     function initialize(address _target) public;
 
     function _replaceContract(address _target) internal {
-        // bytes4(keccak256(&quot;initialize(address)&quot;)) == 0xc4d66de8
-        require(_target.delegatecall(0xc4d66de8, _target), &quot;Proxiable::_replaceContract: failed&quot;);
+        // bytes4(keccak256("initialize(address)")) == 0xc4d66de8
+        require(_target.delegatecall(0xc4d66de8, _target), "Proxiable::_replaceContract: failed");
     }
 }
 
@@ -316,7 +316,7 @@ contract BZxProxy is BZxStorage, Proxiable {
     }
 
     function setTarget(
-        string _funcId,  // example: &quot;takeLoanOrderAsTrader(address[6],uint256[9],address,uint256,bytes)&quot;
+        string _funcId,  // example: "takeLoanOrderAsTrader(address[6],uint256[9],address,uint256,bytes)"
         address _target) // logic contract address
         public
         onlyOwner
@@ -402,7 +402,7 @@ contract BZxProxy is BZxStorage, Proxiable {
      */
 
     function getTarget(
-        string _funcId) // example: &quot;takeLoanOrderAsTrader(address[6],uint256[9],address,uint256,bytes)&quot;
+        string _funcId) // example: "takeLoanOrderAsTrader(address[6],uint256[9],address,uint256,bytes)"
         public
         view
         returns (address)

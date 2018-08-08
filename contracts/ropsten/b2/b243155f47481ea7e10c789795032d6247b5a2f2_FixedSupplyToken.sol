@@ -183,9 +183,9 @@ contract FixedSupplyToken is ERC20Interface, Owned {
 
     constructor() public {
 
-        symbol = &quot;ROCKS&quot;;
+        symbol = "ROCKS";
 
-        name = &quot;Moon Rocks&quot;;
+        name = "Moon Rocks";
 
         decimals = 0;
 

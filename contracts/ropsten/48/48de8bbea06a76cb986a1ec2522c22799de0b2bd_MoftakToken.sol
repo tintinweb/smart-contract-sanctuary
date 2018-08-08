@@ -113,8 +113,8 @@ contract MoftakToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MoftakToken() public {
-        symbol = &quot;mofs&quot;;
-        name = &quot;moftakcoins Token&quot;;
+        symbol = "mofs";
+        name = "moftakcoins Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x9277bA018A65518ADF2aAD0177f24022AEC053e0] = _totalSupply;

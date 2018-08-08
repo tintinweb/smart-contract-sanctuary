@@ -92,9 +92,9 @@ contract tokenProvider is OwnerHelper, ERC20Interface
 
     constructor() public
     {
-        name = &quot;testTokenProvider&quot;;
+        name = "testTokenProvider";
         decimals = 18;
-        symbol = &quot;TTP&quot;;
+        symbol = "TTP";
         totalSupply = 0;
         
         owner = msg.sender;

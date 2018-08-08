@@ -5,7 +5,7 @@ pragma solidity ^0.4.17;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -203,8 +203,8 @@ contract ERC20 is ERC20Basic {
 contract MinutemanToken is ERC20, Ownable, Managed, Whitelisted, StablePrice(10) {
   using SafeMath for uint256;
 
-  string public symbol = &quot;MMT&quot;;
-  string public name = &quot;Minuteman Token&quot;;
+  string public symbol = "MMT";
+  string public name = "Minuteman Token";
   uint8 public decimals = 0;
 
   mapping (address => uint256) balances;
@@ -511,11 +511,11 @@ contract Portfolio {
   function Portfolio(address _assembly) public {
     assemblyAddress = _assembly;
 
-    allocations[0] = Allocations.Allocation(&quot;Tactical Capital&quot;, 48);
-    allocations[1] = Allocations.Allocation(&quot;Safety Net&quot;, 20);
-    allocations[2] = Allocations.Allocation(&quot;Options&quot;, 20);
-    allocations[3] = Allocations.Allocation(&quot;Non-Profit&quot;, 10);
-    allocations[4] = Allocations.Allocation(&quot;Management&quot;, 2);
+    allocations[0] = Allocations.Allocation("Tactical Capital", 48);
+    allocations[1] = Allocations.Allocation("Safety Net", 20);
+    allocations[2] = Allocations.Allocation("Options", 20);
+    allocations[3] = Allocations.Allocation("Non-Profit", 10);
+    allocations[4] = Allocations.Allocation("Management", 2);
   }
 
   function getAllocation(uint index) public view returns (bytes16, uint8) {

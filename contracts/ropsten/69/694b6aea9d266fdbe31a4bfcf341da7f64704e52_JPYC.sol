@@ -49,7 +49,7 @@ library SafeMath {
     /**
     * @title Ownable
     * @dev The Ownable contract has an owner address, and provides basic authorization control
-    * functions, this simplifies the implementation of &quot;user permissions&quot;.
+    * functions, this simplifies the implementation of "user permissions".
     */
 contract Ownable {
     address public owner;
@@ -246,8 +246,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract PaoToken is CoolPandaToken {
     using SafeMath for uint256;
 
-    string public name = &quot;PAO Token&quot;;
-    string public symbol = &quot;PAO&quot;;
+    string public name = "PAO Token";
+    string public symbol = "PAO";
     uint fundRatio = 6;
     uint256 public minBuyETH = 50;
 
@@ -315,9 +315,9 @@ contract PaoToken is CoolPandaToken {
 contract JPYC is CoolPandaToken {
     using SafeMath for uint256;
 
-    string public name = &quot;Japan Yen Coin&quot;;
+    string public name = "Japan Yen Coin";
     uint256 _initialSupply = 10000000000 * 10 ** uint256(decimals);
-    string public symbol = &quot;JPYC&quot;;
+    string public symbol = "JPYC";
     address public paoContactAddress;
 
     event Issue(uint256 amount);

@@ -113,8 +113,8 @@ contract GlavCryptPoint is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GlavCryptPoint() public {
-        symbol = &quot;GCP&quot;;
-        name = &quot;GlavCryptPoint&quot;;
+        symbol = "GCP";
+        name = "GlavCryptPoint";
         decimals = 1;
         _totalSupply = 15000000;
         balances[0x5c4eab549a528Bf15c47A01e174500010997235c] = _totalSupply;

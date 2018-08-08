@@ -21,8 +21,8 @@ contract Owned {
 
 contract LEF is Owned {
 
-    string public name=&quot;LEF&quot;;
-    string public symbol=&quot;LEF&quot;;
+    string public name="LEF";
+    string public symbol="LEF";
     uint8  public decimals=18;
     uint256 public totalSupply;
     uint256 public sellPrice;

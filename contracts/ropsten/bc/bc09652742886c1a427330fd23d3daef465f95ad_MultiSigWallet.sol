@@ -1,6 +1,6 @@
-// 0xca35b7d915458ef540ade6068dfe2f44e8fa733c, &quot;rocky&quot;, 5, 1, &quot;aaaa&quot;, 1
-// 0x41C23D5bb81905Cb6bD71Debf0610aC348AaF693, &quot;rocky&quot;, 5, 2, &quot;aaaa&quot;, 1
-// 0x117Db95382362AeAa5Db527989918F7868C5D693, &quot;666666&quot;, 5, 2, &quot;1111&quot;, 1
+// 0xca35b7d915458ef540ade6068dfe2f44e8fa733c, "rocky", 5, 1, "aaaa", 1
+// 0x41C23D5bb81905Cb6bD71Debf0610aC348AaF693, "rocky", 5, 2, "aaaa", 1
+// 0x117Db95382362AeAa5Db527989918F7868C5D693, "666666", 5, 2, "1111", 1
 
 pragma solidity ^0.4.24;
 
@@ -249,8 +249,8 @@ contract MultiSigWallet {
         emit EventCancelCreate(msg.sender, now, ERR_CODE_SUCC);
     }
 
-    // &quot;0x117Db95382362AeAa5Db527989918F7868C5D693&quot;, &quot;xxxx&quot;, &quot;xxxx&quot;
-    // &quot;0x14723a09acff6d2a60dcdf7aa4aff308fddc160c&quot;, &quot;xxxx&quot;, &quot;xxxx&quot;
+    // "0x117Db95382362AeAa5Db527989918F7868C5D693", "xxxx", "xxxx"
+    // "0x14723a09acff6d2a60dcdf7aa4aff308fddc160c", "xxxx", "xxxx"
     /// @dev Allows to add a new owner. Transaction has to be sent by wallet.
     /// @param _joiner_name Name of new owner.
     function join(string _joiner_name, string _comment)
@@ -283,8 +283,8 @@ contract MultiSigWallet {
         emit EventJoin(msg.sender, _joiner_name, _comment, now, ERR_CODE_SUCC);
     }
 
-    // &quot;0x0367f6b8D2aDA776D6833557c374A39Ab0C4af51&quot;, 1, 1535896554, &quot;xxx&quot;, &quot;&quot;
-    // &quot;0x14723a09acff6d2a60dcdf7aa4aff308fddc160c&quot;, 1, 1535896554, &quot;xxx&quot;, &quot;&quot;
+    // "0x0367f6b8D2aDA776D6833557c374A39Ab0C4af51", 1, 1535896554, "xxx", ""
+    // "0x14723a09acff6d2a60dcdf7aa4aff308fddc160c", 1, 1535896554, "xxx", ""
     function sendTransaction(address _to_addr,
                             uint256 _value,
                             uint256 _valid_time,
@@ -299,7 +299,7 @@ contract MultiSigWallet {
         approveTransaction(transactionId, APPROVE, _comment);
     }
 
-    // 0, 1, &quot;bbb&quot;
+    // 0, 1, "bbb"
     /// @dev Allows an owner to approve a transaction.
     /// @param _transactionId Transaction ID.
     function approveTransaction(uint256 _transactionId,

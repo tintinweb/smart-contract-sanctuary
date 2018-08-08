@@ -416,8 +416,8 @@ contract ERC827Token is ERC827, StandardToken {
 contract AromaToken is ERC827Token {
    using SafeMath for uint256;
 
-   string public name = &quot;Atrip Token Test&quot;;
-   string public symbol = &quot;APK&quot;;
+   string public name = "Atrip Token Test";
+   string public symbol = "APK";
    uint public decimals = 18;
 
    address public wallet =0x569be1c8CC4a0B9B3276E0b8e9259A1AB5c783FE; //

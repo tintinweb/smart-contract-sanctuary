@@ -38,7 +38,7 @@ contract IotPC {
     }
 
     function () payable public {
-        emit Deposited(&quot;Ether recieved&quot;, msg.value);
+        emit Deposited("Ether recieved", msg.value);
     }
 
     modifier only_owner() {
@@ -52,7 +52,7 @@ contract IotPC {
     }
 
     function verify_signature(bytes32 hash,uint8 sig_v,bytes32 sig_r,bytes32 sig_s,address pko) public pure returns(bool){
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
         bytes32 prefixedHash = keccak256(prefix, hash);
         return ecrecover(prefixedHash,sig_v,sig_r,sig_s) == pko;
     }

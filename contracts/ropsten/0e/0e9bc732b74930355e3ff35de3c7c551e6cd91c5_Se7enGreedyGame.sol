@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -87,8 +87,8 @@ contract Se7enGreedyGame is modularLong {
 
     bool public isActive = false;
 
-    string constant public name = &quot;Greedy of Se3en&quot;;
-    string constant public symbol = &quot;Greedy&quot;;
+    string constant public name = "Greedy of Se3en";
+    string constant public symbol = "Greedy";
 
     address public communityAddress = 0xbAbfCD5BFF3bd2ED6592d89856Aa2bA3a08fE86c;
     uint256 private communityBalance = 0;  // 社区余额
@@ -155,7 +155,7 @@ contract Se7enGreedyGame is modularLong {
         if(addr == 0) {
           addr = msg.sender;
         }
-        require(code > 50000, &quot;邀请码必须大于50000&quot;);
+        require(code > 50000, "邀请码必须大于50000");
 
         uint256 _playerId = determinePID(addr);
         buyCore(_playerId);
@@ -469,7 +469,7 @@ contract Se7enGreedyGame is modularLong {
         onlyOwner
     {
         // only team just can activate
-        require(isActive == false, &quot;Greedy Game already activated&quot;);
+        require(isActive == false, "Greedy Game already activated");
 
         // activate the contract
         isActive = true;
@@ -504,7 +504,7 @@ contract Se7enGreedyGame is modularLong {
 
 
     modifier isActivated() {
-        require(isActive == true, &quot;its not ready yet.  check ?eta in discord&quot;);
+        require(isActive == true, "its not ready yet.  check ?eta in discord");
         _;
     }
 
@@ -513,7 +513,7 @@ contract Se7enGreedyGame is modularLong {
         uint256 _codeLength;
 
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
 
@@ -521,8 +521,8 @@ contract Se7enGreedyGame is modularLong {
      * @dev sets boundaries for incoming tx
      */
     modifier isWithinLimits(uint256 _eth) {
-        require(_eth >= 1000000000, &quot;pocket lint: not a valid currency&quot;);
-        require(_eth <= 100000000000000000000000, &quot;no vitalik, no&quot;);
+        require(_eth >= 1000000000, "pocket lint: not a valid currency");
+        require(_eth <= 100000000000000000000000, "no vitalik, no");
         _;
     }
 
@@ -843,7 +843,7 @@ library GreedyKeysCalcLong {
 
     /**
      * @dev calculates how many keys would exist with given an amount of eth
-     * @param _eth eth &quot;in contract&quot;
+     * @param _eth eth "in contract"
      * @return number of keys that would exist
      *    { sqrt[ (_eth * 3125) + 5624988281256103515625 ]  - 74999921875 } / 156250000
      */
@@ -861,7 +861,7 @@ library GreedyKeysCalcLong {
 
     /**
      * @dev calculates how much eth would be in contract given a number of keys
-     * @param _keys number of keys &quot;in contract&quot;
+     * @param _keys number of keys "in contract"
      * @return eth that would exists
      *    [ 78125000 * _keys^2  + ( 149999843750000  * _keys ) ] / 2 / 1000000000000000000  ^ 2
      *
@@ -902,14 +902,14 @@ library NameFilter {
         uint256 _length = _temp.length;
 
         //sorry limited to 32 characters
-        require (_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require (_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // make sure it doesnt start with or end with space
-        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, "string cannot start or end with space");
         // make sure first two characters are not 0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
 
         // create a bool to track if we have a non number character
@@ -936,11 +936,11 @@ library NameFilter {
                     (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                     // or 0-9
                     (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // make sure theres not 2x spaces in a row
                 if (_temp[i] == 0x20)
-                    require( _temp[i+1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require( _temp[i+1] != 0x20, "string cannot contain consecutive spaces");
 
                 // see if we have a character other than a number
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -948,7 +948,7 @@ library NameFilter {
             }
         }
 
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
 
         bytes32 _ret;
         assembly {
@@ -985,7 +985,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -997,7 +997,7 @@ library SafeMath {
         pure
         returns (uint256)
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -1010,7 +1010,7 @@ library SafeMath {
         returns (uint256 c)
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
 

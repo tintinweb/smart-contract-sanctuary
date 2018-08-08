@@ -113,8 +113,8 @@ contract Criptomedicina1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Criptomedicina1() public {
-        symbol = &quot;PUTA&quot;;
-        name = &quot;Criptomedicina1&quot;;
+        symbol = "PUTA";
+        name = "Criptomedicina1";
         decimals = 18;
         _totalSupply = 999999999999999999999999999;
         balances[0xadED66548267adDdff0c412068D95e59f8B5c35D] = _totalSupply;

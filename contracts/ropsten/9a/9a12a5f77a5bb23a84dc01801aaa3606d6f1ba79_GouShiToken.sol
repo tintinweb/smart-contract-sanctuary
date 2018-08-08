@@ -229,8 +229,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract GouShiToken is StandardToken {
 
-  string public constant name = &quot;GouShiToken&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;GouShi&quot;; // solium-disable-line uppercase
+  string public constant name = "GouShiToken"; // solium-disable-line uppercase
+  string public constant symbol = "GouShi"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 100000 * (10 ** uint256(decimals));

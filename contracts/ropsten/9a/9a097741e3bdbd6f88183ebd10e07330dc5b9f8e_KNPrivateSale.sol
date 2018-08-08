@@ -130,7 +130,7 @@ contract KNBaseToken is ERC20 {
 
 }
 
-contract KNToken is KNBaseToken(&quot;Know Token&quot;, &quot;KN&quot;, 18, 7795482309000000000000000000), Ownable {
+contract KNToken is KNBaseToken("Know Token", "KN", 18, 7795482309000000000000000000), Ownable {
 
     uint256 internal privateToken = 389774115000000000000000000;
     uint256 internal preSaleToken = 1169322346000000000000000000;

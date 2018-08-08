@@ -113,8 +113,8 @@ contract HBToken is UnboundedRegularToken {
 
     uint public totalSupply = 5*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;HuobiToken&quot;;
-    string constant public symbol = &quot;HT&quot;;
+    string constant public name = "HuobiToken";
+    string constant public symbol = "HT";
 
     function HBToken() {
         balances[msg.sender] = totalSupply;

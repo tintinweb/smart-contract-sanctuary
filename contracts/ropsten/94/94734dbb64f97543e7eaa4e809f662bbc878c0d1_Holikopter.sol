@@ -82,8 +82,8 @@ contract Holikopter is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Holikopter&quot;;
-    string public constant symbol = &quot;HLKR&quot;;
+    string public constant name = "Holikopter";
+    string public constant symbol = "HLKR";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

@@ -248,8 +248,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GBCCoin is StandardToken {
-  string public name = &quot;GBCCoin&quot;; 
-  string public symbol = &quot;GBC&quot;;
+  string public name = "GBCCoin"; 
+  string public symbol = "GBC";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 200000000;
   function GBCCoin() {

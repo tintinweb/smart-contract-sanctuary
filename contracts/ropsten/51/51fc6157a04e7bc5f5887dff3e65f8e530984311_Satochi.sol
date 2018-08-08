@@ -116,8 +116,8 @@ contract Satochi is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Satochi() public {
-        symbol = &quot;CHI&quot;;
-        name = &quot;Satochi&quot;;
+        symbol = "CHI";
+        name = "Satochi";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 5 weeks;

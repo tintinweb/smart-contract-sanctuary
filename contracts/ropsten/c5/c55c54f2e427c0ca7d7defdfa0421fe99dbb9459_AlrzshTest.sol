@@ -113,8 +113,8 @@ contract AlrzshTest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AlrzshTest() public {
-        symbol = &quot;Alrtst&quot;;
-        name = &quot;AlrzshTest&quot;;
+        symbol = "Alrtst";
+        name = "AlrzshTest";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xAb3C8E620F2f75c85aE08e24E68cCbfAcB5eB99B] = _totalSupply;

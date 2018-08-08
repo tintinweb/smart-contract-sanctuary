@@ -72,8 +72,8 @@ contract Sumte is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Sumte&quot;;
-    string public constant symbol = &quot;SMT&quot;;
+    string public constant name = "Sumte";
+    string public constant symbol = "SMT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

@@ -52,13 +52,13 @@ contract PremiumCalculator is Owned, IPremiumCalculator {
     mapping (bytes2 => mapping(string => uint) ) coefficients;
     mapping (bytes2 => Interval[]) coefficientIntervals;
    
-    string constant DEFAULT = &quot;default&quot;;
-    bytes2 constant CHARGE_LEVEL = &quot;CL&quot;;  
-    bytes2 constant DEVICE_BRAND = &quot;DB&quot;;
-    bytes2 constant DEVICE_AGE = &quot;DA&quot;; // in months
-    bytes2 constant CPU_USAGE = &quot;CU&quot;;
-    bytes2 constant REGION = &quot;R&quot;;
-    bytes2 constant WEAR_LEVEL = &quot;WL&quot;;
+    string constant DEFAULT = "default";
+    bytes2 constant CHARGE_LEVEL = "CL";  
+    bytes2 constant DEVICE_BRAND = "DB";
+    bytes2 constant DEVICE_AGE = "DA"; // in months
+    bytes2 constant CPU_USAGE = "CU";
+    bytes2 constant REGION = "R";
+    bytes2 constant WEAR_LEVEL = "WL";
     
     using SafeMath for uint;
 
@@ -94,11 +94,11 @@ contract PremiumCalculator is Owned, IPremiumCalculator {
         coefficientIntervals[CHARGE_LEVEL].push(Interval(30, 100, 100));
     
         // DEVICE BRAND
-        coefficients[DEVICE_BRAND][&quot;huawei&quot;] = 100;
-        coefficients[DEVICE_BRAND][&quot;samsung&quot;] = 100;
-        coefficients[DEVICE_BRAND][&quot;xiaomi&quot;] = 100;
-        coefficients[DEVICE_BRAND][&quot;oppo&quot;] = 105;
-        coefficients[DEVICE_BRAND][&quot;vivo&quot;] = 105;
+        coefficients[DEVICE_BRAND]["huawei"] = 100;
+        coefficients[DEVICE_BRAND]["samsung"] = 100;
+        coefficients[DEVICE_BRAND]["xiaomi"] = 100;
+        coefficients[DEVICE_BRAND]["oppo"] = 105;
+        coefficients[DEVICE_BRAND]["vivo"] = 105;
         coefficients[DEVICE_BRAND][DEFAULT] = 110;
 
         // DEVICE AGE IN MONTHS
@@ -114,49 +114,49 @@ contract PremiumCalculator is Owned, IPremiumCalculator {
         coefficientIntervals[CPU_USAGE].push(Interval(30, 100, 110));
 
         // REGION
-        coefficients[REGION][&quot;ca&quot;] = 100;
-        coefficients[REGION][&quot;ru&quot;] = 100;
-        coefficients[REGION][&quot;mn&quot;] = 100;
-        coefficients[REGION][&quot;no&quot;] = 100;
-        coefficients[REGION][&quot;kg&quot;] = 100;
-        coefficients[REGION][&quot;fi&quot;] = 100;
-        coefficients[REGION][&quot;is&quot;] = 100;
-        coefficients[REGION][&quot;tj&quot;] = 100;
-        coefficients[REGION][&quot;se&quot;] = 100;
-        coefficients[REGION][&quot;ee&quot;] = 100;
-        coefficients[REGION][&quot;ch&quot;] = 100;
-        coefficients[REGION][&quot;lv&quot;] = 100;
-        coefficients[REGION][&quot;li&quot;] = 100;
-        coefficients[REGION][&quot;kp&quot;] = 100;
-        coefficients[REGION][&quot;ge&quot;] = 100;
-        coefficients[REGION][&quot;by&quot;] = 100;
-        coefficients[REGION][&quot;lt&quot;] = 100;
-        coefficients[REGION][&quot;at&quot;] = 100;
-        coefficients[REGION][&quot;kz&quot;] = 100;
-        coefficients[REGION][&quot;sk&quot;] = 100;
-        coefficients[REGION][&quot;cn&quot;] = 100;
-        coefficients[REGION][&quot;am&quot;] = 100;
-        coefficients[REGION][&quot;bt&quot;] = 100;
-        coefficients[REGION][&quot;dk&quot;] = 100;
-        coefficients[REGION][&quot;cz&quot;] = 100;
-        coefficients[REGION][&quot;ad&quot;] = 100;
-        coefficients[REGION][&quot;pl&quot;] = 100;
-        coefficients[REGION][&quot;np&quot;] = 100;
-        coefficients[REGION][&quot;ua&quot;] = 100;
-        coefficients[REGION][&quot;cl&quot;] = 100;
-        coefficients[REGION][&quot;gb&quot;] = 100;
-        coefficients[REGION][&quot;de&quot;] = 100;
-        coefficients[REGION][&quot;us&quot;] = 100;
-        coefficients[REGION][&quot;lu&quot;] = 100;
-        coefficients[REGION][&quot;ro&quot;] = 100;
-        coefficients[REGION][&quot;si&quot;] = 100;
-        coefficients[REGION][&quot;nl&quot;] = 100;
-        coefficients[REGION][&quot;ie&quot;] = 100;
+        coefficients[REGION]["ca"] = 100;
+        coefficients[REGION]["ru"] = 100;
+        coefficients[REGION]["mn"] = 100;
+        coefficients[REGION]["no"] = 100;
+        coefficients[REGION]["kg"] = 100;
+        coefficients[REGION]["fi"] = 100;
+        coefficients[REGION]["is"] = 100;
+        coefficients[REGION]["tj"] = 100;
+        coefficients[REGION]["se"] = 100;
+        coefficients[REGION]["ee"] = 100;
+        coefficients[REGION]["ch"] = 100;
+        coefficients[REGION]["lv"] = 100;
+        coefficients[REGION]["li"] = 100;
+        coefficients[REGION]["kp"] = 100;
+        coefficients[REGION]["ge"] = 100;
+        coefficients[REGION]["by"] = 100;
+        coefficients[REGION]["lt"] = 100;
+        coefficients[REGION]["at"] = 100;
+        coefficients[REGION]["kz"] = 100;
+        coefficients[REGION]["sk"] = 100;
+        coefficients[REGION]["cn"] = 100;
+        coefficients[REGION]["am"] = 100;
+        coefficients[REGION]["bt"] = 100;
+        coefficients[REGION]["dk"] = 100;
+        coefficients[REGION]["cz"] = 100;
+        coefficients[REGION]["ad"] = 100;
+        coefficients[REGION]["pl"] = 100;
+        coefficients[REGION]["np"] = 100;
+        coefficients[REGION]["ua"] = 100;
+        coefficients[REGION]["cl"] = 100;
+        coefficients[REGION]["gb"] = 100;
+        coefficients[REGION]["de"] = 100;
+        coefficients[REGION]["us"] = 100;
+        coefficients[REGION]["lu"] = 100;
+        coefficients[REGION]["ro"] = 100;
+        coefficients[REGION]["si"] = 100;
+        coefficients[REGION]["nl"] = 100;
+        coefficients[REGION]["ie"] = 100;
         // TODO: add others
         coefficients[REGION][DEFAULT] = 0;
 
         // WEAR LEVEL
-        coefficients[WEAR_LEVEL][&quot;100&quot;] = 100;
+        coefficients[WEAR_LEVEL]["100"] = 100;
         coefficients[WEAR_LEVEL][DEFAULT] = 0;
     }
 

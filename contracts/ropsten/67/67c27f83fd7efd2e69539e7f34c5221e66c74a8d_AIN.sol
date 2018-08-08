@@ -113,8 +113,8 @@ contract AIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AIN() public {
-        symbol = &quot;AIN&quot;;
-        name = &quot;Artificial Intelligence Network&quot;;
+        symbol = "AIN";
+        name = "Artificial Intelligence Network";
         decimals = 18;
         _totalSupply = 99999999000000000000000000;
         balances[0x37C7f1d17b6a413121136d8c1aA5AfB04ec68064] = _totalSupply;

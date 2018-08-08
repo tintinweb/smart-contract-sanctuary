@@ -113,8 +113,8 @@ contract SportistToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SportistToken() public {
-        symbol = &quot;Sportist&quot;;
-        name = &quot;SportistToken&quot;;
+        symbol = "Sportist";
+        name = "SportistToken";
         decimals = 100;
         _totalSupply = 100000000000;
         balances[0xF79D46dcF43bEeB5E030aEcFb88679ECa210F24F] = _totalSupply;

@@ -28,9 +28,9 @@ contract ERC20Basic {
   function balanceOf(address who)public constant returns (uint);
   function transfer(address to, uint value) ;
   event Transfer(address indexed from, address indexed to, uint value);
- string  public constant name = &quot;Reward Point Tokens&quot;;
- string public constant symbol = &quot;RPT&quot;;
- string public constant decimals = &quot;0&quot;;}
+ string  public constant name = "Reward Point Tokens";
+ string public constant symbol = "RPT";
+ string public constant decimals = "0";}
 contract BasicToken is ERC20Basic {
   using SafeMath for uint;
   mapping(address => uint) balances;

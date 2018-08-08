@@ -114,8 +114,8 @@ contract WartegsToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;0WRTG&quot;;
-        name = &quot;Wartegs Token&quot;;
+        symbol = "0WRTG";
+        name = "Wartegs Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

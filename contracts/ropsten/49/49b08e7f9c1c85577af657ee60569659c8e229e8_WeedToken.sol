@@ -113,8 +113,8 @@ contract WeedToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WeedToken() public {
-        symbol = &quot;Weed&quot;;
-        name = &quot;Weed Token&quot;;
+        symbol = "Weed";
+        name = "Weed Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDF07D75572181D9F56526645bc71Bb40b0cfd005] = _totalSupply;

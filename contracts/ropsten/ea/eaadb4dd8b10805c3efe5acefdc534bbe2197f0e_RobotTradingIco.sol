@@ -151,8 +151,8 @@ contract RobotTradingToken is StandardToken, SafeMath {
      * Token meta data
      */
      
-    string public constant name = &quot;Robot Trading&quot;;
-    string public constant symbol = &quot;RTD&quot;;
+    string public constant name = "Robot Trading";
+    string public constant symbol = "RTD";
     uint public constant decimals = 18;
 
     // tottal supply
@@ -232,7 +232,7 @@ contract RobotTradingIco is SafeMath {
 
     State public currentState = State.Pause;
 
-    string public constant name = &quot;Robot Trading ICO&quot;;
+    string public constant name = "Robot Trading ICO";
 
     // Addresses of founders and other level
     address public accManager;
@@ -392,7 +392,7 @@ contract RobotTradingIco is SafeMath {
         buyTokens(msg.sender);
     }
 
-    /// @dev Burn tokens from accounts only in state &quot;not migrated&quot;. Only manager can do it
+    /// @dev Burn tokens from accounts only in state "not migrated". Only manager can do it
     /// @param _from Address of account
     function burnTokens(address _from, uint _value) onlyManager notMigrated {
         robottradingToken.burnTokens(_from, _value);

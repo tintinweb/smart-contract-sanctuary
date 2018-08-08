@@ -114,8 +114,8 @@ contract LSSCE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;LSSCE&quot;;
-        name = &quot;Ljubljana Summer School Cryptoeconomics&quot;;
+        symbol = "LSSCE";
+        name = "Ljubljana Summer School Cryptoeconomics";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x56C71cCff55f9d4abAE3de08328f586a7bFDe53f] = _totalSupply;

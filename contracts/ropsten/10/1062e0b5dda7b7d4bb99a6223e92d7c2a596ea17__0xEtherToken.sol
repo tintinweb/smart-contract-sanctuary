@@ -263,9 +263,9 @@ contract _0xEtherToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xETH&quot;;
+        symbol = "0xETH";
 
-        name = &quot;0xEther Token&quot;;
+        name = "0xEther Token";
 
         decimals = 8;
 

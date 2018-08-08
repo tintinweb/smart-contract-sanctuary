@@ -176,7 +176,7 @@ contract NFToken is ERC721, SupportsInterface {
     
     /**
     * @dev Magic value of a smart contract that can recieve NFT.
-    * Equal to: bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;)).
+    * Equal to: bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")).
     */
     bytes4 constant MAGIC_ON_ERC721_RECEIVED = 0x150b7a02;
 
@@ -223,7 +223,7 @@ contract NFToken is ERC721, SupportsInterface {
     }
 
     function safeTransferFrom(address _from, address _to, uint256 _tokenId) external {
-        _safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+        _safeTransferFrom(_from, _to, _tokenId, "");
     }
 
     function transferFrom(address _from, address _to, uint256 _tokenId) external canTransfer(_tokenId) validNFToken(_tokenId) {
@@ -501,7 +501,7 @@ interface ETH721 {
     function handleMultipleItems(address _sender, uint _classId1, uint _classId2, uint _classId3, uint _target, uint _param) external;
 }
 
-contract ETH721Item is NFTStandard(&quot;ETH721&quot;, &quot;ETH&quot;), BasicAccessControl {
+contract ETH721Item is NFTStandard("ETH721", "ETH"), BasicAccessControl {
     uint constant public MAX_OWNER_PERS_SITE = 100000;
     uint constant public MAX_SITE_ID = 100008;
     uint constant public MAX_SITE_TOKEN_ID = 10080;

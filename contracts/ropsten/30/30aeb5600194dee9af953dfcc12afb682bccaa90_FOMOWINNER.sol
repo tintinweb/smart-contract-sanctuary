@@ -33,10 +33,10 @@ contract TokenERC20 {
     uint256 initialSupply = 1000000000;
     
     // 令牌的名称
-    string public name = &quot;FOMO WINNER&quot;;
+    string public name = "FOMO WINNER";
 
     // 令牌的标识
-    string public symbol = &quot;FMW&quot;;
+    string public symbol = "FMW";
 
     // 18 decimals is the strongly suggested default, avoid changing it
     // 强烈建议18位小数

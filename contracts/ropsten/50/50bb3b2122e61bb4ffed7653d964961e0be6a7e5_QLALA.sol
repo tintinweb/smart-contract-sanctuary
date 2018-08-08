@@ -116,8 +116,8 @@ contract QLALA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QLALA() public {
-        symbol = &quot;QLA&quot;;
-        name = &quot;QLALA TOKEN&quot;;
+        symbol = "QLA";
+        name = "QLALA TOKEN";
         decimals = 18;
          _totalSupply = 800000000000000000000000000;
         balances[0x6503A129404f08672FC640BfBEC3DCD3A9bB4933] = _totalSupply;

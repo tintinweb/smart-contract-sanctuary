@@ -148,8 +148,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Marshal is StandardToken {
 
-    string public constant name = &quot;Marshal Token&quot;;
-    string public constant symbol = &quot;MRS&quot;;
+    string public constant name = "Marshal Token";
+    string public constant symbol = "MRS";
     uint256 public constant decimals = 8;
     uint256 public constant INITIAL_SUPPLY = 100000000 * 10**8;
     function Jumanji() {

@@ -8,7 +8,7 @@ contract UpDemo {
 
     constructor() public{
         isEnding = true;
-        message = &quot;&quot;;
+        message = "";
     }
 
     function testYBool() public view returns(bool _rYBool){

@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GENERITOKEN1&quot;;
-        name = &quot;Example Fixed Supply Token&quot;;
+        symbol = "GENERITOKEN1";
+        name = "Example Fixed Supply Token";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

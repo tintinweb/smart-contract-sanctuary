@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract YixiuToken is StandardToken {
-  string public name    = &quot;YiXiuToken&quot;;
-  string public symbol  = &quot;YXT&quot;;
+  string public name    = "YiXiuToken";
+  string public symbol  = "YXT";
   uint8 public decimals = 18;
 
   // one billion in initial supply

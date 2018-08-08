@@ -27,8 +27,8 @@ contract ERC20Interface {
 contract DrupeCoin is ERC20Interface {
 	using SafeMath for uint;
 
-	string public constant symbol = &quot;DPC&quot;;
-	string public constant name = &quot;DrupeCoin&quot;;
+	string public constant symbol = "DPC";
+	string public constant name = "DrupeCoin";
 	uint8 public constant decimals = 18;
 
 	uint _initialSupply;

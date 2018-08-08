@@ -191,8 +191,8 @@ contract CrowdForceTestToken is ERC20Token {
   
   /* Basic token data */
 
-  string public constant name     = &quot;CrowdForce Test Coin&quot;;
-  string public constant symbol   = &quot;CFTC&quot;;
+  string public constant name     = "CrowdForce Test Coin";
+  string public constant symbol   = "CFTC";
   uint8  public constant decimals = 6;
 
   /* Wallet addresses - initially set to owner at deployment */
@@ -446,7 +446,7 @@ contract CrowdForceTestToken is ERC20Token {
   
   // ERC20 functions ------------------
 
-  /* Override &quot;transfer&quot; (ERC20) */
+  /* Override "transfer" (ERC20) */
 
   function transfer(address _to, uint _amount) returns (bool success) {
     require( isTransferable() );
@@ -455,7 +455,7 @@ contract CrowdForceTestToken is ERC20Token {
     return super.transfer(_to, _amount);
   }
   
-  /* Override &quot;transferFrom&quot; (ERC20) */
+  /* Override "transferFrom" (ERC20) */
 
   function transferFrom(address _from, address _to, uint _amount) returns (bool success) {
     require( isTransferable() );
@@ -503,7 +503,7 @@ contract CrowdForceTestToken is ERC20Token {
     Refund(msg.sender, amount, tokens);
   }
 
-  /* Claiming of &quot;airdropped&quot; tokens in case of successful crowdsale */
+  /* Claiming of "airdropped" tokens in case of successful crowdsale */
   /* Can be done by token holder, or by adminWallet */ 
 
   function claimAirdrop() external {

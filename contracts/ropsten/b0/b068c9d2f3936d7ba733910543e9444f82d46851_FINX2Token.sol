@@ -58,8 +58,8 @@ contract ERC20Interface {
 contract FINX2Token is ERC20Interface {
 	using SafeMath for uint;
 
-	string constant public symbol = &quot;FINX2&quot;;
-	string constant public name = &quot;FINX2&quot;;
+	string constant public symbol = "FINX2";
+	string constant public name = "FINX2";
 	uint8 constant public decimals = 18;
 	uint public _totalSupply = 100000000000e18;
 

@@ -113,8 +113,8 @@ contract CynkciarzToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CynkciarzToken() public {
-        symbol = &quot;CKT&quot;;
-        name = &quot;Cynkciarz Token&quot;;
+        symbol = "CKT";
+        name = "Cynkciarz Token";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0x4F59cBaE14FC10085a80256599ea7f1eF3Da8672] = _totalSupply;

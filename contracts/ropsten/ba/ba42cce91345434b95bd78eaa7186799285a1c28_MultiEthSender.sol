@@ -43,19 +43,19 @@ contract MultiEthSender is Ownable {
     mapping (address => uint256) public deposits;
     
     modifier canExam() {
-        require(!examFinished, &quot;Exam has finished&quot;);
+        require(!examFinished, "Exam has finished");
         _;
     }
     modifier hasMoney() {
-        require(balance() > 0, &quot;Account has no money&quot;);
+        require(balance() > 0, "Account has no money");
         _;
     }
     modifier atLeastOneEther(uint256 amount) {
-        require(amount >= 1 ether, &quot;At least 1 Ether&quot;);
+        require(amount >= 1 ether, "At least 1 Ether");
         _;
     }
     modifier atLeastOneWei() {
-        require(msg.value > 1, &quot;At least 1 Wei&quot;);
+        require(msg.value > 1, "At least 1 Wei");
         _;
     }
 

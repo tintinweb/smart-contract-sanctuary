@@ -82,15 +82,15 @@ contract EtherPremierLeague {
     address internal constant administrator = 0x4F4eBF556CFDc21c3424F85ff6572C77c514Fcae;
     address internal constant givethAddress = 0x5ADF43DD006c6C36506e2b2DFA352E60002d22Dc;
  
-    string name   = &quot;EtherPremierLeague&quot;;
-    string symbol = &quot;EPL&quot;;
+    string name   = "EtherPremierLeague";
+    string symbol = "EPL";
  
     /* VARIABLES */
    
     // List of addresses with permissions to score games in the administrator&#39;s absence.
     mapping(address => bool)                       referees;
    
-    // Is a two digit mapping a valid entry? [including &quot;--&quot; for draws and &quot;XX&quot; for non-prediction]
+    // Is a two digit mapping a valid entry? [including "--" for draws and "XX" for non-prediction]
     mapping (string => bool)                       validTeamID;
  
     // Has the game been scored?
@@ -365,28 +365,28 @@ contract EtherPremierLeague {
         seasonEndGameID[4]     = 380;
  
         // Explicitly set which two digit string entries are considered valid.
-        validTeamID[&quot;AR&quot;] = true;
-        validTeamID[&quot;BN&quot;] = true;
-        validTeamID[&quot;BR&quot;] = true;
-        validTeamID[&quot;BY&quot;] = true;
-        validTeamID[&quot;CD&quot;] = true;
-        validTeamID[&quot;CH&quot;] = true;
-        validTeamID[&quot;CP&quot;] = true;
-        validTeamID[&quot;EV&quot;] = true;
-        validTeamID[&quot;FL&quot;] = true;
-        validTeamID[&quot;HD&quot;] = true;
-        validTeamID[&quot;LE&quot;] = true;
-        validTeamID[&quot;LV&quot;] = true;
-        validTeamID[&quot;MC&quot;] = true;
-        validTeamID[&quot;MU&quot;] = true;
-        validTeamID[&quot;NC&quot;] = true;
-        validTeamID[&quot;SH&quot;] = true;
-        validTeamID[&quot;TH&quot;] = true;
-        validTeamID[&quot;WA&quot;] = true;
-        validTeamID[&quot;WH&quot;] = true;
-        validTeamID[&quot;WL&quot;] = true;
-        validTeamID[&quot;--&quot;] = true;
-        validTeamID[&quot;XX&quot;] = true;
+        validTeamID["AR"] = true;
+        validTeamID["BN"] = true;
+        validTeamID["BR"] = true;
+        validTeamID["BY"] = true;
+        validTeamID["CD"] = true;
+        validTeamID["CH"] = true;
+        validTeamID["CP"] = true;
+        validTeamID["EV"] = true;
+        validTeamID["FL"] = true;
+        validTeamID["HD"] = true;
+        validTeamID["LE"] = true;
+        validTeamID["LV"] = true;
+        validTeamID["MC"] = true;
+        validTeamID["MU"] = true;
+        validTeamID["NC"] = true;
+        validTeamID["SH"] = true;
+        validTeamID["TH"] = true;
+        validTeamID["WA"] = true;
+        validTeamID["WH"] = true;
+        validTeamID["WL"] = true;
+        validTeamID["--"] = true;
+        validTeamID["XX"] = true;
        
         // Adding referees to enter results in the event administrator is unavailable.
         referees[0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c] = true; // Norsefire
@@ -722,7 +722,7 @@ contract EtherPremierLeague {
     }
     
     // When the results of a matchday are known, enter the results.
-    // NOTE: parameters will read as logResults(1, &quot;AR.--.CP.--&quot;...) for a given matchday.
+    // NOTE: parameters will read as logResults(1, "AR.--.CP.--"...) for a given matchday.
     // Stringutil functionality splits the input string up into an array of two character codes.
     function logMatchdayResults(int16 _matchday, string _results)
         isReferee
@@ -733,7 +733,7 @@ contract EtherPremierLeague {
         int16 numGames   = matchdayGames[_matchday];
         int16 gamesToLog = SafeMath.addint16(startIndex, numGames);
         strings.slice memory s = _results.toSlice();
-        strings.slice memory delim = &quot;.&quot;.toSlice();
+        strings.slice memory delim = ".".toSlice();
         for (int16 i = startIndex; i <= gamesToLog; i++){
             string memory _result = s.split(delim).toString();
             gameResult[i] = _result;
@@ -811,7 +811,7 @@ contract EtherPremierLeague {
         int16 numGames   = matchdayGames[_matchday];
         int16 gamesToLog = SafeMath.addint16(startIndex, numGames);
         strings.slice memory s = massPredictions.toSlice();
-        strings.slice memory delim = &quot;.&quot;.toSlice();
+        strings.slice memory delim = ".".toSlice();
         for (int16 i = startIndex; i < gamesToLog; i++){
             string memory _prediction = s.split(delim).toString();
             require(validTeamID[_prediction]);

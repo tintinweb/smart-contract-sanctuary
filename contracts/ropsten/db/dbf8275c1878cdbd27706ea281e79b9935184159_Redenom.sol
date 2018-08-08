@@ -153,8 +153,8 @@ contract Redenom is ERC20Interface, Owned{
     event Vote(address indexed voter, uint indexed propId, uint voterBalance, uint indexed curentBallotId);
 
     function Redenom() public {
-        symbol = &quot;NOMT&quot;;
-        name = &quot;Redenom_test&quot;;
+        symbol = "NOMT";
+        name = "Redenom_test";
         _totalSupply = 0; // total NOM&#39;s in the game 
 
         total_fund = 10000000 * 10**decimals; // 100 000 000.00000000, 1Mt

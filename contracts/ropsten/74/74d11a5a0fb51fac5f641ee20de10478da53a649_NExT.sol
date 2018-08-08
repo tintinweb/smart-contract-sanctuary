@@ -131,9 +131,9 @@ contract NExT is StandardToken {
         balances[0xB61bdAECf23D2fc75dD98eb63E45cA3c49B32207] = 1000000000;               // Give 0xB61bdAECf23D2fc75dD98eb63E45cA3c49B32207 1 Billion
         balances[0x8458F45126D23d9BefD74D358cD812FCCF4fD287] = 1000000000;               // Give 0x8458F45126D23d9BefD74D358cD812FCCF4fD287 1 Billion
         totalSupply = 105000000000; // Set total supply
-        name = &quot;NExT Coin&quot;;         // Set the name for display purposes
+        name = "NExT Coin";         // Set the name for display purposes
         decimals = 0;               // Set the amount of decimals for display purposes
-        symbol = &quot;NTX&quot;;             // Set the symbol for display purposes
+        symbol = "NTX";             // Set the symbol for display purposes
     }
 
     /* Approves and then calls the receiving contract */
@@ -144,7 +144,7 @@ contract NExT is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

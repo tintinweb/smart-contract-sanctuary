@@ -113,8 +113,8 @@ contract FeemCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FeemCoin() public {
-        symbol = &quot;FEEM&quot;;
-        name = &quot;FeemCoin&quot;;
+        symbol = "FEEM";
+        name = "FeemCoin";
         decimals = 18;
         _totalSupply = 500000000000000000000000000000000000000000000;
         balances[0xa1D19E9EcdBAF9cf12FcF29ECD70C2D8B70B49aD] = _totalSupply; //MEW address here

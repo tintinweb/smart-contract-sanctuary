@@ -31,7 +31,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -299,8 +299,8 @@ contract Vesting is MintableToken {
 
 contract GG is Vesting {
 
-    string public name = &quot;GG for TEST&quot;;
-    string public symbol = &quot;GG&quot;;
+    string public name = "GG for TEST";
+    string public symbol = "GG";
     uint256 public decimals = 0;
 
     function GG() public {

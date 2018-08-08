@@ -113,8 +113,8 @@ contract BariCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BariCoin() public {
-        symbol = &quot;BRICN&quot;;
-        name = &quot;Bari Coin&quot;;
+        symbol = "BRICN";
+        name = "Bari Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5ACf0A2d50795f2eF11AA79DD914605eb3fb9193] = _totalSupply;

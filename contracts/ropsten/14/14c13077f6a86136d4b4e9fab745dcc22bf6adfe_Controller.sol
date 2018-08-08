@@ -121,7 +121,7 @@ contract Controller is AbstractSweeperList {
     
     function () payable{
         destinationAddress.call.value(msg.value).gas(61000)();
-        received(&quot;first contract called&quot;);
+        received("first contract called");
     }
     
     modifier onlyOwner() {

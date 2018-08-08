@@ -113,8 +113,8 @@ contract Prosper is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Prosper() public {
-        symbol = &quot;PROP&quot;;
-        name = &quot;Prosper Token&quot;;
+        symbol = "PROP";
+        name = "Prosper Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0x1E64e6b6bFAB3750484404fD7d24f38233CD80eD] = _totalSupply;

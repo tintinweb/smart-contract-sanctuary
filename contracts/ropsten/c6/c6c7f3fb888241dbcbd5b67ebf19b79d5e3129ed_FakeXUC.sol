@@ -98,8 +98,8 @@ contract FakeXUC is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FakeXUC() public {
-        symbol = &quot;XUC&quot;;
-        name = &quot;Fake XUC&quot;;
+        symbol = "XUC";
+        name = "Fake XUC";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xebff76c18de8532b58bc983624ad748cc458fd62] = _totalSupply;

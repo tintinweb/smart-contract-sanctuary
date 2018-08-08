@@ -116,8 +116,8 @@ contract KTCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KTCToken() public {
-        symbol = &quot;KTC&quot;;
-        name = &quot;KTC Token&quot;;
+        symbol = "KTC";
+        name = "KTC Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 100 weeks;

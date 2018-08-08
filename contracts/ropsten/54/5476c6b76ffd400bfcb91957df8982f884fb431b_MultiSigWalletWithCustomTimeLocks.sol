@@ -2,14 +2,14 @@
 
   Copyright 2018 bZeroX, LLC
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -262,7 +262,7 @@ contract MultiSigWallet {
     function external_call(address destination, uint value, uint dataLength, bytes data) internal returns (bool) {
         bool result;
         assembly {
-            let x := mload(0x40)   // &quot;Allocate&quot; memory for output (0x40 is where &quot;free memory&quot; pointer is stored by convention)
+            let x := mload(0x40)   // "Allocate" memory for output (0x40 is where "free memory" pointer is stored by convention)
             let d := add(data, 32) // First 32 bytes are the padded length of data, so exclude that
             result := call(
                 sub(gas, 34710),   // 34710 is the value that solidity is currently emitting
@@ -457,27 +457,27 @@ contract MultiSigWalletWithCustomTimeLocks is MultiSigWallet {
     {
         secondsTimeLockedDefault = _secondsTimeLockedDefault;
 
-        customTimeLockFunctions.push(&quot;transferOwnership(address)&quot;);
+        customTimeLockFunctions.push("transferOwnership(address)");
         customTimeLocks[0xf2fde38b].isSet = true;
         customTimeLocks[0xf2fde38b].secondsTimeLocked = 600; // 10 min
 
-        customTimeLockFunctions.push(&quot;transferBZxOwnership(address)&quot;);
+        customTimeLockFunctions.push("transferBZxOwnership(address)");
         customTimeLocks[0x72e98a79].isSet = true;
         customTimeLocks[0x72e98a79].secondsTimeLocked = 600;
 
-        customTimeLockFunctions.push(&quot;replaceContract(address)&quot;);
+        customTimeLockFunctions.push("replaceContract(address)");
         customTimeLocks[0xfb08fdaa].isSet = true;
         customTimeLocks[0xfb08fdaa].secondsTimeLocked = 600;
 
-        customTimeLockFunctions.push(&quot;setTarget(string,address)&quot;);
+        customTimeLockFunctions.push("setTarget(string,address)");
         customTimeLocks[0xc11296fc].isSet = true;
         customTimeLocks[0xc11296fc].secondsTimeLocked = 600;
 
-        customTimeLockFunctions.push(&quot;setBZxAddresses(address,address,address,address)&quot;);
+        customTimeLockFunctions.push("setBZxAddresses(address,address,address,address)");
         customTimeLocks[0x0dc2e439].isSet = true;
         customTimeLocks[0x0dc2e439].secondsTimeLocked = 600;
 
-        customTimeLockFunctions.push(&quot;setVault(address)&quot;);
+        customTimeLockFunctions.push("setVault(address)");
         customTimeLocks[0x6817031b].isSet = true;
         customTimeLocks[0x6817031b].secondsTimeLocked = 600;
     }
@@ -493,7 +493,7 @@ contract MultiSigWalletWithCustomTimeLocks is MultiSigWallet {
     }
 
     /// @dev Changes the custom duration of the time lock for transactions to a specific function.
-    /// @param _funcId example: &quot;functionName(address[6],uint256[9],address,uint256,bytes)&quot;
+    /// @param _funcId example: "functionName(address[6],uint256[9],address,uint256,bytes)"
     /// @param _secondsTimeLockedCustom Custom duration needed after a transaction is confirmed and before it becomes executable, in seconds.
     function changeCustomTimeLock(string _funcId, uint _secondsTimeLockedCustom)
         public
@@ -509,7 +509,7 @@ contract MultiSigWalletWithCustomTimeLocks is MultiSigWallet {
     }
 
     /// @dev Removes the custom duration of the time lock for transactions to a specific function.
-    /// @param _funcId example: &quot;functionName(address[6],uint256[9],address,uint256,bytes)&quot;
+    /// @param _funcId example: "functionName(address[6],uint256[9],address,uint256,bytes)"
     function removeCustomTimeLock(string _funcId)
         public
         onlyWallet

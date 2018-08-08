@@ -113,8 +113,8 @@ contract GCPrightToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GCPrightToken() public {
-        symbol = &quot;RTG&quot;;
-        name = &quot;GCP right Token&quot;;
+        symbol = "RTG";
+        name = "GCP right Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb88d14b9f0740268a1Be51de37039e6beEfafE25] = _totalSupply;

@@ -184,18 +184,18 @@ contract standardToken is Token, Ownable {
 
 
 contract GBI is standardToken {
-    string public name = &quot;CHIFU GBI&quot;;	//合约名称
-    string public symbol = &quot;GBI&quot;;			//合约简称
+    string public name = "CHIFU GBI";	//合约名称
+    string public symbol = "GBI";			//合约简称
     uint8 public decimals = 18;				//最多的小数位数
-    string public version = &quot;V0.1&quot;;	//版本
+    string public version = "V0.1";	//版本
 
 }
 
 contract TWDT is standardToken {
-    string public name = &quot;CHIFU TWDT&quot;;	//合约名称
-    string public symbol = &quot;TWDT&quot;;			//合约简称
+    string public name = "CHIFU TWDT";	//合约名称
+    string public symbol = "TWDT";			//合约简称
     uint8 public decimals = 18;				//最多的小数位数
-    string public version = &quot;V0.1&quot;;	//版本
+    string public version = "V0.1";	//版本
 
 }
 

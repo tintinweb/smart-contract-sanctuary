@@ -70,8 +70,8 @@ contract TXR is ERC20, ERC223 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     function StandardToken(string name, string symbol, uint8 decimals, uint256 totalSupply) public {
-        _symbol = &quot;TXR&quot;;
-        _name = &quot;Tradexr&quot;;
+        _symbol = "TXR";
+        _name = "Tradexr";
         _decimals = 8;
         _totalSupply = 5000;
         balances[msg.sender] = totalSupply;

@@ -106,8 +106,8 @@ contract CryptDash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CRDH16&quot;;
-        name = &quot;CryptDash&quot;;
+        symbol = "CRDH16";
+        name = "CryptDash";
         decimals = 18;
         bonusEnds = now + 1 hours;
         endDate = now + 7 weeks;

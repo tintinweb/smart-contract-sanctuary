@@ -115,8 +115,8 @@ contract MyPinerTokenTest3 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MyPinerTokenTest3() public {
-        symbol = &quot;MYPT3&quot;;
-        name = &quot;MyPiner Token Test 3&quot;;
+        symbol = "MYPT3";
+        name = "MyPiner Token Test 3";
         decimals = 0;
         _totalSupply = 69000000;
         startDate = now;

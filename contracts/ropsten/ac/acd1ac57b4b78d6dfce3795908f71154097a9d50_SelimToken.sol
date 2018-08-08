@@ -260,8 +260,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/SelimToken.sol
 
 contract SelimToken is StandardToken {
-    string public name = &quot;SelimToken&quot;; 
-    string public symbol = &quot;SLT&quot;;
+    string public name = "SelimToken"; 
+    string public symbol = "SLT";
     uint public decimals = 2;
     uint public INITIAL_SUPPLY = 10000 * (10 ** decimals);
 

@@ -112,7 +112,7 @@ contract BasicToken is ERC20Basic {
 // ----------------------------------------------------------------------------
 // @title Ownable
 // @dev The Ownable contract has an owner address, and provides basic authorization control
-// functions, this simplifies the implementation of &quot;user permissions&quot;.
+// functions, this simplifies the implementation of "user permissions".
 // ----------------------------------------------------------------------------
 contract Ownable {
     address public owner;
@@ -494,7 +494,7 @@ contract PausableToken is StandardToken, Pausable, BlackList {
 // @Source Code Verification ()
 // ----------------------------------------------------------------------------
 contract FunkeyCoin is PausableToken, MintableToken, BurnableToken, MultiTransferToken {
-    string public name = &quot;FunkeyCoin&quot;;
-    string public symbol = &quot;FKC&quot;;
+    string public name = "FunkeyCoin";
+    string public symbol = "FKC";
     uint256 public decimals = 18;
 }

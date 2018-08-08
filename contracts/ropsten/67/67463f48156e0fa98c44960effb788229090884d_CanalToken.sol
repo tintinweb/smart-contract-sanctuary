@@ -113,8 +113,8 @@ contract CanalToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CanalToken() public {
-        symbol = &quot;0CANAL&quot;;
-        name = &quot;0 Canal Token&quot;;
+        symbol = "0CANAL";
+        name = "0 Canal Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6828a5ec9c2a913d5A2ce62B089d586c9740949e] = _totalSupply;

@@ -113,8 +113,8 @@ contract MotherDNAShare is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MotherDNAShare() public {
-        symbol = &quot;mDNA&quot;;
-        name = &quot;Mother DNA Share&quot;;
+        symbol = "mDNA";
+        name = "Mother DNA Share";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xBa8147abf61Dae7eD8A2f04C3483F96adc068a95] = _totalSupply;

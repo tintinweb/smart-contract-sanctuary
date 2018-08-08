@@ -113,8 +113,8 @@ contract FitToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FitToken() public {
-        symbol = &quot;FIT&quot;;
-        name = &quot;Fit Token&quot;;
+        symbol = "FIT";
+        name = "Fit Token";
         decimals = 3;
         _totalSupply = 1000000000000;
         balances[0x9ab00c5d2efAae070A3f84e6a54F1AeA0a6DD775] = _totalSupply;

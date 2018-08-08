@@ -150,8 +150,8 @@ contract ERC223Token is ERC223Interface {
 contract CoVEXTokenERC223 is ERC223Token{
     using SafeMath for uint256;
 
-    string public name = &quot;CoVEX Coin&quot;;
-    string public symbol = &quot;CoVEX&quot;;
+    string public name = "CoVEX Coin";
+    string public symbol = "CoVEX";
     uint256 public decimals = 18;
 
     // 250M

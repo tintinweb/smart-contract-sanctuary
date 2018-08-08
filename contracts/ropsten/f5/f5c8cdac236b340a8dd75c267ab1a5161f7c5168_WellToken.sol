@@ -56,8 +56,8 @@ contract WellToken is Owned, ERC20{
     using SafeMath for uint256;
     
     // Public variables of the token
-    string constant public name = &quot;WELL Token&quot;;
-    string constant public symbol = &quot;WELL&quot;;
+    string constant public name = "WELL Token";
+    string constant public symbol = "WELL";
     uint8 constant public decimals = 18;
     uint256 total_supply = 5000000000e18; // Total supply of 5 billion Well Tokens
     uint256 constant public teamReserve = 100000000e18; //10%...

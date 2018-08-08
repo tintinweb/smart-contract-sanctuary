@@ -3,7 +3,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -346,8 +346,8 @@ contract DCF is ManagedToken {
      * @param _coinPrice Price of coin(price should be greater 0)
      */
     constructor(uint256 _coinPrice) public ManagedToken(msg.sender, msg.sender) {
-        name = &quot;DCF&quot;;
-        symbol = &quot;DCF&quot;;
+        name = "DCF";
+        symbol = "DCF";
         decimals = 18;
         totalSupply = 500000000 ether;                                          //The maximum number of tokens is unchanged and totals will decrease after issue
         minDeposit = 0.01 ether;                                                //Default MIN of deposit is 0.01 ether.
@@ -358,8 +358,8 @@ contract DCF is ManagedToken {
      * Throws if called when isPause = true
      */
     modifier canDeposit() {
-        require(!isPause, &quot;Deposit to issue token is paused.&quot;);
-        require(msg.value >= minDeposit, &quot;Deposit is required greater value of minDeposit&quot;);
+        require(!isPause, "Deposit to issue token is paused.");
+        require(msg.value >= minDeposit, "Deposit is required greater value of minDeposit");
         _;
     }
 
@@ -377,7 +377,7 @@ contract DCF is ManagedToken {
         //Calculate number of token to issue
         uint256 value = safeDiv(safeMul(msg.value, 1 ether), coinPrice);
         //Check to have enough token to issue
-        require(totalSupply >= value, &quot;Not enough token to issue.&quot;);
+        require(totalSupply >= value, "Not enough token to issue.");
         //Total of token can continue to issue
         totalSupply = safeSub(totalSupply, value);
 

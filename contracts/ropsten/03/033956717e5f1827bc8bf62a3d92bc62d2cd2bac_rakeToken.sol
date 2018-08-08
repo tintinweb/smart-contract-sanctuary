@@ -97,8 +97,8 @@ contract Owned {
 // token transfers
 // ----------------------------------------------------------------------------
 contract rakeToken is ERC20Interface, Owned, SafeMath {
-    string public symbol = &quot;RAKE&quot;;
-    string public  name = &quot;Rake Token&quot;;
+    string public symbol = "RAKE";
+    string public  name = "Rake Token";
     uint8 public decimals = 18;
     uint public _totalSupply = 10000000000 * 10 ** uint256(decimals);
 

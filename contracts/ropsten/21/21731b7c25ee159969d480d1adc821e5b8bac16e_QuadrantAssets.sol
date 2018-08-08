@@ -16,8 +16,8 @@ pragma solidity ^0.4.18;
 
 contract QuadrantAssets {
 
-    string public symbol = &quot;QDA&quot;;
-    string public name = &quot;Quadrant Assets&quot;;
+    string public symbol = "QDA";
+    string public name = "Quadrant Assets";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;	
 	uint256 _FreeQDA = 250;

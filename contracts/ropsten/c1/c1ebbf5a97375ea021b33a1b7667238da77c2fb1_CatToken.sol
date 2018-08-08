@@ -93,9 +93,9 @@ interface tokenRecipient {
 contract CatToken is Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Cat&quot;;           //The Token&#39;s name: e.g. DigixDAO Tokens
+    string public name = "Cat";           //The Token&#39;s name: e.g. DigixDAO Tokens
     uint8 public decimals = 8;             //Number of decimals of the smallest unit
-    string public symbol = &quot;Cat&quot;;         //An identifier: e.g. REP
+    string public symbol = "Cat";         //An identifier: e.g. REP
     uint public totalSupply;
     address public raindropAddress = 0x0;
 

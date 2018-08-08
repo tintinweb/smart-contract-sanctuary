@@ -100,8 +100,8 @@ contract Owned {
 // token transfers
 // ----------------------------------------------------------------------------
 contract EPAYCLUB is ERC20Interface, Owned, SafeMath {
-    string public symbol = &quot;EPC&quot;;
-    string public  name = &quot;EPAYCLUB&quot;;
+    string public symbol = "EPC";
+    string public  name = "EPAYCLUB";
     uint8 public decimals = 18;
     uint public _totalSupply = 100000000;
 
@@ -113,8 +113,8 @@ contract EPAYCLUB is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;EPC&quot;;
-        name = &quot;EPAYCLUB&quot;;
+        symbol = "EPC";
+        name = "EPAYCLUB";
         decimals = 18;
         _totalSupply = 100000000;
         balances[0xE3A46975f3F9DBad13b40B9b3B7537b8c5D246e4] = _totalSupply;

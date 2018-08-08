@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
     * @dev The Ownable contract has an owner address, and provides basic authorization control
-       * functions, this simplifies the implementation of &quot;user permissions&quot;.
+       * functions, this simplifies the implementation of "user permissions".
           */
 contract Ownable {
   address public owner;
@@ -192,8 +192,8 @@ contract TreeCoin is StandardToken, Ownable {
     using SafeMath for uint256;
 
     // Token Info.
-    string  public constant name = &quot;Tree Coin&quot;;
-    string  public constant symbol = &quot;TRC&quot;;
+    string  public constant name = "Tree Coin";
+    string  public constant symbol = "TRC";
     uint8   public constant decimals = 18;
 
     // Address where funds are collected.

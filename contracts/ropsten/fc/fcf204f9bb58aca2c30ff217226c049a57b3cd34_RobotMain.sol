@@ -198,8 +198,8 @@ contract RobotBase is Ownable {
 
 contract RobotOwnership is RobotBase, ERC721, Pausable
 {
-    string public constant name = &quot;Robots&quot;;
-    string public constant symbol = &quot;RB&quot;;
+    string public constant name = "Robots";
+    string public constant symbol = "RB";
 
     function _transfer(address _from, address _to, uint256 _tokenId) internal {
         ownerToNumberOfRobots[_to]++;

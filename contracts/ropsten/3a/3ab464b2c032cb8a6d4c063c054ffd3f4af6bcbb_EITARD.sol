@@ -48,8 +48,8 @@ contract EITARD is TokenBase, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function EITARD() public {
-        symbol = &quot;EIT&quot;;
-        name = &quot;Emplyees Investment Trust Token&quot;;
+        symbol = "EIT";
+        name = "Emplyees Investment Trust Token";
         decimals = 0;
         _totalSupply = 90000000;
 		minter = msg.sender;

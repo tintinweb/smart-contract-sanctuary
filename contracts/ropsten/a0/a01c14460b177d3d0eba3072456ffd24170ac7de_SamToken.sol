@@ -79,9 +79,9 @@ contract SamToken is Token {
         ) {
         balances[msg.sender] = 10000000000;    // creator gets all initial tokens
         totalSupply = 10000000000;             // total supply of token
-        name = &quot;SamCoin&quot;;               // name of token
+        name = "SamCoin";               // name of token
         decimals = 4;                  // amount of decimals
-        symbol = &quot;SMC&quot;;                // symbol of token
+        symbol = "SMC";                // symbol of token
     }
 
     /* Approves and then calls the receiving contract */
@@ -89,7 +89,7 @@ contract SamToken is Token {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -74,8 +74,8 @@ contract SocialMediaPay is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Social Media Pay&quot;;
-    string public constant symbol = &quot;SMP&quot;;
+    string public constant name = "Social Media Pay";
+    string public constant symbol = "SMP";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 500000000e8;

@@ -234,7 +234,7 @@ contract ERC223ReceivingContract {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -426,7 +426,7 @@ contract DaicovoStandardToken is ERC20Standard, ERC223Standard, MintableToken {
  */
 contract OVOToken is DaicovoStandardToken {
     string public icon;
-    function OVOToken () public DaicovoStandardToken(&quot;ICOVO&quot;, &quot;OVO&quot;, 9) {
-        icon = &quot;QmXMDG2UnMQ7rFqxRN2LVA3ad2FLNTarDXZijdrctt8vpo&quot;;
+    function OVOToken () public DaicovoStandardToken("ICOVO", "OVO", 9) {
+        icon = "QmXMDG2UnMQ7rFqxRN2LVA3ad2FLNTarDXZijdrctt8vpo";
     }
 }

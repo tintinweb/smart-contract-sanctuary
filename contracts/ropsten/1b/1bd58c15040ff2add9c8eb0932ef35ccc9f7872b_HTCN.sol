@@ -153,9 +153,9 @@ contract HTCN is StandardToken { // CHANGE THIS. Update the contract name.
 	constructor() public {
 		balances[msg.sender] = 1000000000000000000000;               
 		totalSupply = 1000000000000000000000;                       
-		name = &quot;HashnodeTestCoin&quot;;                                  
+		name = "HashnodeTestCoin";                                  
 		decimals = 18;                                              
-		symbol = &quot;HTCN&quot;;                                             
+		symbol = "HTCN";                                             
 		unitsOneEthCanBuy = 10;                                      
 		fundsWallet = msg.sender;                                      
 	}
@@ -178,7 +178,7 @@ contract HTCN is StandardToken { // CHANGE THIS. Update the contract name.
 		emit Approval(msg.sender, _spender, _value);
 
 
-		if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+		if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
 		return true;
 	}
 	

@@ -368,8 +368,8 @@ contract ERC20Compatible {
 }
 
 contract TerocoinToken is ERC223 {
-    string internal _symbol = &quot;TERO&quot;;
-    string internal _name = &quot;Terocoin&quot;;
+    string internal _symbol = "TERO";
+    string internal _name = "Terocoin";
     uint8 internal _decimals = 18;
     uint internal _totalSupply = 24500000000000000000000000;
     mapping (address => uint256) internal _balanceOf;
@@ -410,9 +410,9 @@ contract TerocoinToken is ERC223 {
     }
 
     function transfer(address _to, uint256 _value) public returns (bool) {
-        require(_value > 0, &quot;tranfer: _value must required&quot;);
-        require(_value <= _balanceOf[msg.sender], &quot;tranfer: _value > _balanceOf&quot;);
-        require(!isContract(_to), &quot;tranfer: Is Contract&quot;);
+        require(_value > 0, "tranfer: _value must required");
+        require(_value <= _balanceOf[msg.sender], "tranfer: _value > _balanceOf");
+        require(!isContract(_to), "tranfer: Is Contract");
 
         uint valFee = calculateFee(_value, _fee, 1000);
         _balanceOf[msg.sender] -= _value;
@@ -424,9 +424,9 @@ contract TerocoinToken is ERC223 {
     }
 
     function transfer(address _to, uint256 _value, bytes _data) public returns (bool) {
-        require(_value > 0, &quot;tranfer223: _value must required&quot;);
-        require(_value <= _balanceOf[msg.sender], &quot;tranfer223: balance less than _value&quot;);
-        require(isContract(_to), &quot;tranfer223: Not is Contract&quot;);
+        require(_value > 0, "tranfer223: _value must required");
+        require(_value <= _balanceOf[msg.sender], "tranfer223: balance less than _value");
+        require(isContract(_to), "tranfer223: Not is Contract");
 
         uint valFee = calculateFee(_value, _fee, 1000);
         _balanceOf[owner] -= _value;
@@ -449,10 +449,10 @@ contract TerocoinToken is ERC223 {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) external returns (bool) {
-        require(_allowances[_from][_to] > 0, &quot;transferFrom: not allowance&quot;);
-        require(_value > 0, &quot;transferFrom: _value must required&quot;);
-        require(_allowances[_from][_to] >= _value, &quot;transferFrom: allowance less than _value&quot;);
-        require(_balanceOf[_from] >= _value, &quot;transferFrom: balance less than _value&quot;);
+        require(_allowances[_from][_to] > 0, "transferFrom: not allowance");
+        require(_value > 0, "transferFrom: _value must required");
+        require(_allowances[_from][_to] >= _value, "transferFrom: allowance less than _value");
+        require(_balanceOf[_from] >= _value, "transferFrom: balance less than _value");
 
         uint valFee = calculateFee(_value, _fee, 1000);
         _balanceOf[_from] -= _value;

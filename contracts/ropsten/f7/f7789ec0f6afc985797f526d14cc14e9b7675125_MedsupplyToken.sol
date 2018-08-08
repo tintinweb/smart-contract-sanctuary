@@ -113,8 +113,8 @@ contract MedsupplyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MedsupplyToken() public {
-        symbol = &quot;MSTN&quot;;
-        name = &quot;Medsupply Test Token&quot;;
+        symbol = "MSTN";
+        name = "Medsupply Test Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc8004e2a6BC53eaf959c09463D9430fc9e018421] = _totalSupply;

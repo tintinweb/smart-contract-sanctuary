@@ -69,7 +69,7 @@ library ECRecovery {
 
   /**
    * toEthSignedMessageHash
-   * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+   * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
    * @dev and hash the result
    */
   function toEthSignedMessageHash(bytes32 hash)
@@ -80,7 +80,7 @@ library ECRecovery {
     // 32 is the length in bytes of hash,
     // enforced by the type signature above
     return keccak256(abi.encode(
-      &quot;\x19Ethereum Signed Message:\n32&quot;,
+      "\x19Ethereum Signed Message:\n32",
       hash
     ));
   }
@@ -120,7 +120,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -173,8 +173,8 @@ contract Stryking is IERC20, Ownable {
   using SafeMath for uint256;
   using ECRecovery for bytes32;
 
-  string public name = &quot;Stryking Token&quot;;
-  string public symbol = &quot;STRY&quot;;
+  string public name = "Stryking Token";
+  string public symbol = "STRY";
   uint8 public constant decimals = 18;
   uint256 public constant decimalFactor = 10 ** uint256(decimals);
   uint256 public constant totalSupply = 2000000000 * decimalFactor;

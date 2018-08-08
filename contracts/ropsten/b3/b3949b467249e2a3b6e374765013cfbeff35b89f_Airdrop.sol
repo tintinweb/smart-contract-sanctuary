@@ -1,6 +1,6 @@
 pragma solidity ^0.4.24;
 
-//import &quot;./AbstractESS.sol&quot;;
+//import "./AbstractESS.sol";
 
 library SafeMath {
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {
@@ -76,10 +76,10 @@ contract AirESS is AbstractESS {
 
 
     // Public variables for the ESSENTIA ERC20 ESS token contract
-    string public constant standard = &quot;ESSENTIA erc20 and Genesis&quot;;
+    string public constant standard = "ESSENTIA erc20 and Genesis";
     uint256 public constant decimals = 18;   // hardcoded to be a constant
-    string public name = &quot;ESSENTIA&quot;;
-    string public symbol = &quot;ESS&quot;;
+    string public name = "ESSENTIA";
+    string public symbol = "ESS";
     uint256 public totalSupply;
 
     event Transfer(address indexed from, address indexed to, uint256 value);

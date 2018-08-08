@@ -113,8 +113,8 @@ contract SOLUSToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SOLUSToken() public {
-        symbol = &quot;SOL&quot;;
-        name = &quot;SOLUS Token&quot;;
+        symbol = "SOL";
+        name = "SOLUS Token";
         decimals = 18;
         _totalSupply = 300000000000000000000000000;
         balances[0xe8CaC667AcB2C628833bCfD299A3Cd977DeEbEd5] = _totalSupply;

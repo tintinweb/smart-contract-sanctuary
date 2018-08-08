@@ -113,8 +113,8 @@ contract AssToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AssToken() public {
-        symbol = &quot;ASS &quot;;
-        name = &quot;Ass Token&quot;;
+        symbol = "ASS ";
+        name = "Ass Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x621b535c57076d680Be372792e8b249cBF793cEe] = _totalSupply;

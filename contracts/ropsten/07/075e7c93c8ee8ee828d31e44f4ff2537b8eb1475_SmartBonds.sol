@@ -109,8 +109,8 @@ contract SmartBonds is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SmartBonds() public {
-        symbol = &quot;SBND&quot;;
-        name = &quot;Smart Bonds&quot;;
+        symbol = "SBND";
+        name = "Smart Bonds";
         decimals = 18;
         _totalSupply = 1000000 * 10**18;
         balances[0xd75228421Fb7B62052F6d744f95E8E492Fa9084f] = _totalSupply;

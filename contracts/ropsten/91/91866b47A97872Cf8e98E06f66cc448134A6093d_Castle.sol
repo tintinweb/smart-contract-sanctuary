@@ -24,7 +24,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -257,7 +257,7 @@ contract StandardTile is Galleasset, DataParser{
   //standard tile interface
   //called when tile is purchased from Land contract
   function onPurchase(uint16 _x,uint16 _y,uint8 _tile,address _owner,uint _amount) public returns (bool) {
-    require(msg.sender==getContract(&quot;Land&quot;) || msg.sender==getContract(&quot;LandLib&quot;));
+    require(msg.sender==getContract("Land") || msg.sender==getContract("LandLib"));
     landOwners[_x][_y][_tile] = _owner;
     emit LandOwner(_x,_y,_tile,_owner);
     return true;
@@ -281,10 +281,10 @@ contract StandardTile is Galleasset, DataParser{
   ///////internal helpers to keep stack thin enough//////////////////////////////////////////////////////////
   function _incrementTokenBalance(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) internal {
     tokenBalance[_x][_y][_tile][_token]+=_amount;
-    require(tokenBalance[_x][_y][_tile][_token]>=_amount,&quot;Overflow?&quot;);
+    require(tokenBalance[_x][_y][_tile][_token]>=_amount,"Overflow?");
   }
   function _decrementTokenBalance(uint16 _x,uint16 _y,uint8 _tile,address _token,uint _amount) internal {
-    require(tokenBalance[_x][_y][_tile][_token]>=_amount,&quot;This tile does not have enough of this token&quot;);
+    require(tokenBalance[_x][_y][_tile][_token]>=_amount,"This tile does not have enough of this token");
     tokenBalance[_x][_y][_tile][_token]-=_amount;
   }
 }
@@ -294,13 +294,13 @@ contract Castle is StandardTile {
 
   constructor(address _galleass) public StandardTile(_galleass) { }
 
-  function createCitizen(uint16 _x,uint16 _y,uint8 _tile,bytes32 food1, bytes32 food2, bytes32 food3) public isGalleasset(&quot;Castle&quot;) isLandOwner(_x,_y,_tile) returns (uint) {
+  function createCitizen(uint16 _x,uint16 _y,uint8 _tile,bytes32 food1, bytes32 food2, bytes32 food3) public isGalleasset("Castle") isLandOwner(_x,_y,_tile) returns (uint) {
     //use an internal function because the stack is too deep
     return _createCitizen(_x,_y,_tile,food1,food2,food3);
   }
 
   function _createCitizen(uint16 _x,uint16 _y,uint8 _tile,bytes32 food1, bytes32 food2, bytes32 food3) internal returns (uint) {
-    CitizensLib citizensContract = CitizensLib(getContract(&quot;CitizensLib&quot;));
+    CitizensLib citizensContract = CitizensLib(getContract("CitizensLib"));
     return citizensContract.createCitizen(msg.sender,_x,_y,_tile,food1,food2,food3);
   }
 

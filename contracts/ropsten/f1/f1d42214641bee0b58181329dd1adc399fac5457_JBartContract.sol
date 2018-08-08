@@ -113,8 +113,8 @@ contract JBartContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JBartContract() public {
-        symbol = &quot;JBART&quot;;
-        name = &quot;Bascom Art&quot;;
+        symbol = "JBART";
+        name = "Bascom Art";
         decimals = 18;
         _totalSupply = 50000000000000000000000000;
         balances[0xe7Fe73f3D0b5E805da69277D486BeDfaEA0bb36b] = _totalSupply; //MEW address here

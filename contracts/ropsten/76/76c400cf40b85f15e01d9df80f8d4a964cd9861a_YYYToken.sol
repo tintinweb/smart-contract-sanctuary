@@ -111,8 +111,8 @@ contract YYYToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YYYToken() public {
-        symbol = &quot;YYY&quot;;
-        name = &quot;YYY Token&quot;;
+        symbol = "YYY";
+        name = "YYY Token";
         decimals = 18;
         bonusEnds = now + 1 days;
         endDate = now + 7 days;

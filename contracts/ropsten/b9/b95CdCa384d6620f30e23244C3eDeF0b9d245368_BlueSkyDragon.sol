@@ -72,8 +72,8 @@ contract BlueSkyDragon is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Blue Sky Dragon&quot;;
-    string public constant symbol = &quot;BSG&quot;;
+    string public constant name = "Blue Sky Dragon";
+    string public constant symbol = "BSG";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

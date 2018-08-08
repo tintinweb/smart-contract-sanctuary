@@ -198,7 +198,7 @@ contract StandardToken is ERC20, BasicToken {
 contract ZeroChain is StandardToken, Ownable {
 
 	/* Overriding some ERC20 variables */
-	string public constant name      = &quot;ZeroChain&quot;;
+	string public constant name      = "ZeroChain";
 	uint256 public constant decimals = 18;
 
 	uint256 public constant MAX_NUM_OZT_TOKENS    =  1000000000 * 10 ** decimals;

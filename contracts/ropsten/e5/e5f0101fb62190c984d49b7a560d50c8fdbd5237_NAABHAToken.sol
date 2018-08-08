@@ -113,8 +113,8 @@ contract NAABHAToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NAABHAToken() public {
-        symbol = &quot;NBH&quot;;
-        name = &quot;NAABHA Token&quot;;
+        symbol = "NBH";
+        name = "NAABHA Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x28e1C707D160111947B66d07dAEa24cF7ff5813c] = _totalSupply;

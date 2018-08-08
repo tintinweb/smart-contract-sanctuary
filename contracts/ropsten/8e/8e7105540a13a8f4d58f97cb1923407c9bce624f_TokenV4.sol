@@ -119,8 +119,8 @@ contract TokenV4 is ERC20Standard
     // #region Constants
     
     /// FIX - set the token name, token symbol and the number of tokens issued (Production: 100 million tokens)
-    string public constant name = &quot;TokenV4&quot;;           // Token name for display purposes
-    string public constant symbol = &quot;TKV4&quot;;            // Token symbol for display purposes 
+    string public constant name = "TokenV4";           // Token name for display purposes
+    string public constant symbol = "TKV4";            // Token symbol for display purposes 
     uint256 public constant initialSupply = 100000000; // Initial number of tokens (the actual number of tokens)
     uint8 public constant decimals = 18;               // Amount of decimals for display purposes (must be 18)
     

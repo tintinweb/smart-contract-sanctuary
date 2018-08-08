@@ -82,8 +82,8 @@ contract CCChainToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;CCChain&quot;;
-    string public constant symbol = &quot;CCC&quot;;
+    string public constant name = "CCChain";
+    string public constant symbol = "CCC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

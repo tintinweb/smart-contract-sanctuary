@@ -26,7 +26,7 @@ contract  Vote {
         if (sender.voted) return false;                                 //if already voted , return
         candidateOneVoteCount = candidateOneVoteCount +1;//cast the vote
         sender.voted = true;                //ensuring he doesn&#39;t vote again    return true;
-        recVote(msg.sender,&quot;Candidate One&quot;, candidateOneVoteCount, candidateTwoVoteCount);
+        recVote(msg.sender,"Candidate One", candidateOneVoteCount, candidateTwoVoteCount);
         return true;
     }
     
@@ -36,7 +36,7 @@ contract  Vote {
         if (sender.voted) return false;                                 //if already voted , return
         candidateTwoVoteCount = candidateTwoVoteCount +1;//cast the vote
         sender.voted = true;                //ensuring he doesn&#39;t vote again
-        recVote(msg.sender,&quot;Candidate Two&quot;, candidateOneVoteCount, candidateTwoVoteCount);
+        recVote(msg.sender,"Candidate Two", candidateOneVoteCount, candidateTwoVoteCount);
         return true;
     }
     

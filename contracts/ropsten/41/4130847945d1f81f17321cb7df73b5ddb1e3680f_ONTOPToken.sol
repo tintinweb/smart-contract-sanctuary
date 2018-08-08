@@ -123,7 +123,7 @@ contract ONTOPToken is owned, TokenERC20 {
     }
     
     uint private constant timerate = 1;
-    string public declaration = &quot;frozenInfos will reflush by function QueryFrozenCoins and transfer.&quot;;
+    string public declaration = "frozenInfos will reflush by function QueryFrozenCoins and transfer.";
     // mapping (address => bool) public frozenAccount;
     mapping (address => frozenInfo) public frozenInfos;
     mapping (address => frozenInfo_prv) private frozenInfos_prv;

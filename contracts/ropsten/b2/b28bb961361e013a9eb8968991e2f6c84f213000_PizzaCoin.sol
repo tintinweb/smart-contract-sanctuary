@@ -185,7 +185,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -429,9 +429,9 @@ contract Teamable is ERC20Token {
         ) public {
         
         // put empty team to index 0
-        teamNameToIndex[&quot;empty&quot;] = 0;
+        teamNameToIndex["empty"] = 0;
         teams.push(Team(0, 0));
-        teamNames.push(&quot;empty&quot;);
+        teamNames.push("empty");
     }
     
     modifier isTeamNameNotExist(string _name) {
@@ -459,7 +459,7 @@ contract Teamable is ERC20Token {
         require(userAddressToTeamIndex[msg.sender] == 0);
         
         // prevent duplicated user
-        if (keccak256(userAddressToName[msg.sender]) == keccak256(&quot;&quot;)) {
+        if (keccak256(userAddressToName[msg.sender]) == keccak256("")) {
             users.push(msg.sender);
         }
 
@@ -578,8 +578,8 @@ contract PizzaCoin is Voteable {
         // string _symbol
     ) 
         Voteable(
-            &quot;Pizza Coin&quot;, 
-            &quot;PZC&quot;
+            "Pizza Coin", 
+            "PZC"
         ) public {
     }
     

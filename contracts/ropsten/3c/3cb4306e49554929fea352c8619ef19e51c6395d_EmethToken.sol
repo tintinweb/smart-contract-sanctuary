@@ -147,7 +147,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -477,6 +477,6 @@ contract DetailedERC20 is ERC20 {
  * @dev Mintable, Burnable ERC20 compliant token
  */
 contract EmethToken is DetailedERC20, CappedToken, BurnableToken {
-  string public icon = &quot;QmVqVzW38emorVLx1sk9XBZZ2hQ5zEBCK392mavC9XY7TU&quot;;
-  constructor() public DetailedERC20(&quot;Emeth&quot;, &quot;EMT&quot;, 18) CappedToken(20000000000000000000000000) {}
+  string public icon = "QmVqVzW38emorVLx1sk9XBZZ2hQ5zEBCK392mavC9XY7TU";
+  constructor() public DetailedERC20("Emeth", "EMT", 18) CappedToken(20000000000000000000000000) {}
 }

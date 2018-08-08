@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 contract NTToken is StandardToken, BurnableToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;NT&quot;;
-    string constant public name = &quot;NSC Test Coin&quot;;
+    string constant public symbol = "NT";
+    string constant public name = "NSC Test Coin";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 1000000000e18;

@@ -243,7 +243,7 @@ interface ERC721 {
    * approved address for this NFT. Throws if `_from` is not the current owner. Throws if `_to` is
    * the zero address. Throws if `_tokenId` is not a valid NFT. When transfer is complete, this
    * function checks if `_to` is a smart contract (code size > 0). If so, it calls `onERC721Received`
-   * on `_to` and throws if the return value is not `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+   * on `_to` and throws if the return value is not `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
    * @param _from The current owner of the NFT.
    * @param _to The new owner.
    * @param _tokenId The NFT to transfer.
@@ -260,7 +260,7 @@ interface ERC721 {
   /**
    * @dev Transfers the ownership of an NFT from one address to another address.
    * @notice This works identically to the other function with an extra data parameter, except this
-   * function just sets data to &quot;&quot;
+   * function just sets data to ""
    * @param _from The current owner of the NFT.
    * @param _to The new owner.
    * @param _tokenId The NFT to transfer.
@@ -303,7 +303,7 @@ interface ERC721 {
     external;
 
   /**
-   * @dev Enables or disables approval for a third party (&quot;operator&quot;) to manage all of
+   * @dev Enables or disables approval for a third party ("operator") to manage all of
    * `msg.sender`&#39;s assets. It also emits the ApprovalForAll event.
    * @notice The contract MUST allow multiple operators per owner.
    * @param _operator Address to add to the set of authorized operators.
@@ -352,7 +352,7 @@ interface ERC721TokenReceiver {
    * @dev Handle the receipt of a NFT. The ERC721 smart contract calls this function on the
    * recipient after a `transfer`. This function MAY throw to revert and reject the transfer. Return
    * of other than the magic value MUST result in the transaction being reverted.
-   * Returns `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))` unless throwing.
+   * Returns `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))` unless throwing.
    * @notice The contract address is always the message sender. A wallet/broker/auction application
    * MUST implement the wallet interface if it will accept safe transfers.
    * @param _from The sending address.
@@ -458,7 +458,7 @@ contract NFToken is Ownable, ERC721, SupportsInterface {
 
   /**
    * @dev Magic value of a smart contract that can recieve NFT.
-   * Equal to: keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;).
+   * Equal to: keccak256("onERC721Received(address,uint256,bytes)").
    */
   bytes4 constant MAGIC_ON_ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -592,7 +592,7 @@ contract NFToken is Ownable, ERC721, SupportsInterface {
    * approved address for this NFT. Throws if `_from` is not the current owner. Throws if `_to` is
    * the zero address. Throws if `_tokenId` is not a valid NFT. When transfer is complete, this
    * function checks if `_to` is a smart contract (code size > 0). If so, it calls `onERC721Received`
-   * on `_to` and throws if the return value is not `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+   * on `_to` and throws if the return value is not `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
    * @param _from The current owner of the NFT.
    * @param _to The new owner.
    * @param _tokenId The NFT to transfer.
@@ -612,7 +612,7 @@ contract NFToken is Ownable, ERC721, SupportsInterface {
   /**
    * @dev Transfers the ownership of an NFT from one address to another address.
    * @notice This works identically to the other function with an extra data parameter, except this
-   * function just sets data to &quot;&quot;
+   * function just sets data to ""
    * @param _from The current owner of the NFT.
    * @param _to The new owner.
    * @param _tokenId The NFT to transfer.
@@ -624,7 +624,7 @@ contract NFToken is Ownable, ERC721, SupportsInterface {
   )
     external
   {
-    _safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    _safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
@@ -677,7 +677,7 @@ contract NFToken is Ownable, ERC721, SupportsInterface {
   }
 
   /**
-   * @dev Enables or disables approval for a third party (&quot;operator&quot;) to manage all of
+   * @dev Enables or disables approval for a third party ("operator") to manage all of
    * `msg.sender`&#39;s assets. It also emits the ApprovalForAll event.
    * @notice This works even if sender doesn&#39;t own any tokens at the time.
    * @param _operator Address to add to the set of authorized operators.

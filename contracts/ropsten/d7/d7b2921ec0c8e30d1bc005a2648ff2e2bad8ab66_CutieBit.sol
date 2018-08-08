@@ -101,8 +101,8 @@ contract StandardToken is Token, SafeMath {
  */
 contract CutieBit is StandardToken {
 
-  string public name = &quot;CutieBit Coin&quot;;
-  string public symbol = &quot;CUTIE&quot;;
+  string public name = "CutieBit Coin";
+  string public symbol = "CUTIE";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 267000000 * 1 ether;
 

@@ -26,9 +26,9 @@ contract Database {
     // --------------------------------------------------------------------------------------
     constructor(address _ownerOne, address _ownerTwo, address _ownerThree)
     public {
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerOne))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerTwo))] = true;
-        boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, _ownerThree))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerOne))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerTwo))] = true;
+        boolStorage[keccak256(abi.encodePacked("owner", _ownerThree))] = true;
         emit LogInitialized(_ownerOne, _ownerTwo, _ownerThree);
     }
 
@@ -41,10 +41,10 @@ contract Database {
     function setContractManager(address _contractManager)
     external {
         require(_contractManager != address(0));
-        require(boolStorage[keccak256(abi.encodePacked(&quot;owner&quot;, msg.sender))]);
-        // require(addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] == address(0));   TODO: Allow swapping of CM for testing
-        addressStorage[keccak256(abi.encodePacked(&quot;contract&quot;, &quot;ContractManager&quot;))] = _contractManager;
-        boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, _contractManager))] = true;
+        require(boolStorage[keccak256(abi.encodePacked("owner", msg.sender))]);
+        // require(addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] == address(0));   TODO: Allow swapping of CM for testing
+        addressStorage[keccak256(abi.encodePacked("contract", "ContractManager"))] = _contractManager;
+        boolStorage[keccak256(abi.encodePacked("contract", _contractManager))] = true;
         emit LogContractManager(_contractManager, msg.sender); 
     }
 
@@ -147,7 +147,7 @@ contract Database {
     // Caller must be registered as a contract within the MyBit Dapp through ContractManager.sol
     // --------------------------------------------------------------------------------------
     modifier onlyMyBitContract() {
-        require(boolStorage[keccak256(abi.encodePacked(&quot;contract&quot;, msg.sender))]);
+        require(boolStorage[keccak256(abi.encodePacked("contract", msg.sender))]);
         _;
     }
 
@@ -181,28 +181,28 @@ contract API {
   public
   view
   returns (address) {
-    return database.addressStorage(keccak256(abi.encodePacked(&quot;MyBitFoundation&quot;)));
+    return database.addressStorage(keccak256(abi.encodePacked("MyBitFoundation")));
   }
 
   function InstallerEscrow()
   public
   view
   returns (address) {
-    return database.addressStorage(keccak256(abi.encodePacked(&quot;InstallerEscrow&quot;)));
+    return database.addressStorage(keccak256(abi.encodePacked("InstallerEscrow")));
   }
 
   function myBitFoundationPercentage()
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;myBitFoundationPercentage&quot;)));
+    return database.uintStorage(keccak256(abi.encodePacked("myBitFoundationPercentage")));
   }
 
   function installerPercentage()
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;installerPercentage&quot;)));
+    return database.uintStorage(keccak256(abi.encodePacked("installerPercentage")));
   }
 
   //-----------------------------------------------------------------------------------------------------------------------
@@ -212,21 +212,21 @@ contract API {
   public
   view
   returns (bool) {
-    return database.boolStorage(keccak256(abi.encodePacked(&quot;pause&quot;, _contractAddress)));
+    return database.boolStorage(keccak256(abi.encodePacked("pause", _contractAddress)));
   }
 
   function contractAddress(string _name)
   public
   view
   returns (address) {
-    return database.addressStorage(keccak256(abi.encodePacked(&quot;contract&quot;, _name)));
+    return database.addressStorage(keccak256(abi.encodePacked("contract", _name)));
   }
 
   function contractExists(address _contractAddress)
   public
   view
   returns (bool) {
-    return database.boolStorage(keccak256(abi.encodePacked(&quot;contract&quot;, _contractAddress)));
+    return database.boolStorage(keccak256(abi.encodePacked("contract", _contractAddress)));
   }
 
   //-----------------------------------------------------------------------------------------------------------------------
@@ -236,14 +236,14 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;userAccess&quot;, _user)));
+    return database.uintStorage(keccak256(abi.encodePacked("userAccess", _user)));
   }
 
   function isOwner(address _user)
   public
   view
   returns (bool) {
-    return database.boolStorage(keccak256(abi.encodePacked(&quot;owner&quot;, _user)));
+    return database.boolStorage(keccak256(abi.encodePacked("owner", _user)));
   }
 
   function getFunctionAuthorizationHash(address _contractAddress, address _signer, string _functionName, bytes32 _agreedParameter)
@@ -270,7 +270,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;accessTokenFee&quot;, _accessLevelDesired)));
+    return database.uintStorage(keccak256(abi.encodePacked("accessTokenFee", _accessLevelDesired)));
   }
 
   //-----------------------------------------------------------------------------------------------------------------------
@@ -282,7 +282,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;assetIncome&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("assetIncome", _assetID)));
   }
 
   // Deprecated after Intimate Alpha (0.1): Moving to &#39;assetIncome&#39; for Open-Alpha (0.2)
@@ -290,7 +290,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;assetIncome&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("assetIncome", _assetID)));
   }
 
   // Amount of income paid to funders
@@ -298,7 +298,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;totalPaidToFunders&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("totalPaidToFunders", _assetID)));
   }
 
   // Amount of income already paid to the funder
@@ -306,7 +306,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;totalPaidToFunder&quot;, _assetID, _funder)));
+    return database.uintStorage(keccak256(abi.encodePacked("totalPaidToFunder", _assetID, _funder)));
   }
 
   /* // Deprecated after Intimate Alpha (0.1): totalReceived == assetIncome for Open-Alpha (0.2)
@@ -334,35 +334,35 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;ownershipUnits&quot;, _assetID, _user)));
+    return database.uintStorage(keccak256(abi.encodePacked("ownershipUnits", _assetID, _user)));
   }
 
   function amountRaised(bytes32 _assetID)
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;amountRaised&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("amountRaised", _assetID)));
   }
 
   function fundingStage(bytes32 _assetID)
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;fundingStage&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("fundingStage", _assetID)));
   }
 
   function amountToBeRaised(bytes32 _assetID)
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;amountToBeRaised&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("amountToBeRaised", _assetID)));
   }
 
   function fundingDeadline(bytes32 _assetID)
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;fundingDeadline&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("fundingDeadline", _assetID)));
   }
 
   //-----------------------------------------------------------------------------------------------------------------------
@@ -374,7 +374,7 @@ contract API {
   public
   view
   returns (address) {
-    return database.addressStorage(keccak256(abi.encodePacked(&quot;assetManager&quot;, _assetID)));
+    return database.addressStorage(keccak256(abi.encodePacked("assetManager", _assetID)));
   }
 
   // Percentage of income sent to asset manager
@@ -382,7 +382,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;managerPercentage&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("managerPercentage", _assetID)));
   }
 
     // Percentage of income sent to asset manager
@@ -390,7 +390,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;managerIncome&quot;, _manager)));
+    return database.uintStorage(keccak256(abi.encodePacked("managerIncome", _manager)));
   }
 
   // Amount of MYB locked for this asset
@@ -398,7 +398,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;escrowedForAsset&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("escrowedForAsset", _assetID)));
   }
 
   // Total amount of MYB locked by user for all platform assets
@@ -406,7 +406,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;escrowedMYB&quot;, _manager)));
+    return database.uintStorage(keccak256(abi.encodePacked("escrowedMYB", _manager)));
   }
 
   // Total amount of MYB deposited in the token escrow contract
@@ -415,7 +415,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;depositedMYB&quot;, _manager)));
+    return database.uintStorage(keccak256(abi.encodePacked("depositedMYB", _manager)));
   }
 
   //-----------------------------------------------------------------------------------------------------------------------
@@ -428,15 +428,15 @@ contract API {
   public
   view
   returns (address) {
-    return database.addressStorage(keccak256(abi.encodePacked(&quot;assetStaker&quot;, _assetID)));
+    return database.addressStorage(keccak256(abi.encodePacked("assetStaker", _assetID)));
   }
 
-  // Amount of MYB locked for this asset   (Deprecated: variable now stored as &quot;escrowedForAsset&quot; for release 0.2)
+  // Amount of MYB locked for this asset   (Deprecated: variable now stored as "escrowedForAsset" for release 0.2)
   function lockedForAsset(bytes32 _assetID)
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;escrowedForAsset&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("escrowedForAsset", _assetID)));
   }
 
   // Time when the request for
@@ -444,7 +444,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;escrowExpiration&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("escrowExpiration", _assetID)));
   }
 
   // Time when the request for
@@ -452,14 +452,14 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;stakingExpiration&quot;, _assetID)));
+    return database.uintStorage(keccak256(abi.encodePacked("stakingExpiration", _assetID)));
   }
 
   function stakerIncomeShare(bytes32 _assetID)
   public 
   view 
   returns (uint) { 
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;stakerIncomeShare&quot;, _assetID))); 
+    return database.uintStorage(keccak256(abi.encodePacked("stakerIncomeShare", _assetID))); 
   }
 
   //-----------------------------------------------------------------------------------------------------------------------
@@ -470,14 +470,14 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;ethUSDPrice&quot;)));
+    return database.uintStorage(keccak256(abi.encodePacked("ethUSDPrice")));
   }
 
   function mybUSDPrice()
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;mybUSDPrice&quot;)));
+    return database.uintStorage(keccak256(abi.encodePacked("mybUSDPrice")));
   }
 
   // The unix-timestamp when ETH and MYB prices need to be updated
@@ -485,7 +485,7 @@ contract API {
   public
   view
   returns (uint) {
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;priceExpiration&quot;)));
+    return database.uintStorage(keccak256(abi.encodePacked("priceExpiration")));
   }
 
   // Returns time in seconds until price needs to be updated
@@ -493,7 +493,7 @@ contract API {
   public
   view
   returns (uint) {
-    uint expiration = database.uintStorage(keccak256(abi.encodePacked(&quot;priceExpiration&quot;)));
+    uint expiration = database.uintStorage(keccak256(abi.encodePacked("priceExpiration")));
     if (now > expiration) return 0;
     return (expiration - now);
   }
@@ -503,7 +503,7 @@ contract API {
   public 
   view 
   returns (uint) { 
-    return database.uintStorage(keccak256(abi.encodePacked(&quot;priceUpdateTimeline&quot;))); 
+    return database.uintStorage(keccak256(abi.encodePacked("priceUpdateTimeline"))); 
   }
 
 function ()

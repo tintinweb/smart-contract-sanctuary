@@ -137,9 +137,9 @@ contract BurnableToken is StandardToken {
 
 contract INBETToken is BurnableToken {
     
-    string public constant name = &quot;InBet Token&quot;;
+    string public constant name = "InBet Token";
     
-    string public constant symbol = &quot;IBO&quot;;
+    string public constant symbol = "IBO";
     
     uint32 public constant decimals = 18;
     

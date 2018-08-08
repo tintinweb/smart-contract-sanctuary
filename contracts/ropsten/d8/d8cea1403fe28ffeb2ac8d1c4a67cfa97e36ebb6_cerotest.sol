@@ -107,8 +107,8 @@ contract cerotest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function cerotest() public {
-        symbol = &quot;0TEST&quot;;
-        name = &quot;0TEST&quot;;
+        symbol = "0TEST";
+        name = "0TEST";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc4374F94537412eaad01586F4269775C066e275C] = _totalSupply;

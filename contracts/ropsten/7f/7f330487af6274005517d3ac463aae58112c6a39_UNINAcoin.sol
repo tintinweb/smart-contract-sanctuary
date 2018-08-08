@@ -110,8 +110,8 @@ contract UNINAcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UNINAcoin() public {
-        symbol = &quot;UNINA&quot;;
-        name = &quot;UNINAcoin&quot;;
+        symbol = "UNINA";
+        name = "UNINAcoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8a02Fd60Db9bCe091EBEe83fcd1DA1D4143368DF] = _totalSupply;

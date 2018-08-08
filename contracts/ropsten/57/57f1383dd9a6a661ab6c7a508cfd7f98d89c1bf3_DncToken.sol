@@ -59,7 +59,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -396,8 +396,8 @@ contract CappedToken is MintableToken {
  * DNC Token, totalSupply 100000000000000000
  */
 contract DncToken is BurnableToken, CappedToken(100000000000000000) {
-    string public name = &quot;DNC Token&quot;;
-    string public symbol = &quot;DNC&quot;;
+    string public name = "DNC Token";
+    string public symbol = "DNC";
     uint8 public decimals = 8;
 
     function burn(uint256 _value) onlyOwner public {

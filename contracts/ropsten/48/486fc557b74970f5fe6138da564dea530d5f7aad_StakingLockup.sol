@@ -20,7 +20,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -455,7 +455,7 @@ contract AirdropComponent {
   modifier canAirdrop(address _address, uint256 _amount) {
     require(
       elementToken.transferFrom(_address, this, _amount),
-      &quot;Insufficient token balance of sender&quot;);
+      "Insufficient token balance of sender");
     _;
   }
 
@@ -464,7 +464,7 @@ contract AirdropComponent {
    * @param _address address to check in approvedUsers mapping
    */
   modifier checkAirdrop(address _address) {
-      require(!approvedUsers[_address].airdropped, &quot;User already airdropped&quot;);
+      require(!approvedUsers[_address].airdropped, "User already airdropped");
       _;
   }
 
@@ -521,18 +521,18 @@ contract AirdropComponent {
     // Check that the airdropped tokens are unlocked & matches the given withdraw amount
     require(
       airdrop.unlockTimestamp <= now,
-      &quot;The airdrop hasn&#39;t unlocked yet&quot;);
+      "The airdrop hasn&#39;t unlocked yet");
 
     require(
       airdrop.amount == _amount,
-      &quot;The withdrawal amount does not match the current airdrop amount&quot;);
+      "The withdrawal amount does not match the current airdrop amount");
 
     // Transfer the unstaked airdopped tokens from this contract back to the sender
     // Notice that we are using transfer instead of transferFrom here, so
     //  no approval is needed beforehand.
     require(
       elementToken.transfer(msg.sender, _amount),
-      &quot;Unable to withdraw airdrop&quot;);
+      "Unable to withdraw airdrop");
 
     // Reset personal airdrop amount to 0
     airdrop.amount = 0;
@@ -650,7 +650,7 @@ contract StakingLockup is ERC900, AirdropComponent {
   modifier canStake(address _address, uint256 _amount) {
     require(
       elementToken.transferFrom(_address, this, _amount),
-      &quot;Stake required&quot;);
+      "Stake required");
 
     _;
   }
@@ -663,7 +663,7 @@ contract StakingLockup is ERC900, AirdropComponent {
    */
   modifier canStakeAirdrop(address _address, uint256 _amount) {
     require(approvedUsers[_address].airdrop.amount >= _amount,
-      &quot;Insufficient airdrop token balance&quot;);
+      "Insufficient airdrop token balance");
 
     _;
   }
@@ -673,7 +673,7 @@ contract StakingLockup is ERC900, AirdropComponent {
    * Used for ensuring a user can only stake once for themselves.
    */
   modifier checkStake() {
-      require(!stakeHolders[msg.sender].exists, &quot;User already staked&quot;);
+      require(!stakeHolders[msg.sender].exists, "User already staked");
       _;
   }
 
@@ -766,18 +766,18 @@ contract StakingLockup is ERC900, AirdropComponent {
     // Check that the current stake has unlocked & matches the unstake amount
     require(
       personalStake.unlockedTimestamp <= now,
-      &quot;The current stake hasn&#39;t unlocked yet&quot;);
+      "The current stake hasn&#39;t unlocked yet");
 
     require(
       personalStake.amount == _amount,
-      &quot;The unstake amount does not match the current stake&quot;);
+      "The unstake amount does not match the current stake");
 
     // Transfer the staked tokens from this contract back to the sender
     // Notice that we are using transfer instead of transferFrom here, so
     //  no approval is needed beforehand.
     require(
       elementToken.transfer(msg.sender, _amount),
-      &quot;Unable to withdraw stake&quot;);
+      "Unable to withdraw stake");
 
     // Reducing totalStakedFor by the total amount of tokens staked
     stakeHolders[personalStake.stakedFor].totalStakedFor = stakeHolders[personalStake.stakedFor]

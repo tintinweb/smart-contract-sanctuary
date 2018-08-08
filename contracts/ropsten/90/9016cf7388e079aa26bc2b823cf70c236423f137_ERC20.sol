@@ -80,8 +80,8 @@ contract ERC20 is ERC20Interface {
 
     constructor() public {
         owner = msg.sender;
-        name = &quot;Name&quot;;
-        symbol = &quot;NAM&quot;;
+        name = "Name";
+        symbol = "NAM";
         decimals = 18;
         totalSupply = 1000000000;
         balances[0x6B00BCeA93BB4f1624818879D8b096577099cdD3] = totalSupply;

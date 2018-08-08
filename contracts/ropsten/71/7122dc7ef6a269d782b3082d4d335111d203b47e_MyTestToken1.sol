@@ -118,8 +118,8 @@ contract MyTestToken1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MyTestToken1() public {
-        symbol = &quot;TEST1&quot;;
-        name = &quot;MyTests1&quot;;
+        symbol = "TEST1";
+        name = "MyTests1";
         decimals = 8;
         maxSupply = 21000000 * 10**8;
         totalSupply = maxSupply;

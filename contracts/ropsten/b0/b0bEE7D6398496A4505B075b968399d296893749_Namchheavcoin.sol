@@ -36,8 +36,8 @@ contract Namchheavcoin {
     ) public {
         totalSupply = 2100000000000000 ;  // Update total supply with the decimal amount
         balanceOf[msg.sender] =  2100000000000000 ;                // Give the creator all initial tokens
-        name = &quot;namchheav&quot;;                                   // Set the name for display purposes
-        symbol = &quot;NC&quot;;                               // Set the symbol for display purposes
+        name = "namchheav";                                   // Set the name for display purposes
+        symbol = "NC";                               // Set the symbol for display purposes
     }
 
     /**

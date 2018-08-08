@@ -113,8 +113,8 @@ contract TourMEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TourMEToken() public {
-        symbol = &quot;TMT&quot;;
-        name = &quot;TourME Test Token&quot;;
+        symbol = "TMT";
+        name = "TourME Test Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x63A6e9FF2802b35705fd715839efB67194a065De] = _totalSupply;

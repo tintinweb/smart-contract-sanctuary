@@ -62,8 +62,8 @@ contract TokenERC20 {
     {
         totalSupply = 250000000000;                     //initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;            // Give the creator all initial tokens
-        name = &quot;LOOiX&quot;;                                  // Set the name for display purposes
-        symbol = &quot;LOOIX&quot;;                               // Set the symbol for display purposes
+        name = "LOOiX";                                  // Set the name for display purposes
+        symbol = "LOOIX";                               // Set the symbol for display purposes
     }
 
     /**

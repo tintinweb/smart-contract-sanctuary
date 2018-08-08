@@ -542,7 +542,7 @@ contract RBAC {
 }
 
 contract Whitelist is Ownable, RBAC {
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if operator is not whitelisted.
@@ -1047,7 +1047,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract RayonToken is MintableToken, TransferLimitedToken, BurnableToken {
-    string public name = &quot;RAYON&quot;;
-    string public symbol = &quot;RYN&quot;;
+    string public name = "RAYON";
+    string public symbol = "RYN";
     uint8 public decimals = 18;
 }

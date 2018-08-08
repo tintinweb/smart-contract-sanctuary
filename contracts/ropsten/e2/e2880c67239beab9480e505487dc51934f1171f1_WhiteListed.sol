@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -505,8 +505,8 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract GoConfig {
-    string public constant NAME = &quot;GOeureka&quot;;
-    string public constant SYMBOL = &quot;GOT&quot;;
+    string public constant NAME = "GOeureka";
+    string public constant SYMBOL = "GOT";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
     uint public constant TOTALSUPPLY = 1000000000 * DECIMALSFACTOR;
@@ -774,11 +774,11 @@ contract GOeurekaSale is Claimable, gotTokenSaleConfig, Pausable, Salvageable {
     }
 
     modifier onlyAuthorised(address beneficiary) {
-        require(isWhiteListed(beneficiary),&quot;Not authorised&quot;);
-        require (now >= presaleStart,&quot;too early&quot;);
-        require (!hasEnded(),&quot;ended&quot;);
-        require (multiSig != 0x0,&quot;MultiSig empty&quot;);
-        require ((msg.value > minContribution) || (weiRaised.add(minContribution) > week3Cap),&quot;Value too small&quot;);
+        require(isWhiteListed(beneficiary),"Not authorised");
+        require (now >= presaleStart,"too early");
+        require (!hasEnded(),"ended");
+        require (multiSig != 0x0,"MultiSig empty");
+        require ((msg.value > minContribution) || (weiRaised.add(minContribution) > week3Cap),"Value too small");
         _;
     }
 

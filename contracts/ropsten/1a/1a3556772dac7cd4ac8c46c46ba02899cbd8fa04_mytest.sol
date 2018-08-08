@@ -113,8 +113,8 @@ contract mytest is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function mytest() public {
-        symbol = &quot;TESTT&quot;;
-        name = &quot;mytest&quot;;
+        symbol = "TESTT";
+        name = "mytest";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3567908eb2a074ff58daff4158ae08ace5d7424a] = _totalSupply;

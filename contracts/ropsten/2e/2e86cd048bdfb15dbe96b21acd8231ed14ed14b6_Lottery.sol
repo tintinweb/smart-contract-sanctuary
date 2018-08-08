@@ -91,7 +91,7 @@ contract Lottery {
 
     /* Make sure the hash is still visible
      *
-     * &quot;You can only access the hashes of the most recent 256 blocks, all other values will be zero.&quot;
+     * "You can only access the hashes of the most recent 256 blocks, all other values will be zero."
      */
     uint blockHashRandomness = uint(blockhash(placementTime + 2));
     require(blockHashRandomness > 0);

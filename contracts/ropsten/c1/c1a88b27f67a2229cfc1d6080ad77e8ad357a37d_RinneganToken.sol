@@ -113,8 +113,8 @@ contract RinneganToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RinneganToken() public {
-        symbol = &quot;RIN&quot;;
-        name = &quot;Rinnegan Token&quot;;
+        symbol = "RIN";
+        name = "Rinnegan Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xde030c7F2A8fB47AFf969F6B1a027fda02de0D3F] = _totalSupply;

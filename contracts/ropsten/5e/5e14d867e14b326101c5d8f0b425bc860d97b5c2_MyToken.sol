@@ -1,9 +1,9 @@
 pragma solidity ^0.4.23;
 
 contract MyToken {
-    string public name = &quot;MyToken&quot;;
+    string public name = "MyToken";
     
-    string public symbol = &quot;MTK&quot;;
+    string public symbol = "MTK";
 
     uint8 public decimals = 18;
     

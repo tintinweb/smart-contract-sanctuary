@@ -222,8 +222,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts\BroCoin.sol
 
 contract BroCoin is StandardToken {
-  string public symbol = &quot;BRO&quot;;
-  string public name = &quot;BroCoin&quot;;
+  string public symbol = "BRO";
+  string public name = "BroCoin";
   uint8 public decimals = 18;
 
   function BroCoin() public {

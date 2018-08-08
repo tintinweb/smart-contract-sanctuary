@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 contract MyFirstContract {
-    string constant myName = &quot;hardy&quot;;
+    string constant myName = "hardy";
     string public greeting;
     
     constructor(string initGreeting) public {
@@ -9,6 +9,6 @@ contract MyFirstContract {
     }
     
     function interact() public pure returns(string) {
-        return &quot;hello&quot;;
+        return "hello";
     }
 }

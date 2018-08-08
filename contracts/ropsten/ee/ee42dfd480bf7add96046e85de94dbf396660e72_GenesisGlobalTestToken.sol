@@ -113,8 +113,8 @@ contract GenesisGlobalTestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GenesisGlobalTestToken() public {
-        symbol = &quot;GGT&quot;;
-        name = &quot;Genesis Global Test&quot;;
+        symbol = "GGT";
+        name = "Genesis Global Test";
         decimals = 0;
         _totalSupply = 1000000;
         balances[0x9AC1A6B72f06A94eB626dbDA95BC21Ac97A17307] = _totalSupply;

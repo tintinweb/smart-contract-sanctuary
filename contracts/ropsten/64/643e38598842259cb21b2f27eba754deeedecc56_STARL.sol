@@ -76,8 +76,8 @@ contract STARL is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;STARLIGHT&quot;;
-    string public constant symbol = &quot;STARL&quot;;
+    string public constant name = "STARLIGHT";
+    string public constant symbol = "STARL";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 30000000000e8;

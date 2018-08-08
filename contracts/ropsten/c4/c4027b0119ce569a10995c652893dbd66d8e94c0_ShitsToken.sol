@@ -113,8 +113,8 @@ contract ShitsToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ShitsToken() public {
-        symbol = &quot;0SHT&quot;;
-        name = &quot;0 Shits Token&quot;;
+        symbol = "0SHT";
+        name = "0 Shits Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xA588d92Ac02281E3658d1eBa2AB1462FD51461FD] = _totalSupply;

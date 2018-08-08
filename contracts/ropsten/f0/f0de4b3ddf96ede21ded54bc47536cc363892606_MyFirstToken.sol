@@ -70,7 +70,7 @@ library SafeMath {
   }
 }
 
-contract MyFirstToken is Token(&quot;MFT&quot;, &quot;My First Token&quot;, 18, 1000), ERC20 {
+contract MyFirstToken is Token("MFT", "My First Token", 18, 1000), ERC20 {
 
     using SafeMath for uint;
 

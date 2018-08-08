@@ -113,8 +113,8 @@ contract TestCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TestCoin() public {
-        symbol = &quot;TEST&quot;;
-        name = &quot;Test Coin&quot;;
+        symbol = "TEST";
+        name = "Test Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x333Ed9E1E60d95aA0F44e42151805ad1774865d6] = _totalSupply;

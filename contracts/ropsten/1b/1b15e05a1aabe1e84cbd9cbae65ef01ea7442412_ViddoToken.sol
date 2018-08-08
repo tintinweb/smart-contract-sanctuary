@@ -35,8 +35,8 @@ contract ViddoToken  {
     event Transfer(address indexed from, address indexed to, uint tokens);
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 
-  string public name = &quot;test&quot;;
-  string public symbol = &quot;test&quot;;
+  string public name = "test";
+  string public symbol = "test";
   uint256 public decimals = 18;
   uint256 totalSupply_ = 0;
   constructor ()  public

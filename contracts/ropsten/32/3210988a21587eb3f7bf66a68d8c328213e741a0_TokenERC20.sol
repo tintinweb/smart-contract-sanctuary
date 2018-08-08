@@ -28,8 +28,8 @@ contract TokenERC20 {
     constructor() public {
         totalSupply = 10000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;gadgets&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GDT&quot;;                               // Set the symbol for display purposes
+        name = "gadgets";                                   // Set the name for display purposes
+        symbol = "GDT";                               // Set the symbol for display purposes
     }
 
     /**

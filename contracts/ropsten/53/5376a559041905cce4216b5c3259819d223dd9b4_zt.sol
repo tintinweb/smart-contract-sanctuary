@@ -113,8 +113,8 @@ contract zt is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function zt() public {
-        symbol = &quot;zee&quot;;
-        name = &quot;zee Token&quot;;
+        symbol = "zee";
+        name = "zee Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xe37d26f193504Bb90168b4D5735b1C6c888830a2] = _totalSupply;

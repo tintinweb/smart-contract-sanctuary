@@ -116,8 +116,8 @@ contract lolita is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function lolita() public {
-        symbol = &quot;lool&quot;;
-        name = &quot;lolita&quot;;
+        symbol = "lool";
+        name = "lolita";
         decimals = 0;
         bonusEnds = now + 0 weeks;
         endDate = now + 8 weeks;

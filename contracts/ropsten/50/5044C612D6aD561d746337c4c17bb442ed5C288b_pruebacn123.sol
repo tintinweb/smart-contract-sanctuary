@@ -116,8 +116,8 @@ contract pruebacn123 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function pruebacn123() public {
-        symbol = &quot;122&quot;;
-        name = &quot;pruebacn123&quot;;
+        symbol = "122";
+        name = "pruebacn123";
         decimals = 8;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

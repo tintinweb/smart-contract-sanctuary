@@ -58,8 +58,8 @@ contract Enumivo is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Enumivo&quot;;
-    string public constant symbol = &quot;ENU&quot;;
+    string public constant name = "Enumivo";
+    string public constant symbol = "ENU";
     uint public constant decimals = 8;
 
     uint256 public totalSupply = 1000000000e8;

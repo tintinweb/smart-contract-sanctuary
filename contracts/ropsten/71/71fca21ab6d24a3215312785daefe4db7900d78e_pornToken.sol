@@ -113,8 +113,8 @@ contract pornToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function pornToken() public {
-        symbol = &quot;porn&quot;;
-        name = &quot;porn Token&quot;;
+        symbol = "porn";
+        name = "porn Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000;
         balances[0x4Bd5c80c7E0B4666fD571AB11F70Be620FFbe3Ec] = _totalSupply;

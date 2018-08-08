@@ -73,8 +73,8 @@ contract iPeso is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;iPeso&quot;;
-    string public constant symbol = &quot;iPeso&quot;;
+    string public constant name = "iPeso";
+    string public constant symbol = "iPeso";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 100000000000e8;

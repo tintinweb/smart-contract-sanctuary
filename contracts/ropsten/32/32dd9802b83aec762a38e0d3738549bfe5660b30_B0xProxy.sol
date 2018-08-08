@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -301,7 +301,7 @@ contract Proxiable {
     function initialize(address _target) public;
 
     function _replaceContract(address _target) internal {
-        require(_target.delegatecall(bytes4(keccak256(&quot;initialize(address)&quot;)), _target));
+        require(_target.delegatecall(bytes4(keccak256("initialize(address)")), _target));
     }
 }
 
@@ -341,7 +341,7 @@ contract B0xProxy is B0xStorage, Proxiable {
     }
 
     function setTarget(
-        string _funcId,  // example: &quot;takeLoanOrderAsTrader(address[6],uint256[9],address,uint256,bytes)&quot;
+        string _funcId,  // example: "takeLoanOrderAsTrader(address[6],uint256[9],address,uint256,bytes)"
         address _target) // logic contract address
         public
         onlyOwner
@@ -417,7 +417,7 @@ contract B0xProxy is B0xStorage, Proxiable {
      */
 
     function getTarget(
-        string _funcId) // example: &quot;takeLoanOrderAsTrader(address[6],uint256[9],address,uint256,bytes)&quot;
+        string _funcId) // example: "takeLoanOrderAsTrader(address[6],uint256[9],address,uint256,bytes)"
         public
         view
         returns (address)

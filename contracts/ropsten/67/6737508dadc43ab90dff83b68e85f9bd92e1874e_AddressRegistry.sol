@@ -6,17 +6,17 @@ contract AddressRegistry {
     mapping(bytes32 => address) internal addressBook;
 
     modifier onlyAdmin() {
-        require(msg.sender == getAddr(&quot;admin&quot;));
+        require(msg.sender == getAddr("admin"));
         _;
     }
 
     constructor() public {
-        addressBook[keccak256(&quot;admin&quot;)] = msg.sender;
+        addressBook[keccak256("admin")] = msg.sender;
     }
 
     function setAddr(string AddrName, address Addr) public {
         require(
-            msg.sender == getAddr(&quot;admin&quot;)
+            msg.sender == getAddr("admin")
         );
         addressBook[keccak256(AddrName)] = Addr;
         emit eSetAddr(AddrName, Addr);

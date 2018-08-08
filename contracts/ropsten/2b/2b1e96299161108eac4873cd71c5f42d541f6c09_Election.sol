@@ -22,8 +22,8 @@ contract Election {
     );
 
     function Election () public {
-        addCandidate(&quot;KamalHaasan&quot;);
-        addCandidate(&quot;RajniKanth&quot;);
+        addCandidate("KamalHaasan");
+        addCandidate("RajniKanth");
     }
 
     function addCandidate (string _name) private {

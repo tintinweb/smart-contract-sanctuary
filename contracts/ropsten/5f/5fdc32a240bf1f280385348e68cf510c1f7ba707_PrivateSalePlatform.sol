@@ -165,7 +165,7 @@ contract Car is Owned {
     function returnToken(address tokenAddress, uint totalNum) public onlyOwner hasDepartured isActivate returns (uint) {
         for (uint i = 0; i < accountList.length; i++) {
         // ERC20 transfer
-           if (true == tokenAddress.call(bytes4(keccak256(&quot;transfer(address,uint)&quot;)),accountList[i],totalNum.mul(ethers[accountList[i]]).div(ethBullet))) {
+           if (true == tokenAddress.call(bytes4(keccak256("transfer(address,uint)")),accountList[i],totalNum.mul(ethers[accountList[i]]).div(ethBullet))) {
                 ethers[accountList[i]] = 0;
             }
         }

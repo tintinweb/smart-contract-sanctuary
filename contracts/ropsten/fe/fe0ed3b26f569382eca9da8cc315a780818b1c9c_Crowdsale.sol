@@ -554,9 +554,9 @@ contract ERC20 is ERC20Basic {
 contract StandardToken is ERC20, BasicToken {
 
   // Name of the token
-  string constant public name = &quot;Sentry&quot;;
+  string constant public name = "Sentry";
   // Token abbreviation
-  string constant public symbol = &quot;SEN&quot;;
+  string constant public symbol = "SEN";
   // Decimal places
   uint8 constant public decimals = 18;
   // Zeros after the point

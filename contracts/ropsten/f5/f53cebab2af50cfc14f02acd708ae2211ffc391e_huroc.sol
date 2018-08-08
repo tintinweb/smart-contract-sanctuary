@@ -113,8 +113,8 @@ contract huroc is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function huroc() public {
-        symbol = &quot;huroc&quot;;
-        name = &quot;huroc Token&quot;;
+        symbol = "huroc";
+        name = "huroc Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc5CE874507aaeB15388c3F51228324a4A2Bf9590] = _totalSupply;

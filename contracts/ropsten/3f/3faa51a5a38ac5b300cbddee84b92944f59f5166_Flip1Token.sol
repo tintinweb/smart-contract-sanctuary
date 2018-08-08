@@ -113,8 +113,8 @@ contract Flip1Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Flip1Token() public {
-        symbol = &quot;Flip1&quot;;
-        name = &quot;Flip 1 Token&quot;;
+        symbol = "Flip1";
+        name = "Flip 1 Token";
         decimals = 18;
         _totalSupply = 8000000000000000000000000000;
         balances[0x6398b9A15337D6D3CF78c84012cCD3d32Af03Fc1] = _totalSupply;

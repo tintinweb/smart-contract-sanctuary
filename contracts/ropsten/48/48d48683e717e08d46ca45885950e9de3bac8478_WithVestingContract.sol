@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -171,7 +171,7 @@ contract TokenDistributor is Ownable {
     }
 
     function _setStakeHolder (address _stakeHolder) internal onlyOwner returns (bool) {
-        require(countStakeHolders() < maxStakeHolders, &quot;Max StakeHolders set&quot;);
+        require(countStakeHolders() < maxStakeHolders, "Max StakeHolders set");
         stakeHolders.push(_stakeHolder);
         return true;
     }
@@ -237,7 +237,7 @@ contract WeightedTokenDistributor is TokenDistributor {
     }
 
     function getPortion (uint256 _total) public view returns (uint256) {
-        revert(&quot;Kindly indicate stakeHolder and totalWeight&quot;);
+        revert("Kindly indicate stakeHolder and totalWeight");
     }
 
     function _setStakeHolder (address _stakeHolder, uint256 _weight) internal onlyOwner returns (bool) {
@@ -247,7 +247,7 @@ contract WeightedTokenDistributor is TokenDistributor {
     }
 
     function _setStakeHolder (address _stakeHolder) internal onlyOwner returns (bool) {
-        revert(&quot;Kindly set Weights for stakeHolder&quot;);
+        revert("Kindly set Weights for stakeHolder");
     }
 
     function distribute (address _token) public returns (bool) {
@@ -303,8 +303,8 @@ contract WithVestingContract is WeightedTokenDistributor {
     vestingContractVersion public targetVersion;
 
     bytes4[2] public vestingReleaseCalls = [
-        bytes4(keccak256(&quot;release()&quot;)),
-        bytes4(keccak256(&quot;release(address)&quot;))
+        bytes4(keccak256("release()")),
+        bytes4(keccak256("release(address)"))
     ];
 
     constructor ( address _targetToken, uint256 _totalStakeHolders, address[] _stakeHolders, uint256[] _weights) public

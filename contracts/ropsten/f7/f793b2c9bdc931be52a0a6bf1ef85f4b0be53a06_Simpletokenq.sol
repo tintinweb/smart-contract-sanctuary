@@ -5,8 +5,8 @@ contract Simpletokenq {
     using SafeMath for uint256;
     
     uint public constant _totalSupply = 100000000000;
-    string public constant symbol = &quot;SMQ&quot;;
-    string public constant name = &quot;Simpletokenq&quot;;
+    string public constant symbol = "SMQ";
+    string public constant name = "Simpletokenq";
     uint8 public constant decimals = 2;
     
     mapping(address => uint256) balances;

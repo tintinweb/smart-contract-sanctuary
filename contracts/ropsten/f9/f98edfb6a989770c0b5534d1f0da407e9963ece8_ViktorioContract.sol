@@ -3,8 +3,8 @@ pragma solidity ^0.4.0;
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
 contract Viktorio  {
-    string public name = &quot;Viktorio&quot;;
-    string public symbol = &quot;VKT&quot;;
+    string public name = "Viktorio";
+    string public symbol = "VKT";
     uint8 public decimals = 3;
    uint256 public totalSupply;
    //This creates an array with all balances

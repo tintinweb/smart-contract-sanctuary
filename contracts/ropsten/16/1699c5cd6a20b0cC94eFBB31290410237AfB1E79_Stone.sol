@@ -15,7 +15,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -524,8 +524,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract Stone is Galleasset, MintableToken, ERC677Token {
 
-  string public constant name = &quot;Galleass Stone&quot;;
-  string public constant symbol = &quot;G_STONE&quot;;
+  string public constant name = "Galleass Stone";
+  string public constant symbol = "G_STONE";
   uint8 public constant decimals = 0;
 
   uint256 public constant INITIAL_SUPPLY = 0;
@@ -537,7 +537,7 @@ contract Stone is Galleasset, MintableToken, ERC677Token {
   function galleassTransferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
     require(_value <= balances[_from]);
-    require(hasPermission(msg.sender,&quot;transferStone&quot;));
+    require(hasPermission(msg.sender,"transferStone"));
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -546,7 +546,7 @@ contract Stone is Galleasset, MintableToken, ERC677Token {
   }
 
   function galleassMint(address _to,uint _amount) public returns (bool){
-    require(hasPermission(msg.sender,&quot;mintStone&quot;));
+    require(hasPermission(msg.sender,"mintStone"));
     totalSupply_ = totalSupply_.add(_amount);
     balances[_to] = balances[_to].add(_amount);
     Mint(_to, _amount);

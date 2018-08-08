@@ -2,8 +2,8 @@ pragma solidity ^0.4.18;
 
 contract WorldWideCoin {
 
-    string public symbol = &quot;WWC&quot;;
-    string public name = &quot;WorldWideCoin&quot;;
+    string public symbol = "WWC";
+    string public name = "WorldWideCoin";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;   
     uint256 _FreeWWC = 250;

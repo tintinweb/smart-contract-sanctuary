@@ -113,8 +113,8 @@ contract GadielToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GadielToken() public {
-        symbol = &quot;Gadiel&quot;;
-        name = &quot;Gadiel Token&quot;;
+        symbol = "Gadiel";
+        name = "Gadiel Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xcc599fB5D2f92E516F717B9F4494F76a660022df] = _totalSupply;

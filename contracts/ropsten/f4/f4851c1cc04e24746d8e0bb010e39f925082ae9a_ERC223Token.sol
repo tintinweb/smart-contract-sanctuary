@@ -87,8 +87,8 @@ contract ERC223Token is ERC223, SafeMath {
 
   mapping(address => uint) balances;
 
- string public name = &quot;ABCEE&quot;;
-  string public symbol = &quot;ABCEE&quot;;
+ string public name = "ABCEE";
+  string public symbol = "ABCEE";
   uint8 public decimals = 8;
   uint256 public totalSupply = 500000000 * (10 ** 8);
   event Transfer(address indexed from, address indexed to, uint256 value);

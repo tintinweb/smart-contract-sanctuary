@@ -113,8 +113,8 @@ contract TheMutualCurrency is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheMutualCurrency() public {
-        symbol = &quot;TMC&quot;;
-        name = &quot;The Mutual Currency&quot;;
+        symbol = "TMC";
+        name = "The Mutual Currency";
         decimals = 18;
         _totalSupply = 7000000000;
         balances[0xF1c29cC4d222094713663F878a8eb5D9cf541aF3] = _totalSupply;

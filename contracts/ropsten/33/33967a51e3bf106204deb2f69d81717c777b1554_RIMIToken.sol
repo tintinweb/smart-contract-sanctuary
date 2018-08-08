@@ -64,8 +64,8 @@ interface ERC20Interface {
 
 contract RIMIToken is ERC20Interface {				// 계약 선언
     using SafeMath for uint;					// 연산 함수 (0으로 나누기 등)
-    string public constant name = &quot;RIMIToken&quot;;				// 토큰명
-    string public constant symbol = &quot;RIM&quot;;				// 토큰 기호
+    string public constant name = "RIMIToken";				// 토큰명
+    string public constant symbol = "RIM";				// 토큰 기호
     uint8 public constant decimals = 18;				// 소수점 수
     
     uint private _tokenSupply;					// 총 발행 수

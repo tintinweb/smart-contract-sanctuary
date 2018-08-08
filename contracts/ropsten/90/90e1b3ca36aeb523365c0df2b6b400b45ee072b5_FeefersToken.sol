@@ -113,8 +113,8 @@ contract FeefersToken is ERC20Interface, Owned, SafeMath {        //Change Token
     // Constructor
     // ------------------------------------------------------------------------
     function FeefersToken() public {          //Change Token to required name
-        symbol = &quot;Feefers&quot;;       //Change symbol name
-        name = &quot;Feefers Token&quot;;     //Change name
+        symbol = "Feefers";       //Change symbol name
+        name = "Feefers Token";     //Change name
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xEaC88423Bcf99218Cd4a3c3AC9345eb7F0c51465] = _totalSupply;         //Change to Ethereum Address

@@ -113,8 +113,8 @@ contract EthLyteToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EthLyteToken() public {
-        symbol = &quot;EtLyteT&quot;;
-        name = &quot;EthLyteToken&quot;;
+        symbol = "EtLyteT";
+        name = "EthLyteToken";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0x96101912Eaf1466ac528C2C41666e8C81d334e56] = _totalSupply;

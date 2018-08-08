@@ -113,8 +113,8 @@ contract Nursicoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Nursicoin() public {
-        symbol = &quot;NIC&quot;;
-        name = &quot;Nursicoin&quot;;
+        symbol = "NIC";
+        name = "Nursicoin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0xEC3850A76853052b77CBE6495Bb48C1FeB5eEbC3] = _totalSupply;

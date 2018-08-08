@@ -265,9 +265,9 @@ contract _0xPeriheliaToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xPRH&quot;;
+        symbol = "0xPRH";
 
-        name = &quot;0xPerihelia Token&quot;;
+        name = "0xPerihelia Token";
 
         decimals = 8;
 

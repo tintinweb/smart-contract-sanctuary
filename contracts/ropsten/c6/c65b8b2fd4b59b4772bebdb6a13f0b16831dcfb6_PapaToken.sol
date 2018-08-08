@@ -113,8 +113,8 @@ contract PapaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PapaToken() public {
-        symbol = &quot;PAPA&quot;;
-        name = &quot;Papa Token&quot;;
+        symbol = "PAPA";
+        name = "Papa Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x70A8a46729180f3b410Cfbe2517CfA7aE60d4404] = _totalSupply;

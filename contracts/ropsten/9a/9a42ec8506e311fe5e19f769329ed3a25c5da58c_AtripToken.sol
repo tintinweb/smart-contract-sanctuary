@@ -416,8 +416,8 @@ contract ERC827Token is ERC827, StandardToken {
 contract AtripToken is ERC827Token {
    using SafeMath for uint256;
 
-   string public name = &quot;Atrip Token&quot;;
-   string public symbol = &quot;APK&quot;;
+   string public name = "Atrip Token";
+   string public symbol = "APK";
    uint public decimals = 18;
 
    address public wallet = 0x0;//

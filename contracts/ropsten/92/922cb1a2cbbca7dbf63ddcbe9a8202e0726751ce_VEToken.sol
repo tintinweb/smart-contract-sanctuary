@@ -113,8 +113,8 @@ contract VEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VEToken() public {
-        symbol = &quot;VET&quot;;
-        name = &quot;Valueless Ethereum Token&quot;;
+        symbol = "VET";
+        name = "Valueless Ethereum Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3DcBE9fc817Be73deA81126BE0E48066f42E737C] = _totalSupply;

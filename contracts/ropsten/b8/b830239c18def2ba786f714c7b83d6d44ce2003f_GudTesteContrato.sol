@@ -113,8 +113,8 @@ contract GudTesteContrato is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GudTesteContratoF() public {
-        symbol = &quot;GDT&quot;;
-        name = &quot;GudTeste&quot;;
+        symbol = "GDT";
+        name = "GudTeste";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x5c7AD20DC173dFa74C18E892634E1CA27E8E472F] = _totalSupply;

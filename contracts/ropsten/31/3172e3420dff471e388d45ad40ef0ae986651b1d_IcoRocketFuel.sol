@@ -165,7 +165,7 @@ contract IcoRocketFuel is Ownable {
     modifier onlyCrowdsaleOwner(address _token) {
         require(
             msg.sender == crowdsales[_token].owner,
-            &quot;Failed to call function due to permission denied.&quot;
+            "Failed to call function due to permission denied."
         );
         _;
     }
@@ -173,7 +173,7 @@ contract IcoRocketFuel is Ownable {
     modifier inState(address _token, States _state) {
         require(
             crowdsales[_token].state == _state,
-            &quot;Failed to call function due to crowdsale is not in right state.&quot;
+            "Failed to call function due to crowdsale is not in right state."
         );
         _;
     }
@@ -181,7 +181,7 @@ contract IcoRocketFuel is Ownable {
     modifier nonZeroAddress(address _token) {
         require(
             _token != address(0),
-            &quot;Failed to call function due to address is 0x0.&quot;
+            "Failed to call function due to address is 0x0."
         );
         _;
     }
@@ -304,22 +304,22 @@ contract IcoRocketFuel is Ownable {
     {
         require(
             crowdsales[_token].owner == address(0),
-            &quot;Failed to create crowdsale due to the crowdsale is existed.&quot;
+            "Failed to create crowdsale due to the crowdsale is existed."
         );
 
         require(
             _goal <= _cap,
-            &quot;Failed to create crowdsale due to goal is larger than cap.&quot;
+            "Failed to create crowdsale due to goal is larger than cap."
         );
 
         require(
             _minInvest > 0,
-            &quot;Failed to create crowdsale due to minimum investment is 0.&quot;
+            "Failed to create crowdsale due to minimum investment is 0."
         );
 
         require(
             _commission <= 100,
-            &quot;Failed to create crowdsale due to commission is larger than 100.&quot;
+            "Failed to create crowdsale due to commission is larger than 100."
         );
 
         // Leverage SafeMath to help potential overflow of maximum token untis.
@@ -374,20 +374,20 @@ contract IcoRocketFuel is Ownable {
     {
         require(
             msg.value >= crowdsales[_token].minInvest,
-            &quot;Failed to buy token due to less than minimum investment.&quot;
+            "Failed to buy token due to less than minimum investment."
         );
 
         require(
             crowdsales[_token].raised.add(msg.value) <= (
                 crowdsales[_token].cap
             ),
-            &quot;Failed to buy token due to exceed cap.&quot;
+            "Failed to buy token due to exceed cap."
         );
 
         require(
             // solium-disable-next-line security/no-block-members
             block.timestamp < crowdsales[_token].closingTime,
-            &quot;Failed to buy token due to crowdsale is closed.&quot;
+            "Failed to buy token due to crowdsale is closed."
         );
 
         deposits[msg.sender][_token] = (
@@ -509,7 +509,7 @@ contract IcoRocketFuel is Ownable {
             crowdsales[_token].earlyClosure || (
             // solium-disable-next-line security/no-block-members
             block.timestamp >= crowdsales[_token].closingTime),                   
-            &quot;Failed to finalize due to crowdsale is opening.&quot;
+            "Failed to finalize due to crowdsale is opening."
         );
 
         if (_goalReached(ERC20(_token))) {
@@ -563,7 +563,7 @@ contract IcoRocketFuel is Ownable {
     {
         require(
             crowdsales[_token].raised > 0,
-            &quot;Failed to claim raised Wei due to raised Wei is 0.&quot;
+            "Failed to claim raised Wei due to raised Wei is 0."
         );
 
         uint256 _raisedWei = crowdsales[_token].raised;
@@ -586,7 +586,7 @@ contract IcoRocketFuel is Ownable {
     {
         require(
             deposits[msg.sender][_token] > 0,
-            &quot;Failed to claim token due to deposit is 0.&quot;
+            "Failed to claim token due to deposit is 0."
         );
 
         // Calculate token unit amount to be transferred. 
@@ -612,7 +612,7 @@ contract IcoRocketFuel is Ownable {
     {
         require(
             deposits[msg.sender][_token] > 0,
-            &quot;Failed to claim refund due to deposit is 0.&quot;
+            "Failed to claim refund due to deposit is 0."
         );
 
         uint256 _value = deposits[msg.sender][_token];

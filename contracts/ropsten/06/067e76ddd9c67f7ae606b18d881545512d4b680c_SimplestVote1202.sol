@@ -18,13 +18,13 @@ contract SimplestVote1202 {
     mapping (address => uint) private ballotOf_;
 
     constructor() public {
-        optionDescMap[1] = &quot;Yes&quot;;
-        optionDescMap[2] = &quot;No&quot;;
+        optionDescMap[1] = "Yes";
+        optionDescMap[2] = "No";
     }
 
     function vote(uint option) public returns (bool success) {
-        require(option == 1 || option == 2, &quot;Vote option has to be either 1 or 2.&quot;);
-        require(ballotOf_[msg.sender] == 0, &quot;The sender has casted ballots.&quot;); // no re-vote
+        require(option == 1 || option == 2, "Vote option has to be either 1 or 2.");
+        require(ballotOf_[msg.sender] == 0, "The sender has casted ballots."); // no re-vote
         ballotOf_[msg.sender] = option;
         voteCounts[option] = voteCounts[option] + 1; // TODO(xinbenlv): use SafeMath in a real implementation
         emit OnVote(msg.sender, option);
@@ -61,7 +61,7 @@ contract SimplestVote1202 {
     }
 
     function issueDescription() public pure returns (string desc) {
-        return &quot;Should we make John Smith our CEO?&quot;;
+        return "Should we make John Smith our CEO?";
     }
 
     function availableOptions() public view returns (uint[] options_) {

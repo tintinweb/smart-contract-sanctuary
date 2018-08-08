@@ -129,8 +129,8 @@ contract WePNToken is ERC20Interface, Owned, SafeMath, EscrowableToken {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;WEPN&quot;;
-        name = &quot;WePN Token&quot;;
+        symbol = "WEPN";
+        name = "WePN Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[msg.sender] = _totalSupply;

@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -266,13 +266,13 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
 
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if called by any account that&#39;s not whitelisted.
@@ -613,9 +613,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract PixieToken is StandardToken, Whitelist, HasNoEther {
 
-  string public constant name = &quot;Pixie Token&quot;;
+  string public constant name = "Pixie Token";
 
-  string public constant symbol = &quot;PXE&quot;;
+  string public constant symbol = "PXE";
 
   uint8 public constant decimals = 18;
 
@@ -647,7 +647,7 @@ contract PixieToken is StandardToken, Whitelist, HasNoEther {
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(
       transfersEnabled || whitelist(msg.sender) || _to == bridge,
-      &quot;Unable to transfers locked or address not whitelisted or not sending to the bridge&quot;
+      "Unable to transfers locked or address not whitelisted or not sending to the bridge"
     );
 
     return super.transfer(_to, _value);
@@ -656,7 +656,7 @@ contract PixieToken is StandardToken, Whitelist, HasNoEther {
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(
       transfersEnabled || whitelist(msg.sender) || _to == bridge,
-      &quot;Unable to transfers locked or address not whitelisted or not sending to the bridge&quot;
+      "Unable to transfers locked or address not whitelisted or not sending to the bridge"
     );
 
     return super.transferFrom(_from, _to, _value);
@@ -669,7 +669,7 @@ contract PixieToken is StandardToken, Whitelist, HasNoEther {
    * @param _new the address to set
    */
   function changeBridge(address _new) external onlyOwner {
-    require(_new != address(0), &quot;Invalid address&quot;);
+    require(_new != address(0), "Invalid address");
     bridge = _new;
     emit BridgeChange(bridge);
   }
@@ -1046,7 +1046,7 @@ contract PixieCrowdsale is Crowdsale, Pausable {
   * @dev Throws if called by any account other than the owner or the someone in the management list.
   */
   modifier onlyManagement() {
-    require(msg.sender == owner || managementWhitelist[msg.sender], &quot;Must be owner or in management whitelist&quot;);
+    require(msg.sender == owner || managementWhitelist[msg.sender], "Must be owner or in management whitelist");
     _;
   }
 
@@ -1098,7 +1098,7 @@ contract PixieCrowdsale is Crowdsale, Pausable {
    * work. Calls the contract&#39;s finalization function.
    */
   function finalize() onlyOwner public {
-    require(!isFinalized, &quot;Crowdsale already finalised&quot;);
+    require(!isFinalized, "Crowdsale already finalised");
 
     finalization();
     emit Finalized();
@@ -1155,7 +1155,7 @@ contract PixieCrowdsale is Crowdsale, Pausable {
    * @param _openingTime the epoch time to set
    */
   function updateOpeningTime(uint256 _openingTime) external onlyManagement {
-    require(_openingTime > 0, &quot;A opening time must be specified&quot;);
+    require(_openingTime > 0, "A opening time must be specified");
     openingTime = _openingTime;
   }
 
@@ -1166,7 +1166,7 @@ contract PixieCrowdsale is Crowdsale, Pausable {
    * @param _privateSaleCloseTime the epoch time to set
    */
   function updatePrivateSaleCloseTime(uint256 _privateSaleCloseTime) external onlyManagement {
-    require(_privateSaleCloseTime > openingTime, &quot;A private sale time must after the opening time&quot;);
+    require(_privateSaleCloseTime > openingTime, "A private sale time must after the opening time");
     privateSaleCloseTime = _privateSaleCloseTime;
   }
 
@@ -1177,7 +1177,7 @@ contract PixieCrowdsale is Crowdsale, Pausable {
    * @param _preSaleCloseTime the epoch time to set
    */
   function updatePreSaleCloseTime(uint256 _preSaleCloseTime) external onlyManagement {
-    require(_preSaleCloseTime > privateSaleCloseTime, &quot;A pre sale time must be after the private sale close time&quot;);
+    require(_preSaleCloseTime > privateSaleCloseTime, "A pre sale time must be after the private sale close time");
     preSaleCloseTime = _preSaleCloseTime;
   }
 
@@ -1188,7 +1188,7 @@ contract PixieCrowdsale is Crowdsale, Pausable {
    * @param _closingTime the epoch time to set
    */
   function updateClosingTime(uint256 _closingTime) external onlyManagement {
-    require(_closingTime > preSaleCloseTime, &quot;A closing time must be after the pre-sale close time&quot;);
+    require(_closingTime > preSaleCloseTime, "A closing time must be after the pre-sale close time");
     closingTime = _closingTime;
   }
 
@@ -1199,7 +1199,7 @@ contract PixieCrowdsale is Crowdsale, Pausable {
    * @param _minimumContribution the minimum contribution to set
    */
   function updateMinimumContribution(uint256 _minimumContribution) external onlyManagement {
-    require(_minimumContribution > 0, &quot;Minimum contribution must be great than zero&quot;);
+    require(_minimumContribution > 0, "Minimum contribution must be great than zero");
     minimumContribution = _minimumContribution;
     emit MinimumContributionUpdated(_minimumContribution);
   }
@@ -1280,15 +1280,15 @@ contract PixieCrowdsale is Crowdsale, Pausable {
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
     super._preValidatePurchase(_beneficiary, _weiAmount);
 
-    require(isCrowdsaleOpen(), &quot;Crowdsale not open&quot;);
+    require(isCrowdsaleOpen(), "Crowdsale not open");
 
-    require(weiRaised.add(_weiAmount) <= hardCap, &quot;Exceeds maximum cap&quot;);
+    require(weiRaised.add(_weiAmount) <= hardCap, "Exceeds maximum cap");
 
-    require(_weiAmount >= minimumContribution, &quot;Beneficiary minimum amount not reached&quot;);
+    require(_weiAmount >= minimumContribution, "Beneficiary minimum amount not reached");
 
-    require(whitelist[_beneficiary], &quot;Beneficiary not whitelisted&quot;);
+    require(whitelist[_beneficiary], "Beneficiary not whitelisted");
 
-    require(!paused, &quot;Contract paused&quot;);
+    require(!paused, "Contract paused");
   }
 
   /**

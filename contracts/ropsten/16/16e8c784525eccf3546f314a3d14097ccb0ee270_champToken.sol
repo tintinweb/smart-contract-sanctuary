@@ -116,8 +116,8 @@ contract champToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function champToken() public {
-        symbol = &quot;CMP&quot;;
-        name = &quot;champ Token&quot;;
+        symbol = "CMP";
+        name = "champ Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

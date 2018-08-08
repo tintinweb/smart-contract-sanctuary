@@ -97,8 +97,8 @@ contract MetronomeToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function MetronomeToken() public {
-        symbol = &quot;MET&quot;;
-        name = &quot;Test Metronome Token&quot;;
+        symbol = "MET";
+        name = "Test Metronome Token";
         decimals = 18;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

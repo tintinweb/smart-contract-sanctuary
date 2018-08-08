@@ -113,8 +113,8 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;0FUCKS&quot;;
-        name = &quot;0 Fucks Token&quot;;
+        symbol = "0FUCKS";
+        name = "0 Fucks Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xfE0f7A487440140C13545352a42d0317a28eE91F] = _totalSupply;

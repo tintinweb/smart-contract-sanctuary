@@ -39,7 +39,7 @@ interface ERC721 /* is ERC165 */ {
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
     ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
-    ///  `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`.
+    ///  `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`.
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -48,7 +48,7 @@ interface ERC721 /* is ERC165 */ {
 
     /// @notice Transfers the ownership of an NFT from one address to another address
     /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to &quot;&quot;.
+    ///  except this function just sets data to "".
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -74,7 +74,7 @@ interface ERC721 /* is ERC165 */ {
     /// @param _tokenId The NFT to approve
     function approve(address _approved, uint256 _tokenId) external;
 
-    /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+    /// @notice Enable or disable approval for a third party ("operator") to manage
     ///  all of `msg.sender`&#39;s assets
     /// @dev Emits the ApprovalForAll event. The contract MUST allow
     ///  multiple operators per owner.
@@ -140,7 +140,7 @@ contract BitGuildAccessAdmin {
   modifier onlyOperator {
     require(
       isOperator[msg.sender] || msg.sender == owner,
-      &quot;Permission denied. Must be an operator or the owner.&quot;);
+      "Permission denied. Must be an operator or the owner.");
     _;
   }
 
@@ -151,7 +151,7 @@ contract BitGuildAccessAdmin {
   function transferOwnership(address _newOwner) public onlyOwner {
     require(
       _newOwner != address(0),
-      &quot;Invalid new owner address.&quot;
+      "Invalid new owner address."
     );
     emit OwnershipTransferred(owner, _newOwner);
     owner = _newOwner;
@@ -164,19 +164,19 @@ contract BitGuildAccessAdmin {
   function addOperator(address _newOperator) public onlyOwner {
     require(
       _newOperator != address(0),
-      &quot;Invalid new operator address.&quot;
+      "Invalid new operator address."
     );
 
     // Make sure no dups
     require(
       !isOperator[_newOperator],
-      &quot;New operator exists.&quot;
+      "New operator exists."
     );
 
     // Only allow so many ops
     require(
       operators.length < MAX_OPS,
-      &quot;Overflow.&quot;
+      "Overflow."
     );
 
     operators.push(_newOperator);
@@ -193,13 +193,13 @@ contract BitGuildAccessAdmin {
     // Make sure operators array is not empty
     require(
       operators.length > 0,
-      &quot;No operator.&quot;
+      "No operator."
     );
 
     // Make sure the operator exists
     require(
       isOperator[_operator],
-      &quot;Not an operator.&quot;
+      "Not an operator."
     );
 
     // Manual array manipulation:
@@ -244,7 +244,7 @@ contract AvatarOperator is BitGuildAccessAdmin {
     for(uint8 i = 0; i < nameBytes.length; ++i) {
       uint8 asc = uint8(nameBytes[i]);
       require (
-        asc == 95 || (asc >= 48 && asc <= 57) || (asc >= 65 && asc <= 90) || (asc >= 97 && asc <= 122), &quot;Invalid name&quot;); 
+        asc == 95 || (asc >= 48 && asc <= 57) || (asc >= 65 && asc <= 90) || (asc >= 97 && asc <= 122), "Invalid name"); 
     }
     _;
   }

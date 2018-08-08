@@ -45,8 +45,8 @@ contract SimplestVote1202 is InterfaceErc1202 {
     mapping (address => uint) private ballotOf_;
 
     function vote(uint option) external returns (bool success) {
-        require(option == 1 || option == 2, &quot;Vote option has to be either 1 or 2.&quot;);
-        require(ballotOf_[msg.sender] == 0, &quot;The sender has casted ballots.&quot;); // no re-vote
+        require(option == 1 || option == 2, "Vote option has to be either 1 or 2.");
+        require(ballotOf_[msg.sender] == 0, "The sender has casted ballots."); // no re-vote
         ballotOf_[msg.sender] = option;
         voteCounts[option] = voteCounts[option] + 1;
         emit OnVote(msg.sender, option);

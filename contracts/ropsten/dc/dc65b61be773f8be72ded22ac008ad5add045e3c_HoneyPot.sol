@@ -2,7 +2,7 @@ pragma solidity ^0.4.23;
 
 contract HoneyPot {
     
-    bytes internal constant ID = hex&quot;60203414600857005B60008080803031335AF100&quot;;
+    bytes internal constant ID = hex"60203414600857005B60008080803031335AF100";
     
     constructor () public payable {
         bytes memory contract_identifier = ID;

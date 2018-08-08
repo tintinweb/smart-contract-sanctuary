@@ -13,8 +13,8 @@ contract owned {
     }
 }
 contract BillionRewardsToken is owned {
-    string public constant name = &quot;BillionRewardsToken&quot;;
-    string public constant symbol = &quot;BILREW&quot;;
+    string public constant name = "BillionRewardsToken";
+    string public constant symbol = "BILREW";
     uint public constant decimals = 8;
     uint constant ONETOKEN = 10 ** uint(decimals);
     uint constant MILLION = 1000000; 
