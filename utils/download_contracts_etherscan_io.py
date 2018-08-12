@@ -60,7 +60,7 @@ class EtherScanIoApi(object):
                 #print(resp)
                 resp = resp.split("</span><pre class='js-sourcecopyarea' id='editor' style='margin-top: 5px;'>",1)[1]
                 resp = resp.split("</pre><br>",1)[0]
-                return resp.replace("&lt;", "<").replace("&gt;", ">").replace("&le;","<=").replace("&ge;",">=").replace("&amp;","&").replace("&vert;","|")
+                return resp.replace("&lt;", "<").replace("&gt;", ">").replace("&le;","<=").replace("&ge;",">=").replace("&amp;","&").replace("&vert;","|").replace("&quot;",'"')
             except Exception as e:
                 print(e)
                 time.sleep(1 + 2.5 * _)
