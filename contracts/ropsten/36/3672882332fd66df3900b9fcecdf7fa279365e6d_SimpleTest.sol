@@ -1,0 +1,1 @@
+pragma solidity 0.4.25;contract SimpleTest{string public blablabla;constructor() public{blablabla = "Hello world!";}}
