@@ -27,21 +27,22 @@ class EtherScanIoApi(object):
         page = start
 
         while not end or page <= end:
-            resp = self.session.get("/contractsVerified/%d" % page).text
-            page, lastpage = re.findall(r'Page <b>(\d+)</b> of <b>(\d+)</b>', resp)[0]
+            resp = self.session.get("/contractsVerified/%d?ps=100" % page).text
+            page, lastpage = re.findall(r'Page <strong(?:[^>]+)>(\d+)</strong> of <strong(?:[^>]+)>(\d+)</strong>', resp)[0]
             page, lastpage = int(page),int(lastpage)
             if not end:
                 end = lastpage
             rows = self._parse_tbodies(resp)[0]  # only use first tbody
             for col in rows:
+
                 contract = {'address': self._extract_text_from_html(col[0]).split(" ",1)[0],
-                               'name': self._extract_text_from_html(col[1]),
-                               'compiler': self._extract_text_from_html(col[2]),
-                               'balance': self._extract_text_from_html(col[3]),
-                               'txcount': int(self._extract_text_from_html(col[4])),
-                               'settings': self._extract_text_from_html(col[5]),
-                               'date': self._extract_text_from_html(col[6]),
-                               }
+                            'name': self._extract_text_from_html(col[1]),
+                            'compiler': self._extract_text_from_html(col[3]),
+                            'balance': self._extract_text_from_html(col[4]),
+                            'txcount': int(self._extract_text_from_html(col[5])),
+                            'settings': self._extract_text_from_html(col[6]),
+                            'date': self._extract_text_from_html(col[7]),
+                            }
                 yield contract
             page += 1
 
@@ -58,7 +59,7 @@ class EtherScanIoApi(object):
                 print("=======================================================")
                 print(address)
                 #print(resp)
-                resp = resp.split("</span><pre class='js-sourcecopyarea' id='editor' style='margin-top: 5px;'>",1)[1]
+                resp = resp.split("<pre class='js-sourcecopyarea editor' id='editor' style='margin-top: 5px;'>",1)[1]
                 resp = resp.split("</pre><br>",1)[0]
                 return resp.replace("&lt;", "<").replace("&gt;", ">").replace("&le;","<=").replace("&ge;",">=").replace("&amp;","&").replace("&vert;","|").replace("&quot;",'"')
             except Exception as e:
