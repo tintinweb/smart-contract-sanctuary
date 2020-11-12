@@ -1,14 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # github.com/tintinweb
-#
-"""
-
-HACKy - non productive - script to download contracts from etherscan.io with throtteling.
-Will eventually being turned into a simple etherscan.io api library. Feel free to take over that part and
- contribute if interested.
-
-"""
 import re
 import os
 from etherscan.contracts import Contract
@@ -21,7 +13,6 @@ class EtherScanIoApi(object):
     """
     Base EtherScan.io Api implementation
     """
-
     def __init__(self, api_key = None):
         self.api_key = api_key
 
@@ -42,8 +33,6 @@ if __name__=="__main__":
 
     output_directory = "../contracts/%s/"%prefix
     overwrite = False
-    amount = 1000000
-
     etherscan = EtherScanIoApi(api_key=ETHERSCAN_API_KEY)
 
     with open('export-verified-contractaddress-opensource-license.csv') as csvfile:
@@ -53,7 +42,7 @@ if __name__=="__main__":
             contract_address = row[1]
             contract_name = row[2]
             print("contract address: %s" %contract_address)
-            sourceCode = etherscan.get_contract_source(address = contract_address)
+            sourceCode = etherscan.get_contract_source(contract_address)
 
             #Handle multiContract addresses
             all_contracts = []
@@ -62,13 +51,10 @@ if __name__=="__main__":
                 print("MultiContract Contract")
                 for key,value in contract_json.items():
                     contract = {}
-                    print(key)
-                    print(value['content'])
                     contract['name'] = key.replace(".sol", "")
                     contract['sourceCode'] = value['content']
                     all_contracts.append(contract)
             except Exception as e:
-                print(e)
                 all_contracts = [{'name' : contract_name,
                                   'sourceCode' : sourceCode }]
 
