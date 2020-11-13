@@ -47,6 +47,8 @@ if __name__=="__main__":
             #Handle multiContract addresses
             all_contracts = []
             try:
+                if sourceCode.startswith("{{"):
+                    sourceCode = sourceCode[1:-1]
                 contract_json = json.loads(sourceCode)
                 print("MultiContract Contract")
                 for key,value in contract_json.items():
@@ -55,8 +57,17 @@ if __name__=="__main__":
                     contract['sourceCode'] = value['content']
                     all_contracts.append(contract)
             except Exception as e:
-                all_contracts = [{'name' : contract_name,
-                                  'sourceCode' : sourceCode }]
+                contract_json = json.loads(sourceCode)
+                contract_json = contract_json["sources"]
+                try:
+                    for key,value in contract_json.items():
+                        contract = {}
+                        contract['name'] = key.replace(".sol", "")
+                        contract['sourceCode'] = value['content']
+                        all_contracts.append(contract)
+                except Exception as e:
+                    all_contracts = [{'name' : contract_name,
+                                    'sourceCode' : sourceCode }]
 
 
             for cont in all_contracts:
