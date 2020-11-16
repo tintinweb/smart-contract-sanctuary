@@ -25,9 +25,6 @@ Scripts for dumping smart contracts from public sources (etherscan.io, etherchai
 #### Update
 To use [List of Verified Contract addresses with an OpenSource license](https://etherscan.io/exportData?type=open-source-contract-codes), you can download the csv file, add it to the util folder, and run `parse_download_contracts_etherscan_io.py` (with your etherscan API). This will add the new contracts to the appropriate folder
 
-
-#### Update
-To use [List of Verified Contract addresses with an OpenSource license](https://etherscan.io/exportData?type=open-source-contract-codes), you can download the csv file, add it to the util folder, and run `parse_download_contracts_etherscan_io.py` (with your etherscan API). This will add the new contracts to the appropriate folder
 ## Contribute
 
 Feel free to contribute smart contract sources, scripts for dumping sources or your analysis results with us.
@@ -40,7 +37,7 @@ Feel free to contribute smart contract sources, scripts for dumping sources or y
 * code-hash (without comments; maybe compile and hash bytecode to dedup sources)
 
 
-### Citations
+## Citation
 If you are using this dataset in your research and paper, here's how you can cite this dataset: 
 
 - APA6
