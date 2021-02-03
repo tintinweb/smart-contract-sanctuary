@@ -7,6 +7,8 @@
 | contracts    | folder structure of dumped solidity contract sources |
 | utils        | utilities for dumping smart contracts from public sources |
 
+**Note**: This repo updates twice a day (ropsten/mainnet).
+
 ### Contracts
 
 The folder structure contains the solidity sources. Each file is the address (without 0x) and the contract name, e.g. `0f0c3fedb6226cd5a18826ce23bec92d18336a98_URToken.sol`
@@ -31,7 +33,6 @@ Feel free to contribute smart contract sources, scripts for dumping sources or y
 
 ### TODO
 
-* Keep the dataset updated (Last update Nov 12, 2020)
 * deduplication script (link instead of duplicate)
 * statistics
 * code-hash (without comments; maybe compile and hash bytecode to dedup sources)
