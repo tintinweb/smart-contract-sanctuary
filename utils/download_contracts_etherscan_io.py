@@ -15,7 +15,7 @@ import os
 from bs4 import BeautifulSoup
 
 DEBUG_RAISE = True
-DEBUG_PRINT_CONTRACTS = True
+DEBUG_PRINT_CONTRACTS = False
 
 
 class EtherScanIoApi(object):
@@ -103,7 +103,7 @@ class EtherScanIoApi(object):
     def _parse_tbodies(self, data):
         tbodies = []
         for tbody in re.findall(r"<tbody.*?>(.+?)</tbody>", data, re.DOTALL):
-            print(tbody)
+            #print(tbody)
             rows = []
             for tr in re.findall(r"<tr.*?>(.+?)</tr>", tbody):
                 rows.append(re.findall(r"<td.*?>(.+?)</td>", tr))
