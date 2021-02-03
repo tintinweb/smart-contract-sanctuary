@@ -34,3 +34,4 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: python3 download_contracts_etherscan_io.py
+        working-directory: utils
