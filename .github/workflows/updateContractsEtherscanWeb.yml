@@ -37,3 +37,18 @@ jobs:
         working-directory: utils
     
       # commit changes
+      - name: Persist changes / autocommit
+        uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
+        with:
+          # The arguments for the `git add` command (see the paragraph below for more info)
+          # Default: '.'
+          add: 'contracts'
+
+          # The name of the user that will be displayed as the author of the commit
+          # Default: author of the commit that triggered the run
+          author_name: GithubAction/updateContractsEtherscanWeb
+
+
+          # The message for the commit
+          # Default: 'Commit from GitHub Actions (name of the workflow)'
+          message: 'GithubAction - updateContractsEtherscanWeb - autocommit'
