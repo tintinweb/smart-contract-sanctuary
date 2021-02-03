@@ -1,1 +1,2 @@
 py-etherscan-api
+bs4

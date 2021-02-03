@@ -12,6 +12,10 @@ Will eventually being turned into a simple etherscan.io api library. Feel free t
 from pyetherchain.pyetherchain import UserAgent
 import re
 import os
+from bs4 import BeautifulSoup
+
+DEBUG_RAISE = True
+DEBUG_PRINT_CONTRACTS = True
 
 
 class EtherScanIoApi(object):
@@ -59,8 +63,14 @@ class EtherScanIoApi(object):
                 print("=======================================================")
                 print(address)
                 #print(resp)
-                resp = resp.split("<pre class='js-sourcecopyarea editor' id='editor' style='margin-top: 5px;'>",1)[1]
+                resp = re.split("<pre class='js-sourcecopyarea editor' id='editor\d*' style='margin-top: 5px;'>",resp,1)[1]
                 resp = resp.split("</pre><br>",1)[0]
+                soup = BeautifulSoup(resp)
+                resp = soup.get_text() # normalize html.
+                if DEBUG_PRINT_CONTRACTS:
+                    print(resp)
+                if "&lt;" in resp or "&gt;" in resp or "&le;" in resp or "&ge;" in resp or "&amp;" in resp or "&vert;" in resp or "&quot;" in resp:
+                    raise Exception("HTML IN OUTPUT!! - BeautifulSoup messed up..")
                 return resp.replace("&lt;", "<").replace("&gt;", ">").replace("&le;","<=").replace("&ge;",">=").replace("&amp;","&").replace("&vert;","|").replace("&quot;",'"')
             except Exception as e:
                 print(e)
@@ -133,6 +143,8 @@ if __name__=="__main__":
                 if not len(source):
                     raise Exception(c)
             except Exception as e:
+                if DEBUG_RAISE:
+                    raise
                 continue
 
 
