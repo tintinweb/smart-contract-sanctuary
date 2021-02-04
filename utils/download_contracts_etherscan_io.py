@@ -63,15 +63,24 @@ class EtherScanIoApi(object):
                 print("=======================================================")
                 print(address)
                 #print(resp)
-                resp = re.split("<pre class='js-sourcecopyarea editor' id='editor\d*' style='margin-top: 5px;'>",resp,1)[1]
-                resp = resp.split("</pre><br>",1)[0]
-                soup = BeautifulSoup(resp)
-                resp = soup.get_text() # normalize html.
-                if DEBUG_PRINT_CONTRACTS:
-                    print(resp)
-                if "&lt;" in resp or "&gt;" in resp or "&le;" in resp or "&ge;" in resp or "&amp;" in resp or "&vert;" in resp or "&quot;" in resp:
-                    raise Exception("HTML IN OUTPUT!! - BeautifulSoup messed up..")
-                return resp.replace("&lt;", "<").replace("&gt;", ">").replace("&le;","<=").replace("&ge;",">=").replace("&amp;","&").replace("&vert;","|").replace("&quot;",'"')
+                sources = []
+                # remove settings box. this is not solidity source
+                if "<span class='text-secondary'>Settings</span><pre class='js-sourcecopyarea editor' id='editor' style='margin-top: 5px;'>" in resp:
+                    resp = resp.split("<span class='text-secondary'>Settings</span><pre class='js-sourcecopyarea editor' id='editor' style='margin-top: 5px;'>",1)[0]
+                    
+                for rawSource in re.split("<pre class='js-sourcecopyarea editor' id='editor\d*' style='margin-top: 5px;'>",resp)[1:]:
+                    src = rawSource.split("</pre><br>",1)[0]
+                    soup = BeautifulSoup(src)
+                    source = soup.get_text() # normalize html.
+                    if DEBUG_PRINT_CONTRACTS:
+                        print(source)
+                    if "&lt;" in source or "&gt;" in source or "&le;" in source or "&ge;" in source or "&amp;" in source or "&vert;" in source or "&quot;" in source:
+                        raise Exception("HTML IN OUTPUT!! - BeautifulSoup messed up..")
+                    source =  source.replace("&lt;", "<").replace("&gt;", ">").replace("&le;","<=").replace("&ge;",">=").replace("&amp;","&").replace("&vert;","|").replace("&quot;",'"')
+                    sources.append(source)
+                if not sources:
+                    raise Exception("No editor boxes found in source. rate limited?")
+                return "\n\n".join(sources)
             except Exception as e:
                 print(e)
                 time.sleep(1 + 2.5 * _)
