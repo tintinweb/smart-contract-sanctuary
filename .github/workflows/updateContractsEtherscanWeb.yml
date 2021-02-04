@@ -1,9 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Update From Etherscan web
+name: Dump Contracts (Etherscan/Web/Mainnet)
 
 # Controls when the action will run. 
 on:
+  schedule:
+  # run at 1am every day
+  # * is a special character in YAML so you have to quote this string
+    - cron:  '0 1,13 * * *'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -32,6 +36,23 @@ jobs:
         working-directory: utils
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Dump Contracts (web)
         run: python3 download_contracts_etherscan_io.py
         working-directory: utils
+    
+      # commit changes
+      - name: Persist changes / autocommit
+        uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
+        with:
+          # The arguments for the `git add` command (see the paragraph below for more info)
+          # Default: '.'
+          add: 'contracts'
+
+          # The name of the user that will be displayed as the author of the commit
+          # Default: author of the commit that triggered the run
+          author_name: GithubAction/updateContractsEtherscanWeb
+
+
+          # The message for the commit
+          # Default: 'Commit from GitHub Actions (name of the workflow)'
+          message: 'GithubAction - updateContractsEtherscanWeb - autocommit'
