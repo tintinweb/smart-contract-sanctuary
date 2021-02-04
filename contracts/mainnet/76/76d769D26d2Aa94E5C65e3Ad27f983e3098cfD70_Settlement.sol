@@ -30,7 +30,7 @@ library SafeMathUniswap {
 }
 
 
-// File @sushiswap/core/contracts/uniswapv2/libraries/TransferHelper.[email protected]
+// File @sushiswap/core/contracts/uniswapv2/libraries/[email protected]
 
 
 

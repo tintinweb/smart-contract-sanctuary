@@ -44,3 +44,98 @@ contract UpgradableProxy is GovernableProxy, Proxy {
         return size > 0;
     }
 }
+
+pragma solidity 0.6.11;
+
+import {IERCProxy} from "./IERCProxy.sol";
+
+abstract contract Proxy is IERCProxy {
+    function delegatedFwd(address _dst, bytes memory _calldata) internal {
+        // solium-disable-next-line security/no-inline-assembly
+        assembly {
+            let result := delegatecall(
+                sub(gas(), 10000),
+                _dst,
+                add(_calldata, 0x20),
+                mload(_calldata),
+                0,
+                0
+            )
+            let size := returndatasize()
+
+            let ptr := mload(0x40)
+            returndatacopy(ptr, 0, size)
+
+            // revert instead of invalid() bc if the underlying call failed with invalid() it already wasted gas.
+            // if the call returned error data, forward it
+            switch result
+                case 0 {
+                    revert(ptr, size)
+                }
+                default {
+                    return(ptr, size)
+                }
+        }
+    }
+
+    function proxyType() override external pure returns (uint proxyTypeId) {
+        // Upgradeable proxy
+        proxyTypeId = 2;
+    }
+
+    function implementation() override virtual public view returns (address);
+}
+
+pragma solidity 0.6.11;
+
+contract GovernableProxy {
+    bytes32 constant OWNER_SLOT = keccak256("proxy.owner");
+
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+    constructor() internal {
+        _transferOwnership(msg.sender);
+    }
+
+    /**
+     * @dev Returns the address of the current owner.
+     */
+    function owner() public view returns(address _owner) {
+        bytes32 position = OWNER_SLOT;
+        assembly {
+            _owner := sload(position)
+        }
+    }
+
+    modifier onlyOwner() {
+        require(isOwner(), "NOT_OWNER");
+        _;
+    }
+
+    function isOwner() public view returns (bool) {
+        return owner() == msg.sender;
+    }
+
+    /**
+     * @dev Transfers ownership of the contract to a new account (`newOwner`).
+     */
+    function transferOwnership(address newOwner) external onlyOwner {
+        _transferOwnership(newOwner);
+    }
+
+    function _transferOwnership(address newOwner) internal {
+        require(newOwner != address(0), "OwnableProxy: new owner is the zero address");
+        emit OwnershipTransferred(owner(), newOwner);
+        bytes32 position = OWNER_SLOT;
+        assembly {
+            sstore(position, newOwner)
+        }
+    }
+}
+
+pragma solidity 0.6.11;
+
+interface IERCProxy {
+    function proxyType() external pure returns (uint proxyTypeId);
+    function implementation() external view returns (address codeAddr);
+}

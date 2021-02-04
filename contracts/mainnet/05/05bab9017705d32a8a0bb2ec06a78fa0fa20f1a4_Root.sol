@@ -947,7 +947,7 @@ interface IERC20 {
 // File: contracts/token/IDollar.sol
 
 /*
-    Copyright 2020 Empty Set Squad <[email protected]mail.com>
+    Copyright 2020 Empty Set Squad <[email protected]>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

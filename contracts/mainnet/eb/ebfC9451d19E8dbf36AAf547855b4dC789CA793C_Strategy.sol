@@ -856,7 +856,7 @@ interface VaultAPI is IERC20 {
     function governance() external view returns (address);
 }
 
-// Part: iearn-finance/[email protected]0.3.0/BaseStrategy
+// Part: iearn-finance/[email protected]/BaseStrategy
 
 /**
  * @title Yearn Base Strategy
