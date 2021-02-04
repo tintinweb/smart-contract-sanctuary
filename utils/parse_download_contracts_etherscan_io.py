@@ -57,9 +57,9 @@ if __name__=="__main__":
                     contract['sourceCode'] = value['content']
                     all_contracts.append(contract)
             except Exception as e:
-                contract_json = json.loads(sourceCode)
-                contract_json = contract_json["sources"]
                 try:
+                    contract_json = json.loads(sourceCode)
+                    contract_json = contract_json["sources"]
                     for key,value in contract_json.items():
                         contract = {}
                         contract['name'] = key.replace(".sol", "")
