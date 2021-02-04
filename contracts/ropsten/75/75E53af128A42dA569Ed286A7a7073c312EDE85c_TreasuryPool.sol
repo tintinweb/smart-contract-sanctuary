@@ -22,3 +22,14 @@ contract TreasuryPool {
         totalUnderlyingAssetAmount = _initialTotalUnderlyingAssetAmount;
     }
 }
+
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.7.6;
+
+interface IOldTreasuryPool {
+    function underlyingAssetAddress() external view returns (address);
+
+    function totalUnderlyingAssetAmount() external view returns (uint256);
+
+    function paused() external view returns (bool);
+}

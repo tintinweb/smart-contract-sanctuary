@@ -10,7 +10,7 @@ pragma solidity ^0.4.21;
 
 
 /**
- * [email protected]9.0/contracts/math/SafeMath.sol
+ * [email protected]/contracts/math/SafeMath.sol
  */
 
 /**
