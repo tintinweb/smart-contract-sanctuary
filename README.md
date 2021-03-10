@@ -1,5 +1,5 @@
 # smart-contract-sanctuary
-🐦🌴🌴🌴🦕 A home for ethereum smart contracts, all verified smart contracts from Etherscan. 🏠
+🐦🌴🌴🌴🦕 A home for ethereum smart contracts verified on Etherscan. 🏠
 
 
 | Folder       | Description   |
