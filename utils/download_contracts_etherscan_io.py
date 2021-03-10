@@ -123,16 +123,16 @@ class EtherScanIoApi(object):
 
 if __name__=="__main__":
     import sys
-    if "ropsten" in sys.argv:
-        prefix="ropsten"
+    if len(sys.argv)>1:
+        prefix = sys.argv.pop()
     else:
-        prefix="mainnet"
+        prefix = "www"
 
     output_directory = "../contracts/%s/"%prefix
     overwrite = False
     amount = 1000000
 
-    e = EtherScanIoApi(baseurl="https://%s.etherscan.io"%("ropsten" if prefix=="ropsten" else "www"))
+    e = EtherScanIoApi(baseurl="https://%s.etherscan.io"%(prefix))
     for nr,c in enumerate(e.get_contracts()):
         with open(os.path.join(output_directory,"contracts.json"),'a') as f:
             f.write("%s\n"%c)
