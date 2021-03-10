@@ -7,14 +7,17 @@
 | contracts    | folder structure of dumped solidity contract sources |
 | utils        | utilities for dumping smart contracts from public sources |
 
-**Note**: This repo updates twice a day (ropsten/mainnet).
+**Note**: This repo is updated twice a day.
+
+## Folders
 
 ### Contracts
 
-The folder structure contains the solidity sources. Each file is the address (without 0x) and the contract name, e.g. `0f0c3fedb6226cd5a18826ce23bec92d18336a98_URToken.sol`
+Contains smart contract sources for various networks, grouped by the first two chars of the contract address.
+Files are named in the format `<address>_<source_unit_name>`, e.g. `0f0c3fedb6226cd5a18826ce23bec92d18336a98_URToken.sol`
 
 Some contracts are listed in `contracts.json`, but this file is not complete. Rely on the file structure for a full list. 
-This repo auto submits contracts to [4byte.directory](https://www.4byte.directory/). Feel free to contribute sources.
+This repo used to auto submit contracts to [4byte.directory](https://www.4byte.directory/). Feel free to contribute sources.
 
 
 ### Utils
@@ -25,6 +28,7 @@ Scripts for dumping smart contracts from public sources (etherscan.io, etherchai
 
 
 #### Update
+
 To use [List of Verified Contract addresses with an OpenSource license](https://etherscan.io/exportData?type=open-source-contract-codes), you can download the csv file, add it to the util folder, and run `parse_download_contracts_etherscan_io.py` (with your etherscan API). This will add the new contracts to the appropriate folder
 
 ## Contribute
