@@ -128,7 +128,7 @@ if __name__=="__main__":
     else:
         prefix = "www"
 
-    output_directory = "../contracts/%s/"%prefix
+    output_directory = "../contracts/%s/"%("mainnet" if prefix=="www" else prefix)
     overwrite = False
     amount = 1000000
 
