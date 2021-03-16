@@ -14,7 +14,7 @@ import re
 import os
 from bs4 import BeautifulSoup
 
-DEBUG_RAISE = True
+DEBUG_RAISE = False
 DEBUG_PRINT_CONTRACTS = False
 
 
