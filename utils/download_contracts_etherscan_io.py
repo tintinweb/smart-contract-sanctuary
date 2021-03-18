@@ -31,8 +31,13 @@ class EtherScanIoApi(object):
         page = start
 
         while not end or page <= end:
-            resp = self.session.get("/contractsVerified/%d?ps=100" % page).text
-            page, lastpage = re.findall(r'Page <strong(?:[^>]+)>(\d+)</strong> of <strong(?:[^>]+)>(\d+)</strong>', resp)[0]
+            for _ in range(5):
+                resp = self.session.get("/contractsVerified/%d?ps=100" % page).text
+                pageResult = re.findall(r'Page <strong(?:[^>]+)>(\d+)</strong> of <strong(?:[^>]+)>(\d+)</strong>', resp)
+                if len(pageResult)>0:
+                    break
+                time.sleep(10) # wait a bit ;)
+            page, lastpage = pageResult[0]
             page, lastpage = int(page),int(lastpage)
             if not end:
                 end = lastpage
