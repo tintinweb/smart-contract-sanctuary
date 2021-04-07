@@ -32,11 +32,16 @@ class EtherScanIoApi(object):
 
         while not end or page <= end:
             for _ in range(5):
-                resp = self.session.get("/contractsVerified/%d?ps=100" % page).text
-                pageResult = re.findall(r'Page <strong(?:[^>]+)>(\d+)</strong> of <strong(?:[^>]+)>(\d+)</strong>', resp)
-                if len(pageResult)>0:
-                    break
-                time.sleep(10) # wait a bit ;)
+                try:
+                    resp = self.session.get("/contractsVerified/%d?ps=100" % page).text
+                    pageResult = re.findall(r'Page <strong(?:[^>]+)>(\d+)</strong> of <strong(?:[^>]+)>(\d+)</strong>', resp)
+                    if len(pageResult)>0:
+                        break
+                    time.sleep(10) # wait a bit ;)
+                except Exception as e:
+                    if "Unexpected Status Code" not in str(e): raise e
+                    time.sleep(10) # wait a bit ;)
+                    
             page, lastpage = pageResult[0]
             page, lastpage = int(page),int(lastpage)
             if not end:
