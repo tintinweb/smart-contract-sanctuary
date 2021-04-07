@@ -12,6 +12,7 @@ Will eventually being turned into a simple etherscan.io api library. Feel free t
 from pyetherchain.pyetherchain import UserAgent
 import re
 import os
+import time
 from bs4 import BeautifulSoup
 
 DEBUG_RAISE = False
@@ -61,7 +62,6 @@ class EtherScanIoApi(object):
             page += 1
 
     def get_contract_source(self, address):
-        import time
         e = None
         for _ in range(20):
             resp = self.session.get("/address/%s"%address).text
