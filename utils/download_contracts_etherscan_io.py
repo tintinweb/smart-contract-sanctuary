@@ -9,15 +9,59 @@ Will eventually being turned into a simple etherscan.io api library. Feel free t
  contribute if interested.
 
 """
-from pyetherchain.pyetherchain import UserAgent
 import re
 import os
-import time
+import requests
+import random
+from retry import retry
 from bs4 import BeautifulSoup
 
+import logging
+
+logger = logging.getLogger(__name__)
 DEBUG_RAISE = False
 DEBUG_PRINT_CONTRACTS = False
 
+
+class UserAgent(object):
+    """
+    User-Agent handling retries and errors ...
+    """
+
+    UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36"
+
+    def __init__(self, baseurl, proxies={}):
+        self.baseurl, self.proxies = baseurl, proxies
+        self.session = None
+        self.initialize()
+
+    def initialize(self):
+        self.session = requests.session()
+        self.session.headers.update({"user-agent":self.UA + str(random.randint(0,100))})
+
+    def get(self, path, params={}, headers={}, proxies={}):
+        new_headers = self.session.headers.copy()
+        new_headers.update(headers)
+
+        proxies = proxies or self.proxies
+        _e = None
+
+        resp = self.session.get("%s%s%s"%(self.baseurl, "/" if not path.startswith("/") else "", path),
+                                    params=params, headers=new_headers, proxies=proxies)
+        if resp.status_code != 200:
+            raise Exception("Unexpected Status Code: %s!=200" % resp.status_code)
+        return resp
+
+
+    def post(self, path, params={}, headers={}):
+        new_headers = self.session.headers.copy()
+        new_headers.update(headers)
+    
+        resp = self.session.post("%s%s%s"%(self.baseurl, "/" if not path.startswith("/") else "", path),
+                                params=params, headers=new_headers)
+        if resp.status_code != 200:
+            raise Exception("Unexpected Status Code: %s!=200" % resp.status_code)
+        return resp
 
 class EtherScanIoApi(object):
     """
@@ -26,28 +70,56 @@ class EtherScanIoApi(object):
 
     def __init__(self, baseurl=None, proxies={}):
         baseurl = baseurl or "https://www.etherscan.io"
-        self.session = UserAgent(baseurl=baseurl, retry=5, retrydelay=8, proxies=proxies)
+        self.session = UserAgent(baseurl=baseurl, proxies=proxies)
+
+    @retry(Exception, delay=1, backoff=2, max_delay=10, tries=5, jitter=(1,4), logger=logger)
+    def _request_contract_list(self, page, amount=100):
+        resp = self.session.get("/contractsVerified/%d?ps=%s" % (page, amount))
+        pageResult = re.findall(r'Page <strong(?:[^>]+)>(\d+)</strong> of <strong(?:[^>]+)>(\d+)</strong>', resp.text)
+        if len(pageResult)>0:
+            return resp, pageResult
+        raise Exception("Invalid html response: Page marker not found")
+
+    @retry(Exception, delay=1, backoff=2, max_delay=10, tries=10, jitter=(1,4), logger=logger)
+    def _request_contract_source(self, address):
+        resp = self.session.get("/address/%s"%address).text
+        if "You have reached your maximum request limit for this resource. Please try again later" in resp:
+            print("[[THROTTELING]]")
+            raise Exception("Throtteling")
+
+        print("=======================================================")
+        print(address)
+        #print(resp)
+        sources = []
+        # remove settings box. this is not solidity source
+        if "<span class='text-secondary'>Settings</span><pre class='js-sourcecopyarea editor' id='editor' style='margin-top: 5px;'>" in resp:
+            resp = resp.split("<span class='text-secondary'>Settings</span><pre class='js-sourcecopyarea editor' id='editor' style='margin-top: 5px;'>",1)[0]
+            
+        for rawSource in re.split("<pre class='js-sourcecopyarea editor' id='editor\d*' style='margin-top: 5px;'>",resp)[1:]:
+            src = rawSource.split("</pre><br>",1)[0]
+            soup = BeautifulSoup(src, features="html.parser")
+            source = soup.get_text() # normalize html.
+            if DEBUG_PRINT_CONTRACTS:
+                print(source)
+            if "&lt;" in source or "&gt;" in source or "&le;" in source or "&ge;" in source or "&amp;" in source or "&vert;" in source or "&quot;" in source:
+                raise Exception("HTML IN OUTPUT!! - BeautifulSoup messed up..")
+            source =  source.replace("&lt;", "<").replace("&gt;", ">").replace("&le;","<=").replace("&ge;",">=").replace("&amp;","&").replace("&vert;","|").replace("&quot;",'"')
+            sources.append(source)
+        if not sources:
+            print(rawSource)
+            raise Exception("unable to find source-code. rate limited? retry..")
+        return "\n\n".join(sources)
 
     def get_contracts(self, start=0, end=None):
         page = start
 
         while not end or page <= end:
-            for _ in range(5):
-                try:
-                    resp = self.session.get("/contractsVerified/%d?ps=100" % page).text
-                    pageResult = re.findall(r'Page <strong(?:[^>]+)>(\d+)</strong> of <strong(?:[^>]+)>(\d+)</strong>', resp)
-                    if len(pageResult)>0:
-                        break
-                    time.sleep(10) # wait a bit ;)
-                except Exception as e:
-                    if "Unexpected Status Code" not in str(e): raise e
-                    time.sleep(10) # wait a bit ;)
-                    
+            resp, pageResult = self._request_contract_list(page)                    
             page, lastpage = pageResult[0]
             page, lastpage = int(page),int(lastpage)
             if not end:
                 end = lastpage
-            rows = self._parse_tbodies(resp)[0]  # only use first tbody
+            rows = self._parse_tbodies(resp.text)[0]  # only use first tbody
             for col in rows:
 
                 contract = {'address': self._extract_text_from_html(col[0]).split(" ",1)[0],
@@ -62,40 +134,7 @@ class EtherScanIoApi(object):
             page += 1
 
     def get_contract_source(self, address):
-        e = None
-        for _ in range(20):
-            resp = self.session.get("/address/%s"%address).text
-            if "You have reached your maximum request limit for this resource. Please try again later" in resp:
-                print("[[THROTTELING]]")
-                time.sleep(1+2.5*_)
-                continue
-            try:
-                print("=======================================================")
-                print(address)
-                #print(resp)
-                sources = []
-                # remove settings box. this is not solidity source
-                if "<span class='text-secondary'>Settings</span><pre class='js-sourcecopyarea editor' id='editor' style='margin-top: 5px;'>" in resp:
-                    resp = resp.split("<span class='text-secondary'>Settings</span><pre class='js-sourcecopyarea editor' id='editor' style='margin-top: 5px;'>",1)[0]
-                    
-                for rawSource in re.split("<pre class='js-sourcecopyarea editor' id='editor\d*' style='margin-top: 5px;'>",resp)[1:]:
-                    src = rawSource.split("</pre><br>",1)[0]
-                    soup = BeautifulSoup(src)
-                    source = soup.get_text() # normalize html.
-                    if DEBUG_PRINT_CONTRACTS:
-                        print(source)
-                    if "&lt;" in source or "&gt;" in source or "&le;" in source or "&ge;" in source or "&amp;" in source or "&vert;" in source or "&quot;" in source:
-                        raise Exception("HTML IN OUTPUT!! - BeautifulSoup messed up..")
-                    source =  source.replace("&lt;", "<").replace("&gt;", ">").replace("&le;","<=").replace("&ge;",">=").replace("&amp;","&").replace("&vert;","|").replace("&quot;",'"')
-                    sources.append(source)
-                if not sources:
-                    raise Exception("unable to find source-code. rate limited? retry..")
-                return "\n\n".join(sources)
-            except Exception as e:
-                print(e)
-                time.sleep(1 + 2.5 * _)
-                continue
-        raise e
+        return self._request_contract_source(address)
 
     def _extract_text_from_html(self, s):
         return re.sub('<[^<]+?>', '', s).strip()
@@ -162,6 +201,7 @@ if __name__=="__main__":
                 if not len(source):
                     raise Exception(c)
             except Exception as e:
+                print(e)
                 if DEBUG_RAISE:
                     raise
                 continue
