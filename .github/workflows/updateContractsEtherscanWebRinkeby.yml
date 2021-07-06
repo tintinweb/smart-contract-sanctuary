@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Dump Contracts (Etherscan/Web/Rinkeby)
+name: ETH (Etherscan/Web/Rinkeby)
 
 # Controls when the action will run. 
 on:
@@ -38,7 +38,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Dump Contracts (web)
-        run: python3 download_contracts_etherscan_io.py rinkeby
+        run: python3 download_etherscan.py -c etherscan.com -n rinkeby
         working-directory: utils
     
       # commit changes

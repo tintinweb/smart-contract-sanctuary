@@ -37,7 +37,9 @@ class UserAgent(object):
 
     def initialize(self):
         self.session = requests.session()
-        self.session.headers.update({"user-agent":self.UA + str(random.randint(0,100))})
+        self.session.headers.update({
+            "user-agent":self.UA + str(random.randint(0,100))
+        })
 
     def get(self, path, params={}, headers={}, proxies={}):
         new_headers = self.session.headers.copy()

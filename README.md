@@ -4,7 +4,8 @@
 
 | Folder       | Description   |
 | ------------ | ------------- |
-| contracts    | folder structure of dumped solidity contract sources |
+| contracts    | folder structure of dumped solidity contract sources (ethereum) |
+| contracts_`chain`    | folder structure of dumped solidity contract sources (other chains)|
 | utils        | utilities for dumping smart contracts from public sources |
 
 **Note**: This repo is updated twice a day.
