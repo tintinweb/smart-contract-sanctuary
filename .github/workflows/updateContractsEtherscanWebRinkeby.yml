@@ -38,7 +38,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Dump Contracts (web)
-        run: python3 download_etherscan.py -c etherscan.com -n rinkeby
+        run: python3 download_etherscan.py -c etherscan.io -n rinkeby
         working-directory: utils
     
       # commit changes
