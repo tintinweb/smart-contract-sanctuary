@@ -108,7 +108,6 @@ class EtherScanIoApi(object):
             source =  source.replace("&lt;", "<").replace("&gt;", ">").replace("&le;","<=").replace("&ge;",">=").replace("&amp;","&").replace("&vert;","|").replace("&quot;",'"')
             sources.append(source)
         if not sources:
-            print(rawSource)
             raise Exception("unable to find source-code. rate limited? retry..")
         return "\n\n".join(sources)
 
