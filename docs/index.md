@@ -16,7 +16,7 @@
 _______________
 
 <sup>
-last updated: Fri Jul 09 2021 21:25:51 GMT+0000 (Coordinated Universal Time)
+last updated: Sat Jul 10 2021 02:32:21 GMT+0000 (Coordinated Universal Time)
 </sup>
 
 ## Ethereum
@@ -24,37 +24,37 @@ last updated: Fri Jul 09 2021 21:25:51 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `95359`   
-**Unique Submissions (Name):** `44496`   
+**SourceUnits:** `95396`   
+**Unique Submissions (Name):** `44517`   
 
 **First Submission:** `3/24/2016`    
-**Most Recent Submission:** `7/9/2021`   
+**Most Recent Submission:** `7/10/2021`   
 
 #### Top 10
 
 **Compiler:** 
    * `v0.4.24` (89835)
-   * `0.6.12` (46264)
+   * `0.6.12` (46374)
    * `v0.4.19` (44720)
    * `v0.4.21` (44668)
    * `v0.4.18` (37833)
    * `v0.4.23` (20723)
    * `v0.4.11` (18453)
    * `v0.4.20` (18043)
-   * `0.5.17` (16298)
-   * `0.7.6` (14662)   
+   * `0.5.17` (16334)
+   * `0.7.6` (14687)   
 
 **Names:**
    * `lockEtherPay` (20978)
    * `ADZbuzzCommunityToken` (5948)
    * `ERC20Token` (5818)
    * `TokenERC20` (5386)
+   * `Token` (4874)
    * `Crowdsale` (4872)
-   * `Token` (4869)
-   * `SimpleERC20` (4468)
-   * `ERC20` (2399)
+   * `SimpleERC20` (4477)
+   * `ERC20` (2400)
    * `MintedTokenCappedCrowdsaleExt` (2334)
-   * `MultiSigWallet` (2088)   
+   * `MultiSigWallet` (2089)   
 
 **Submission Dates:** 
    * `6/12/2018` (2860)
@@ -259,8 +259,8 @@ last updated: Fri Jul 09 2021 21:25:51 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `220882`   
-**Unique Contract Names (submissions):** `99181`   
+**SourceUnits:** `220919`   
+**Unique Contract Names (submissions):** `99202`   
         
 
 --------
@@ -270,8 +270,8 @@ last updated: Fri Jul 09 2021 21:25:51 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `3079`   
-**Unique Submissions (Name):** `2171`   
+**SourceUnits:** `3572`   
+**Unique Submissions (Name):** `2528`   
 
 **First Submission:** `7/6/2021`    
 **Most Recent Submission:** `7/9/2021`   
@@ -279,34 +279,34 @@ last updated: Fri Jul 09 2021 21:25:51 GMT+0000 (Coordinated Universal Time)
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (1754)
-   * `0.8.4` (490)
-   * `0.5.16` (232)
-   * `0.8.6` (186)
-   * `0.5.17` (122)
-   * `0.8.2` (100)
-   * `0.7.6` (90)
-   * `0.8.0` (89)
-   * `0.4.26` (88)
-   * `0.8.3` (69)   
+   * `0.6.12` (1991)
+   * `0.8.4` (567)
+   * `0.5.16` (255)
+   * `0.8.6` (226)
+   * `0.5.17` (144)
+   * `0.8.2` (114)
+   * `0.8.0` (104)
+   * `0.7.6` (99)
+   * `0.4.26` (96)
+   * `0.8.3` (78)   
 
 **Names:**
-   * `BEP20Token` (111)
-   * `Token` (99)
-   * `Address` (65)
+   * `BEP20Token` (126)
+   * `Token` (111)
+   * `Address` (76)
    * `ERC20` (57)
-   * `MasterChef` (28)
+   * `MasterChef` (30)
    * `Excavator` (24)
    * `CoinToken` (22)
-   * `YouCoin` (21)
+   * `YouCoin` (22)
    * `miniBABYDOGE` (18)
-   * `AuntyDoge` (13)   
+   * `TokenBEP20` (14)   
 
 **Submission Dates:** 
    * `7/6/2021` (1000)
    * `7/7/2021` (1000)
    * `7/8/2021` (1000)
-   * `7/9/2021` (500)   
+   * `7/9/2021` (1000)   
         
 
 ### Testnet
@@ -352,8 +352,8 @@ last updated: Fri Jul 09 2021 21:25:51 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `5624`   
-**Unique Contract Names (submissions):** `3293`   
+**SourceUnits:** `6117`   
+**Unique Contract Names (submissions):** `3650`   
         
 
 -------
