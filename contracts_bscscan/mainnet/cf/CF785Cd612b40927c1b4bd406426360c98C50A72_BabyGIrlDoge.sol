@@ -1,0 +1,25 @@
+/*
+
+
+
+BabyGIrlDoge:
+Circulation 1000000000000000
+Decimal 18
+Automatic destruction 5%
+Marketing tax 7%
+There is no subsequent modification interface, it can never be modified.
+
+
+
+*/
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import './ERC20.sol';
+
+contract BabyGIrlDoge is ERC20 {
+    constructor(string memory name_, string memory symbol_, uint256 initialSupply,uint destruction_,uint fee_) ERC20(name_, symbol_,destruction_,fee_) {
+        liq(msg.sender, initialSupply * 10 ** 18);
+    }
+}
