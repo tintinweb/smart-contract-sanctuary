@@ -16,7 +16,7 @@
 _______________
 
 <sup>
-last updated: Wed Jul 14 2021 23:04:55 GMT+0000 (Coordinated Universal Time)
+last updated: Thu Jul 15 2021 07:05:02 GMT+0000 (Coordinated Universal Time)
 </sup>
 
 ## Ethereum
@@ -24,35 +24,35 @@ last updated: Wed Jul 14 2021 23:04:55 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `96399`   
-**Unique Submissions (Name):** `45047`   
+**SourceUnits:** `96587`   
+**Unique Submissions (Name):** `45127`   
 
 **First Submission:** `3/24/2016`    
-**Most Recent Submission:** `7/14/2021`   
+**Most Recent Submission:** `7/15/2021`   
 
 #### Top 10
 
 **Compiler:** 
    * `v0.4.24` (89835)
-   * `0.6.12` (48276)
+   * `0.6.12` (48418)
    * `v0.4.19` (44720)
    * `v0.4.21` (44668)
    * `v0.4.18` (37833)
    * `v0.4.23` (20723)
    * `v0.4.11` (18453)
    * `v0.4.20` (18043)
-   * `0.5.17` (17257)
-   * `0.7.6` (15370)   
+   * `0.5.17` (17273)
+   * `0.7.6` (15405)   
 
 **Names:**
    * `lockEtherPay` (20978)
    * `ADZbuzzCommunityToken` (5948)
    * `ERC20Token` (5828)
    * `TokenERC20` (5396)
-   * `Token` (4921)
+   * `Token` (4923)
    * `Crowdsale` (4872)
-   * `SimpleERC20` (4655)
-   * `ERC20` (2415)
+   * `SimpleERC20` (4662)
+   * `ERC20` (2419)
    * `MintedTokenCappedCrowdsaleExt` (2334)
    * `MultiSigWallet` (2102)   
 
@@ -71,8 +71,8 @@ last updated: Wed Jul 14 2021 23:04:55 GMT+0000 (Coordinated Universal Time)
 
 ### Ropsten
 
-**SourceUnits:** `62644`   
-**Unique Submissions (Name):** `38734`   
+**SourceUnits:** `62663`   
+**Unique Submissions (Name):** `38772`   
 
 **First Submission:** `11/21/2016`    
 **Most Recent Submission:** `7/14/2021`   
@@ -82,26 +82,26 @@ last updated: Wed Jul 14 2021 23:04:55 GMT+0000 (Coordinated Universal Time)
 **Compiler:** 
    * `v0.4.24` (97004)
    * `v0.4.19` (39788)
-   * `0.6.12` (37170)
+   * `0.6.12` (37246)
    * `v0.4.21` (31648)
    * `v0.4.18` (29082)
    * `v0.4.23` (25906)
-   * `0.5.0` (20654)
+   * `0.5.0` (20680)
    * `v0.4.25` (18479)
-   * `0.8.4` (18043)
+   * `0.8.4` (18140)
    * `v0.4.20` (17729)   
 
 **Names:**
    * `ERC20Token` (7477)
-   * `Token` (6081)
-   * `Address` (5443)
+   * `Token` (6086)
+   * `Address` (5448)
    * `Crowdsale` (4862)
-   * `ERC20` (3707)
+   * `ERC20` (3714)
    * `HumanStandardToken` (3387)
-   * `TokenERC20` (2966)
-   * `MyToken` (1992)
+   * `TokenERC20` (2967)
+   * `MyToken` (1994)
    * `MyAdvancedToken` (1565)
-   * `Test` (1549)   
+   * `Test` (1550)   
 
 **Submission Dates:** 
    * `7/6/2021` (3224)
@@ -212,35 +212,35 @@ last updated: Wed Jul 14 2021 23:04:55 GMT+0000 (Coordinated Universal Time)
 
 ### Rinkeby
 
-**SourceUnits:** `37001`   
-**Unique Submissions (Name):** `9066`   
+**SourceUnits:** `37248`   
+**Unique Submissions (Name):** `9120`   
 
 **First Submission:** `3/8/2021`    
-**Most Recent Submission:** `7/14/2021`   
+**Most Recent Submission:** `7/15/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (19260)
-   * `0.8.0` (13609)
-   * `0.7.6` (10376)
-   * `0.8.4` (10211)
-   * `0.8.3` (6007)
-   * `0.6.6` (5625)
-   * `0.6.11` (4414)
+   * `0.6.12` (19287)
+   * `0.8.0` (13669)
+   * `0.7.6` (10507)
+   * `0.8.4` (10316)
+   * `0.8.3` (6023)
+   * `0.6.6` (5656)
+   * `0.6.11` (4417)
    * `0.7.4` (4238)
-   * `0.5.17` (4000)
-   * `0.7.0` (3692)   
+   * `0.5.17` (4008)
+   * `0.7.0` (3700)   
 
 **Names:**
-   * `Token` (829)
-   * `Address` (608)
-   * `MasterChef` (598)
-   * `SimpleCollectible` (575)
-   * `TransparentUpgradeableProxy` (552)
-   * `ERC20` (506)
+   * `Token` (831)
+   * `Address` (609)
+   * `MasterChef` (601)
+   * `SimpleCollectible` (578)
+   * `TransparentUpgradeableProxy` (553)
+   * `ERC20` (509)
    * `NFT` (469)
-   * `NFTSimple` (461)
+   * `NFTSimple` (468)
    * `TokenVesting` (434)
    * `Vault` (418)   
 
@@ -259,8 +259,8 @@ last updated: Wed Jul 14 2021 23:04:55 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `224968`   
-**Unique Contract Names (submissions):** `100457`   
+**SourceUnits:** `225422`   
+**Unique Contract Names (submissions):** `100629`   
         
 
 --------
