@@ -15,6 +15,7 @@ import requests
 import random
 from retry import retry
 from bs4 import BeautifulSoup
+import json
 
 import logging
 
@@ -240,7 +241,7 @@ if __name__=="__main__":
     e = EtherScanIoApi(baseurl="https://%s.etherscan.io"%(prefix))
     for nr,c in enumerate(e.get_contracts()):
         with open(os.path.join(output_directory,"contracts.json"),'a') as f:
-            f.write("%s\n"%c)
+            f.write("%s\n"%json.dumps(c))
             print("got contract: %s" % c)
             dst = os.path.join(output_directory, c["address"].replace("0x", "")[:2].lower())  # index by 1st byte
             if not os.path.isdir(dst):
@@ -263,8 +264,8 @@ if __name__=="__main__":
                 continue
 
 
-            with open(fpath, "wb") as f:
-                f.write(bytes(source, "utf8"))
+            with open(fpath, "wb") as fw:
+                fw.write(bytes(source, "utf8"))
 
             print("[%d/%d] dumped --> %s (%-20s) -> %s" % (nr, amount, c["address"], c["name"], fpath))
 

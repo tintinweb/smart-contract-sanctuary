@@ -14,6 +14,7 @@ import os
 import logging
 import argparse
 from connector.etherscan import TronScanApi, ContractNotFound
+import json
 
 logger = logging.getLogger(__name__)
 DEBUG_RAISE = True
@@ -67,23 +68,23 @@ def main():
                 source = e.get_contract_source(c["address"]).strip()
                 if not len(source):
                     raise Exception(c)
-                f.write("%s\n"%c)
+                f.write("%s\n"%json.dumps(c))
             except Exception as err:
                 print(err)
                 if DEBUG_RAISE:
                     raise
                 c["err"] = repr(err)
-                f.write("%s\n"%c)
+                f.write("%s\n"%json.dumps(c))
                 continue
             except ContractNotFound as cnf:
                 print(cnf.msg)
                 c["err"] = repr(cnf)
-                f.write("%s\n"%c)
+                f.write("%s\n"%json.dumps(c))
                 continue
 
 
-            with open(fpath, "wb") as f:
-                f.write(bytes(source, "utf8"))
+            with open(fpath, "wb") as fw:
+                fw.write(bytes(source, "utf8"))
 
             print("[%d/%d] dumped --> %s (%-20s) -> %s" % (nr, amount, c["address"], c["name"], fpath))
 
