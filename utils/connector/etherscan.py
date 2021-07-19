@@ -23,6 +23,10 @@ DEBUG_RAISE = False
 DEBUG_PRINT_CONTRACTS = False
 
 
+class ContractNotFound(BaseException): 
+    def __init__(self, msg):
+        self.msg = msg
+
 class UserAgent(object):
     """
     User-Agent handling retries and errors ...
@@ -55,12 +59,12 @@ class UserAgent(object):
         return resp
 
 
-    def post(self, path, params={}, headers={}):
+    def post(self, path, params={}, headers={}, json=None):
         new_headers = self.session.headers.copy()
         new_headers.update(headers)
     
         resp = self.session.post("%s%s%s"%(self.baseurl, "/" if not path.startswith("/") else "", path),
-                                params=params, headers=new_headers)
+                                params=params, headers=new_headers, json=json)
         if resp.status_code != 200:
             raise Exception("Unexpected Status Code: %s!=200" % resp.status_code)
         return resp
@@ -168,6 +172,57 @@ class EtherScanIoApi(object):
                 rows.append(re.findall(r"<td.*?>(.+?)</td>", tr))
             tbodies.append(rows)
         return tbodies
+
+
+
+class TronScanApi(object):
+    """
+    Base EtherScan.io Api implementation
+    """
+
+    def __init__(self, baseurl=None, proxies={}):
+        baseurl = baseurl or "http://apilist.tronscan.org"
+        self.session = UserAgent(baseurl=baseurl, proxies=proxies)
+
+    @retry(Exception, delay=1, backoff=2, max_delay=10, tries=5, jitter=(1,4), logger=logger)
+    def _request_contract_list(self, start, amount=1000):
+        resp = self.session.get("api/contracts?count=true&limit=%s&confirm=0&start=%s&verified-only=true&open-source-only=false&sort=-verify_time&search="%(amount, start))
+        return resp.json()
+
+    @retry(Exception, delay=1, backoff=2, max_delay=10, tries=10, jitter=(1,4), logger=logger)
+    def _request_contract_source(self, address):
+        resp = self.session.post("api/solidity/contract/info", json={"contractAddress":address})
+
+        print("=======================================================")
+        print(address)
+        #print(resp)
+        respj = resp.json()
+        if(respj["code"] <0):
+            raise ContractNotFound("server error: %r"%respj)
+
+        sources = respj["data"]["contract_code"]
+        
+        if not sources:
+            raise Exception("unable to find source-code. rate limited? retry..")
+
+        import base64
+        sources = ["//SourceUnit: %s\n\n%s"%(s["name"],base64.b64decode(s["code"]).decode("utf-8")) for s in sources]
+        return "\n\n".join(sources)
+
+    def get_contracts(self, start=0, end=None):
+        entry = start
+
+        while not end or entry <= end:
+            pageResult = self._request_contract_list(entry)         
+            if not len(pageResult["data"]):
+                break  # no more entries
+
+            for entryData in pageResult["data"]:
+                entry+=1
+                yield entryData
+
+    def get_contract_source(self, address):
+        return self._request_contract_source(address)
 
 
 
