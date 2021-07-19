@@ -5486,3 +5486,24 @@
 {"address": "0xad3fee1432ed2e9162c82375503544abb5a7d23d", "name": "token6", "compiler": "0.8.4", "balance": "0.009761794922651318 Ether", "txcount": 0, "settings": "", "date": "7/18/2021"}
 {"address": "0x4cf75f5a7847808b8efe789165126509f46c466e", "name": "token", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/18/2021"}
 {"address": "0xca45820e287d6bff4bb0f60b37264c2208798c9b", "name": "test5", "compiler": "0.8.4", "balance": "0.000049792352179028 Ether", "txcount": 0, "settings": "", "date": "7/18/2021"}
+{"address": "0x7319c55fe8506075d6cded9c96b31dd2448e50f1", "name": "GCOL", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "7/19/2021"}
+{"address": "0xb161013da3d50f019579d70f9729a0d064ae5d3c", "name": "HelloWord", "compiler": "0.4.26", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0x5Cca95aFEF266b7391eB1071A1aFDc77Fc99B6d0", "name": "FNDNFTMarket", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0xef98507beb73a4b13c6b4a3b896c364366ce2262", "name": "HelloWord", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0xde5ee9cdf492616d2b83e5148af2fb9be580b491", "name": "HelloWord", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0xbb163c9df6886038262f3fe72193b209c6e2543c", "name": "USDT", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0x9E5269D4A10db84D9A2aF9cC79bB70046e9feeD3", "name": "DateString", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0xe7a5596efd27efea2646d288cb4da10bdd2e2714", "name": "RRR", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0xd68c6345f969603500f14A648Ad35d02B45729c7", "name": "Oracle", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0xD680FEF619e77945453d9987dE6166B26E62B6A2", "name": "DaoEventsV2", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0x4c6dc9393ff65b09035dd108f2d8c4155a77786e", "name": "Token", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0x0e7Db729af1C26c8d387B40AeE215eD3366aDe7A", "name": "WIVA", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/19/2021"}
+{"address": "0x270E4f42b3F5666235F81e50D557fc9b07d897fa", "name": "ERC20", "compiler": "0.8.4", "balance": "1.003361151856127433 Ether", "txcount": 0, "settings": "-", "date": "7/19/2021"}
+{"address": "0x5b9fc424b6945d7faf843e87316f8ddf29214c8e", "name": "LoopringIOExchangeOwner", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0x1EAcacCa086677E9FCA3b5FE064e3f66E758bd44", "name": "ExchangeBlocks", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0xFC9dCa45F08716A379205595F57d7aEbB437824E", "name": "ExchangeV3", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0x8A1854e1707bdBBeeA1aFA491750Ebf92D5AD577", "name": "WIVA", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/19/2021"}
+{"address": "0x83Dbc86Af2b7f8C82aBDD811c96A059e5Ff3F978", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0x434fB199cF1cFC6C72338E921Ff1bB101b4e5404", "name": "RootToken", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0x9F4CA0514eCc78C661bC95C05bbFa2Eaa15ADd4C", "name": "UniswapV3AutoFunctions", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0x7a554d2ddd4f1c32e56978202bff2a61ab6f2cb5", "name": "ST_Rebase_Liquidity_Token", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
