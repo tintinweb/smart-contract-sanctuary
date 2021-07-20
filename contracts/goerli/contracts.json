@@ -5510,3 +5510,19 @@
 {"address": "0xb8aC194b49f3C02010BF239B5963C64974Cfa0B8", "name": "ExchangeV3", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
 {"address": "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506", "name": "UniswapV2Router02", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 433, "settings": "", "date": "7/20/2021"}
 {"address": "0x6D6914ae343Bc31cC1Cdb7afCd129b15e5c70728", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0x2196cbcc5200ea6d9984fcc425dacc83932e3cf9", "name": "Heroes", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "-", "date": "7/20/2021"}
+{"address": "0x2975822FF87CB100de4F92901C6C71047cef3977", "name": "BalanceChecker", "compiler": "0.6.2", "balance": "-", "txcount": 0, "settings": "-", "date": "7/20/2021"}
+{"address": "0xE6Fdd64833cfE306BF3a3779d9eA69E6b5600D2D", "name": "Raise", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0x999E2Dc402f4405573dbE7dD554F6DB257f97679", "name": "RaiseFactory", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0x17883f90E83504c3AAe39C8018D6b5338B0015d2", "name": "RaiseFactory", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0x04728F7B807821cf7B34b6A990D7F673D5503B6f", "name": "TokenFactory", "compiler": "0.5.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0x0c3aa91273604bf7cdf799b8960a97313936c422", "name": "TokenFactory", "compiler": "0.5.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0xa3E4E67319116d6f63349406B788fd0D5382e9F9", "name": "Escrow", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0xC43A7A890a3d666Cc8Ae3277dec4cb9D928cE111", "name": "Pai", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0xd4c951047cd3418419b72b3a8986e0848dbcc5ac", "name": "StakeManager", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0x87Cd2D766E3A256e4a527bCAB3A8c8D87c9E2d9D", "name": "Pai", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0xF00b57D81181692EaAe1243f2561C2819acC6b12", "name": "StakeManagerProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0x12e29d1c693b815fa7a186193f92b53be611b470", "name": "TokenErc20", "compiler": "0.4.16", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0xeBD02d76CBBeE98C9EE6522405dEC33B30cfE968", "name": "ZHToken", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "-", "date": "7/20/2021"}
+{"address": "0x4dDb57125da1E7fe4A37FD8F28291efE9128F8E5", "name": "ToyDose1", "compiler": "0.6.8", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0x9908f6ba0eb046a4eb889c1b8098b346e5d5f135", "name": "StakingPool", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
