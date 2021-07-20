@@ -5507,3 +5507,6 @@
 {"address": "0x434fB199cF1cFC6C72338E921Ff1bB101b4e5404", "name": "RootToken", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
 {"address": "0x9F4CA0514eCc78C661bC95C05bbFa2Eaa15ADd4C", "name": "UniswapV3AutoFunctions", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
 {"address": "0x7a554d2ddd4f1c32e56978202bff2a61ab6f2cb5", "name": "ST_Rebase_Liquidity_Token", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/19/2021"}
+{"address": "0xb8aC194b49f3C02010BF239B5963C64974Cfa0B8", "name": "ExchangeV3", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
+{"address": "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506", "name": "UniswapV2Router02", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 433, "settings": "", "date": "7/20/2021"}
+{"address": "0x6D6914ae343Bc31cC1Cdb7afCd129b15e5c70728", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/20/2021"}
