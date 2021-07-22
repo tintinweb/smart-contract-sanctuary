@@ -41,6 +41,8 @@ def main():
 
     overwrite = False
     amount = 1000000
+    break_on_dupes_threshold_initial = 500
+    break_on_dupes_threshold = break_on_dupes_threshold_initial
 
     e = EtherScanIoApi(baseurl="https://%s"%(args.chain if not args.network else "%s.%s"%(args.network, args.chain)))
     print(e.session.baseurl)
@@ -56,7 +58,13 @@ def main():
             if not overwrite and os.path.exists(fpath):
                 print(
                     "[%d/%d] skipping, already exists --> %s (%-20s) -> %s" % (nr, amount, c["address"], c["name"], fpath))
+                break_on_dupes_threshold -=1
+                if break_on_dupes_threshold<=0:
+                    print("<--STOP: break on dupes threshold")
+                    break
                 continue
+
+            break_on_dupes_threshold = break_on_dupes_threshold_initial # reset dupecount on new contract
 
             try:
                 source = e.get_contract_source(c["address"]).strip()
