@@ -5570,3 +5570,17 @@
 {"address": "0xD7125FbFF04ADA45F6d2CcB8FDdf16541d0b306A", "name": "Proposal", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
 {"address": "0xD5b4e770De83a5fb8987A38bd508e86e43c5e0a4", "name": "Proposal", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
 {"address": "0x868f9686b0bB803fee9073403c62025f2F50c660", "name": "Disperse", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
+{"address": "0xFc9C8B886C2C09Dc504b615F798f83c6146E62E7", "name": "SIFU", "compiler": "0.7.1", "balance": "-", "txcount": 0, "settings": "", "date": "7/22/2021"}
+{"address": "0x3F13889eF7DE47fdEE74974E51f726242A7a3Eae", "name": "FlatParentCreature4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/22/2021"}
+{"address": "0xc5c9db5568227d817faffb544b47b4fd5222746e", "name": "Calc", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/22/2021"}
+{"address": "0x6E52149ba4f0DA5050Bfa556f319cc8db4393b6D", "name": "FlatParentCreature4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/22/2021"}
+{"address": "0x20d35ea7c5186879E7d5Ec6d0941d451bBa54F4b", "name": "EthPool", "compiler": "0.7.6", "balance": "5.8 Ether", "txcount": 0, "settings": "", "date": "7/22/2021"}
+{"address": "0x8a69C01357aa3Fc41A1Fdc298ebE6ffAA1Ef8344", "name": "FlatParentCreature4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/22/2021"}
+{"address": "0x1eccEc01d2bE51965Ee2DD9E25C93b2F8380eC6C", "name": "clientWallet", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
+{"address": "0xb17C88bDA07D28B3838E0c1dE6a30eAfBCF52D85", "name": "ShyftKycContract", "compiler": "0.7.1", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
+{"address": "0xa6bfd52b70471566687f0963f4f4103f4dda9874", "name": "Weather", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
+{"address": "0x082A7daac615Fbbfd0CF39FB3e366255723C7fd5", "name": "PowerfulERC20", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
+{"address": "0xe291DB054722Cc84CaDCc1FA63Ac16Fb3FA39de7", "name": "StakingPoolImpl", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
+{"address": "0x8E34146ef3b057A9E0869bdd988ffa57c6104A51", "name": "StakingPoolFactoryImpl", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
+{"address": "0x6fc3A7dfAf286B7a3fe87EdB86A87F1902d46588", "name": "MockUniswapV2Pair", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
+{"address": "0xc6D457842E21D2bC05ddf09FbF5202dAACa7A43b", "name": "MockAggregator", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/21/2021"}
