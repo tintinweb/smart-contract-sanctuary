@@ -5651,3 +5651,8 @@
 {"address": "0x68825f5FD50a0ED475A34fd463A06fb9466514E5", "name": "clientWallet", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/23/2021"}
 {"address": "0xbD8195C26553869443A1Ce95aE6766bd26d37eB3", "name": "clientWalletFactory", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/23/2021"}
 {"address": "0x875b0756e75578925b4ae0cFAeb5671dBF250DdC", "name": "clientWalletFactory", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/23/2021"}
+{"address": "0xd86bCB7D85163Fbc81756bb9cc22225D6ABCCadB", "name": "TransactionManager", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/24/2021"}
+{"address": "0x520d0049d79e123894312586b14825806e6c9439", "name": "PiggyBank", "compiler": "0.8.4", "balance": "0.01 Ether", "txcount": 0, "settings": "", "date": "7/24/2021"}
+{"address": "0xA623e679F7dECBB9a15Bc0C6153BE4DF6736D003", "name": "Collection", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/24/2021"}
+{"address": "0xB65fE8dae56BE6d1Dc4301Bad46Acf83Ada9C59F", "name": "MyToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/24/2021"}
+{"address": "0xb0402Cc1Aea230de434BcA6e91577676Cee90154", "name": "SHFLFarmer", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/24/2021"}
