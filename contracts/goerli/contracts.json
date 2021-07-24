@@ -5656,3 +5656,9 @@
 {"address": "0xA623e679F7dECBB9a15Bc0C6153BE4DF6736D003", "name": "Collection", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/24/2021"}
 {"address": "0xB65fE8dae56BE6d1Dc4301Bad46Acf83Ada9C59F", "name": "MyToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/24/2021"}
 {"address": "0xb0402Cc1Aea230de434BcA6e91577676Cee90154", "name": "SHFLFarmer", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/24/2021"}
+{"address": "0x8944e4172d7ebcb45aa5cf22f7574174731a474e", "name": "qSpaceNATIVESale", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "-", "date": "7/24/2021"}
+{"address": "0x2636b3091ab91222b3967ac8960985b019a7a182", "name": "qSpaceNative", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "7/24/2021"}
+{"address": "0x6e226bbc977ae5c3764d594f69468002cf7460db", "name": "qSpaceNative", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "7/24/2021"}
+{"address": "0xa8ed6edfc9971b3ac54a2ddf5d2f66278cd03280", "name": "ST_Stable_Coin", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "7/24/2021"}
+{"address": "0x223f2f8680885ddca12b989c0becae39319e4378", "name": "ST_Stable_Coin", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "7/24/2021"}
+{"address": "0x3cc9d4e67060e2fB16bBAD8579520e8ADBdC66fa", "name": "FactoryRegistry", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "-", "date": "7/24/2021"}
