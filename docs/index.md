@@ -18,7 +18,7 @@
 _______________
 
 <sup>
-last updated: Sat Jul 24 2021 23:05:33 GMT+0000 (Coordinated Universal Time)
+last updated: Sun Jul 25 2021 07:04:47 GMT+0000 (Coordinated Universal Time)
 </sup>
 
 ## Ethereum
@@ -26,21 +26,21 @@ last updated: Sat Jul 24 2021 23:05:33 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `98581`   
-**Unique Submissions (Name):** `46168`   
+**SourceUnits:** `98591`   
+**Unique Submissions (Name):** `46177`   
 
 **First Submission:** `3/24/2016`    
-**Most Recent Submission:** `7/24/2021`   
+**Most Recent Submission:** `7/25/2021`   
 
 #### Top 10
 
 **Compiler:** 
    * `v0.4.24` (13377)
-   * `0.6.12` (9332)
+   * `0.6.12` (9333)
    * `v0.4.19` (6180)
    * `v0.4.21` (5427)
    * `v0.4.18` (5414)
-   * `0.8.4` (3895)
+   * `0.8.4` (3897)
    * `0.5.17` (3452)
    * `0.7.6` (2950)
    * `v0.4.11` (2702)
@@ -214,30 +214,30 @@ last updated: Sat Jul 24 2021 23:05:33 GMT+0000 (Coordinated Universal Time)
 
 ### Rinkeby
 
-**SourceUnits:** `41116`   
-**Unique Submissions (Name):** `9961`   
+**SourceUnits:** `41143`   
+**Unique Submissions (Name):** `9964`   
 
 **First Submission:** `3/8/2021`    
-**Most Recent Submission:** `7/24/2021`   
+**Most Recent Submission:** `7/25/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (6515)
-   * `0.8.0` (5013)
-   * `0.8.4` (4568)
+   * `0.6.12` (6525)
+   * `0.8.0` (5017)
+   * `0.8.4` (4570)
    * `0.7.6` (3898)
-   * `0.6.6` (2042)
+   * `0.6.6` (2043)
    * `0.8.3` (1996)
    * `0.7.4` (1452)
-   * `0.5.17` (1436)
-   * `0.8.6` (1297)
+   * `0.5.17` (1438)
+   * `0.8.6` (1302)
    * `0.6.11` (1280)   
 
 **Names:**
-   * `Token` (346)
+   * `Token` (349)
    * `Address` (222)
-   * `SimpleCollectible` (207)
+   * `SimpleCollectible` (208)
    * `MasterChef` (194)
    * `ERC20` (191)
    * `NFTSimple` (184)
@@ -261,8 +261,8 @@ last updated: Sat Jul 24 2021 23:05:33 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `234850`   
-**Unique Contract Names (submissions):** `103404`   
+**SourceUnits:** `234887`   
+**Unique Contract Names (submissions):** `103416`   
         
 
 --------
