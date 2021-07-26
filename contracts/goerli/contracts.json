@@ -5695,3 +5695,15 @@
 {"address": "0x15f0101fb696390788e6Dfa32c2Eb1a0d3293D99", "name": "DevRunners", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "7/26/2021"}
 {"address": "0xeCD7b5010B3C9eA7839DdAef034A46dFdD1ca97f", "name": "DevRunners", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "7/25/2021"}
 {"address": "0x96D1B41c0aC6F45c8fAad0b318F42A9D64d8D2d7", "name": "boteros", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/25/2021"}
+{"address": "0x6A1e155B1D6926084D4c4571e0e3E9BC609Bcc16", "name": "FlatParentCreature4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
+{"address": "0x6B488ffB498142d154d5181facfa1D7A2C9dFF96", "name": "FlatParentCreature4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
+{"address": "0x44Bf4D8e1ed70298dF55e01905412D23bc2569B1", "name": "FlatParentCreature4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
+{"address": "0x0afb89c437487e4ef030f09c4cc1ddab49c65bb6", "name": "Cal", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/26/2021"}
+{"address": "0x229a2bfcF993a81E38041b3A81595CF7FF154899", "name": "Mock_dai", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
+{"address": "0xf534cf8b7b3b1e009873d27932aa972b9c8e6dd2", "name": "NewGolemNetworkToken", "compiler": "0.5.10", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
+{"address": "0xd51b721443d32c3c125dc8cebcfa00321d1ea58a", "name": "NGNTFaucet", "compiler": "0.5.10", "balance": "-", "txcount": 0, "settings": "-", "date": "7/26/2021"}
+{"address": "0xcAa438bB1BE337EdCe14420351BC2569A4770cCe", "name": "WIVA", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/26/2021"}
+{"address": "0xED0A419E1b9481578F67D444659D0E517C094Fd1", "name": "NewSampleToken", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/26/2021"}
+{"address": "0x9B3Ae090E8280B34233d0F5976dF4CeAfA3826C3", "name": "Curve", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
+{"address": "0x60239683B1A51c66126F7bFa842BF6aA68e53b2e", "name": "UniswapV2Router02", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
+{"address": "0x702e9fc3fD7C49AC5A87eAD995d23a9c8fA4947B", "name": "FulfillInterpreter", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
