@@ -5732,3 +5732,20 @@
 {"address": "0x5BB05536a932A726b8894226d8644715DB31baa8", "name": "clientWalletFactory", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/26/2021"}
 {"address": "0x344cA19326cbF0D753f311E57d88E38c7eE57b36", "name": "FlatParentCreature4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
 {"address": "0x952CA955fAdd48C3e27a88593bc3CA1Ba7ff3BE5", "name": "clientWalletFactory", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
+{"address": "0x3ebc709ab6d01ad145bff6d8439da1394853ed77", "name": "Token", "compiler": "0.7.3", "balance": "-", "txcount": 0, "settings": "-", "date": "7/27/2021"}
+{"address": "0x75333eb87AAb332573B1Ec8068D2B6110334d9Cc", "name": "UniswapV2Router02", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x27ac20e2def003dbddf4b962091da10e1f463dc2", "name": "PigBank", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0xEfEB54261E9C34eA47B004da664A93234916f11d", "name": "UniswapV2Factory", "compiler": "0.5.16", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0xaf23eb46899da0d7de77a91033bfb397630057ff", "name": "PigBank", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x5f32Af931612D07C887D3FbF0836640a0881aCa5", "name": "UniswapV2Factory", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x1f628fb0bCB7E13a5350f346b64Fae6860c55C12", "name": "FlatParentCreature4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0xbabff62084ea7bd423e17ad623e65cef82d3b7e5", "name": "RhoTokenRewards", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x5e256a9e864a93480e7f388d04a9e271452b7f6c", "name": "LPStakingRewards", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x60e034ce85f7b35cbd2db39e40c3522b02e9adad", "name": "StakingRewards", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x17064cbbda2c88e38f47c5f05a6efb0c8870b2ca", "name": "CompoundStrategy", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0xbed36632b9c00c9a4b1638dae21696b403019a8e", "name": "Vault", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0xa4a5cd81716604e88bc77d5da0a6f7f82c53ec1f", "name": "FlurryRebaseUpkeep", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x5f528d0c42217a6eb9b7537073f278697c785cd8", "name": "RhoToken", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x2d62f005f5d27ba829d23eefd95109fb8ec5f261", "name": "FlurryToken", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0xa9fD0336880ED8e91A4FCf6ed97B28d31DdEfD56", "name": "Counter", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/27/2021"}
+{"address": "0x34159D122151d58D6d6e359E6dBC9F8FF35B929E", "name": "FlatCreature3", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
