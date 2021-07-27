@@ -5749,3 +5749,15 @@
 {"address": "0x2d62f005f5d27ba829d23eefd95109fb8ec5f261", "name": "FlurryToken", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
 {"address": "0xa9fD0336880ED8e91A4FCf6ed97B28d31DdEfD56", "name": "Counter", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/27/2021"}
 {"address": "0x34159D122151d58D6d6e359E6dBC9F8FF35B929E", "name": "FlatCreature3", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/26/2021"}
+{"address": "0x3bdf3c6130003f8c04bd52f32ff623d66ec85aac", "name": "Kwik", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x448F2b1B99d8D03849C62e5b4c66AFdd669A2357", "name": "PKKTFarm", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x7b5782A59276A4660506Eef72450C6aA612960B9", "name": "PKKTToken", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x00f0674a1BbDD57761c804632411bcec859c9d81", "name": "UniswapV3Factory", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x6F6CF54a40734B9E31bA995e6b74DE40B0520326", "name": "GovernorBravoDelegate", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0xf90d3d4a679897d9afded4f974eba71bbb2e92a1", "name": "DummyMintableERC721", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/27/2021"}
+{"address": "0xaa3eef62d2134feec2b89c9ec752957fe0d64400", "name": "BatchTransfer", "compiler": "0.4.21", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "7/27/2021"}
+{"address": "0x8bca9af14e8a4729ff5a561a15929b9ec34aa6f5", "name": "SimpleStorage", "compiler": "0.4.26", "balance": "-", "txcount": 0, "settings": "-", "date": "7/27/2021"}
+{"address": "0x41c758d7708e738073dd916c23fb954792defe17", "name": "SimpleStorage", "compiler": "0.4.26", "balance": "-", "txcount": 0, "settings": "-", "date": "7/27/2021"}
+{"address": "0x8ab5d0bd4837cdcfaf167dd2ce6788f2b6ae2889", "name": "RootNFT", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x8A771e3A4F5dCf43F2f9Ea77DE5C71Cf4aE97C4D", "name": "Proposal", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/27/2021"}
+{"address": "0x0085272a9b5b7837c92ddab07572537f72fee69f", "name": "OracleUser", "compiler": "0.4.26", "balance": "-", "txcount": 0, "settings": "-", "date": "7/27/2021"}
