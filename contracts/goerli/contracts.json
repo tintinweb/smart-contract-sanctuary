@@ -5820,3 +5820,19 @@
 {"address": "0x1ebd7a3493C6a19C427b3089915E8b50f3Eb102C", "name": "TribeCoin", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "7/28/2021"}
 {"address": "0x333E5b292e12Ce33f57Fe7bE89673499e1aa91DE", "name": "Timelock", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "7/28/2021"}
 {"address": "0x942D88D0f1447bc71907E31F656CF353a85814b5", "name": "ParentOpenRari", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/28/2021"}
+{"address": "0x6b705fc5c425be07ebe59d09aa9fd2c0df88cab4", "name": "Weather", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0xb81ba6ee336a23e48ca37902a14e7f57847394fd", "name": "WETH9_", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0xc8cbf143943e25f627e77e1063d72ce0a9a435bd", "name": "Storage", "compiler": "0.7.1", "balance": "-", "txcount": 0, "settings": "-", "date": "7/29/2021"}
+{"address": "0xa2ae59f281ffb0042f1bb6166ade14785c602e65", "name": "RootNFT", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0x3aaeee0219e95e22db2223401bf3bbd5a2ba6833", "name": "pool", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0x1bd8d043cba5460255da9d13a9b36804f3f29818", "name": "pool", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "7/29/2021"}
+{"address": "0x51cb9d77CC4C1585BeA01E4E0c922DCFAee96F22", "name": "GovernorBravoDelegate", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0x9e4fD9AeCfba82E607239BF79DfcAd11eDe1dC0d", "name": "NonfungiblePositionManager", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0x80d5705fc35f7278a34E1BE2266c9103D78D5B53", "name": "NonfungibleTokenPositionDescriptor", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0x189F6B51F3636b737FB792aCD77bc1376a5890a1", "name": "NFTDescriptor", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0xd0a740603f3de7b3f5a3af579e6eacf2302fcd24", "name": "MockRhoStrategy", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0xa2496b6d8a5D534c3EA036c81f934267Ce4905d4", "name": "SwapRouter", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0xb4a5354fd3af0f9db2f296c9f02f9750c2626a37", "name": "CompoundV0Strategy", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0x4750D06e79F4802Ee7f3C530bc2f92b4D7bddDa0", "name": "Quoter", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0x93C2AE8a41E62aba54745e43cf351d111066f34f", "name": "UniswapV3Factory", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "7/29/2021"}
+{"address": "0x7952f954D80691D7fA6c698851092f37b872810f", "name": "ParentOpenRari", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "7/29/2021"}
