@@ -5979,3 +5979,19 @@
 {"address": "0xC513E13a426203FAD3eE1889fE6Fc6f706B77B2d", "name": "RegistryNFT", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/2/2021"}
 {"address": "0xa7367282DE6442A3440A8B768E019F5A74B84b5c", "name": "RegistryCOM", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/2/2021"}
 {"address": "0x26a4307a9be750851ee0f146eb3ccaa6d0b339a7", "name": "BabyH", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/2/2021"}
+{"address": "0x0CD1Bc0f54F60F5E3d428B203a3EDb802196Ab21", "name": "SWASH", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/3/2021"}
+{"address": "0x06e8C84956494438e5e9755444aa12DE5b40ed62", "name": "AXCBurner", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0xdF8F7A5B5D0BCEcBC6CCE113907cE1ba647b478b", "name": "FactoryRegistry", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "-", "date": "8/3/2021"}
+{"address": "0x29c5aeBEbc84E47111D6D6A73f6C2745266298ef", "name": "TokenManager", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0xF13c20bD59D6d567eDC466E8A19E631E90b72E34", "name": "TokenManager", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0xb344580c11A4793DE22EAD70371EDB0735217439", "name": "TokenManager", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0xEeBe62487002335A91B74470D7C6b97d370018a4", "name": "TokenManager", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0x29e15E6E546820dF54aE2e3e606029a5D98824aD", "name": "SmartStake", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0xf5a756CEe542DF4898030f02ebf29269a45eeE4E", "name": "FactoryRegistry", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "-", "date": "8/3/2021"}
+{"address": "0xb1B3D50811731f55543152FA134D0EF44f082cb6", "name": "Counter", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/3/2021"}
+{"address": "0x7a7fdf6D2e8E983C3e9Eb1640981e692B83e9969", "name": "Eth_broker", "compiler": "0.5.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0x1ee4a5a9672ec24a64be03ea8844d0812e7f11f9", "name": "SygnumTokenProxy", "compiler": "0.5.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0x227E259AEDD2d12c0384a3C1dEf18D21fFc9D117", "name": "FlatParentCreature4", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0x76cd13244f1f62010aaf6d01c382ae05fce477c4", "name": "DEX", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0x4c2f0db7db187364bf16dd2e3a966e7b7985fdc4", "name": "APEX", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/3/2021"}
+{"address": "0x5933c5c460BC3D14AA031d37df650A4007F30df0", "name": "FactoryRegistry", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "-", "date": "8/3/2021"}
