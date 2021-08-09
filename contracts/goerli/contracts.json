@@ -6230,3 +6230,15 @@
 {"address": "0x08232f7F912DC354A631E34eC12164158D2a9624", "name": "Pogpunk", "compiler": "0.7.3", "balance": "-", "txcount": 0, "settings": "", "date": "8/8/2021"}
 {"address": "0x71493aDDC1df1f8B43B6E96e996Ee401c081977C", "name": "NFTStateTransfer", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/7/2021"}
 {"address": "0x39a9C9B9353661b112648D269C863ad8bE5B53aB", "name": "NFTStateTransfer", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/7/2021"}
+{"address": "0xf29389e5E59c016b2bBa152B0da4bd150818D949", "name": "TokenManager", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x10F930a13Dd5D4B9bE355C46c0D2281a432bb574", "name": "ParentOpenRari", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x78B02f14B3E146598AB51267A48Fa0542B8812E6", "name": "PriceOracle", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x77C2b45f4Dd54281dD769952F4EEd94a01406ac7", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x7BcC83e1AB2f83d44908296602a3B718f7a65e4B", "name": "OfficialGuardian", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0xF7410703dB972eF5926A6f5514D3d87fBb697D49", "name": "OwnedUpgradeabilityProxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x9B8855374fd91c637D9D79a2673f35D4e19639DE", "name": "WalletFactory", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x95BFC1BE625218B5798A2A4BAe23002d8fBEbeB7", "name": "SmartWallet", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x13a74ED96Df4eEcf2E758CeA8cab9D26cfA1BD31", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0xdB89053FB0Bc11483af6d172081AA6fFFcFB44eb", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0xca71ca5017c321bb90062f4592385019729d13b1", "name": "Calc", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "8/9/2021"}
+{"address": "0xc6684E23FcDfA7aC095a945F51635025CBfA6efB", "name": "boteros", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
