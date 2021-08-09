@@ -6261,3 +6261,10 @@
 {"address": "0x9540Db362F8Ea9186DdB1288EdA2EB3fC4D9dBB3", "name": "PriceOracle", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
 {"address": "0xE1b2c81c24DA078cC7Ce7ad681B48ef2e1987170", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
 {"address": "0x817226E6501e2d818198Aac5f2C54A8C206FC590", "name": "RootOpenRari", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x0b4ec44e87c118398ab55dd899ee70a034d81a58", "name": "ERC20", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0xabbf0493e8db68c59314141a5c219baf2e53fcc0", "name": "TokenDemo", "compiler": "0.4.16", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x08945bb611cca46e0d0dfc8ff9640a4bcf3cec6f", "name": "RhoTokenRewards", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0xb33d56c7a84730cab593e8488a03d14fcf14ca3a", "name": "LPStakingRewards", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0xf891bf247bc69ffdbca388120410fa5ba2822a1d", "name": "FlurryStakingRewards", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0xa32535fab148863553bb352e5804677a8bf7011d", "name": "CompoundV0Strategy", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x1a0453bca6e55e5ba8f4ee29a0fb790e47bdc186", "name": "Vault", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
