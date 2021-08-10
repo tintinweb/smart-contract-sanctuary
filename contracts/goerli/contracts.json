@@ -6279,3 +6279,10 @@
 {"address": "0x252e8483F2a6F04E88F980089911B4d53d599150", "name": "StorageMonkey", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
 {"address": "0x1AccAEEfd319b49d120f4034c3CF66fF80a0b0B3", "name": "StorageMonkey", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
 {"address": "0x1fbeeb01f4989978912fbddce34360f03f33c4a4", "name": "MGSToken", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "-", "date": "8/9/2021"}
+{"address": "0x6a7375A00b6c7Dc4634409dce65295DE384f60D1", "name": "MyNft", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
+{"address": "0x1f656BE01D9bBBfbe5ebB05b7dd33DcE44838D61", "name": "XToken", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x54939100F719dbC997D9de34eFe5dE87010EE8d6", "name": "NexaCollection", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0xcD077C0Cfc1851b5D0F246DF735B46C766Ab02f0", "name": "KFC", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x8751fc2ed6077acbfc92b69bad4a56814fc1a670", "name": "BCCERC20GoerliToken", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
+{"address": "0x12a1684a76794c55c40a8aad316a7d59edf536e1", "name": "TestVendingMachine", "compiler": "0.6.11", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
+{"address": "0xBC5620119B7374fb06369745e440cacc87273c10", "name": "BridgeState", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
