@@ -6268,3 +6268,14 @@
 {"address": "0xf891bf247bc69ffdbca388120410fa5ba2822a1d", "name": "FlurryStakingRewards", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
 {"address": "0xa32535fab148863553bb352e5804677a8bf7011d", "name": "CompoundV0Strategy", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
 {"address": "0x1a0453bca6e55e5ba8f4ee29a0fb790e47bdc186", "name": "Vault", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x0a01809bbc19c9a2d27F6D46de329E92E3cf9A28", "name": "PeriFinanceToEthereum", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x7eff8829874c488d110439c2a8ed056ff2e5a6e0", "name": "FlashBotsUniswapQuery", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
+{"address": "0x5d0ada679e5f5ff59fa18bfa878526619bbbc63a", "name": "FlashBotsMultiCall", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x81514a4DF9906EdD1b406E2BBd7e552751a570c2", "name": "RewardEscrow", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x4396A50Adaa5053b2f1954E4CDd9ba139413357c", "name": "RootChainManagerProxy", "compiler": "0.6.11", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x1c0691e49a8e385e9f8ddb872814f5b68052039a", "name": "Test2", "compiler": "0.4.23", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
+{"address": "0x79B3119FA25eeBd9cf34eC77431F24cd6BEb3297", "name": "DummyMintableERC20", "compiler": "0.6.11", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x2e9FcD7c3D160A4C7a60A8f8a709da00Eb3C7539", "name": "ETHPool", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x252e8483F2a6F04E88F980089911B4d53d599150", "name": "StorageMonkey", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x1AccAEEfd319b49d120f4034c3CF66fF80a0b0B3", "name": "StorageMonkey", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/9/2021"}
+{"address": "0x1fbeeb01f4989978912fbddce34360f03f33c4a4", "name": "MGSToken", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "-", "date": "8/9/2021"}
