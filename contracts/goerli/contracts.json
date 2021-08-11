@@ -6286,3 +6286,20 @@
 {"address": "0x8751fc2ed6077acbfc92b69bad4a56814fc1a670", "name": "BCCERC20GoerliToken", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
 {"address": "0x12a1684a76794c55c40a8aad316a7d59edf536e1", "name": "TestVendingMachine", "compiler": "0.6.11", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
 {"address": "0xBC5620119B7374fb06369745e440cacc87273c10", "name": "BridgeState", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0xC1b9b1Ff63EF14502F7C6c8e9F5eeD47654695aE", "name": "StakeManager", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "8/11/2021"}
+{"address": "0xedea440c0407c21d8afCDfA385e7aE60A8645878", "name": "TNode", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/11/2021"}
+{"address": "0xe48b82aca037a62b4E7fa892367b3AFbe543A48F", "name": "StakingRewardsFactory", "compiler": "0.5.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/11/2021"}
+{"address": "0x8262499f16c3635e23dcfabbb48e57f93f6a26fa", "name": "Test", "compiler": "0.4.23", "balance": "-", "txcount": 0, "settings": "-", "date": "8/11/2021"}
+{"address": "0x27ca3b768d30bc7d9d848cb2012678a44fe5d011", "name": "Calc", "compiler": "0.7.1", "balance": "-", "txcount": 0, "settings": "-", "date": "8/11/2021"}
+{"address": "0xa4ee30d9ca2e64d79b4b696e0b7ea7d58a86e6c6", "name": "Test", "compiler": "0.4.23", "balance": "-", "txcount": 0, "settings": "-", "date": "8/11/2021"}
+{"address": "0x087ff8634410e20d353b52af3fa0413263c079b5", "name": "Please", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/11/2021"}
+{"address": "0x88c6dd022f80c43ad62bbf7e971c61e2940413d3", "name": "TESTRUN", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/11/2021"}
+{"address": "0x985b29219c969a957319108d491e7cc77b0b85a7", "name": "Address", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
+{"address": "0xa392a6dc0f472baadfcdf2160157076e2bdfd9fa", "name": "Create2", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
+{"address": "0x7a1ce92356fedfef55822b48339ec31d1a9913cc", "name": "Create2Deployer", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "8/10/2021"}
+{"address": "0x509aa8F32362a9AF044Ac8939ab2b62286EDfCC5", "name": "GasTaxCommission", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0xE05f4EfC15Bb4E389fa745de543Ad9E95d14aBad", "name": "Pogpunk", "compiler": "0.7.3", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0xDce3D154D1645C62D49D792b7305761c08F037a8", "name": "FlatRateCommission", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0xb9cC0e82290993D37C57d37967Eb53Af53F428B6", "name": "StakingPoolImpl", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x6535ef5545b4fDa71097E336b2791f94e41388dc", "name": "StakingPoolFactoryImpl", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/10/2021"}
+{"address": "0x6d06fb344cf6bb49cf867F0ffF599e44b9BEAdC8", "name": "ChainlinkGasOracle", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/10/2021"}
