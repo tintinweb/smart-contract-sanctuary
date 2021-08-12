@@ -6350,3 +6350,49 @@
 {"address": "0x0cd6a62a27cb36800e0d328a121ec4514c930549", "name": "Test", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "8/11/2021"}
 {"address": "0x57bf81c80fffcf759280c992af89fc8ad810f116", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/11/2021"}
 {"address": "0x266b8a9fd933cb5be3a1fb2de702be9b086818eb", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/11/2021"}
+{"address": "0x537940c51632161F7F88db80B5117e9CD5096C11", "name": "V2_1Upgrader", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x24728c5d6fdB9A404481F40Ab338321a1cc1947A", "name": "FiatTokenV2_1", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0xa10B8ED0999FcE4f8998EB30f585a1512f872cd1", "name": "V2Upgrader", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x475f5884460F685Ce78A1d1aA969DfFB52983Aa9", "name": "FiatTokenUtil", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x0d8FDc174DBc3Fd485A4aBe458f11E5d87c0BAfE", "name": "FiatTokenV2", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x81C45Df479F922263E87A16211942B49451aA330", "name": "FiatTokenProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0xD7e8E8157b7A4794B20D3F66CCe66b5C27725b03", "name": "FiatTokenV1", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0xf38eb9e060fc7104908db80968b3e2a7a226b07f", "name": "Fractions", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x6B85ABaeCbd40dA176D6D0da3984e4C3E0b7b175", "name": "c", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x7d912438dB174001A5BFF5D0d0CDA829c7B2c3ed", "name": "Boardroom", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x8C8E816904D81e89983d65b05E13429D138eBbFe", "name": "TreasuryV2", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x86E0aef7AcC76794682930969Dc7cD7765EA1DEa", "name": "WitnetRequestBoardV03", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x3669D14970E3D7bD8E81a69Ca3D2DFb8078b0279", "name": "WitnetProxy", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x8b83E1d419256d987D4d3557f0C80E811E5bE794", "name": "c", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x0BeEEe1DE04511791F75de46652FBe33BEe17D6C", "name": "CBOR", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x8279BE8f740DBeDB05C0Ce165447E8bc1457a137", "name": "Fractionalizer", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x04859E76a961E8B2530afc4829605013bEBD01A4", "name": "FractionsImpl", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x08d34fB9302B5Db2d74A5c92A1B1B8CD18220aC9", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x03802E71bc731300028e9D6B8D54E38c43379a44", "name": "CBOR", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x0ed1C8a181F6012c4c1757F03Fa35a83B7a8FBd5", "name": "Math", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x638a2ca608093559aa852bC92E07388D5C69470A", "name": "ChefLinkMaki", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x32995b03F3e87CDF7F211B5a60903030f2BF345F", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0xd19D83D8e5EbCaC3Dcc9CFF96cD60e4bee01344A", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x2FDed1F4c258B4907b8153d10B06812DFAEd7c88", "name": "FNDNFTMarket", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0xf91E545963995b7c7e1C891B3B165Ac1995C9BB5", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0xb0dcf780310a5726D21302B1a51924c533BE1A58", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x6a6CAFfAD62BC543C558174D332106eCfb4D386A", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0xC099456d58021983C39A32521C879Fe7fCe4138b", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0xc36F8642b3dfaF46f1F86330eB68614cFF182A2E", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x13179F6b254d2477550b2336d41BD7787caDeD79", "name": "s", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0xa55baf93c1e714f25146ff63568ffb38f9588860", "name": "Calc", "compiler": "0.7.2", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x82e0181e2bb6C34CF47460aa056CcACdDa67b919", "name": "KoMintableERC721", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x91FE09bB4D060abc2FD1460f87D19c4c9410448e", "name": "PeerToPeerMarkets", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x30BD25a872f3B5c9c76B30e6D03C0bAbB8FeFEb2", "name": "DummyMintableERC20", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x5f42C6d7ee1255AD7FD96302945F136a9f55AC3D", "name": "CallProxy", "compiler": "0.6.11", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0xAB43bA48c9edF4C2C4bB01237348D1D7B28ef168", "name": "Proxy", "compiler": "0.6.11", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x769d55Dc09C82c0E6001Cd4688cF390E2bFB69eC", "name": "MiniMeToken", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0xD99DA809C0A4036DD98D5A2e5E8FD9c94bd8A14b", "name": "MiniMeTokenFactory", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x34673f63a16081913b147b27295aa4a3ec098d81", "name": "StakingPool", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x043f991806a2363016e4341e1C25a35d6C29Fe40", "name": "NFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0x82cE1dCd103E617d3390B78Af2633Db791D6098D", "name": "TransitionEvaluator", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x06D482b5bD7302aCE9dEAE3Fc85d3484D7c5B8e1", "name": "TransitionDisputer", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x83Ce1E78804f2ed3Ba9dB8d3cc0F03dC5b33D222", "name": "RollupChain", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0xe34286865aa9a24a87658113f2667001342dc441", "name": "ChildTokenNFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "8/12/2021"}
+{"address": "0xe07cdea6511b06a3df6b1cea9a893dd5c3bcddda", "name": "ChefLinkMaki", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x9a80cfa9ca6039e0db3d52b7a3350798d1b1cbc0", "name": "ProxyERC20", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
