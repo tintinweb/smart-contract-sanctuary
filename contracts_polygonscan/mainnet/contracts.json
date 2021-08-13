@@ -8286,3 +8286,6 @@
 {"address": "0x22Ac6e22D4Af4cFA333A518898996052a04dBc43", "name": "ZapContract", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "8/12/2021"}
 {"address": "0x5FE28a00739E30A7E9b3f868E4Dd76CbC5b29427", "name": "MultiSwap", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/12/2021"}
 {"address": "0x04e7fdb391c4afe0ccd7902087c2b18f166e4acc", "name": "BatchMinter", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "8/12/2021"}
+{"address": "0x17b02Ca924f90261c920E59feF812387e5619E9e", "name": "EBIToken", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 3, "settings": "-", "date": "8/13/2021"}
+{"address": "0x12c7a605ba887a3538e441e97e1f6a06cdd57755", "name": "MultisigENS", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x7186e19f688d3f31ddd7c89f37e01f464e793041", "name": "USDC", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "8/13/2021"}
