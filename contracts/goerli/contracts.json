@@ -6420,3 +6420,39 @@
 {"address": "0xfF60253CBaA73a85c5523d7E726c1EfFeAaf58Ff", "name": "s", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
 {"address": "0xAeb85BEBDbbcfB5b7AfF0F19c2076D40d0149cAf", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/12/2021"}
 {"address": "0x05a3984D10C70fce5b2e1220f28730E5c6600787", "name": "Monetizer", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/12/2021"}
+{"address": "0x06e470d6971a6b686e2fafe77c7cb0b0a7aba18b", "name": "MultisigDeployer", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xA481F58265B6758118D9b1c4dc6c143080154402", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xA2679793ccCb33FcbC7094AaEC3e83CcA846ce7E", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xfa02Ea1e7be1AB8430f186E95d8165E31C755906", "name": "Monetizer", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xa25b3579a295be016de5eb5F082b54B12d45F72C", "name": "SignMessageLib", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0xAa20F6Ae2Bc7f752CD028c57E5B81BFb1B0985Ae", "name": "DssSpell", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x6eB7f16842b13A1Fbb270Fc952Fb9a73D7c90a0e", "name": "StairstepExponentialDecrease", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0x8f570b146655cd52173b0db2ddeb40b7b32c5a9c", "name": "Clipper", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x29d02F7844AEF1168c9B20FC75C2cBFC78Bea519", "name": "Clipper", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xf42d6987dcd3e01343df1774ed5a5b93e999b935", "name": "StartonErc20MintBurnPause", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xa60167F68C507e47dbCc74E7C917e16Cc29acb66", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xb480b8dd5a232cb7b227989eacda728d1f247db6", "name": "DssPsm", "compiler": "0.6.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x2F067409EEc16719C2c654e0302e9848f1400F33", "name": "Monetizer", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xE57ccdA8306Dc2C810b21987257Ff11790e30344", "name": "StartonErc20MintBurnPause", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xF2f86B76d1027f3777c522406faD710419C80bbB", "name": "AuthGemJoin5", "compiler": "0.6.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x01add91ca44abdd6dacadd90f1c7f982a4430060", "name": "Controller", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0x6EDA820c07c4eD5D00F7Fe83f798d201339cFD9c", "name": "Controller", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0xdD2e771900a75D7fc38f69E106DD33cCE356D912", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0x96127973B1d8a48A7d314bB621929d68d834817b", "name": "Monetizer", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xb78DfA04128CB5BC365a5a3bC406D3215E4520a3", "name": "GameToken", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x7c9AB6F53479B609f9a69Fa7A7358108A04ca2f3", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0x21D99280756c34194711e165671290C6d995e68b", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0xeE2DD11E055B5cd3193CA6EAbb09b80Fb6bbaa2c", "name": "ChefLinkMaki", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xB1c2d1eb2b5a038c584e0B94Bc6D5f500acDd75b", "name": "ChefLinkMaki", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x34327FE1d92555CdFa828323F25aAC1656aAE3aD", "name": "TellorMaster", "compiler": "0.7.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x4b0b28619488F33dcb9D5750b6AfCbc578bD9620", "name": "TellorTest", "compiler": "0.7.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x22D4729b4d8fDBC43EeCcD9bEB90177a8E3582fC", "name": "GameToken", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x66e9c76b76f73b7f04108e26d201bc4023386fa6", "name": "Vyper_contract", "compiler": "vyper:0.2.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x30d9ed9054681c56bf3cff638b4f3109ed06339a", "name": "Gnbzz", "compiler": "0.4.23", "balance": "-", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0x6abbd8dcfab9dc0ee251705acd79f362c6c1166c", "name": "Gnbzz", "compiler": "0.4.23", "balance": "-", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0x4515912Be2d52d2351cF90351AC2ac1aa3d21Ddc", "name": "L1UniversalOneSidedFarm", "compiler": "0.7.3", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0xfFD578A47dFeED35b041Ea31D3b21e659D617964", "name": "Gnbzz", "compiler": "0.4.23", "balance": "-", "txcount": 0, "settings": "-", "date": "8/13/2021"}
+{"address": "0xaEC0327ceCDA4CD898f9aCB79df037b732d17b59", "name": "WitnetRequestBoardV03", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x739629E69C133F6042247Ebd264368a7ec04Ce7d", "name": "WitnetProxy", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x0533D2cD0797809ADCcbAe708331648347c62dc1", "name": "Witnet", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
+{"address": "0x15Ba8794975388a9270dE37e18914F3f4a15A002", "name": "CBOR", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/13/2021"}
