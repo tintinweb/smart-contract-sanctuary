@@ -4304,3 +4304,14 @@
 {"address": "0x3C09A91978C83F5733126376970855BE19094951", "name": "OracleHelper", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/13/2021"}
 {"address": "0xfF47B25498C4280f71658e9dA08eF0f33f9Bb5b5", "name": "EthiopiaV2", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "8/13/2021"}
 {"address": "0x7101228a565Ada040656062254d48440CBA81c70", "name": "EthiopiaV2", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "8/13/2021"}
+{"address": "0xacEE4Dc752a6F3a7c2FdaF83d3ee66861C205805", "name": "BinamarsItemMarket", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/14/2021"}
+{"address": "0xE31b9F8e0c74C5834ff9Ec1f696a7459374D52cE", "name": "BinaEquipmentNFT", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/14/2021"}
+{"address": "0xD4BA723E6Fa6BD100D40aFd7B1EF1EbF92C6bB52", "name": "IdentityProxyFactory", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "8/14/2021"}
+{"address": "0xBd38522268a8071721A634805C2e52A5603082d5", "name": "Identity", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "8/14/2021"}
+{"address": "0xB935798C4735424300edd3CCf2033FEF9b10cefD", "name": "ModuleManager", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/14/2021"}
+{"address": "0x7EEC6121aE0f258aB9E04759B0dE7445491E80df", "name": "Assets", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 0, "settings": "-", "date": "8/14/2021"}
+{"address": "0xa0B7b940797002EE9d7892d44261F899309a5e61", "name": "IdentityProxyFactory", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "8/14/2021"}
+{"address": "0xE5cDaBF0cF89BbD23E8322D28BDEC6eab5F7E818", "name": "Identity", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "8/14/2021"}
+{"address": "0x76BEF4A343fB9d7216C5cF03F8e42c676d029224", "name": "ModuleManager", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/14/2021"}
+{"address": "0xDDdf61F2130FEd0A1a5dF6E97B2Ef2Db0728676e", "name": "ModuleRegistry", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "8/14/2021"}
+{"address": "0x6ca63351851F4B19eC50AEd8995c828CD7508e55", "name": "CDHInventory", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "8/14/2021"}
