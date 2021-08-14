@@ -8421,3 +8421,8 @@
 {"address": "0xa46023273730F6CF81FcCb86cDcbF737077189D3", "name": "MorpheusToken", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/13/2021"}
 {"address": "0x2feFFEb2a52b657b660749BBb136dAa87aBba831", "name": "MorpheusToken", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/13/2021"}
 {"address": "0x59780B2FC7f10F128Ed462D5DeD6C66BCe755484", "name": "MasterChefV2", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "8/13/2021"}
+{"address": "0x08d1c87cbcF9f9D6B45485b562f77a3cf2260562", "name": "StrategyCommonChefLP", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/14/2021"}
+{"address": "0xc7F7Ff4B3b55Da11a6278947E774399dFB9F4ca0", "name": "BeefyVaultV6", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/14/2021"}
+{"address": "0xAdAC234D7c99e3c9D8A9867Becc1EAe46c296f06", "name": "StrategyCommonChefSingle", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/14/2021"}
+{"address": "0x6E12cEE45f6208366Ef19c58a7c59978256D5C1C", "name": "BeefyVaultV6", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/14/2021"}
+{"address": "0xE356d88Ce30D5e727587f99352727fCBc59731D3", "name": "PmoonToken", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/14/2021"}
