@@ -6501,3 +6501,4 @@
 {"address": "0xCb544B95EA9BcdFB68439Ae14944A269dC638514", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/14/2021"}
 {"address": "0x0AdC51F9dA5fE39720396299daB8B557ec510F23", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/14/2021"}
 {"address": "0xD1E2b5e91c21CAEcc4E97d83bd04d4aCE0611A5c", "name": "HelloWorld", "compiler": "0.7.3", "balance": "-", "txcount": 0, "settings": "", "date": "8/14/2021"}
+{"address": "0x4310bB50663D548e27Ec9A188Cd6f813DeD3b805", "name": "Lottery", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "8/14/2021"}
