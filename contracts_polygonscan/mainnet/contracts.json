@@ -8721,3 +8721,6 @@
 {"address": "0x2149b179cbb14353f23f58efd73b5fc830ac17a0", "name": "CardStad", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 4, "settings": "-", "date": "8/14/2021"}
 {"address": "0x22BB5daEa8a9B00C986918D249672E2ceaa26cB1", "name": "TroveManager", "compiler": "0.6.11", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "8/14/2021"}
 {"address": "0x423034F0db31BD7C35E0F4156B211A91cAd1A2cc", "name": "SortedTroves", "compiler": "0.6.11", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "8/14/2021"}
+{"address": "0x8A826736204663ae16526eB5A3dc86a8fecb3679", "name": "MorpheusDream", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/15/2021"}
+{"address": "0xb2313e90b58dcdff6b94e529d072d928b80f042e", "name": "FlashSwapper", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "8/15/2021"}
+{"address": "0x75f56e0245ae09f57276856dc79d7388f653805d", "name": "FlashSwapper", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "8/15/2021"}
