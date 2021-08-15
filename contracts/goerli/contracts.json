@@ -6502,3 +6502,16 @@
 {"address": "0x0AdC51F9dA5fE39720396299daB8B557ec510F23", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/14/2021"}
 {"address": "0xD1E2b5e91c21CAEcc4E97d83bd04d4aCE0611A5c", "name": "HelloWorld", "compiler": "0.7.3", "balance": "-", "txcount": 0, "settings": "", "date": "8/14/2021"}
 {"address": "0x4310bB50663D548e27Ec9A188Cd6f813DeD3b805", "name": "Lottery", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "8/14/2021"}
+{"address": "0x17E13E92253fdD78A0E20aed69b9a53B32f4Bb3a", "name": "SharedDepositV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x353f26c5893AbEE857b185D52B8cE44697B0d365", "name": "Blocklist", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x42a399cC5A49B88F1A2DC5FfC45B79FD0C5b9763", "name": "TokenManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x9fBd45Eba5A177D335ad6754ed9bd12f863f065D", "name": "PriceOracle", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xf329ce9Eb2264C0bb2522D007FcBc44289491286", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x22A0a56a94F1894f12714ac836F375377E9ed7B6", "name": "SharedDepositV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x083ee7C9EEd61CBC1a18c6707684654981a4294F", "name": "Blocklist", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x901E360F3fF7aEd5B3C0FBfA0338343cbaD078AE", "name": "TokenManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xdcc5b3Fc9ef38EcBfdc9912fce25f7B417BC4605", "name": "PriceOracle", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xd3dE24a47F6CAc4F8163C96E6523D716c7b091E5", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x373550da5fc7e3e85c9275fcc442175fb9d5cd9f", "name": "FiatTokenV1", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x3c9337ff68ae0b8dc0bdf509cd1c25e4baf1424b", "name": "BasicStakingContract", "compiler": "0.4.25", "balance": "-", "txcount": 0, "settings": "", "date": "8/14/2021"}
+{"address": "0xd43928ba93f515ee8900eceaf6b83bccf50eb931", "name": "testToken20", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/14/2021"}
