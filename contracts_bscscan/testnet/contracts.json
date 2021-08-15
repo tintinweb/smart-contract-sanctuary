@@ -23779,3 +23779,14 @@
 {"address": "0x8b3fdd07ee53862e3aeefcd5dce4163dc78d556f", "name": "BEP20", "compiler": "0.5.16", "balance": "0 BNB", "txcount": 0, "settings": "-", "date": "8/14/2021"}
 {"address": "0x1B1DF0b19C692562Bd590093b5aA4Bd680512246", "name": "WalletsToken", "compiler": "0.7.0", "balance": "0.000002845507264323 BNB", "txcount": 0, "settings": "", "date": "8/14/2021"}
 {"address": "0xb1c5AEA8A7Ad959AE062A436F36E728F9dA2CF61", "name": "ZEE", "compiler": "0.5.4", "balance": "0.32999999999999994 BNB", "txcount": 0, "settings": "", "date": "8/14/2021"}
+{"address": "0xb42442074b28d1709231ae6f55d7ce5beabebc88", "name": "FundManager", "compiler": "0.6.12", "balance": "0 BNB", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xc199aeEadd6FCdCa3195A4bB403bCA84FDA83Dca", "name": "MMPMarket", "compiler": "0.8.6", "balance": "0 BNB", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x89df2bcc43DCb9C9f4b376BE0774bCd93b4c6986", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 BNB", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xbd9417b598288b8bfad2afe53fc99ca0b9b04e82", "name": "LOCALDOGE3", "compiler": "0.8.4", "balance": "0 BNB", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xe01101865E4163833d47cca49e11e578eA1f7557", "name": "SyrupBar", "compiler": "0.6.12", "balance": "0 BNB", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xddFbC7574e6fce5Ee3a44648266B956576F91519", "name": "MMPMarket", "compiler": "0.8.6", "balance": "0 BNB", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x3054262fb86748268d9c6719aac43ba95a476c10", "name": "SafeMoon_7", "compiler": "0.6.12", "balance": "0 BNB", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x2e8b4918BDFAAd88Be4Ec82D56177307BAf594AC", "name": "MMPCollection", "compiler": "0.8.6", "balance": "0 BNB", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xa4d0906e24fa533eb5487057840b2cde8713d186", "name": "ElonInu", "compiler": "0.6.8", "balance": "0 BNB", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x35c1d27f1d6ad3ae3881a160485490d42a50146e", "name": "Token", "compiler": "0.6.2", "balance": "0 BNB", "txcount": 0, "settings": "-", "date": "8/15/2021"}
+{"address": "0x6d012e4e7e5609e218301f1721c54f50e932869f", "name": "EYETEST", "compiler": "0.7.4", "balance": "0 BNB", "txcount": 0, "settings": "-", "date": "8/15/2021"}
