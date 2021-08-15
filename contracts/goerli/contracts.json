@@ -6531,3 +6531,5 @@
 {"address": "0x886a7cb0b3af57c9d4ccde4379505b869c29c0ed", "name": "MoonieIDOSignups", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
 {"address": "0xe7798f1be788dd968e158b6aca1af17886e556a3", "name": "MatToken", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/15/2021"}
 {"address": "0x090446a6fB49C41b821e270685681833e43F0a74", "name": "Demo", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x6fbb33b1e395f6a1537e50523857caab23ce50ef", "name": "VErc20", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0x7e6b06328e59bcb82220564be24f179346fcbcbf", "name": "VErc20Proxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
