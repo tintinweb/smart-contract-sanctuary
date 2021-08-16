@@ -6537,3 +6537,35 @@
 {"address": "0x62d7dfc38c5f208d2d44cccf61ad8d72d09ec26d", "name": "FxReverseERC20RootTunnel", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
 {"address": "0x80bc860a9efc49f2d72d4416328730e852da9083", "name": "BNB", "compiler": "0.4.26", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
 {"address": "0x15fe03b31ad563882C3465bF31309E26c27B5F72", "name": "Pedestrians", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xefcd235B1f13e7fC5eab1d05C910d3c390b3439F", "name": "DSPause", "compiler": "0.5.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xc09880a0D6d06fa18C8bDC9dF2E203F0d0124fa1", "name": "DssDeploy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x7b96e96549b1b09eafa698a3b12d884b5bfe8b29", "name": "PauseFab", "compiler": "0.5.12", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x5DCdbD3cCF9B09EAAD03bc5f50fA2B3d3ACA0121", "name": "DSPauseProxy", "compiler": "0.5.12", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0xB9b861e8F9b29322815260B6883Bbe1DBC91dA8A", "name": "MkrAuthority", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x1f6434a645263Bc7b41638468F79D9c7B09B2faF", "name": "InstantDistributionAgreementV1", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x3355d1d1cfdad8e5fa559aa7d81481c4023f58b8", "name": "SlotsBitmapLibrary", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x4D7a78aBABbad453429b9B4503cB0BA0b2BA6859", "name": "ConstantFlowAgreementV1", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x991B50c1c0445f9d4132e50C97712B376980cb3D", "name": "SuperToken", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x85AfCf531aF1a853AC65F6bfa4de99C742B8e432", "name": "SuperTokenFactory", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xc5E4eaB513A7CD12b2335e8a0D57273e13D499f7", "name": "DSToken", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xE60bf5ed3653240fBf13ef64D46aEb6c3e68a837", "name": "TestGovernance", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x38f8502744a0B9d18E4474FA1467fE2c0E3ca4A9", "name": "Superfluid", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x3722010b73659ce6b16b83A473554538105BD5F0", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xbff21d0d319a3aebcd61dcb87372be7ed857365a", "name": "ChefLinkMaki", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xf1262C67f12635987c793217863dFaB7A24808DE", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x68Ec054e72C39744234e4A75760354372208f735", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x3D0451ECbDd6878027744480D96434726D6a0F0a", "name": "ViewCount", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x23fc7b5c6E02fcEF1E0e3BdF23e9d57b814E9ef0", "name": "SharedDepositV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x9C6ed295C8600857359a3cAC7eA0446035461D8d", "name": "Blocklist", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x88e9C8F204f0c95dc56d813305C730d6AB86077d", "name": "TokenManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x5035fECF7182da0D77cCc84a160f1022a473D855", "name": "PriceOracle", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xD441F6C2d14aFBD284aaAC2D5eF2A79EDA02E5a9", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x8B4FfFB55CCC7CA459A237fE2A72d3032cD179af", "name": "SSVNetwork", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x5E4F0C3e4bCf7D94429E52EE5c3f53a6066c0C45", "name": "HeroNFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x649907b30526c96580B27f5Ada93841468C443Be", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x03a50cE179e5aBf0F0E08A8bB12395517BF41c74", "name": "LepaLiquidityBucket", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x99a1C4a96654D70b08Faa753FD63019Da55a60bD", "name": "SSVNetwork", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x7E0489EA47EaFa001F9212F49d88b2720eAE9168", "name": "LepaStrategicBucket", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x12CD7C518c622852d5E0c4ddA19AaD86983cBe08", "name": "DummyMintableERC1155", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x69e317C237Cb72f964c4075aF6D8CFB4c92e7AFF", "name": "GameToken", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xcfefa72a86f6d45786d23f5319beeacc75cdb5fe", "name": "MoonieNFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
