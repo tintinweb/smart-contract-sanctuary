@@ -6569,3 +6569,22 @@
 {"address": "0x12CD7C518c622852d5E0c4ddA19AaD86983cBe08", "name": "DummyMintableERC1155", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
 {"address": "0x69e317C237Cb72f964c4075aF6D8CFB4c92e7AFF", "name": "GameToken", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
 {"address": "0xcfefa72a86f6d45786d23f5319beeacc75cdb5fe", "name": "MoonieNFT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xd16f719d251D62D5453a1999C887b881bddA2931", "name": "ViewCount", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x48d9b9B980EcB23601E4cE5D0f828Ad1F3c8673f", "name": "MedianAAVEUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0xF87BE13f2b081d8D555f31d6bd6590Fd817a99FA", "name": "MedianUNIUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x38D27Ba21E1B2995d0ff9C1C070c5c93dd07cB31", "name": "MedianYFIUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x0f18931AF4BD88a77640E86977E41691A6773C81", "name": "MedianBALUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0xe4919256D404968566cbdc5E5415c769D5EeBcb0", "name": "MedianLINKUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x9D86EC8d17AC9F27B67626710e70598198c53846", "name": "MedianLRCUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x41Bd42D1f64489a85CB552a9C122546bF0986399", "name": "MedianCOMPUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x44084f056e9405FB41343ACb4E2E49f75b75640f", "name": "MedianUSDTUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0xCCce898497e139831523cc9D23c948138dDF67f6", "name": "MedianMANAUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x9e2ab3c02229458Ac611De9f4FF56792cf0c6D30", "name": "MedianKNCUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x5C964118cD17B6b7b8a15C5De93b2E23c24d5789", "name": "MedianZRXUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x586409bb88cF89BBAB0e106b0620241a0e4005c9", "name": "MedianBTCUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x838212865E2c2f4F7226fCc0A3EFc3EB139eC661", "name": "DSValue", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x559492e2D2CB96da572aB35b551049f2414039DB", "name": "MedianBATUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0xd81834aa83504f6614cae3592fb033e4b8130380", "name": "MedianETHUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x94588e35fF4d2E99ffb8D5095F35d1E37d6dDf12", "name": "OSM", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x737d25643fbAafd1d22Fca3528C0255B96472AAa", "name": "ViewCount", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x33Ed584fc655b08b2bca45E1C5b5f07c98053bC1", "name": "DSChief", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
