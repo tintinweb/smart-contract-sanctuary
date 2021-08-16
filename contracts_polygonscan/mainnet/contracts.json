@@ -8880,3 +8880,13 @@
 {"address": "0x4A1387A98C31571534391826AE2769F0C99fB40D", "name": "PoolUtils", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/15/2021"}
 {"address": "0xF2e9C4ffBEbDD60594Fde93d515Ecbeca3004DdE", "name": "FlashSwapper", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "8/15/2021"}
 {"address": "0xf9ef2665432bed830a28798c90e97bb6aa9e5eb1", "name": "Innovatract", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "8/15/2021"}
+{"address": "0xaA4DE78d231309D9bD9f0354d4aF61e53aCD67D9", "name": "StreamingFeeModule", "compiler": "0.6.10", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/16/2021"}
+{"address": "0xa994DF5308d22d0AA077966F1ceEda58a581C8e3", "name": "IntegrationRegistry", "compiler": "0.6.10", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/16/2021"}
+{"address": "0x3C4546B7E60E7D4b667Fe28Aa19DE59b626C9dE2", "name": "BasicIssuanceModule", "compiler": "0.6.10", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/16/2021"}
+{"address": "0xC721B4B560471bFD39bEa41BC7549559B076b680", "name": "OTC", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/16/2021"}
+{"address": "0x5095C5ed6CE313DFB91529b1359A43caca82Ba14", "name": "Controller", "compiler": "0.6.10", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "8/16/2021"}
+{"address": "0x71FFf86b26A625c38b500CE9a51F76d4603D9fe4", "name": "QuokkaReferral", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "8/16/2021"}
+{"address": "0x25Bb70ad185E38E045bC571f0Eec991f32C1FfA1", "name": "MasterChefV2", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "8/16/2021"}
+{"address": "0x6c01b6d67277a3805406b339470570211754b559", "name": "SafeTax", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "8/16/2021"}
+{"address": "0x70D94787BC9274aDe3F0A519a63CB49a4E335FD6", "name": "QuokkaLocker", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/16/2021"}
+{"address": "0x1eC1b66FBEa4f305D4953e08A1C253adA114157D", "name": "QuokkaToken", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 4, "settings": "-", "date": "8/16/2021"}
