@@ -6533,3 +6533,7 @@
 {"address": "0x090446a6fB49C41b821e270685681833e43F0a74", "name": "Demo", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
 {"address": "0x6fbb33b1e395f6a1537e50523857caab23ce50ef", "name": "VErc20", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
 {"address": "0x7e6b06328e59bcb82220564be24f179346fcbcbf", "name": "VErc20Proxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
+{"address": "0xFdAC983eFdE47d5cbA813AAfCb71DD5cd1C453B0", "name": "GameToken", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x62d7dfc38c5f208d2d44cccf61ad8d72d09ec26d", "name": "FxReverseERC20RootTunnel", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x80bc860a9efc49f2d72d4416328730e852da9083", "name": "BNB", "compiler": "0.4.26", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x15fe03b31ad563882C3465bF31309E26c27B5F72", "name": "Pedestrians", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/15/2021"}
