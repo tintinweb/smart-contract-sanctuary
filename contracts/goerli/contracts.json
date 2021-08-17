@@ -6588,3 +6588,17 @@
 {"address": "0x94588e35fF4d2E99ffb8D5095F35d1E37d6dDf12", "name": "OSM", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
 {"address": "0x737d25643fbAafd1d22Fca3528C0255B96472AAa", "name": "ViewCount", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
 {"address": "0x33Ed584fc655b08b2bca45E1C5b5f07c98053bC1", "name": "DSChief", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x5A104950487B7f2D4ABE0CE96d1bD61E3db9271D", "name": "NFTFactoryEth", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0xc6BaBf8594c76Bd731296aA5806db94b5513ca08", "name": "FactoryRegistry", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0x68f263e816ff7d9020139e0af92f106eb108bad7", "name": "VErc20", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xb1ef7e1bbf8ec4dd28aa094b1cb7ca0fabe3f45e", "name": "VErc20Proxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x4791ebD1a10fe50cf8084e4dF24f590465FFeF17", "name": "ViewCount", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x82E9D758D53456c20d6528F6C5E7988991FB9933", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x9c6021E1B668aFad7dCd7CB98042ae1c53b4910F", "name": "PolygonTokenHarvester", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "8/16/2021"}
+{"address": "0xae2D1371AA9f1D0a4D5F3b84CD3f93A490804AC3", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x48BAD6624982e34dD1C2668997C66Af1731d6292", "name": "NFTFactoryEth", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x0343Df8323c2945A17dfE8Aa0f245C70abF2e6D2", "name": "SuperToken", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x22f343b310130f9d2c0553B2F3b82532Ff7CaB55", "name": "SuperTokenFactory", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0xba7fd62b6Ced0d9894EFa1351d39686EBe07576c", "name": "ViewCount", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x74d860243Ff08A243d5485899f343117EbDa6eA8", "name": "SuperfluidLoader", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x597f532306D877165a8100B767845D1065721a07", "name": "ViewCount", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
