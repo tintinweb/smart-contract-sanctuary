@@ -6602,3 +6602,12 @@
 {"address": "0xba7fd62b6Ced0d9894EFa1351d39686EBe07576c", "name": "ViewCount", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
 {"address": "0x74d860243Ff08A243d5485899f343117EbDa6eA8", "name": "SuperfluidLoader", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/16/2021"}
 {"address": "0x597f532306D877165a8100B767845D1065721a07", "name": "ViewCount", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/16/2021"}
+{"address": "0x2dBeb58bb738f073BDE718d5B3638a992B0AAf32", "name": "PriceOracle", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/17/2021"}
+{"address": "0x9e0C80eD580778BAAa4df81586D7ebc68493bbBf", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/17/2021"}
+{"address": "0x280b05d10b24A449a4E30580482b13AC4b9961C6", "name": "Haaton", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/17/2021"}
+{"address": "0x5b4DAaEfFCB31416f87396Fc4201e30b0b0e2A69", "name": "SharedDepositV2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/17/2021"}
+{"address": "0x3142b6Cf88aCB7Bc55001F39C443b06269204401", "name": "Blocklist", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/17/2021"}
+{"address": "0xC5Df1197fd863AF1a5bB353e24E719138E17FEF4", "name": "TokenManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/17/2021"}
+{"address": "0xCd34c0B9D27F28e5616943D05E13837d49A22642", "name": "PriceOracle", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/17/2021"}
+{"address": "0x3153BAFA02CCE9c1FfcE9D749744eE6bbBEc3713", "name": "vEth2", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/17/2021"}
+{"address": "0x10d877B1313CC13a72b9FFd0b77109Bb6145C3ef", "name": "MultiSigWallet", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/17/2021"}
