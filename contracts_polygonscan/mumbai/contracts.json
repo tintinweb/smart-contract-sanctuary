@@ -4606,3 +4606,13 @@
 {"address": "0x93fb0572cB512781F45E8f8dB62D96e36261823d", "name": "MintContract", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "8/16/2021"}
 {"address": "0x5BC689e3CFa0BE43bc7A79E130f5621e7DaBb549", "name": "BattleV2Contract", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 32, "settings": "", "date": "8/16/2021"}
 {"address": "0x1Af6841f2ccF920186F637220f8D622f283B5505", "name": "NFTV2Staking", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 11, "settings": "-", "date": "8/16/2021"}
+{"address": "0x1CA2BA39B911f368709C51f0DB3D93A994824DA0", "name": "CoFounderPool", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "8/17/2021"}
+{"address": "0x5878632784f726Caf559DBA8152d1CB364b99A26", "name": "ReservedPool", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/17/2021"}
+{"address": "0xFa3D3a67D5a9E6cedbd52b4C231E0947F8ECf946", "name": "Factory", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/17/2021"}
+{"address": "0x44449750621213Ca54Be4AC68B857B0dC8944C25", "name": "DataGen", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "8/17/2021"}
+{"address": "0xFa2D40Fbb754E4d05C5219f7c35F1da537e32b29", "name": "Asset", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/17/2021"}
+{"address": "0xd24F4F66D9Da9e60553907557CBA1cC58f72236B", "name": "UChildERC20Proxy", "compiler": "0.6.6", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "8/17/2021"}
+{"address": "0x3f38B29fDd0B541fDbDb40DCbb461e49c5224495", "name": "UChildERC20", "compiler": "0.6.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/17/2021"}
+{"address": "0xdb452eb9c4ed330ae8dce749c3bd5c44b2162975", "name": "HUTPresale", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "8/17/2021"}
+{"address": "0x84e1E7bF342f24f0753784a7290a88b6a3aB3DdA", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "8/17/2021"}
+{"address": "0x79651c882fc765ab3858e28d7fbe0f24469aaf7a", "name": "VerifyContract", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "8/17/2021"}
