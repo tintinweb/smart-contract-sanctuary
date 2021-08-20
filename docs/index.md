@@ -18,7 +18,7 @@
 _______________
 
 <sup>
-last updated: Fri Aug 20 2021 06:26:00 GMT+0000 (Coordinated Universal Time)
+last updated: Fri Aug 20 2021 18:13:13 GMT+0000 (Coordinated Universal Time)
 </sup>
 
 ## Ethereum
@@ -272,36 +272,36 @@ last updated: Fri Aug 20 2021 06:26:00 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `30433`   
-**Unique Submissions (Name):** `18215`   
+**SourceUnits:** `30730`   
+**Unique Submissions (Name):** `18389`   
 
 **First Submission:** `7/6/2021`    
-**Most Recent Submission:** `8/19/2021`   
+**Most Recent Submission:** `8/20/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (13422)
-   * `0.8.4` (4080)
-   * `0.8.6` (2490)
-   * `0.5.16` (1621)
-   * `0.7.6` (1413)
-   * `0.8.2` (919)
-   * `0.4.26` (891)
-   * `0.5.17` (855)
-   * `0.8.0` (844)
-   * `0.7.4` (746)   
+   * `0.6.12` (13552)
+   * `0.8.4` (4107)
+   * `0.8.6` (2517)
+   * `0.5.16` (1630)
+   * `0.7.6` (1426)
+   * `0.8.2` (926)
+   * `0.4.26` (901)
+   * `0.5.17` (862)
+   * `0.8.0` (855)
+   * `0.7.4` (758)   
 
 **Names:**
-   * `Token` (1127)
-   * `BEP20Token` (957)
-   * `IterableMapping` (539)
+   * `Token` (1136)
+   * `BEP20Token` (960)
+   * `IterableMapping` (550)
    * `Address` (422)
    * `ERC20` (281)
-   * `MasterChef` (210)
-   * `CoinToken` (196)
+   * `MasterChef` (213)
+   * `CoinToken` (197)
    * `Excavator` (130)
-   * `token` (83)
+   * `token` (84)
    * `Timelock` (82)   
 
 **Submission Dates:** 
@@ -319,34 +319,34 @@ last updated: Fri Aug 20 2021 06:26:00 GMT+0000 (Coordinated Universal Time)
 
 ### Testnet
 
-**SourceUnits:** `25687`   
-**Unique Submissions (Name):** `8196`   
+**SourceUnits:** `26164`   
+**Unique Submissions (Name):** `8343`   
 
 **First Submission:** `7/6/2021`    
-**Most Recent Submission:** `8/19/2021`   
+**Most Recent Submission:** `8/20/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (8464)
-   * `0.8.4` (4392)
-   * `0.8.6` (2873)
-   * `0.8.0` (1854)
-   * `0.7.6` (1380)
-   * `0.5.16` (1369)
-   * `0.6.6` (770)
-   * `0.5.17` (463)
-   * `0.8.3` (415)
-   * `0.8.2` (397)   
+   * `0.6.12` (8581)
+   * `0.8.4` (4449)
+   * `0.8.6` (2915)
+   * `0.8.0` (1908)
+   * `0.7.6` (1408)
+   * `0.5.16` (1389)
+   * `0.6.6` (777)
+   * `0.5.17` (472)
+   * `0.8.2` (444)
+   * `0.8.3` (415)   
 
 **Names:**
-   * `Address` (623)
-   * `IterableMapping` (456)
-   * `BEP20Token` (418)
-   * `MasterChef` (411)
-   * `Token` (378)
-   * `CoinToken` (127)
-   * `Timelock` (120)
+   * `Address` (629)
+   * `IterableMapping` (460)
+   * `MasterChef` (435)
+   * `BEP20Token` (423)
+   * `Token` (384)
+   * `CoinToken` (129)
+   * `Timelock` (122)
    * `PancakeRouter` (111)
    * `Test` (103)
    * `MoonCoin` (100)   
@@ -366,8 +366,8 @@ last updated: Fri Aug 20 2021 06:26:00 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `56120`   
-**Unique Contract Names (submissions):** `26411`   
+**SourceUnits:** `56894`   
+**Unique Contract Names (submissions):** `26732`   
         
 
 -------
@@ -378,37 +378,37 @@ last updated: Fri Aug 20 2021 06:26:00 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `9491`   
-**Unique Submissions (Name):** `4160`   
+**SourceUnits:** `9646`   
+**Unique Submissions (Name):** `4212`   
 
 **First Submission:** `7/5/2021`    
-**Most Recent Submission:** `8/19/2021`   
+**Most Recent Submission:** `8/20/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (4474)
-   * `0.8.4` (1017)
-   * `0.8.6` (721)
-   * `0.8.0` (560)
-   * `0.5.16` (455)
-   * `0.6.6` (301)
-   * `0.7.6` (299)
-   * `0.5.17` (278)
-   * `0.8.3` (268)
-   * `0.6.11` (205)   
+   * `0.6.12` (4528)
+   * `0.8.4` (1048)
+   * `0.8.6` (732)
+   * `0.8.0` (571)
+   * `0.5.16` (458)
+   * `0.7.6` (305)
+   * `0.6.6` (304)
+   * `0.8.3` (282)
+   * `0.5.17` (280)
+   * `0.6.11` (206)   
 
 **Names:**
-   * `MasterChef` (516)
-   * `Timelock` (220)
-   * `StrategyBase` (82)
+   * `MasterChef` (524)
+   * `Timelock` (223)
+   * `StrategyBase` (83)
    * `token` (75)
    * `Address` (61)
-   * `vaultBase` (56)
-   * `Token` (45)
-   * `IterableMapping` (45)
-   * `MasterChefV2` (40)
-   * `StrategyTwoAssets` (40)   
+   * `vaultBase` (57)
+   * `Token` (46)
+   * `IterableMapping` (46)
+   * `MasterChefV2` (43)
+   * `Referral` (40)   
 
 **Submission Dates:** 
    * `7/6/2021` (328)
@@ -425,37 +425,37 @@ last updated: Fri Aug 20 2021 06:26:00 GMT+0000 (Coordinated Universal Time)
 
 ### Mumbai
 
-**SourceUnits:** `4886`   
-**Unique Submissions (Name):** `1778`   
+**SourceUnits:** `5102`   
+**Unique Submissions (Name):** `1821`   
 
 **First Submission:** `6/25/2021`    
-**Most Recent Submission:** `8/19/2021`   
+**Most Recent Submission:** `8/20/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (897)
-   * `0.8.4` (856)
-   * `0.8.0` (703)
-   * `0.7.6` (367)
-   * `0.5.16` (324)
-   * `0.8.6` (316)
-   * `0.6.6` (228)
+   * `0.6.12` (913)
+   * `0.8.4` (872)
+   * `0.8.0` (767)
+   * `0.7.6` (392)
+   * `0.5.16` (337)
+   * `0.8.6` (332)
+   * `0.6.6` (233)
    * `0.7.4` (120)
-   * `0.8.3` (103)
-   * `0.4.24` (103)   
+   * `0.8.3` (110)
+   * `0.5.17` (105)   
 
 **Names:**
-   * `MasterChef` (74)
+   * `MasterChef` (78)
    * `CustomToken` (68)
    * `Bridge` (65)
    * `Presale` (47)
+   * `Staking` (33)
    * `AcyV1Router02` (32)
    * `Whitelist` (31)
-   * `Vesting` (27)
-   * `UChildERC20Proxy` (26)
-   * `Factory` (26)
-   * `NftStaking` (26)   
+   * `UniswapV2Router02` (28)
+   * `UniswapV2Factory` (27)
+   * `Vesting` (27)   
 
 **Submission Dates:** 
    * `7/12/2021` (391)
@@ -464,16 +464,16 @@ last updated: Fri Aug 20 2021 06:26:00 GMT+0000 (Coordinated Universal Time)
    * `7/14/2021` (157)
    * `8/16/2021` (154)
    * `7/15/2021` (153)
+   * `8/19/2021` (143)
    * `7/8/2021` (140)
    * `7/19/2021` (138)
-   * `8/11/2021` (133)
-   * `7/22/2021` (127)   
+   * `8/11/2021` (133)   
         
 
 ### ___totals___
 
-**SourceUnits:** `14377`   
-**Unique Contract Names (submissions):** `5938`   
+**SourceUnits:** `14748`   
+**Unique Contract Names (submissions):** `6033`   
         
 
 -------
