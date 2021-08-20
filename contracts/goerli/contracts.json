@@ -6804,3 +6804,15 @@
 {"address": "0xE56650443DA18aeE251FD5321Db26dd80BCe4CE6", "name": "Pixxiti", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/19/2021"}
 {"address": "0xf3ABDB14Da2FE4B4244Dd75f0c63438CFd3eaB47", "name": "USDT", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/19/2021"}
 {"address": "0x58b05821cB242FED9a32511d55e3dEBEe1829e42", "name": "OpenSkyRootTickets", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/19/2021"}
+{"address": "0x56c4f665016C8FC6f2097B2B736f3dBE1575f4d3", "name": "SNAKETOKEN", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/20/2021"}
+{"address": "0xe870a13d782d5ac79bdeb72cdd62567e948cb3f2", "name": "UglyBabyKirby", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/20/2021"}
+{"address": "0x9e8641bc553a4400abcfdc9d9dea4e4040fce689", "name": "KungFuCoin", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/20/2021"}
+{"address": "0x38af7e1a68fcb1caa017ef84b00e8a6ac462c7f5", "name": "KungFuCoin", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "", "date": "8/20/2021"}
+{"address": "0x6e38566118c709f968A4D78E248A88833F47Cb53", "name": "BTCSwap", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/20/2021"}
+{"address": "0x60b7e8d635babc75e4bad2a5f1752c9502a33e75", "name": "ERC20PresetMinterPauser", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/20/2021"}
+{"address": "0x93AE32fbbDa8Fd53B7557E7AF8d6fF2Acb79deFf", "name": "BTCSwap", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/20/2021"}
+{"address": "0x3cba7f34b86dF46213751da663Ef67222ebae744", "name": "BTCSwap", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/20/2021"}
+{"address": "0x12E204efcB559dEdA214C538e487b7a9ef594608", "name": "WitnetRequestBoardTrustableDefault", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/19/2021"}
+{"address": "0xD43e6D27D995bf9542F8CfE524c54Ad3A1Cd413A", "name": "WitnetProxy", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/19/2021"}
+{"address": "0x52CbB9D63A50e79b05dEC3Ab73ff89ef5A8E35D7", "name": "WitnetParserLib", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/19/2021"}
+{"address": "0x21047672D4B7e7e30eeeD81a258d85e390A8B5D8", "name": "WitnetDecoderLib", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/19/2021"}
