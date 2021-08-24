@@ -7089,3 +7089,21 @@
 {"address": "0xc9d0ee751d2da974713f2fe06dc3de369f3b12c3", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/23/2021"}
 {"address": "0x33de2c4A3e4E4DeC415FA544beD68Ed9d0e1f481", "name": "TokenVesting", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/23/2021"}
 {"address": "0x0517FEF50f974E867094EEED96BC5677A487A3B0", "name": "Polar", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/23/2021"}
+{"address": "0xC26E8790d2E06881dAD2E61d19a4b22E47Ff59a2", "name": "TOKEN", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0xc716950e5deae248160109f562e1c9bf8e0ca25b", "name": "LIT", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/24/2021"}
+{"address": "0x994D5c7c6AA86A364F911953CF9886dcF1AF9cC6", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0x9FEE3bDAC6a24a1A9b73A9e06319f5CBa9db6BfB", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0xf5327d5C6ac01843f43EbAB368bA8d2286B3f183", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0xcD2596B29fDbEfb4782e4956dE7EEF678B1443e9", "name": "DMail", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0xb02e160A1D00eC1b8E53B789efCA373dD47251a1", "name": "ERC20", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0x60638aEfe6873c660726b21a69c39D13cE79a872", "name": "ERC20", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0x95A60E4b71bE7870c7616Ef58E8C8799B0c29AEb", "name": "MiniSwap", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0xaC1C6Cb999F546f8c381e61A481e69141248675A", "name": "ERC20", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0xaF0FD452051f3470568786A2E2e40e2223E34D83", "name": "MiniSwap", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0x0AfeB3D5610dC482243cC62f168559B6756b7044", "name": "MiniSwap", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0x11e568B848109d15E5511751812a38b7C43C5D60", "name": "WithdrawalHandler", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0x68440161A5d007e1fBfb2c99a29220C8da750287", "name": "SmartStake", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0xe285836B943051AE7c3533496d89ef183E870232", "name": "TransparentUpgradeableProxy", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0xd7B2F968E79DF1230Cc304b0fAb9B2ACe1eC089B", "name": "ProxyAdmin", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0x2991dBd24b83AB7A894D896CC302467584Ae076a", "name": "ERC721", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0xcd94594e2Ef56F1DAEB11217fC5a6BD44672AB1E", "name": "DMail", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
