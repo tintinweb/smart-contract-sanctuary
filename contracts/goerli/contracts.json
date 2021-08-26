@@ -7125,3 +7125,37 @@
 {"address": "0xade57ae7bc9d882c99b7357035da607beb30319c", "name": "TestEvent", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "8/24/2021"}
 {"address": "0xd4050378c9cd5BE82A205BBAF78528b52952Fe1d", "name": "NagaRouterV2", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
 {"address": "0x13d3D93e5612638e1A5Ba0d074726fEB6Ec3A1a6", "name": "NagaFactoryV2", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "8/24/2021"}
+{"address": "0x7060157ba25af1a6a421226e4ceA78d90fBdFb09", "name": "SlumdogeExchange", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "8/26/2021"}
+{"address": "0x914c1444245f4e71c4240400C9aE273068d565a1", "name": "Rama", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "8/26/2021"}
+{"address": "0xd0ad3fe9a9cbe5f08b9415ed808aa182851439f6", "name": "storageSomething", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "8/26/2021"}
+{"address": "0x1524F7beCA1bdcAA7B7591301f222B295eB9947f", "name": "Uni", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "8/26/2021"}
+{"address": "0x568CAfbDcCFae8fd53B080d37B5Cdc95dCf62AdE", "name": "UniswapV2Router02", "compiler": "0.6.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/26/2021"}
+{"address": "0x35f9e00e7377777cF821C3a400b469e299ee1ee5", "name": "StakingInfo", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "8/26/2021"}
+{"address": "0xc720a880784405cb395d07fc5dc74291abb49215", "name": "Multicall", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/26/2021"}
+{"address": "0xe31d540167B4ec0CD43742E7c624b6ec560b5a85", "name": "StakeManager", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "8/26/2021"}
+{"address": "0xf65f0a177F34d3a9766F934Ff1922c722E88503D", "name": "WETH9", "compiler": "0.4.19", "balance": "1 Ether", "txcount": 0, "settings": "", "date": "8/26/2021"}
+{"address": "0x4aEF647e3Be1F23d38e31084Ce5E306dF1D7E08c", "name": "UniswapV2Factory", "compiler": "0.5.16", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/26/2021"}
+{"address": "0x3e0464d30705e7a839e0172145510cdf933e479f", "name": "InactaNFTEthereum", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x1b1975ea48a162e003eebbabce035357741efbcc", "name": "YardTokenMainnet", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x838b3049a05E50BC25600AB6B8a8795B4f8773B2", "name": "Uni", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x43a98e5C4A7F3B7f11080fc9D58b0B8A80cA954e", "name": "JarvisRewardToken", "compiler": "0.5.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x5E891015ED99d7C5c9eB5527658B4649F3f26c45", "name": "KoMintableERC721", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "8/25/2021"}
+{"address": "0x8C2ae52923a5E1F197ee7EB3CaD2208b639D95c7", "name": "Bullseum", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x2fE6398803B30d3A3a29e733487Eb6Ef4Ccc4a3E", "name": "ERC2362PriceFeed", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x031699240f710B47e92Df7766C06ee6C22A75df1", "name": "ERC2362PriceFeed", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0xa6fE39378E62e946b89019edD2043F17d2e7Dd47", "name": "ERC2362PriceFeed", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x43Fe8778389f4EB98e82B750DCCAfF0D7d57778c", "name": "ERC2362PriceFeed", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x8eA48a209BFa3a7c42CF6F5D619Bf4bc8EF41dD8", "name": "EtherTulip", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x3C64A345F51d78B37962fcb979A28C2bc3a0428B", "name": "StreamETH", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0xB2Bb96A69AB4E99653750d0312D8dDEe840943fa", "name": "Polar", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x66613d17caE7b0De93b72590EEdC60E4EDDE2101", "name": "EtherTulip", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x035B8CE1e6ec21A8BfEfa82635A01BF2A172E3E0", "name": "WitnetRequestBoardTrustableDefault", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x46cF0c52f7B2e76F1E95fe163B98F92413f1d5A4", "name": "WitnetParserLib", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x8b90dDB14ce8604df484e9a37B996719881439BC", "name": "WitnetDecoderLib", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0xb58D05247d16b3F1BD6B59c52f7f61fFef02BeC8", "name": "WitnetProxy", "compiler": "0.8.6", "balance": "0.00241094 Ether", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x88699e6285c38715c0a8c334b2c37fe3c8791005", "name": "RoboDogeCoin", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x44bcf7308b248c098a91ceef626e600100fc5e24", "name": "CREDIToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x2eA3a32684A7E341796AA4F9410558891fD3b669", "name": "Glod", "compiler": "0.4.23", "balance": "-", "txcount": 0, "settings": "-", "date": "8/25/2021"}
+{"address": "0x88A2d9A016A8F130bF6f83FAAD14Ce8744074bb6", "name": "DummyMintableERC721", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0x64e2Deff79C372d2dB7e30511468B596f1060053", "name": "SlumdogeBillionaires", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
+{"address": "0xA30ffCA0D7924fc6afAA4251b828De549fda18ef", "name": "DummyMintableERC721", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "8/25/2021"}
