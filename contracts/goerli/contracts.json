@@ -7742,3 +7742,4 @@
 {"address": "0x710b00f67C39DD6b06f653f4d6cADA40BCfA2612", "name": "MonoswapStaking", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "9/1/2021"}
 {"address": "0xBec564c3A5a74587E401Ba6765163D57890472dE", "name": "MonoToken", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/1/2021"}
 {"address": "0xb4dac4e50addb5204ff1ce46dd4c1a7295ebf3ce", "name": "StorageString", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "", "date": "9/1/2021"}
+{"address": "0x8EA9F23c253f508972D173B0bd0E67cB04A1ad8d", "name": "Storage", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/2/2021"}
