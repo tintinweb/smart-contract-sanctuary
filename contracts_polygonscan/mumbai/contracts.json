@@ -6478,3 +6478,4 @@
 {"address": "0xc17548248785e5B496E1B0173847ebd5506087F4", "name": "UniswapV2Pair", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "9/1/2021"}
 {"address": "0xF53CA50d97e19805F56DBf343f0A103b537dF7D3", "name": "UniswapV2Factory", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/1/2021"}
 {"address": "0x68C4d030B46e14B7Be56E642cef2dB599B105991", "name": "MyCollectible", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/1/2021"}
+{"address": "0xA3cC48464285Ac86E2D02Ebb71E08C80f690f83a", "name": "NFTDexV6Polygon", "compiler": "0.5.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/2/2021"}
