@@ -7780,3 +7780,10 @@
 {"address": "0x1a9AB436Ad860Db609d3ec9A2882B643c659F63E", "name": "GenericERC721", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/2/2021"}
 {"address": "0x7521de8e1b2b90eff4f71f1be4717088ff99d574", "name": "JJC", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/2/2021"}
 {"address": "0xc74186745f70178351A157cCC5742FC6C826f723", "name": "MyUpgradeableContracts", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/2/2021"}
+{"address": "0x3D7c0F2542091881d6cA24B30F84E2EA9478Ea0F", "name": "Actions", "compiler": "0.5.15", "balance": "-", "txcount": 0, "settings": "-", "date": "9/2/2021"}
+{"address": "0x936e7043f204cd36cd92009d44bf6b8129f6007b", "name": "MainDeployer", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "9/2/2021"}
+{"address": "0x5476103DAA1828bC7376C7A262635451f6467dF8", "name": "ProxyRegistry", "compiler": "0.5.15", "balance": "-", "txcount": 0, "settings": "-", "date": "9/2/2021"}
+{"address": "0xF03C05d210052fD323F79772e4ffdEca343d84E1", "name": "XCharacters", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/2/2021"}
+{"address": "0xF8136E4ee3C1aAddaB4CCCe72d2a3E60E2920912", "name": "WeirdCubes", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/2/2021"}
+{"address": "0x44b325b7D243C0b02353514362d80C5Dd7B3C99F", "name": "OwnerOf", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/2/2021"}
+{"address": "0xcD05f913FfDE29A1cbf2dF80831F2bBB11EfA5e1", "name": "XCharacters", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/2/2021"}
