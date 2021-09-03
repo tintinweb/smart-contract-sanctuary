@@ -6575,3 +6575,9 @@
 {"address": "0xe4E4e7933052BD886e0D4c0284F11C1b6afD2A66", "name": "NFTDexV6Polygon", "compiler": "0.5.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/2/2021"}
 {"address": "0x750faee73d27d2dfae494902af3dbac8fd79adc4", "name": "VRMCloneFactory", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "9/2/2021"}
 {"address": "0x18680b023df346ae603556b48fa95cdf904df05f", "name": "BOA", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/2/2021"}
+{"address": "0x9637b5102cbd79e9ce5680e9bca0a2083593b666", "name": "DIAToken", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/3/2021"}
+{"address": "0xb709A6a18a80e6aF9531A157Aa8Af01F59a0C1C7", "name": "KiBridgeV15", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/3/2021"}
+{"address": "0x7e6c2a6e2b76e399fa19aa5cc2eeefc695496089", "name": "USDTToken", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/3/2021"}
+{"address": "0x65F8a5C1269BA6Ac298854A6925Ac1508ba40398", "name": "NFT", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/3/2021"}
+{"address": "0x9f1a52c036e774d919e3e0c87cfabb270316d4dc", "name": "USDCToken", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/3/2021"}
+{"address": "0x8B58CA870af4af31B9D45712e9FaCcd6A0E074aa", "name": "BiconomyToken", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/3/2021"}
