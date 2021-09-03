@@ -7826,3 +7826,4 @@
 {"address": "0x0571a5558B942F976062886bc2E7381Ad6E243f8", "name": "InvestorV1Factory", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/3/2021"}
 {"address": "0x96e065C7D9c2879Bdc57BCA284fF924e77bba8ed", "name": "SocialMonitor", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/3/2021"}
 {"address": "0x5e0b74dB5378ae9B46893Ef8889FD26a170CA808", "name": "DefishCore", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/3/2021"}
+{"address": "0x7e851f0eed546a956ae66f77363b4031d6bfba54", "name": "MedianSTETHUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "9/3/2021"}
