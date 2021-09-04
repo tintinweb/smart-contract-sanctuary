@@ -12513,3 +12513,8 @@
 {"address": "0x3e7b82f4ddcd28cc3af77d1b194785d2db3a9fd6", "name": "ISLAMICOIN", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 26, "settings": "-", "date": "9/3/2021"}
 {"address": "0xcef7fef9514aa1b127661d489b7742f2b166a4cd", "name": "ISLAMICOIN_BAYT_AL_MAL", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 4, "settings": "-", "date": "9/3/2021"}
 {"address": "0x4e88B4f358406b5cd36622771Fd427d719f6f5fC", "name": "StrategyLeveragedAAVE", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 7, "settings": "", "date": "9/3/2021"}
+{"address": "0x0cB2A7395dB180E36f6019725282Dc18FA9CD2f5", "name": "Flashloan", "compiler": "0.6.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/4/2021"}
+{"address": "0x723b17718289a91af252d616de2c77944962d122", "name": "Gaia", "compiler": "0.5.17", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/4/2021"}
+{"address": "0x55fc385e751e3b53fee7AeB5E600c9d4e45238Ae", "name": "DelightPresaleVip", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/4/2021"}
+{"address": "0xE64D3B5Bf4064843a3c29C8cc46841B9c8f05A4F", "name": "DelightMadness", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/4/2021"}
+{"address": "0x569936684390E142BB0d40206eae817656a38715", "name": "DelightToken", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/4/2021"}
