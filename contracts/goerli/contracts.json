@@ -7956,3 +7956,4 @@
 {"address": "0x77fb265dac16ccc5cc80c3583a72cf7776f9b759", "name": "Disperse", "compiler": "0.4.25", "balance": "-", "txcount": 0, "settings": "-", "date": "9/4/2021"}
 {"address": "0x4A921BbAE7B80f6CFDaB415507e1407dEDd12EaC", "name": "HiIQRewards", "compiler": "0.7.1", "balance": "-", "txcount": 0, "settings": "", "date": "9/4/2021"}
 {"address": "0xaf22b466d26143147a2edd9f23c8ba376500313e", "name": "BAckcodi", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/4/2021"}
+{"address": "0x8ba1f171f6558c09c396b93d2adfa91f99249289", "name": "ChessBettor", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/4/2021"}
