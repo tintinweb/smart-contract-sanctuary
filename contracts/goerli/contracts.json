@@ -7827,3 +7827,21 @@
 {"address": "0x96e065C7D9c2879Bdc57BCA284fF924e77bba8ed", "name": "SocialMonitor", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/3/2021"}
 {"address": "0x5e0b74dB5378ae9B46893Ef8889FD26a170CA808", "name": "DefishCore", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/3/2021"}
 {"address": "0x7e851f0eed546a956ae66f77363b4031d6bfba54", "name": "MedianSTETHUSD", "compiler": "0.5.12", "balance": "-", "txcount": 0, "settings": "-", "date": "9/3/2021"}
+{"address": "0x844f40AC2ba14A0F8E200184139EeBc54A495D36", "name": "dotdotdot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/4/2021"}
+{"address": "0xcA33182e2b6533fc5a0f5abC5f5cC998929Eaba5", "name": "Address", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/4/2021"}
+{"address": "0x80c69a490c557b9cf0e3ea637443ce5a29b5a70b", "name": "Address", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/4/2021"}
+{"address": "0xD1025c6F77dE9A987256D4EE7d269F6E07CD7320", "name": "dotdotdot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/4/2021"}
+{"address": "0xa0a750039966ce3cc5a4d3adc671c4d4fa411859", "name": "ERC20", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/4/2021"}
+{"address": "0x80C4AD0467caB5eCb4aaF6Ad2Cd34C882C6dcf5d", "name": "GasCompensationVault", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/4/2021"}
+{"address": "0xd2662F510B538a2dF8fF94eCc32c9B66c056B5Ab", "name": "GasCompensationVault", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/4/2021"}
+{"address": "0x13Cb5Ef48c98a91EE87bc5C63463FdE48F95b326", "name": "AddWithFactoryProposal", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/4/2021"}
+{"address": "0x802320ba4709f28b0207345aFEf4f3fa51e04e1E", "name": "TornadoInstanceCloneFactory", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/4/2021"}
+{"address": "0x02E0b482Acd06026c6ee4Dd4B0Ff09c50B8A3348", "name": "AddWithFactoryProposal", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/3/2021"}
+{"address": "0x97C211AC2993F1696C5a5457Ae64Bd104FFaFAA1", "name": "TornadoInstanceCloneFactory", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/3/2021"}
+{"address": "0xC453e927b377f4ab8ed95f5472fd4689a9f3368e", "name": "TornadoInstanceCloneFactory", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/3/2021"}
+{"address": "0x07261fB5f44775e4338c28d73fbe982DB25b1a47", "name": "AddWithFactoryProposal", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/3/2021"}
+{"address": "0x68B003972f13BD565214d7089e0b67758381d161", "name": "TornadoInstanceCloneFactory", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/3/2021"}
+{"address": "0x5EF37b60C374634Ff917BaafECB515Bf1482cAc3", "name": "AuctionFractionalizer", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "9/3/2021"}
+{"address": "0x8fCD445E86ecF0C79355C5dF257A4E5A32C73AfE", "name": "AuctionFractionsImpl", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "9/3/2021"}
+{"address": "0x6f324438334A42b5e4a061AD9AA07Cce93792CC7", "name": "InvestorV1Pool", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/3/2021"}
+{"address": "0x05869c7c36AE96fb41c85F282c95D3626A69ff5A", "name": "Monetizer", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/3/2021"}
