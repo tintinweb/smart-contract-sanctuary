@@ -12694,3 +12694,7 @@
 {"address": "0x35Ba74150dee7c830c52EbCC85029a215aacAA79", "name": "DelightToken", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "9/4/2021"}
 {"address": "0x0999ebf84586e4D607D3706b5b6BE48BEA1883d0", "name": "DelightMadness", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/4/2021"}
 {"address": "0x8b4323B0E73AcC2B69F2c25E23d16d26E3bE08D3", "name": "DelightToken", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/4/2021"}
+{"address": "0x93e014a68e0bc3b065204ad93fdac588a0291ae1", "name": "Just", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "9/5/2021"}
+{"address": "0xB824c6625C9acd1f26b5d38eA562F2c956AEf3D9", "name": "Pinks", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "9/5/2021"}
+{"address": "0x0a2818883d6c8579633aff54f81e5f63d5de7272", "name": "Pixeliens", "compiler": "0.6.7", "balance": "0 MATIC", "txcount": 6, "settings": "", "date": "9/5/2021"}
+{"address": "0xb4dbf994ce6714a258f4f1dfefadc8119b14ec48", "name": "Loot", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "9/5/2021"}
