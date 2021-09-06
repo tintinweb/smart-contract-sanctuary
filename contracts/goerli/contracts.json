@@ -8035,3 +8035,4 @@
 {"address": "0xD48CAD6fAbfbD4B7C0aF5043425A81aD904e8907", "name": "PinkslipUtils", "compiler": "0.6.5", "balance": "-", "txcount": 0, "settings": "", "date": "9/6/2021"}
 {"address": "0x72a2f909EDeddE275De0B7373EFcDb6009183467", "name": "NftUtils", "compiler": "0.6.5", "balance": "-", "txcount": 0, "settings": "", "date": "9/6/2021"}
 {"address": "0x307173eaa2c1606a8daf8ff1f29fa49595bf9437", "name": "TheSevens", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/6/2021"}
+{"address": "0xbF75616479732b75b0443Da710a0c46C17A44C66", "name": "Deployer", "compiler": "0.6.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/6/2021"}
