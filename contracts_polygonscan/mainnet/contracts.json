@@ -12880,3 +12880,9 @@
 {"address": "0x49271Fa3d0c52CfCF9DBd7a9f34E043705a55D62", "name": "SaffronDinoSwapAutocompounder", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/5/2021"}
 {"address": "0x6B126d1c5C557BA9C14082d41B039d09E92630CA", "name": "Saffron_DinoSwap_Adapter", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/5/2021"}
 {"address": "0xcF90c5C4B89FF5E34f3a85145a76BDF4fEcc5a89", "name": "TenyHeroNFT", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 12, "settings": "", "date": "9/5/2021"}
+{"address": "0x37450C41CB9D6c1E9D3A49711608efE01cD95CD3", "name": "PolyrollERC20", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 8, "settings": "", "date": "9/6/2021"}
+{"address": "0xb5083A4f506033e85bf9d5770669C1415CaA3B8F", "name": "MissionVaultChefSingle", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/6/2021"}
+{"address": "0x33afa1a1a9343b2dfdf9b8a0615befc0a4584b14", "name": "IdaSwapRouter", "compiler": "0.6.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/6/2021"}
+{"address": "0xcD0600b1ffbF65A01b1bb3800be283CDdd03DE61", "name": "MissionVaultChefSingle", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/6/2021"}
+{"address": "0x7dcf282ecabf1f1b1e0bc56c8a2b20715ca76e15", "name": "The48pxLeaves", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "9/6/2021"}
+{"address": "0x827ACB09A2Dc20e39C9Aad7F7190d9bc53534192", "name": "NerdyCoderClones", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/6/2021"}
