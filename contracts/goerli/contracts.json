@@ -7998,3 +7998,5 @@
 {"address": "0x782e6135dab23E52C827684928ea39952A3F0eC3", "name": "TestJob", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/5/2021"}
 {"address": "0x996091E660525c683be96F3601eb66ce4BaEd5BA", "name": "Keep3rV1", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "9/5/2021"}
 {"address": "0xF1e138915eD8cf5b073FA5bd87cF6Db39F549650", "name": "Keep3rRopstenHelper", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/5/2021"}
+{"address": "0xC1257CA4638e556F3B268bFEa3Aa4387c0132679", "name": "Contract", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/6/2021"}
+{"address": "0x3EDd9982425c1DC7D59bC8A227BAf4A63DF29b9d", "name": "TheSevens", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/6/2021"}
