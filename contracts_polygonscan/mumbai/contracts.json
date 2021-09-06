@@ -6873,3 +6873,7 @@
 {"address": "0x6175513750676D5837d83413d5500662238FCFA1", "name": "pBNB", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "9/5/2021"}
 {"address": "0x837E7DA329bdd91a5005DdA93C8f076640D4b214", "name": "BridgeAssistB", "compiler": "0.8.5", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/5/2021"}
 {"address": "0x4896e7E77729de1c1F7cfF4a2004810aeDC215D0", "name": "KiBridgeV16", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "9/5/2021"}
+{"address": "0xef0cec3c3c97b728311cec395923ea5884d07cbd", "name": "DEMONft721", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/6/2021"}
+{"address": "0x0f60fdB84BdF7ceF2dA9993425F2664cD99e00cA", "name": "NFTDexV7Polygon", "compiler": "0.5.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/6/2021"}
+{"address": "0x6e4564b6f707f31Ae98DBEC806c34Cc1751d5423", "name": "PALG", "compiler": "0.4.24", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "9/6/2021"}
+{"address": "0x2DE129727df37e4B7E3A51ba41fe8Bd9422490f8", "name": "AidToken", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/6/2021"}
