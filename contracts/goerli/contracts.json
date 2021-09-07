@@ -8124,3 +8124,4 @@
 {"address": "0x0F2D3DdD1b789A636A0A261C985b7221198A9852", "name": "L1UniversalOneSidedFarm", "compiler": "0.7.3", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/7/2021"}
 {"address": "0x577c04be046b583a33a325b4ec35def21120bc5a", "name": "TheSevens", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/7/2021"}
 {"address": "0x19f522917a46d56580c920beb0ca789739914439", "name": "Pattern3", "compiler": "0.4.23", "balance": "-", "txcount": 0, "settings": "-", "date": "9/7/2021"}
+{"address": "0x5a256D6765C0ec3aaD22c2242adD6c364e15A919", "name": "ShrimpCocks", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "9/7/2021"}
