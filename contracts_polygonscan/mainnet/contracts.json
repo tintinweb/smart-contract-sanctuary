@@ -13344,3 +13344,8 @@
 {"address": "0x6f4e06870a3f51b53f7d9f435478485d2def99a7", "name": "Address", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "9/7/2021"}
 {"address": "0xC358E8aA20C0bD8dD44Fd96F91C2218d91CF622C", "name": "Image", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/7/2021"}
 {"address": "0x48c550146a14188d987c22efe29cc6c12e3abf38", "name": "Address", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "9/7/2021"}
+{"address": "0xe5bd4954bd6749a8e939043eedce4c62b41cc6d0", "name": "PickleJarDepositFeeInitializable", "compiler": "0.6.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/8/2021"}
+{"address": "0xB6e7e6111b9fC66b3A4E69FA22075c564F7bB263", "name": "LootCrate", "compiler": "0.8.3", "balance": "0 MATIC", "txcount": 71, "settings": "", "date": "9/8/2021"}
+{"address": "0x74C6b7D36C2B500361f6E72f8b094615bf6c78A5", "name": "AutoMaticVaultQuickv2", "compiler": "0.7.3", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/8/2021"}
+{"address": "0x5b474962E24D5948410741a1689d0D36e938b2B7", "name": "NFP", "compiler": "0.8.7", "balance": "2 MATIC", "txcount": 5, "settings": "", "date": "9/8/2021"}
+{"address": "0x2096f03ba1498bd9e858a4fa30c72c2dc5cba848", "name": "PickleJar", "compiler": "0.6.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/8/2021"}
