@@ -8134,3 +8134,5 @@
 {"address": "0xBA9ef4a42E859C2b27b74Ff275D83Db53072940C", "name": "TulipBidding", "compiler": "0.8.7", "balance": "0.01 Ether", "txcount": 0, "settings": "", "date": "9/7/2021"}
 {"address": "0x2fC8eED85F9eF831B57A03B2e0684a6F403063b2", "name": "StreamETH", "compiler": "0.8.7", "balance": "0.71416 Ether", "txcount": 0, "settings": "", "date": "9/7/2021"}
 {"address": "0x6f9c9035d8B90265D432222788A7ac4eCEc96593", "name": "PuppyTest", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/7/2021"}
+{"address": "0xa770B757e723Da5EbC0667e835E4A3b27fbbcFD0", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/8/2021"}
+{"address": "0x6ed79d8fc3b2eef78e4372dfb52dea1295ec5d66", "name": "mLoot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/8/2021"}
