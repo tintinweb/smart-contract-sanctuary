@@ -8195,3 +8195,5 @@
 {"address": "0xCFb021dB1434597318aB27A246b4BA85fb393eb9", "name": "Contract", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/8/2021"}
 {"address": "0x7D33F40EF622BCe09FCF9776ea53631F50FC16A8", "name": "Contract", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/8/2021"}
 {"address": "0x2034e7db1de5abf65326782beeef68d6657f58fa", "name": "mLoot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/8/2021"}
+{"address": "0xc524915395e7fea97680b61c8dee1739ae3e7de5", "name": "TestToken3Flatened", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/8/2021"}
+{"address": "0x3dbfcbf5613313921c029ab9e49f9afe203af8e6", "name": "LPLeverageLaunch", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/8/2021"}
