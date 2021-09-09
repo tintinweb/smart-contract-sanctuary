@@ -8197,3 +8197,25 @@
 {"address": "0x2034e7db1de5abf65326782beeef68d6657f58fa", "name": "mLoot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/8/2021"}
 {"address": "0xc524915395e7fea97680b61c8dee1739ae3e7de5", "name": "TestToken3Flatened", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/8/2021"}
 {"address": "0x3dbfcbf5613313921c029ab9e49f9afe203af8e6", "name": "LPLeverageLaunch", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/8/2021"}
+{"address": "0x22249df807e0e4b7fcfcbf87553fa2f62aa5248b", "name": "mLoot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021"}
+{"address": "0x80B151a2cA3a770349E8C52646EAbD8eF9a07A89", "name": "Pattern3", "compiler": "0.4.23", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021"}
+{"address": "0x45f010583af2e4BB4E185c8C8D335ed96233af9c", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021"}
+{"address": "0x43E624336e75aa2A47d0832d4613c64524D92ab0", "name": "StakingPoolImpl", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0x360263fbAcb06c402A7C7fef955ba949977B8a35", "name": "StakingPoolFactoryImpl", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0xB66CdB410D7422E1cda4e82b964bD88edD7E28d7", "name": "MockAggregator", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0xB5F89791E79Fa5DbaF4C2bFE81dCe855D9a00211", "name": "MockAggregator", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0x2AD88466E5055CbFd1eeB010E38Dcfdf8d69fA6a", "name": "ChainlinkPriceOracle", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0xB4f20860BbCa39fcf5bE03Dda47B7593B8fD6656", "name": "ChainlinkGasOracle", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0x963528728905AFD53d5957e62F5b5A2a087Ed83B", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021"}
+{"address": "0xE9f76E6A8A00ae4caa81227e2546f5fCC98A2b08", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021"}
+{"address": "0xb27fA1cA288466E3Fc54e5c2A07622D0ab23C47B", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021"}
+{"address": "0x923e7786176Ef21d0B31645fB1353b1392Dd0e40", "name": "SubscriptionProtocol", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0x6e5724582a883b012b419f73ec07db27916f9651", "name": "LPLeverageLaunch", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0x69FB10c6B77E695371037f209046E76208a2Fe49", "name": "Box", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021"}
+{"address": "0x555eB963Af01Be5BAe89699A7fBBbCA5Def40009", "name": "NounsDAOProxy", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0x22932551387D271B4fe512c6af209d0724360183", "name": "NounsToken", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021"}
+{"address": "0x6bce1ae88860ff82bfa6046eeced45f3205f365f", "name": "StakefishGreenEnergySticker", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/8/2021"}
+{"address": "0x878c1a02e240cca90210befe04b50cde5f271729", "name": "SimpleStorage", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/8/2021"}
+{"address": "0x20a728b940cb00607e8e82d1ed27fc58517aa829", "name": "VErc20", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/8/2021"}
+{"address": "0xa7b50697c1898d8ba65b4244dd5be5117877830c", "name": "VErc20Proxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/8/2021"}
+{"address": "0xa886984FF8f9bDd0d50230790035f1dcA0d6BDfB", "name": "ProxyStateSender", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "9/8/2021"}
