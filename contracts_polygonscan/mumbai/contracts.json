@@ -7495,3 +7495,8 @@
 {"address": "0xA98C4a3d1A488e1005089343CBC6C8A74406C2Ca", "name": "RevenueShare", "compiler": "0.5.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/9/2021"}
 {"address": "0x5F47640Af7E8Dc6f940C0959bb7C6A74B1A11a7C", "name": "ComposableHolding", "compiler": "0.6.8", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/9/2021"}
 {"address": "0x811309b0be4244c18c82b0651bdb0bfc8231fc89", "name": "PuppyChildERC20", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/9/2021"}
+{"address": "0x45BA072FFB7E5B6eF3Ed0da128D0b9e33210d17D", "name": "SimplePriceOracle", "compiler": "0.6.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/10/2021"}
+{"address": "0xc9cdbf69d7fdd139590e416453c7bccc43fd6c4d", "name": "RockPaperScissor", "compiler": "0.5.17", "balance": "0.321 MATIC", "txcount": 4, "settings": "-", "date": "9/10/2021"}
+{"address": "0x1f48D2a99A04a78aB2A56fc58283Ab91A8cafc7c", "name": "DebtToken", "compiler": "0.6.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/10/2021"}
+{"address": "0x248aDA4B2f0c210b12B29d2D1c44B19ab86052b3", "name": "ERC1155AQ", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/10/2021"}
+{"address": "0x446102FBA09d43EEC3eD24186E6bC06F818539f7", "name": "MultiFeeDistribution", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "9/10/2021"}
