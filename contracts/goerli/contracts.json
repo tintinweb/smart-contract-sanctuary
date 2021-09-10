@@ -8330,3 +8330,86 @@
 {"address": "0x1547b3089F17B972907c5aAcc3b016369f099817", "name": "MarchandDeGlace", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x7c9AEE9a3a3A9107F05F341C1cC1cBe645FD816B", "name": "GEL", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x11F94423BB98108a756e1c1a9E909e388A6112C4", "name": "CheckersMock", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x7AABAfFb8187f0A9820c78Fd4e40Cfb4C8321c9A", "name": "AgoraSpaceFactory", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x17BDe77F7b71f28d11145F83CcaF632906Ea16Ea", "name": "KoMintableERC721", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x879F3241B30D5593eDDD491C4543214d88F39944", "name": "AdapterDeployer", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xDAA1D408AB9a2067586043f465D3De6966A91179", "name": "LenderDeployer", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x575efc05cd4936494f5c8f29664f339fc7bec2d6", "name": "token", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x14b604419fbb12EA722E194cC28Da77c54EA9007", "name": "EpochCoordinator", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x57294DEbd4f9C36960642249109C3fe9725C8777", "name": "PoolAdmin", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xE0Dd887A2D52759FdF0070B4552Df03aA56498c6", "name": "Assessor", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xa454Ba1A1B6Eb4aCdF0283885B99E8ba00DdB4DD", "name": "Reserve", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x77aB29f9A09Ae5b4A1B9508EF1CA4Ec1Fa9c3F71", "name": "Operator", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x985FE078526369733dC829945CF4982511796eeD", "name": "Memberlist", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xa2dbb2Ad332FbeB0e5a169190E870bfCc82eFD63", "name": "FETH_R11", "compiler": "0.6.11", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x6F40d1D9B168821f06f04b0FA049fe8F7508E9c0", "name": "Tranche", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x31972e47f3578eB7760F0ED6Fa643B5C5f66F425", "name": "RestrictedToken", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xdbA5174A9E79aaCaA6Ab94AC9d24632b24AdA477", "name": "Operator", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x616CaB49815fF85F4c188f5F309046512363C904", "name": "Memberlist", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0x9c534b98f2Bf8041ecd85FF5EE92eA7FD88B43B9", "name": "Tranche", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x46Bae8f784286E16b42d842801b6364d5f873790", "name": "RestrictedToken", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x6789720768054B5558d7bE682292C5f9C0122334", "name": "Shelf", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xb36e374dACb5bB4cA0B3e3E585aa0657E5E1c81D", "name": "NAVFeed", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0x7c681241dBa0DE0378E57c7c0bE995E3308D85E3", "name": "Pile", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0x9a94DBe6a373c1F44c4DF36AC97254573C3A2C6D", "name": "Title", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xfC3A8Cf725ecBA978a570B8c0600FDB794138B2e", "name": "BorrowerDeployer", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x8b2A862E3F7B55CEbc6705e03025739446e8197d", "name": "LotteryAndVaultProposal", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xc44c4Be87417E88BD1928B67B36D4C90Ab9a75D3", "name": "TinlakeRoot", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x1488841b8b2c02c6d93ef65aeA088A0941107a19", "name": "GasCompensationVault", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x4A8F43548DA175a81b9227d06dEf398987633C9a", "name": "Shelf", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xfDE7462961df570068F3E40fefeD9d6dbf2F6127", "name": "NAVFeed", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0x868B5a8f1E421Ff030e77739C76Ce5c2eBA70fE9", "name": "Pile", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xe9A1e25B0f5d8674DbDBF474BC7F6d5465AfCba0", "name": "Title", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xFd163381F0F30d27d85853d3898Ff4d3E4c5B83A", "name": "BorrowerDeployer", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xEF4eb353f0aAAa9a9C93E1040Cda891E86302405", "name": "TinlakeRoot", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x4c1F6361F2d161C41f7Ca5Dc39ffc58e1e9C01Eb", "name": "Shelf", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xE46aBE5B2609A10A6DfCB7B0EA4C29fF547A82b1", "name": "Pile", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0x84F5032a07B84B102aeBC6Bc73cA19B083779F6c", "name": "Title", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x9cf702E8a71b95c8Cb2054Fac4807503D2fE8725", "name": "BorrowerDeployer", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xfFd9414E23D5CedF618Ac4e7b3253d2B5514a9bE", "name": "TinlakeRoot", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x5245bc3e1cc74484267ea65d8ad786f2c8781b02", "name": "Shroud", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x9bb8d211cfcc9a636fb4e55d08911c51e6269b6e", "name": "TestToken", "compiler": "0.5.8", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xC4F15ff7e02A3DEDfBE6F3e469B47F02cD15F69F", "name": "VaultWrapper", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x9424BdAA153CA0a8dFdaa057164ae14B2bC23b2B", "name": "DAO", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x2BBD50E174D935b928C02b8E74e29F162a7Ebb56", "name": "Bridge", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0xF474a000bB5eb1973780d92b1A8a11C994E520A9", "name": "BorrowerDeployer", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x9508afE439BBFa16345ED724542bC876eaC4597e", "name": "TinlakeRoot", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x9331faF9Fa003Db9D70490759AE86c52768185C1", "name": "Licences", "compiler": "0.6.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xFCeD5133138a6D61a4e7dd809CF70e78E96311e5", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0x3b8Dfb373E422066a7cfd32e190eA8D9787EC762", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xB910d22B077b1CA843Fea8666b12CA6a397E5931", "name": "AgoraSpaceFactory", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/10/2021"}
+{"address": "0x6A76157A757f877A2Db866c0CB30A3330eDb655E", "name": "Loot", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xc1bf73e4f4b5460e932d42a6fb04d38ff65d2389", "name": "VerifySignature", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0x24ee4d57bb207699c2f10391854707d1146a9ad7", "name": "AssetProxy", "compiler": "0.5.8", "balance": "-", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xF3C3B2a45D2c2A8Fec74318de12003153DbCFe29", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xE896caE30F457e5360E59B9D6a0cBC99cDE8fb34", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0x51BADCF5cF304911E4bF1D42751aE1356c4449C1", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/10/2021"}
+{"address": "0xa1c8E207A53c343b5562d8c499b678B49b3ebE40", "name": "Kamikaze", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "Exception('unable to find source-code. rate limited? retry..')"}
+{"address": "0x111F8Bbb29bC51e74334Ec36623EFF588F05875B", "name": "DepositRouter", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xf131538B25cF4ab52Da0B1dFbceCA98390384462", "name": "DepositRouter", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x9287070b6d4bf7f883b8fd609d3223a481e46645", "name": "Dice", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x8205Cc03B56eabAb3106D1d0B858B7056fed9F91", "name": "EventTester", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x576BeC17512C5072ac8f65C0F719Ed104a51FA9d", "name": "AgoraSpaceFactory", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x371b10d43372Ec27EffF5996e35077FAd24532f3", "name": "Detf", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x8b314332e813cbb0bc96ae5ee50a04d8e4435c4a", "name": "Loot", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xf0d3f3ff8df0fdda32687a04bee04c90ba3760ff", "name": "Detf", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xef8e47B0E43d5Fcc43c2C5abEc2884471edfbC97", "name": "InvestorV1Factory", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x1a95d07b1aca4a88e65f93a83b756da16ed25585", "name": "Calc", "compiler": "0.7.1", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xE1E34E97B2789bAbE25Aa09F92A1Fb5BCaB93306", "name": "DepositRouter", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x12b1b2dbc7f76c03ec8dca38bfef726359245183", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xe5541906ce765a8d218564c86cb78f8b46db5c93", "name": "mLoot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x13F57C00ee0A97B8360Cf5cd8002D55c7C167C04", "name": "LootMap", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x743c4ded3a657ef66a2a60213c576701009f6c9c", "name": "Address", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x52b61578Df7af83c8089fFd7907C0556eeE9FD21", "name": "Monetizer", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x015d65363BC136935A031dc4B079c74092B1FaD7", "name": "PowerfulERC20", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xDfE6F74411b1dE4b704E1acf05dCBD30D34bAc5b", "name": "ChainStakingContract", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xe6ff7e8863661c3e95c1de26fc6a4c3109d9f176", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x7c595bdec275a4dd2f224b583a6669a90dba2582", "name": "mLoot", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x998951FAcAA5BDDB0C9291d57dAC2e78f47A7213", "name": "ChainStakingContract", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x47DFD130A890Ec0fbb81673424FeCc891E2F9d0a", "name": "PlatinumDistributor", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xcB694FdB9F5d1e88577Aab96DB59C158dBD5036e", "name": "PlatinumToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x5AD65f31fb4c726ff06cf255026a6dAfD55880DC", "name": "Loot", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x82Ed88B45ADB4297C04a79138eDAFb017553aaEF", "name": "extensionLoot", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x1547b3089F17B972907c5aAcc3b016369f099817", "name": "MarchandDeGlace", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x7c9AEE9a3a3A9107F05F341C1cC1cBe645FD816B", "name": "GEL", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x11F94423BB98108a756e1c1a9E909e388A6112C4", "name": "CheckersMock", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
