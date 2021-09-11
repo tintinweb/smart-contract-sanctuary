@@ -7630,3 +7630,13 @@
 {"address": "0x9f64932be34d5d897c4253d17707b50921f372b6", "name": "DarkcodiNFT", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "9/10/2021"}
 {"address": "0xBC096c3256029C96315786E325FE419E299693aC", "name": "ERC1155AQ", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/10/2021"}
 {"address": "0xBECeB15a0D786B8310Ce2db09d6206F28C5315a0", "name": "ERC1155AQ", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/10/2021"}
+{"address": "0x0551558B5F454edD6741F1b1F93B91F4E2E991a7", "name": "AErc20Delegator", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/11/2021"}
+{"address": "0x7Ced4aAD32bB1d3d4fEcfbc91166f98C10e4C017", "name": "AErc20Delegate", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/11/2021"}
+{"address": "0xd7e7FAA2649181E3f5B823BD61450c0796852E39", "name": "AMatic", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/11/2021"}
+{"address": "0x17E3a5Ef66A156850617BcA1AA505b97e8ce8320", "name": "AtlantisLens", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/11/2021"}
+{"address": "0x112cE7Da164F4753C33B4817c76A05Ce4A3CD58e", "name": "AtlantisPriceOracle", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "9/11/2021"}
+{"address": "0x86c0a7fdAc06a84BD87FE04F9dCF33F4D9234339", "name": "JumpRateModelV2", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/11/2021"}
+{"address": "0x9fCb6B35E0Bf10eDCa2ae4f0aF0Acd5CA259670c", "name": "Comptroller", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/11/2021"}
+{"address": "0x61132239aE6827529d4924B6BB6e7119523C6874", "name": "Unitroller", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 11, "settings": "", "date": "9/11/2021"}
+{"address": "0xAd07CB45ac11cd409DAD47768b3649D03205653f", "name": "CryptoCabz", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/11/2021"}
+{"address": "0xF9Bd82E7747d6E1A34cC2cf7F45d00548791d872", "name": "Multicall", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/11/2021"}
