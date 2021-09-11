@@ -18,7 +18,7 @@
 _______________
 
 <sup>
-last updated: Sat Sep 11 2021 07:14:29 GMT+0000 (Coordinated Universal Time)
+last updated: Sat Sep 11 2021 18:13:15 GMT+0000 (Coordinated Universal Time)
 </sup>
 
 ## Ethereum
@@ -319,8 +319,8 @@ last updated: Sat Sep 11 2021 07:14:29 GMT+0000 (Coordinated Universal Time)
 
 ### Testnet
 
-**SourceUnits:** `35881`   
-**Unique Submissions (Name):** `11064`   
+**SourceUnits:** `35917`   
+**Unique Submissions (Name):** `11070`   
 
 **First Submission:** `7/6/2021`    
 **Most Recent Submission:** `9/11/2021`   
@@ -328,19 +328,19 @@ last updated: Sat Sep 11 2021 07:14:29 GMT+0000 (Coordinated Universal Time)
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (11047)
-   * `0.8.4` (5835)
+   * `0.6.12` (11048)
+   * `0.8.4` (5844)
    * `0.8.6` (3388)
-   * `0.8.0` (2932)
-   * `0.5.16` (1970)
+   * `0.8.0` (2936)
+   * `0.5.16` (1971)
    * `0.7.6` (1909)
-   * `0.8.7` (1430)
-   * `0.6.6` (1046)
-   * `0.8.2` (736)
-   * `0.5.17` (698)   
+   * `0.8.7` (1434)
+   * `0.6.6` (1047)
+   * `0.8.2` (749)
+   * `0.5.17` (701)   
 
 **Names:**
-   * `Address` (841)
+   * `Address` (842)
    * `IterableMapping` (620)
    * `MasterChef` (592)
    * `BEP20Token` (575)
@@ -366,8 +366,8 @@ last updated: Sat Sep 11 2021 07:14:29 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `76930`   
-**Unique Contract Names (submissions):** `35007`   
+**SourceUnits:** `76966`   
+**Unique Contract Names (submissions):** `35013`   
         
 
 -------
@@ -425,8 +425,8 @@ last updated: Sat Sep 11 2021 07:14:29 GMT+0000 (Coordinated Universal Time)
 
 ### Mumbai
 
-**SourceUnits:** `7632`   
-**Unique Submissions (Name):** `2615`   
+**SourceUnits:** `7642`   
+**Unique Submissions (Name):** `2618`   
 
 **First Submission:** `6/25/2021`    
 **Most Recent Submission:** `9/11/2021`   
@@ -434,13 +434,13 @@ last updated: Sat Sep 11 2021 07:14:29 GMT+0000 (Coordinated Universal Time)
 #### Top 10
 
 **Compiler:** 
-   * `0.8.4` (1283)
+   * `0.8.4` (1284)
    * `0.6.12` (1280)
    * `0.8.0` (1125)
    * `0.7.6` (637)
    * `0.8.6` (531)
-   * `0.5.16` (418)
-   * `0.8.7` (321)
+   * `0.5.16` (426)
+   * `0.8.7` (322)
    * `0.6.6` (312)
    * `0.8.3` (185)
    * `0.7.4` (136)   
@@ -472,8 +472,8 @@ last updated: Sat Sep 11 2021 07:14:29 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `21369`   
-**Unique Contract Names (submissions):** `8445`   
+**SourceUnits:** `21379`   
+**Unique Contract Names (submissions):** `8448`   
         
 
 -------
