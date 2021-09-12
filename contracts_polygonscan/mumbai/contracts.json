@@ -7711,3 +7711,11 @@
 {"address": "0xba3cf4c0012cf362281767995d7da0f92f77e2a8", "name": "BatchMetaTXProcessor", "compiler": "0.5.7", "balance": "0 MATIC", "txcount": 85, "settings": "", "date": "9/11/2021"}
 {"address": "0xEB16403F7d1241d3F40c4D479ab0ec352C8E3565", "name": "MATICMultiplier", "compiler": "0.6.12", "balance": "0.800000000000000002 MATIC", "txcount": 2, "settings": "", "date": "9/11/2021"}
 {"address": "0x0731dbd5231ab267c5ea9b6ccc989be1b079fbde", "name": "UUWearables", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 10, "settings": "", "date": "9/11/2021"}
+{"address": "0xbd16a783e3fc095bffee6e260c2678c002fcf9f6", "name": "TestNftMint", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/12/2021"}
+{"address": "0xF79e107D40725a5A6Fa8e8D32C0BD763414F6004", "name": "nNFT", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 10, "settings": "", "date": "9/12/2021"}
+{"address": "0x42B5941399C6116EBb15c59113846dc862A54f35", "name": "NFTMarket", "compiler": "0.8.4", "balance": "0.003 MATIC", "txcount": 7, "settings": "", "date": "9/12/2021"}
+{"address": "0x217C70b9d3BA4f009088aC77c95Bfb9De73173Af", "name": "NFT", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 11, "settings": "", "date": "9/12/2021"}
+{"address": "0x7C7DD266ac9Bf601b4dB04Ea3a480412F03AD9d0", "name": "NFTMarket", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/12/2021"}
+{"address": "0xD6B0D88A69D414326A8e1969Fbe54b583e53F2E8", "name": "NFT", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/12/2021"}
+{"address": "0xe74ef06ae7e9f92fd9352dc146c9f4b6b1909991", "name": "PolyTars", "compiler": "0.8.0", "balance": "2 MATIC", "txcount": 4, "settings": "-", "date": "9/12/2021"}
+{"address": "0xDaeBbAEa7763B976C2c8fFfEC1adb0E87F249158", "name": "nNFT", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "9/12/2021"}
