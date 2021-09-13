@@ -14334,3 +14334,11 @@
 {"address": "0xfc1cf034f9c4f9a93b4195d22c494b281ac48506", "name": "SnookGame", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/12/2021"}
 {"address": "0x175d307859da4f21759a99287ac26d9e0e4da40f", "name": "OptimusArt", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 8, "settings": "", "date": "9/12/2021"}
 {"address": "0x86668e5c438c55a8011a1b75080f5128fc9ab900", "name": "CLEARSIGHTToken", "compiler": "0.4.24", "balance": "0 MATIC", "txcount": 6, "settings": "-", "date": "9/12/2021"}
+{"address": "0xedb75db4f63f1405936d4924fce7a752f5a4f3ce", "name": "FlufOnPoly", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/13/2021"}
+{"address": "0x7d0688c7c91ec5a255fbf74f9d357acb7405524a", "name": "Krill", "compiler": "0.7.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/13/2021"}
+{"address": "0x991c6ade8878fac95a36a9228305fa2f8341a4c6", "name": "ChampionsVault", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "9/13/2021"}
+{"address": "0x290000C417a1DE505eb08b7E32b3e8dA878D194E", "name": "NurseryPetting", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "9/13/2021"}
+{"address": "0xB13E0AD4193D0cCF5F55e62c488B88A3CfF85232", "name": "NurseryStaking", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/13/2021"}
+{"address": "0x167d0f495c59ec75af0190516de3b60720cac956", "name": "HelloDungeon", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "9/13/2021"}
+{"address": "0x1f654d1105c27e631dd5af20b76100750c755741", "name": "SyntheticLoot", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "9/13/2021"}
+{"address": "0x229F692adA2f4405789D5AEEac832877e4C0750E", "name": "ChildAmunWrappedWeth", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/13/2021"}
