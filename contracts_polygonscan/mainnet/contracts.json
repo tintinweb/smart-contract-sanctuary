@@ -14566,3 +14566,9 @@
 {"address": "0xda0cd9f0d1a930bf0e50d00b7319449ed71d8407", "name": "EDA_SENSEI", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "9/13/2021"}
 {"address": "0x51685b67185518758ea3c19fed99475f296dfc66", "name": "MasterChef", "compiler": "0.7.4", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "9/13/2021"}
 {"address": "0x222461bc436a180da97fc8a3d3d92f2987ff8cf8", "name": "MasterChef", "compiler": "0.7.4", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "9/13/2021"}
+{"address": "0xfddaa8f9a5e877149a33ec4bed68ffafb7620528", "name": "HelloDungeon", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/14/2021"}
+{"address": "0x34D58ae6d3F03A35Bd7Cd180a601Bcf08d00bff7", "name": "StrategyQuickSwap", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/14/2021"}
+{"address": "0x4cF204f528D5eDC39893A5D0A511B8E0e766934D", "name": "StrategyQuickSwap", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/14/2021"}
+{"address": "0x211f7f9C664D2ed9dF934dF15Bd6b8DDFcb9b35D", "name": "StrategyQuickSwap", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/14/2021"}
+{"address": "0xEd65f9E0684d20F635f6E62C5413C72708A2d957", "name": "StrategyQuickSwap", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/14/2021"}
+{"address": "0x9c7Eaf6b140ddf0AB3DE45EA1Eb5F679e373370A", "name": "PlayersFactory", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/14/2021"}
