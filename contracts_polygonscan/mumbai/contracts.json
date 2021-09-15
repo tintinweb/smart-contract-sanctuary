@@ -8167,3 +8167,6 @@
 {"address": "0x58b2538a5d358ea947a8f92bc3c0c6b6b628b969", "name": "RandomNumberConsumer", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "9/14/2021"}
 {"address": "0xA484CFdA43D84E3C3D61e22011D6ff8fDb886526", "name": "WorkerConfig", "compiler": "0.6.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/14/2021"}
 {"address": "0x9bc19ffd0198c32f4bf8406741b3927f483ed55c", "name": "WorkerConfig", "compiler": "0.6.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/14/2021"}
+{"address": "0x7749bD1AF064E834a6dfBa8fE11CFeA918712896", "name": "SVGNFT", "compiler": "0.8.3", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "9/15/2021"}
+{"address": "0x39801883205e5401272b2129b3891d7910F5E243", "name": "ChildAmunWeth", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/15/2021"}
+{"address": "0xa5ff5bea7253b147dda71c02b0858e6a4aaef498", "name": "NftMint", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "9/15/2021"}
