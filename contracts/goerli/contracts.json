@@ -9238,3 +9238,64 @@
 {"address": "0x1547b3089F17B972907c5aAcc3b016369f099817", "name": "MarchandDeGlace", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x7c9AEE9a3a3A9107F05F341C1cC1cBe645FD816B", "name": "GEL", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x11F94423BB98108a756e1c1a9E909e388A6112C4", "name": "CheckersMock", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xd3667bf7ae07ac8b224c74e56622a035916fa16a", "name": "Token", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0x870D3c0e095Bbe3BeB9358D00CAA3DEADE19214D", "name": "MockGelatoGasPriceOracle", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xc84c6B22121a4151f207206B24B3356F9E7f56cE", "name": "L1Escrow", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x45Ce83f02EAe69b8AF7E074D5f2941DB02646BF8", "name": "FrameTraitStorage", "compiler": "0.6.11", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xD387ff1B1bCCC89AEBd8d023567EeEC655386464", "name": "TwitterPointCounterFactory", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xcbf666cf2103120e913696f326cdbd559b607331", "name": "RootChainManager", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xD163509eDa309D3E725e717c2EF6B0494908eAD7", "name": "CrazyToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0x0741d7e4734dcdba7291ae52f85ba129975acb2a", "name": "AMyToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x2A025246a5fA15f3fF74bdabBf20E0598C00a881", "name": "CrazyToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0x6Baa7C1CB942cA90eA9E7beB06101f5B2fA9F9ec", "name": "BizzareToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0xA4AF70C3958b0FF5773cB5efB7F245f02f65Fb4A", "name": "BizzareToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0xd25640b15b66826c069b2b57b59bf23e0f0469fb", "name": "AMyToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xc9f30E3c60CD42eE32263eDc49758988C30C90Ff", "name": "EFIToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xaA64e8Cc8329EAE9b0ffdA2cD109f307DF64475d", "name": "TwitterPointCounterFactory", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x216715916E6D9c1842d1f851F6359e745e3c2783", "name": "TwitterPointCounterFactory", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x4359a2AdB150D808aC36FCAc524a827AB2b25246", "name": "FounderVault", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xfD06B6dFe174Cc997864777AB01aFc1f84d094e9", "name": "EmogramMarketplace", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x2DA5B4D02452B1aC846f4Ad75a0dee5AedFbA1fc", "name": "EmogramsCollectible", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x20D38694666eB3Cd204cef69E0Efe9B78b8B2B51", "name": "WOWSSftMinter", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x32e9329c2654986390Fabd008074EEC948CE15b3", "name": "StakeManager", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x09ee0c35434c7c18A678f5a96a27F70eB38BdE8E", "name": "EmogramMarketplace", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xcb45371E8735F54171cD420365403DC2eF1188a4", "name": "TwitterPointCounterFactory", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x370dEFc2688353Af46fb62108BAEFB8437d90270", "name": "ModelMintableERC721", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xeb2E9a1884b3B5Df287bD1E025dd2b91FDC6928b", "name": "StakeManagerProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xE241B56E74045f5382F5f471aaBFC8D4D6f73262", "name": "TokenBonusAirdropFinal", "compiler": "0.5.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0xe1b94aa7632cb26489e6a751fb37751793628623", "name": "RootChainManager", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x81396a2ef9bf1ce453230f6f0549d546be067e91", "name": "MintableERC1155Predicate", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x3f99009295dedd768f7284afe07cdfed70c3e3ac", "name": "MintableERC20Predicate", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x5448d8d58699a5fedf1819d8e031ab0a0a78dea8", "name": "EtherPredicate", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xD176AA5c65309d826EC3793B3945372440d3F54c", "name": "MintableERC721", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xC47697C91e43F8Ff23de6dD85a90cCb6B5C405d8", "name": "RootPUSDC", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x2589a544Ed7CF69B82333Ef3F4cF0B8b39576b49", "name": "USDC", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x8Ef455061f362b5e58d7Bb1db8a690E3089290fB", "name": "MigrateToV2", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xEe9A861F0B3f347DAcE69b328CecF67570d3E32a", "name": "XFILProxy", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x955d26FD28E0b5a7240a70dfe610C95B3e829FB2", "name": "DummyERC721", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x2b676f695DdbffA8B2A27665A3d379D0871d595b", "name": "Mining", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x6a5DD9b18E7c2b6861a82009Fe7c2d5f22103A5A", "name": "XFIL", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xe036a24a167D1f57DD5b54c99dAb072822FA6d04", "name": "MintableERC721PredicateProxy", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xe14d5F26dCC6065B1cb7e5aE85530fE68F5c6e58", "name": "ProxyAdmin", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x8d64b9e09688f16592522b0c98f17f1ad8488937", "name": "EToken2", "compiler": "0.4.11", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0x7782e17Cd314106136c520B35afc4486989e48da", "name": "MintableERC721Predicate", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x4a524893472c9ae73a0bda806e09289ba4639bba", "name": "AssetProxy", "compiler": "0.5.8", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0xe88A1E6A4709b4e7abDe6521c8313DC5d05590cE", "name": "Booster", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x6f7ecb504d1aa59c7608324ac86531ce46aef5f4", "name": "SocialMoney", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xc7aBE522C8d81F1C235beb6e0079bf5Bdc7fe54A", "name": "Test01", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0x6672B87119aBdeFe4B09e5Bdc9aD744a8155DF6c", "name": "ERC721PredicateProxy", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x934AF5ba3516764b9BC59032A3370b6EaEB3aee3", "name": "ERC721Predicate", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xc214b82C3A754D9e0AB8333Db02B7b0FC2F3055E", "name": "Omnimorphs", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0x3B6aad76254A79A9E256C8AeD9187DEa505AAD52", "name": "EverDragons2", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/17/2021"}
+{"address": "0xef66a9c7768047edd99856afa2be4839b4a22db6", "name": "ShrimpCocks", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/16/2021"}
+{"address": "0x233C6E1E219c39F97069f3a12Ce0c4d70eD7F441", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/16/2021"}
+{"address": "0x7535A7260219F3339863Ce9A6FF825D45414CCa6", "name": "StrategyDAICurve", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "9/16/2021"}
+{"address": "0xfe323b94751db5ce9a6e695de68a75bc8dfe17cd", "name": "Controller", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "9/16/2021"}
+{"address": "0xd92af77a360c53ccb30c944702eb2b8554ef1120", "name": "Token", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "9/16/2021"}
+{"address": "0xa1c8E207A53c343b5562d8c499b678B49b3ebE40", "name": "Kamikaze", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "Exception('unable to find source-code. rate limited? retry..')"}
+{"address": "0x111F8Bbb29bC51e74334Ec36623EFF588F05875B", "name": "DepositRouter", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xf131538B25cF4ab52Da0B1dFbceCA98390384462", "name": "DepositRouter", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x9287070b6d4bf7f883b8fd609d3223a481e46645", "name": "Dice", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x8205Cc03B56eabAb3106D1d0B858B7056fed9F91", "name": "EventTester", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x576BeC17512C5072ac8f65C0F719Ed104a51FA9d", "name": "AgoraSpaceFactory", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x371b10d43372Ec27EffF5996e35077FAd24532f3", "name": "Detf", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
