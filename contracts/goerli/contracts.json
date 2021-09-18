@@ -9299,3 +9299,20 @@
 {"address": "0x8205Cc03B56eabAb3106D1d0B858B7056fed9F91", "name": "EventTester", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x576BeC17512C5072ac8f65C0F719Ed104a51FA9d", "name": "AgoraSpaceFactory", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x371b10d43372Ec27EffF5996e35077FAd24532f3", "name": "Detf", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/9/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xabaf855839198cef1b19152dddcc67f3a8fba3f6", "name": "token", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xc952b00F5184F4Fe1B19f669a98C89cf3704e321", "name": "ValidatorShare", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x993dd52e344ae66869171abfb28c666b49930574", "name": "HumanStandardToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xfb66b3fccc886e754a0002f1e84d85a6b2b7ac82", "name": "HumanStandardToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x537ade23f3c8ac52db4845fcb213206672c219b5", "name": "HumanStandardToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xE3121Faae4c3Cc607497F0d763920AE2f158DAE0", "name": "Registry", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x6e36E86423C607a8D54A30Ac3D5685013BddEA8A", "name": "Governance", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "-", "date": "9/18/2021"}
+{"address": "0x127D13b2b38386F30521c53dB6fd0e7f057b7450", "name": "GovernanceProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xd9973620722385ca3972a6b7a6eb0957215270de", "name": "HumanStandardToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xeeEdF0F9A5bF6bc9e8cC6E2ca4670F3FE527F0fb", "name": "ArtProofs", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xf074B6af758c31F3736bb5A74D347A8b4d014fe3", "name": "ArtProofs", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x8199b05ae66c2fa833e79a0caba902803eb37510", "name": "HumanStandardToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xF9723fE6020DF06F3f9069dE9c5B47AF3dC57C2B", "name": "Tournament", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "9/18/2021"}
+{"address": "0xb9f93a4f0b22facd0afbc773a19904179c1ebb7e", "name": "IOUEth", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0xB0208E37757800dab5552FF39Ae3bBafE7Ed1081", "name": "Crowdy", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0xA835169BE388C2BADB88Fd667a4201D719F49AEe", "name": "ArbiLiqLock", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "9/17/2021"}
+{"address": "0x33486ad226b7eed25c7660f7dd1c465e2aecf4f0", "name": "TheSevens", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/17/2021"}
