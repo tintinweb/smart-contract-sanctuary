@@ -9348,3 +9348,26 @@
 {"address": "0x2dBBAc8DBBF2D6377B335df983a243080347Fb9D", "name": "TwitterPointCounter", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
 {"address": "0xc8197cd36199b3d8cd08243869aa62858b631c43", "name": "TxRule", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
 {"address": "0x58f2aEAB844adfc7459a9B2f4773010847d70523", "name": "AnimeGirls", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "9/18/2021"}
+{"address": "0xC3d40849ed53aE70896688eEeE27cbB7fF336A04", "name": "RideNftUpgradeableProxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0x98bC6CDB8D5E572AEaaC6eA1cb44d9839115C875", "name": "MultiModelNftUpgradeable", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0xc6A3eB23067E854C6520EE0dD0794498628aa9C7", "name": "Token", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0x21Afde2A6C8E3eB8E161457be49556F50c74eDEf", "name": "Staking", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0x297020b0905d56d7bccdc8a93a18d9ec643b6c05", "name": "MeliroaCore", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0x7874f3cc480f892cb6420b23d2cdd758b206763b", "name": "MeliroaCore", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0xe22A4F641A17A7aD714032E17a127F703bFec514", "name": "Token", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0x30748cF9c807eb4a2Ed264452e8c01Bb1cB4738D", "name": "Staking", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0xC0A9f960020A610B2a86692f3E75e9c1C235CE2A", "name": "StakingChild", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0x63a173A4eBFe74DD9250479F9A668a001c0f88C7", "name": "TransparentUpgradeableProxy", "compiler": "0.8.2", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0x5a1b605b61BC6A9ae49789F838bE68fc83509370", "name": "Vyper_contract", "compiler": "vyper:0.2.12", "balance": "-", "txcount": 0, "settings": "-", "date": "9/18/2021"}
+{"address": "0x6201F0d44b13e601534C556Cf82157627AE0f735", "name": "Registry", "compiler": "0.8.2", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x9d9DcBB7270c405ea32E10c541aEaf181631DfDb", "name": "Bridge", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xa2222006ABB06fcb1CE5eD828Ef4d5D5E9DBBBDf", "name": "StakingRelayVerifier", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x039DAc2a9d2e6D2ce5E1d8847057Fc54bDbE6c1C", "name": "DAO", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x229644e8edff9079EEc3297381e39572FfB9C340", "name": "RideNftUpgradeableProxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xF3Ae20256e60cF96274Be8ccf7F082Aa105F8409", "name": "MultiModelNftUpgradeable", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x9A1f400FA839C48B29C335A06fC324670D0e7d86", "name": "PriceOracleUpgradeableProxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x7bC1239199207417a32f23731a09Fdd572D231CF", "name": "PriceOracleUpgradeable", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x06454E306DBCB79C7C139d5e8977ac455f812f52", "name": "NymLibUpgradeableProxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0xbB42ef28cee8e728542035066073726248f1AA83", "name": "Tattoo", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x9205cBF8f6c3566eA521D3d18E2299CcCF88eFCF", "name": "NymLibUpgradeable", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
+{"address": "0x7bC3487097F6495D3d0d2944Df80B161612293a9", "name": "ProxyAdmin", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "9/18/2021"}
