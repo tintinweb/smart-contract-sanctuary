@@ -9398,3 +9398,10 @@
 {"address": "0x62dd135e3bfbcf967df6bd42b5f04bf20f6e93e2", "name": "UpgradableProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
 {"address": "0xea4A19067f22a74A86ADf9257aBD3C25b0D4a57f", "name": "StakeManager", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
 {"address": "0xFb7bd589c5cb8Dd373842bDc23f260EEA3377fCf", "name": "cupcat", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "-", "date": "9/19/2021"}
+{"address": "0x8c6876724F32346D78D10D79308a01364dEC4Cf5", "name": "DepositRouter", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "9/20/2021"}
+{"address": "0x666e23D8D583dffeE6235487455127fc2886d4ce", "name": "MyTestContract", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "9/20/2021"}
+{"address": "0x63d8f84a2a99eca7b8d96a0867ad521f69996a4f", "name": "MeliroaCore", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/20/2021"}
+{"address": "0x7fdbc733cdefce87fc703da44e014ea552d18163", "name": "YetAnotherPizzaNFT", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0x6acb6b7f102b0429d7d4e6600e310db80f432cb8", "name": "YetAnotherPizzaNFT", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0xDABd8eaF10A172FB0425804b06420362cf6F6EC1", "name": "VaultWrapper", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "9/19/2021"}
+{"address": "0x0bf41165F7d0d289007029bc01Bf4AF2d98dDDc4", "name": "Registry", "compiler": "0.8.2", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "9/19/2021"}
