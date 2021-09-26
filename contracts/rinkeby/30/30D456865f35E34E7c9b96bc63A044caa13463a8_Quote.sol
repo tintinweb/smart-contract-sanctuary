@@ -1,0 +1,20 @@
+/**
+ *Submitted for verification at Etherscan.io on 2021-09-26
+*/
+
+// SPDX-License-Identifier: MIT 
+
+pragma solidity 0.8.0;
+
+contract Quote {
+    // This is to keep my favorite quote
+    // String = text
+    string favoriteQuote;
+    
+    function setQuote(string memory _quote) public {
+        //Internal working code 
+        // = Assignment 
+        favoriteQuote = _quote; 
+    }
+    
+}
