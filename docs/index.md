@@ -18,7 +18,7 @@
 _______________
 
 <sup>
-last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
+last updated: Fri Oct 01 2021 19:24:55 GMT+0000 (Coordinated Universal Time)
 </sup>
 
 ## Ethereum
@@ -26,8 +26,8 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `117473`   
-**Unique Submissions (Name):** `54058`   
+**SourceUnits:** `117610`   
+**Unique Submissions (Name):** `54140`   
 
 **First Submission:** `3/24/2016`    
 **Most Recent Submission:** `10/1/2021`   
@@ -36,22 +36,22 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 **Compiler:** 
    * `v0.4.24` (13377)
-   * `0.6.12` (11346)
+   * `0.6.12` (11360)
    * `v0.4.19` (6180)
-   * `0.8.4` (6106)
+   * `0.8.4` (6129)
    * `v0.4.21` (5427)
    * `v0.4.18` (5414)
-   * `0.7.6` (4348)
-   * `0.5.17` (3949)
+   * `0.7.6` (4350)
+   * `0.5.17` (3953)
    * `v0.4.11` (2702)
-   * `0.8.0` (2607)   
+   * `0.8.0` (2622)   
 
 **Names:**
    * `lockEtherPay` (2526)
    * `SimpleERC20` (1321)
-   * `Token` (910)
-   * `ERC20Token` (893)
-   * `TokenERC20` (854)
+   * `Token` (912)
+   * `ERC20Token` (894)
+   * `TokenERC20` (855)
    * `ADZbuzzCommunityToken` (754)
    * `Crowdsale` (711)
    * `ERC20` (466)
@@ -73,8 +73,8 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### Ropsten
 
-**SourceUnits:** `80198`   
-**Unique Submissions (Name):** `43546`   
+**SourceUnits:** `80348`   
+**Unique Submissions (Name):** `43584`   
 
 **First Submission:** `11/21/2016`    
 **Most Recent Submission:** `10/1/2021`   
@@ -83,27 +83,27 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 **Compiler:** 
    * `v0.4.24` (16689)
-   * `0.6.12` (8901)
+   * `0.6.12` (8916)
    * `v0.4.19` (7630)
    * `v0.4.25` (6676)
-   * `0.8.4` (5734)
+   * `0.8.4` (5756)
    * `v0.4.18` (5507)
    * `v0.4.21` (5074)
-   * `0.8.0` (4713)
-   * `0.5.0` (4509)
-   * `0.7.6` (4065)   
+   * `0.8.0` (4722)
+   * `0.5.0` (4516)
+   * `0.7.6` (4070)   
 
 **Names:**
    * `ERC20Token` (1461)
-   * `Token` (1346)
-   * `Address` (1301)
+   * `Token` (1347)
+   * `Address` (1303)
    * `Crowdsale` (937)
    * `ERC20` (813)
    * `HumanStandardToken` (607)
    * `TokenERC20` (592)
    * `Vesting` (417)
-   * `MyToken` (402)
-   * `TestToken` (335)   
+   * `MyToken` (404)
+   * `TestToken` (336)   
 
 **Submission Dates:** 
    * `5/11/2021` (450)
@@ -120,8 +120,8 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### Goerli
 
-**SourceUnits:** `9614`   
-**Unique Submissions (Name):** `3383`   
+**SourceUnits:** `9637`   
+**Unique Submissions (Name):** `3390`   
 
 **First Submission:** `2/24/2021`    
 **Most Recent Submission:** `10/1/2021`   
@@ -129,15 +129,15 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (1876)
-   * `0.7.6` (1287)
-   * `0.8.4` (902)
-   * `0.8.7` (900)
+   * `0.6.12` (1880)
+   * `0.7.6` (1288)
+   * `0.8.4` (906)
+   * `0.8.7` (903)
    * `0.8.0` (614)
    * `0.6.6` (451)
    * `0.8.6` (428)
-   * `0.5.17` (332)
-   * `0.5.16` (294)
+   * `0.5.17` (333)
+   * `0.5.16` (295)
    * `0.6.11` (253)   
 
 **Names:**
@@ -167,8 +167,8 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### Kovan
 
-**SourceUnits:** `36814`   
-**Unique Submissions (Name):** `8086`   
+**SourceUnits:** `36895`   
+**Unique Submissions (Name):** `8110`   
 
 **First Submission:** `3/8/2021`    
 **Most Recent Submission:** `10/1/2021`   
@@ -176,12 +176,12 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (9850)
+   * `0.6.12` (9854)
    * `0.7.6` (4994)
-   * `0.8.4` (3194)
-   * `0.8.0` (2513)
-   * `0.5.16` (1689)
-   * `0.6.6` (1383)
+   * `0.8.4` (3199)
+   * `0.8.0` (2528)
+   * `0.5.16` (1691)
+   * `0.6.6` (1385)
    * `0.5.17` (1278)
    * `0.8.3` (1227)
    * `0.8.6` (1218)
@@ -191,7 +191,7 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
    * `InitializableImmutableAdminUpgradeabilityProxy` (755)
    * `Token` (428)
    * `DefaultReserveInterestRateStrategy` (272)
-   * `EternalStorageProxy` (199)
+   * `EternalStorageProxy` (206)
    * `Vault` (198)
    * `Pool` (177)
    * `Address` (175)
@@ -214,8 +214,8 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### Rinkeby
 
-**SourceUnits:** `79964`   
-**Unique Submissions (Name):** `18539`   
+**SourceUnits:** `80456`   
+**Unique Submissions (Name):** `18642`   
 
 **First Submission:** `3/8/2021`    
 **Most Recent Submission:** `10/1/2021`   
@@ -223,27 +223,27 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 #### Top 10
 
 **Compiler:** 
-   * `0.8.4` (12139)
-   * `0.8.0` (10873)
-   * `0.6.12` (9788)
-   * `0.7.6` (6809)
-   * `0.8.7` (5342)
-   * `0.8.6` (5235)
-   * `0.6.6` (4109)
-   * `0.8.3` (2680)
-   * `0.5.17` (1965)
-   * `0.5.16` (1961)   
+   * `0.8.4` (12212)
+   * `0.8.0` (10979)
+   * `0.6.12` (9835)
+   * `0.7.6` (6832)
+   * `0.8.7` (5428)
+   * `0.8.6` (5265)
+   * `0.6.6` (4118)
+   * `0.8.3` (2686)
+   * `0.5.17` (1973)
+   * `0.5.16` (1963)   
 
 **Names:**
-   * `SimpleCollectible` (699)
-   * `Token` (646)
-   * `Address` (626)
-   * `Lottery` (474)
-   * `NFT` (443)
+   * `SimpleCollectible` (706)
+   * `Token` (647)
+   * `Address` (631)
+   * `Lottery` (478)
+   * `NFT` (453)
    * `MasterChef` (297)
    * `Test` (278)
+   * `FundMe` (275)
    * `ERC20` (268)
-   * `FundMe` (254)
    * `Creature` (225)   
 
 **Submission Dates:** 
@@ -261,8 +261,8 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `324063`   
-**Unique Contract Names (submissions):** `127612`   
+**SourceUnits:** `324946`   
+**Unique Contract Names (submissions):** `127866`   
         
 
 --------
@@ -319,36 +319,36 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### Testnet
 
-**SourceUnits:** `44536`   
-**Unique Submissions (Name):** `13414`   
+**SourceUnits:** `45010`   
+**Unique Submissions (Name):** `13547`   
 
 **First Submission:** `7/6/2021`    
-**Most Recent Submission:** `9/30/2021`   
+**Most Recent Submission:** `10/1/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (13119)
-   * `0.8.4` (6967)
-   * `0.8.6` (3932)
-   * `0.8.0` (3820)
-   * `0.8.7` (2656)
-   * `0.5.16` (2425)
-   * `0.7.6` (2276)
-   * `0.6.6` (1232)
-   * `0.8.2` (1013)
-   * `0.5.17` (1013)   
+   * `0.6.12` (13247)
+   * `0.8.4` (7036)
+   * `0.8.6` (3962)
+   * `0.8.0` (3877)
+   * `0.8.7` (2697)
+   * `0.5.16` (2441)
+   * `0.7.6` (2294)
+   * `0.6.6` (1235)
+   * `0.8.2` (1024)
+   * `0.5.17` (1023)   
 
 **Names:**
-   * `Address` (1005)
-   * `BEP20Token` (703)
-   * `IterableMapping` (700)
-   * `MasterChef` (689)
-   * `Token` (585)
-   * `CoinToken` (210)
-   * `Presale` (185)
-   * `PancakeRouter` (180)
-   * `Timelock` (179)
+   * `Address` (1033)
+   * `BEP20Token` (710)
+   * `IterableMapping` (705)
+   * `MasterChef` (695)
+   * `Token` (591)
+   * `CoinToken` (212)
+   * `Presale` (193)
+   * `Timelock` (182)
+   * `PancakeRouter` (181)
    * `MoonCoin` (169)   
 
 **Submission Dates:** 
@@ -366,8 +366,8 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `94480`   
-**Unique Contract Names (submissions):** `42269`   
+**SourceUnits:** `94954`   
+**Unique Contract Names (submissions):** `42402`   
         
 
 -------
@@ -425,33 +425,33 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### Mumbai
 
-**SourceUnits:** `10107`   
-**Unique Submissions (Name):** `3358`   
+**SourceUnits:** `10254`   
+**Unique Submissions (Name):** `3417`   
 
 **First Submission:** `6/25/2021`    
-**Most Recent Submission:** `9/30/2021`   
+**Most Recent Submission:** `10/1/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.8.4` (1835)
-   * `0.6.12` (1447)
-   * `0.8.0` (1442)
-   * `0.7.6` (955)
-   * `0.8.7` (643)
-   * `0.8.6` (635)
-   * `0.5.16` (487)
-   * `0.6.6` (410)
+   * `0.8.4` (1852)
+   * `0.8.0` (1467)
+   * `0.6.12` (1458)
+   * `0.7.6` (960)
+   * `0.8.7` (659)
+   * `0.8.6` (654)
+   * `0.5.16` (510)
+   * `0.6.6` (414)
    * `0.8.3` (256)
    * `0.6.11` (236)   
 
 **Names:**
-   * `MasterChef` (124)
+   * `MasterChef` (125)
    * `CustomToken` (85)
    * `Bridge` (71)
    * `Presale` (58)
+   * `Token` (57)
    * `TestToken` (56)
-   * `Token` (55)
    * `VaultFireStrategy` (52)
    * `UniswapV2Factory` (50)
    * `UniswapV2Router02` (48)
@@ -472,8 +472,8 @@ last updated: Fri Oct 01 2021 07:21:08 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `27918`   
-**Unique Contract Names (submissions):** `10790`   
+**SourceUnits:** `28065`   
+**Unique Contract Names (submissions):** `10849`   
         
 
 -------
