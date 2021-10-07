@@ -10820,3 +10820,13 @@
 {"address": "0xCE4f321dF13a11EF1B8A2Fa9dE9F94b93F2f4d5f", "name": "RealitioForeignArbitrationProxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/6/2021"}
 {"address": "0xADD678e8fAa3C6570b3A6A5930aC2FdAce2EdA07", "name": "SelfFaucet", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "10/6/2021"}
 {"address": "0xa0aee8e44b8f28a9638a1df241b26d73216be451", "name": "Conceal", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/6/2021"}
+{"address": "0x168CDd780869C37AC353627699682Fbd958BdF02", "name": "IndexcoinUSDC", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/7/2021"}
+{"address": "0x8BFdE152201B769C695f6b93eee2FE15DAc0329e", "name": "DummyMintableERC20", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/7/2021"}
+{"address": "0x44A0FAc66100e5E52ae62f1895527dbf97C1a119", "name": "IndexcoinUSDC", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/7/2021"}
+{"address": "0xb7581AE7434Afe2cAfccc59e7dBd1EBb95B9930F", "name": "DummyMintableERC1155", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/7/2021"}
+{"address": "0xF9E32EA84066572f416fD6669c1D3dEc08Bd82c5", "name": "URSStore", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/7/2021"}
+{"address": "0x06E0c893B6c2c4ca13a87A718C9F1436fE5E3657", "name": "Card", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/6/2021"}
+{"address": "0x74893c37beacf205507ea794470b13de06294220", "name": "JoinFab", "compiler": "0.5.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/6/2021"}
+{"address": "0xdE270327e85B7790D4D26618B4994c683d9482cA", "name": "Entropy", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "10/6/2021"}
+{"address": "0x72880903c8d78aAA4d2745b171c2370627e68913", "name": "CreatorsFund", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/6/2021"}
+{"address": "0x69FaD78658c0E7C87aCa84d4ca5DE35e420BCf1E", "name": "HelloWorld", "compiler": "0.7.3", "balance": "-", "txcount": 0, "settings": "", "date": "10/6/2021"}
