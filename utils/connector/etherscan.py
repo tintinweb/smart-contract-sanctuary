@@ -23,6 +23,13 @@ logger = logging.getLogger(__name__)
 DEBUG_RAISE = False
 DEBUG_PRINT_CONTRACTS = False
 
+def is_json(myjson):
+    try:
+        json_object = json.loads(myjson)
+    except ValueError as e:
+        return False
+    return True
+
 
 class ContractNotFound(BaseException): 
     def __init__(self, msg):
@@ -106,6 +113,10 @@ class EtherScanIoApi(object):
             src = rawSource.split("</pre><br>",1)[0]
             soup = BeautifulSoup(src, features="html.parser")
             source = soup.get_text() # normalize html.
+            
+            if source.startswith("{") and "optimizer" in source and "pragma" not in source and is_json(source):
+                continue  # ignore settings
+            
             if DEBUG_PRINT_CONTRACTS:
                 print(source)
             if "&lt;" in source or "&gt;" in source or "&le;" in source or "&ge;" in source or "&amp;" in source or "&vert;" in source or "&quot;" in source:
