@@ -19195,3 +19195,12 @@
 {"address": "0x1D378C24BD5C83B4c9aC91497b44a77aEcb627A4", "name": "UniswapV2Pair", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/7/2021"}
 {"address": "0xe3d3b90dbc370e6741e397ac6b21376990da30b2", "name": "UniswapV2Factory", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/7/2021"}
 {"address": "0xf844f99d0ade158c141e4aab7e9b426ffbd08962", "name": "EggSocietyNFT", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/7/2021"}
+{"address": "0x00825c496f2de90d14a3bfb19acf3f38466c57da", "name": "MOIAVERSE", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/7/2021"}
+{"address": "0x9C7a1625774e96efa01848C4D20f479A22cf01a0", "name": "AutoLockedVault", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/7/2021"}
+{"address": "0x4c02B6a316678643bef8983523fc83e353073d41", "name": "AutoLockedStrategy", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/7/2021"}
+{"address": "0x9541e2f2fadcb3404bb6c07bab1746b9772627f4", "name": "NIDUS_TOKEN", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/7/2021"}
+{"address": "0xE0BcEF7d5053b169A2d3f559039f21A5643C8c61", "name": "MOIAVERSE", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/7/2021"}
+{"address": "0x502B2D4c22ACCc3CA8e3c774DEE8A54B3baF734e", "name": "ExternalRoyalty", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/7/2021"}
+{"address": "0x9364742c7E343D4dE0C75b20A380A0370cA08355", "name": "StakingNft", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/7/2021"}
+{"address": "0x525107F70efe433C55Fe078cceb215092B013561", "name": "AutoStakingPoolv2", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/7/2021"}
+{"address": "0xf3b8c4acaf5bb7a4b1df1a3dfd691037ef283cc2", "name": "USDC_MINER", "compiler": "0.4.26", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/7/2021"}
