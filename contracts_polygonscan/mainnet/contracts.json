@@ -19204,3 +19204,9 @@
 {"address": "0x9364742c7E343D4dE0C75b20A380A0370cA08355", "name": "StakingNft", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/7/2021"}
 {"address": "0x525107F70efe433C55Fe078cceb215092B013561", "name": "AutoStakingPoolv2", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/7/2021"}
 {"address": "0xf3b8c4acaf5bb7a4b1df1a3dfd691037ef283cc2", "name": "USDC_MINER", "compiler": "0.4.26", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/7/2021"}
+{"address": "0x48aeed2d92d634ef3905f1f7c15613b035e8df1b", "name": "StrategyDualRewardsNonReentrant", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/7/2021"}
+{"address": "0xeebf742c27e3d01c736d21c30c88cc8cb792a990", "name": "GenericVault", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/7/2021"}
+{"address": "0x7514464397933C36c4ccB8a6dcE19Ce5f4Ce2Ead", "name": "LazyPetterResolver", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/7/2021"}
+{"address": "0x0bc5086A2BebA2C5E771F55906D8b14f02BC7e6f", "name": "LazyPetter", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/7/2021"}
+{"address": "0xb06fF6944e9A9A77fdBCaDbee1327e09d813b1dA", "name": "ExternalRoyalty", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/7/2021"}
+{"address": "0x270c76E1D9c566c1fbD24CB5D298197621a442B6", "name": "StakingNft", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/7/2021"}
