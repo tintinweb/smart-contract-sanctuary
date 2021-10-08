@@ -6,3 +6,5 @@
 {"address": "0xa37e328eA5Fc9F7cDD973C740E2FeCcb98C87ddD", "name": "testArrays", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/6/2021"}
 {"address": "0x7fff7887b1a0aaa32fce00a007486e50e39adba6", "name": "A", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/6/2021"}
 {"address": "0xb11cf21feb3f4e1ee294fbbb654b1868236eeafc", "name": "readAString", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/6/2021"}
+{"address": "0x97f72bA888A26A0F98C67cf15d781dDBFE64B990", "name": "LockProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x3A77dB10eAa7436e608a99643Ab2bEB2E901C72C", "name": "EthCrossChainManager", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
