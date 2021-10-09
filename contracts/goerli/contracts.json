@@ -10881,3 +10881,49 @@
 {"address": "0xc50baf5d874576F903Afe3884Ce106C44C2973DC", "name": "IndexcoinUSDC", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/7/2021"}
 {"address": "0xf5d1b7a0F340113ACaE9054643534f30017Bea6a", "name": "Indexcoin", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/7/2021"}
 {"address": "0xdA496Fdb362000398b49B9e29c9177e41cB34853", "name": "FlashBotsMultiCall", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/7/2021"}
+{"address": "0x1a08c62e7222c4c82b988403a70180e3d8ef201a", "name": "cal3", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/9/2021"}
+{"address": "0x4ff600FeeF243B21Ee47FBA24c1883C682E8FFCA", "name": "FluiDexDelegate", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0xF4996f7847E2637b9893D2cE3B05aD1D1c7029d3", "name": "FluiDexDemo", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0x746c79879F814b0fC02767f2107fcb55b8492b3f", "name": "KeyedVerifier", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "10/9/2021"}
+{"address": "0x890574b254bf34356dc6282c57e16010a9161754", "name": "coatard", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/9/2021"}
+{"address": "0x95291fc3cd3d57e595c1a7309e0989fb2a4a29b1", "name": "Governance", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0x27dde07b6ed44e93f920f6f813622f0324205d16", "name": "cal2", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/9/2021"}
+{"address": "0x5c620c7dc781b38634bd79ddaa642cb3d5874061", "name": "WeirdToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0x3930e8d1f7197807eab5f8894cf74a277da20293", "name": "RebelSeals", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x1d750F94a8D7F876f99aC686ddF02B056c251a04", "name": "SliverMint", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xb334d0f708b96908447850a1248726abbf500e4e", "name": "UFragments", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xf25D5C73eb12C0b8d8fC72564259F12C21c30F1D", "name": "kittiez", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xb9e70e7302188Fd6c83de310AA911648026107D2", "name": "EmogramMarketplaceUpgradeable", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xe5e806245Cd519A5b3815Fe17C03a5793d2F6f10", "name": "DssSpell", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xbb52acdd47d8262e6167602f0cd2c884c3d6ebe2", "name": "cal1", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/8/2021"}
+{"address": "0x12D12AF63c6A91711907180431bCAA4F951095B2", "name": "FlashBotsMultiCall", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xe2F3caD1A1Eb5e95e600c368a65b8fb6e98e3DE8", "name": "AsteroidStream", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xc8Bb7fA6f61B62A745983c87F29309B7d5989210", "name": "TestComplexJob", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x5BdEB57CC46D1a74D532359C98Ff46862b07AAEc", "name": "FlashBotsMultiCall", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xB6ECaEb67001D9C9543F07FC2AC67cd825Ac6981", "name": "NativeSuperTokenProxy", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "10/8/2021"}
+{"address": "0xA9C1b5206A759fFF6698a59E413bf5e1736d878e", "name": "Faucet", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xe91515C0B042F859A31bEC50987E1083b70ae604", "name": "TestJob", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xb84dcf988067D74a62754b114C53bb1a608D3179", "name": "Keep3rV1ForTest", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xe5dC100786A842d6054296845feBe809CB8907dE", "name": "Keep3rV1Library", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x312f3F51FcffCC4d1c95E242303b7Ef49d3A3989", "name": "Keep3rHelperForTest", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x03c82271dBb33093EAEc9fC412AaE6E0B71095d3", "name": "Keep3rHelperForTest", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x826b23407BCe1Fc14B7afA9cCD1497f6CCF3f4Bd", "name": "Keep3rV1ForTest", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x604421078272A63C550B59d816DB087DEdFB5ad6", "name": "Keep3rV1Library", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x98FFF05642A57F0E936ee94d1A662214C3f7e60f", "name": "GoerliNFTFactory", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x992EC63F48c760510B5b3e058A6ba1aA0Fa3B6AB", "name": "MintableERC721", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xf3C4D7CFEd252DF64eC8f163e25eea06A1795EC4", "name": "Feature", "compiler": "0.8.8", "balance": "-", "txcount": 0, "settings": "-", "date": "10/8/2021"}
+{"address": "0x1532768D7fBD11bF085b6AE7909ab0598c22694a", "name": "Box", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "10/8/2021"}
+{"address": "0x51ac294ebaAD08b344386E2542958d88D6b3Ac28", "name": "EIP1559Burn", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xe5a9Dc3a0F3f5d8E04f75B7B09AfDAD26acb2c0B", "name": "EIP1559Burn", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x498F70B44Ee5ce7419428fce26DEFB98e0c35719", "name": "RootChainManager", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x7ac55C8Ef2A5c230c8aa7C1C4B3a1889beF70424", "name": "RootChainManager", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xA86139F4fb8fE0a372Ef48a289102254b8299305", "name": "UserProxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xA258781371ef270b38Ee07F12Af35CC6793A1354", "name": "Checkerboard", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/8/2021"}
+{"address": "0x700c5b36dee419705375fb89efaf8bb024b5a5cf", "name": "ERC721PresetMinterPauserAutoId", "compiler": "0.7.6", "balance": "0.0001 Ether", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x3c14E572a2983363Fb9d3a5Dc1D027693aaBfDf5", "name": "Checkerboard", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/8/2021"}
+{"address": "0x047E0b64743071b897A6177F1796E98b4C3f344E", "name": "EIP1559Burn", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x9Cc9758d28d74b0bEd1AAD88385c637bA60a3e52", "name": "Indexcoin", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "10/8/2021"}
+{"address": "0x2efB4dCB6bca848B57637E5BB56CE75D2C693a02", "name": "EIP1559Burn", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x14ed3990b6745C42dB68FAAbEb13ADddDb776cA2", "name": "KoiosTitanToken", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "10/8/2021"}
+{"address": "0xde253A377F93B071a0a4EB0ccd3671Bf38D814CE", "name": "ERC721PresetMinterPauserAutoId", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xB49750AD82d11C12209A837210AB753AB09115a7", "name": "KoiosTitanToken", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "10/8/2021"}
