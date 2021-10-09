@@ -8,3 +8,6 @@
 {"address": "0xb11cf21feb3f4e1ee294fbbb654b1868236eeafc", "name": "readAString", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/6/2021"}
 {"address": "0x97f72bA888A26A0F98C67cf15d781dDBFE64B990", "name": "LockProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
 {"address": "0x3A77dB10eAa7436e608a99643Ab2bEB2E901C72C", "name": "EthCrossChainManager", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xd2ecb3afe598b746F8123CaE365a598DA831A449", "name": "AVM_BridgeDepositBox", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0xD29C85F15DF544bA632C9E25829fd29d767d7978", "name": "GreeterL2", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
+{"address": "0x03f9c54b5d5de9b2323d944faa406e3f20734b67", "name": "OpenNFTs", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
