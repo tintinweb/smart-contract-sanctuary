@@ -10949,3 +10949,12 @@
 {"address": "0xE436322a10695bB08d203e481A5433872966F896", "name": "FluiDexDelegate", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
 {"address": "0x25EE4858bccAa755D8Ce3b870a31Dc82DbE1b11F", "name": "FluiDexDemo", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
 {"address": "0xd91f2481680D8d95B16f950F1a82E76f7FBBD8ac", "name": "KeyedVerifier", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0x7602a2eC0974FdD1A14A28353a4F8F6277ecBDd2", "name": "MegaTokens", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0xc4082674117b823a5b6f7b94d67faf6d949ae710", "name": "Toadz", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0x70dd35698f39bd71387261a070ede8d2851a2ec5", "name": "Toadz", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0xf0cd4f11a2c1b1401c967505dab6bdfaec072c54", "name": "Address", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "10/9/2021"}
+{"address": "0xe647aaabcdd8b1209fa06aea4baff3d610a7ece6", "name": "Address", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/9/2021"}
+{"address": "0xbD3B7EEa650619a9A54b969eF5375faDcff46F87", "name": "SLNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/9/2021"}
+{"address": "0xc039cc3ed3d1a63309b48d5c1170e62c603d4fdd", "name": "RebelSeals", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0x1e95B705Dbbb3E1128445aFc06D9dA401552FDCb", "name": "CollectivePurchase", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
+{"address": "0xb432433d3fc8fb1051dd774104173d5ff6306243", "name": "RebelSeals", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/9/2021"}
