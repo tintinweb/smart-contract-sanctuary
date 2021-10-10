@@ -528,3 +528,9 @@
 {"address": "0x2762e676A9F17C7De34fe4b124424837c7E18e1c", "name": "KoiosTitanToken", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 7, "settings": "-", "date": "10/9/2021"}
 {"address": "0x8F7A097E30D67c6b412B350eA570447163Ba89d8", "name": "PledgeToken", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/9/2021"}
 {"address": "0x5f99b5f6bc3f0d012a9112a235e313d5f6824644", "name": "PledgePool", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/9/2021"}
+{"address": "0x001a2e4442c7af1246249e8eaeed8e72e072f494", "name": "PyroSafemoonInu", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "10/10/2021"}
+{"address": "0x8AADBd1f39754c02F3154547ae1718014d5afc27", "name": "BRIDGEL2", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "10/10/2021"}
+{"address": "0xaAfb614B238Bf003D35C97C4f46503E164006AD2", "name": "ArbiRewards", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/10/2021"}
+{"address": "0x3b624348fC06a8629E0107a8a409b83B6297C77B", "name": "LootMirror", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "10/10/2021"}
+{"address": "0x0b9C52FEBF284C4CfC20C6311e90cCA0B198F427", "name": "DPXStrategy", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/10/2021"}
+{"address": "0xF02F64E538Dcee7BC190bbBA6376a3614ED0cC23", "name": "DgenesisStakingRewards", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 39, "settings": "", "date": "10/9/2021"}
