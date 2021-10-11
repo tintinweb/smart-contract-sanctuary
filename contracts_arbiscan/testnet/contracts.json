@@ -12,3 +12,4 @@
 {"address": "0xD29C85F15DF544bA632C9E25829fd29d767d7978", "name": "GreeterL2", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
 {"address": "0x03f9c54b5d5de9b2323d944faa406e3f20734b67", "name": "OpenNFTs", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/8/2021"}
 {"address": "0x3241e6c61f273019ed62cf29f0f81dccb81a8057", "name": "Verbals", "compiler": "0.8.7", "balance": "0.000000000006 ETH", "txcount": 13, "settings": "-", "date": "10/9/2021"}
+{"address": "0x8Eb4076BdCc9Dc911e1AFdb69d9C84ca7c114EAB", "name": "Battle", "compiler": "0.8.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/10/2021"}
