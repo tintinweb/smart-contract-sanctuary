@@ -20,3 +20,6 @@
 {"address": "0xc0dCab2615cBc2b0C582598037ffD74760fbeed9", "name": "CryptoChangeDexV1", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/11/2021"}
 {"address": "0x2a13579384Dd07A8f4f430787617d4A532FEA6Ed", "name": "Token", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/11/2021"}
 {"address": "0x18d6401c534c5Df9e346174afbE83C41e0644DFA", "name": "Token", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/11/2021"}
+{"address": "0xab1211f1eb56b0afc01e8a01537b0116edcd8160", "name": "Yesw", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x619153a84df1f58c97350de3b2da62904f92781c", "name": "AutismRegistrar", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 9, "settings": "-", "date": "10/12/2021"}
+{"address": "0xef0e2008d39700d5da900baa5a1bbf68562a95bb", "name": "AutismRegistrar", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 6, "settings": "-", "date": "10/12/2021"}
