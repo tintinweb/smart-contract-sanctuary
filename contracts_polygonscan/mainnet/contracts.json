@@ -20156,3 +20156,175 @@
 {"address": "0x01a811638d1979cfd3bd14f9c103d2d83872aed1", "name": "LiquidityGeneratorToken", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 15, "settings": "", "date": "10/11/2021"}
 {"address": "0x7b3EC232b08BD7b4b3305BE0C044D907B2DF960B", "name": "KeeperRegistry", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "10/11/2021"}
 {"address": "0xb80419f2a9d3f4596d79e03711fc37f8ee27a02f", "name": "SurgeInu", "compiler": "0.8.8", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/11/2021"}
+{"address": "0x30f88662784b9c51a58f8cf5dad8a233911c46e8", "name": "RID", "compiler": "0.8.7", "balance": "0.35 MATIC", "txcount": 3, "settings": "-", "date": "10/13/2021"}
+{"address": "0x00acBBBb72AbDF055C909415220DDB8a3b8FFbb9", "name": "SCC", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x9Bfd230a470173D301CB949d1E74F70b2C683E0F", "name": "BottleCaps", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xce4f7FC9f29B663087060BB3131E9171eFD2c806", "name": "HelloERC20", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x8cbb4D7310CA667ceDeCAfe4CFeE97c4b92e4a61", "name": "HelloERC20", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x5Eab952D5a81067EBb9F1E2348382E34805b7e53", "name": "StrategyGenLevAAVE", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 12, "settings": "", "date": "10/13/2021"}
+{"address": "0x25b4a62e5cC2CdC029D34339f621Ca57cACD964e", "name": "StrategyCurveTricryptoPolygon", "compiler": "0.6.11", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0xbD898A4d3643C0c840c950a046afe38D00a9eC30", "name": "GuppyVault", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x1c1F66488FAAc57e211e0d0D317e5d33bbE619b1", "name": "StrategyPolygonSushiLP", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0xe67e5C17989Ba02F012b51f0C763814eC12A99EC", "name": "HelloERC20", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x93dEc1d74C19006262582b58Fd0d40f8A2862855", "name": "PowerfulERC20", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xDF91c4fF098df678C6217B9180BFb9656c21c6b4", "name": "StrategyCurveTricryptoPolygon", "compiler": "0.6.11", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0x85C4aE348D35784f6f28b3ffAce7cb1629d5126c", "name": "Pseudopops", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 18, "settings": "-", "date": "10/13/2021"}
+{"address": "0x2447603cb3eb35ae5e07b085813a71ba35cb131d", "name": "ALIENO", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "10/13/2021"}
+{"address": "0xE07F7D70cf81A49dB8Ef43a385E27581cA0325bf", "name": "CryptoBoredHorseClub", "compiler": "0.8.7", "balance": "7 MATIC", "txcount": 8, "settings": "", "date": "10/13/2021"}
+{"address": "0xD2e5C178681056F2AfC86a29c04F14311A897F82", "name": "DixyFriend", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/13/2021"}
+{"address": "0xBe8EE9fd63C78765BDCF367Eb4f064Eda5f2DCb7", "name": "BottleCaps", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x53445D223A3F6906c13c5E425D3209F07E54B0AC", "name": "Pseudopop", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 15, "settings": "-", "date": "10/13/2021"}
+{"address": "0x04387d8bADe6e08ea9644847736b6110350C45a1", "name": "HelloERC20", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x7fea224dcac74b0585988e80d661757b40bd642c", "name": "Kardassian", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 3, "settings": "-", "date": "10/13/2021"}
+{"address": "0xDDddDdddd83dE5cE88a7e7A0dF47a702528984E7", "name": "GnosisSafeProxy", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0x6886Fe3E5FEDc2dC2012c6c6Ebe9cA6f46bb9Ae8", "name": "CryptoScots", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 9, "settings": "", "date": "10/13/2021"}
+{"address": "0x185cc27dd46bed43162ef72e0768fa8d163107bd", "name": "CompiBrain", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xaB662120A0726E35770a8aeE05FAd4622F6d243a", "name": "LittleSlimes", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 38, "settings": "", "date": "10/13/2021"}
+{"address": "0x4B4f8AA8A67C85c903847Bf08b1fBab15a31dA6e", "name": "DigitalEyes", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0x8358fb6981f0f7f3498656ebcc95194e4B7cb4A6", "name": "ITEM", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 10, "settings": "", "date": "10/13/2021"}
+{"address": "0x450bad1361e400572f41233483b32110b0cb3e02", "name": "JavaConverterRegistry", "compiler": "0.4.24", "balance": "0 MATIC", "txcount": 3, "settings": "-", "date": "10/13/2021"}
+{"address": "0x435F4fc2140b8187C6B78241603D4C07E7b94E2a", "name": "KagedProject", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x5dAAfb8442BC84EC247bCAE77d464438eC8118e6", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 11, "settings": "", "date": "10/13/2021"}
+{"address": "0x28e354b665f06C602d34420F166E0AFba877F1Cc", "name": "Minanil", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x1103F4eA2E49A91Cddb5149D2080187095501e45", "name": "Pandastic_Panda", "compiler": "0.8.7", "balance": "9.1 MATIC", "txcount": 16, "settings": "", "date": "10/13/2021"}
+{"address": "0x5e202fb19f50c1a4B2653281ca30c8Bc6a8fcC1D", "name": "StnToken", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "10/13/2021"}
+{"address": "0x12c147e5f46E167008A93A18153b054c70515Aa7", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "10/13/2021"}
+{"address": "0xddddd6bcdf3ec3c770d6819e9be84c55dbc82dee", "name": "GnosisSafeProxy", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "10/13/2021"}
+{"address": "0xf49426d6c3aCA85E33E7e6ab2e80e2C528A1bd06", "name": "OctaDahlia", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 10, "settings": "", "date": "10/13/2021"}
+{"address": "0xed0176ba6e6a748375cf181723c244c6a6e54ca4", "name": "Punk", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x4966F7823E78668931586d8034071bcd49c23934", "name": "PlayfulPonies", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 6, "settings": "", "date": "10/13/2021"}
+{"address": "0xC5D7151884e60b20643f6E6071cDffa536719cFd", "name": "Bank2", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x76BE864699447062F0dCca614871cE4308890234", "name": "NftCategory", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xe9c6123015f03bc85c6ea0a20b2a7d773efadd51", "name": "UtilsCryptoSpace", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xa965c8ecd1e5e8543176142299ceb8f075771c7d", "name": "CryptoSpaceERC20", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x8E4aa30d0b36Ea9ca16b7E69819Cf14c3B6De6EE", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/13/2021"}
+{"address": "0xC34003e7146B02562165833eA288268EbaE0F64D", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x24B911A9aF4cE94c5f4baA6f5ba4D115EECC1Aaa", "name": "GuppyVault", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x83A6e44685F95eCA6aA36b87d5EE42b7Bca2A481", "name": "StrategyPolygonSushiLP", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x64b4d9B111BcA3c7C2d24bc73136d30Bbaca0067", "name": "ApolloToken", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 10, "settings": "", "date": "10/13/2021"}
+{"address": "0x95709Fa8DC2978cfC3b117e96219E8D77a802A0B", "name": "GameQuestion", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x3A2720CAf798366d6C3de028Ad5aBB5c915Cb909", "name": "TutellusDeployer", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x6163fb268392416Bc5bCADC487731ceb1DDc3EC9", "name": "TutellusStaking", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 10, "settings": "", "date": "10/13/2021"}
+{"address": "0xfD96ddc029eCF5DFe5a072F7933501f61c3Fb01C", "name": "Factory", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x536aC1B2C8FBA084c74d98c874B84e722D5C11c7", "name": "TheBonePunks", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xA271d7C96a86732f6FfaE1a964Dda61a1Ce76678", "name": "TutellusRewardsVault", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x47373472cc70815216dF914F7744C132DB944e6D", "name": "TutellusHoldersVault", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x418544C79fDAeD6aB1E63d612cc7C8A297358683", "name": "TutellusClientsVault", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xBA66916ca522267df40E41011d6ee57694974000", "name": "TutellusTreasuryVault", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x749FA38c2d93d2e64F109D15d23eC0A079876951", "name": "TutellusRoleManager", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/13/2021"}
+{"address": "0xb1f79Eb4fb3BD4DD516033FA9ab3037874A905E4", "name": "TutellusERC20", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x4310Bb79ee52fFA70F58250cB69eBcEC08CD7Ca9", "name": "ElectricDicks", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 104, "settings": "", "date": "10/13/2021"}
+{"address": "0xC5B074aF543c02bfbbEe1faC98703D01Bf108Dd1", "name": "HMToken", "compiler": "0.6.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x3A3f6DA5baE9974C66B16CD4B1EfD1585c081B19", "name": "FledgeFlies", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x8c651cC6cC07abe69f14B776EAEfeb5c40172894", "name": "FearPlayToEarn_V4", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 30, "settings": "-", "date": "10/13/2021"}
+{"address": "0xEab18B3026b23CFcb952af794A9058D236091DB8", "name": "lifebytes", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "10/13/2021"}
+{"address": "0xE68C1808AF52521Ed13Fa88542B857aAE78cc9CF", "name": "Vault", "compiler": "0.5.17", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0xa2e6096696e2295de3DD57Be44E33e6cBD7b4732", "name": "FearPlayToEarn_V3", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 9, "settings": "-", "date": "10/13/2021"}
+{"address": "0xF3705636419409a0B3a0Bd1b0818b23d335Bd4CB", "name": "Token", "compiler": "0.5.17", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0xDaba3768dE765778A104060f26789989E6b14d05", "name": "FeeSettings", "compiler": "0.5.17", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xd2d7f1f70e82fcf3c69ba427ec52b93a486b2e32", "name": "NFTBuyContract", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 11, "settings": "", "date": "10/13/2021"}
+{"address": "0x7399B46DfAEe5DB7f754961A57E565547E598D4e", "name": "Factory", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x03A85700EC92EF6aBdB4dF1273E541b9F4295ee1", "name": "TimeRift", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 1158, "settings": "", "date": "10/13/2021"}
+{"address": "0xb15cc34baBEDeB57Be0494A31a0072E8041df6A6", "name": "BulkTransfer", "compiler": "0.8.6", "balance": "71.31 MATIC", "txcount": 109, "settings": "-", "date": "10/13/2021"}
+{"address": "0x481104f0974869d46eb0DfC6a81867f416763730", "name": "StrategyFactory", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "10/13/2021"}
+{"address": "0xf3e04972222ddd7b3daa19b4f63fa0186ee696ee", "name": "Hiros", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 15, "settings": "", "date": "10/13/2021"}
+{"address": "0xa47a02188fD2d3A2B4fEb0983e90851473016378", "name": "TutellusERC20", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x4C4dF5E4eb58FCC0ae121212B0605BB1ee431865", "name": "TutellusRoleManager", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/13/2021"}
+{"address": "0x96541DBF250D9f22A8B30efF785DD0392eeAdA35", "name": "Metasaurs", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/13/2021"}
+{"address": "0x4904cC8CcC752a88dad468Dd01Dc3Ca4eD425dfa", "name": "Factory", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x87a0a46120651e1a50ae3d5e851216bf1dea6499", "name": "PridePaw", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0xbD98F4787E0262dfF523BA4a4Ee60d79888A7e8a", "name": "DadCollectionV2", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/13/2021"}
+{"address": "0x41ee1d1adb6a1e690e32c04e324bb6631d957a37", "name": "NFT", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0xbA6abf2a6ed0e680799D59FEff6470bBfeBeCb0A", "name": "BleskoCat", "compiler": "0.8.7", "balance": "0.8 MATIC", "txcount": 35, "settings": "", "date": "10/13/2021"}
+{"address": "0x25A6E7dDC990de5c8F3cd6769d4Ca236Ce41ED0E", "name": "FearPlayToEarn_V2", "compiler": "0.7.6", "balance": "0 MATIC", "txcount": 11, "settings": "-", "date": "10/13/2021"}
+{"address": "0x41774e4a717c75ed73e84048be9a46c0bc736ed6", "name": "DLTx", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/13/2021"}
+{"address": "0x8EA44195a60850eC58A6272f07C63863e1fA7ff4", "name": "HMToken", "compiler": "0.6.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x0685d50e6C85F0E9a0555901cA1027570BcA7A4e", "name": "Pool", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "10/13/2021"}
+{"address": "0x2ca5E556fFF5AcBc19f5F8D87082F0bbA01fcBC4", "name": "VaultQuickFlipToFlip", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x27e660751bb917c15be3a8a9579257d9fb25af02", "name": "MetaaniMedal", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "10/13/2021"}
+{"address": "0xBeA52F01CF8e9F66b7F2140F216e4003AcBb6f12", "name": "VaultQuickFlipToFlip", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xe33ddd09149b7b1a4e762e4d9eaca30299f605e0", "name": "FutureLockToken", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "10/13/2021"}
+{"address": "0x0Fa189A26F0d396724fC7C4d507795DcB2e27Af1", "name": "ExecutorOfPath", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/13/2021"}
+{"address": "0xe2e2c2877625b7c0025e40a127a82c5c4a3e4862", "name": "TheRandomGame", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xd9600f4b49eb303196fb0bd2cc3cc8762e019c19", "name": "NFT", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 45, "settings": "", "date": "10/13/2021"}
+{"address": "0xd46df541148932690B81092f600f35208AFd4325", "name": "mPRISM", "compiler": "0.6.8", "balance": "0 MATIC", "txcount": 315, "settings": "", "date": "10/13/2021"}
+{"address": "0x83D714e8716AADeacdcCe4C4761673BC3A5d5570", "name": "After_School_Ghoul_Club", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 46, "settings": "", "date": "10/13/2021"}
+{"address": "0xbb29d2a58d880af8aa5859e30470134deaf84f2b", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x3a256e12cd17907361e141cac257f3c54eeb0bca", "name": "TheGardenLocked", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 429, "settings": "", "date": "10/13/2021"}
+{"address": "0x5d5530eb3147152fe78d5c4bfeede054c8d1442a", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x5f7f94a1dd7b15594d17543beb8b30b111dd464c", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0xE11D67F34251365cA0567d591D83939e6e6698dA", "name": "InvestmentSafeFactory", "compiler": "0.8.6", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0x2412b1b843a148921c3a5ae092911feaec6a3516", "name": "YaanClaimContract", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x169e0ec8cba6d9cb4ef3ec18ae9823e6bbdcdfa8", "name": "daizu", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x5359D518E99FD46dC4c987C0B822C1D340Aa11B9", "name": "Login", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/13/2021"}
+{"address": "0xc4bb7277a74678f053259cb1f96140347efbfd46", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x937F7125994a91d5E2Ce31846b97578131056Bb4", "name": "MVPStrategy", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/13/2021"}
+{"address": "0xbe2cdc21f3849761e232442c80c9ed98a6e3d570", "name": "daizu", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x26F1AB67571C9AF745b90de2E139E0a983F1b3e2", "name": "AToken", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0xf1acb99AfF673a1E02fCAfb6638F50cf0C894EDa", "name": "AToken", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x9618E57fe0a3b3A79723CaC7c6AEF330C3Df515E", "name": "AToken", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x125651Bd966EBEA63d4960887373a0D1902104BF", "name": "AToken", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021"}
+{"address": "0x533AF8ad419fB3082df9C80BE2ad903912a817FB", "name": "DODONFTPoolProxy", "compiler": "0.6.9", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/13/2021"}
+{"address": "0x072ff3ed5F723FB4E9a83a76755ED5222ea99d7A", "name": "FilterERC1155V1", "compiler": "0.6.9", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x697F28107dF60BE8813Ce44103F15e51aEA1D61b", "name": "FilterERC721V1", "compiler": "0.6.9", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x50D148D0908C602A56884B8628A36470a875EEb2", "name": "FilterAdmin", "compiler": "0.6.9", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xe6aafa1c45d9d0c64686c1f1d17b9fe9c7dab05b", "name": "Controller", "compiler": "0.6.9", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x91e1c84ba8786b1fae2570202f0126c0b88f6ec7", "name": "DODONFTApprove", "compiler": "0.6.9", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "10/13/2021"}
+{"address": "0x19F5a4b3B79E220664f27a6Ff3cb927Ae7189506", "name": "GrexieICO", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 307, "settings": "", "date": "10/13/2021"}
+{"address": "0x3913860C9A4075f69bFBF277D76572CffF2DeFcC", "name": "AlienCollectableNFTs", "compiler": "0.8.7", "balance": "0.1885 MATIC", "txcount": 5, "settings": "", "date": "10/13/2021"}
+{"address": "0x6a1e35b0e0cb8bdc2b05aceac91add1b0c3f45d3", "name": "daizu", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0xCe111bf8fC16b80D2C772A2cD79c0ac504aF3Ac4", "name": "Factory", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x098a30dc9B5788d5A71f44c7A2B5bCF652A975Ba", "name": "DualFarm", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0x51f10f14241805421d36AEE0dCeAE9a0F7280410", "name": "JollyMoon", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/13/2021"}
+{"address": "0xBF773f00C3aE7B1eE9641c7e1cF14FdDCDC0CEBb", "name": "VaultBase", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 6, "settings": "", "date": "10/13/2021"}
+{"address": "0xbc0B1d5d76c112d96EECa0edE7026Dd72b84E6AA", "name": "StrategyTwoAssets", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 5, "settings": "-", "date": "10/13/2021"}
+{"address": "0x99dE9f6ACc587726FE72AC8F6E2b4a6563c98Af9", "name": "VaultBase", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 21, "settings": "", "date": "10/13/2021"}
+{"address": "0x66908948A7Fd50f040Bcc3Fb488B574bE73c9cb1", "name": "StrategyTwoAssets", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 7, "settings": "-", "date": "10/13/2021"}
+{"address": "0xe04369f4a48d4f992248ec17319dcc6c04877914", "name": "StrategyPancakeCake", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0xbd3eed652836de5e7464cd580e364b6aef64fff1", "name": "testpolygon", "compiler": "0.7.6", "balance": "0.008106276702977496 MATIC", "txcount": 10, "settings": "", "date": "10/13/2021"}
+{"address": "0x6660a567c1ba86195eaf646cc97b49f7f4b03548", "name": "StrategyPairWeightLp", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0x15ef04c00733030aff1a6dc0c74e855589d0bb4a", "name": "ConveyorV2Pair", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 0, "settings": "-", "date": "10/13/2021"}
+{"address": "0xCc737C1EEC38f0E8669d32A8e34a48f26Cf10333", "name": "AbidingAstronaut", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 32, "settings": "", "date": "10/13/2021"}
+{"address": "0x7e769e3226561501457612f6100c8150da243e6f", "name": "CryptoCruisers", "compiler": "0.8.7", "balance": "60 MATIC", "txcount": 3, "settings": "", "date": "10/13/2021"}
+{"address": "0x7B59620C741065D5B25f772545e3D3eaa766dcBf", "name": "TestNFT123", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xf1f62425d22fd758a7dfa3f0bfdbe8ba364fb5c3", "name": "ConveyorV2Pair", "compiler": "0.8.2", "balance": "0 MATIC", "txcount": 0, "settings": "-", "date": "10/13/2021", "err": "Exception('unable to find source-code. rate limited? retry..')"}
+{"address": "0xd548a7d0ae9d2dcc170facba097552938bcae026", "name": "ABI", "compiler": "0.8.8", "balance": "0 MATIC", "txcount": 0, "settings": "-", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xcc5a8bd4538e95cfec8be1af5fce77db7bb1b778", "name": "EthereansAirdrop", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 274, "settings": "-", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xB3a0fE973EF3002B57977923B49B90e2086d949d", "name": "ChessToken", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 3, "settings": "-", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xDC342C4dCA06Dd2fFb96a912Fb2CC2D13314A4Ac", "name": "MiningToken", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x23f67a4aa237A5caB39eE80b350dAE019c49B96e", "name": "SyrupBar", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x4b68e53e3b3d6ff159bf274327f04c808892aec9", "name": "ExtendedAsciiPlotPolygon", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 76, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xd9664Ab9d90653C7AE957e67474724DaC2Ba8d51", "name": "BorrowContract", "compiler": "0.5.17", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xe9D398a7626FFF43fc9BFccbE528004c2B64Fea0", "name": "MasterChess", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x5158619dE429Fb35077FB503524DF7D1D15714F0", "name": "SyrupBar", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x3ba577F0159034816C9a7004789ECf4531b9cD1B", "name": "ChessToken", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x13d3D93e5612638e1A5Ba0d074726fEB6Ec3A1a6", "name": "Address", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x6981D96206f6A56CeA0A2ABd70287Ce10aB05C23", "name": "LazyPetterResolver", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x46addb3cf4f8db24df5ab8b0a24ceff132c725c1", "name": "LazyPetter", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 0, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x9dC89f10568a3aE767092f02A1a25cb3bf3B582f", "name": "CryptoCruisers", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x0fB093480f5A842B5C944c0056070c9F54B77F07", "name": "AliensAmongstSheep", "compiler": "0.8.7", "balance": "320.06 MATIC", "txcount": 182, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x053600282BF056797d387825d331BB66998aAB24", "name": "Cryptolandia", "compiler": "0.8.7", "balance": "0.02 MATIC", "txcount": 24, "settings": "", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xd66f06cab23b5e5cdd336bb041edf19a00b569fb", "name": "Apenomics", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 3, "settings": "-", "date": "10/13/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xffF47B003c2cEc270627f896e37462D5D4B52684", "name": "Magi", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 5, "settings": "-", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x9e2ead9b64663c58d1e6922e7b99bfa2d7a16f1f", "name": "SkullToons", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 10, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x867FC7909885E39bEE5F1B0354a64Ef0F0Dd9494", "name": "TacoBunnies", "compiler": "0.8.4", "balance": "0 MATIC", "txcount": 0, "settings": "-", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xe2e157f3d88B6602227D7Ec7Df12D5c8546234e0", "name": "Dwarves", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 2, "settings": "-", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x1d88D0ee9b7FC5473196E88fEc699D456B157741", "name": "Property", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xBdbf42001cb20C4D3e061Ee470b90596fC1C4caB", "name": "Donator", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x636e10421931272a62F273Ed1638A8384E39Cf12", "name": "Factory", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 20, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xFCc62E1A76fadF8CDa9986aa906E574FE545D5fF", "name": "bonelessClub", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 23, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x7662CfA5e064B85fD23c9C8d8Ef912340947ed7d", "name": "HalloweenMashupV2", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 15, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x4792b5943a05fc6AF3B20B5F1D1d7dDe33C42980", "name": "VaultBase", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 32, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x01633263fF0BBc2BFFfE9c2245bda684B875027F", "name": "StrategyTwoAssets", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 9, "settings": "-", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xbd124869e76c94e74b7f24c5dfe5ae7a77da8eba", "name": "CompoundLens", "compiler": "0.5.16", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x26fD484830E463ebf0A441ac879e538F6b8909B6", "name": "KoalaSquad", "compiler": "0.8.0", "balance": "0 MATIC", "txcount": 1, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x08360E4d902688665D8f2FF1CF996363C3192177", "name": "StrategyLiquidate", "compiler": "0.5.17", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x2C0A0e812dA74b79dFB0CdD04239550653B3F371", "name": "StrategyAave", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x560732794698A99299785Be72B5537BaE1C69ee2", "name": "StrategyAave", "compiler": "0.6.12", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x203F5c9567d533038d2da70Cbc20e6E8B3f309F9", "name": "GFarmPoolV5", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 5, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x176586Dec2b70df5B72a6Efe158a87f210551798", "name": "GFarmTradingVaultV5", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 4, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x7aF43F23F33642C4eA8bF10211A26d5A028A555F", "name": "GFarmTradingCallbacksV5", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x96059f17Be7d2e59406be75e77e23c128141672E", "name": "GFarmTradingV5", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 2, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xaee4d11a16B2bc65EDD6416Fb626EB404a6D65BD", "name": "GFarmTradingStorageV5", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 39, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xea40927cadda2c31e722667701236cc672e9a1cc", "name": "WusdAaveStrategy", "compiler": "0.8.9", "balance": "0 MATIC", "txcount": 1, "settings": "-", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x8aaaFf79c94debF411D4a4166C1aEab7A63EBEeC", "name": "GFarmPriceAggregatorV5", "compiler": "0.8.7", "balance": "0 MATIC", "txcount": 40, "settings": "", "date": "10/12/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
