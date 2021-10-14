@@ -11226,3 +11226,33 @@
 {"address": "0x38F2558bDB6FcF6bb5F27423b4cB1d2D3bAF8473", "name": "Treasury", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/13/2021"}
 {"address": "0x27177aF427212107A3ece2b42D91555067fB196E", "name": "Controller", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/13/2021"}
 {"address": "0x9f385B638efEAd7BfEB3a32472CA94bAdadE93c8", "name": "Registry", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/13/2021"}
+{"address": "0xDA6021f5ad41912A7CCE32C95Bc78f120eBcA81C", "name": "LPStakingUpgradeable", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x75692A508F8aFb306DdE3D713a53dfb5109935C6", "name": "LPStakingUpgradeable", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x3E4Fa99107aD166380A9F5523BbacAcD1e24909C", "name": "DepositSecurityModule", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x6f88759b87941b526725ea07c859c200486ae0c2", "name": "SkyWeaverAssets", "compiler": "0.5.10", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x8e470801A989d54304d75C89dAA1F9D026ebBCED", "name": "EvervarPersona", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x3362f4FdC32Fb49B8C21E62372446378cfB229f8", "name": "L1L2Example", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x210DdC232656728Ac408548613cEdfCA55759dD2", "name": "Bridge", "compiler": "0.6.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0xc0939728026039bb0ad49bcf24770efc675c41e5", "name": "MintRoom", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "10/14/2021"}
+{"address": "0x0B60A6A10deb5C349ec9daF58BA9d8E3843C11D9", "name": "JungleFreaksCaller", "compiler": "0.8.4", "balance": "48.6 Ether", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x1126d4502e869Ca97959C8D65BF2FFE2cb577dBC", "name": "ValidatorProxy", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x90B476c2C3fd68a55BdA1e0B6E764b16D4C29623", "name": "JungleFreaks", "compiler": "0.8.4", "balance": "1.4 Ether", "txcount": 0, "settings": "-", "date": "10/14/2021"}
+{"address": "0xc1a85f9bde5a53a140776dd3a28df7bb59f04aff", "name": "CryptoNijigenGirlsTestUpgradeableV2", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "10/14/2021"}
+{"address": "0x6AEb9CB792B4aF6e01d6E460f1Fb2285F37E06bB", "name": "RootChain", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x7bdba20b0579de14d05714023d3e48eb7e7a6bb8", "name": "CryptoNijigenGirlsUpgradeableV2", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "10/14/2021"}
+{"address": "0xecBd23cFe7dd31A8743Bd3282Ff2b9Aee81644ab", "name": "KBAEToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x8a7c2c8d1292ebdab6f72345f4d877a38514b38d", "name": "Checkerboard", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "10/14/2021"}
+{"address": "0x5cbd4aee3241c25ea2c9dcbcea39401086afd631", "name": "Coin", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/14/2021"}
+{"address": "0x468ee80eb72c46cc2b5ff5468d16835263926f64", "name": "emilijaus_kontraktas", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/14/2021"}
+{"address": "0x72099287736B13399c1f7620D026b0332f33CDE8", "name": "MyToken3", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/14/2021"}
+{"address": "0x7ee91247b0cC2a2762689fd43e22006bd14f403e", "name": "L1L2Example", "compiler": "0.6.11", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0xC04421B8FCd0438D8Da2DDF9ce8f09566fFCC94B", "name": "MyToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/14/2021"}
+{"address": "0xd910572C4801f4435a2098A55292270743105530", "name": "Faucet", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0xC814aFD17170d2A8c02C9f0E8B7bA8Bf96aB75Ff", "name": "KoCoCard", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x00A888B413f73d9B1d54b23BC3bC2a3Aefd755cD", "name": "Faucet", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0xC97aD7d8ABBfACb982173f9b32360ad9288cc783", "name": "Viewer", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0xA8e9020f9a1908b520d1577A7d1292fA9D44a9BA", "name": "StakingReward", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x49BB7eA1Aa8f2F667aA317a1e6fDD8A44B988925", "name": "SGN", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0xb3f5Fbe570C4287ac4EAbD3DcA5ca4E15526C625", "name": "Govern", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x42e6Af231bA8eE39f1bf185d452061283bfB324b", "name": "FarmingRewards", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x2BbC4d7841f2b33bf4cA1821b05BC8cDE3b55856", "name": "Genosphere", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
