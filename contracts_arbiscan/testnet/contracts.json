@@ -23,3 +23,7 @@
 {"address": "0xab1211f1eb56b0afc01e8a01537b0116edcd8160", "name": "Yesw", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/13/2021"}
 {"address": "0x619153a84df1f58c97350de3b2da62904f92781c", "name": "AutismRegistrar", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 9, "settings": "-", "date": "10/12/2021"}
 {"address": "0xef0e2008d39700d5da900baa5a1bbf68562a95bb", "name": "AutismRegistrar", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 6, "settings": "-", "date": "10/12/2021"}
+{"address": "0xf719d42fb61654e81dd0a3dff4be18c5af1a9fbb", "name": "Adoption", "compiler": "0.5.3", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/14/2021"}
+{"address": "0x67792044e3b220043a5a642705c0f7187ad3b319", "name": "YeSwapFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/14/2021"}
+{"address": "0xE5929A4EA4858E14f32E53BfBAf0d637428AB9A9", "name": "AVAXVaultHandler", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "10/13/2021"}
+{"address": "0xC6b0017D2d86Aa5e6e51FFf10bc04F77F36BEa1d", "name": "AddressRegistry", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/13/2021"}
