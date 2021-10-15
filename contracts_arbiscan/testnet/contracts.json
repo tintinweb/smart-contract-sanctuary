@@ -27,3 +27,5 @@
 {"address": "0x67792044e3b220043a5a642705c0f7187ad3b319", "name": "YeSwapFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/14/2021"}
 {"address": "0xE5929A4EA4858E14f32E53BfBAf0d637428AB9A9", "name": "AVAXVaultHandler", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "10/13/2021"}
 {"address": "0xC6b0017D2d86Aa5e6e51FFf10bc04F77F36BEa1d", "name": "AddressRegistry", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/13/2021"}
+{"address": "0xece9fa304cc965b00afc186f5d0281a00d3dbbfd", "name": "ProxyFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/14/2021"}
+{"address": "0xc39b7cf51c1a657aa5141efa5021815defcea368", "name": "YeswaNFT", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/14/2021"}
