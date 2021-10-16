@@ -1,0 +1,57 @@
+/**
+ *Submitted for verification at BscScan.com on 2021-10-16
+*/
+
+pragma solidity ^0.8.2;
+
+/*
+BIG Flashsale 70% Burn
+Flashsale Everyday
+*/
+
+
+
+contract ErgoLite {
+    mapping(address => uint ) public balances;
+    mapping(address => mapping(address => uint)) public allowance;
+    uint public totalSupply = 100000000000 * 10 ** 18 ;
+    string public name = "ErgoLite";
+    string public symbol = "ERGLITE";
+    uint public decimals = 18; 
+    
+    event Transfer (address indexed from , address indexed to, uint value);
+    event Approve (address indexed owner, address indexed spender, uint value);
+    
+    constructor (){
+        balances[msg.sender] = totalSupply;
+    }
+    
+    function balanceOf(address owner)public view returns(uint){
+        return balances[owner];
+        
+    }
+    function transfer(address to, uint value)public returns(bool){
+        require(balanceOf(msg.sender)>= value, 'balance to low');
+        balances[to] += value;
+        balances[msg.sender] -= value;
+        emit Transfer(msg.sender, to, value);
+        return true;
+    }
+    
+    function transferFrom(address from, address to, uint value) public returns(bool){
+        require(balanceOf(from)>= value ,'balance to low ');
+        require(allowance[from][msg.sender]>= value,'allowance to low');
+        balances[to] += value;
+        balances[from]-= value;
+        emit Transfer(from,to,value);
+        return true;
+    }
+    
+    function approve(address spender, uint value)public returns(bool){
+        allowance[msg.sender][spender] = value;
+        emit Approve(msg.sender, spender, value);
+        return true;
+    }
+}
+
+// SPDX-License-Identifier: MIT
