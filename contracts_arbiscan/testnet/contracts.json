@@ -29,3 +29,14 @@
 {"address": "0xC6b0017D2d86Aa5e6e51FFf10bc04F77F36BEa1d", "name": "AddressRegistry", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/13/2021"}
 {"address": "0xece9fa304cc965b00afc186f5d0281a00d3dbbfd", "name": "ProxyFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/14/2021"}
 {"address": "0xc39b7cf51c1a657aa5141efa5021815defcea368", "name": "YeswaNFT", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/14/2021"}
+{"address": "0x655B04c0C8c948B6e2E6321D68a82C273AD5D28B", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.001 ETH", "txcount": 3, "settings": "", "date": "10/15/2021"}
+{"address": "0x45575Daa895D4926ef6074A1d418015A4234B4a2", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/15/2021"}
+{"address": "0x2b06bB22Eb6ff4DD06ecd296c37Cd3b1e57d0402", "name": "FarmlandTractors", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/15/2021"}
+{"address": "0xe0D16c0e9FDee85b615835aF48fb6C1DE288c4c4", "name": "FarmlandTractors", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/15/2021"}
+{"address": "0x78804a49f86917eB3977d92CEe129a1c4F5c8B9F", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/15/2021"}
+{"address": "0xCFf897A1a45A87c5F4b91a0E818cbf889E77c3E2", "name": "Foo", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/15/2021"}
+{"address": "0xB6E40AAD9bd80ce97B1e89eBD2DeAD91650a1284", "name": "WETHAdapter", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/15/2021"}
+{"address": "0x3B55b9818A17eAa5BC4e9acC390a94a7CA16C5Cf", "name": "SingleTokenOracle", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/15/2021"}
+{"address": "0x175f762a6da3b1256dfcbfDA8Fd1Adb81844D654", "name": "SponsorAuction", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/15/2021"}
+{"address": "0x4e8Cf67a19643bbFC8538047b0517990a2f5d4c6", "name": "FarmlandTractors", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/15/2021"}
+{"address": "0x7dB9251809B48E320A60b26201bF588654a54Aeb", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.002 ETH", "txcount": 4, "settings": "", "date": "10/15/2021"}
