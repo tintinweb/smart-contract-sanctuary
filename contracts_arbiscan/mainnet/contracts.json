@@ -647,3 +647,13 @@
 {"address": "0x0f1ed99f9c4e020d35ceb07be3a3bd9e4395a8ea", "name": "StabilizeStrategyMIMV2", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/14/2021"}
 {"address": "0xDe5F530F9363647fcF8cB7764C71A5d994dcb3Af", "name": "PrivateSale", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/14/2021"}
 {"address": "0xe8e4ee488363a032aa57abe2c0e8bfd6c66685b5", "name": "Pauser", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/14/2021"}
+{"address": "0xbae8a66560be80eab3945252e9af43b914c2049b", "name": "DOGUE_MAGAZINE", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/16/2021"}
+{"address": "0x1aaEC0Fa487A979A3F6B46DCCf0aC2648167a61E", "name": "CryptoGenerals", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 32, "settings": "", "date": "10/16/2021"}
+{"address": "0xB575244296c27e7897382E6c140708c44A6A4229", "name": "StableMint", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "10/16/2021"}
+{"address": "0xA4cc4A18A44595D8c7dc34431A99994545997Ce3", "name": "WrappedToken", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "10/16/2021"}
+{"address": "0xF8E3C6d39a4F05Fc8980CEA6710c79D7A9D57C98", "name": "OracleObserver", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/16/2021"}
+{"address": "0x35d0708b401a1a66E8026e229a9EF43dA98D14A9", "name": "PledgePool", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/16/2021"}
+{"address": "0x017Ff87AB312301aDE54f7cf9Cc5AEA28C9De024", "name": "TwoWay", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 11, "settings": "", "date": "10/16/2021"}
+{"address": "0x563eC4A3E48b9E0c2E0428084978cD64efcac780", "name": "Multicall", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/15/2021"}
+{"address": "0x751A0bC0e3f75b38e01Cf25bFCE7fF36DE1C87DE", "name": "MerkleOrchard", "compiler": "0.7.1", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/15/2021"}
+{"address": "0xc9f9E7FC92A7D3B2b3554be850fFF462B7b382E7", "name": "EscrowMinion", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/15/2021"}
