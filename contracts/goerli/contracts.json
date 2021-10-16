@@ -11386,3 +11386,14 @@
 {"address": "0x7B788AC6dC160AE47f01f5e0cF31D969ACa77f29", "name": "FlufMarketplace", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
 {"address": "0x63A5C5f3405BaAE4185f774ed89C32A6b5725e55", "name": "FlufSceneAndMusic", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
 {"address": "0x1707bc6d7242fe56b1d4427f0e42A3958Bc6690c", "name": "LPStakingUpgradeable", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/14/2021"}
+{"address": "0x7340ac4fcbfe28033c39d232976b15e3f28fe875", "name": "Address", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "-", "date": "10/16/2021"}
+{"address": "0x08eb7432D4cfad8E978fC0E06Eb2555c545A7452", "name": "Stores", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/16/2021"}
+{"address": "0x02AEAe97e2FDCff63c8b7fC01D722bbab0F52749", "name": "OjamuToken", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/16/2021"}
+{"address": "0x5a6e1963a32c73284f6369fb397f5bb81f5289bf", "name": "CryptoNijigen", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "10/16/2021"}
+{"address": "0x5b699e7961c0c463b8147321ac3d6d53df90c993", "name": "CryptoNijigenGirlsUpgradeableV6", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "10/16/2021"}
+{"address": "0xDea4741BCBe90CB0c559DeC8E8fd2047c4E6693C", "name": "FlashBotsMultiCall", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/16/2021"}
+{"address": "0x7617788829920F45B348Fe77BA8fe42f5AC8b671", "name": "FlashBotsMultiCall", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/15/2021"}
+{"address": "0xBFb88579e0F58faDb5C7979d6029E74F16E049f7", "name": "RacerKeySale", "compiler": "0.8.9", "balance": "0.9 Ether", "txcount": 0, "settings": "", "date": "10/15/2021"}
+{"address": "0x1C3355a71B83F295865866eBC8D12eEDCB030e26", "name": "RacerKey", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/15/2021"}
+{"address": "0x4A7F745C4A728Ae3cc243CdEc566497843F0eF82", "name": "FirstToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/15/2021"}
+{"address": "0x0bd8048318Ab82A4c2b3De92D22e5b9E39A3eD66", "name": "MockStandardERC20", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/15/2021"}
