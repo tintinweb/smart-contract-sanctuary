@@ -40,3 +40,7 @@
 {"address": "0x175f762a6da3b1256dfcbfDA8Fd1Adb81844D654", "name": "SponsorAuction", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/15/2021"}
 {"address": "0x4e8Cf67a19643bbFC8538047b0517990a2f5d4c6", "name": "FarmlandTractors", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/15/2021"}
 {"address": "0x7dB9251809B48E320A60b26201bF588654a54Aeb", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.002 ETH", "txcount": 4, "settings": "", "date": "10/15/2021"}
+{"address": "0x7a7683a89f3c5b9d935c56d965c326efb046fe9b", "name": "TestAApes", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "10/16/2021"}
+{"address": "0x520e30ED6f6E45fadD50dF899fC45cb3f81e24b2", "name": "Box", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "10/16/2021"}
+{"address": "0xc54B31D8C54926897283c04975dBce00Ca95b5Fb", "name": "WETHAdapter", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/16/2021"}
+{"address": "0xc25c0D873ca4a48e1dE7a3D1814555826c5b2EdB", "name": "SingleTokenOracle", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/16/2021"}
