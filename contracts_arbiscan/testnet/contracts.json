@@ -44,3 +44,11 @@
 {"address": "0x520e30ED6f6E45fadD50dF899fC45cb3f81e24b2", "name": "Box", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "10/16/2021"}
 {"address": "0xc54B31D8C54926897283c04975dBce00Ca95b5Fb", "name": "WETHAdapter", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/16/2021"}
 {"address": "0xc25c0D873ca4a48e1dE7a3D1814555826c5b2EdB", "name": "SingleTokenOracle", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/16/2021"}
+{"address": "0x00551f424BD3426A1B15eb1Ea4680cc2bf7E9D76", "name": "DevAdmin", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/18/2021"}
+{"address": "0x84b6712Ec4174536daBf019fa6549A2e2125DEae", "name": "DevProxy", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/18/2021"}
+{"address": "0x029bab556E095E5166a7Be02eC4C2dcE26925470", "name": "MarketFactory", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0xf20f18502dDb81ff4265D4E7B09a754a1BbC4782", "name": "Policy1", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0x1CF5A65D5594C507D797c855D71cF5524B15a639", "name": "GitHubMarket", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0x377B7d9C2DA6eD293EA62d2bCdA1cF54009751F8", "name": "MarketProxy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/18/2021"}
+{"address": "0x86CdcfA5e6ac784776B54fb2e767BE1CAb3656b3", "name": "L2Corn", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/17/2021"}
+{"address": "0x93c3D44DD9C56fED583bED9f0c531D64917DBe00", "name": "L2Corn", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 13, "settings": "", "date": "10/17/2021"}
