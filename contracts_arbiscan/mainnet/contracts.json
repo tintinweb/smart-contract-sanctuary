@@ -666,3 +666,13 @@
 {"address": "0x006197cC4a60F9aFf7A32371Fd059f489B1489e9", "name": "UniswapV2Oracle", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "10/17/2021"}
 {"address": "0x848e0ba28b637e8490d88bae51fa99c87116409b", "name": "ERC777SnapshotWrapper", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/16/2021"}
 {"address": "0xe8cd6879dd7fbb1d44995fd871cf293c5a151b29", "name": "Alvin_Redeemable_Plushie", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/16/2021"}
+{"address": "0xCa7664DCA7358704E222A3f801843C938eeEA019", "name": "ArbCommunityNFT", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "10/18/2021"}
+{"address": "0xFeb6D3004B9Cf7595Af96DBA23d9Ec8e5F6e3Ebc", "name": "HyperLiquidrium", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "10/18/2021"}
+{"address": "0x57f8797E94a264482f6D7FD51912e4b97eDA7818", "name": "Visor", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0x8C8a54381b1FC988978d89978DD3B198F4ca54C0", "name": "LiquidriumFactory", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "10/18/2021"}
+{"address": "0xa27C20A7CF0e1C68C0460706bB674f98F362Bc21", "name": "OrderBookReader", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0x09f77E8A13De9a35a7231028187e9fD5DB8a2ACB", "name": "OrderBook", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/18/2021"}
+{"address": "0xD792a0fa3238c59AAB77Ecd1949DCBa08cE02357", "name": "MagicClaim", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0xf3DFbE887D81C442557f7a59e3a0aEcf5e39F6aa", "name": "MagicClaim", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/18/2021"}
+{"address": "0x73EB8b2b235F7957f830ea66ABE433D9EED9f0E3", "name": "MagicRewardsArbitrum", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0x8e8fE0aCDd67E1291a504E7290ecDCB7578EDa69", "name": "StakingPools", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 20, "settings": "", "date": "10/17/2021"}
