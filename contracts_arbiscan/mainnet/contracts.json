@@ -676,3 +676,15 @@
 {"address": "0xf3DFbE887D81C442557f7a59e3a0aEcf5e39F6aa", "name": "MagicClaim", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/18/2021"}
 {"address": "0x73EB8b2b235F7957f830ea66ABE433D9EED9f0E3", "name": "MagicRewardsArbitrum", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
 {"address": "0x8e8fE0aCDd67E1291a504E7290ecDCB7578EDa69", "name": "StakingPools", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 20, "settings": "", "date": "10/17/2021"}
+{"address": "0xB6410a1B2d923958a187407844172339051DE999", "name": "NFTMarket", "compiler": "0.8.7", "balance": "0.035875 ETH", "txcount": 53, "settings": "", "date": "10/19/2021"}
+{"address": "0x144a2bb88ae708d5a0793fb0166f17d7b2accaf3", "name": "MyStrategy", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/19/2021"}
+{"address": "0x2a139a2812f1424f0c88e3d73854b16fb04e9449", "name": "AddressMergeHelper", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/19/2021"}
+{"address": "0x3a8efa2d87d60c0289f19b44a0928f4269c0f094", "name": "AddressesGeneratorV2Vaults", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/19/2021"}
+{"address": "0xb58AFa4be9B13D896E81D5355C961D2c33172099", "name": "AccessControlledOffchainAggregator", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "10/19/2021"}
+{"address": "0x28077b47cd03326de7838926a63699849dd4fa87", "name": "AVM_BridgeDepositBox", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/19/2021"}
+{"address": "0x8a5f0876b217ee61d101e022bb00d032e6d353bc", "name": "ManagementList", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/19/2021"}
+{"address": "0x4780461eb5428728767284fd5ade58890620b595", "name": "TransferProxy", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "10/19/2021"}
+{"address": "0x039fFdC819a9429d8452435d2559Ca91E6B00AF7", "name": "CryptoPunkArtsERC1155Token", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/19/2021"}
+{"address": "0x45cf814B1eb10C54c9aB3632837623b6CC846daB", "name": "ExchangeV1", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/19/2021"}
+{"address": "0x1cC1554b76acc2968d6ECb15681E7e95C80B6266", "name": "HoneyADOGELPStrategy", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "10/19/2021"}
+{"address": "0xa2580D06426AC7A606d34Cc17D1D09efEceAE717", "name": "ArbCommunityNFT", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/18/2021"}
