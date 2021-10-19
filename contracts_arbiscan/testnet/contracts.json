@@ -52,3 +52,10 @@
 {"address": "0x377B7d9C2DA6eD293EA62d2bCdA1cF54009751F8", "name": "MarketProxy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/18/2021"}
 {"address": "0x86CdcfA5e6ac784776B54fb2e767BE1CAb3656b3", "name": "L2Corn", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/17/2021"}
 {"address": "0x93c3D44DD9C56fED583bED9f0c531D64917DBe00", "name": "L2Corn", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 13, "settings": "", "date": "10/17/2021"}
+{"address": "0xA033268D5F2e3ED21596fb11bB7512096DCcb20B", "name": "Withdraw", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0xAfeF452B4Be4Ab155FE0bCB616123ab8E344655f", "name": "STokensManager", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0x9d8D4d9224a5D612e64dd62Df5D28D375466759f", "name": "PropertyFactory", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/18/2021"}
+{"address": "0x78e88afb1a10E0CC372b0b9b5BC4E8392e6EE3f7", "name": "PolicyFactory", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0x0a1997c769F54b3F81AD80D6851ae56f5735f6b2", "name": "MetricsFactory", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0xdb0eBa11EC0F8Bee3662977312ff5Ca3934De1Be", "name": "Lockup", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
+{"address": "0xE75929F46355ad8C5C558755D836364f119BdB22", "name": "AddressRegistry", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/18/2021"}
