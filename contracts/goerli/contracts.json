@@ -11672,3 +11672,27 @@
 {"address": "0x19f001d4daded5bf15f9c12fc36d3db17d40a80f", "name": "FixedExchangeableToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "10/19/2021"}
 {"address": "0xA9c10B1dc1151EBB0495DE9FDeD458F46d4445b9", "name": "ERC20", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/19/2021"}
 {"address": "0x32244ec0a6303b0968eedcd7a968ff4336ebb5bf", "name": "Token", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0x3823D3f1b3A43Ae797D079C02f2E6A866fBBaAc7", "name": "TOKELLAMA", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0x609fA6C1BeD686A5Aff9bBbFaA8f6C647a410173", "name": "PresaleToken", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0x60Ae4364d7Dec8dF25d1a70B13B0A7908154C395", "name": "TOKELLAMA", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0xbaa504f18e3da150c8039e6cc372e9f7c9313f18", "name": "DutchAuction", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0x865a89e8b8c1dc9f232728732e88f88285893575", "name": "DutchAuction", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0xc582f375f287dae2fefebc3d27645a2898defc9e", "name": "APN", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0xdb5c97dfadcd4928b8c4f6e9a7766d93b6788acb", "name": "CharityVault", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0x9a1057c5d4eda7491ae8acad4bb7994f05fb1b7b", "name": "DutchAuction", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0x293e3a98cc905e759edb07d579fa2cdb24941575", "name": "CharityVaultFactory", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0x682324f84ceeba774c83080439d83a56ec69a97c", "name": "IDO", "compiler": "0.8.0", "balance": "1.1 Ether", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0x8466e127823d822ec4740f1c3240e3d0341ef919", "name": "DutchAuction", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/20/2021"}
+{"address": "0xb086786ea24150ddb12787f0d09253155e540647", "name": "Checkerboard", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "10/20/2021"}
+{"address": "0xe039D4daaDA9f7F51a95CfbDD0E90Bc06A69c632", "name": "HghEthereum", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0x256Df578846117A15106F1F0e99155afF5E76d66", "name": "Vault", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0x8b5842a935731ed1b92e3211a7f38bebd185eb53", "name": "VaultFactory", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0x3Ae252FC2D7001563a3D477d3533FB732476B577", "name": "ERC20Handler", "compiler": "0.6.4", "balance": "-", "txcount": 0, "settings": "-", "date": "10/19/2021"}
+{"address": "0x0c97010420F9d5125aAd33De99F6C3Cc4372F557", "name": "PAYMENTS", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0x9fD8b81b9F46A33E6036c7124aD33C3A209Fd422", "name": "GelatoTutorialNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0xF0E69881d7Dc9700f04700fB7bEcCDa8E5fD8bC7", "name": "DummyMintableERC1155", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "-", "date": "10/19/2021"}
+{"address": "0x445CDDFceEa99108C77A5cd68D9F2589705Eb2Ce", "name": "MaticMikeEthereum", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0xeAdDd31692BC8c17b98CF25c22d054BdE37Ef5A5", "name": "SpookySouls", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0x9982227821b45312584193e5d8aa368A5DE764d7", "name": "MorphedCard", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0xa5C0DD65cc56eD13EB19665152480eB7d2a0d04D", "name": "BABYBILZ", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/19/2021"}
+{"address": "0x79F6FA675d41BC363a42f3f48749C78AFeAC319A", "name": "SimpleStorage", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "10/19/2021"}
