@@ -62,3 +62,7 @@
 {"address": "0xDb298285FE4C5410B05390cA80e8Fbe9DE1F259B", "name": "ForexArb", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/20/2021"}
 {"address": "0xB398982a2301252F0eFbfaF320f9816cD5869007", "name": "TreasuryProxy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/19/2021"}
 {"address": "0xf272da41d66400F28a868743197024E1E8eA2377", "name": "TreasuryL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/19/2021"}
+{"address": "0x60e08416bd176a365ee66f7d035446825e14d0d5", "name": "DevArbitrum", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/21/2021"}
+{"address": "0x9aA3dc7cAB9008711A0B6EC09632C049e2CF88bE", "name": "MarketFactory", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/21/2021"}
+{"address": "0x342C693A89Fd64fE08AE995f9FB914c50e63Cd94", "name": "VaultCore", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/20/2021"}
+{"address": "0x5DC1Af1E1d0c0E5234FD492D87d57715a008c6Cd", "name": "VaultCoreLibrary", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/20/2021"}
