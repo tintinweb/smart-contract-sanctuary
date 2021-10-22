@@ -725,3 +725,12 @@
 {"address": "0xd22a58f79e9481d1a88e00c343885a588b34b68b", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/21/2021"}
 {"address": "0x5e3F3CcB444a48f74679Ea36C3335B6dda50116f", "name": "Strategy", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/20/2021"}
 {"address": "0xa4e1687f89bD741bAa4cf9500fE5Fe1A78dA880E", "name": "Vault", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/20/2021"}
+{"address": "0x3f770Ac673856F105b586bb393d122721265aD46", "name": "StandardArbERC20", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/22/2021"}
+{"address": "0x5e2a18eb368a6466abb693adabbbbd32b4d87c65", "name": "ChangeTimelockOwnerSpell", "compiler": "0.6.9", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/22/2021"}
+{"address": "0x3d147cD9aC957B2a5F968dE9d1c6B9d0872286a0", "name": "fxToken", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/22/2021"}
+{"address": "0x7E141940932E3D13bfa54B224cb4a16510519308", "name": "fxToken", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/22/2021"}
+{"address": "0x52489378054F991ef2150fF58b283e3f361d131D", "name": "ChainlinkOracle", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/22/2021"}
+{"address": "0xb2a6C1aa3f8260E25d984f295d08D14C38b5AA7F", "name": "MagicClaim", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/22/2021"}
+{"address": "0x1ed289a555b6edb2d474c301cf8b04b28a8f59bc", "name": "Proxy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/21/2021"}
+{"address": "0xfb8064d54cce639ca02546797fe350f4d883ecb8", "name": "Nfts", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/21/2021"}
+{"address": "0x64081252c497fcfec247a664e9d10ca8ed71b276", "name": "ArbiFluxToken", "compiler": "0.6.9", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "10/21/2021"}
