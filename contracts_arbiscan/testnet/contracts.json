@@ -99,3 +99,9 @@
 {"address": "0xc07c7A72fAC06213d740A01719DBE519a8CEf229", "name": "arbiSperms", "compiler": "0.8.7", "balance": "0.775 ETH", "txcount": 4, "settings": "-", "date": "10/22/2021"}
 {"address": "0xD5A1d24354d8717Be997cf19cc543249b77b8e04", "name": "arbiSperms", "compiler": "0.8.7", "balance": "0.05 ETH", "txcount": 4, "settings": "-", "date": "10/22/2021"}
 {"address": "0xfDDc3f1Ae4C8ce6FF528c5Fd4026EBf3fB7F7d2c", "name": "SperaxTokenL2", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/21/2021"}
+{"address": "0x8105224BB996EcDB44780D991B8Bc971e07603A4", "name": "ArbitrumVIP", "compiler": "0.7.0", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "10/23/2021"}
+{"address": "0x6F58Cb90725aA7026d3a865D8b05d65eCAe28B74", "name": "StandardTokenV1", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/23/2021"}
+{"address": "0xa511B560dDDAeb69B06aA25e72e0916A4470d05D", "name": "arbiSperms", "compiler": "0.8.2", "balance": "0.025 ETH", "txcount": 2, "settings": "-", "date": "10/23/2021"}
+{"address": "0xC513DDe9d1381ca4a87957C4E668E9923C3cdaE1", "name": "Address", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/23/2021"}
+{"address": "0x102fA8259D905eaF87DCA8CB78E86bfdb1Cc1b59", "name": "arbiSperms", "compiler": "0.8.2", "balance": "0.025 ETH", "txcount": 2, "settings": "-", "date": "10/23/2021"}
+{"address": "0x32DE35FE1c452F0fd80a4bE6A70952786A5DB3dD", "name": "arbiSperms", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/23/2021"}
