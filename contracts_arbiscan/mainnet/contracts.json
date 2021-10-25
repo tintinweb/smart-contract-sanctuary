@@ -756,3 +756,8 @@
 {"address": "0x2ddE86634921a42b3c662c1C99Cda8301Cdfd273", "name": "MagicClaim", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/23/2021"}
 {"address": "0xfab95915359bdCa523c0EFe55e73B30b77897e1f", "name": "Magic", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/23/2021"}
 {"address": "0xb9fb5ed5986a87193a299fe6b7b195c937de44a2", "name": "kek", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/22/2021"}
+{"address": "0x94fa85e2cb3dca290f2246f1c6c77457347f7cb7", "name": "AyearnRewards", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/25/2021"}
+{"address": "0x925f039459f8932c62a6718bcc08b38125f0322c", "name": "AFIToken", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/25/2021"}
+{"address": "0xd60f4E5A7E84dc0f1Fc30F3eA11A2a8c5023fF69", "name": "StarNFTV1", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/25/2021"}
+{"address": "0xd300322832765FEe6b910D314F2c2d879427226F", "name": "TreasuryStake", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/24/2021"}
+{"address": "0xDf19f1216aA406DF8bC585246bee7D96933f285F", "name": "TreasuryMine", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/24/2021"}
