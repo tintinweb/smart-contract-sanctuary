@@ -761,3 +761,13 @@
 {"address": "0xd60f4E5A7E84dc0f1Fc30F3eA11A2a8c5023fF69", "name": "StarNFTV1", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/25/2021"}
 {"address": "0xd300322832765FEe6b910D314F2c2d879427226F", "name": "TreasuryStake", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/24/2021"}
 {"address": "0xDf19f1216aA406DF8bC585246bee7D96933f285F", "name": "TreasuryMine", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/24/2021"}
+{"address": "0x41B8567E10b876A10a8e323Ec81DF7DbA787A8b5", "name": "Vault", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/26/2021"}
+{"address": "0x4AeC063BB5322c9d4c1f46572f432aaE3b78b87c", "name": "AdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/26/2021"}
+{"address": "0x7dd26f47e1c8a060edc1999d8781dde90a4c33a9", "name": "AdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "10/26/2021"}
+{"address": "0x496372872170654f1768fee618cc37e8e3022972", "name": "MyStrategy", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/26/2021"}
+{"address": "0xDF19d746b5Ab2B7b040dAf0eC3341000cFE17bae", "name": "CErc20Delegator", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 117, "settings": "", "date": "10/26/2021"}
+{"address": "0xBC4a19345c598D73939b62371cF9891128ecCB8B", "name": "CEther", "compiler": "0.5.17", "balance": "109.03544600024 ETH", "txcount": 66, "settings": "", "date": "10/26/2021"}
+{"address": "0x0983B43A40A2e36ce1EA55B2aC88041Fc88E2613", "name": "ComptrollerG7", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/26/2021"}
+{"address": "0xD5B649c7d27C13a2b80425daEe8Cb6023015Dc6B", "name": "Unitroller", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 130, "settings": "", "date": "10/26/2021"}
+{"address": "0x3Bf0880fd26E49c46d1A1e69ADb268889B4be840", "name": "Comp", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 304, "settings": "", "date": "10/26/2021"}
+{"address": "0xE5eb0bD8858Ab06667986C19769935Eb86E0b562", "name": "SPELLETHStrategy", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 12, "settings": "", "date": "10/26/2021"}
