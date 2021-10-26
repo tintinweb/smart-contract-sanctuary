@@ -12301,3 +12301,19 @@
 {"address": "0xBEe0634db8c35Ffa98ae623f98517105dA0E73FD", "name": "FlashBotsMultiCall", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "10/25/2021"}
 {"address": "0x545Bc9677f27522f3A00A1A850f3DEA538d6205D", "name": "GStakingManager", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "10/25/2021"}
 {"address": "0x21096B5fe7203fca4bAB52FB9fe7295647f70F56", "name": "RareBlocks", "compiler": "0.8.9", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "10/25/2021"}
+{"address": "0xbA47983CBd912643d1A8aD2676dEdf7e7B074Ecb", "name": "GStakingManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/26/2021"}
+{"address": "0x87002ebb2E5b99873FC721CD38DD830c13CEB39b", "name": "GStakingManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/26/2021"}
+{"address": "0xb6B8417B153AF374CA165A336452a693b2885bc5", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "10/26/2021"}
+{"address": "0x9d3A2c40487AEA8e9ccBCfc25d39A057B1a3a090", "name": "USDC", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/26/2021"}
+{"address": "0xde01b84ae0753aa2acd2143a6c31a3f1f515aea6", "name": "Calc", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "10/26/2021"}
+{"address": "0xD1c2Ba2aC76f685594C6eBd75D7f11E2Bc7c1069", "name": "ServiceReceiver", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "10/26/2021"}
+{"address": "0x9B415A5C434c82f32bC8Cb555c1e60693e7412D3", "name": "GStakingManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/26/2021"}
+{"address": "0x6b68a882cf92e73d51759da7e74bdcc78df236e5", "name": "Genosphere", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "10/26/2021"}
+{"address": "0x0965b2D44Fa32f7E6Cf81b15A149dF4d25897146", "name": "test", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/26/2021"}
+{"address": "0xc17Df7922aCb21c175055796a014de7109F73977", "name": "SKETCH", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "10/26/2021"}
+{"address": "0x9e1a5f7e935c3eb44297df815c631d4002dbb0cf", "name": "CryptoNijigen", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "10/26/2021"}
+{"address": "0xca0fcd6a4fc09fe9f07956ddff51ddb6cbdc0419", "name": "CryptoNijigen", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "10/26/2021"}
+{"address": "0xAf1BE3CA928b1a8a840d8d1dD109350918Bc037A", "name": "test", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "10/26/2021"}
+{"address": "0xf873Daf9010dF0275C4Bb184Cb3e84f8F3626549", "name": "BoredBullDogClub", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "10/25/2021"}
+{"address": "0xb787Ab25f2dADe2bFD72a0648E575B926106a0Bb", "name": "MintPass", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "10/25/2021"}
+{"address": "0x6238f106E2e0B0041747963B693e3a7E5223E764", "name": "Guccinu", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "10/25/2021"}
