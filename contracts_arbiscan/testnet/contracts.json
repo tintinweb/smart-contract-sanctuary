@@ -115,3 +115,10 @@
 {"address": "0x3604B592886b137aab1e1Af29566a29874907265", "name": "Router", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/25/2021"}
 {"address": "0x3529d2280D0D8068d7B6D10E75607Cd89B211880", "name": "Factory", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/25/2021"}
 {"address": "0x5567d1247b79d918068e17d9c9fAd48369806D2d", "name": "Config", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/25/2021"}
+{"address": "0x1673aEb3758346737E4fFBEe76f50ed1554b26Ba", "name": "Router", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/26/2021"}
+{"address": "0xd2180437Dd76036Ce13cBFd7875DFF6b407FE2e6", "name": "Factory", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/26/2021"}
+{"address": "0x2458e6BD0CC06E42cC9F9205eb0a8b40C6dd9C39", "name": "PriceOracleForTest", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "10/26/2021"}
+{"address": "0xB06984eac16Af8a72312E8C88cF6ebC0a968f35f", "name": "PriceOracle", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/26/2021"}
+{"address": "0xD2240796EB137ac9A3486A4E7547641baC529Dae", "name": "VaultCoreLibrary", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/25/2021"}
+{"address": "0xd7a9677E5C4c31A7aCa2D40dcCEAD043591E1A9F", "name": "USDsL2", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/25/2021"}
+{"address": "0xC73CA88DDb4576919CA3b4132Cc0A7ad36cB7D63", "name": "BancorFormula", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/25/2021"}
