@@ -187,3 +187,6 @@
 {"address": "0x0A99dCEbA3FBD0C6A3c6607F6F1d8ec0e626a8De", "name": "Router", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 41, "settings": "", "date": "10/27/2021"}
 {"address": "0xcc030127843c477519c2211c4c820Ccc3b751DfF", "name": "Factory", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/27/2021"}
 {"address": "0x7E20158e02C783894E402e15646D30E74ef9D6ed", "name": "Config", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 5, "settings": "-", "date": "10/27/2021"}
+{"address": "0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2", "name": "Create2Deployer", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/28/2021"}
+{"address": "0x3b624348fC06a8629E0107a8a409b83B6297C77B", "name": "LootMirror", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 10, "settings": "-", "date": "10/28/2021"}
+{"address": "0x9ca2ffc28cb8d930fd9b499292cf42623c7e77f6", "name": "TokenMigration", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 18, "settings": "", "date": "10/28/2021"}
