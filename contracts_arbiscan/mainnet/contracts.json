@@ -812,3 +812,17 @@
 {"address": "0xa0EF47D2b81d22cf45161Db7c422655B9686DD23", "name": "UniswapV2Oracle", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/27/2021"}
 {"address": "0xE5Ed878571c8592D61D1485471794d3EdB04e694", "name": "AssetSwapper", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/27/2021"}
 {"address": "0xfe6dbff2589414836f2c16c8da15e38b472cd513", "name": "ShibArbi", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 72, "settings": "-", "date": "10/27/2021"}
+{"address": "0xcca07fb7934c923de37a0d5230456cc04143ce23", "name": "Contract", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/29/2021"}
+{"address": "0x9a94784264aaae397441c1e47fa132be4e61bdad", "name": "TimelockController", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/29/2021"}
+{"address": "0xde24d308b724ba5bb24a4c095667fc09158ebd27", "name": "WZYX", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/29/2021"}
+{"address": "0xc0Dc7C5057141C9065bd9bedf79fd4E9EA69a739", "name": "TransparentUpgradeableProxy", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/29/2021"}
+{"address": "0xdCF837A3546d0CB4cFB1158018Bd32Ca11445891", "name": "RewardDistributor", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/29/2021"}
+{"address": "0xDE09dC65417E1c48B7c3a53E56c1B61Ed4792E8E", "name": "ERC20Vesting", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/29/2021"}
+{"address": "0x477d72BF5a719Fea4dFd3d8F4a0BDDe3dF32A22e", "name": "ERC20Vesting", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/29/2021"}
+{"address": "0x818ceD3D446292061913f1f74B2EAeE6341a76Ec", "name": "SSOVDpx", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 93, "settings": "", "date": "10/29/2021"}
+{"address": "0x0b0758843C633eAeb264fd8bb386Ec341706eb91", "name": "NEKUHarvest", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/29/2021"}
+{"address": "0x8b94160957c083Fa9fE794598C4019f07E235482", "name": "NEKUVault", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "10/29/2021"}
+{"address": "0xeeDAD57c4082cf26362072Df56e15Cf0dFF91582", "name": "StrategyForSushiMiniLp", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/29/2021"}
+{"address": "0xacBf216370262b025455B1937943Ea21037817CF", "name": "NEKUController", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 16, "settings": "", "date": "10/29/2021"}
+{"address": "0xF09eD52638c22cc3f1D7F5583e3699A075e601B2", "name": "Reader", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/29/2021"}
+{"address": "0xb41f93d542F91D52cc7D797438534cDd05336F6C", "name": "ZapFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/29/2021"}
