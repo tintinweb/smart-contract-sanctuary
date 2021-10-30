@@ -826,3 +826,9 @@
 {"address": "0xacBf216370262b025455B1937943Ea21037817CF", "name": "NEKUController", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 16, "settings": "", "date": "10/29/2021"}
 {"address": "0xF09eD52638c22cc3f1D7F5583e3699A075e601B2", "name": "Reader", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/29/2021"}
 {"address": "0xb41f93d542F91D52cc7D797438534cDd05336F6C", "name": "ZapFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "10/29/2021"}
+{"address": "0xb2CB70575B2CC4EA34269F434A9Bc205e817fAb2", "name": "CardsUpdateMetadata", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/30/2021"}
+{"address": "0x91373b367b8b0Ae581145094367C2Ba357B6A7E2", "name": "ArbisETHLPFarmStrategy", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/30/2021"}
+{"address": "0x400cd47bdc5a07e772cbb3e2b4fd8b7f150f10b4", "name": "ShibaSwap", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/30/2021"}
+{"address": "0x4Af054280609052471EF5AcEE2eEB2372b8624F2", "name": "SwaprStrategyDeployer", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 13, "settings": "", "date": "10/30/2021"}
+{"address": "0xd1b9a787f6b377ecce3971adf4d27d897d8ba6c1", "name": "GenericVaultDeployer", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/30/2021"}
+{"address": "0x223DF4Bd6cf3712EDDb3DAcB5689F3018D7Af455", "name": "SummaPri", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/30/2021"}
