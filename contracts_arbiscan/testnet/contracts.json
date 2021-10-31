@@ -191,3 +191,7 @@
 {"address": "0x3b624348fC06a8629E0107a8a409b83B6297C77B", "name": "LootMirror", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 10, "settings": "-", "date": "10/28/2021"}
 {"address": "0x9ca2ffc28cb8d930fd9b499292cf42623c7e77f6", "name": "TokenMigration", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 18, "settings": "", "date": "10/28/2021"}
 {"address": "0x4AdA118bDac03fAeB0e0809C607394F36252d21C", "name": "VerifiedSale", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "10/29/2021"}
+{"address": "0xcfcc81c508a8025879a27257cc0f699f9f2016ab", "name": "Multicall2", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/31/2021"}
+{"address": "0xb65b6Bd8ca13cA688ABbE6d6B3B020a191D5297b", "name": "OrcsRaidsArbs", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 4, "settings": "-", "date": "10/30/2021"}
+{"address": "0x0a543346ACcdebf83031Cb4491aCf43129041A72", "name": "Descartes", "compiler": "0.7.4", "balance": "0 ETH", "txcount": 32, "settings": "", "date": "10/30/2021"}
+{"address": "0x110deC1662Cc89779c0c017Ffd7aF6FBb09b19a1", "name": "OrcsRaidsArbs", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "10/30/2021"}
