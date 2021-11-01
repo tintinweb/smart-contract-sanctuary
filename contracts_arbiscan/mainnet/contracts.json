@@ -850,3 +850,13 @@
 {"address": "0x4B48c7C7bD42aebA39D9C12C3F99b1E9E5e1CDB5", "name": "SummaSwapInterfaceMulticall", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/31/2021"}
 {"address": "0x2941ebF2D046F74C806736F8Db32588d56c68be9", "name": "TokenIssue", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/31/2021"}
 {"address": "0x2a1eb747cc5efbd239a23be29da5c3979a54e922", "name": "KENSHINU", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "10/31/2021"}
+{"address": "0x18999c13f0f12b0c7c5d78b35c19d381e20a1580", "name": "EntrustCommerce", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/1/2021"}
+{"address": "0xCC7DB563BBD40BF1531f752B6082FD2CE24D7e6F", "name": "DemocraticOwnership", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/1/2021"}
+{"address": "0xD8CDB4b17a741DC7c6A57A650974CD2Eba544Ff7", "name": "Presale", "compiler": "0.5.7", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/1/2021"}
+{"address": "0x3c8F2d5af2e0F5Ef7C23A08DF6Ad168ece071D4b", "name": "AccessControlledOffchainAggregator", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/1/2021"}
+{"address": "0xdc540d5d2b6ca8fe0cfe8e975c944e0b4a9dab87", "name": "WZyxBridge", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 10, "settings": "-", "date": "11/1/2021"}
+{"address": "0x63ede585791facba27d220901f08a55df8002fe8", "name": "TreasuryProxy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/1/2021"}
+{"address": "0x2445C5a8939d3563A29E8E5E8dc11f2BF02Ea374", "name": "TreasuryV2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/1/2021"}
+{"address": "0x0a15Ccf5E6029AaAeBc5F01b09d3C240Dc56c5f9", "name": "AddressRegistry", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/1/2021"}
+{"address": "0xa3de020256816b3E2C18Fdc3e849Eed4c5e93C62", "name": "DevAdmin", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/1/2021"}
+{"address": "0x2218833E81d0a739b976a8E04BbE703cAea3598a", "name": "ERC20VestingRescindable", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "10/31/2021"}
