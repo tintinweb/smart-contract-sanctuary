@@ -212,3 +212,9 @@
 {"address": "0xe6603073F1E99e156e74c79a58675cfAcAb9Ba96", "name": "OrcsRaidsArbs", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "10/31/2021"}
 {"address": "0xbe7ea7036bee5235ba1976406136c7d6ae1a1033", "name": "Vault", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "10/31/2021"}
 {"address": "0xC630C4B25dDa2E52bcF8043F29DD6144Cfd9E0a2", "name": "Router", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "10/31/2021"}
+{"address": "0x518320c6f29929554D5a3Ca3B0E68413dF926552", "name": "ASCIILabsDao", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/1/2021"}
+{"address": "0xE1BC75a6dE0c13b200CE1a850E622aF5c04042e6", "name": "MockToken", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/1/2021"}
+{"address": "0xa945507cdf0020bB326f4bCE88c2EcDC14F1B739", "name": "L2DaiGateway", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/1/2021"}
+{"address": "0x1Bf67De6F636e328eC3792ca31EbBF29F045b818", "name": "ArbDevWrapper", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/1/2021"}
+{"address": "0xeabc1f3d0d8b6c8788f080d66b353b6124aa9aa5", "name": "StakingTwinRewardsFactory", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/1/2021"}
+{"address": "0x340F776896Ef897a28AE6fC0CCeC6170cE83A94C", "name": "Dai", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/1/2021"}
