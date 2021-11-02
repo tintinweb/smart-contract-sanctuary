@@ -12805,3 +12805,22 @@
 {"address": "0x7a1454C9500EC06A9878cb7b60a71C0B1a76063d", "name": "Registry", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "11/1/2021"}
 {"address": "0x817b610Aab81583db65FfcAF72505a77868089bd", "name": "GovernanceProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "11/1/2021"}
 {"address": "0xF324b67feA47b41dFa6C80401Fd24ac330986B08", "name": "Governance", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "11/1/2021"}
+{"address": "0xe9b3a85922335fa76480ba9234a4fb18c8482a96", "name": "Calc", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "11/2/2021"}
+{"address": "0x38b729bf1ad2C53Fa67281cF5b4C195836dB1D86", "name": "CardMarket", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/2/2021"}
+{"address": "0xb3cfd63517c2e556047C3E2E1aE17c679F20D80b", "name": "LoveLiveCard", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/2/2021"}
+{"address": "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", "name": "TestToadz", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/2/2021"}
+{"address": "0x1c509b61b1aad003947ab9795fbf4ded2d793d3e", "name": "ChatterBridgeERC721", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/2/2021"}
+{"address": "0x19844fc1cbe2dc761814facce7162f64876ff051", "name": "NumbreBuyProxy", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "11/2/2021"}
+{"address": "0x8bDa9F5C33FBCB04Ea176ea5Bc1f5102e934257f", "name": "TestERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/2/2021"}
+{"address": "0xAb1D243b07e99C91dE9E4B80DFc2B07a8332A2f7", "name": "TestERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/2/2021"}
+{"address": "0x22E993D9108DbDe9F32553C3fD0A404aCD2B7150", "name": "ERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/2/2021"}
+{"address": "0x3f0a24b0c021c4d92fc03a9502ffb45c26efb81d", "name": "Checkerboard", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "11/2/2021"}
+{"address": "0x3c867383e7b3db47d267ce51c4166c54b64c8cf5", "name": "Hyuga", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "11/2/2021"}
+{"address": "0x7f75fd8e05c60bf9a3710cc99f5df05549c3387d", "name": "FLOKIPUP", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "11/1/2021"}
+{"address": "0xfD9bfC4DD83F80a6BfEE9c7cEFAe82B00654703C", "name": "Monzy", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "11/1/2021"}
+{"address": "0x68d731dfa9a96af375a10aa9e389e8c82c40c9a2", "name": "EthernityRegistry", "compiler": "0.4.26", "balance": "-", "txcount": 0, "settings": "", "date": "11/1/2021"}
+{"address": "0x47682DCC6E3f30e38d8CF62021a0f2D2696a26bd", "name": "TOGA", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/1/2021"}
+{"address": "0x7fb39deC6544b8314233ca565f210bF025435169", "name": "AppaInu", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/1/2021"}
+{"address": "0xA2Dd2132Af1D7E947125A22042cdB188F46bC43b", "name": "HoneyToken", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/1/2021"}
+{"address": "0x9d176EE62160f81FFA8c800BfC9c4F70c99c80ec", "name": "HoneyFarmQueen", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/1/2021"}
+{"address": "0xA657F1727397949B96dd5dc3f56524Bc97517a07", "name": "HoneyHive", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/1/2021"}
