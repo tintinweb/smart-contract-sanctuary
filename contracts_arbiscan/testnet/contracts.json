@@ -218,3 +218,6 @@
 {"address": "0x1Bf67De6F636e328eC3792ca31EbBF29F045b818", "name": "ArbDevWrapper", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/1/2021"}
 {"address": "0xeabc1f3d0d8b6c8788f080d66b353b6124aa9aa5", "name": "StakingTwinRewardsFactory", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/1/2021"}
 {"address": "0x340F776896Ef897a28AE6fC0CCeC6170cE83A94C", "name": "Dai", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/1/2021"}
+{"address": "0x88859dD9C60Fa12eBD53CFA40cDD960fB0A3C456", "name": "TESTERC20", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/2/2021"}
+{"address": "0x0B6892842113249C56629AE7c4ae91B465FCC4f9", "name": "TESTERC20", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/2/2021"}
+{"address": "0xd54779EC6998883ea405EC096650c880BB89Aa6b", "name": "MaviaTokenL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/2/2021"}
