@@ -221,3 +221,8 @@
 {"address": "0x88859dD9C60Fa12eBD53CFA40cDD960fB0A3C456", "name": "TESTERC20", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/2/2021"}
 {"address": "0x0B6892842113249C56629AE7c4ae91B465FCC4f9", "name": "TESTERC20", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/2/2021"}
 {"address": "0xd54779EC6998883ea405EC096650c880BB89Aa6b", "name": "MaviaTokenL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/2/2021"}
+{"address": "0xcf76a8365a218d799f36030d89f86c8fbcc65a6e", "name": "PerpetualProtocolReferrer", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/4/2021"}
+{"address": "0x928d6f271f4cdea1a544f40898350d1ba55018d4", "name": "FeswaNFT", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/4/2021"}
+{"address": "0x69752367a0720963aec78760eeaa208afcf09122", "name": "FeSwapFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/4/2021"}
+{"address": "0x31c6ba28f9692564a6ebd516676f2d49ac8c0dba", "name": "Fesw", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/3/2021"}
+{"address": "0x6a8fe4753ab456e85e1379432d92abf1fb49b5df", "name": "MetamorphicContractFactory", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/3/2021"}
