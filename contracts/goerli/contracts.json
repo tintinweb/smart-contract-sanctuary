@@ -13135,3 +13135,17 @@
 {"address": "0x7aCa8F0d68b8dcea6553ecbfeE55056727c136A8", "name": "MintableERC721PredicateProxy", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/4/2021"}
 {"address": "0x3c99C0af51B2c4243FF257a238afd571ba3B3f17", "name": "MintableERC721Predicate", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/4/2021"}
 {"address": "0x9035DA0f88b9Ef5B471B7aA02E82CB4BBcC65642", "name": "ERC721PredicateProxy", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/4/2021"}
+{"address": "0x5e2010df7c853194299ed97c906feddc1b0394e2", "name": "PiggyBank", "compiler": "0.7.1", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x58e0D16Cd95d5Ef71b62Ec26deD873D25edfC782", "name": "SketchySquirrel", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0xAa17B435B718E773E7F93Dd9474069499f051AE0", "name": "OlympusBondDepository", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x9E677de184891a389Ed55d802542087f72e6aCf8", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0xa64325270750f69f407ce0309490A5142ee65A6A", "name": "TransferTool", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "-", "date": "11/5/2021"}
+{"address": "0x588F9d425981859287D7BDD650b643648fF5c291", "name": "VFContract", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x1c1A2eB4c1300756aD3aD394f7422b70631df273", "name": "FundamentaBridge20", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x82fccd9a1e4ecf8bc5a2eb73ce0ff6ddd5d87472", "name": "ERC20", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "11/4/2021"}
+{"address": "0x89f472E710Bcf1781b9741240CeF4Ca79DAa810F", "name": "TransparentUpgradeableProxy", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/4/2021"}
+{"address": "0xe87A2DDF744Dec66885A4d7502C30E0F2449410F", "name": "OnChainVoteL1", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/4/2021"}
+{"address": "0xA365d3b5cf24905c985ae951f133555709b03BB8", "name": "FundamentaBridge20", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/4/2021"}
+{"address": "0x834787f9728A2797Df987AEEDb6d3D7446E93282", "name": "ERCWithProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "11/4/2021"}
+{"address": "0x21a6ffabe137e21eb9d798ea0dd9ef6067e8c9ff", "name": "LLTH", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "11/4/2021"}
+{"address": "0x7E60e6ad57500e6E93453Fda0f4f6CFe1Aa6E6f3", "name": "DummyMintableERC721", "compiler": "0.6.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/4/2021"}
