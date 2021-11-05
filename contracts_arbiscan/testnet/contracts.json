@@ -226,3 +226,14 @@
 {"address": "0x69752367a0720963aec78760eeaa208afcf09122", "name": "FeSwapFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/4/2021"}
 {"address": "0x31c6ba28f9692564a6ebd516676f2d49ac8c0dba", "name": "Fesw", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/3/2021"}
 {"address": "0x6a8fe4753ab456e85e1379432d92abf1fb49b5df", "name": "MetamorphicContractFactory", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/3/2021"}
+{"address": "0x9b592dbcf45f8260657bc9ac8bb3bcfe2c83d99c", "name": "StakingTwinRewardsFactory", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/5/2021"}
+{"address": "0x6729B1425DF1750e14CEb171919c346f58014913", "name": "TestMint", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/5/2021"}
+{"address": "0x7725f9a802e1612ec5e5bf65a73d4318cda0c4a9", "name": "FeswGovernor", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/5/2021"}
+{"address": "0xc2078563d1ce2b8ff241a087b37344a7ea0a07dd", "name": "Timelock", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/5/2021"}
+{"address": "0x4Bc6c6bfB39Dc3fBcC2410D53665A34f66028cdf", "name": "EtomicSwap", "compiler": "0.5.17", "balance": "0.0005 ETH", "txcount": 2, "settings": "", "date": "11/4/2021"}
+{"address": "0x7a1a7ca70340e5460b73662ba46dad0a56930f68", "name": "PerpetualProtocolReferrer", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/4/2021"}
+{"address": "0x364cd4f1202a48e9e6c6de502b2dde572ef57281", "name": "FeSwapRouter", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/4/2021"}
+{"address": "0xBA094939bdCC3bA3c2Bb69eC6274dF76075F1887", "name": "ERC20VaultHandler", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 10, "settings": "", "date": "11/4/2021"}
+{"address": "0xD07f4Fe56Fc7628Ca130B813c46Ee7a61019Fd0F", "name": "MSDControllerV2", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "11/4/2021"}
+{"address": "0x53876c224Ef395428c97b368236Eb7132400c4B3", "name": "MSD", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/4/2021"}
+{"address": "0x0a968b282AB73CAf329BF4C1C16C580d0F781113", "name": "SwapRouter", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/4/2021"}
