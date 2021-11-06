@@ -13248,3 +13248,19 @@
 {"address": "0x78F0E35C1aC01Aab5f19e19754c0208f5920D36e", "name": "Registry", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
 {"address": "0x7798470A6F64c0801411A5159B8d01fD80f8E984", "name": "GovernanceProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
 {"address": "0xa092706717Dcb6892b93f0baAcC07B902Dbd509C", "name": "Governance", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0xf1e04195aefa3f8e979f8b8467d30b81a9ba46e2", "name": "NftOwner", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0x0Bcf1F8EB68BA3936da2849bF1e14E22dd406344", "name": "FxERC20RootTunnel", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0xaEA51679C91Fb81F42e414e6Dd26ff237Ec53C1A", "name": "FxMintableERC20RootTunnel", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0xD8711F0896716B74ee5f251D9d8088cc8c0E37a4", "name": "BottleLauncher", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x47586f4d7a4052a5f3ecaae582049fcd58a10675", "name": "BearX", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0xDa8963AefF1a2D1038F8fe7766635945e8e933D9", "name": "BottleLauncher", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0xB4A0042185F2bE9297780fa79047B5ddeCfcE6a9", "name": "BottleLauncher", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x1e8BfF3F43832ad63bd4024C44BdC8238935A8D0", "name": "Komori", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "11/5/2021"}
+{"address": "0x6f9dc69fde5885fee9698c3a58fcb4e8852c8142", "name": "TransferVerifier", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0xab03ebcef708abc44708441ce1f4698b4abf6c25", "name": "CancelVerifier", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x79ee9ab99beb577ee852089588513192d63cbd14", "name": "CallExecutor", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x0675e200207875ee310d4452247c0c4ef2153f39", "name": "DeployAndExecute", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x74893182c3620aac36d787d1fd9bde84d6c785cf", "name": "Account", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x2de47e4204172d455d86194d4a0cbf10f0eaa238", "name": "UniV2ExcessWethCrossPair", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0xc5a16c0e3f1463a66bebf71e3bdb14b432dfba47", "name": "UniV2ExcessOut", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x6fa2c00073a7037fd5dfe1bfd8852a5f435eecec", "name": "UniV2ExcessIn", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
