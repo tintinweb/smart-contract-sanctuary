@@ -956,3 +956,5 @@
 {"address": "0xdb9e3464a27fd3a36c0dedd8a1841dec7cd0151d", "name": "CrossChainOracleSingleAsset", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/4/2021"}
 {"address": "0xDe905e6411B34dF9921AdDf8F66cAf0C7F9C288F", "name": "stARBIS", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "11/4/2021"}
 {"address": "0xb8bCc5cd7047F5482Fb3db1C3eD0dC246fC59b4d", "name": "ComboOracle_UniV2_UniV3", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/4/2021"}
+{"address": "0x7485e3C36afFd87b805cf303d37c11EF75980f28", "name": "StrategyForSushiMiniLp", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/6/2021"}
+{"address": "0xe8794cca601d848e4e9a0a79364fdfc7210f53a1", "name": "LiquidityLock", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/5/2021"}
