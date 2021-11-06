@@ -13264,3 +13264,16 @@
 {"address": "0x2de47e4204172d455d86194d4a0cbf10f0eaa238", "name": "UniV2ExcessWethCrossPair", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
 {"address": "0xc5a16c0e3f1463a66bebf71e3bdb14b432dfba47", "name": "UniV2ExcessOut", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/5/2021"}
 {"address": "0x6fa2c00073a7037fd5dfe1bfd8852a5f435eecec", "name": "UniV2ExcessIn", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/5/2021"}
+{"address": "0x7ea34718c8e11b969b020d94453381d6ade5cda8", "name": "EFLOKI", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "11/6/2021"}
+{"address": "0x6e3c2510fe738d59c78ed3d2dedd07a88b875cf0", "name": "KHToken_StandardToken_U", "compiler": "0.4.24", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0x67C26dAEf411384297641a06895E1AD3cE97028f", "name": "VFContract", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0x3ceE793C0BD68559Df67E4b23d49E82d54C2866b", "name": "FundMe", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0xB97eB29b699EBbF5c58Af6eebCB4c6187fE87833", "name": "EasyToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0x4ab26f756e538162a00a6fecfb1325f3ccf433be", "name": "Piggy", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0x236aA8d9183D3664E7e0ff90158584718d8e4eaF", "name": "LiquidityMigrator", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0x0c05f50832c54d522a730f557155f65ec4111b80", "name": "CodeWithJoe", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "-", "date": "11/6/2021"}
+{"address": "0xf6fb81dcc6fe366ea08905c9c3ae34fe49b77459", "name": "CodeWithJoe", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "-", "date": "11/6/2021"}
+{"address": "0x3039521bded99e0bd5126cb30113c169db78aa25", "name": "DssBlow", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0xA6c4356C55C4672E28552D3779682D4404c7Be65", "name": "BottleLauncher", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
+{"address": "0x5C4337E6b74FEf9F5c2eBCF04434C81c53673ec5", "name": "Slime", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "-", "date": "11/6/2021"}
+{"address": "0xc2d3a8B2050eaa4cb9dA73a5DAd73D116bDC4b4A", "name": "BottleLauncher", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/6/2021"}
