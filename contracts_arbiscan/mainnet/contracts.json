@@ -958,3 +958,7 @@
 {"address": "0xb8bCc5cd7047F5482Fb3db1C3eD0dC246fC59b4d", "name": "ComboOracle_UniV2_UniV3", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/4/2021"}
 {"address": "0x7485e3C36afFd87b805cf303d37c11EF75980f28", "name": "StrategyForSushiMiniLp", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/6/2021"}
 {"address": "0xe8794cca601d848e4e9a0a79364fdfc7210f53a1", "name": "LiquidityLock", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/5/2021"}
+{"address": "0x1B9651C3Ff7f055b721c9B51219709E52FDbE5Fd", "name": "SynapseBridge", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/7/2021"}
+{"address": "0x375E9252625bDB10B457909157548E1d047089f9", "name": "L2BridgeZap", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 80, "settings": "", "date": "11/7/2021"}
+{"address": "0xd3d83E4A7332aDd51d0cdb82E9ffEfC310285DBa", "name": "Punknpunks", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "11/7/2021"}
+{"address": "0x30ad7d88917476e29a2640a347de013eae6b91c9", "name": "JoeToken", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/6/2021"}
