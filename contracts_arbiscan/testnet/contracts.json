@@ -255,3 +255,4 @@
 {"address": "0x6ac0Fd93A95a903B7ef5EfB892FB41470e2f5788", "name": "GovernorBeta", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/6/2021"}
 {"address": "0x7176aFFF16120E671f343F540503F2FF18f58a68", "name": "Long", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 14, "settings": "", "date": "11/6/2021"}
 {"address": "0x0d2C0d83C34d343f75291aeAAe2546Fb2Bcdd978", "name": "Timelock", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/6/2021"}
+{"address": "0x723C1b61d38203923E917C398cBd25dF1320E801", "name": "ERC20VaultHandler", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/7/2021"}
