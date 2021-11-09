@@ -978,3 +978,10 @@
 {"address": "0x3E0215c1D639280e13B46e3aF94Fb5630d1b3212", "name": "RdpxVolatilityOracle", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/8/2021"}
 {"address": "0xD84cE0c38122713CAf4Faf080316A4c84c73f64e", "name": "UniswapV2Oracle", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/8/2021"}
 {"address": "0x8d481245801907b45823Fb032E6848d0D3c29AE5", "name": "StakingRewardsV2", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "11/7/2021"}
+{"address": "0xE19671022a3972084bF0E842fCEC6043dDda25e3", "name": "HundredLendingAMO_ARBI", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "11/9/2021"}
+{"address": "0x0f44eAAC6B802be1A4b01df9352aA9370c957f5a", "name": "IceCreamNFT", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/9/2021"}
+{"address": "0x30f8627373634967F692c949092281Cf8Fb0327A", "name": "wZ2O", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "11/9/2021"}
+{"address": "0x527a819db1eb0e34426297b03bae11F2f8B3A19E", "name": "TaskTreasuryL2", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/9/2021"}
+{"address": "0x8aB6aDbC1fec4F18617C9B889F5cE7F28401B8dB", "name": "PokeMe", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/9/2021"}
+{"address": "0xB3f5503f93d5Ef84b06993a1975B9D21B962892F", "name": "EIP173Proxy", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/9/2021"}
+{"address": "0x95f4538C3950CE0EF5821f2049aE2aC5cCade68D", "name": "Forwarder", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/9/2021"}
