@@ -256,3 +256,14 @@
 {"address": "0x7176aFFF16120E671f343F540503F2FF18f58a68", "name": "Long", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 14, "settings": "", "date": "11/6/2021"}
 {"address": "0x0d2C0d83C34d343f75291aeAAe2546Fb2Bcdd978", "name": "Timelock", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/6/2021"}
 {"address": "0x723C1b61d38203923E917C398cBd25dF1320E801", "name": "ERC20VaultHandler", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/7/2021"}
+{"address": "0xFbdb43a93bf3b589B0b1bE5af20e0e82d6E31968", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.285 ETH", "txcount": 22, "settings": "", "date": "11/8/2021"}
+{"address": "0xce863e9e39059ce3edde8171d24e65c6da54cbf2", "name": "A", "compiler": "0.5.10", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "11/8/2021"}
+{"address": "0xfef7d22ffdfcde784b4eeae5247aa2c664dd572f", "name": "A", "compiler": "0.6.0", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/8/2021"}
+{"address": "0xf66dcfac2c978c8b5a1a820513e8554d9d124598", "name": "MultipleByRatio", "compiler": "0.7.0", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/8/2021"}
+{"address": "0xbbea51ff730b9c6bfb973a5321d96f8013528d78", "name": "KyberNetworkTokenSale", "compiler": "0.4.20", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/8/2021"}
+{"address": "0xa4b6acaa950d76597a9d6377519e2002672b6dd7", "name": "A", "compiler": "0.4.20", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/8/2021"}
+{"address": "0x2946d56971745c44865f32615ff94e92ddbad0cb", "name": "EncodePackedExample", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/8/2021"}
+{"address": "0xfff9ae7f040d94947694b94c4b8f9bfc8515cdb8", "name": "testArrays", "compiler": "0.7.0", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/8/2021"}
+{"address": "0x6fB2916Fefa200A5d045EB685BFB04c4b1257213", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.282 ETH", "txcount": 22, "settings": "", "date": "11/8/2021"}
+{"address": "0x9bCb3F85b0b01968F5e0100652a53958c8558452", "name": "MarketProxy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/8/2021"}
+{"address": "0xAd3d7435b43cd1cc7a469AF2ae6Da22f23419F88", "name": "YouTubeMarketV2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/8/2021"}
