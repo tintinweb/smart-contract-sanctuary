@@ -13419,3 +13419,23 @@
 {"address": "0x027029f5c824e36b8affefb39a17891beb26ed07", "name": "NFTBlack_GENISIS", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "11/8/2021"}
 {"address": "0x06a0ed873e608a54e5b4fad7616f52e2534510c8", "name": "CredefiToken", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/8/2021"}
 {"address": "0x427658f349b0a90bbc07952b0b0b2978c0608157", "name": "IXIToken", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/8/2021"}
+{"address": "0x37285150995D548444f2Be77c9bAc5024507f9ff", "name": "DefishBreeding", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/9/2021"}
+{"address": "0x548383b005C3b28e9a2fb2fCaaBc1CF5BA96f6b0", "name": "RootChainManager", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/9/2021"}
+{"address": "0xe11Cb41f45EF60F6631d87A141f25d9BbEee965c", "name": "RootChainProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "11/9/2021"}
+{"address": "0x1311Ff6dB1d698Aeed730Dc2388C9b668471653d", "name": "RootChain", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "11/9/2021"}
+{"address": "0x190ef1ce9b8c7a20ac51cd4482f63c76d665da57", "name": "LandTransferUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "11/9/2021"}
+{"address": "0xAD4E886B924d849656AcB2b2cBDdBC619BEaCdc4", "name": "NFTStateTransfer", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "11/9/2021"}
+{"address": "0xD1E9CDeEe91428Dc767d0f99460e4e2F6BA6ad2A", "name": "MECollectible", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "11/9/2021"}
+{"address": "0x8C661806f716652B637728355cC4e2620D428F99", "name": "Uni", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "11/9/2021"}
+{"address": "0x623e57435D9eE82C52d31823798bf85429850F45", "name": "GStakingManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/9/2021"}
+{"address": "0x96dDd38D8C817B7F361077375B09065Ae5D75Efd", "name": "NFTStateTransfer", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "11/9/2021"}
+{"address": "0x8C2e48a41ad1D2c58D546F9373817f95794170aF", "name": "MockERC1155", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "11/8/2021"}
+{"address": "0x2204A9810cd3F3FA49AfdAE09E8f8a9664839e0d", "name": "Socks", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/8/2021"}
+{"address": "0x52Ae6Ac8CCc38d2A0bCF31582F29373D899bC73D", "name": "MockERC721", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/8/2021"}
+{"address": "0x7E163E4f8e3Ff2F6Fd416D9a1EF3Fa8D732C352d", "name": "Socks", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/8/2021"}
+{"address": "0x530f14f3A9F9db4782B2cd4fA53897F80F135266", "name": "Socks", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/8/2021"}
+{"address": "0x95D45cF550338D9901bFB11DBD97Fe781eAfc097", "name": "Socks", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "11/8/2021"}
+{"address": "0x3dAFcC480E4Db22716b1Ea5A34DE791CeF6fBe15", "name": "NFTStateTransfer", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "11/8/2021"}
+{"address": "0x296467b5fa304cf90a8f9d83e1dc389aa5682634", "name": "Indice", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "11/8/2021"}
+{"address": "0xcD7f41c5700097B3bA174A1545Da2C7BfD14d26F", "name": "MockPair", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/8/2021"}
+{"address": "0xf6a9EEfcE222183446bEc2eBeb1504FAc2637462", "name": "Multicall2", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/8/2021"}
