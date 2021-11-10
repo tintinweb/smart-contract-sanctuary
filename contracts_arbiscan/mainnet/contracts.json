@@ -985,3 +985,10 @@
 {"address": "0x8aB6aDbC1fec4F18617C9B889F5cE7F28401B8dB", "name": "PokeMe", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/9/2021"}
 {"address": "0xB3f5503f93d5Ef84b06993a1975B9D21B962892F", "name": "EIP173Proxy", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/9/2021"}
 {"address": "0x95f4538C3950CE0EF5821f2049aE2aC5cCade68D", "name": "Forwarder", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/9/2021"}
+{"address": "0xEcd46A72CD1Befb4eD8E88DBc90bEeAB524172A9", "name": "HyperLiquidrium", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0x78418681f9ed228d627f785fb9607ed5175518fd", "name": "EmissionControl", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0x71423cba5524440d92A7115D7c32fFa08da87517", "name": "rFLUID", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0x24099000ae45558ce4d049ad46ddaaf71429b168", "name": "BAMM", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0xb426c1b7fabea9ea6a273e8427040568a8c7df13", "name": "Comptroller", "compiler": "0.5.16", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0xf2bb803010fa55ab60af1a4740d1a1d6c9c93a39", "name": "Vault", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0x7E418a9926c8D1cbd09CC93E8051cC3BbdfE3854", "name": "Swapper", "compiler": "0.5.17", "balance": "0.15584596 ETH", "txcount": 1164, "settings": "", "date": "11/10/2021"}
