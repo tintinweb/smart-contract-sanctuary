@@ -267,3 +267,12 @@
 {"address": "0x6fB2916Fefa200A5d045EB685BFB04c4b1257213", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.282 ETH", "txcount": 22, "settings": "", "date": "11/8/2021"}
 {"address": "0x9bCb3F85b0b01968F5e0100652a53958c8558452", "name": "MarketProxy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/8/2021"}
 {"address": "0xAd3d7435b43cd1cc7a469AF2ae6Da22f23419F88", "name": "YouTubeMarketV2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/8/2021"}
+{"address": "0xd46BA13686765deCa5aa12b8fA956A8F2362DFf7", "name": "FixedPricePool", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0x4649194eD6dD812253BAde2A154441193c95371D", "name": "StakingImp", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0xBDAB2e497AA7Aa862a0c1003e0cFFd83fDC758DC", "name": "UpgradeabilityProxy", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0x06BdeB8aF90d70721a69D148BE04C4a550C68b89", "name": "ProtocolToken", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0xE2166EF234c8F4aa37Ad41DF78CCBdd782Cb2B04", "name": "ProtocolToken", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0xFfA68Bb12D3bA3BE62616DAd93a7774F9eE207C1", "name": "Whitelist", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/10/2021"}
+{"address": "0x98bfe0c0a032d841808c602ee4bc4bd507bed0fe", "name": "BasisStrategy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "11/9/2021"}
+{"address": "0x8321a28f5bf0dd61246545fe2067a64d0b86004c", "name": "BasisStrategy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 35, "settings": "", "date": "11/9/2021"}
+{"address": "0x572a6a05d29f620737851a30554cd80b0cf540b9", "name": "MultipleByRatio", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/9/2021"}
