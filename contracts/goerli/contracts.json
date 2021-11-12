@@ -13641,3 +13641,23 @@
 {"address": "0x4D25AB6B1878B6C9bb8957ff760711B077C44Cd0", "name": "TellorTest", "compiler": "0.7.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/10/2021"}
 {"address": "0x4d2d814F41cc4ec4bD380C9177B9aC2e95065ADa", "name": "Controller", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "11/10/2021"}
 {"address": "0xd5C2bd6777250188B34D77C82e46838b602B06A3", "name": "PercentSplitETH", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/10/2021"}
+{"address": "0x1b001da0aa4ebb415f7dbe545263bdc0e21d8a3f", "name": "LidoProxy", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "11/12/2021"}
+{"address": "0x61fde6954340cFb9F819D6A066Df21ba97C43e94", "name": "UMAImpl", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0xadEB70A74E05C1338f14699DcDF2493F7Fb85A69", "name": "OpynImpl", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0x8b6e1930Cfbea3713aE06ABC50bFDcC1F1B14237", "name": "LiquidityVault", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0xAF034C3d1ff5086294a9051F23dB24238abd0820", "name": "LiquidityManager", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0xC1519CAb9BA1b163a92f54282cf4324e3EB298A7", "name": "OptionToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0x3c24B3939F74fa322345554A0785F602878E7e4C", "name": "OptionRegistry", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0xba5876ea622875de2b8daa9ed10cec0a3fc61db8", "name": "LidoProxy", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "11/12/2021"}
+{"address": "0xf425f67fe20394C5Aa841390b675968f85663e3c", "name": "MintersERC20", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0x46114b93631c6914d422f1804e3da9628a48fd12", "name": "TempusGauge", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "11/12/2021"}
+{"address": "0x433e85f094bf306bc8c7be96905418c0dd6b26ed", "name": "TempusGauge", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "11/12/2021"}
+{"address": "0xc85b80869ec89503d0d9d9f96d53789f0cbee555", "name": "TempusGauge", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "11/12/2021"}
+{"address": "0xbe983621c981c2cf9796075b24e41824eeee521f", "name": "Bamboo", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0x1f1c888e718cc69add27ef76ae760c393c044a9e", "name": "HourseToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "11/12/2021"}
+{"address": "0x7b5a076507c0e8075f32323178664f30d3Bb69d4", "name": "RacerKeySale", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0xc6636D8b7016eE5b4a88207133eB335F6C40EbB9", "name": "RacerKey", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/12/2021"}
+{"address": "0x0f85Ff7165D4aeCfEe3085237937Be08b3B3b500", "name": "NFTBrandAssets", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/11/2021"}
+{"address": "0x78fC0b7FB85Cca0132e6d9a979665fB1d2b0027a", "name": "StakingPoolImpl", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/11/2021"}
+{"address": "0xC0E76815CDbc14e352C0Fc5571634a04b431FD99", "name": "FlashBotsMultiCall", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/11/2021"}
+{"address": "0xe2dd03Ef3934046C033Cd87B077ae731eF467bec", "name": "Yolo", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "11/11/2021"}
