@@ -1036,3 +1036,17 @@
 {"address": "0xA61178CF37a0436417540C1554A25c20aF844c32", "name": "WeaponsBridgeL2", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/12/2021"}
 {"address": "0x48d0A85E5A79f043c1721DD4E13F2418287C8D45", "name": "TreasureNFTOracle", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/11/2021"}
 {"address": "0x134569A78306A0F239deaF8890d0f6DDd457Bd06", "name": "TreasureMarketplace", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 17, "settings": "", "date": "11/11/2021"}
+{"address": "0x7dF2aEC5494339459A6b868A764DF21124906ecd", "name": "GmProtocol", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 13, "settings": "", "date": "11/13/2021"}
+{"address": "0x0121097A95839782D5cE2f9260570358BCee812c", "name": "GmProtocol", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/13/2021"}
+{"address": "0xB055EbbAcc8Eefc166c169e9Ce2886D0406aB49b", "name": "Vyper_contract", "compiler": "vyper:0.2.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/13/2021"}
+{"address": "0x3Cf49c31A0C13E89700a13813B8ac1170B402B80", "name": "FundFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/13/2021"}
+{"address": "0x37F7865568d9cb30791583cA404E0B23eF05CF21", "name": "ComboOracle_UniV2_UniV3", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/13/2021"}
+{"address": "0xC4B2C51f969e0713E799De73b7f130Fb7Bb604CF", "name": "ProxyUpgradeableOwnable", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/13/2021"}
+{"address": "0xF92b8AD7a62437142C4bf87D91e2bE0Fe1F44e9f", "name": "VolatilitySurfaceOracle", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/13/2021"}
+{"address": "0x329700ae5dA80a196a51A22011B96715Bd12Cd2C", "name": "CHEEMSETHStrategy", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/13/2021"}
+{"address": "0x78ab636351c1c5f117c1442b82d14ab3a92f8464", "name": "BeefyVaultV6", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "11/13/2021"}
+{"address": "0x6207536011918f1a0d8a53bc426f4fd54df2e5a8", "name": "StrategyArbiBifiMaxi", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "11/13/2021"}
+{"address": "0xf50056e8712939aa932cdd68d1101271bb3d4a1e", "name": "BountyAuction", "compiler": "0.8.0", "balance": "0.23 ETH", "txcount": 7, "settings": "-", "date": "11/12/2021"}
+{"address": "0x11C7f9E47E7601A2BAeC9798e768C4a908d7CAfa", "name": "Admin", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 12, "settings": "", "date": "11/12/2021"}
+{"address": "0x62e93f6A9a1848E5DfB400a60Fa484622c01CAF0", "name": "BountyAuction", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "11/12/2021"}
+{"address": "0xDBEf87E74128EcDdEd43063278d0d5c96e4d39c5", "name": "BountyAuction", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "11/12/2021"}
