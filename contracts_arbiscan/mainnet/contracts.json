@@ -1050,3 +1050,5 @@
 {"address": "0x11C7f9E47E7601A2BAeC9798e768C4a908d7CAfa", "name": "Admin", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 12, "settings": "", "date": "11/12/2021"}
 {"address": "0x62e93f6A9a1848E5DfB400a60Fa484622c01CAF0", "name": "BountyAuction", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "11/12/2021"}
 {"address": "0xDBEf87E74128EcDdEd43063278d0d5c96e4d39c5", "name": "BountyAuction", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "11/12/2021"}
+{"address": "0x6F95C4b67430153d42836e63D3d73FE3F4fa8F33", "name": "OmicronBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/14/2021"}
+{"address": "0xab67ad7ec428abb0ea6dbd1a537aad9c30f38b4e", "name": "OKLG", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/13/2021"}
