@@ -199,19 +199,3 @@ interface IStringUtilsV1 {
     function split(string calldata str, string calldata delim) external pure returns(string[] memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

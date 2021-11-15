@@ -2194,19 +2194,3 @@ interface IDepositContract {
     function get_deposit_count() external view returns (bytes memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 500000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

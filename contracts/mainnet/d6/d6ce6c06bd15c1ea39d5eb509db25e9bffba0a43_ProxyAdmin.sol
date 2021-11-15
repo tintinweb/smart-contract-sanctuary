@@ -946,18 +946,3 @@ contract ChildOfProxiable is Proxiable {
     function _beforeUpgrade(address newImplementation) internal virtual override {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

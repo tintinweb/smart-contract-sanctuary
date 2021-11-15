@@ -3286,18 +3286,3 @@ contract UnitNFT_old is ERC1155Supply, ReentrancyGuard {
     receive() external payable {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

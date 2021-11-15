@@ -2551,21 +2551,3 @@ contract MockERC20 is MockBTC {
     constructor() public MockBTC("Other ERC20", "OTHER", 18) {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  }
-}

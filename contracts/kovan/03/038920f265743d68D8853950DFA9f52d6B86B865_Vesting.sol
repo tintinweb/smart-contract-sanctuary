@@ -534,23 +534,3 @@ library SafeMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/PercentageCalculator.sol": {
-      "PercentageCalculator": "0x379deb47211baf4c417ff89c6798b06182f1d9ef"
-    }
-  }
-}

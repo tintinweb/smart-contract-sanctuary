@@ -502,19 +502,3 @@ interface IStakerData {
   function userInfo ( address, address ) external view returns ( uint256 amount, uint256 tokenPaid, uint256 pointPaid );
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 0
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -2025,22 +2025,3 @@ contract Treasury is Ownable, ITreasury {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": false
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

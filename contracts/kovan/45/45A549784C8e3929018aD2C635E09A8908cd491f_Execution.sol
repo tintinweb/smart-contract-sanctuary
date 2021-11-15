@@ -1688,19 +1688,3 @@ interface IChiToken {
     function freeFromUpTo(address from, uint256 value) external returns(uint256 freed);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

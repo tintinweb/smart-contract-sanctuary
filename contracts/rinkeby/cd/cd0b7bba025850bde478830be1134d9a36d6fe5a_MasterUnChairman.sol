@@ -1602,27 +1602,3 @@ contract UnFederalReserveToken is ERC20("UnFederalReserveToken", "eRSDL"), Ownab
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [
-    ":@openzeppelin/=/Users/isit/git/comp/unfederalreserve-merchantlobby/node_modules/@openzeppelin/"
-  ],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

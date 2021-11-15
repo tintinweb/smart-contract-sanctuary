@@ -1171,19 +1171,3 @@ interface ITokenGateway {
     function calculateL2TokenAddress(address l1ERC20) external view returns (address);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

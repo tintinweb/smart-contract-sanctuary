@@ -5284,25 +5284,3 @@ contract ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/matiasbn/Desktop/stacktical/stacktical-dsla-contracts/contracts/StringUtils.sol": {
-      "StringUtils": "0xC7183212c2b0D4A62A542F7C4c3060Db55BE0bd2"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -2520,23 +2520,3 @@ library EnumerableSet {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/pools/USDoPoolLibrary.sol": {
-      "USDoPoolLibrary": "0x99a4974eeb6982c04ee2fce9a95a63669b19314b"
-    }
-  }
-}

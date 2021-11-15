@@ -1627,25 +1627,3 @@ contract ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/zx/code/opensea-nft-2/contracts/LootBoxRandomness.sol": {
-      "LootBoxRandomness": "0x101A5585C3616bc079EAAEc1A0FeC54604cD0Cc1"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

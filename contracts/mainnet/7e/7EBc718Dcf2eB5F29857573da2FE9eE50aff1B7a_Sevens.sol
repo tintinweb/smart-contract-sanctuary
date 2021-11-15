@@ -1488,19 +1488,3 @@ contract Sevens is ERC721Full, ERC721MetadataMintable, ERC721Burnable, HasSecond
   }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

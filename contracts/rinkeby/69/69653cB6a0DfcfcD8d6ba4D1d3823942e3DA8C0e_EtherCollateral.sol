@@ -1674,23 +1674,3 @@ interface IConjureFactory {
     function getConjureRouter() external returns (address payable);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/SafeDecimalMath.sol": {
-      "SafeDecimalMath": "0xab8e70dfb73af4b8ba8f2066b68fd515050a3881"
-    }
-  }
-}

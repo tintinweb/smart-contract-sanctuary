@@ -356,27 +356,3 @@ contract IntegralReader is IIntegralReader {
     }
 }
 
-{
-  "libraries": {
-    "IIntegralReader.sol": {},
-    "IERC20.sol": {},
-    "IIntegralERC20.sol": {},
-    "IReserves.sol": {},
-    "IIntegralPair.sol": {},
-    "IIntegralOracle.sol": {},
-    "IntegralReader.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 26
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

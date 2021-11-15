@@ -2125,25 +2125,3 @@ abstract contract Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/media/rashtrakoff/CHINMAYHDD/Blockchain_Projects/our-contracts/contracts/Libraries/ScaledMath.sol": {
-      "ScaledMath": "0xbFcEB0EfA6ee28A257fF828D992F855755A778db"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

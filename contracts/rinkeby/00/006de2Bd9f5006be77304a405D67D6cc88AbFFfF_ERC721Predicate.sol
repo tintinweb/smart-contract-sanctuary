@@ -2483,25 +2483,3 @@ library RLPReader {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/centos/alpha_testnet/code/contracts/contracts/common/lib/Common.sol": {
-      "Common": "0xE81D00c7545955F0c36Ab579420cB8638693A92A"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

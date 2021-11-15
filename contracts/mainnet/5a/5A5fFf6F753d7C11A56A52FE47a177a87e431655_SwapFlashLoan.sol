@@ -4274,30 +4274,3 @@ interface ISwap {
     ) external returns (uint256);
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/SwapFlashLoan.sol:SwapFlashLoan": {
-      "SwapUtils": "0x11199A9eE50127F335B84A1eEb961D8A85147f5F",
-      "AmplificationUtils": "0xFE986b20d34df3Aa9fA2e4d18b8EBe5AC6c753b0"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

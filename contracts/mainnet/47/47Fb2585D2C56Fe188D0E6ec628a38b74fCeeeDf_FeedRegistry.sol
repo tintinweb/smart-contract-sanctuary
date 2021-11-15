@@ -2613,21 +2613,3 @@ contract MockAggregatorProxy is AggregatorProxy {
     ) AggregatorProxy(aggregatorAddress) {} // solhint-disable-line
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  }
-}

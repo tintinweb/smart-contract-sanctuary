@@ -2894,19 +2894,3 @@ contract ScannerRegistryEnable is ScannerRegistryManaged {
     uint256[49] private __gap;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

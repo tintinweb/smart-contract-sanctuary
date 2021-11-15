@@ -14456,18 +14456,3 @@ abstract contract DSProxyFactoryInterface {
     function build(address owner) public virtual returns (DSProxy proxy);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

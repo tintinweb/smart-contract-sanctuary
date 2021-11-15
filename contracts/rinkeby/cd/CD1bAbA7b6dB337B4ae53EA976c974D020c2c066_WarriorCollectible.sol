@@ -1886,25 +1886,3 @@ contract Ownable is Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/pmumby/Development/BattleDrome/battledrome-erc1155-warrior/contracts/LibWarrior.sol": {
-      "LibWarrior": "0xa66347d54c40D445886C748455630BcF1e8591BB"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

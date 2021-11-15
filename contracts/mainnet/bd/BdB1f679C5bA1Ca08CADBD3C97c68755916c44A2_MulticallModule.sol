@@ -1190,19 +1190,3 @@ interface IERC1363Spender {
   function onApprovalReceived(address owner, uint256 value, bytes calldata data) external returns (bytes4);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

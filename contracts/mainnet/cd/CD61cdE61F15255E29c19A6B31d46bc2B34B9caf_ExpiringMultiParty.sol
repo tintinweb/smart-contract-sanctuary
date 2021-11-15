@@ -14223,29 +14223,3 @@ contract Umip3Upgrader {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": false
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 199
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/financial-templates/expiring-multiparty/ExpiringMultiPartyLib.sol": {
-      "ExpiringMultiPartyLib": "0x52A974B2Addc791138DD8c34E9BFFb508D33aa8B"
-    },
-    "contracts/financial-templates/perpetual-multiparty/PerpetualLib.sol": {
-      "PerpetualLib": "0x258678A2F13D32f1E031C81162fF58EA0F870D31"
-    }
-  }
-}

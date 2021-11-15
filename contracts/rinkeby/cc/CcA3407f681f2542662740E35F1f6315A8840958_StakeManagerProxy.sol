@@ -167,21 +167,3 @@ contract StakeManagerProxy is UpgradableProxy {
     constructor(address _proxyTo) public UpgradableProxy(_proxyTo) {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

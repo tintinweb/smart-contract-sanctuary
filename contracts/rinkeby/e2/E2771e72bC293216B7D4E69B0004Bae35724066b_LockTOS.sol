@@ -3752,19 +3752,3 @@ contract AccessRoleCommon {
     bytes32 public constant BURNER_ROLE = keccak256("BURNER");
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

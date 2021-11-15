@@ -834,29 +834,3 @@ library BytesLib {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/BytesLib.sol": {
-      "BytesLib": "0xd7b3dfc136827a6ed1601125997d8c45b633a193"
-    },
-    "contracts/libraries/Path.sol": {
-      "Path": "0xf3cadb9134aca474b7d7ac587f22b000851d1bfe"
-    }
-  }
-}

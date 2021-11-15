@@ -774,19 +774,3 @@ contract UnlimitedMBOwnableToken is ERC20Base, ERC20Mintable, ERC20Burnable, Own
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

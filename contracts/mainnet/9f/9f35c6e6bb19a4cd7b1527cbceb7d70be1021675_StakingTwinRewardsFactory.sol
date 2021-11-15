@@ -1096,18 +1096,3 @@ contract StakingTwinRewardsFactory is Ownable {
     }
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  }
-}

@@ -800,19 +800,3 @@ contract AttrPockets is TraitDB {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 20
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -4720,32 +4720,3 @@ contract TKPoolJoinExit is BNum {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/utils/BuniSafeMath.sol": {
-      "BuniSafeMath": "0x940f9cc489a1a7dd47a135cdacf9e8507a584c27"
-    },
-    "contracts/utils/RightsManager.sol": {
-      "RightsManager": "0x8534c255bf2c06176e89235fe65e9a3132753d5c"
-    },
-    "contracts/utils/SmartPoolManager.sol": {
-      "SmartPoolManager": "0x4cd95bbf3fcd61278e2e1b96de952166229dfe5e"
-    }
-  }
-}

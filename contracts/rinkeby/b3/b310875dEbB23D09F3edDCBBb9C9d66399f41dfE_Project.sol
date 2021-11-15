@@ -3789,26 +3789,3 @@ interface IERC165Upgradeable {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/SignatureDecoder.sol": {
-      "SignatureDecoder": "0x49c34a56c8ed8b5ac3fff55347e19c59baf4e7c7"
-    },
-    "contracts/libraries/Tasks.sol": {
-      "Tasks": "0xbc6fdf02f1bdc6b26c7c664c49e2fff030b4c0ef"
-    }
-  }
-}

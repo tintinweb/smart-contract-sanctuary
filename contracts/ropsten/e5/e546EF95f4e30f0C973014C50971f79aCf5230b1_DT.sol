@@ -1879,26 +1879,3 @@ interface IAutomatedExternalReflector {
     function collectShare() external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libs/FeeLibrary.sol": {
-      "FeeLibrary": "0xf7327c2a284834cd95ea6669f27525d7e5000c8c"
-    },
-    "contracts/libs/SwapWithLP.sol": {
-      "SwapWithLP": "0xa4fa0bc80b1f45f1d3126b556679428744bb56aa"
-    }
-  }
-}

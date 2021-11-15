@@ -657,24 +657,3 @@ contract ERC20ExecuteExtension {
     function _addAllowanceIfNeeded(address owner, address spender, uint256 amountNeeded) internal;
 }
 
-{
-  "evmVersion": "petersburg",
-  "libraries": {},
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

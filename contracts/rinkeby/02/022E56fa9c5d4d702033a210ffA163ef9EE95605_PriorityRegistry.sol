@@ -5531,29 +5531,3 @@ contract YmtOSV1 is IYmtOSV1 {
     }
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/Dependencies/PledgeLib.sol": {
-      "PledgeLib": "0x6e666e78ab0fca0afaea07e320df34365b0cfe80"
-    }
-  }
-}

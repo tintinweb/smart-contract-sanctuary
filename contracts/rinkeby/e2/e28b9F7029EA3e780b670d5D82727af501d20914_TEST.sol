@@ -2924,19 +2924,3 @@ interface ICreatorCore is IERC165 {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 145
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

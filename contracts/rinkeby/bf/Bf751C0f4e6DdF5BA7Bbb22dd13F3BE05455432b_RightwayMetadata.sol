@@ -711,28 +711,3 @@ library Strings {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/bart/git/InfinityTokens-contract/contracts/custom/RightwayDecoder.sol": {
-      "RightwayDecoder": "0x332349Ef178fD9c3C34154a9Ddd54a35C5B80921"
-    },
-    "/home/bart/git/InfinityTokens-contract/contracts/utils/Base64.sol": {
-      "Base64": "0x2aCb23B77d24Be996A2B6561e9E92F65D65Ecf2F"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

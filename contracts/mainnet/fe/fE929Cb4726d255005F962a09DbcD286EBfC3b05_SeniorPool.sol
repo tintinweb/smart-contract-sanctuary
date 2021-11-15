@@ -4045,29 +4045,3 @@ contract SeniorPool is BaseUpgradeablePausable, ISeniorPool {
   }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/protocol/core/SeniorPool.sol:SeniorPool": {
-      "Accountant": "0x3483Db484B213786990185Eb6347eC49904D0Bfa"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

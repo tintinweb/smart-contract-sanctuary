@@ -8476,23 +8476,3 @@ library ExchangeRate {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/SettleAssetsExternal.sol": {
-      "SettleAssetsExternal": "0x6085b0a8f4c7ffa2e8ca578037792d6535d1e29b"
-    }
-  }
-}

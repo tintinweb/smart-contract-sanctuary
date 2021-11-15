@@ -77,18 +77,3 @@ contract WWHACKD {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 3000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

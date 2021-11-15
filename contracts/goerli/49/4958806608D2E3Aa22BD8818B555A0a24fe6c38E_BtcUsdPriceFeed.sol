@@ -1559,25 +1559,3 @@ contract BtcUsdPriceFeed is UsingWitnet, IERC2362 {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/guill/github/witnet-price-feed-examples/contracts/flattened/BtcUsdPriceFeed/FlattenedBtcUsdPriceFeed.sol": {
-      "Witnet": "0x9b42b0D80C428B17A5828dF5C2c96454ca54bD04"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

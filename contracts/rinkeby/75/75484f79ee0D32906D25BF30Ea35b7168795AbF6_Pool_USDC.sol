@@ -6424,23 +6424,3 @@ interface AggregatorV3Interface {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Usr/Pools/UsrPoolLibrary.sol": {
-      "UsrPoolLibrary": "0xa9bf3cc908e7cd9d0e8d3b41d473547fed750390"
-    }
-  }
-}

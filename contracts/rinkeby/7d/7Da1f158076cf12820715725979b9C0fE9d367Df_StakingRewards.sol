@@ -932,21 +932,3 @@ contract StakingRewards is IStakingRewards, RewardsDistributionRecipient, Reentr
     event Recovered(address token, uint256 amount);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 250
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

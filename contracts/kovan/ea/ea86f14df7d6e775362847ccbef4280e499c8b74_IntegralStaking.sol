@@ -567,27 +567,3 @@ contract IntegralStaking is IIntegralStaking, Votes {
     }
 }
 
-{
-  "libraries": {
-    "Math.sol": {},
-    "SafeMath.sol": {},
-    "TransferHelper.sol": {},
-    "Votes.sol": {},
-    "IIntegralStaking.sol": {},
-    "IIntegralToken.sol": {},
-    "IntegralStaking.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

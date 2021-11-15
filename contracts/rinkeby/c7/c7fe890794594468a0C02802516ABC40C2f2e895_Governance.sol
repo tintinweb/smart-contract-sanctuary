@@ -244,19 +244,3 @@ contract Config {
     uint128 internal constant MAX_DEPOSIT_AMOUNT = 20282409603651670423947251286015;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -497,33 +497,3 @@ interface ICERC20 is IERC20 {
     function underlying() external returns (address);
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "details": {
-      "constantOptimizer": true,
-      "cse": true,
-      "deduplicate": true,
-      "jumpdestRemover": true,
-      "orderLiterals": true,
-      "peephole": true,
-      "yul": false
-    },
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

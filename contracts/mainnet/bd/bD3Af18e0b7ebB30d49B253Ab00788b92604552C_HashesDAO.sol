@@ -3896,24 +3896,3 @@ library MathHelpers {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000,
-    "details": {
-      "yul": false,
-      "deduplicate": true,
-      "cse": true,
-      "constantOptimizer": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

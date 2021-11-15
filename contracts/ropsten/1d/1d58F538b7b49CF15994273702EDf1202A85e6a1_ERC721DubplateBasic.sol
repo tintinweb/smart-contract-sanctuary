@@ -6072,22 +6072,3 @@ contract ERC721DubplateUser is OwnableUpgradeable, ERC721BurnableUpgradeable, ER
     uint256[50] private __gap;
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

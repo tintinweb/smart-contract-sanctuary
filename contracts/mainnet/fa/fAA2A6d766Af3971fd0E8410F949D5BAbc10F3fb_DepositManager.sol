@@ -2695,28 +2695,3 @@ library BytesLib {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/libs/ParamManager.sol": {
-      "ParamManager": "0x874dF019F8Ac3c7a2575c0F513e300915e4A8Dc1"
-    },
-    "/contracts/libs/RollupUtils.sol": {
-      "RollupUtils": "0x9E649D34aC3097E3B68c37FCb94D76588cA9DE54"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

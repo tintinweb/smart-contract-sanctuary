@@ -986,21 +986,3 @@ contract FB_v2 is ERC20Upgradeable, OwnableUpgradeable, PausableUpgradeable {
     event MinterChanged(address indexed newAddress);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

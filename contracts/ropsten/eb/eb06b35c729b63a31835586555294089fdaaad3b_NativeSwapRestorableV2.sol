@@ -1393,19 +1393,3 @@ interface IAuctionV2 {
     function addReservesToAuction(uint256 daysInFuture, uint256 amount) external returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 50000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

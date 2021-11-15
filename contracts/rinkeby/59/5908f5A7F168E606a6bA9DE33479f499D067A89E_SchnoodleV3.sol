@@ -1530,21 +1530,3 @@ contract SchnoodleV3 is ERC777PresetFixedSupplyUpgradeable, OwnableUpgradeable {
     event EleemosynaryChanged(address indexed account, uint256 percent);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

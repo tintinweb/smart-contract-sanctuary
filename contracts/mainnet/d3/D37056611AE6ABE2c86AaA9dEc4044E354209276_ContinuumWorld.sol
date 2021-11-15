@@ -1946,21 +1946,3 @@ interface IMintableERC1155 is IERC1155 {
     function mintBatch(address to, uint256[] calldata ids, uint256[] calldata amounts, bytes calldata data) external;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

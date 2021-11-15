@@ -213,22 +213,3 @@ contract IntegralPointsToken {
     }
 }
 
-{
-  "libraries": {
-    "SafeMath.sol": {},
-    "IntegralPointsToken.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

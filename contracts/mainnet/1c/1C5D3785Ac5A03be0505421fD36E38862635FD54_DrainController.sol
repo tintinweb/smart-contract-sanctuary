@@ -966,26 +966,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 9999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/VampireAdapter.sol": {
-      "VampireAdapter": "0xc22c12d1a327c1bfe5782bca429a3f7828bc068a"
-    }
-  }
-}

@@ -3145,22 +3145,3 @@ interface IFuzzyswapPoolEvents {
     event IncentiveSet(address virtualPoolAddress, uint32 endTimestamp, uint32 startTimestamp);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 0
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

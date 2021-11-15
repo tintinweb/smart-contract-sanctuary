@@ -595,21 +595,3 @@ interface IYouSwapCallee {
     function YouSwapV2Call(address sender, uint amount0, uint amount1, bytes calldata data) external;
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

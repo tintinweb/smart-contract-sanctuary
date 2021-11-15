@@ -1663,19 +1663,3 @@ abstract contract IUniswapV2Router01 {
     function getAmountsIn(uint amountOut, address[] calldata path) external view virtual returns (uint[] memory amounts);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

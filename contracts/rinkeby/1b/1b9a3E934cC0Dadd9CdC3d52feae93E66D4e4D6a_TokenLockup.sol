@@ -423,23 +423,3 @@ library ScheduleCalc {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/ScheduleCalc.sol": {
-      "ScheduleCalc": "0x6a8f99af85aa68e50b31ba633c279eb569d91e41"
-    }
-  }
-}

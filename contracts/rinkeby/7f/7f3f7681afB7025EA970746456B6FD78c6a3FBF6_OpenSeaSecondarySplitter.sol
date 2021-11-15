@@ -575,21 +575,3 @@ contract OpenSeaSecondarySplitter is PaymentSplitter {
     constructor(address[] memory payees, uint256[] memory shares) PaymentSplitter(payees, shares) {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

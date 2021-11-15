@@ -3317,29 +3317,3 @@ library PRBMathCommon {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/lib/LibPerpetuals.sol": {
-      "Perpetuals": "0x7ccd1a4eb2be67ccd1a288e8f9e9a3a7408c28bc"
-    },
-    "contracts/lib/LibPrices.sol": {
-      "Prices": "0x930efe061863242715610c7eada683a1732bba6e"
-    }
-  }
-}

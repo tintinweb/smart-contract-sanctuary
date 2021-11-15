@@ -4777,27 +4777,3 @@ abstract contract LendingPoolStorage {
   bool internal _paused;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/protocol/libraries/logic/ReserveLogic.sol": {
-      "ReserveLogic": "0xcc16e1eda6df897c03ecc6c192fb3a7ebc1cdc74"
-    },
-    "contracts/protocol/libraries/logic/ValidationLogic.sol": {
-      "ValidationLogic": "0x14bccf4749ecff75c3229a65fa2e1281a148617a"
-    }
-  }
-}

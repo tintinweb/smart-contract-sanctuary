@@ -3498,29 +3498,3 @@ contract DeploymentAdmin is ProxyAdmin {
     
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/libs/LibAccess.sol": {
-      "LibAccess": "0x74fb0a2bdd8a7dcec3543f2f3b2cafc429222df7"
-    },
-    "contracts/libs/LibConfig.sol": {
-      "LibConfig": "0xf3a0c44d23b8c2b54d2a757271e907782aef9da9"
-    }
-  }
-}

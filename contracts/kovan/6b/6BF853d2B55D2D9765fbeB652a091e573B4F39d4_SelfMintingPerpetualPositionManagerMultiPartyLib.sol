@@ -3296,23 +3296,3 @@ library SynthereumInterfaces {
   bytes32 public constant SelfMintingController = 'SelfMintingController';
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/@jarvis-network/uma-core/contracts/financial-templates/common/FeePayerPoolPartyLib.sol": {
-      "FeePayerPoolPartyLib": "0xad77d62d583922138225313b65dddc3f46d6ad8a"
-    }
-  }
-}

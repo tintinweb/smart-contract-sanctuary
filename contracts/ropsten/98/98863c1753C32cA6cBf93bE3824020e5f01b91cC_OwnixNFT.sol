@@ -1162,18 +1162,3 @@ contract OwnixNFT is IOwnixERC1155, ERC1155Burnable, Ownable {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

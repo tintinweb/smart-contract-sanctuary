@@ -1658,32 +1658,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/ScaleCodec.sol": {
-      "ScaleCodec": "0xb63018fc29763989f0957f270530de49806cd868"
-    },
-    "contracts/utils/MerkleProof.sol": {
-      "MerkleProof": "0xd09740331b19e2bb051b1194779c318eeea0404e"
-    }
-  }
-}

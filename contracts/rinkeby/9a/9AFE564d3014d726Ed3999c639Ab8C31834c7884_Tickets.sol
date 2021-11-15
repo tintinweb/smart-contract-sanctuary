@@ -3075,23 +3075,3 @@ library Strings {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/library/HeapSort.sol": {
-      "HeapSort": "0xeeb412b9920ee6d42af1a58a5d59288ed780d248"
-    }
-  }
-}

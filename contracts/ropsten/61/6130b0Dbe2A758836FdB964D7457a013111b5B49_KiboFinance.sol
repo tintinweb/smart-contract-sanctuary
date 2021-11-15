@@ -1457,25 +1457,3 @@ library SafeERC20 {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/Users/patricio/Documents/Freelance/octopus/Ethereum/contracts/PriceConsumer.sol": {
-      "PriceConsumer": "0x83bD88bCe056086c79F601F610A38aAD67F01090"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -2116,23 +2116,3 @@ library EnumerableSet {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/FruitFarm.sol": {
-      "FruitFarm": "0x34b99b1a62db187f9ef2743daff972c2ad20829a"
-    }
-  }
-}

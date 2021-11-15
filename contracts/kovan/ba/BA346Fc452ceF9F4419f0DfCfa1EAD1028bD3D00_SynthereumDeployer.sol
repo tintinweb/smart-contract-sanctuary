@@ -3171,19 +3171,3 @@ import {IDerivativeDeployment} from './IDerivativeDeployment.sol';
 
 interface IDerivative is IDerivativeDeployment, IDerivativeMain {}
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

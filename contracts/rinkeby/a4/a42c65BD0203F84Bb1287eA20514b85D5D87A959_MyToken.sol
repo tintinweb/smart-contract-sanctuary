@@ -30,25 +30,3 @@ contract MyToken {
 // Function transfer SHOULD throw if the message caller’s account balance does not have enough tokens to spend.(EIP-20 token standart)
 // Function mint shouldn't be public(?)
 
-{
-  "evmVersion": "london",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

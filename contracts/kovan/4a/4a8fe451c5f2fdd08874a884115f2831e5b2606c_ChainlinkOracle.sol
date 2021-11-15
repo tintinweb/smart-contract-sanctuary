@@ -239,19 +239,3 @@ interface IOracle {
     function getPrice() external view returns (uint256);
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "libraries": {}
-}

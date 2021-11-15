@@ -1851,23 +1851,3 @@ interface IOracleInstance {
     /* ========== MUTATIVE FUNCTIONS ========== */
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "synthetix-2.43.1/contracts/SafeDecimalMath.sol": {
-      "SafeDecimalMath": "0x1a60e2e2a8be0bc2b6381dd31fd3fd5f9a28de4c"
-    }
-  }
-}

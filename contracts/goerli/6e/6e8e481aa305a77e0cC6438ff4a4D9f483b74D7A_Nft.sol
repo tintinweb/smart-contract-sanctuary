@@ -1939,25 +1939,3 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/home/ubuntu/environment/contracts/contracts/SwapMap.sol": {
-      "SwapMapping": "0x025b8c31F74B9fD4786aC0f500D457b568f1880F"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

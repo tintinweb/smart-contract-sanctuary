@@ -836,19 +836,3 @@ contract CappedMBROwnableToken is ERC20Base, ERC20Capped, ERC20Mintable, ERC20Bu
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

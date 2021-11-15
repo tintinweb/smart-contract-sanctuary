@@ -7557,29 +7557,3 @@ contract ERC20Mock is ERC20Permit  {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 5000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "@yield-protocol/utils-v2/contracts/token/SafeERC20Namer.sol": {
-      "SafeERC20Namer": "0x1fd4C043c74Acfb36FCD8F7EcCD08b1c14E4545A"
-    },
-    "@yield-protocol/yieldspace-v2/contracts/YieldMath.sol": {
-      "YieldMath": "0x227f4d7a2ca2c88ed53ff19cd69886538d623072"
-    }
-  }
-}

@@ -1681,19 +1681,3 @@ abstract contract ERC1155ReceiverUpgradeable is Initializable, ERC165Upgradeable
     uint256[50] private __gap;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

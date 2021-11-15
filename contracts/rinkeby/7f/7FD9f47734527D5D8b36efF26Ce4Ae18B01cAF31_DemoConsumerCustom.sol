@@ -604,25 +604,3 @@ contract RequestIdBase {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "@unification-com/xfund-router/contracts/lib/ConsumerLib.sol": {
-      "ConsumerLib": "0xD69582b569C5616D46f277b97d1fd49EcB9df418"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1117,14 +1117,3 @@ contract ISignatureValidator is ISignatureValidatorConstants {
         returns (bytes4);
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

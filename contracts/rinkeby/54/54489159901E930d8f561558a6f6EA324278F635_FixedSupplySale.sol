@@ -3762,19 +3762,3 @@ interface ERC20 {
 	function allowance(address _owner, address _spender) external view returns (uint256 remaining);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

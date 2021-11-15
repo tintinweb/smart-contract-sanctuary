@@ -608,25 +608,3 @@ contract HidingVaultNFTProxy is ERC1967Proxy {
     constructor(address _implementation, address _defaultOwner, bytes memory _data) ERC1967Proxy(_implementation, _data) {}
 }
 
-{
-  "evmVersion": "berlin",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

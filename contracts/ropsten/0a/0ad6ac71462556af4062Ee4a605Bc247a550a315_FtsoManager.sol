@@ -3898,18 +3898,3 @@ interface IVoterWhitelister {
     function getFtsoWhitelistedPriceProviders(uint256 _ftsoIndex) external view returns (address[] memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

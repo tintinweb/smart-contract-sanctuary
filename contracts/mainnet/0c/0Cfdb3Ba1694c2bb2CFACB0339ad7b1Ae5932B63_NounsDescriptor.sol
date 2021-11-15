@@ -936,23 +936,3 @@ library Base64 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libs/NFTDescriptor.sol": {
-      "NFTDescriptor": "0x0bbad8c947210ab6284699605ce2a61780958264"
-    }
-  }
-}

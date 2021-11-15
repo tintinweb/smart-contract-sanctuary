@@ -788,19 +788,3 @@ interface IPermanentStorage {
     function setRelayersValid(address[] memory _relayers, bool[] memory _isValids) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

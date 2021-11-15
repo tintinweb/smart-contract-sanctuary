@@ -1262,19 +1262,3 @@ contract GoldenCake is Context, IERC20, Ownable, ReentrancyGuard {
     receive() external payable {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -4539,26 +4539,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/AmplificationUtilsV1.sol": {
-      "AmplificationUtilsV1": "0x995d60f131cb511ef71218e6641a8f157a9be8e3"
-    },
-    "contracts/SwapUtilsV1.sol": {
-      "SwapUtilsV1": "0x40579177b9e467d14e98b5d1ad00bd025cff8e0a"
-    }
-  }
-}

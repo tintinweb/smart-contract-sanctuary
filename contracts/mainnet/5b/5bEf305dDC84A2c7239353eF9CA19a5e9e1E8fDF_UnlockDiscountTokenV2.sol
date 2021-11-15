@@ -1783,19 +1783,3 @@ abstract contract ERC20MintableUpgradeable is Initializable, ERC20Upgradeable, M
     uint256[50] private ______gap;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -5525,23 +5525,3 @@ interface ISynthereumFactoryVersioning {
     returns (uint256 numberOfVersions);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/synthereum-pool/v4/PoolOnChainPriceFeedLib.sol": {
-      "SynthereumPoolOnChainPriceFeedLib": "0x0df09796ff78fc70d6f15b387f6be5687f31c67a"
-    }
-  }
-}

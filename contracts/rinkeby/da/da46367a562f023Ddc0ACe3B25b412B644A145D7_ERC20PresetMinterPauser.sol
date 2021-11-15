@@ -1520,19 +1520,3 @@ contract ERC20PresetMinterPauser is Context, AccessControlEnumerable, ERC20Burna
 
 // File contracts/Token.sol
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

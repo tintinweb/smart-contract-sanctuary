@@ -14392,18 +14392,3 @@ contract BasicERC20 is IERC20 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 199
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

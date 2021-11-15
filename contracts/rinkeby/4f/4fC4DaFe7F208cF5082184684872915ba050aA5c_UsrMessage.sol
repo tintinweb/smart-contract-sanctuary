@@ -2280,34 +2280,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 20
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/Users/sterlingcrispin/code/ConceptualLandscapesCONCEPT/Messages/contracts/DrawSvgOps.sol": {
-      "DrawSvgOps": "0x59Ec3BBe57fCa0ec78Bd963b22fD4d2952B11af0"
-    },
-    "/Users/sterlingcrispin/code/ConceptualLandscapesCONCEPT/Messages/contracts/StringHell.sol": {
-      "StringHell": "0x6514Ce67de3522a65C6078e835f58525D1b7691d"
-    },
-    "/Users/sterlingcrispin/code/ConceptualLandscapesCONCEPT/Messages/contracts/v1ContractData.sol": {
-      "v1ContractData": "0x53256059616C69eE1aAb7b0EE94eEE8463D7B430"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  }
-}

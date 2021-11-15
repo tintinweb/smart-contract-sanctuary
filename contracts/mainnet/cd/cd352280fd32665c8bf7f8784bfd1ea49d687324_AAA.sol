@@ -14,26 +14,3 @@ contract AAA {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 0
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "CCC.sol": {
-      "CCC": "0x7560aF28d77e1B0a452bD3D7D4dc96FF86815379"
-    }
-  }
-}

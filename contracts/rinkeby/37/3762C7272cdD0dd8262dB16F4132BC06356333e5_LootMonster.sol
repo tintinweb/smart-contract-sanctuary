@@ -1734,28 +1734,3 @@ abstract contract Ownable is Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/LootMonCard.sol": {
-      "LootMonCard": "0x22c5CE43A438Ed5Ff0412BaA466d2E605D597bf2"
-    },
-    "/contracts/LootMonUtil.sol": {
-      "LootMonUtil": "0x0859f14f3e2ff8AEf5EF9850B98973199695c8d8"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -2502,23 +2502,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/PositionFee.sol": {
-      "PositionFee": "0x08e6798f0f21ab04f2216b7a11dddb4512f67254"
-    }
-  }
-}

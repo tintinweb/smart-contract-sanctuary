@@ -1834,21 +1834,3 @@ contract ApeDaoRemix is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ow
   receive() external payable {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 10
-  },
-  "evmVersion": "petersburg",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

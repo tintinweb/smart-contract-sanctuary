@@ -5365,23 +5365,3 @@ library XPNSignalMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 50
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/XPNUtils.sol": {
-      "XPNUtils": "0xb9112d2b8e9008377649f912c11d71813660043b"
-    }
-  }
-}

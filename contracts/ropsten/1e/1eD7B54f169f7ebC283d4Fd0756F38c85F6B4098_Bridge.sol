@@ -1845,25 +1845,3 @@ library Address {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/pooh/sovryn/deploy_bridge/verify_ethscan_master/Bridge-SC/sovryn-token-bridge/bridge/contracts/Utils.sol": {
-      "Utils": "0x5c407a4f3429fdDEeBe8c20d74b300FFBDf4695B"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

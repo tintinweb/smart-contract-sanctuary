@@ -4595,32 +4595,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/GlobalLimits.sol": {
-      "GlobalLimits": "0x5bb276ceb5755210be18a6647cd7c1faece79f91"
-    },
-    "contracts/Pricing.sol": {
-      "Pricing": "0x3c7347689d68a44eecff34e416c4911be7551b7a"
-    },
-    "contracts/SafeMath.sol": {
-      "SafeMath": "0x69388ccc065468d47ff2e2f300b8b2c474a99e4c"
-    },
-    "contracts/SellLimit.sol": {
-      "SellLimit": "0x0eddc1ee5b4a096522f6e04770500801336c4cf2"
-    }
-  }
-}

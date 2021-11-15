@@ -8175,23 +8175,3 @@ library SettleAssetsExternal {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/actions/nTokenMintAction.sol": {
-      "nTokenMintAction": "0x8a3bdd3fd149bc5d0a218e3d1a2b96433a8e5df1"
-    }
-  }
-}

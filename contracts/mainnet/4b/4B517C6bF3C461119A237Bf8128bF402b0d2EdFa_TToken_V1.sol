@@ -2461,25 +2461,3 @@ bytes32 constant ADMIN = keccak256("ADMIN");
 bytes32 constant PAUSER = keccak256("PAUSER");
 bytes32 constant AUTHORIZED = keccak256("AUTHORIZED");
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

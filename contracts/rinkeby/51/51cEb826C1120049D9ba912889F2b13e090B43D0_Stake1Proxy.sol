@@ -1228,19 +1228,3 @@ interface IStakeVaultFactory {
     function setVaultLogicByPhase(uint256 _phase, address _logic) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

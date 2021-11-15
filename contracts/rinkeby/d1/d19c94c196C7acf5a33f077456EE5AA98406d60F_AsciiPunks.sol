@@ -1546,25 +1546,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/mnt/c/Users/dean/workspace/asciipunks/contracts/AsciiPunkFactory.sol": {
-      "AsciiPunkFactory": "0x050BDC3a07c6Ad0594424958150320615dA46cC2"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

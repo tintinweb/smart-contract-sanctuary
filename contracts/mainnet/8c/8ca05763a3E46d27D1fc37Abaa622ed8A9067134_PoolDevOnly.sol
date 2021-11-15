@@ -1560,23 +1560,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "@sherlock/v1-core/contracts/libraries/LibPool.sol": {
-      "LibPool": "0xedda10a93767b07f6913cb01479f6418eb35ab7e"
-    }
-  }
-}

@@ -727,22 +727,3 @@ contract StakingRewardsV2 is IStakingRewardsV2, ReentrancyGuard, PausableV2 {
     event Recovered(address token, uint256 amount);
 }
 
-{
-  "metadata": {
-    "useLiteralContent": false
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

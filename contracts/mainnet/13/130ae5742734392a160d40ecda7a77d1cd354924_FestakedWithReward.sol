@@ -941,25 +941,3 @@ library Address {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/naiemk/nk/open-staking_/contracts/staking/Festaked.Library.sol": {
-      "FestakedLib": "0xbce3Ed9c430DDC9d695BCca825a5e20aD08009dd"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

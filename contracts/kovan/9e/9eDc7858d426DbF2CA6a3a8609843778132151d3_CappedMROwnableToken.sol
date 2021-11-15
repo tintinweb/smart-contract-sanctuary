@@ -792,19 +792,3 @@ contract CappedMROwnableToken is ERC20Base, ERC20Capped, ERC20Mintable, ERC20Rec
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

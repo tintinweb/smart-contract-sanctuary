@@ -21,19 +21,3 @@ contract SplitStorage {
     address internal immutable zoraMedia = 0x85e946e1Bd35EC91044Dc83A5DdAB2B6A262ffA6;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

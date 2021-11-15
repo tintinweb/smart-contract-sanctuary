@@ -550,23 +550,3 @@ library SafeMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/tokenomics/PercentageCalculator.sol": {
-      "PercentageCalculator": "0x9da2dfb009064bd99c474d08b220f7e837418f1c"
-    }
-  }
-}

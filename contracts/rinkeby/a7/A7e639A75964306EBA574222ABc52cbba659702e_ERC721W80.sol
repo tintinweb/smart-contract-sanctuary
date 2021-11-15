@@ -2101,21 +2101,3 @@ abstract contract AbstractRoyalties {
     function _onRoyaltiesSet(uint256 _id, LibPart.Part[] memory _fees) virtual internal;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

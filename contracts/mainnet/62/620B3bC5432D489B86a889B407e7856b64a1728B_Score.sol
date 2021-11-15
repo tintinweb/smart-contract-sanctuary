@@ -384,25 +384,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 500
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/Users/jacob/Developer/DeFiWorkspace/punk.protocol/contracts/libs/CommitmentWeight.sol": {
-      "CommitmentWeight": "0x2b18d7988B298B5c7Ea02C4d4a33d6DCb3282d8B"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

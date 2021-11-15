@@ -2366,23 +2366,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/blitmap-analysis.sol": {
-      "BlitmapAnalysis": "0x7d2e3eba0119f38cca36a1cf4aeb9ffd38bf9210"
-    }
-  }
-}

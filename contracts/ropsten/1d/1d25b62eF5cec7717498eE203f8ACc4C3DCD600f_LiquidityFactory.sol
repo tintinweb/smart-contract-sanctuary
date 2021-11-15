@@ -758,25 +758,3 @@ contract LiquidityFactory {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/metapriest/code/my_code/dotvote/contracts/contracts/SafeMathLib.sol": {
-      "SafeMathLib": "0x2365A147D3fd5522e375e1c17eeC780095b73d49"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

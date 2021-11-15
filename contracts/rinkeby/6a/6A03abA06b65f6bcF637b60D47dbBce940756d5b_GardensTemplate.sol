@@ -8453,21 +8453,3 @@ contract ITollgate {
     function initialize(ERC20 _feeToken, uint256 _feeAmount, address _feeDestination) external;
 }
 
-{
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

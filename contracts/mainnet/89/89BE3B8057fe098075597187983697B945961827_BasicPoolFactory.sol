@@ -296,25 +296,3 @@ contract BasicPoolFactory {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/metapriest/code/my_code/dotvote/contracts/contracts/SafeMathLib.sol": {
-      "SafeMathLib": "0x82d7630c5EB722557De6D76575C9a7b8DE718500"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

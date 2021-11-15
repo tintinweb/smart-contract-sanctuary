@@ -988,19 +988,3 @@ contract XiCrowdsale is Crowdsale {
     constructor(address Xi) public Crowdsale(111111, 0x0978Aeb524DAe938748847fCD182d29478Af2D81, IERC20(Xi)) {}
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

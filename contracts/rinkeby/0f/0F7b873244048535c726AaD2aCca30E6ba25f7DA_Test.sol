@@ -520,25 +520,3 @@ contract Test {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/E/fiverr/April/AsciiMan/asciiman-contract/contracts/Ascii_Man/AsciiManFactory.sol": {
-      "AsciiManFactory": "0x28c5cADeeA8C8993840BAa307703729E9720874B"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

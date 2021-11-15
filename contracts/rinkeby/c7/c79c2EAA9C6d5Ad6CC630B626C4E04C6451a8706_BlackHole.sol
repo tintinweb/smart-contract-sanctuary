@@ -5,19 +5,3 @@ pragma solidity ^0.6.12;
 // no one can transfer MDX from the contract
 contract BlackHole {}
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

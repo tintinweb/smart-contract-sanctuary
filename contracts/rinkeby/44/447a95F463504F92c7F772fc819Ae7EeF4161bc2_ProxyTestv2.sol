@@ -1028,18 +1028,3 @@ abstract contract UUPSUpgradeable is ERC1967Upgrade {
     function _authorizeUpgrade(address newImplementation) internal virtual;
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  }
-}

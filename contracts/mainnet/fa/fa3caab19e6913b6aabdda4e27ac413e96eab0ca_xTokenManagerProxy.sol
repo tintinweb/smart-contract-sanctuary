@@ -758,22 +758,3 @@ library StorageSlot {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 7777
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

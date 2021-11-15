@@ -9159,31 +9159,3 @@ library LibBytesRichErrors {
     }
 }
 
-{
-  "remappings": [
-    "@0x/contracts-erc20=/Users/michaelzhu/protocol/contracts/staking/node_modules/@0x/contracts-erc20",
-    "@0x/contracts-utils=/Users/michaelzhu/protocol/contracts/staking/node_modules/@0x/contracts-utils",
-    "@0x/contracts-exchange-libs=/Users/michaelzhu/protocol/contracts/staking/node_modules/@0x/contracts-exchange-libs",
-    "@0x/contracts-asset-proxy=/Users/michaelzhu/protocol/contracts/staking/node_modules/@0x/contracts-asset-proxy"
-  ],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000,
-    "details": {
-      "yul": true,
-      "deduplicate": true,
-      "cse": true,
-      "constantOptimizer": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "evmVersion": "istanbul"
-}

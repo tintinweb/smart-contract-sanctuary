@@ -1778,29 +1778,3 @@ library console {
 
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/Greeter.sol:Greeter": {
-      "SafeMath": "0x9534826D9B791c1766706394645becF34fcE0ee2"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

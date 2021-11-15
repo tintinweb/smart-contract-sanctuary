@@ -2800,27 +2800,3 @@ library Helpers {
   }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "./contracts/protocol/libraries/logic/GenericLogic.sol": {
-      "GenericLogic": "0x75D1c3B41d152c84BeAac11Fa8AAd471c79338c7"
-    }
-  }
-}

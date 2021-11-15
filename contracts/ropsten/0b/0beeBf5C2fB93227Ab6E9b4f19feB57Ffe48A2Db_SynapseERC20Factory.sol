@@ -230,25 +230,3 @@ interface ISynapseERC20 {
         string memory _name, string memory _symbol, uint8 _decimals,  uint256 _underlyingChainId, address _underlyingTokenAddress,  address owner) external; 
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

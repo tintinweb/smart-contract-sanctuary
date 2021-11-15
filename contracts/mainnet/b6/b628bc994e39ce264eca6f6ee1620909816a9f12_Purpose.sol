@@ -3994,23 +3994,3 @@ library ECDSA {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/ProtectedBoostableLib.sol": {
-      "ProtectedBoostableLib": "0x85ae45a05971170b70744292e2f051c0c49cf909"
-    }
-  }
-}

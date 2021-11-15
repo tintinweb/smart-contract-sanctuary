@@ -126,19 +126,3 @@ bytes32 constant BUYBACK_PAUSER = keccak256("BUYBACK_PAUSER");
 bytes32 constant RECOLLATERALIZE_PAUSER = keccak256("RECOLLATERALIZE_PAUSER");
 bytes32 constant COLLATERAL_PRICE_PAUSER = keccak256("COLLATERAL_PRICE_PAUSER");
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

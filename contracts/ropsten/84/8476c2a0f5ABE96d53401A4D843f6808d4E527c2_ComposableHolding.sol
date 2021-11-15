@@ -1524,26 +1524,3 @@ abstract contract ContextUpgradeable is Initializable {
     uint256[50] private __gap;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "@openzeppelin/contracts-upgradeable/token/ERC20/SafeERC20Upgradeable.sol": {
-      "SafeERC20Upgradeable": "0xe51ebdf391d7e3b1447e5bea4bae394c91c2d44e"
-    }
-  }
-}

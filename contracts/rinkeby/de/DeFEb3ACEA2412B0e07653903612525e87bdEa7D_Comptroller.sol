@@ -4592,18 +4592,3 @@ contract CDelegateInterface is CDelegationStorage {
     function _resignImplementation() public;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

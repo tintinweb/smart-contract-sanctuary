@@ -480,21 +480,3 @@ uint256 constant ADDRESS_TRESUARY = 10;
 uint256 constant ADDRESS_SIGNER = 11;
 uint256 constant ADDRESS_OWNER = 12;
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

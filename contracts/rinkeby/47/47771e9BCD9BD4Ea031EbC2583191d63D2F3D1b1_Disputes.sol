@@ -3182,23 +3182,3 @@ enum Lifecycle {
     SCConfirmed
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/SignatureDecoder.sol": {
-      "SignatureDecoder": "0x92acd6f9e663876bfbd95768766f94592ab919de"
-    }
-  }
-}

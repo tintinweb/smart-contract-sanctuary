@@ -5559,25 +5559,3 @@ interface StoreInterface {
     function computeFinalFee(address currency) external view returns (FixedPoint.Unsigned memory);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/meir/Desktop/prelaunch/variable-expiring-multiparty/contracts/VariableExpiringMultiPartyLib.sol": {
-      "VariableExpiringMultiPartyLib": "0x7e8C45219463e372B3eE216523830cAD0bA92DA8"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

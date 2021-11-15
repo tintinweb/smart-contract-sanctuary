@@ -2568,26 +2568,3 @@ library console {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/WeiBlocksCore.sol": {
-      "Game": "0xf126AC6f96B60cd8CEfA787b2146b185fa33e21E"
-    }
-  }
-}

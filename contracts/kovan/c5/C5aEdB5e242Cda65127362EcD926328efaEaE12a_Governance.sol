@@ -1834,19 +1834,3 @@ interface INXMMaster {
   function getLatestAddress(bytes2 _contractName) external view returns (address payable contractAddress);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

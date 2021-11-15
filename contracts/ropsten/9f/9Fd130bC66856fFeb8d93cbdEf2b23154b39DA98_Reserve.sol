@@ -614,19 +614,3 @@ interface iUSDV {
     function convertToUSDVForMemberDirectly(address member) external returns (uint256 convertAmount);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

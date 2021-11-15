@@ -7190,23 +7190,3 @@ interface AggregatorV3Interface {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/SettleAssetsExternal.sol": {
-      "SettleAssetsExternal": "0x51009a6f606f81d57cb227592dc52b2bf5d3e26f"
-    }
-  }
-}

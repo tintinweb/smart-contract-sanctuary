@@ -1449,29 +1449,3 @@ interface IMintableERC20 is IERC20 {
     function mint(address user, uint256 amount) external;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "details": {
-      "constantOptimizer": true,
-      "cse": true,
-      "deduplicate": true,
-      "jumpdestRemover": true,
-      "orderLiterals": true,
-      "peephole": true,
-      "yul": false
-    },
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

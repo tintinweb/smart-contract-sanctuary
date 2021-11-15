@@ -1440,25 +1440,3 @@ contract MoonShield is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/Developer/truffle/MoonShield/contracts/MoonShield.sol": {
-      "Utils": "0xCb4A2ccB1975C622C92b56c483bF2Dc08C996A3F"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

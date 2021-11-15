@@ -1906,26 +1906,3 @@ library strings {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 50
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/AConstants.sol": {
-      "AConstants": "0x408be14c29abfa7b0f4f258d456e4a17b5523b7e"
-    }
-  }
-}

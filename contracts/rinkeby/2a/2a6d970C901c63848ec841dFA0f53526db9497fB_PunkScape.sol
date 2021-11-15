@@ -1913,19 +1913,3 @@ abstract contract HasSecondarySaleFees is ERC165 {
     function getFeeBps(uint256 id) public view virtual returns (uint256[] memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

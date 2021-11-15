@@ -288,25 +288,3 @@ interface IVotingIdentity {
     function totalSupply() external view returns (uint);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/metapriest/code/my_code/dotvote/contracts/contracts/MerkleLib.sol": {
-      "MerkleLib": "0x8196D6264BB667908dC106D855Bf53E03816e725"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

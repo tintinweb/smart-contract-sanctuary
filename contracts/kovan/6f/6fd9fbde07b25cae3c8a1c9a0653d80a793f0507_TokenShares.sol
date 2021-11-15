@@ -209,25 +209,3 @@ library TokenShares {
     }
 }
 
-{
-  "libraries": {
-    "IERC20.sol": {},
-    "IWETH.sol": {},
-    "SafeMath.sol": {},
-    "TransferHelper.sol": {},
-    "TokenShares.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 26
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

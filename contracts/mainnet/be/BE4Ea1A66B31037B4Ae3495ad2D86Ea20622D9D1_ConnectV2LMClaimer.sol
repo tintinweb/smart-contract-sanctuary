@@ -50,19 +50,3 @@ contract ConnectV2LMClaimer is Resolver {
     string public constant name = "LM-Merkle-Claimer-v1.0";
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

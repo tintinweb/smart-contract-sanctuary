@@ -1319,34 +1319,3 @@ contract IntegralFactory is IIntegralFactory {
     }
 }
 
-{
-  "libraries": {
-    "IIntegralFactory.sol": {},
-    "IERC20.sol": {},
-    "IIntegralERC20.sol": {},
-    "IReserves.sol": {},
-    "IIntegralPair.sol": {},
-    "SafeMath.sol": {},
-    "Reserves.sol": {},
-    "AbstractERC20.sol": {},
-    "IntegralERC20.sol": {},
-    "Math.sol": {},
-    "IIntegralOracle.sol": {},
-    "Normalizer.sol": {},
-    "IntegralPair.sol": {},
-    "IntegralFactory.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 26
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

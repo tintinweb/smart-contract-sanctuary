@@ -423,29 +423,3 @@ interface ERC20 {
     function transferFrom(address _from, address _to, uint _value) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/utils/cryptography/ECDSA.sol": {
-      "EC": "0xf185b5965b86a71a937439d4b3c5886751693b6a"
-    },
-    "contracts/utils/cryptography/Hash.sol": {
-      "Hash": "0x97ea9078fea1b5a69b045a6a0d8386dba14526f4"
-    },
-    "contracts/utils/cryptography/MerkleProof.sol": {
-      "MerkleProof": "0x2077e29e65badc71bc90c7b5e029095591470cf9"
-    }
-  }
-}

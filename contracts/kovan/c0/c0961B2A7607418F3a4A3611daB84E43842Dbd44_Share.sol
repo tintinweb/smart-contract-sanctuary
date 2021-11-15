@@ -1166,19 +1166,3 @@ contract Share is ERC20Custom, Ownable, Initializable {
     event ShareMinted(address indexed from, address indexed to, uint256 amount);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

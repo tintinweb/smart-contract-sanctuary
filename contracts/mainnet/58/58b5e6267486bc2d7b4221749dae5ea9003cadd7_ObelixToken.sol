@@ -769,19 +769,3 @@ interface IObelixFarming {
     function estimateOBELIXProvidedWithStartTimestamp(address _staker) external view returns (uint256, uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

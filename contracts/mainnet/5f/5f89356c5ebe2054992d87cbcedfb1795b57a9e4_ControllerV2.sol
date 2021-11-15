@@ -3353,19 +3353,3 @@ contract KMCDInterface is KMCDStorage {
     function _setController(KineControllerInterface newController) public;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

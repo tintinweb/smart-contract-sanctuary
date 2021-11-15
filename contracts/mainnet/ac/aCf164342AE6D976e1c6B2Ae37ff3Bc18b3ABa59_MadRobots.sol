@@ -1690,18 +1690,3 @@ contract MadRobots is ERC721, ERC721Enumerable, Ownable, ReentrancyGuard {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

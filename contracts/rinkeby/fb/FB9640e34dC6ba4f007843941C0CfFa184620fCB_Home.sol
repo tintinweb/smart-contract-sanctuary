@@ -3635,25 +3635,3 @@ library BytesUtils {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/utils/ArrayUtils.sol": {
-      "ArrayUtils": "0xA70666c6e9971F8F166EEe2A53e8B26e08B2e886"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

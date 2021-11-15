@@ -138,18 +138,3 @@ interface IFeeDistribution {
   function viewDistribution() external returns(uint usdp_, uint duck_);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

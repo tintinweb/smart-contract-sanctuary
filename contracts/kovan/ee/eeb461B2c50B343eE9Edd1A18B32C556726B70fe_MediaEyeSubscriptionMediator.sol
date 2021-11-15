@@ -152,19 +152,3 @@ interface IMediaEyeSubscription {
     function subscribeLevelOneByBridge(address account, uint256 startTimestamp, uint256 endTimestamp) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

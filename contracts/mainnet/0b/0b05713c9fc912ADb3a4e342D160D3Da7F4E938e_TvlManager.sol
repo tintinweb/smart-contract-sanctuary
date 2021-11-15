@@ -4919,19 +4919,3 @@ abstract contract AssetAllocationBase is IAssetAllocation {
     function tokens() public view virtual override returns (TokenData[] memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

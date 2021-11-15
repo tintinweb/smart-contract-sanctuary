@@ -14588,18 +14588,3 @@ contract PerpetualMock {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 199
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

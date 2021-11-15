@@ -159,24 +159,3 @@ contract IntegralPointsMerkleDistributor is IIntegralPointsMerkleDistributor {
     }
 }
 
-{
-  "libraries": {
-    "IIntegralPointsMerkleDistributor.sol": {},
-    "IERC20.sol": {},
-    "MerkleProof.sol": {},
-    "IntegralPointsMerkleDistributor.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

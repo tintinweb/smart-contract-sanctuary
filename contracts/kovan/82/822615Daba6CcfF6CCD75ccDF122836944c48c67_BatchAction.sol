@@ -8837,32 +8837,3 @@ interface AggregatorV3Interface {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/FreeCollateralExternal.sol": {
-      "FreeCollateralExternal": "0xb5ca3bff5483ff1a38a0a069ec749b9f6b34cdb3"
-    },
-    "contracts/external/SettleAssetsExternal.sol": {
-      "SettleAssetsExternal": "0x51009a6f606f81d57cb227592dc52b2bf5d3e26f"
-    },
-    "contracts/external/actions/TradingAction.sol": {
-      "TradingAction": "0x63b8428263e5a1d2bf982e3af9d97a6393785010"
-    },
-    "contracts/external/actions/nTokenMintAction.sol": {
-      "nTokenMintAction": "0x1c270406484464693f9a47eca4979a147d5e57f0"
-    }
-  }
-}

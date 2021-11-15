@@ -196,21 +196,3 @@ library SafeMath {
 // Note. My SimpleERC20 contract addr: 0x5ce58949f60Bf5E5864d8612c488dB8D11633cf9
 // My verified https://kovan.etherscan.io/verifyContract-solc?a=0x5ce58949f60bf5e5864d8612c488db8d11633cf9&c=v0.6.12%2bcommit.27d51765&lictype=3
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

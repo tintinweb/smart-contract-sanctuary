@@ -3648,23 +3648,3 @@ interface IUniswapV2Router01 {
         returns (uint256[] memory amounts);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/lib/PricesLib.sol": {
-      "PricesLib": "0xd5117f88ff6f2b2421ffc0af51557c19162e9136"
-    }
-  }
-}

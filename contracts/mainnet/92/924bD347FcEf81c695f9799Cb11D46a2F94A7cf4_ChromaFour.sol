@@ -2378,25 +2378,3 @@ library Strings {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/roger/Dev/Blockchain/Truffle/code-collect/contracts/Utils.sol": {
-      "Utils": "0x88a9EABC4CBb315B92C19521eF47FB987eDD630b"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

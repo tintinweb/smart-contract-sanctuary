@@ -4540,32 +4540,3 @@ contract CRPFactory {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "libraries/BalancerSafeMath.sol": {
-      "BalancerSafeMath": "0x0deef356670624c4b782f7599c815ab23db970d6"
-    },
-    "libraries/RightsManager.sol": {
-      "RightsManager": "0xf7cce8e207ddf7ff208f83a95c335e3f87874ecc"
-    },
-    "libraries/SmartPoolManager.sol": {
-      "SmartPoolManager": "0x937f57de701010cb67b279a528e0f30b31329241"
-    }
-  }
-}

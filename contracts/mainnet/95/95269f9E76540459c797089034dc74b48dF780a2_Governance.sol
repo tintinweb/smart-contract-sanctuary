@@ -278,18 +278,3 @@ contract Config {
     uint128 constant DEFAULT_MAX_DEPOSIT_AMOUNT = 2 ** 85;
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  }
-}

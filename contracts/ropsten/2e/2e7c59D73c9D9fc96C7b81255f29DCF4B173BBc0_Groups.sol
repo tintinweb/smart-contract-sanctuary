@@ -6118,28 +6118,3 @@ contract Authorizations is AuthorityVerifier {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/runner/work/keep-core/keep-core/solidity-v1/contracts/cryptography/BLS.sol": {
-      "BLS": "0x737Cf8Be6c08698b81765CA0aDEa3A2B435e6A85"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  }
-}

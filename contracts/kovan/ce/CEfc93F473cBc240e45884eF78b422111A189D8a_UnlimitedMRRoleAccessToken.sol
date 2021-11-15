@@ -1435,19 +1435,3 @@ contract UnlimitedMRRoleAccessToken is ERC20Base, ERC20Mintable, AccessControlEn
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

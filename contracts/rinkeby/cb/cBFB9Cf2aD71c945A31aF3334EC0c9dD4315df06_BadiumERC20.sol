@@ -2161,21 +2161,3 @@ contract ERC20PresetMinerPauser is ERC20PresetMinterPauser {
     event PoSMint(address miner, uint256 value, uint8 slot);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

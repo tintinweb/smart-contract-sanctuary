@@ -1053,21 +1053,3 @@ interface IERC721TokenReceiver {
 	function onERC721Received(address _from, uint256 _tokenId, bytes memory _data) external returns (bytes4);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

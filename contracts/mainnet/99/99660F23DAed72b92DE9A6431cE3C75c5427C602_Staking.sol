@@ -3543,23 +3543,3 @@ library LibFixedMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/staking/libs/Cobbs.sol": {
-      "LibCobbDouglas": "0x5fd49e0c441a9bd0b950e841f6f2d5fb22722568"
-    }
-  }
-}

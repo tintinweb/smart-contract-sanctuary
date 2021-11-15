@@ -2020,26 +2020,3 @@ library strings {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/FlootConstants.sol": {
-      "FlootConstants": "0x05f9befa0b9971c866bd97c49e5992b6ebd2ebf4"
-    }
-  }
-}

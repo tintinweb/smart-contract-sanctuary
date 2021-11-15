@@ -5404,22 +5404,3 @@ import { TokenInfo } from "./TokenInfo.sol";
 // solhint-disable-next-line no-empty-blocks
 abstract contract ERC20WithTokenInfo is IERC20, TokenInfo {}
 
-{
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

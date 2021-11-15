@@ -1895,24 +1895,3 @@ library PoseidonT6 {
   function poseidon(uint256[5] memory input) public pure returns (uint256) {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1600
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/logic/Poseidon.sol": {
-      "PoseidonT3": "0x7a865794e85c29a793962754370f8541d36dc12a",
-      "PoseidonT6": "0xc20871f4b5281416c2bf72125507c5fcba9079cd"
-    }
-  }
-}

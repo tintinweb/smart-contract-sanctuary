@@ -226,19 +226,3 @@ contract Config {
     uint256 internal constant SECURITY_COUNCIL_MEMBERS_NUMBER = 3;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

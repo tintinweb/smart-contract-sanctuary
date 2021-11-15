@@ -1769,18 +1769,3 @@ contract StkTruToken is VoteToken, StkClaimableContract, IPauseableContract, Ree
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 20000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

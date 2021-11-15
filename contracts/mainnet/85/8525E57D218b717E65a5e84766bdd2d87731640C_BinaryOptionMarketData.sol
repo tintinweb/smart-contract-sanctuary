@@ -1879,18 +1879,3 @@ contract BinaryOptionMarketFactory is MinimalProxyFactory, Owned {
     event BinaryOptionMastercopyChanged(address _binaryOptionMastercopy);
 }
 
-{
-  "optimizer": {
-    "enabled": false
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

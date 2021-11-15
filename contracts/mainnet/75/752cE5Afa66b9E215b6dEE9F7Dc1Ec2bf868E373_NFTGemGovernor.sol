@@ -3477,33 +3477,3 @@ abstract contract Initializable {
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "src/governance/NFTGemGovernor.sol:NFTGemGovernor": {
-      "GovernanceLib": "0x8B4207A13a5a13bDb2bBf15c137820e61e3c4AAc",
-      "Strings": "0x98ccd9cb27398a6595f15cbc4b63ac525b942aad",
-      "SafeMath": "0xD34a551B4a262230a373D376dDf8aADb2B0D49FD",
-      "ProposalsLib": "0x54812b41409912bd065e9d3920ce196ff9bfc995",
-      "Create2": "0xa511e209a01e27d134b4f564263f7db8fcbdeba6"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 9999
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

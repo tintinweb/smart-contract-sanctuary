@@ -1593,19 +1593,3 @@ abstract contract ERC165Upgradeable is Initializable, IERC165Upgradeable {
     uint256[50] private __gap;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

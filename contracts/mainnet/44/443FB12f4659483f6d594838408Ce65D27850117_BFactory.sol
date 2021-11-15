@@ -1799,19 +1799,3 @@ library BalancerConstants {
     uint256 public constant MAX_UINT = uint256(-1);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

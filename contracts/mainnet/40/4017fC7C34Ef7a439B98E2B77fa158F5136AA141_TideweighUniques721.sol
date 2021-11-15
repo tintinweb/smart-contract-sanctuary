@@ -2441,29 +2441,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/ERC721Lib.sol": {
-      "ERC721Lib": "0xe5e4379d8782d75f5e7983d8a2328fa9d7cf62de"
-    },
-    "contracts/RoleBasedAccessControlLib.sol": {
-      "RoleBasedAccessControlLib": "0x5bf9810aaafff1b5295d2fc5fca65df2800ba2bb"
-    }
-  }
-}

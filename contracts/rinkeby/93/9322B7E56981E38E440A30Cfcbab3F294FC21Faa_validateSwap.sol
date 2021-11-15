@@ -58,19 +58,3 @@ interface Ivalidator {
     function is_valid(address _token, uint256 _tokenid) external returns (uint256,bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

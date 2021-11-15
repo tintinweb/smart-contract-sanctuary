@@ -471,29 +471,3 @@ contract UniswapQueryHelper is ISwapQueryHelper {
 
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "src/swap/uniswap/UniswapQueryHelper.sol:UniswapQueryHelper": {
-      "UniswapLib": "0xdFef81cc612Eb80FD79598b97AC01cB54aA8E371"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 9999
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

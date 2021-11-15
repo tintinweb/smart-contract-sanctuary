@@ -1200,21 +1200,3 @@ abstract contract IDebtToken is ERC20, BasicMetaTransaction, Initializable {
     function burn(address _to, uint256 _total) external virtual;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

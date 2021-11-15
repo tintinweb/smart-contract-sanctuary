@@ -3969,23 +3969,3 @@ library Utils
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/base/libwallet/ERC20Lib.sol": {
-      "ERC20Lib": "0x9d7c436db65ad7a02bb03ca727d027bd34789958"
-    }
-  }
-}

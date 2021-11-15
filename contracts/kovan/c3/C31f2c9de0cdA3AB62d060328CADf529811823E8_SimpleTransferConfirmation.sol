@@ -101,18 +101,3 @@ interface IHomeAMB {
     function requireToGetInformation(bytes32 _requestSelector, bytes calldata _data) external returns (bytes32);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

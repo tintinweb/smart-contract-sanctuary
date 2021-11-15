@@ -662,19 +662,3 @@ contract WBTC is StandardToken, DetailedERC20("Wrapped BTC", "WBTC", 8),
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

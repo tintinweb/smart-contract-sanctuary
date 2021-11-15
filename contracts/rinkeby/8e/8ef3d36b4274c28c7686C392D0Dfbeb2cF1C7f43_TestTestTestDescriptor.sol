@@ -976,21 +976,3 @@ interface ITestTestTest is IERC721Enumerable {
     function _tokenIdToLegendaryNumber(uint256 _tokenId) external view returns(uint8);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -3143,23 +3143,3 @@ abstract contract EIP712 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/dfx-protocol-mock/MockedProportionalLiquidity.sol": {
-      "MockedProportionalLiquidity": "0x32c20692da9a1843a48ca42418222f821a7a0855"
-    }
-  }
-}

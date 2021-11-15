@@ -588,19 +588,3 @@ interface IOilerCollateral is IERC20, IERC20Permit {
     function decimals() external view returns (uint8);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

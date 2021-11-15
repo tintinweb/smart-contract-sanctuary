@@ -327,19 +327,3 @@ interface IBridgeSwapper {
     function exchange(uint256 _indexIn, uint256 _indexOut, uint256 _amountIn) external returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

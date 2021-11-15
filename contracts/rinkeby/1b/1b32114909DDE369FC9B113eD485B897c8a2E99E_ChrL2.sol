@@ -529,23 +529,3 @@ library MerkleProof {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Postchain.sol": {
-      "Postchain": "0xe969a2c6bd9ab6928effa18481fd0a0780b28da9"
-    }
-  }
-}

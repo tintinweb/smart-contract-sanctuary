@@ -1580,21 +1580,3 @@ abstract contract HasSecondarySaleFees is ERC165Storage {
     function getFeeBps(uint256 id) public virtual view returns (uint[] memory);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

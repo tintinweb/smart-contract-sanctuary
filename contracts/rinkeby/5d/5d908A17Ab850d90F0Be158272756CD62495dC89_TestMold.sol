@@ -3025,19 +3025,3 @@ interface IHasSecondarySaleFees {
     function getFeeRecipients(uint256 id) external view returns (address payable[] memory);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

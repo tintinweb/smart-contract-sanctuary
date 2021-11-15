@@ -865,15 +865,3 @@ contract LitiProxy is TransparentUpgradeableProxy {
     ) TransparentUpgradeableProxy(_logic, admin_, _data) {}
 }
 
-{
-  "optimizer": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

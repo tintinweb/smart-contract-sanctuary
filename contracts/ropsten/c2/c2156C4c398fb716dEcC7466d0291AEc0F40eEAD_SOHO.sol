@@ -1416,25 +1416,3 @@ contract SOHO is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "constantinople",
-  "libraries": {
-    "/C/Users/Greg/Documents/Truffletest/Soho/contracts/SOHO_Token.sol": {
-      "Utils": "0xc9F44c493DC39957fAC8F50eCec4C855c23C890A"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

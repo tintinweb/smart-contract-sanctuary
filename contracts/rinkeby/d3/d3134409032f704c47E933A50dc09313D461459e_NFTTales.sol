@@ -1472,21 +1472,3 @@ contract NFTTales is ERC721, ReentrancyGuard, Ownable {
     constructor() ERC721("NFTTales", "Tales") Ownable() {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

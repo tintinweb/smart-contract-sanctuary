@@ -1850,23 +1850,3 @@ interface IExternalReflection {
     function updateTotalSupply(uint256 newTotalSupply) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/utils/SwapWithLP.sol": {
-      "SwapWithLP": "0x7c14b0f56ffe2e21552b57df79610d23f708b9c2"
-    }
-  }
-}

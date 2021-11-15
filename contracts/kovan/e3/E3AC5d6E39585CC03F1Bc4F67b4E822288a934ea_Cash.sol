@@ -427,19 +427,3 @@ contract ERC20 is IERC20 {
     function onTokenTransfer(address _from, address _to, uint256 _value) internal;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

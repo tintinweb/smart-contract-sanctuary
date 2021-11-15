@@ -6448,28 +6448,3 @@ contract ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/home/sameep/projects/solo/contracts/protocol/impl/AdminImpl.sol": {
-      "AdminImpl": "0xab537fad330bc83a99a9b6eae15a447dd5525cfe"
-    },
-    "/home/sameep/projects/solo/contracts/protocol/impl/OperationImpl.sol": {
-      "OperationImpl": "0xd23417efc36a72c733326ebb7dae3a22f675cbeb"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

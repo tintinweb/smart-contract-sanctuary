@@ -2247,19 +2247,3 @@ contract WrappedXVC is Context, AccessControl, ERC20Capped, ERC20Pausable, ERC20
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 15000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1859,28 +1859,3 @@ contract AbstractSortitionPool is SortitionTree, GasStation {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "@keep-network/sortition-pools/contracts/StackLib.sol": {
-      "StackLib": "0x813C1c6732e4A15bC46E4F4efBA36D0F8aC827A1"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  }
-}

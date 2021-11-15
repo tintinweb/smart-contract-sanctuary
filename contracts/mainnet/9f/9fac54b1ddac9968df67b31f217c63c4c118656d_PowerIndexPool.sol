@@ -2519,19 +2519,3 @@ interface BFactoryInterface {
   function newBPool(string calldata name, string calldata symbol) external returns (BPoolInterface);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -542,30 +542,3 @@ library AddLiquidity {
     }
 }
 
-{
-  "libraries": {
-    "TransferHelper.sol": {},
-    "SafeMath.sol": {},
-    "Math.sol": {},
-    "Normalizer.sol": {},
-    "IERC20.sol": {},
-    "ITwapERC20.sol": {},
-    "IReserves.sol": {},
-    "ITwapPair.sol": {},
-    "ITwapOracle.sol": {},
-    "AddLiquidity.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

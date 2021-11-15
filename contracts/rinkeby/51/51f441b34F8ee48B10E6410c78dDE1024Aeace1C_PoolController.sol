@@ -1997,21 +1997,3 @@ contract TOASTToken is IInternalToken, ERC20Burnable, Ownable {
 
 pragma solidity >= 0.6.0 < 0.7.0;
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

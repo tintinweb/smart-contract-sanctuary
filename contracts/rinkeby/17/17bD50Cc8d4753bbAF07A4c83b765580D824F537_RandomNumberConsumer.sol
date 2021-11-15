@@ -1018,21 +1018,3 @@ contract RandomNumberConsumer is VRFConsumerBase, Ownable {
     // function withdrawLink() external {} - Implement a withdraw function to avoid locking your LINK in the contract
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

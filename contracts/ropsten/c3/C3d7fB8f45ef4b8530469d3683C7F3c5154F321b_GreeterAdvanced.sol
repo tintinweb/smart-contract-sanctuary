@@ -1599,23 +1599,3 @@ library console {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/GreeterLibrary.sol": {
-      "GreeterLibrary": "0x7e8e60e8209c5b3c6a7e83f93533be434d177c54"
-    }
-  }
-}

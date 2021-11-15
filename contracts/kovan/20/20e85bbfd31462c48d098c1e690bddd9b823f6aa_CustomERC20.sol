@@ -274,25 +274,3 @@ contract CustomERC20 is AbstractERC20 {
     }
 }
 
-{
-  "libraries": {
-    "IERC20.sol": {},
-    "IIntegralERC20.sol": {},
-    "SafeMath.sol": {},
-    "AbstractERC20.sol": {},
-    "CustomERC20.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

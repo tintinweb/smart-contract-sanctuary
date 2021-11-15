@@ -489,30 +489,20 @@ abstract contract Context {
 }
 
 // contracts/GUATIRE.sol 
-// SPDX-License-Identifier: MIT 
-pragma solidity ^0.8.0; 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
-contract GUATIRE is ERC20 { 
-constructor() ERC20("GUATIRE","GUA") { 
-_mint(msg.sender, 150000 * (10 ** uint256(decimals())));
-}
-}
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
+// SPDX-License-Identifier: MIT 
+
+pragma solidity ^0.8.0; 
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
+
+contract GUATIRE is ERC20 { 
+
+constructor() ERC20("GUATIRE","GUA") { 
+
+_mint(msg.sender, 150000 * (10 ** uint256(decimals())));
+
 }
+
+}
+

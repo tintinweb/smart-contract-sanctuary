@@ -1383,18 +1383,3 @@ contract Test_Contract is ERC721Enumerable, Ownable {
  "0x8E37C3090F979Ab951356E28E8E14722cC71C97B"]
  */
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

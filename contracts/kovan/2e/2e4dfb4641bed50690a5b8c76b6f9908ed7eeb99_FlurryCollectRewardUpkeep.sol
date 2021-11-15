@@ -4325,19 +4325,3 @@ interface ILPStakingRewards {
     function flurryStakingRewards() external returns (IFlurryStakingRewards);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

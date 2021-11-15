@@ -1490,19 +1490,3 @@ contract MintableToken is Ownable, SignerRole, IERC721, IERC721Metadata, ERC721B
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

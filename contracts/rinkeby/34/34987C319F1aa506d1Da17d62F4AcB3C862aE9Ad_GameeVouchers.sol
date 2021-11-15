@@ -2136,19 +2136,3 @@ contract GameeVouchers is ERC1155Inventory, IERC1155InventoryMintable, IERC1155I
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -2123,22 +2123,3 @@ contract VRFRequestIDBase {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10151
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

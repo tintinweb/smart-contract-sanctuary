@@ -521,21 +521,3 @@ contract Tgas is ERC2917Impl("Tomi Swap", "TOMI", 18, 40 * (10 ** 18)) {
 	
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 50
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

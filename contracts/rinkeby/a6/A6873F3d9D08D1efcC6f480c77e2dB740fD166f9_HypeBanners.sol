@@ -1573,21 +1573,3 @@ abstract contract HypeBeastCoreERC721 is ERC721, ERC721URIStorage, Pausable, Own
   receive() external payable {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

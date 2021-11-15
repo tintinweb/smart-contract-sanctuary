@@ -15018,28 +15018,3 @@ pragma solidity >=0.6.0 <0.8.0;
 
 import "../utils/Context.sol";
 
-{
-  "evmVersion": "berlin",
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000,
-    "details": {
-      "yul": true,
-      "deduplicate": true,
-      "cse": true,
-      "constantOptimizer": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  }
-}

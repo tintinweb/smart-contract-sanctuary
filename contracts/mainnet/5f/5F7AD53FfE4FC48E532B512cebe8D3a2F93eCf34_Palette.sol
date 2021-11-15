@@ -2094,19 +2094,3 @@ interface RoyaltiesV2 {
   function getRaribleV2Royalties(uint256 id) external view returns (LibPart.Part[] memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

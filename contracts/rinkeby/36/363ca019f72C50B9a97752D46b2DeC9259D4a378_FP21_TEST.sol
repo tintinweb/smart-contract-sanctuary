@@ -1623,21 +1623,3 @@ interface FP21Interface_TEST is IERC721Enumerable {
     function transfer(address from, address to, uint256 tokenId) external ;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

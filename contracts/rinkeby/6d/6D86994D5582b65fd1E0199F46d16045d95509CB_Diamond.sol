@@ -303,19 +303,3 @@ interface IDiamondCut {
     event DiamondCut(FacetCut[] _diamondCut, address _init, bytes _calldata);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

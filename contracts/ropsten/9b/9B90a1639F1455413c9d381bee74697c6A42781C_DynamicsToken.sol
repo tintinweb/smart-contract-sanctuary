@@ -1911,19 +1911,3 @@ interface IAutomatedExternalReflector {
     function updateTotalSupply(uint256 newTotalSupply) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

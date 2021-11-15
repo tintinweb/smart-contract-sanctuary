@@ -1219,19 +1219,3 @@ interface IKeep3rV1Helper {
     function getQuoteLimitFor(address origin, uint256 gasUsed) external view returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

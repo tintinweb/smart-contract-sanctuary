@@ -1622,32 +1622,3 @@ interface IWitness {
   ) external view returns (uint256, uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/CoverUtilV1.sol": {
-      "CoverUtilV1": "0xeb37da0d157656d40dbc7cbaf763bbf26f3a4b32"
-    },
-    "contracts/libraries/GovernanceUtilV1.sol": {
-      "GovernanceUtilV1": "0x7b613a1f146bd33ce4e620bec0c7004f6c13357e"
-    },
-    "contracts/libraries/ProtoUtilV1.sol": {
-      "ProtoUtilV1": "0x037445d26434248d4aa59d96ba476d3d8b4b0e96"
-    },
-    "contracts/libraries/StoreKeyUtil.sol": {
-      "StoreKeyUtil": "0x341a9c0652638c19ccb4fa7540918eebaea4ed04"
-    }
-  }
-}

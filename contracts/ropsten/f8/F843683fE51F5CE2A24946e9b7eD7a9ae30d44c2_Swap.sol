@@ -3669,30 +3669,3 @@ interface ISwap {
         external;
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/Swap.sol:Swap": {
-      "SwapUtils": "0xc15B081287894B4E719F23371500265E3cfbdb13",
-      "AmplificationUtils": "0x5cBa336ff2e674b976f66333C7148d315ecFbAEe"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

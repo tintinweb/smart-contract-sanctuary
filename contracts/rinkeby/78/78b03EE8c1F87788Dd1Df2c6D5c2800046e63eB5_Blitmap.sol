@@ -2343,23 +2343,3 @@ abstract contract ReentrancyGuard {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/blitmap-analysis.sol": {
-      "BlitmapAnalysis": "0xe6f51d61d4490f26e911df4499e993f677bd9610"
-    }
-  }
-}

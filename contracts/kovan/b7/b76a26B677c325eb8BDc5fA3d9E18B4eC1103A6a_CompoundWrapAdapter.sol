@@ -741,26 +741,3 @@ interface IComptroller {
     function claimComp(address holder) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/protocol/integration/lib/Compound.sol": {
-      "Compound": "0x094dad10e112299a384bc9dc18465c8701b0ca9b"
-    }
-  }
-}

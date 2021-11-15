@@ -1883,19 +1883,3 @@ interface IFeeDistributor {
     event FeeRecipientSet(address lidoAgent, address delphiAgent, address developer);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

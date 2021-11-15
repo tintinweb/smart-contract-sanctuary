@@ -1192,25 +1192,3 @@ abstract contract ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/shubhangi/Projects/OrijinFinance/contracts/contracts/libraries/PresaleHelper.sol": {
-      "PresaleHelper": "0xe23fEab3C2450A44cfbC5Aadb95f7772aeBb8888"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

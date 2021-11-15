@@ -4763,19 +4763,3 @@ interface LinkTokenInterface {
     function transferFrom(address from, address to, uint256 value) external returns (bool success);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

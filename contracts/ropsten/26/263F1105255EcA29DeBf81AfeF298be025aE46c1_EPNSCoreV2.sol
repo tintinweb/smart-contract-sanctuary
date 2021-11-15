@@ -4482,19 +4482,3 @@ contract MockDAI is MintableERC20 {
     constructor () ERC20("DAI", "DAI") public {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

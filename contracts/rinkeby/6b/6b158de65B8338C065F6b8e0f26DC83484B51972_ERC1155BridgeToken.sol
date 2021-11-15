@@ -1370,21 +1370,3 @@ contract ERC1155BridgeToken is BaseRelayRecipient, ERC1155, IBurnableMintableERC
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "remappings": [],
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

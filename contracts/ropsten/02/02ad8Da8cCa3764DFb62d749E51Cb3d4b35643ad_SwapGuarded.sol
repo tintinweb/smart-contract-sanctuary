@@ -3515,29 +3515,3 @@ interface ISwapGuarded {
         external;
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/guarded/SwapGuarded.sol:SwapGuarded": {
-      "SwapUtilsGuarded": "0xDcD9d0456846F641F5547cA025aFe9ae560Cc61F"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

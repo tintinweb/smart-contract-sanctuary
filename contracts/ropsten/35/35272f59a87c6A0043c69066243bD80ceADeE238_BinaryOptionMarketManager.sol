@@ -1789,23 +1789,3 @@ contract OwnedWithInit {
     event OwnerChanged(address oldOwner, address newOwner);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "synthetix-2.43.1/contracts/SafeDecimalMath.sol": {
-      "SafeDecimalMath": "0x34a5ef81d18f3a305ae9c2d7df42beef4c79031c"
-    }
-  }
-}

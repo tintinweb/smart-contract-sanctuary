@@ -4762,26 +4762,3 @@ interface IUniswapV2Router01 {
     function getAmountsIn(uint amountOut, address[] calldata path) external view returns (uint[] memory amounts);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/GlobalLimits.sol": {
-      "GlobalLimits": "0xd35e4762f8048b86493356114e2ac23e44d0fa40"
-    },
-    "contracts/SellLimit.sol": {
-      "SellLimit": "0x9f2f07a2a378a3e517733670b28d12c7545abedb"
-    }
-  }
-}

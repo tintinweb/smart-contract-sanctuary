@@ -1843,19 +1843,3 @@ contract WrappedEtherWaifu is ERC721 {
 
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

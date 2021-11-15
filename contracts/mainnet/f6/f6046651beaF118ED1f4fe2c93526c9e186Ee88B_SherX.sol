@@ -2007,26 +2007,3 @@ library GovStorage {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "@sherlock/v1-core/contracts/libraries/LibPool.sol": {
-      "LibPool": "0xedda10a93767b07f6913cb01479f6418eb35ab7e"
-    },
-    "@sherlock/v1-core/contracts/libraries/LibSherX.sol": {
-      "LibSherX": "0x22b6d0df02ff7480c77d73a755e5e5ecdac53b1e"
-    }
-  }
-}

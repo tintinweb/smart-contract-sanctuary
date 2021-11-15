@@ -1698,19 +1698,3 @@ contract CAMA is Context, CustomOwnable, ERC165, IERC721, IERC721Metadata {//cha
     // }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

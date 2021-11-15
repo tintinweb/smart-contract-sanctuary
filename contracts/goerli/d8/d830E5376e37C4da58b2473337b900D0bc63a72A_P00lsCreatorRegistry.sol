@@ -3373,19 +3373,3 @@ interface IERC1363Receiver {
     function onTransferReceived(address operator, address from, uint256 value, bytes calldata data) external returns (bytes4);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

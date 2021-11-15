@@ -2375,29 +2375,3 @@ abstract contract Ownable is Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/ScaleCodec.sol": {
-      "ScaleCodec": "0xbf5c8e65424a15be43bfa69f3cfbe930608fb342"
-    },
-    "contracts/utils/MerkleProof.sol": {
-      "MerkleProof": "0xd8cde9a104158321b1767f42b98a1dd3d5cc4c25"
-    }
-  }
-}

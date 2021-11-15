@@ -9570,26 +9570,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/FreeCollateralExternal.sol": {
-      "FreeCollateralExternal": "0xb06c0881265140cfd2f6510a95e04dca8df4405b"
-    },
-    "contracts/external/SettleAssetsExternal.sol": {
-      "SettleAssetsExternal": "0x923abfd03d76990793bc0dfba299ae67fae5c0b5"
-    }
-  }
-}

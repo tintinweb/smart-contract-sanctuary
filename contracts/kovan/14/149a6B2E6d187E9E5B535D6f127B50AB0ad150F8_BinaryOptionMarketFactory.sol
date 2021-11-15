@@ -1778,18 +1778,3 @@ library AddressSetLib {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

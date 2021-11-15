@@ -1910,21 +1910,3 @@ contract LostAvatars is
 //https://github.com/proactive-dev/eip2981/blob/main/contracts/ERC721WithRoyalty.sol
 //https://vitalik.ca/general/2021/08/22/prices.html
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

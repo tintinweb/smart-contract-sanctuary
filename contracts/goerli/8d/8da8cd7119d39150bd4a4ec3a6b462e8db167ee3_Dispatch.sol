@@ -3074,19 +3074,3 @@ abstract contract ScannerRegistryMetadata is ScannerRegistryCore {
     uint256[49] private __gap;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

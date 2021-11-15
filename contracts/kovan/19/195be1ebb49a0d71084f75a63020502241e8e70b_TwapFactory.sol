@@ -1240,34 +1240,3 @@ contract TwapFactory is ITwapFactory {
     }
 }
 
-{
-  "libraries": {
-    "ITwapFactory.sol": {},
-    "IERC20.sol": {},
-    "ITwapERC20.sol": {},
-    "IReserves.sol": {},
-    "ITwapPair.sol": {},
-    "SafeMath.sol": {},
-    "Reserves.sol": {},
-    "AbstractERC20.sol": {},
-    "TwapLPToken.sol": {},
-    "Math.sol": {},
-    "ITwapOracle.sol": {},
-    "Normalizer.sol": {},
-    "TwapPair.sol": {},
-    "TwapFactory.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1677,21 +1677,3 @@ library LibRoyaltiesV2 {
     bytes4 constant _INTERFACE_ID_ROYALTIES = 0xcad96cca;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

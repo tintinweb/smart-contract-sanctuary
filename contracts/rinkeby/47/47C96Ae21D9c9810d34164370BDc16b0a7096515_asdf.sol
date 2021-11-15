@@ -3262,23 +3262,3 @@ library asdfnum {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Renderer.sol": {
-      "Renderer": "0x56ca9b63a2fe30be8a059b649d55654143965fee"
-    }
-  }
-}

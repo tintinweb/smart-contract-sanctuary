@@ -959,22 +959,3 @@ interface ISendValueWithFallbackWithdraw {
   function withdraw() external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1337
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

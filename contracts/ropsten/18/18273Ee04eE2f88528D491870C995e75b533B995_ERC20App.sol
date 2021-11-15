@@ -1282,25 +1282,3 @@ library EnumerableSet {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/mac/Documents/Polkadex/polkadot-ethereum/ethereum/contracts/ScaleCodec.sol": {
-      "ScaleCodec": "0x9F577a3e7823237A418A25448fc2758016bD7AF4"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

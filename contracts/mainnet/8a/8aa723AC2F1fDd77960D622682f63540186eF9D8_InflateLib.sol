@@ -872,19 +872,3 @@ interface IInflateLib {
 
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 2000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

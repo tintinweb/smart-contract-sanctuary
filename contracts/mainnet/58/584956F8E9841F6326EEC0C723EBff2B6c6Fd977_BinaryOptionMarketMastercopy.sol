@@ -1801,23 +1801,3 @@ contract BinaryOptionMarketFactory is MinimalProxyFactory, Owned {
     event BinaryOptionMastercopyChanged(address _binaryOptionMastercopy);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "synthetix-2.43.1/contracts/SafeDecimalMath.sol": {
-      "SafeDecimalMath": "0x84d626b2bb4d0f064067e4bf80fce7055d8f3e7b"
-    }
-  }
-}

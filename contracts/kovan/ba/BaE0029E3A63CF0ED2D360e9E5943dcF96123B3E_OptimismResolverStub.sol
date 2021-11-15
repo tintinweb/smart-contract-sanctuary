@@ -55,19 +55,3 @@ interface OptimismVerifierI{
   function getVerifiedValue(address l2resolver, bytes32 slot, L2StateProof memory proof) external view returns(bytes32);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

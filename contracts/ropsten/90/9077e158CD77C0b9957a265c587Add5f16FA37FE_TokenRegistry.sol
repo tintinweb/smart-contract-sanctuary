@@ -394,25 +394,3 @@ contract Logger {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/gamer456148/Downloads/rollup.v1-main/contracts/libs/ParamManager.sol": {
-      "ParamManager": "0x86549C48d44912f5DFe05Fe8dAac6C7d514E7069"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

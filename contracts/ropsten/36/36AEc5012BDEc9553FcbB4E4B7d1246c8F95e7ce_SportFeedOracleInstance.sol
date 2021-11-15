@@ -1394,23 +1394,3 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint value);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "solidity-util/lib/Integers.sol": {
-      "Integers": "0xb2ce23436b8d2309e09a355aad0db59696771c8d"
-    }
-  }
-}

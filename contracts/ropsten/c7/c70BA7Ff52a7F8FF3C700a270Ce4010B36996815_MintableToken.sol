@@ -1438,19 +1438,3 @@ contract MintableToken is Ownable, IERC721, IERC721Metadata, ERC721Burnable, ERC
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1957,17 +1957,3 @@ contract TheMoonBoyz is ERC721, Ownable, PaymentSplitter {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

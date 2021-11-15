@@ -185,19 +185,3 @@ contract TokenDelegateStorageV1 is TokenDelegatorStorage {
     mapping (address => uint) public nonces;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

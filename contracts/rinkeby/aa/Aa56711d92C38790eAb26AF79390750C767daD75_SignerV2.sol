@@ -281,25 +281,3 @@ abstract contract ISignatureValidator is ISignatureValidatorConstants {
     function isValidSignature(bytes memory _data, bytes memory _signature) public view virtual returns (bytes4);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

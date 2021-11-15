@@ -2185,28 +2185,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 20
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/Users/sterlingcrispin/code/ConceptualLandscapesCONCEPT/Messages/contracts/DrawSvgOps.sol": {
-      "DrawSvgOps": "0x88fcdC675110B32d1BC576606FEA8c75B698d03d"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  }
-}

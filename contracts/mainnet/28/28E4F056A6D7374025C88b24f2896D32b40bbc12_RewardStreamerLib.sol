@@ -756,26 +756,3 @@ interface IERC1155 is IERC165 {
     ) external;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/Staking/TokenHelper.sol": {
-      "TokenHelper": "0xaa7aaa0c937c7af76559c30958773f207a7baab5"
-    }
-  }
-}

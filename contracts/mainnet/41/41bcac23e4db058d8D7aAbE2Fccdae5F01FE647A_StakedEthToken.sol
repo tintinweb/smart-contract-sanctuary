@@ -2253,19 +2253,3 @@ abstract contract ERC20Upgradeable is Initializable, IERC20Upgradeable {
     uint256[44] private __gap;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

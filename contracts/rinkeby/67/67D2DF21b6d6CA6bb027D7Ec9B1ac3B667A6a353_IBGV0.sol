@@ -1072,19 +1072,3 @@ interface IIBGEvents {
     event YieldMatchingLostIncome(address indexed _from, address indexed reciever, uint matchingLostIncome, uint indexed level, uint time);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

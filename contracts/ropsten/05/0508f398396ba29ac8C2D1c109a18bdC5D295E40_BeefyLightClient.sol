@@ -1765,29 +1765,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/ScaleCodec.sol": {
-      "ScaleCodec": "0xbf5c8e65424a15be43bfa69f3cfbe930608fb342"
-    },
-    "contracts/utils/Bitfield.sol": {
-      "Bitfield": "0x26aa40ebfcc0396f13a5716e0ccc05d1612b5135"
-    }
-  }
-}

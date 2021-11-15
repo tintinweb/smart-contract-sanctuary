@@ -499,18 +499,3 @@ using BoringMath for uint256;
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 350
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

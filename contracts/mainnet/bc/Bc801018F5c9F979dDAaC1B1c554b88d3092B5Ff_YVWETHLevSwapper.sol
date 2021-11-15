@@ -475,18 +475,3 @@ contract YVWETHLevSwapper{
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 350
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

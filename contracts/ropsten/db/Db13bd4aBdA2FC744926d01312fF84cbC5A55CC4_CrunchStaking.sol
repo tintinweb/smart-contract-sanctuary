@@ -1237,25 +1237,3 @@ interface IERC677Receiver {
     ) external;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/Stakeholding.sol": {
-      "Stakeholding": "0xaEdA4EF5FEB076a00bA6A85d6C0eBfd029D397d7"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

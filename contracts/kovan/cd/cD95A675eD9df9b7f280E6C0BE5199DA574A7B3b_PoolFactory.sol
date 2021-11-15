@@ -3832,26 +3832,3 @@ library ABDKMathQuad {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/implementation/PoolSwapLibrary.sol": {
-      "PoolSwapLibrary": "0xd046bC64854a7aF5bB61C207A9B2636148B04CAf"
-    }
-  }
-}

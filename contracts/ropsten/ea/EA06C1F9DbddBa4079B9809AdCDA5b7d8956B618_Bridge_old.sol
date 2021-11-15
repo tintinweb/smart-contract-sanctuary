@@ -1850,25 +1850,3 @@ library Address {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/toantv/projects/dex/rsksmart/tokenbridge/bridge/contracts/previous/Utils_old.sol": {
-      "Utils_old": "0x49F925C38C275859f87ea8f61A34a85b2b872eBC"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -4605,25 +4605,3 @@ enum TaskStatus {None, Inactive, Active, Complete}
 
 enum Lifecycle {None, TaskFunded, SCConfirmed}
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/contracts/libraries/Tasks.sol": {
-      "Tasks": "0x9550cc6e433A57E83b18BD54BE334e56CD6b775C"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1863,23 +1863,3 @@ library SafeMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/bitcoinWhitePaper/MorseCodeLibrary.sol": {
-      "MorseCode": "0x2172b024b8cd036b96fa6e6a03f9265233524a92"
-    }
-  }
-}

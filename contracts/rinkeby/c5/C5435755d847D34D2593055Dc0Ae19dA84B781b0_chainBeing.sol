@@ -1846,25 +1846,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1300
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/E/fiverr/April/AsciiMan/asciiman-contract/contracts/ChainBeing/chainBeingFactory.sol": {
-      "chainBeingFactory": "0x07F5D1cA908d6aF373463D65f15f6c7EAd9f5041"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

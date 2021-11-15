@@ -418,20 +418,3 @@ interface IMoonCatsRescue {
     function rescueOrder(uint256 rescueIndex) external view returns(bytes5 catId);
 }
 
-{
-  "evmVersion": "berlin",
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -4876,34 +4876,3 @@ contract Authorizations is AuthorityVerifier {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/runner/work/keep-core/keep-core/solidity-v1/contracts/libraries/staking/GrantStaking.sol": {
-      "GrantStaking": "0xCeEdce50042bBbf1a7035e7d9cC16044f46B56A3"
-    },
-    "/home/runner/work/keep-core/keep-core/solidity-v1/contracts/libraries/staking/Locks.sol": {
-      "Locks": "0x2F0EA9AAf97B68e659DA7cd6e80A46dbd851a7d5"
-    },
-    "/home/runner/work/keep-core/keep-core/solidity-v1/contracts/libraries/staking/TopUps.sol": {
-      "TopUps": "0xcDeee614f8446e29026b913885a89090D9b5E223"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1778,19 +1778,3 @@ library SwapConstants {
     uint256 internal constant _DEFAULT_DECAY_PERIOD = 1 minutes;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1697,23 +1697,3 @@ contract JackRaffle is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/JackRaffleToken.sol": {
-      "Utils": "0x228ad55a7c3a54fb5af46f32f8d92ac16f73d284"
-    }
-  }
-}

@@ -1166,33 +1166,3 @@ contract IntegralPair is Reserves, IntegralERC20, IIntegralPair {
     }
 }
 
-{
-  "libraries": {
-    "IERC20.sol": {},
-    "IIntegralERC20.sol": {},
-    "IReserves.sol": {},
-    "IIntegralPair.sol": {},
-    "SafeMath.sol": {},
-    "Reserves.sol": {},
-    "AbstractERC20.sol": {},
-    "IntegralERC20.sol": {},
-    "Math.sol": {},
-    "IIntegralFactory.sol": {},
-    "IIntegralOracle.sol": {},
-    "Normalizer.sol": {},
-    "IntegralPair.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}
