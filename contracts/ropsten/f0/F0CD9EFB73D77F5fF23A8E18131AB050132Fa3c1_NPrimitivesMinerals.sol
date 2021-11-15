@@ -1564,23 +1564,3 @@ abstract contract NPassCore is ERC721Enumerable, ReentrancyGuard, Ownable {
     }
 }
 
-{
-  "metadata": {
-    "bytecodeHash": "none",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1273,18 +1273,3 @@ contract SPACExDOGE is Context, IERC20, Ownable {
 
 // have i ever told you guys about my ghost pigeon theory?
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

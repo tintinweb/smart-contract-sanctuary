@@ -1227,25 +1227,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/dom/repos/rad-contracts/contracts/RevenueSplitMapping.sol": {
-      "RevenueSplitMapping": "0x11d13D0E4890A835e2AfB599E59Fd9bE407073A0"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

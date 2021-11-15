@@ -1310,19 +1310,3 @@ interface IAssimilator {
     function viewNumeraireAmountAndBalance(address, uint256) external view returns (int128, int128);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

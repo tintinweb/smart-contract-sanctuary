@@ -1985,23 +1985,3 @@ contract SpaceXFlokiDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 99999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/SpaceXFloki.sol": {
-      "IterableMapping": "0x1462BA2c5D1071E9996cCB8b68f5BAA2B08eDf63"
-    }
-  }
-}

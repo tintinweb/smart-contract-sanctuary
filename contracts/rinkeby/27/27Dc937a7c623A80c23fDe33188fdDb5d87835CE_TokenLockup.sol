@@ -774,23 +774,3 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/ScheduleCalc.sol": {
-      "ScheduleCalc": "0x1e2fc435b0e8c6328b96449cf7198afe7e1bfcd2"
-    }
-  }
-}

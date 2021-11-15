@@ -915,29 +915,3 @@ interface IUniswapV2Pair {
     function initialize(bytes32, address, address) external;
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "src/uniswap/factory/UniswapV2Factory.sol:UniswapV2Factory": {
-      "UniswapV2Pair": "0x796c92bA99A0c0C80CcE7Cffa28968ab538AA014"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

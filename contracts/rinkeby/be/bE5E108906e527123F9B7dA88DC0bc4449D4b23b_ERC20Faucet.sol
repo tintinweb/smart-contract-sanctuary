@@ -1653,22 +1653,3 @@ interface IERC20Minter {
     function mint(address to, uint256 amount) external;
 }
 
-{
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1832,25 +1832,3 @@ contract GigaBNB is BEP20, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/yvesr/flashbnb/contracts/flashbnb.sol": {
-      "IterableMapping": "0x8a00fC4E44bba0B6324d457b25d44913D88C9539"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

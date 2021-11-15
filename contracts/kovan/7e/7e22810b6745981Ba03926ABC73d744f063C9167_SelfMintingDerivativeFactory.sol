@@ -5316,23 +5316,3 @@ interface RegistryInterface {
     returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/contracts/derivative/self-minting/v1/SelfMintingPerpetualMultiPartyLib.sol": {
-      "SelfMintingPerpetualMultiPartyLib": "0x728284758674744d70d89eab42c43029abb4d99f"
-    }
-  }
-}

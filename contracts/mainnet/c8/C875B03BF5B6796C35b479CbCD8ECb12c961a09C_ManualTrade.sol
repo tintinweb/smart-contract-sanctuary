@@ -1437,22 +1437,3 @@ interface IWETH9 is IERC20 {
   function withdraw(uint256) external;
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

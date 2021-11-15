@@ -1718,25 +1718,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/var/www/html/boltfork/arthcoin-v2/contracts/Arth/Pools/ArthPoolLibrary.sol": {
-      "ArthPoolLibrary": "0xf679A2beBf6D1A3e0f0f5FAA59c88B9A0787Ef7e"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

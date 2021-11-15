@@ -1476,22 +1476,3 @@ interface IRecordStorage is IRecordReader {
     function reset(uint256 tokenId) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

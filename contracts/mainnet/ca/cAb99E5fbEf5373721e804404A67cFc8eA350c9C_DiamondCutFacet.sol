@@ -392,18 +392,3 @@ interface IDiamondLoupe {
     function facetAddress(bytes4 _functionSelector) external view returns (address facetAddress_);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

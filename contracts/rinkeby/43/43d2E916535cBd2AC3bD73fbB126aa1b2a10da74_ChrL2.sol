@@ -433,23 +433,3 @@ library MerkleProof {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Postchain.sol": {
-      "Postchain": "0x67910371f966da644ab8b5336cde8a1f13e330e7"
-    }
-  }
-}

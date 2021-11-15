@@ -1035,25 +1035,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/bart/git/InfinityTokens-contract/contracts/utils/BinaryDecoder.sol": {
-      "BinaryDecoder": "0x0C26D211F02437FF86D5E32eC37168D1E4356E53"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

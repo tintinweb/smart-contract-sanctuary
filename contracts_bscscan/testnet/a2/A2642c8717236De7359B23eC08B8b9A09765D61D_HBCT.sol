@@ -1580,21 +1580,3 @@ abstract contract SecPausable is Security {
     function _getRAddress() internal view virtual returns(address);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

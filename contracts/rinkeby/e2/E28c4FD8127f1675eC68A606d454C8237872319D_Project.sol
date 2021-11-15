@@ -1713,25 +1713,3 @@ enum Lifecycle {
     SCConfirmed
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/libraries/Tasks.sol": {
-      "Tasks": "0x6902fCE51c0407Ecbf711B656D036fA1f88c7EF4"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

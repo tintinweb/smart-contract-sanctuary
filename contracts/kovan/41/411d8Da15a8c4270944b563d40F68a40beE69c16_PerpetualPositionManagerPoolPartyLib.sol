@@ -3238,23 +3238,3 @@ library EnumerableSet {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/@jarvis-network/uma-core/contracts/financial-templates/common/FeePayerPoolPartyLib.sol": {
-      "FeePayerPoolPartyLib": "0x9b3ba4e1da7eb89feac5eb085796c6dc5748f38b"
-    }
-  }
-}

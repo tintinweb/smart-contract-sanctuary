@@ -53,25 +53,3 @@ library ConvertLib {
 	}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/contracts/ConvertLib.sol": {
-      "ConvertLib": "0x7cd806Ee14797DB619b4AAB089853a8278031C8c"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

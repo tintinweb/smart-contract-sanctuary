@@ -4127,29 +4127,3 @@ interface IERC20MetadataUpgradeable is IERC20Upgradeable {
     function decimals() external view returns (uint8);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/libraries/VaultLifecycle.sol": {
-      "VaultLifecycle": "0x14cc2c0b624e437202b53e533147982842865511"
-    }
-  }
-}

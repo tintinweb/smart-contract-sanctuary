@@ -3891,23 +3891,3 @@ library console {
 
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/LibPackStorage.sol": {
-      "LibPackStorage": "0xb18bb42683c778ffa89f76316febc6dc3cf445f7"
-    }
-  }
-}

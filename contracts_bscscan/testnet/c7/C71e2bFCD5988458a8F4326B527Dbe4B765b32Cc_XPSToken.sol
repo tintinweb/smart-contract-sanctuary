@@ -1959,21 +1959,3 @@ function setFees(uint256 liquidityPoolFee,uint256 marketingPoolFee,uint256 burnF
     function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

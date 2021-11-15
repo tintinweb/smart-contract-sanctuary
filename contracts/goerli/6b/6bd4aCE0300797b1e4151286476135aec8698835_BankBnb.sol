@@ -1786,23 +1786,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/BankBnb/IterableMapping.sol": {
-      "IterableMapping": "0xDb28301Dc8a03A6A276B083433cDAb99eDd756d6"
-    }
-  }
-}

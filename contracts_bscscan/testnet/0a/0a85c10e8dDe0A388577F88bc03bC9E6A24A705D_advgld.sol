@@ -2073,25 +2073,3 @@ contract BpetherDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/D/Workspace/Truffle Token/contracts/Libraries/IterableMapping.sol": {
-      "IterableMapping": "0xCbc885086D30706fe06798355e0D9cb3D34cb2ca"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -2085,25 +2085,3 @@ library ECDSA {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/wsl-files/work/git/eth/less-contracts/contracts/libraries/Calculations.sol": {
-      "Calculations": "0xfd9a99354A1A7B171DBdA29F20c08625A5080c5C"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

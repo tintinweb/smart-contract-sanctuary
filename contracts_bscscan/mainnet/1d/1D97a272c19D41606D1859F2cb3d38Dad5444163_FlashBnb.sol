@@ -1832,25 +1832,3 @@ contract FlashBnb is BEP20, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/yvesr/flashbnb/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xF12d886589D0f90d6FF0C1b13291cceCc27c37d0"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

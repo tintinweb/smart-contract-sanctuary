@@ -548,18 +548,3 @@ contract SSpellSwapperV1 is ISwapper {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 9000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

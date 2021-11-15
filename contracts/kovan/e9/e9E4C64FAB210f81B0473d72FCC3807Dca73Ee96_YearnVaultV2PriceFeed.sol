@@ -913,33 +913,3 @@ interface IYearnVaultV2Registry {
     function vaults(address, uint256) external view returns (address);
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "details": {
-      "constantOptimizer": true,
-      "cse": true,
-      "deduplicate": true,
-      "jumpdestRemover": true,
-      "orderLiterals": true,
-      "peephole": true,
-      "yul": false
-    },
-    "runs": 1000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

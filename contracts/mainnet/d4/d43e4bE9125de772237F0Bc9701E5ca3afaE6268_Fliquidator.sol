@@ -2465,19 +2465,3 @@ interface ISoloMargin {
   function getMarketInterestRate(uint256 _marketId) external view returns (Rate memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

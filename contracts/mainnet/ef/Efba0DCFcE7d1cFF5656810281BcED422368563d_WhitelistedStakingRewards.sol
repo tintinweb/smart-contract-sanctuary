@@ -795,18 +795,3 @@ contract WhitelistedStakingRewards is IStakingRewards, Whitelist, ReentrancyGuar
     event RewardsEmissionCanceled();
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

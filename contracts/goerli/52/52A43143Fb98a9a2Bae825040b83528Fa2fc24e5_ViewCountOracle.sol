@@ -1583,25 +1583,3 @@ contract ViewCountOracle is UsingWitnet {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/flattened/Flattened.sol": {
-      "Witnet": "0x9b42b0D80C428B17A5828dF5C2c96454ca54bD04"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

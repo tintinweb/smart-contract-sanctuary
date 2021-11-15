@@ -5053,29 +5053,3 @@ library console {
 
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/MockPrediction.sol:MockPrediction": {
-      "PredictionHelper": "0x30F32A217657fef9d995055fd1407A958578C73E"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

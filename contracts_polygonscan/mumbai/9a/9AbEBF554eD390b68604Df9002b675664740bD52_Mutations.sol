@@ -1969,23 +1969,3 @@ library BuddyLib {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/BuddyLib.sol": {
-      "BuddyLib": "0x1010ee04f8d1be3a6447b3c8022037c8c3425fe9"
-    }
-  }
-}

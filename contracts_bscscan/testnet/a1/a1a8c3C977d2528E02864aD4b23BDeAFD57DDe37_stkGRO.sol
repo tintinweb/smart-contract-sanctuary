@@ -6624,25 +6624,3 @@ library $
 		0x0000000000000000000000000000000000000000;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/G.sol": {
-      "G": "0x0edeA000b1bBd718CEE231cDaEBf4bc602234aDB"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

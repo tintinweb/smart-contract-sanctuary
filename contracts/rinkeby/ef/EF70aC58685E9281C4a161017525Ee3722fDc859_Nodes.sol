@@ -13213,23 +13213,3 @@ contract SegmentTreeTester {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/utils/SegmentTree.sol": {
-      "SegmentTree": "0x878d1ada286c7749de73d62ff31b1093a040fde3"
-    }
-  }
-}

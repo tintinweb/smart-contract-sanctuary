@@ -349,27 +349,3 @@ library BuyHelper {
     }
 }
 
-{
-  "libraries": {
-    "IIntegralOracle.sol": {},
-    "IERC20.sol": {},
-    "IIntegralERC20.sol": {},
-    "IReserves.sol": {},
-    "IIntegralPair.sol": {},
-    "SafeMath.sol": {},
-    "BuyHelper.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

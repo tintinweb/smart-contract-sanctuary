@@ -2143,23 +2143,3 @@ interface IERC20MetadataUpgradeable is IERC20Upgradeable {
     function decimals() external view returns (uint8);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/IterableMapping.sol": {
-      "IterableMapping": "0x8332e1f3d9bed9ba72699dbf2156710b7857d14b"
-    }
-  }
-}

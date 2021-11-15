@@ -2167,23 +2167,3 @@ interface IUniswapV2Router01 {
         returns (uint256[] memory amounts);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "cache/solpp-generated-contracts/lib/PricesLib.sol": {
-      "PricesLib": "0xd5ca2447ea2164826fd17a017b154b9b4adc8104"
-    }
-  }
-}

@@ -187,22 +187,3 @@ contract UChildERC20Proxy is UpgradableProxy {
     constructor(address _proxyTo) public UpgradableProxy(_proxyTo) {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 65866
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

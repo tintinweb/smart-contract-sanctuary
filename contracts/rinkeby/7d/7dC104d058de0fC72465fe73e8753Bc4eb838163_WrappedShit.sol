@@ -1707,21 +1707,3 @@ contract WrappedShit is Ownable, ERC721Full, Pausable {
 
 }
 
-{
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

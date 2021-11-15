@@ -1161,25 +1161,3 @@ library TransferHelper {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/pavelbulochkin/plasmapay/Launchpad-testdev/contracts/Spaceport-v1-periphery/contracts/SpaceportHelper.sol": {
-      "SpaceportHelper": "0x5673451BdA29aAC3d26AEeb9Ed105C339Cc275c0"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

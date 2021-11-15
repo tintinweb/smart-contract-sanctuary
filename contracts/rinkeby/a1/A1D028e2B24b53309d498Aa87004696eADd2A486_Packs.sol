@@ -3911,23 +3911,3 @@ library Base64 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/LibPackStorage.sol": {
-      "LibPackStorage": "0x45702d2ed312df59dd9b5844bc9ba1f24d51c8bf"
-    }
-  }
-}

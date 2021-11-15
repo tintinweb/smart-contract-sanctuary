@@ -2405,22 +2405,3 @@ contract Adapter01 is IAdapter, NewUniswapV2, ZeroxV4, ZeroxV2, Curve, Balancer,
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

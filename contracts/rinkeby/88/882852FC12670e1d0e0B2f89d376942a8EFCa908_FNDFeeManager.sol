@@ -746,22 +746,3 @@ abstract contract ReentrancyGuardUpgradeable is Initializable {
     uint256[49] private __gap;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1337
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

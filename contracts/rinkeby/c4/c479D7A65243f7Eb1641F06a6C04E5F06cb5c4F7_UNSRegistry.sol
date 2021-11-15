@@ -2168,19 +2168,3 @@ interface IForwarder {
     function execute(ForwardRequest calldata req, bytes calldata signature) external returns (bytes memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1379,18 +1379,3 @@ library TranscriptLibrary {
     }
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  }
-}

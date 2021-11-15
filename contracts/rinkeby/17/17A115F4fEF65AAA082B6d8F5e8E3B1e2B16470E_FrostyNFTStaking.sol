@@ -9269,22 +9269,3 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": false
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

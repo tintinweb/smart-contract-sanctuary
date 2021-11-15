@@ -1224,22 +1224,3 @@ interface IWeth is IERC20 {
     function withdraw(uint256) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 780
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

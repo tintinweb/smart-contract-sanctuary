@@ -194,24 +194,3 @@ contract Dai is LibNote {
     }
 }
 
-{
-  "evmVersion": "petersburg",
-  "libraries": {},
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

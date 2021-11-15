@@ -300,22 +300,3 @@ library LibDiamondStorage {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 9999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

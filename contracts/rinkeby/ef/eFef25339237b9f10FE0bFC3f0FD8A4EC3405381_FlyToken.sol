@@ -93,19 +93,3 @@ contract FlyToken is ERC20 {
     ERC20(1e28, 'FlyToken', 18, 'FLY') { }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

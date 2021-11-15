@@ -2777,26 +2777,3 @@ library console {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "@yield-protocol/utils-v2/contracts/token/SafeERC20Namer.sol": {
-      "SafeERC20Namer": "0x5556549241b4986d1150A46Ac0AE1129f6220214"
-    }
-  }
-}

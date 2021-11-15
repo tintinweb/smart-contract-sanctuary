@@ -2046,25 +2046,3 @@ abstract contract Ownable is Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/ConceptualProjectParts.sol": {
-      "ConceptualProjectParts": "0xCaD788240bEcd48c6fbE717cdF0e1fabE35c662E"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

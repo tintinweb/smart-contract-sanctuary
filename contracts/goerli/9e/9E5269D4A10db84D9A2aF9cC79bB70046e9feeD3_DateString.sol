@@ -180,19 +180,3 @@ library DateString {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 7500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

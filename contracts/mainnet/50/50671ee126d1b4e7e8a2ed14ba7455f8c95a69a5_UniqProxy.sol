@@ -761,21 +761,3 @@ contract UniqProxy is TransparentUpgradeableProxy{
     ) payable TransparentUpgradeableProxy(_logic, admin_, _data) {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

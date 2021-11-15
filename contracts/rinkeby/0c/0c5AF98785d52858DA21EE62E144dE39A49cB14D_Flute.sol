@@ -2120,23 +2120,3 @@ library Base64 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/lib/ItemLib.sol": {
-      "ItemLib": "0xbca421b6edcb2b5acc6737eb0ff7cd2717902a76"
-    }
-  }
-}

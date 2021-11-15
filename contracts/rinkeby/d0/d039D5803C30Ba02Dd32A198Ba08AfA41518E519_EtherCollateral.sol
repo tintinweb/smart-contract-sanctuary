@@ -1692,23 +1692,3 @@ interface IConjureRouter {
     function deposit() external payable;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/SafeDecimalMath.sol": {
-      "SafeDecimalMath": "0x3b5e815a5875102c47167de07bfae376213de2ac"
-    }
-  }
-}

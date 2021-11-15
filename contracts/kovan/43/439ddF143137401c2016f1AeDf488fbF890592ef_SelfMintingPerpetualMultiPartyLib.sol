@@ -11428,29 +11428,3 @@ library EnumerableMap {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/derivative/common/FeePayerPartyLib.sol": {
-      "FeePayerPartyLib": "0x36bae0fa5b561d48179c57eb055d4e1d8e5cedac"
-    },
-    "deploy/contracts/derivative/self-minting/v1/SelfMintingPerpetualLiquidatableMultiPartyLib.sol": {
-      "SelfMintingPerpetualLiquidatableMultiPartyLib": "0x9ca424d8584530d0b979b1c87bdccdbd94c6fbd1"
-    },
-    "deploy/contracts/derivative/self-minting/v1/SelfMintingPerpetualPositionManagerMultiPartyLib.sol": {
-      "SelfMintingPerpetualPositionManagerMultiPartyLib": "0xe8e376aa6ca3f5d5751c49fdd21db5213064dfa5"
-    }
-  }
-}

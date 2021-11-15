@@ -1598,22 +1598,3 @@ interface IERC721Receiver {
     ) external returns (bytes4);
 }
 
-{
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

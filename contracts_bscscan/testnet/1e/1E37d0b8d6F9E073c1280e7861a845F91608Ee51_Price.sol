@@ -227,21 +227,3 @@ interface IPrice {
      function getHistoricalPrice(address _address, uint80 roundId) external view returns (int _price, uint8 _decimals, uint _startedAt, uint _timeStamp, string memory _description);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

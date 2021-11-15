@@ -683,25 +683,3 @@ contract LGEWhitelisted is Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 5000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

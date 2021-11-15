@@ -13078,27 +13078,3 @@ interface IExchangeAdapter {
   ) external returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/protocol/libraries/logic/ReserveLogic.sol": {
-      "ReserveLogic": "0xddf5976122428fc601fb1b4d058f53f4ca0228ee"
-    },
-    "contracts/protocol/libraries/logic/ValidationLogic.sol": {
-      "ValidationLogic": "0x5f7638e8f7dbfdc8db3cd457abc110305963b9a2"
-    }
-  }
-}

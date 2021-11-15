@@ -392,19 +392,3 @@ interface IYieldOracle {
     function consult(uint256 forInterval) external returns (uint256 amountOut);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 9999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

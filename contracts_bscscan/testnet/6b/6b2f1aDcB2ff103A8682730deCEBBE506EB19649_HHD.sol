@@ -2247,19 +2247,3 @@ contract HHD is Context, AccessControl, BEP20Capped, BEP20Pausable, BEP20Burnabl
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 5500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

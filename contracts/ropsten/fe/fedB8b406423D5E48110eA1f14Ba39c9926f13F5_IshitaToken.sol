@@ -629,18 +629,3 @@ contract IshitaToken is ERC20("IshitaToken", "ISTA"), Ownable , Pausable   {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

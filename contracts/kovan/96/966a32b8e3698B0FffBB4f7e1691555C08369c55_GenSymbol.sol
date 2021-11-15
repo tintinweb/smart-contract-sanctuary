@@ -225,23 +225,3 @@ library DateTime {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/options/lib/DateTime.sol": {
-      "DateTime": "0x184d86ed8b87ff9ece69cfaad256049208b6db11"
-    }
-  }
-}

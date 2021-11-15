@@ -2599,29 +2599,3 @@ abstract contract Pausable is Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/CoverUtilV1.sol": {
-      "CoverUtilV1": "0x5c88deb9fc8d217d836fa88c2a87c73c2259ad47"
-    },
-    "contracts/libraries/ProtoUtilV1.sol": {
-      "ProtoUtilV1": "0x4acbf26d53d2f58d7ae4f4352e289a0cb305bb13"
-    },
-    "contracts/libraries/StoreKeyUtil.sol": {
-      "StoreKeyUtil": "0xb9f1ef66a8c939aa6c4a2961f354de9baf4f58bc"
-    }
-  }
-}

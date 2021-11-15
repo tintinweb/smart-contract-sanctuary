@@ -53,25 +53,3 @@ contract MetaCoin {
 	}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "contracts/ConvertLib.sol": {
-      "ConvertLib": "0x2de14ABa63E487fD54E9e717edA25eE6B33cCF5d"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

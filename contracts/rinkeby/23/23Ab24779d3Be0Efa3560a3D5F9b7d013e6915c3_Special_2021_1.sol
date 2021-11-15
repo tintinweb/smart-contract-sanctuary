@@ -19,22 +19,3 @@ interface SpecialInterface {
   function getImageBase64(uint256 id, uint256 craneId) external pure returns (string memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200,
-    "details": {
-      "yul": false
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

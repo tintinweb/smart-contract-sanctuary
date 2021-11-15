@@ -13,21 +13,3 @@ contract NonFungibleApesHelper {
     uint16[30] public tier5 = [36,99,137,161,167,172,181,182,202,225,245,251,275,381,407,415,472,524,530,532,567,568,623,706,736,756,776,804,919,951];
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

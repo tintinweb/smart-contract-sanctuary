@@ -2705,19 +2705,3 @@ interface IMaltPoolPeriphery {
   function getOptimalLiquidity(address tokenA, address tokenB, uint256 liquidityB) external view returns (uint256 liquidityA);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

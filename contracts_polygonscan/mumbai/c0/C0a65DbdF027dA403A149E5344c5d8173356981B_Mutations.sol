@@ -435,23 +435,3 @@ library BuddyLib {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/BuddyLib.sol": {
-      "BuddyLib": "0x0ee5ae5470ba9c15457222f93c3feb1d70d07246"
-    }
-  }
-}

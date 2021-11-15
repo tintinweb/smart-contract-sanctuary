@@ -8114,26 +8114,3 @@ library ExchangeRate {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/FreeCollateralExternal.sol": {
-      "FreeCollateralExternal": "0xc4a0a39f99002f62747a4fdc6836b16cbee4372d"
-    },
-    "contracts/external/SettleAssetsExternal.sol": {
-      "SettleAssetsExternal": "0x1ce3d734aaafaa06c46048d2371c2e507692c988"
-    }
-  }
-}

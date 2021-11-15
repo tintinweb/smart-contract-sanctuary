@@ -6507,23 +6507,3 @@ library BokkyPooBahsDateTimeLibrary {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/utils/SegmentTree.sol": {
-      "SegmentTree": "0x29cf0506b8335283fbaa2b49d094e6200a1c409a"
-    }
-  }
-}

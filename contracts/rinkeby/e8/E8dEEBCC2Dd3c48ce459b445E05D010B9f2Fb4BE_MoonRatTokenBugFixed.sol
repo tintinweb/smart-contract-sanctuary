@@ -1447,25 +1447,3 @@ contract MoonRatTokenBugFixed is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/Developer/truffle/moonratv2/contracts/MoonRatTokenBugFixed.sol": {
-      "Utils": "0x357a45cCaed72b168432FDcc75A737ec2fBffF95"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

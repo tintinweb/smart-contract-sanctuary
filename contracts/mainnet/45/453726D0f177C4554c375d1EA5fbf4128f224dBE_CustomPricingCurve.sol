@@ -1625,19 +1625,3 @@ interface IERC1363Approve {
 interface IERC1363 is IERC1363Transfer, IERC1363Approve {
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

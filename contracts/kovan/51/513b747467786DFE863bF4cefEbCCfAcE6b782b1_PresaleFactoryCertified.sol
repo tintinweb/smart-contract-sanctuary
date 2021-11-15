@@ -2134,25 +2134,3 @@ library ECDSA {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/Users/rita/Documents/less-qa/contracts/libraries/Calculations.sol": {
-      "Calculations": "0x8fFdc72Ca758984D0A0E1084e35340Fe04de9b45"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

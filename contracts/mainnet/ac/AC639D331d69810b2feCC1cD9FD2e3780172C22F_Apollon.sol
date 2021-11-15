@@ -1153,19 +1153,3 @@ contract Apollon is Ownable, ERC165, IERC721, IERC721Metadata, IERC721Enumerable
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

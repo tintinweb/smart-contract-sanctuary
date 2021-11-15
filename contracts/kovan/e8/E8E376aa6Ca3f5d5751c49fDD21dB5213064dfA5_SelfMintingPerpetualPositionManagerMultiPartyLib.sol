@@ -11428,23 +11428,3 @@ library EnumerableMap {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/derivative/common/FeePayerPartyLib.sol": {
-      "FeePayerPartyLib": "0x36bae0fa5b561d48179c57eb055d4e1d8e5cedac"
-    }
-  }
-}

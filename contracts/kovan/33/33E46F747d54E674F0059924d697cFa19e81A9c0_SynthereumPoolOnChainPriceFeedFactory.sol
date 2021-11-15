@@ -8747,23 +8747,3 @@ library EnumerableMap {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/synthereum-pool/v3/PoolOnChainPriceFeedLib.sol": {
-      "SynthereumPoolOnChainPriceFeedLib": "0xc8101f3a4fe346ab0a36690097fb967fb4902d6f"
-    }
-  }
-}

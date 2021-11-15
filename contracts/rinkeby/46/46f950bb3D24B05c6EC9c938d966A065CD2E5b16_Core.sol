@@ -2415,23 +2415,3 @@ abstract contract Initializable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Libraries/Math.sol": {
-      "Math": "0xc13fc11006b23f13f583dc0a3747692bedadc63d"
-    }
-  }
-}

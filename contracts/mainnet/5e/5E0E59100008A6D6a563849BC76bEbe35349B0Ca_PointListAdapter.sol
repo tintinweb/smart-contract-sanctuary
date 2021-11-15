@@ -80,22 +80,3 @@ interface IINFPermissionManager {
     function whitelistInvestor(address investor, bool approved) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 350
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

@@ -1317,26 +1317,3 @@ interface IWETH is IERC20 {
     function withdraw(uint) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 9999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/VampireAdapter.sol": {
-      "VampireAdapter": "0x44dda8e799de6a4a4a50052793d208b3be16ca33"
-    }
-  }
-}

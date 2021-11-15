@@ -5728,21 +5728,3 @@ contract VRFConsumer is VRFConsumerBase {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

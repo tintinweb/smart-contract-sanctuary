@@ -2008,19 +2008,3 @@ contract Cards is CustomOwnable, ReentrancyGuard, ERC165, IERC721, IERC721Metada
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

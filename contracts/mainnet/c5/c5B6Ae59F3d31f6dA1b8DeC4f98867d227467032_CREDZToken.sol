@@ -519,25 +519,3 @@ contract CREDZToken is ERC20PresetFixedSupply {
 	constructor() ERC20PresetFixedSupply("CREDZ", "CRDZ", 520000000 * (10 ** uint256(decimals())), msg.sender) {}
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1003,28 +1003,3 @@ interface IMemberToken is IERC1155 {
     function createPod(address[] memory _accounts, bytes memory data) external returns (uint256);
 }
 
-{
-  "evmVersion": "london",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  }
-}

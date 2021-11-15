@@ -1722,19 +1722,3 @@ interface IWithdrawHandler {
   function handleWithdrawal(address staker, uint256 reduceAmount) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

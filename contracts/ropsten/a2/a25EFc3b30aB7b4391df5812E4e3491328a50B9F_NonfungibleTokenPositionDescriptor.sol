@@ -3135,25 +3135,3 @@ library Base64 {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/rahulbane/BlockchainProjects/RouterProtocol/UniswapFork/UniswapV3-Peripherry/contracts/libraries/NFTDescriptor.sol": {
-      "NFTDescriptor": "0x8e5E1967ca77A819c69EAfb0Da35628Ad04C9975"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

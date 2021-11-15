@@ -1889,19 +1889,3 @@ interface IDrainer {
   function drainTokens(address _token, address _beneficiary, uint _amount) external;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

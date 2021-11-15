@@ -2789,23 +2789,3 @@ library SignedSafeMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/NFTDescriptor.sol": {
-      "NFTDescriptor": "0xc2b57ece3057d272a94d325a38353c6aa891954e"
-    }
-  }
-}

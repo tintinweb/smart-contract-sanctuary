@@ -2892,31 +2892,3 @@ abstract contract Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/koloale/orion-projects/orion-exchange_dev/contracts/libs/MarginalFunctionality.sol": {
-      "MarginalFunctionality": "0xB6Bf84cbE86d786a3a66fd1a1Fa77D1e521596EA"
-    },
-    "/Users/koloale/orion-projects/orion-exchange_dev/contracts/libs/LibValidator.sol": {
-      "LibValidator": "0x611c49e049667f67F35E1e271b89299ce00e513A"
-    },
-    "/Users/koloale/orion-projects/orion-exchange_dev/contracts/libs/LibUnitConverter.sol": {
-      "LibUnitConverter": "0x1F9b696272130dE4C3b038376ae8aFBDd14580e6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

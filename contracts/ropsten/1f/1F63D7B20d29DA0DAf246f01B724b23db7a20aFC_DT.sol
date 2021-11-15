@@ -2005,26 +2005,3 @@ interface IExternalReflection {
     function updateTotalSupply(uint256 newTotalSupply) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libs/FeeLibrary.sol": {
-      "FeeLibrary": "0xe2a9ccaabed69fd3eeaa69de9284ec32725978fe"
-    },
-    "contracts/libs/SwapWithLP.sol": {
-      "SwapWithLP": "0x2ded8a735f882c03b4599ed34dd2edea14947529"
-    }
-  }
-}

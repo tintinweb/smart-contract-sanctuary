@@ -1890,25 +1890,3 @@ contract ThorFloki is ERC20, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/yvesr/minithoreum/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x1c121DAE940d4338B990e0C5347e9b1b693C1A2e"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

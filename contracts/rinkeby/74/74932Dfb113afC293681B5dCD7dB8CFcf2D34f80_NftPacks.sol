@@ -1671,22 +1671,3 @@ abstract contract ERC1155Receiver is ERC165, IERC1155Receiver {
     }
 }
 
-{
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

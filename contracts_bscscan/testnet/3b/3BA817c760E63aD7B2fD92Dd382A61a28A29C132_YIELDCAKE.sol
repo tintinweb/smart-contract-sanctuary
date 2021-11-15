@@ -2361,25 +2361,3 @@ contract YIELDCAKEDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/jabxtre/Documents/coding/YCake/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x2043d51B0e877Ea7B8B2F7B297D68f000D0266ED"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -2121,19 +2121,3 @@ library DataTypes {
 	enum InterestRateMode { NONE, STABLE, VARIABLE }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 0
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

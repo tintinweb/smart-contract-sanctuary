@@ -504,18 +504,3 @@ abstract contract Context {
     }
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  }
-}

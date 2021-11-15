@@ -1953,23 +1953,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/testnet/HerosBattle/IterableMapping.sol": {
-      "IterableMapping": "0x8BBA681146dDcA514dE5e2eD7087A0c875c7b783"
-    }
-  }
-}

@@ -4986,25 +4986,3 @@ library UInt128SafeMath {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/agreements/SlotsBitmapLibrary.sol": {
-      "SlotsBitmapLibrary": "0x4e396b838547d87e6a562015774829d98d597266"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

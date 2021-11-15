@@ -8204,29 +8204,3 @@ library EnumerableMap {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/derivative/common/FeePayerPartyLib.sol": {
-      "FeePayerPartyLib": "0x97d884d049cd705d681ae83b5cba3efaad0d2c32"
-    },
-    "deploy/contracts/derivative/self-minting/v1/SelfMintingPerpetualLiquidatableMultiPartyLib.sol": {
-      "SelfMintingPerpetualLiquidatableMultiPartyLib": "0x2aa25770e92de3d61544e1c5245e8c968ddc34c5"
-    },
-    "deploy/contracts/derivative/self-minting/v1/SelfMintingPerpetualPositionManagerMultiPartyLib.sol": {
-      "SelfMintingPerpetualPositionManagerMultiPartyLib": "0xe88178d7e2363c32663abe70e442a0ff2f8b3cce"
-    }
-  }
-}

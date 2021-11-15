@@ -1961,29 +1961,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/ScaleCodec.sol": {
-      "ScaleCodec": "0xd4fe39daff183bed415bf67f4a41ab123bcb1cf1"
-    },
-    "contracts/utils/MerkleProof.sol": {
-      "MerkleProof": "0x326faf52803564c226ce17de968d73229f906ef4"
-    }
-  }
-}

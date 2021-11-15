@@ -1741,22 +1741,3 @@ interface RoyaltiesV2 {
     function getRaribleV2Royalties(uint256 id) external view returns (LibPart.Part[] memory);
 }
 
-{
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -445,22 +445,3 @@ interface IMessageProvider {
     event InboxMessageDeliveredFromOrigin(uint256 indexed messageNum);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

@@ -2166,25 +2166,3 @@ library EnumerableSet {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/Users/tepnik/Desktop/ydragon-contracts/contracts/lib/AssetLib.sol": {
-      "AssetLib": "0xf3D89bFBA3c07594E3bB1eaa5A4f4d407FAEACf6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

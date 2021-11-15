@@ -1668,25 +1668,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/ubuntu/environment/contracts/contracts/Nft.sol": {
-      "SwapMapping": "0xC67Cc90F0A6c9da2db3e7F972cdAD3AfEF683a3a"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

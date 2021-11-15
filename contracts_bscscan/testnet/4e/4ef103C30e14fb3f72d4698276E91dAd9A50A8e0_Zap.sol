@@ -4855,32 +4855,3 @@ contract ZapGetters {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/zap-miner/libraries/ZapStake.sol": {
-      "ZapStake": "0x35d9bf8a2843cc671cfe45c17b497056ac6f2557"
-    },
-    "contracts/zap-miner/libraries/ZapDispute.sol": {
-      "ZapDispute": "0xf7a5128cf219b1e1e22797ef4136c09e4a9e3055"
-    },
-    "contracts/zap-miner/libraries/ZapLibrary.sol": {
-      "ZapLibrary": "0x47fa538282d61aefbe4d118f3a8d8514d356c054"
-    }
-  }
-}

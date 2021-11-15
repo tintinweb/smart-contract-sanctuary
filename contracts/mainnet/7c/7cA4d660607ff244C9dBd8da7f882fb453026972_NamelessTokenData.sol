@@ -2309,25 +2309,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/bart/git/InfinityTokens-contract/contracts/nameless/NamelessMetadataURIV1.sol": {
-      "NamelessMetadataURIV1": "0xe1EB3d8E3cFdBdef8d56480f257a037c19f0B6BC"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

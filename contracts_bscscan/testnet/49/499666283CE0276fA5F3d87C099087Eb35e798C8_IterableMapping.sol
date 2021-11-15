@@ -2405,26 +2405,3 @@ contract xjiDividendTracker is DividendPayingToken {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "libraries": {
-    "contracts/TestToken/IterableMapping.sol": {
-      "IterableMapping": "0x499666283CE0276fA5F3d87C099087Eb35e798C8"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

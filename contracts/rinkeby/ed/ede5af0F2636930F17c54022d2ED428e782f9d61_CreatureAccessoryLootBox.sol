@@ -2198,25 +2198,3 @@ contract ERC1155Tradable is ContextMixin, ERC1155, NativeMetaTransaction, Ownabl
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 20
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/Users/boris/Desktop/VS_Solidity/opensea/contracts/LootBoxRandomness.sol": {
-      "LootBoxRandomness": "0xabB05Cf47715B88D2AF42046015441559aEE03ef"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

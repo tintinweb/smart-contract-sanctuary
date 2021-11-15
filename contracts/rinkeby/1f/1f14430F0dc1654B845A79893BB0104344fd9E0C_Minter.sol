@@ -1216,19 +1216,3 @@ interface IERC20 {
     function approve(address spender, uint256 amount) external returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

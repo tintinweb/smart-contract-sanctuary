@@ -2002,23 +2002,3 @@ interface IERC20Metadata is IERC20 {
     function decimals() external view returns (uint8);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 20000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/DIAGenesisMinter.sol": {
-      "NFTUtil": "0x5e3055e84b1490fa5848db94fe9fd2f559cc5e79"
-    }
-  }
-}

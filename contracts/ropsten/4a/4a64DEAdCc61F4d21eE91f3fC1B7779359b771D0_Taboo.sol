@@ -641,18 +641,3 @@ contract Taboo is ERC1155MixedFungible {
 
 // A sample implementation of core ERC1155 function.
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

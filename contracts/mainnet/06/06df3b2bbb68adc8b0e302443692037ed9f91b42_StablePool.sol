@@ -5862,19 +5862,3 @@ interface IMinimalSwapInfoPool is IBasePool {
     ) external returns (uint256 amount);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 9999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

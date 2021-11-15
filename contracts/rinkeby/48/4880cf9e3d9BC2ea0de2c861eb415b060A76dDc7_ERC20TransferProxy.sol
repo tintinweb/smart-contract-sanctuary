@@ -464,21 +464,3 @@ interface IERC20TransferProxy {
     function erc20safeTransferFrom(IERC20Upgradeable token, address from, address to, uint256 value) external;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

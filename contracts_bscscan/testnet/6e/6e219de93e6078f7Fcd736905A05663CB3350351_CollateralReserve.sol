@@ -611,19 +611,3 @@ contract CollateralReserve is Ownable, ICollateralReserve, Initializable {
     event TreasuryChanged(address indexed newTreasury);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

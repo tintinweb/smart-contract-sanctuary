@@ -2132,21 +2132,3 @@ contract ERC721_fixedURI is ERC721PresetMinterPauserAutoId {
         ) ERC721PresetMinterPauserAutoId(name, symbol, baseTokenURI){}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

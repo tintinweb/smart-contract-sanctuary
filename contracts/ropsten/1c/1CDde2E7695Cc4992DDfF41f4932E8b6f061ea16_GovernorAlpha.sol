@@ -919,19 +919,3 @@ interface iUTILS {
     function sortArray(uint256[] memory array) external pure returns (uint256[] memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

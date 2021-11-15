@@ -1801,25 +1801,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/Public/BABYBILZ/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xb29679a5643E54A0bbE495a74b2A778fD0C8DA49"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

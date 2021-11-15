@@ -1476,19 +1476,3 @@ contract CappedMRRoleAccessToken is BEP20Base, BEP20Capped, BEP20Mintable, Acces
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

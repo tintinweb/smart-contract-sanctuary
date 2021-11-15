@@ -4915,28 +4915,3 @@ contract Admin is State, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/protocol/impl/OperationImpl.sol": {
-      "OperationImpl": "0x2bbF236B0Afc4112cf79CE028f7D8095b1961cDe"
-    },
-    "/contracts/protocol/impl/AdminImpl.sol": {
-      "AdminImpl": "0xF1424E875B0518afE7F5cEb945002D72f3A79Fbb"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

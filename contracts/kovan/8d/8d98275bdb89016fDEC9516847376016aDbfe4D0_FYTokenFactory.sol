@@ -1319,26 +1319,3 @@ library AddressStringUtil {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "@yield-protocol/utils-v2/contracts/token/SafeERC20Namer.sol": {
-      "SafeERC20Namer": "0xc01abac5c5e614d37e7999231df538df739b2748"
-    }
-  }
-}

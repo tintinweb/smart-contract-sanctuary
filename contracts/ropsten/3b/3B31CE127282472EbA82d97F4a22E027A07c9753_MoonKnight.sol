@@ -2413,19 +2413,3 @@ contract PermissionGroup is Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 222
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

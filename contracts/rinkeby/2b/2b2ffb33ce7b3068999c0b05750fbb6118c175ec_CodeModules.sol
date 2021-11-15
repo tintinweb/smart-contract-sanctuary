@@ -2318,24 +2318,3 @@ interface IERC165Upgradeable {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "/Users/main/projects/test1/contracts/CodeModulesRendering.sol": {
-      "CodeModulesRendering": "0x4Fb8f510D86210F4f7E2Cc3EA9a5167AF71F255f"
-    }
-  }
-}

@@ -4120,27 +4120,3 @@ interface IN is IERC721Enumerable, IERC721Metadata {
     function getEight(uint256 tokenId) external view returns (uint256);
 }
 
-{
-  "metadata": {
-    "bytecodeHash": "none",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/ProfanityLib.sol": {
-      "ProfanityLib": "0x65ba8419bb38581daba146296cab1e24731300f3"
-    }
-  }
-}

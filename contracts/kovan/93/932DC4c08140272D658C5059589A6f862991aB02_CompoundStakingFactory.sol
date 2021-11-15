@@ -9085,23 +9085,3 @@ contract Reputation is DAOUpgradeableContract, AccessControlUpgradeable {
 	}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 0
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/staking/UniswapV2SwapHelper.sol": {
-      "UniswapV2SwapHelper": "0x7D7200b2b049BB3d91bCbdf95eC0EE6c2b5f8b7E"
-    }
-  }
-}

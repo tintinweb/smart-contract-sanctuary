@@ -775,29 +775,3 @@ contract IntegralOracle is IIntegralOracle {
     }
 }
 
-{
-  "libraries": {
-    "Math.sol": {},
-    "SafeMath.sol": {},
-    "FixedSafeMath.sol": {},
-    "Normalizer.sol": {},
-    "IIntegralOracle.sol": {},
-    "IUniswapV2Pair.sol": {},
-    "FixedPoint.sol": {},
-    "UniswapV2OracleLibrary.sol": {},
-    "IntegralOracle.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

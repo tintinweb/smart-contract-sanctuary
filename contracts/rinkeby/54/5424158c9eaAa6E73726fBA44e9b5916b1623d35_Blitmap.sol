@@ -2343,23 +2343,3 @@ library BlitmapAnalysis {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/blitmap-analysis.sol": {
-      "BlitmapAnalysis": "0x278dce44ae59c696bec9c1e94ee60678021b869d"
-    }
-  }
-}

@@ -44,25 +44,3 @@ contract MetaCoin {
 	}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/E/NETIS R&D/sc-workshop/contracts/ConvertLib.sol": {
-      "ConvertLib": "0xF81742e1f45B45DB0697d1c5Cd0d3dfFF3bFa76F"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

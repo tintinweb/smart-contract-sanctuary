@@ -1816,29 +1816,3 @@ interface IIdleHero {
     function heroDetail(uint256 tokenId) external view returns (uint256 dna, uint256[] memory parents, uint256[] memory childs, uint256 bornCount);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "details": {
-      "constantOptimizer": true,
-      "cse": true,
-      "deduplicate": true,
-      "jumpdestRemover": true,
-      "orderLiterals": true,
-      "peephole": true,
-      "yul": false
-    },
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -13386,29 +13386,3 @@ library EnumerableMap {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/@jarvis-network/uma-core/contracts/financial-templates/common/FeePayerPoolPartyLib.sol": {
-      "FeePayerPoolPartyLib": "0xad77d62d583922138225313b65dddc3f46d6ad8a"
-    },
-    "contracts/contracts/derivative/self-minting/v1/SelfMintingPerpetualLiquidatableMultiPartyLib.sol": {
-      "SelfMintingPerpetualLiquidatableMultiPartyLib": "0x151f4a1fc265e198313be9f48e45eee829df8195"
-    },
-    "contracts/contracts/derivative/self-minting/v1/SelfMintingPerpetualPositionManagerMultiPartyLib.sol": {
-      "SelfMintingPerpetualPositionManagerMultiPartyLib": "0x085c02404ac19bd05b206fdd5a91d53880a738bd"
-    }
-  }
-}

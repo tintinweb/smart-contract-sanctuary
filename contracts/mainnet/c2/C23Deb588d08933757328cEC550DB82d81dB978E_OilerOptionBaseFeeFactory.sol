@@ -3101,19 +3101,3 @@ interface IOilerRegistry {
     function setOptionsRouter(IOilerOptionsRouter _optionsRouter) external;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -2955,29 +2955,3 @@ contract IBlockerOperators {
     function removeBlocker(address _account) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/factory/ProxyDeployer.sol": {
-      "ProxyDeployer": "0x5cf38733be0dfbb83bf0c6eaa5f26abc0b563ebb"
-    },
-    "contracts/factory/TokenDeployer.sol": {
-      "TokenDeployer": "0x63af303dc0c09b140c7690a2addbcf81e3f5d333"
-    }
-  }
-}

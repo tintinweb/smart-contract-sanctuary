@@ -1890,25 +1890,3 @@ contract ThoreumX is ERC20, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/yvesr/minithoreum/contracts/minithoreum.sol": {
-      "IterableMapping": "0xb035328D6447A0A3FD27a9506751Bd28d4606CD3"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -557,25 +557,3 @@ library IterableMapping {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/Pla/Desktop/TestDeploy/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x7f0607244F22269c9ed2c8ED1Ed915661375d355"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

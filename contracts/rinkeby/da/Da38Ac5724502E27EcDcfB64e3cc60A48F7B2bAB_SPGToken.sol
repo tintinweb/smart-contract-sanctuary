@@ -1137,19 +1137,3 @@ contract SPGToken is BEP20('SPG Token', 'MERL') {
 
 // File contracts/merlinall.sol
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -2164,26 +2164,3 @@ library LibStorage {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/libs/LibAccess.sol": {
-      "LibAccess": "0x824ac211d63d628546c255aaabe124f1c4089c5d"
-    }
-  }
-}

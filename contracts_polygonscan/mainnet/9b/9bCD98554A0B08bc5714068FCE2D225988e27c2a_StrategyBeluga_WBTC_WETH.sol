@@ -1470,19 +1470,3 @@ contract Storage {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 150
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

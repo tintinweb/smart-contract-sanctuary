@@ -3799,29 +3799,3 @@ interface ISwap {
         external;
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/SwapFlashLoan.sol:SwapFlashLoan": {
-      "SwapUtils": "0x149bBb210051851016F57a2824C0444f642833a6"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

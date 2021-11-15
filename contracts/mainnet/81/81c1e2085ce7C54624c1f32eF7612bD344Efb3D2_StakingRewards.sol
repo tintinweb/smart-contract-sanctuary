@@ -875,19 +875,3 @@ contract StakingRewardsFactory is Ownable, ReentrancyGuard{
 * @author Sparkle Loyalty Team ♥♥♥ SPRKL
 */
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

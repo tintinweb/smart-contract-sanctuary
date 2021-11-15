@@ -1719,21 +1719,3 @@ contract ShopNextWalletBuilder is MultiOwner {
     event ReleaseTokenForWallets(address tokenAddress, uint256 totalAmount);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1845,25 +1845,3 @@ library Address {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/user/codes/tokenbridge/bridge/contracts/Utils.sol": {
-      "Utils": "0xEa08D8B7065DBA450cF37c42a0A4482a813fdd58"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

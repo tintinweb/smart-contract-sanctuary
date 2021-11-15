@@ -1533,19 +1533,3 @@ contract CappedMBRRoleAccessToken is ERC20Base, ERC20Capped, ERC20Mintable, ERC2
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

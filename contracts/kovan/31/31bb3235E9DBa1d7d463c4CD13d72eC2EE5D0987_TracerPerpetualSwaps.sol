@@ -3118,26 +3118,3 @@ library PRBMathCommon {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/lib/LibPrices.sol": {
-      "Prices": "0x3b70b570fdc930c465b7c512787c0bbd18ef175c"
-    }
-  }
-}

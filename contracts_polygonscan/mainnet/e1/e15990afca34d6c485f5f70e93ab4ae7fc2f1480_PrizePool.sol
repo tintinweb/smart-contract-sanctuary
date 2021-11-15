@@ -1451,23 +1451,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/SortitionSumTreeFactory.sol": {
-      "SortitionSumTreeFactory": "0x25756adb8b40145e0d744415efc0d8a67ddfd9fe"
-    }
-  }
-}

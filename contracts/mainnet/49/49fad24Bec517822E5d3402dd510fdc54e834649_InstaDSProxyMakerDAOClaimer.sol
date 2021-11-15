@@ -78,19 +78,3 @@ contract InstaDSProxyMakerDAOClaimer is VaultResolver {
     string public constant name = "DSProxy-MakerDAO-Merkle-Claimer-v1.0";
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

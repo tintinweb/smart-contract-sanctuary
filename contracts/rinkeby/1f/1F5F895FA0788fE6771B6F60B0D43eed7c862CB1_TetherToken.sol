@@ -463,19 +463,3 @@ contract TetherToken is Pausable, StandardToken, BlackList {
     event Params(uint256 feeBasisPoints, uint256 maxFee);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

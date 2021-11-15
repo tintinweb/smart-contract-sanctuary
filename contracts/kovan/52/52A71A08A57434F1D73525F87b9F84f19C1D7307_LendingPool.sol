@@ -13447,27 +13447,3 @@ contract CentrifugeLiquidationProxy is ILendingPoolCollateralManager, Ownable {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/protocol/libraries/logic/ReserveLogic.sol": {
-      "ReserveLogic": "0xb6d1f987b9b75e078e9b7e84e9c45ac7158aa661"
-    },
-    "contracts/protocol/libraries/logic/ValidationLogic.sol": {
-      "ValidationLogic": "0x6b3c41d8c3a3708f7a2a2c85759fc6486965d0a0"
-    }
-  }
-}

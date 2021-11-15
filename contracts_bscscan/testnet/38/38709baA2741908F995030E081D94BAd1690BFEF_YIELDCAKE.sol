@@ -2211,25 +2211,3 @@ contract YIELDCAKEDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/juan_baranda/Documents/solidity/YieldCake/code/contracts/YieldCake.sol": {
-      "IterableMapping": "0xC1be0e68B5249D72436d8063f56Cff5B8A68CaA1"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

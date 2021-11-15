@@ -5930,26 +5930,3 @@ contract TestnetERC20 is ERC20 {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/contracts/derivative/common/FeePayerPartyLib.sol": {
-      "FeePayerPartyLib": "0x8add527100cb9d3feab48946de495b92c0847be8"
-    },
-    "deploy/contracts/contracts/derivative/v2/PerpetualPositionManagerPoolPartyLib.sol": {
-      "PerpetualPositionManagerPoolPartyLib": "0xab31122286d29515707368cc1be9ed5a4072211e"
-    }
-  }
-}

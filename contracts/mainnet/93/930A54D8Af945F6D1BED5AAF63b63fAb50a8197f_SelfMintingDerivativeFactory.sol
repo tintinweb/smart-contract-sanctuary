@@ -8204,23 +8204,3 @@ library EnumerableMap {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/derivative/self-minting/v1/SelfMintingPerpetualMultiPartyLib.sol": {
-      "SelfMintingPerpetualMultiPartyLib": "0x586cce2d7ce78e9c9fd5c062ec6ee59880eac78f"
-    }
-  }
-}

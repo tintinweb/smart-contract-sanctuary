@@ -404,26 +404,3 @@ contract IntegralTimeRelease is IIntegralTimeRelease {
     }
 }
 
-{
-  "libraries": {
-    "Math.sol": {},
-    "SafeMath.sol": {},
-    "TransferHelper.sol": {},
-    "IERC20.sol": {},
-    "IIntegralTimeRelease.sol": {},
-    "IntegralTimeRelease.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

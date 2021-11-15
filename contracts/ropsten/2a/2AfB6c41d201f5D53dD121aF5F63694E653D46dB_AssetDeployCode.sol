@@ -3213,28 +3213,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/Users/tepnik/Desktop/ydragon-contracts/contracts/lib/AssetLib.sol": {
-      "AssetLib": "0x7Ed95731690dA8218C91E39Bb883823a79605348"
-    },
-    "/Users/tepnik/Desktop/ydragon-contracts/contracts/lib/AssetLib2.sol": {
-      "AssetLib2": "0x009b6c5326D6fcD268105823C7671E3960d8541a"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

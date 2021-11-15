@@ -758,26 +758,3 @@ abstract contract ERC165 {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000,
-    "details": {
-      "yul": true,
-      "constantOptimizer": false
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

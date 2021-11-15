@@ -1354,18 +1354,3 @@ contract TestTMB is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable 
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

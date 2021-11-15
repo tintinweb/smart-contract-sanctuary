@@ -1955,26 +1955,3 @@ interface IERC1820Registry {
     event ManagerChanged(address indexed account, address indexed newManager);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/ScaleCodec.sol": {
-      "ScaleCodec": "0x97a29db72d438c0c66a4fea0e936e71e7895e64d"
-    }
-  }
-}

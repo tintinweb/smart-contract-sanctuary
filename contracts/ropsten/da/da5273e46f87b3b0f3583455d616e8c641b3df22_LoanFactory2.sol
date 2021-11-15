@@ -2526,18 +2526,3 @@ contract LoanFactory2 is ILoanFactory2, Initializable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 20000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

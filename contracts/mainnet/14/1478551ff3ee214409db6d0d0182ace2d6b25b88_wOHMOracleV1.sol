@@ -168,18 +168,3 @@ contract wOHMOracleV1 is IOracle {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 9000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

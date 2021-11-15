@@ -60,22 +60,3 @@ pragma solidity>=0.5.0;library UnsafeMath{function divRoundingUp(uint256 x,uint2
 
 pragma solidity>=0.4.0;library FixedPoint96{uint8 internal constant RESOLUTION=96;uint256 internal constant Q96=0x1000000000000000000000000;}
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

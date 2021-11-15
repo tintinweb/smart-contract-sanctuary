@@ -688,18 +688,3 @@ contract TestUSDTToken is ERC20 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 20000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

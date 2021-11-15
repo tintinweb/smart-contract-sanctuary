@@ -3650,29 +3650,3 @@ library LibERC20Transformer {
     }
 }
 
-{
-  "remappings": [
-    "@0x/contracts-utils=/home/cluracan/code/0x-protocol/node_modules/@0x/contracts-utils",
-    "@0x/contracts-erc20=/home/cluracan/code/0x-protocol/contracts/zero-ex/node_modules/@0x/contracts-erc20"
-  ],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000,
-    "details": {
-      "yul": true,
-      "deduplicate": true,
-      "cse": true,
-      "constantOptimizer": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "evmVersion": "istanbul"
-}

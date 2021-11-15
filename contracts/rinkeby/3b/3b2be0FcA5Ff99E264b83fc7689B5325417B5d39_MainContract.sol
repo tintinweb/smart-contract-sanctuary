@@ -882,25 +882,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/var/www/html/boltfork/platform-contracts/contracts/SafeMath.sol": {
-      "SafeMath": "0x8A90F5F287Bff3384Fc94034F742033DF1d6a276"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

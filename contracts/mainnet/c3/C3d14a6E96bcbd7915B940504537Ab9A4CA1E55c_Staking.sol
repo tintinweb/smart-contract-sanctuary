@@ -3730,23 +3730,3 @@ library LibFixedMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/staking/libs/Cobbs.sol": {
-      "LibCobbDouglas": "0xb84828c5978f4539bbda1965f92ea34dc7a649fb"
-    }
-  }
-}

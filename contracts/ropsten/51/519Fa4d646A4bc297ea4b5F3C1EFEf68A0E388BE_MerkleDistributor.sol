@@ -1024,25 +1024,3 @@ interface IMerkleDistributor is IERC721Metadata, IERC721Enumerable  {
     event PermanentURI(string _value, uint256 indexed _id);
 }
 
-{
-  "evmVersion": "berlin",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 9999
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

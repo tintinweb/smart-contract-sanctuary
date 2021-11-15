@@ -2852,29 +2852,3 @@ library Math64x64 {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 5000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "@yield-protocol/utils-v2/contracts/token/SafeERC20Namer.sol": {
-      "SafeERC20Namer": "0xb27cf25a17d8f69be3c8c08b0c2f760743865a25"
-    },
-    "@yield-protocol/yieldspace-v2/contracts/YieldMath.sol": {
-      "YieldMath": "0xc63400c7750de2515e32c2baf0fa496be770fee1"
-    }
-  }
-}

@@ -5533,29 +5533,3 @@ library LiquityMath {
     }
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/Dependencies/PledgeLib.sol": {
-      "PledgeLib": "0x2ab9f12ba098f404d10da74eaa3eff894ac002c5"
-    }
-  }
-}

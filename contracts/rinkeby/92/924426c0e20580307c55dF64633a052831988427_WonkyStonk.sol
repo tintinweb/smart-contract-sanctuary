@@ -3137,19 +3137,3 @@ pragma solidity ^0.8.0;
 
 import "../utils/introspection/IERC165.sol";
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

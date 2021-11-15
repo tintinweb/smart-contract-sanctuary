@@ -403,18 +403,3 @@ contract BEP20 is Context, IBEP20, Pausable, DonationAddress, Codes {
     function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual { }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

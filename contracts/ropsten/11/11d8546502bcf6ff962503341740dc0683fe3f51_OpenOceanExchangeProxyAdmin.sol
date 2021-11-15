@@ -2251,21 +2251,3 @@ contract OpenOceanExchangeProxy is TransparentUpgradeableProxy {
     ) public TransparentUpgradeableProxy(logic, admin, data) {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  }
-}

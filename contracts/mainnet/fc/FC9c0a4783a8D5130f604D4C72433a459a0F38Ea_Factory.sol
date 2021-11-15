@@ -1991,23 +1991,3 @@ contract GreenwoodERC20 is IGreenwoodERC20 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/FactoryUtils.sol": {
-      "FactoryUtils": "0x33bd4627f4ca6481b3ef87a83392ee658a02db43"
-    }
-  }
-}

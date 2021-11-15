@@ -2095,31 +2095,3 @@ library Strings {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/D/Snap/marketplace/robofi-contracts-core/contracts/dabot/staking/DABotStakingLib.sol": {
-      "DABotStakingLib": "0xBEADdb3ef83F94496A33bc86a0D0aa17cDccDf1f"
-    },
-    "/D/Snap/marketplace/robofi-contracts-core/contracts/dabot/setting/DABotSettingLib.sol": {
-      "DABotSettingLib": "0x93288592841c3877301881a5C741f01B3631Ae53"
-    },
-    "/D/Snap/marketplace/robofi-contracts-core/contracts/dabot/controller/DABotControllerLib.sol": {
-      "DABotTemplateControllerLib": "0x0E16cB3E824a5A4b762D0c96d66dfE3f90718f97"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

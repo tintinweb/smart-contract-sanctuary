@@ -4269,26 +4269,3 @@ library Base64 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/LibPackStorage.sol": {
-      "LibPackStorage": "0xd1913bb633c0ae969ea4c05866163ad9c0eb3168"
-    }
-  }
-}

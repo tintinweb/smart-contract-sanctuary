@@ -4054,23 +4054,3 @@ library Base64 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/LibPackStorage.sol": {
-      "LibPackStorage": "0x282a08ad01f6929c7f05f58a9bcba2dff87568c9"
-    }
-  }
-}

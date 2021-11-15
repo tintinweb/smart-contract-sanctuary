@@ -1439,19 +1439,3 @@ contract FixedRRoleAccessToken is ERC20Base, FeeProcessor, AccessControlEnumerab
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

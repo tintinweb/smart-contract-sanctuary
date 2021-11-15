@@ -8507,21 +8507,3 @@ contract IVotingAggregator {
     function addPowerSource(address _sourceAddr, PowerSourceType _sourceType, uint256 _weight) external;
 }
 
-{
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "optimizer": {
-    "enabled": true,
-    "runs": 5000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

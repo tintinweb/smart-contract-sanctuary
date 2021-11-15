@@ -6583,23 +6583,3 @@ contract FundingLockerFactory {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/core/library/PoolLib.sol": {
-      "PoolLib": "0x874207cf224b8170b5fae09e97a15ae9a440af45"
-    }
-  }
-}

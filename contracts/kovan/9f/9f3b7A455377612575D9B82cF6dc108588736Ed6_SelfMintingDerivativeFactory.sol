@@ -11485,23 +11485,3 @@ library EnumerableMap {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/derivative/self-minting/v1/SelfMintingPerpetualMultiPartyLib.sol": {
-      "SelfMintingPerpetualMultiPartyLib": "0x54b8872597829ddf951d903526688e552c08cee2"
-    }
-  }
-}

@@ -58,32 +58,3 @@ contract RollupProxy is NutBerryEvents {
   }
 }
 
-{
-  "evmVersion": "berlin",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "optimizer": {
-    "details": {
-      "constantOptimizer": true,
-      "cse": true,
-      "deduplicate": true,
-      "jumpdestRemover": true,
-      "orderLiterals": false,
-      "peephole": true,
-      "yul": false
-    },
-    "runs": 256
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

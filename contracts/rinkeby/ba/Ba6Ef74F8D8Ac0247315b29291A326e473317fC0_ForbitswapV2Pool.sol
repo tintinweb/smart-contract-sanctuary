@@ -3171,19 +3171,3 @@ library FixedPoint96 {
     uint256 internal constant Q96 = 0x1000000000000000000000000;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

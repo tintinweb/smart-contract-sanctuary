@@ -53,25 +53,3 @@ contract MetaCoin {
 	}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/Users/rosco/repos/ethereum/truffle-plugin-verify/test/metacoin/contracts/ConvertLib.sol": {
-      "ConvertLib": "0x5233404457AE9A47423b5c0A6EeaA33a2eF7864d"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

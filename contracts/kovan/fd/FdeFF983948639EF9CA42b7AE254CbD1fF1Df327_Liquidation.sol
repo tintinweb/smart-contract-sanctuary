@@ -3161,26 +3161,3 @@ library Prices {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/lib/LibLiquidation.sol": {
-      "LibLiquidation": "0xa34467345f48701b7d99d1bdfe68a607c8e1b46c"
-    }
-  }
-}

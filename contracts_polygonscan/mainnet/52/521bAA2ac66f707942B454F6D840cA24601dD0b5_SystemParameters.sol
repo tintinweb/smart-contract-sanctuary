@@ -349,21 +349,3 @@ uint256 constant BLOCKS_PER_YEAR = BLOCKS_PER_DAY * 365;
 
 uint8 constant PRICE_DECIMALS = 8;
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

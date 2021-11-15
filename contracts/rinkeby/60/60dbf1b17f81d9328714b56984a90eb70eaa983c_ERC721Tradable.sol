@@ -3582,22 +3582,3 @@ interface RoyaltiesV2 {
     function getPaceArtV2Royalties(uint256 id) external view returns (LibPart.Part memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

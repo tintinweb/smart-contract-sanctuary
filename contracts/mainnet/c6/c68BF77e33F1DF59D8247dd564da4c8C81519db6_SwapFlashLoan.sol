@@ -4298,30 +4298,3 @@ interface ISwap {
     ) external returns (uint256);
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/SwapFlashLoan.sol:SwapFlashLoan": {
-      "SwapUtils": "0x2069043d7556B1207a505eb459D18d908DF29b55",
-      "AmplificationUtils": "0x3661D0F70e7f3EC418321A57FD62d691a09b490B"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

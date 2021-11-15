@@ -9327,23 +9327,3 @@ library EnumerableMap {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/contracts/derivative/self-minting/v1/SelfMintingPerpetualMultiPartyLib.sol": {
-      "SelfMintingPerpetualMultiPartyLib": "0x21ed158780d22f5d612901c1525dbda21258da2a"
-    }
-  }
-}

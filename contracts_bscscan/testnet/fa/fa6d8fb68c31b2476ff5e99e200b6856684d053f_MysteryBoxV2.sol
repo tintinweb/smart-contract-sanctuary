@@ -1571,19 +1571,3 @@ interface ITrainersV2 {
     function mintByMigrator(address _tokenOwner, uint8 _element, uint16 _exp, uint8 _level, uint8 _fusionLevel) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

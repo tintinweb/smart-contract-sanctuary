@@ -8105,19 +8105,3 @@ contract PharoExchange is Ownable, ReentrancyGuard {
     event Withdrawal(address indexed _by, address indexed _contract, uint256 _wei);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

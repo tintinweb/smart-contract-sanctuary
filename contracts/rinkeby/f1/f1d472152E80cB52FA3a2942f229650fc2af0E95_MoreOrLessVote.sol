@@ -1648,23 +1648,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/MoreOrLessArt.sol": {
-      "MoreOrLessArt": "0x617d99feb8c43511510fd08b2d00390aa26d30e3"
-    }
-  }
-}

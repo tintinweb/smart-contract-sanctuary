@@ -394,25 +394,3 @@ contract Logger {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/libs/ParamManager.sol": {
-      "ParamManager": "0x874dF019F8Ac3c7a2575c0F513e300915e4A8Dc1"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

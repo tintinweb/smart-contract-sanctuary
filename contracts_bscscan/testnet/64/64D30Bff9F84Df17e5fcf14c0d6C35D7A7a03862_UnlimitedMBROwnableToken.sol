@@ -835,19 +835,3 @@ contract UnlimitedMBROwnableToken is BEP20Base, BEP20Mintable, BEP20Burnable, BE
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

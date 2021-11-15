@@ -1753,25 +1753,3 @@ function _qdiv(uint256 x, uint256 y) pure returns (uint256 z) {
     z = _add(_mul(x, QUA), y / 2) / y;
 }
 
-{
-  "evmVersion": "london",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -3184,22 +3184,3 @@ interface IERC721EnumerableUpgradeable is IERC721Upgradeable {
     function tokenByIndex(uint256 index) external view returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

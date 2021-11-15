@@ -489,30 +489,20 @@ abstract contract Context {
 }
 
 // contracts/BELEN.sol 
-// SPDX-License-Identifier: MIT 
-pragma solidity ^0.8.0; 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
-contract BELEN is ERC20 { 
-constructor() ERC20("BELEN","BLN") { 
-_mint(msg.sender, 155000 * (10 ** uint256(decimals())));
-}
-}
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
+// SPDX-License-Identifier: MIT 
+
+pragma solidity ^0.8.0; 
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
+
+contract BELEN is ERC20 { 
+
+constructor() ERC20("BELEN","BLN") { 
+
+_mint(msg.sender, 155000 * (10 ** uint256(decimals())));
+
 }
+
+}
+

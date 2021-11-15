@@ -1962,26 +1962,3 @@ interface IERC1820Registry {
     event ManagerChanged(address indexed account, address indexed newManager);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/ScaleCodec.sol": {
-      "ScaleCodec": "0x36240ec24064f1267f2ded1428a7e3c62f4a9f12"
-    }
-  }
-}

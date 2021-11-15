@@ -6039,26 +6039,3 @@ interface AdministrateeInterface {
     function pfc() external view returns (FixedPoint.Unsigned memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 199
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/financial-templates/perpetual-multiparty/PerpetualLib.sol": {
-      "PerpetualLib": "0x3145deee9e21c383fd6caa4c81c91804c779db75"
-    }
-  }
-}

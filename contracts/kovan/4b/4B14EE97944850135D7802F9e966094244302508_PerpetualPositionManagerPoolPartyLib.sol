@@ -3447,23 +3447,3 @@ abstract contract Ownable is Context {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/contracts/derivative/common/FeePayerPartyLib.sol": {
-      "FeePayerPartyLib": "0x0f9dff6309493c6c70b26784c58c383685daf564"
-    }
-  }
-}

@@ -80,19 +80,3 @@ library BuddyLib {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1650
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

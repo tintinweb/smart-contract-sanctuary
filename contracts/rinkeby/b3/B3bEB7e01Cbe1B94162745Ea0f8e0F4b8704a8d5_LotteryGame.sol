@@ -2183,25 +2183,3 @@ contract usingProvable {
 }
 // </provableAPI>
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/D/Applicature/lottery-rebase.contract-new-version/applicature-lottery-rebase.contract-99c21d45558f/contracts/LotteryGameSettings.sol": {
-      "LotteryGameSettings": "0x62a700464cd678D93df5d16A78EFA107E6c08561"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

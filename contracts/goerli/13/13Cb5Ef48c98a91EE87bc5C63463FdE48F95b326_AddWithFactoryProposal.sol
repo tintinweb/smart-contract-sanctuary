@@ -1493,19 +1493,3 @@ interface ITornadoTrees {
   function registerWithdrawal(address instance, bytes32 nullifier) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

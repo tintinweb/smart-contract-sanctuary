@@ -1913,23 +1913,3 @@ library IterableMapping {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/IterableMapping.sol": {
-      "IterableMapping": "0x15aB984D6Ab80f57d748d8A7b3Bb3FE261BB60E9"
-    }
-  }
-}

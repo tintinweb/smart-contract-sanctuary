@@ -2324,25 +2324,3 @@ contract FLIGHTTICKETDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/contracts/DeamonDoge.sol": {
-      "IterableMapping": "0xF00214170A3E6aB8e7c75014a1f2DA0E8cBA0bc2"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

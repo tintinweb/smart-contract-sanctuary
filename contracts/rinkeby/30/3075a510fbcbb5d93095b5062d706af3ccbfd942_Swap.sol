@@ -37,19 +37,3 @@ interface tbtcDeposit {
     function add_liquidity(uint[4] calldata amounts, uint min_mint_amount) external returns (uint);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

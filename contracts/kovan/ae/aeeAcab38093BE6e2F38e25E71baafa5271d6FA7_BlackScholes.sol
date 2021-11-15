@@ -921,26 +921,3 @@ interface IBlackScholes {
     ) external view returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/lib/FixidityLib.sol": {
-      "FixidityLib": "0x4012972631ea5548ee22b96ce5da558b56985963"
-    },
-    "contracts/lib/LogarithmLib.sol": {
-      "LogarithmLib": "0x78ea1764808320a8c03cb203d2410c467b2b2f77"
-    }
-  }
-}

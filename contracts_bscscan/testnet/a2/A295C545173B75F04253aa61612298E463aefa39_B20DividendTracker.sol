@@ -1299,25 +1299,3 @@ library SafeMathUint {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/D/DevelopContent/Daima/contracts/facades/IterableMapping.sol": {
-      "IterableMapping": "0xa3506015Ab082733859457E22EADd6d2Cd554Ac4"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

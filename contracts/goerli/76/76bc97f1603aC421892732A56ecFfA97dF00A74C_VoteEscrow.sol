@@ -8856,22 +8856,3 @@ interface IFundDistributor {
     function distributeTo(address _receiver, uint256 _amount) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 500000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

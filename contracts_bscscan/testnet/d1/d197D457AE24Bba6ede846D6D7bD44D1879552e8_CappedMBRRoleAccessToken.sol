@@ -1534,19 +1534,3 @@ contract CappedMBRRoleAccessToken is BEP20Base, BEP20Capped, BEP20Mintable, BEP2
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

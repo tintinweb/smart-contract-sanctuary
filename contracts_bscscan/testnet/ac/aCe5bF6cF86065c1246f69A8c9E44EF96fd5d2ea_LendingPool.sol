@@ -9629,27 +9629,3 @@ contract AaveCollector is VersionedInitializable {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/protocol/libraries/logic/ValidationLogic.sol": {
-      "ValidationLogic": "0x17675d5745fcc5573f2f131d983367da03bffec9"
-    },
-    "contracts/protocol/libraries/logic/ReserveLogic.sol": {
-      "ReserveLogic": "0x5dcf726bfe36d6874d297ea1abbe23db01a2f6fb"
-    }
-  }
-}

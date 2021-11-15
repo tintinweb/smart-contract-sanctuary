@@ -1998,23 +1998,3 @@ interface IGreenwoodERC20 {
     function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/FactoryUtils.sol": {
-      "FactoryUtils": "0xa24ad179ee6d86e0f61190f1b22283088e83e880"
-    }
-  }
-}

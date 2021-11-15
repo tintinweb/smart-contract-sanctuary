@@ -2049,25 +2049,3 @@ contract GetFreeBUSDDividendTracker is DividendPayingToken, Ownable {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/contracts/TheContract.sol": {
-      "IterableMapping": "0x5BD3d6d1E5802f38fB4Fbc3C2b9004d658AdC32c"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

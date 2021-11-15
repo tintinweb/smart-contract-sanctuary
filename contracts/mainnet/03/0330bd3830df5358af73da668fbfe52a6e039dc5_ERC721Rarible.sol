@@ -2629,21 +2629,3 @@ library LibRoyaltiesV2 {
     bytes4 constant _INTERFACE_ID_ROYALTIES = 0xcad96cca;
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

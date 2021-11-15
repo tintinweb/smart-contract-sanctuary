@@ -779,19 +779,3 @@ contract StakingPool is ReentrancyGuard, Pausable, Ownable {
     event BabyMatched(uint256 femaleId, uint256 babyId);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

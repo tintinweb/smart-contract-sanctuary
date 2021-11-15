@@ -1477,27 +1477,3 @@ library SafeMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/libs/SafeDecimalMath.sol": {
-      "SafeDecimalMath": "0x244d5763bd197d2ba9803f875fb466efe253621c"
-    }
-  }
-}

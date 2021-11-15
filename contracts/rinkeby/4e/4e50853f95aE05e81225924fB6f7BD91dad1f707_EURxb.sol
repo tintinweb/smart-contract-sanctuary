@@ -1975,28 +1975,3 @@ library EnumerableSet {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/user/Documents/Project/solidity/miris-sc/contracts/libraries/LinkedList.sol": {
-      "LinkedList": "0xA36311616d2b42D8EC272a36Df969f4A4A1c4E97"
-    },
-    "/home/user/Documents/Project/solidity/miris-sc/contracts/libraries/TokenAccessRoles.sol": {
-      "TokenAccessRoles": "0x497369C6c487732d20932ec91217A8B800b2697E"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

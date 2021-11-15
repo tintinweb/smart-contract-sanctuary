@@ -2737,29 +2737,3 @@ library Math64x64 {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "@yield-protocol/utils-v2/contracts/token/SafeERC20Namer.sol": {
-      "SafeERC20Namer": "0xbdE49509B5e45D4E295f109a3d6dDF984420A4DF"
-    },
-    "@yield-protocol/yieldspace-v2/contracts/YieldMath.sol": {
-      "YieldMath": "0xd3383f183fce56a9b0aef81971d2ab89d76b371d"
-    }
-  }
-}

@@ -948,23 +948,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/core/library/Util.sol": {
-      "Util": "0xf17c932079e4bfd7caa838a25e419f9bfa472366"
-    }
-  }
-}

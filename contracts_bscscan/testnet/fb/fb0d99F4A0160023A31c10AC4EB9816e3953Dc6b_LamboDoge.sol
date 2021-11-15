@@ -1661,26 +1661,3 @@ contract LamboDoge is Context, IBEP20, Ownable, ReentrancyGuard {
 	}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/LamboDoge.sol": {
-      "Utils": "0x88ecd98c9de5b2fd8c31335bd753efcbbb482d48"
-    }
-  }
-}

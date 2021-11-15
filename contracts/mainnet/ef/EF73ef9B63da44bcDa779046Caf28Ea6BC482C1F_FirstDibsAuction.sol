@@ -2205,19 +2205,3 @@ abstract contract Ownable is Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1348
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

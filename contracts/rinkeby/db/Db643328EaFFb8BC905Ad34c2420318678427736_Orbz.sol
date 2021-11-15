@@ -2701,28 +2701,3 @@ library Verifier {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/contracts/game/MiMC.sol": {
-      "MiMC": "0x04f67731b65EF726a0F18135Ae0E610212fe30DD"
-    },
-    "/contracts/game/Verifier.sol": {
-      "Verifier": "0xFB95C71f9a40EF65cd7c29538CdE6Bd2E03cc6D3"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

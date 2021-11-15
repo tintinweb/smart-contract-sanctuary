@@ -9333,29 +9333,3 @@ library EnumerableMap {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/@jarvis-network/uma-core/contracts/financial-templates/common/FeePayerPoolPartyLib.sol": {
-      "FeePayerPoolPartyLib": "0x0c21e94ceeaa2d4768b016f5934c4302efab1a59"
-    },
-    "deploy/contracts/contracts/derivative/self-minting/v1/SelfMintingPerpetualLiquidatableMultiPartyLib.sol": {
-      "SelfMintingPerpetualLiquidatableMultiPartyLib": "0x141003391d43e76944ac63a7b9d4a7b3efa82eb6"
-    },
-    "deploy/contracts/contracts/derivative/self-minting/v1/SelfMintingPerpetualPositionManagerMultiPartyLib.sol": {
-      "SelfMintingPerpetualPositionManagerMultiPartyLib": "0x4a6a811b88fbd1c6400a70ceebd754be9328222c"
-    }
-  }
-}

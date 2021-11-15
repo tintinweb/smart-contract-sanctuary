@@ -1673,22 +1673,3 @@ contract HellGovernment is Initializable, UUPSUpgradeable, OwnableUpgradeable, R
     event MinimumAndMaximumProjectLengthUpdated(uint newMinimumLength, uint newMaximumLength);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

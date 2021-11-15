@@ -1943,23 +1943,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/utils/IterableMapping.sol": {
-      "IterableMapping": "0x7E5C09Ce8350f6fB8Ee6215b0568cC0a9B52b748"
-    }
-  }
-}

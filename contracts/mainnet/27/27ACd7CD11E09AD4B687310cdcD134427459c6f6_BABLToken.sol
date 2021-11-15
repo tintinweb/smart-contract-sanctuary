@@ -3257,22 +3257,3 @@ interface IVoteToken {
 
 interface IVoteTokenWithERC20 is IVoteToken, IERC20 {}
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

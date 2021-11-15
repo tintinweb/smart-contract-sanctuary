@@ -3361,25 +3361,3 @@ contract ReentrancyGuardUpgradeSafe is Initializable {
     uint256[49] private __gap;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/jamify/code/pepe_protocol/contracts/bep/Utils.sol": {
-      "Utils": "0x069142C41865bE52568628Ff780ac41FfeA5Fa63"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

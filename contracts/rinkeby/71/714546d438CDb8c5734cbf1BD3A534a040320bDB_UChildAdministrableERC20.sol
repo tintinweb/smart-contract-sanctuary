@@ -3227,22 +3227,3 @@ library SafeERC20 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 65866
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

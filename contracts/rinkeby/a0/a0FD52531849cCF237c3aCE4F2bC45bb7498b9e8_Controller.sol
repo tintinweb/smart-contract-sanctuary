@@ -2261,25 +2261,3 @@ contract ReentrancyGuardUpgradeSafe is Initializable {
     uint256[49] private __gap;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/yanrangnan/github/GammaProtocol/contracts/libs/MarginVault.sol": {
-      "MarginVault": "0x59ff2B823EBa5AD79E5d856d88Dfd0345f1518d7"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

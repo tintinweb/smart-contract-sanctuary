@@ -1307,21 +1307,3 @@ contract EMC is ERC721Enumerable, ReentrancyGuard, Ownable {
   constructor() ERC721("EMC", "EMC") Ownable() {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

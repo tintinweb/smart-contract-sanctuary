@@ -2147,26 +2147,3 @@ interface IERC721Enumerable is IERC721 {
     function tokenByIndex(uint256 index) external view returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Colors.sol": {
-      "Colors": "0xeacbff9eab49caf2a4895953dee6ec856df31cca"
-    },
-    "contracts/Traits.sol": {
-      "Traits": "0xc673e4e104e913b0946f040ed8085040bf060daa"
-    }
-  }
-}

@@ -449,19 +449,3 @@ interface IFuckYous {
 	function ownerOf(uint256 tokenId) external view returns (address owner);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -3303,25 +3303,3 @@ abstract contract ContextUpgradeable is Initializable {
     uint256[50] private __gap;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/daweizhao/Documents/Sperax/USDs/USDs github/USDs/contracts/libraries/VaultCoreLibrary.sol": {
-      "VaultCoreLibrary": "0x8eD37B1933C39fdb68a2E2EaBdd258d9006D593A"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

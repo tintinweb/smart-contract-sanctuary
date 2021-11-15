@@ -93,22 +93,3 @@ contract TxGasPriceTest {
   }
 }
 
-{
-  "libraries": {
-    "Debug.sol": {},
-    "TxGasPriceTest.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

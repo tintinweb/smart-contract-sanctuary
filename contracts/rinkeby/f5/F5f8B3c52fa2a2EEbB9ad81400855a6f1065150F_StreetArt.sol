@@ -1575,19 +1575,3 @@ contract StreetArt is EaselyMinter {
    constructor() EaselyMinter("StreetArt", "STOC", address(0x1be1De9fdC22bF0716b12006e4092634DC4a2fc0)) {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 300
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

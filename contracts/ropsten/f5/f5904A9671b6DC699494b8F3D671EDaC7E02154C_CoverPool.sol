@@ -1525,19 +1525,3 @@ interface ICoverERC20 is IERC20 {
     function burnByCover(address _account, uint256 _amount) external returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

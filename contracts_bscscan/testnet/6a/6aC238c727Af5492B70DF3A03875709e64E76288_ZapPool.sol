@@ -1454,19 +1454,3 @@ contract ZapPool is Ownable, ReentrancyGuard, Initializable {
     event ZapSwapped(uint256 indexed collateralAmount, uint256 indexed shareAmount);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

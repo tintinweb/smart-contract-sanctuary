@@ -2309,25 +2309,3 @@ contract INSTINCTDividendTracker is DividendPayingToken, Ownable {
     
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/fly/Desktop/dev/safeFlight/contracts/INSTINCTlatestversionwithcommentsNOBlacklistAuditFixOrigin.sol": {
-      "IterableMapping": "0x81b142d2c4396c2DD4a5fBa16502e33C0f2e260D"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

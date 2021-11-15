@@ -2280,23 +2280,3 @@ library SafeMathUint {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/AfterBackDividendTracker/IterableMapping.sol": {
-      "IterableMapping": "0x9a151f3a3f2d9af6974845f7b3df6944b7d38e7a"
-    }
-  }
-}

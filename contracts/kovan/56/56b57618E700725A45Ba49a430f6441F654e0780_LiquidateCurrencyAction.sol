@@ -9661,23 +9661,3 @@ library FreeCollateral {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/FreeCollateralExternal.sol": {
-      "FreeCollateralExternal": "0xc4a0a39f99002f62747a4fdc6836b16cbee4372d"
-    }
-  }
-}

@@ -6951,23 +6951,3 @@ library console {
 
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/StreamExchangeHelper.sol": {
-      "StreamExchangeHelper": "0x310df00959c33fe64a81f49ad041f421fdf19ecd"
-    }
-  }
-}

@@ -1673,25 +1673,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/ubuntu/environment/contracts/contracts/Butter.sol": {
-      "SwapMapping": "0xdE825A6BCc82aC80aB52b05AB9f6Ea52350F802A"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

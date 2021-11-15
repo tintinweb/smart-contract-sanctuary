@@ -2441,29 +2441,3 @@ interface INFTRarityRegister {
 	function getNftRarity(address tokenAddress, uint256 tokenId) external view returns (uint8);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/Staking/RewardStreamerLib.sol": {
-      "RewardStreamerLib": "0x28e4f056a6d7374025c88b24f2896d32b40bbc12"
-    },
-    "contracts/Staking/StakingLib.sol": {
-      "StakingLib": "0x57383e3fd618ee71a8a944ffe94614f2a64f96b3"
-    }
-  }
-}

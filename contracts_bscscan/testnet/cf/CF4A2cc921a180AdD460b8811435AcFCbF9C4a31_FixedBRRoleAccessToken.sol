@@ -1395,19 +1395,3 @@ contract FixedBRRoleAccessToken is BEP20Base, BEP20Burnable, FeeProcessor, Acces
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

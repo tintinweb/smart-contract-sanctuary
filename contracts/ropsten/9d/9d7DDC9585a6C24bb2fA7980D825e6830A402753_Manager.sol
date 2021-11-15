@@ -3161,23 +3161,3 @@ abstract contract ERC20Pausable is ERC20, Pausable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/State.sol": {
-      "State": "0x4a7b73b27ed6783e7b12b419072af30c5f1ea238"
-    }
-  }
-}

@@ -2071,25 +2071,3 @@ contract VUNI is VTokenBase {
     constructor() VTokenBase("vUNI Pool", "vUNI", 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984) {}
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

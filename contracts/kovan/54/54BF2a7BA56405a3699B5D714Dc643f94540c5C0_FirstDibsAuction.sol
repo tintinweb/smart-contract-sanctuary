@@ -2010,19 +2010,3 @@ contract Escrow is Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1348
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

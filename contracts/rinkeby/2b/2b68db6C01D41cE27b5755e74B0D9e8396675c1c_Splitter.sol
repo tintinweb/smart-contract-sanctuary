@@ -255,19 +255,3 @@ contract SplitStorage {
     address public immutable wethAddress = 0xc778417E063141139Fce010982780140Aa0cD5Ab; //rinkeby
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1498,19 +1498,3 @@ pragma solidity >=0.8.0;
 
 enum StakeStatus {Unknown, Withdrawn, Active}
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 50000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

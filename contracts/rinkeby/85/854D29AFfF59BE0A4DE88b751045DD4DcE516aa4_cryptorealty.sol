@@ -489,30 +489,20 @@ abstract contract Context {
 }
 
 // contracts/cryptorealty.sol 
-// SPDX-License-Identifier: MIT 
-pragma solidity ^0.8.0; 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
-contract cryptorealty is ERC20 { 
-constructor() ERC20("cryptorealty", "CRGN") { 
-_mint(msg.sender, 1000000000000000);
-}
-}
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
+// SPDX-License-Identifier: MIT 
+
+pragma solidity ^0.8.0; 
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
+
+contract cryptorealty is ERC20 { 
+
+constructor() ERC20("cryptorealty", "CRGN") { 
+
+_mint(msg.sender, 1000000000000000);
+
 }
+
+}
+

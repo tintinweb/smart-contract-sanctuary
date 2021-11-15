@@ -1165,26 +1165,3 @@ library Strings {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/D/Snap/marketplace/robofi-contracts-core/contracts/dabot/controller/DABotControllerLib.sol": {
-      "DABotMetaLib": "0x024c772877638397D5aC89691E2A66b2467779e6",
-      "DABotTemplateControllerLib": "0x0E16cB3E824a5A4b762D0c96d66dfE3f90718f97"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

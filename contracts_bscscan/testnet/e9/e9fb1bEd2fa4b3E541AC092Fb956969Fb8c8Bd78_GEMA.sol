@@ -1512,23 +1512,3 @@ contract GEMA is Context, IBEP20, Ownable, ReentrancyGuard {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/TAR.sol": {
-      "Utils": "0xf967031559e710c648bf591944ccb6b547e3cd3c"
-    }
-  }
-}

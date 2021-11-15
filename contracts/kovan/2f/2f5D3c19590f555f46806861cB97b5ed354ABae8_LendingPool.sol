@@ -4650,27 +4650,3 @@ contract LendingPoolStorage {
   uint256 internal _maxNumberOfReserves;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/protocol/libraries/logic/ReserveLogic.sol": {
-      "ReserveLogic": "0x23260b0bf878e6e5f5311ab6a76a58793adb4267"
-    },
-    "contracts/protocol/libraries/logic/ValidationLogic.sol": {
-      "ValidationLogic": "0xca7c30b3815fa2f5b881c997d13c7ef8bede09fc"
-    }
-  }
-}

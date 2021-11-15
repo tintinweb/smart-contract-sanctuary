@@ -10267,27 +10267,3 @@ interface IERC20WithPermit is IERC20 {
   ) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/protocol/libraries/logic/ReserveLogic.sol": {
-      "ReserveLogic": "0x70f9a55537d017ed776a06522361e7cc0c97ecf3"
-    },
-    "contracts/protocol/libraries/logic/ValidationLogic.sol": {
-      "ValidationLogic": "0x7b81926f4dc25667f5ae7a5d0ad140f8a45f47a2"
-    }
-  }
-}

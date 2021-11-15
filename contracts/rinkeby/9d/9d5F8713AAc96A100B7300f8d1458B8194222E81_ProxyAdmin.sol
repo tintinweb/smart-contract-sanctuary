@@ -9964,21 +9964,3 @@ interface IWETH9L1 is IWETH9 {
     ) external returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  }
-}

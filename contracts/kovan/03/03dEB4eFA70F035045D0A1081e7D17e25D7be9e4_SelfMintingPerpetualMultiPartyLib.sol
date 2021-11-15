@@ -9326,29 +9326,3 @@ library EnumerableMap {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/contracts/derivative/common/FeePayerPartyLib.sol": {
-      "FeePayerPartyLib": "0x9f673d13927d44ea400e91b57d8159f688ca69d9"
-    },
-    "deploy/contracts/contracts/derivative/self-minting/v1/SelfMintingPerpetualLiquidatableMultiPartyLib.sol": {
-      "SelfMintingPerpetualLiquidatableMultiPartyLib": "0xdc8d118313d87ab5c11d36a0bfad7f6e85971977"
-    },
-    "deploy/contracts/contracts/derivative/self-minting/v1/SelfMintingPerpetualPositionManagerMultiPartyLib.sol": {
-      "SelfMintingPerpetualPositionManagerMultiPartyLib": "0x7c3f74bbf9e198e664af8ecb738cf10c566ca65a"
-    }
-  }
-}

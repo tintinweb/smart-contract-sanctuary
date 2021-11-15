@@ -2033,25 +2033,3 @@ contract CakeFactoryDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Cake/contracts/CakeFactory.sol": {
-      "IterableMapping": "0xD0Bc0A5A198b576939b806811989d6D4c0A76b2f"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

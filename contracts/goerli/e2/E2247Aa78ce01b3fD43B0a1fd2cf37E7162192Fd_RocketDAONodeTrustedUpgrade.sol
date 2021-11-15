@@ -528,21 +528,3 @@ interface RocketDAONodeTrustedUpgradeInterface {
     function upgrade(string memory _type, string memory _name, string memory _contractAbi, address _contractAddress) external;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 15000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

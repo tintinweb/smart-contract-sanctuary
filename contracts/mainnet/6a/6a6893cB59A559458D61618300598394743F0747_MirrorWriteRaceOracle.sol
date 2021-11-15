@@ -162,19 +162,3 @@ contract Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

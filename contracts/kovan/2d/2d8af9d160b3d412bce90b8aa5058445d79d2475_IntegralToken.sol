@@ -424,23 +424,3 @@ contract IntegralToken is Votes {
     }
 }
 
-{
-  "libraries": {
-    "SafeMath.sol": {},
-    "Votes.sol": {},
-    "IntegralToken.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

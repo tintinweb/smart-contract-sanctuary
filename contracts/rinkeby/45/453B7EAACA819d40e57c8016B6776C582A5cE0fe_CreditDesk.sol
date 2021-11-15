@@ -4263,29 +4263,3 @@ contract PauserPausable is AccessControlUpgradeSafe, PausableUpgradeSafe {
   }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/protocol/core/CreditDesk.sol:CreditDesk": {
-      "Accountant": "0x5aeeDd85e2bE473990309f865d881713a090FEb8"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

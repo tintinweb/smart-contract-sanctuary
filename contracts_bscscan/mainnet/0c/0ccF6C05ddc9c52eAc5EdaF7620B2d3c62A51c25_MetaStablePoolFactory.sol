@@ -8256,23 +8256,3 @@ interface IMinimalSwapInfoPool is IBasePool {
     ) external returns (uint256 amount);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "@balancer-labs/v2-pool-utils/contracts/oracle/QueryProcessor.sol": {
-      "QueryProcessor": "0x31c040b1D4C1bf80Ee4dD3C1c2C46b34eEF70b42"
-    }
-  }
-}

@@ -1894,25 +1894,3 @@ contract TIKIDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/amine/OneDrive/Desktop/Contract Fork/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x51dd94c495d75912F212Bbb1830d3DbA3eeA818a"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

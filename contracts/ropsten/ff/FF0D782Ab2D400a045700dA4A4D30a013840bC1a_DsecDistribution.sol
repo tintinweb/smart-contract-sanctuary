@@ -725,19 +725,3 @@ interface IDsecDistribution {
     event TeamRewardRedeem(address indexed sender, uint256 indexed epoch);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

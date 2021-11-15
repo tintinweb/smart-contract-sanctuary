@@ -3821,23 +3821,3 @@ contract WETH is ERC20 {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": false
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "evmVersion": "istanbul",
-  "libraries": {}
-}

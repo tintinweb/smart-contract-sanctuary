@@ -270,19 +270,3 @@ interface IMessengerWrapper {
     function verifySender(address l1BridgeCaller, bytes memory _data) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

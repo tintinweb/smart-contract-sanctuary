@@ -2764,25 +2764,3 @@ library console {
 
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

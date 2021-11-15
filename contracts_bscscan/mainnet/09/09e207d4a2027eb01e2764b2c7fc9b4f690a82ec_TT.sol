@@ -2384,26 +2384,3 @@ contract TTDividendTracker is DividendPayingToken {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "libraries": {
-    "contracts/TT/IterableMapping.sol": {
-      "IterableMapping": "0x7518655B14A66798aC3305182aE442524af88a6c"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

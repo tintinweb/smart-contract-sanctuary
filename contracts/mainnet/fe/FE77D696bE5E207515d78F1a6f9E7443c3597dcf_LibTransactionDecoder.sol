@@ -2792,32 +2792,3 @@ library LibSafeMathRichErrors {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "details": {
-      "constantOptimizer": true,
-      "cse": true,
-      "deduplicate": true,
-      "jumpdestRemover": true,
-      "orderLiterals": true,
-      "peephole": true,
-      "yul": true,
-      "yulDetails": {
-        "stackAllocation": true
-      }
-    },
-    "runs": 1000000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

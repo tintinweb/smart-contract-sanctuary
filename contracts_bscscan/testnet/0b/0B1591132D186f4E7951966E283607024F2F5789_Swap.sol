@@ -3611,25 +3611,3 @@ abstract contract Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/SwapUtils.sol": {
-      "SwapUtils": "0x53eB09F831078ffdc169151CBEEfa3D7892F19Ad"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

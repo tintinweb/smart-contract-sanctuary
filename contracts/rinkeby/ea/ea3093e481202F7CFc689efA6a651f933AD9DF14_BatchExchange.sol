@@ -2903,28 +2903,3 @@ library BytesLib {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "petersburg",
-  "libraries": {
-    "@gnosis.pm/solidity-data-structures/contracts/libraries/IdToAddressBiMap.sol": {
-      "IdToAddressBiMap": "0x5c4C6bf91240A5fdBfB9a1BEd8d43227046e2feA"
-    },
-    "@gnosis.pm/solidity-data-structures/contracts/libraries/IterableAppendOnlySet.sol": {
-      "IterableAppendOnlySet": "0xc3F244bDD41Ac5c0E394bB7113c9A3B93665AA8e"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

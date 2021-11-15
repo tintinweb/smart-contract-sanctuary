@@ -465,30 +465,3 @@ library SafeERC20 {
     }
 }
 
-{
-  "evmVersion": "berlin",
-  "libraries": {
-    "contracts/ExchangeFund.sol:ExchangeFund": {
-      "AmountNormalization": "0x996B5F4f8f80dBd267F79E23e96Ebd6f0ff4C500",
-      "SafeERC20": "0x4418639eEB7347C17E2C98F231e3121F4E6B5dA3"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "none",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

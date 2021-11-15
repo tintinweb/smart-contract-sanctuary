@@ -1922,23 +1922,3 @@ contract BFBDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/babyfootball.sol": {
-      "IterableMapping": "0xc6Bf0EFCE7A2E5D3E642982a369a8D63DaC1C359"
-    }
-  }
-}

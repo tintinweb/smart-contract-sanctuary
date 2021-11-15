@@ -2698,23 +2698,3 @@ abstract contract Pausable is Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/MomentState.sol": {
-      "MomentState": "0x01813ea1e59b84740e43a71152365fc3c65473d5"
-    }
-  }
-}

@@ -132,19 +132,3 @@ interface IERC721Royalties {
     function getFeeBps(uint256 id) external view returns (uint256[] memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

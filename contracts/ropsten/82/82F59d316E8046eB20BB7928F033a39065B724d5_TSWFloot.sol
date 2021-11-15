@@ -2028,26 +2028,3 @@ library strings {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/FlootConstants.sol": {
-      "FlootConstants": "0xd37d125289dd6f6f40cc2f1232fb9f3195c8faf9"
-    }
-  }
-}

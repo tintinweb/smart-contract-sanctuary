@@ -609,25 +609,3 @@ uint256 constant PRECISION_FACTOR = 1e18;
 uint8 constant ANON_DECIMALS = 18;
 uint256 constant ANON_TOTAL_SUPPLY = 10_000_000 * (10**ANON_DECIMALS);
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1869,22 +1869,3 @@ abstract contract Initializable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 25000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

@@ -1103,25 +1103,3 @@ library ABDKMath64x64 {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/clexmond/projects/influence/contracts/contracts/lib/Procedural.sol": {
-      "Procedural": "0xa06f481a2b8cb004ac50701e375ea9022d33Eef3"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

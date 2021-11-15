@@ -2099,25 +2099,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/enamakel/Work/mahadao.com/arthcoin/arthcoin-v2/contracts/Arth/Pools/ArthPoolLibrary.sol": {
-      "ArthPoolLibrary": "0x9FD721d2E26160e830bB2B111DdBeB19a15e4D9B"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

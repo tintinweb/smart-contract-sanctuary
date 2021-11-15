@@ -6118,25 +6118,3 @@ library Address {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/runner/work/keep-core/keep-core/solidity/contracts/cryptography/BLS.sol": {
-      "BLS": "0x51b3CB61f501D3c19ed45661C376C6E9f0E48549"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

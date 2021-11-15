@@ -3135,26 +3135,3 @@ library NFTSVG {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/v3-periphery/contracts/libraries/NFTDescriptor.sol": {
-      "NFTDescriptor": "0x189f6b51f3636b737fb792acd77bc1376a5890a1"
-    }
-  }
-}

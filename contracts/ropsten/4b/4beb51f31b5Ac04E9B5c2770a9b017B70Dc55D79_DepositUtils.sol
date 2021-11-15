@@ -3767,25 +3767,3 @@ library DepositStates {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/runner/work/tbtc/tbtc/solidity/contracts/system/TBTCDevelopmentConstants.sol": {
-      "TBTCConstants": "0x9fc794Cd0AeF639470818bF6e72A4A697C8DC9a0"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1884,26 +1884,3 @@ interface IPancakeSwapV2Router02 is IPancakeSwapV2Router01 {
     ) external;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/protox/XLib.sol": {
-      "XLib": "0x11bd54a135f3c5655f57e882950445a55c7d6a0b"
-    }
-  }
-}

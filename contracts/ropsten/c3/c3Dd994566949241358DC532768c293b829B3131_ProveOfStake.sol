@@ -203,19 +203,3 @@ interface IERC2917 {
     function getStatus() external view returns (uint lastRewardBlock, uint totalProductivity, uint accAmountPerShare, uint mintCumulation);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

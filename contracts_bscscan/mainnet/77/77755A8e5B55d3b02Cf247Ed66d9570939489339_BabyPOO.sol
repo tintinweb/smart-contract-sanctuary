@@ -1936,25 +1936,3 @@ contract BabyPOODividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/yvesr/ChocolateCacke/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x9EC9e0A80474037A1F5f8b8FEdF508F0e8Ba3Db6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

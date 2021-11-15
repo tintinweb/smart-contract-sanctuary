@@ -1521,22 +1521,3 @@ interface IERC20MintableBurnable {
     ) external returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 500000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

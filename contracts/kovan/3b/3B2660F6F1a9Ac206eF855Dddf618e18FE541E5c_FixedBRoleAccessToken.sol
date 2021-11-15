@@ -1384,19 +1384,3 @@ contract FixedBRoleAccessToken is ERC20Base, ERC20Burnable, FeeProcessor, Access
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

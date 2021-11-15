@@ -264,26 +264,3 @@ interface IERC1155TokenReceiver {
   function onERC1155BatchReceived(address _operator, address _from, uint256[] calldata _ids, uint256[] calldata _amounts, bytes calldata _data) external returns(bytes4);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000,
-    "details": {
-      "yul": true,
-      "constantOptimizer": false
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

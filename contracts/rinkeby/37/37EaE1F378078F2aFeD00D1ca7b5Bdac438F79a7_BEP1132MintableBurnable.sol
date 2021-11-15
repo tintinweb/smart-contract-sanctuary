@@ -1740,19 +1740,3 @@ interface IERC1132 is IERC20 {
   event Unlocked(address indexed _of, bytes32 indexed _reason, uint256 _amount);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

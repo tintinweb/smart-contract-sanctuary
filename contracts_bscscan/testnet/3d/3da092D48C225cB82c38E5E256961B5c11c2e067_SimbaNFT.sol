@@ -1874,25 +1874,3 @@ contract TokenURIHelper is Ownable {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/apple/Desktop/truffle-v5/blockchain/contracts/0-address.sol": {
-      "Address": "0x3DF6645cB50E4B0E5D322a470a0e75bc82519D76"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

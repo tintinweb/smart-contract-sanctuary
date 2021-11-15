@@ -5918,23 +5918,3 @@ library EnumerableMap {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/synthereum-pool/v4/PoolOnChainPriceFeedLib.sol": {
-      "SynthereumPoolOnChainPriceFeedLib": "0x962ad60336fa5eccc85733c60aad07b27d427d9c"
-    }
-  }
-}

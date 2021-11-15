@@ -4969,25 +4969,3 @@ library SafeCast {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/hellwolf/Projects/superfluid/protocol-monorepo/packages/ethereum-contracts/contracts/agreements/SlotsBitmapLibrary.sol": {
-      "SlotsBitmapLibrary": "0x33422fEAF202931bAFe974C143bc9046818ee09D"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

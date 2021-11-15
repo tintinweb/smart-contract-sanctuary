@@ -3130,23 +3130,3 @@ library SafeMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/LootBoxRandomness.sol": {
-      "LootBoxRandomness": "0x13bed62be2f93bfb03bab78ee2926b5afd2dcbd0"
-    }
-  }
-}

@@ -2442,25 +2442,3 @@ contract Test is Context, IERC20, Ownable {
 // internal token mechanics
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/fly/Desktop/dev/safeFlight/contracts/2busdwallets+lpPARKfixedWithZeroFeeV6.sol": {
-      "IterableMapping": "0x463d7B38Ce606472303bAc2be1531fE9f6726B7c"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

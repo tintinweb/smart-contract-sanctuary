@@ -2581,19 +2581,3 @@ interface IUserInfoManager {
     function logTransfer(address payable from, uint256 fromBalance, address payable to, uint256 toBalance) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

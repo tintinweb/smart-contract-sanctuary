@@ -521,19 +521,3 @@ interface ITraderManager {
   function setManager(address manager_) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

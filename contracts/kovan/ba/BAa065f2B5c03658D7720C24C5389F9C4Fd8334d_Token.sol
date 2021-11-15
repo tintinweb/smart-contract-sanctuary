@@ -745,19 +745,3 @@ contract Token is ERC20Detailed, ERC20Capped, ERC20Burnable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 300
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

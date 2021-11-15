@@ -1222,23 +1222,3 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/governance/staking/deps/SignatureVerifier.sol": {
-      "SignatureVerifier": "0x3bf48139e7c714ada37c97cd29e0f04d9673494a"
-    }
-  }
-}

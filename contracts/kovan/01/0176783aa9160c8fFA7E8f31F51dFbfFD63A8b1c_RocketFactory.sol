@@ -484,19 +484,3 @@ interface IRocketCallee {
     function rocketCall(address sender, uint amount0, uint amount1, bytes calldata data) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

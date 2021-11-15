@@ -2866,19 +2866,3 @@ interface ICreatorExtensionTokenURI is IERC165 {
     function tokenURI(address creator, uint256 tokenId) external view returns (string memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

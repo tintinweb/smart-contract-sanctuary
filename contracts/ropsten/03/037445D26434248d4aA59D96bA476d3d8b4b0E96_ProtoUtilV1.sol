@@ -744,23 +744,3 @@ interface IMember {
   function getName() external pure returns (bytes32);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/StoreKeyUtil.sol": {
-      "StoreKeyUtil": "0x341a9c0652638c19ccb4fa7540918eebaea4ed04"
-    }
-  }
-}

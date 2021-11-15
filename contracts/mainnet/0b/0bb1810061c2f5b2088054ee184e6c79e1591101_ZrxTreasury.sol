@@ -2196,30 +2196,3 @@ interface IStaking {
         returns (StoredBalance memory balance);
 }
 
-{
-  "remappings": [
-    "@0x/contracts-utils=/Users/michaelzhu/protocol/node_modules/@0x/contracts-utils",
-    "@0x/contracts-zero-ex=/Users/michaelzhu/protocol/node_modules/@0x/contracts-zero-ex",
-    "@0x/contracts-erc20=/Users/michaelzhu/protocol/contracts/treasury/node_modules/@0x/contracts-erc20"
-  ],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000,
-    "details": {
-      "yul": true,
-      "deduplicate": true,
-      "cse": true,
-      "constantOptimizer": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "evmVersion": "istanbul"
-}

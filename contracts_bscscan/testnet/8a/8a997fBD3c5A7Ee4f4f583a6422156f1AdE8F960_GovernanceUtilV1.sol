@@ -1434,26 +1434,3 @@ interface IWitness {
   ) external view returns (uint256, uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/CoverUtilV1.sol": {
-      "CoverUtilV1": "0x5c88deb9fc8d217d836fa88c2a87c73c2259ad47"
-    },
-    "contracts/libraries/StoreKeyUtil.sol": {
-      "StoreKeyUtil": "0xb9f1ef66a8c939aa6c4a2961f354de9baf4f58bc"
-    }
-  }
-}

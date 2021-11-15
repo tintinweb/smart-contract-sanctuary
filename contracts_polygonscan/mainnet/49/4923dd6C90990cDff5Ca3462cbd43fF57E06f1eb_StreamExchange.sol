@@ -6957,23 +6957,3 @@ library console {
 
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/StreamExchangeHelper.sol": {
-      "StreamExchangeHelper": "0x271ef8c9d2ae6a29a543f11a9e92ed00a86904c9"
-    }
-  }
-}

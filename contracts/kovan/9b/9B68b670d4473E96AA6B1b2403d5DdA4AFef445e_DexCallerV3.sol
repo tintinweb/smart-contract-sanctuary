@@ -553,21 +553,3 @@ interface ISwapRouter is IUniswapV3SwapCallback {
     function exactOutput(ExactOutputParams calldata params) external payable returns (uint256 amountIn);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -288,18 +288,3 @@ interface IBettingFactory {
   function createNewPool(address payable _owner, address payable _creater) external returns(address);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

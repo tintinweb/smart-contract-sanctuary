@@ -759,22 +759,3 @@ Public License instead of this License.  But first, please read
 
 */
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 99999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

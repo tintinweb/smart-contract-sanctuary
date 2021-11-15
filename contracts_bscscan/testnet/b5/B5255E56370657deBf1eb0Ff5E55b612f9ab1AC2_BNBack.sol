@@ -2090,25 +2090,3 @@ contract BNBackDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xfCcF246A6Ea944d5FA7f2b80c7B851a3268C70d1"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

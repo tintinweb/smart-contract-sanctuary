@@ -274,20 +274,3 @@ contract onG is MintableToken, BurnableToken, HasNoEther, HasNoTokens {
 	uint256 public decimals = 18;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

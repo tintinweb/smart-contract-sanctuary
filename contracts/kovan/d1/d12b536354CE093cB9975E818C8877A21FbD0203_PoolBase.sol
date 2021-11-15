@@ -1989,23 +1989,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "@sherlock/v1-core/contracts/libraries/LibPool.sol": {
-      "LibPool": "0xe1215b2dc94f487818d65fd7a4f8b9558602f0e0"
-    }
-  }
-}

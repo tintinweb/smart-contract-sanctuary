@@ -1383,21 +1383,3 @@ interface ICompetition{
     event Sponsor(address indexed sponsorAddress, uint256 indexed sponsorAmount, uint256 indexed poolTotal);
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

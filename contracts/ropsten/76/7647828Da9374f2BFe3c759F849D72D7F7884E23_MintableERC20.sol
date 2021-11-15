@@ -554,19 +554,3 @@ interface IERC20 {
     function decreaseAllowance(address spender, uint256 subtractedValue) external returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

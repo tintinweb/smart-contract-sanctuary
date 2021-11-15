@@ -245,17 +245,3 @@ library Address {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

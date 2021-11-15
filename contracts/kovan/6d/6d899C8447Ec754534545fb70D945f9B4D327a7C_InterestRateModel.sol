@@ -1922,22 +1922,3 @@ library DataStruct {
   enum AssetBondState {EMPTY, SETTLED, CONFIRMED, COLLATERALIZED, MATURED, NOT_PERFORMED}
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

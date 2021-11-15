@@ -2135,26 +2135,3 @@ interface ILawGovernance {
         returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/ProtoType.sol": {
-      "ProtoType": "0x69955a2149991338888cb74a7d6839b268611576"
-    }
-  }
-}

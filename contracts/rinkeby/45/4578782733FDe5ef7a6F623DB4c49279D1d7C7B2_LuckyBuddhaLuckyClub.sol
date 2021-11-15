@@ -1778,21 +1778,3 @@ contract LuckyBuddhaLuckyClub is ERC721Enumerable, Ownable, ERC721Burnable, ERC7
     
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

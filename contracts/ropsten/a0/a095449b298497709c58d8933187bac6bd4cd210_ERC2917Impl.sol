@@ -393,19 +393,3 @@ interface IERC20 {
     function approve(address spender, uint amount) external returns (bool);
     function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);}
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -303,19 +303,3 @@ interface IERC223Recipient {
     function tokenFallback(address _from, uint _value, bytes memory _data) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

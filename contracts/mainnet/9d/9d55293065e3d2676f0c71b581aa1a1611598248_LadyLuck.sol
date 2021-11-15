@@ -964,19 +964,3 @@ contract LadyLuck is Initializable, ERC20Upgradeable, OwnableUpgradeable, Pausab
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

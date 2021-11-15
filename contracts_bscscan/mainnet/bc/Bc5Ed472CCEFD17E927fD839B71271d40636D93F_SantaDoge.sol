@@ -1836,23 +1836,3 @@ contract SantaDoge is Context, IBEP20, Ownable, ReentrancyGuard {
 	}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/santadoge.sol": {
-      "Utils": "0xb6213e6d23f2dae29f24f9a0060293052068d623"
-    }
-  }
-}

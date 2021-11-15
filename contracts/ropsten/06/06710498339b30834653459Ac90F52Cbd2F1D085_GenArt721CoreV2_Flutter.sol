@@ -1146,22 +1146,3 @@ contract IERC721Enumerable is IERC721 {
     function tokenByIndex(uint256 index) public view returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

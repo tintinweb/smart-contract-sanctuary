@@ -1217,19 +1217,3 @@ contract Bank is Initializable, ReentrancyGuardUpgradeSafe, Governable, IBTokenF
     receive() external payable {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -3079,20 +3079,3 @@ contract ExponentialNoError {
     }
 }
 
-{
-  "evmVersion": "petersburg",
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

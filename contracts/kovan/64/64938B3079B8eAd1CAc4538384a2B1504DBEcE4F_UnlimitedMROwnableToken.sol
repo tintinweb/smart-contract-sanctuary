@@ -752,19 +752,3 @@ contract UnlimitedMROwnableToken is ERC20Base, ERC20Mintable, ERC20Recoverable, 
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

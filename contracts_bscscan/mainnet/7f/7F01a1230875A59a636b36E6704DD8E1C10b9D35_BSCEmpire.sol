@@ -2326,25 +2326,3 @@ contract BSCEmpireDividendTracker is DividendPayingToken, Ownable {
     
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/C/Users/waaQaas/OneDrive/Desktop/TESTCONTRACT/contracts/Empire.sol": {
-      "IterableMapping": "0xA5F2011BD9f20070a5Fd9db394933cC2BD3c7F23"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

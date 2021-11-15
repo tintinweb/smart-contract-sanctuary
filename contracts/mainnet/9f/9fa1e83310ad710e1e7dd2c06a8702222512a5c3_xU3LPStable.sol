@@ -5992,26 +5992,3 @@ interface IUniswapV3PoolEvents {
     event CollectProtocol(address indexed sender, address indexed recipient, uint128 amount0, uint128 amount1);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/libraries/UniswapLibrary.sol": {
-      "UniswapLibrary": "0x3d426de2961c6a115434d382716878352a63d97c"
-    }
-  }
-}

@@ -1973,26 +1973,3 @@ library strings {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/FlootConstants.sol": {
-      "FlootConstants": "0xc91e780b4703f535b5a807d26e7e7db553050fe9"
-    }
-  }
-}

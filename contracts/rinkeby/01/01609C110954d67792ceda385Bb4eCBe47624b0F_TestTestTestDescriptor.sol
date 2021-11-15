@@ -920,21 +920,3 @@ interface ITestTestTest is IERC721Enumerable {
     function _tokenIdToHash(uint256 _tokenId) external view returns(string memory);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

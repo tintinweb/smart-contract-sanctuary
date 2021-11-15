@@ -1952,25 +1952,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1500
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/filip/desktop/leofinance/leo-polygon/contracts/CAKEPOP/IterableMapping.sol": {
-      "IterableMapping": "0xf9ADA2352903C4132b9F400e51f03D611056aC40"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

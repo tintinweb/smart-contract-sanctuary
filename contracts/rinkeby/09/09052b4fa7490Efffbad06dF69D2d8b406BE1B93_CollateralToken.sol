@@ -319,29 +319,3 @@ library Loan {
     }
 }
 
-{
-  "evmVersion": "london",
-  "libraries": {
-    "contracts/libraries/CollateralToken.sol:CollateralToken": {
-      "FixedPointMath": "0xdAc45f69cde02c3c6A185cb0f7Ac778b88c82bC6"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "none",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -150,19 +150,3 @@ library FeeLibrary {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 25
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

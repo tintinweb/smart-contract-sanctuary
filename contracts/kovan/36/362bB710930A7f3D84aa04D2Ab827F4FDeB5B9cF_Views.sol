@@ -8668,23 +8668,3 @@ interface AggregatorV3Interface {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/FreeCollateralExternal.sol": {
-      "FreeCollateralExternal": "0xb06c0881265140cfd2f6510a95e04dca8df4405b"
-    }
-  }
-}

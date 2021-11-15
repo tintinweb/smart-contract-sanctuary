@@ -2578,25 +2578,3 @@ contract ThoreumDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/mudaseriqbal/Documents/Developer/Luner/thundercake/contracts/ThunderCake.sol": {
-      "IterableMapping": "0xB4986d0c9e823E3d68A6CdD8685a29f110b7E969"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

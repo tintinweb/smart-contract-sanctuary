@@ -2155,23 +2155,3 @@ library ABDKMathQuad {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/CentaurMath.sol": {
-      "CentaurMath": "0x03042482d64577a7bdb282260e2ea4c8a89c064b"
-    }
-  }
-}

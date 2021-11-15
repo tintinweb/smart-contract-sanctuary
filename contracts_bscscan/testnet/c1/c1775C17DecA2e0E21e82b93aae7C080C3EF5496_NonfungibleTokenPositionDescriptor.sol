@@ -2988,25 +2988,3 @@ library TickMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/sunhangleang/Documents/Selendra/smart-contracts/dev-bitrielswap-periphery/contracts/libraries/NFTDescriptor.sol": {
-      "NFTDescriptor": "0x36Cc3Aad1cfeAe1e7aA08c2cd0BF3827Aef24F2B"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

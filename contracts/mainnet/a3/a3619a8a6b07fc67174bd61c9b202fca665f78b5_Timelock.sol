@@ -748,21 +748,3 @@ contract TimelockCreator {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 40
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  }
-}

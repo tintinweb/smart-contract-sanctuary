@@ -8683,23 +8683,3 @@ contract LendingPool is VersionedInitializable, ILendingPool, LendingPoolStorage
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/lendingpool.sol": {
-      "GenericLogic": "0x4402593ae6c0fafda6bd39be6e0deee894bf53b9"
-    }
-  }
-}

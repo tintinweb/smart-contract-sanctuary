@@ -1484,23 +1484,3 @@ library CheckAddress {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "@1001-digital/check-address/contracts/CheckAddress.sol": {
-      "CheckAddress": "0x32336a625aacfa08fe9723d901fff92a7e3465c1"
-    }
-  }
-}

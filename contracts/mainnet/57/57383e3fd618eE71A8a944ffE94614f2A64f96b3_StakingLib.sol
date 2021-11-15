@@ -1698,29 +1698,3 @@ interface IERC721 is IERC165 {
     ) external;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/Staking/RewardStreamerLib.sol": {
-      "RewardStreamerLib": "0x28e4f056a6d7374025c88b24f2896d32b40bbc12"
-    },
-    "contracts/Staking/TokenHelper.sol": {
-      "TokenHelper": "0xaa7aaa0c937c7af76559c30958773f207a7baab5"
-    }
-  }
-}

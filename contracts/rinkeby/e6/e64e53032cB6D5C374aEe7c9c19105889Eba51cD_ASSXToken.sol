@@ -1084,18 +1084,3 @@ contract ASSXToken is ERC20("ASSXToken", "ASSX"), Ownable, Authorizable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

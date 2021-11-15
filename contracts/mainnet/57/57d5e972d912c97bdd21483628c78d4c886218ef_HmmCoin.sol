@@ -793,17 +793,3 @@ abstract contract ERC20Burnable is Context, ERC20 {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

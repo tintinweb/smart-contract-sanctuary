@@ -544,29 +544,3 @@ contract TwapOracle is ITwapOracle {
     function setPrice(uint256 _price) public {}
 }
 
-{
-  "libraries": {
-    "ITwapOracle.sol": {},
-    "SafeMath.sol": {},
-    "Math.sol": {},
-    "FixedSafeMath.sol": {},
-    "Normalizer.sol": {},
-    "IUniswapV2Pair.sol": {},
-    "FixedPoint.sol": {},
-    "UniswapV2OracleLibrary.sol": {},
-    "TwapOracle.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -330,19 +330,3 @@ contract StackPoolTwo is StakedTokenWrapper, Ownable {
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 */
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1585,26 +1585,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "@sherlock/v1-core/contracts/libraries/LibPool.sol": {
-      "LibPool": "0x8d2ec5bc323445041660d72d9c2608c5f049ed36"
-    },
-    "@sherlock/v1-core/contracts/libraries/LibSherX.sol": {
-      "LibSherX": "0xf0d29fd8f09644c76d960ff1c66bb2a9e4285f9d"
-    }
-  }
-}

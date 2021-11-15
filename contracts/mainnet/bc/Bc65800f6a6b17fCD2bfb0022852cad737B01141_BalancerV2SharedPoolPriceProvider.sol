@@ -2064,19 +2064,3 @@ contract BConst {
   uint256 public constant MAX_OUT_RATIO = (BONE / 3) + 1 wei;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

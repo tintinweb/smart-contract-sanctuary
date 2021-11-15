@@ -489,19 +489,3 @@ interface IEventReceiver {
     function onEventReceive(address sender, bytes32 eventType, bytes calldata data) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -302,26 +302,3 @@ contract WhitePaperInterestRateModel is InterestRateModel {
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [
-    ":@openzeppelin=/home/dev/code/agilecode/compound-protocol/node_modules/@openzeppelin"
-  ],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

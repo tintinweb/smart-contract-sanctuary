@@ -7477,23 +7477,3 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/actions/nTokenMintAction.sol": {
-      "nTokenMintAction": "0x1c270406484464693f9a47eca4979a147d5e57f0"
-    }
-  }
-}

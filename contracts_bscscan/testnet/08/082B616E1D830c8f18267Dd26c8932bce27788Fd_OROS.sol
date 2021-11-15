@@ -3369,25 +3369,3 @@ contract DividendTracker is DividendPayingToken, Ownable {
 //     }
 // }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/mudaseriqbal/Documents/Developer/Luner/thundercake/contracts/ThunderCake.sol": {
-      "IterableMapping": "0x9984d719b104e0cf79ba6766f3d9D35D919F0eDe"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

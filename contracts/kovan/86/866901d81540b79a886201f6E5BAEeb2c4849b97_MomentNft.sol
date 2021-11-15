@@ -2333,19 +2333,3 @@ interface IERC721MetadataUpgradeable is IERC721Upgradeable {
     function tokenURI(uint256 tokenId) external view returns (string memory);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

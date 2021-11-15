@@ -2144,28 +2144,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/bart/git/InfinityTokens-contract/contracts/custom/RightwayMetadata.sol": {
-      "RightwayMetadata": "0x693EFb76c0CcF8dCF19dF2f0F427f5d2e628BE1b"
-    },
-    "/home/bart/git/InfinityTokens-contract/contracts/custom/RightwayDecoder.sol": {
-      "RightwayDecoder": "0x01426e8849208f247726248E7b33912033CF7820"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

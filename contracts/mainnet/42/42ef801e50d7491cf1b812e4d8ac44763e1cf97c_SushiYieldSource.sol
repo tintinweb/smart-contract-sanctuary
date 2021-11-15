@@ -6608,21 +6608,3 @@ import '@pooltogether/pooltogether-contracts/contracts/builders/PoolWithMultiple
 pragma solidity >0.0.0;
 import '@pooltogether/pooltogether-contracts/contracts/builders/MultipleWinnersBuilder.sol';
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  }
-}

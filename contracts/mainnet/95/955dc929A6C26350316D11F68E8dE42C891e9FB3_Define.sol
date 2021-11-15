@@ -2066,23 +2066,3 @@ interface IDividendPayingTokenOptional {
   function accumulativeDividendOf(address _owner) external view returns(uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/IterableMapping.sol": {
-      "IterableMapping": "0x80471a3C91c002EA86E5CBEBb14004ad73bCd2c9"
-    }
-  }
-}

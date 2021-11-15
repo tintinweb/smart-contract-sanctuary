@@ -250,18 +250,3 @@ interface IGenericHandler {
     function setResource(bytes32 resourceID, address contractAddress, bytes4 depositFunctionSig, bytes4 executeFunctionSig) external;
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  }
-}

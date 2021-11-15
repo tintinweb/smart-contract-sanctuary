@@ -2517,25 +2517,3 @@ library SwapUtils {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/MathUtils.sol": {
-      "MathUtils": "0x07eCEd01E5CEA99Ea243F42D1849b31010F982aA"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1547,31 +1547,3 @@ library Types {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/gamer456148/Downloads/rollup.v1-main/contracts/libs/ECVerify.sol": {
-      "ECVerify": "0x643ad440Ab0590E9AD80c5C2dB641CE0259B704b"
-    },
-    "/home/gamer456148/Downloads/rollup.v1-main/contracts/libs/ParamManager.sol": {
-      "ParamManager": "0x86549C48d44912f5DFe05Fe8dAac6C7d514E7069"
-    },
-    "/home/gamer456148/Downloads/rollup.v1-main/contracts/libs/RollupUtils.sol": {
-      "RollupUtils": "0xfC2160Ac5C1BEc7e2169E1a51CD977F44c566d88"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

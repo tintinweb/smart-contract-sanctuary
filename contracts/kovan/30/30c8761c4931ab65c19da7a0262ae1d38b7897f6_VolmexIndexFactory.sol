@@ -4128,21 +4128,3 @@ contract NonCollateral is ERC20 {
     constructor(string memory name, string memory symbol) ERC20(name, symbol) {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  }
-}

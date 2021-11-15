@@ -165,19 +165,3 @@ interface RandomizerInterface {
     //function __callback(bytes32 _queryId, string calldata  _result, bytes calldata _proof) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

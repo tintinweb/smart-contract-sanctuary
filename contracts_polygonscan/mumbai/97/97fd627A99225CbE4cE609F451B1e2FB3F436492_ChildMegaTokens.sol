@@ -2297,21 +2297,3 @@ interface IERC1155ChildMintable is IERC165 {
     function withdrawBatch(uint256[] calldata ids, uint256[] calldata amounts) external;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

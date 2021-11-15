@@ -4008,29 +4008,3 @@ contract RibbonVault is OptionsVaultStorage {
      ***********************************************/
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/vaults/BaseVaults/RibbonThetaVault.sol:RibbonThetaVault": {
-      "VaultLifecycle": "0xa2A554E2CaEF2dcd8AAE3206dce0EAd078Ae72E3"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

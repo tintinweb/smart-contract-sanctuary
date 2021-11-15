@@ -1767,25 +1767,3 @@ contract CAKEDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/C/Users/yvesr/babypoocake/contracts/babypoocake.sol": {
-      "IterableMapping": "0x096058757b106Ca20eA98B958A3bb2B0e078D81C"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

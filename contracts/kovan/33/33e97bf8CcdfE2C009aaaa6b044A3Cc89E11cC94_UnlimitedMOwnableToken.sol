@@ -730,19 +730,3 @@ contract UnlimitedMOwnableToken is ERC20Base, ERC20Mintable, Ownable, FeeProcess
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

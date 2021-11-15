@@ -1081,18 +1081,3 @@ interface IGateway {
     function burn(bytes calldata _to, uint256 _amount) external returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

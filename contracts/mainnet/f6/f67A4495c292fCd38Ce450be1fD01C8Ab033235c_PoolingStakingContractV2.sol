@@ -7871,23 +7871,3 @@ contract WorkLockPoolingContract is InitializableStakingContract, Ownable {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "evmVersion": "constantinople",
-  "libraries": {}
-}

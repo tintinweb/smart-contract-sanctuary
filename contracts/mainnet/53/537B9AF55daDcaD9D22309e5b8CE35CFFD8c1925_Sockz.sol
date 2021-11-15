@@ -2029,19 +2029,3 @@ contract Sockz is ERC721, ReentrancyGuard, Ownable {
     //Public sale minting removed.
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

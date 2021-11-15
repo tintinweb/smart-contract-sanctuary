@@ -854,25 +854,3 @@ contract SIMTicketToken is ERC20Burnable, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/apple/Desktop/truffle-v5/blockchain/contracts/0-safe-math.sol": {
-      "SafeMath": "0x41CAb13dB4073b0140DA10EE9cCf8B049653fb83"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

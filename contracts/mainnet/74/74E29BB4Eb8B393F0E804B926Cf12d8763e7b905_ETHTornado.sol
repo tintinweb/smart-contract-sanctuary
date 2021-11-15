@@ -325,25 +325,3 @@ contract ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/apple/Documents/TALHAMALIK/tornado-core/build/contracts/Hasher.json": {
-      "Hasher": "0x492D4DffF16EBA278076451dd1a821ee3360e741"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

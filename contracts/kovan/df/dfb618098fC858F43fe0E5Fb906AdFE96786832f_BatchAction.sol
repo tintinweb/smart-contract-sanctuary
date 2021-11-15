@@ -9562,32 +9562,3 @@ library ExchangeRate {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/FreeCollateralExternal.sol": {
-      "FreeCollateralExternal": "0x68225f47813af66f186b3714ffe6a91850bc76b4"
-    },
-    "contracts/external/SettleAssetsExternal.sol": {
-      "SettleAssetsExternal": "0x6085b0a8f4c7ffa2e8ca578037792d6535d1e29b"
-    },
-    "contracts/external/actions/TradingAction.sol": {
-      "TradingAction": "0x10aae34011c256a9e63ab5ac50154c2539c0f51d"
-    },
-    "contracts/external/actions/nTokenMintAction.sol": {
-      "nTokenMintAction": "0xb15167fff26202aa3d20ecfd7f46a34fa4126e49"
-    }
-  }
-}

@@ -520,23 +520,3 @@ abstract contract Context {
 
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "utils/SortitionSumTreeFactory.sol": {
-      "SortitionSumTreeFactory": "0x2dc826165ba533a13f8db752fc0705e65709a8aa"
-    }
-  }
-}

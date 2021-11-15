@@ -555,21 +555,3 @@ contract Utopia is Pausable, StandardToken, BlackList {
     event Params(uint256 feeBasisPoints, uint256 maxFee);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

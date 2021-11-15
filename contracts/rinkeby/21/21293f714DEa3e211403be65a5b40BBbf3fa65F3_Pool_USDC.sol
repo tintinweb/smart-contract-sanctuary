@@ -2142,25 +2142,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/newsgate/Work/arthcoin-v2/contracts/Arth/Pools/ArthPoolLibrary.sol": {
-      "ArthPoolLibrary": "0xe3d3B52EcA3b69ac3261df36f3a0E608EB2A9f14"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

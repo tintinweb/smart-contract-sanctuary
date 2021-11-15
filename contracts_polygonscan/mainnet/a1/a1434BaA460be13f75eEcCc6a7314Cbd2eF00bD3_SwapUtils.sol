@@ -2517,23 +2517,3 @@ interface IAllowlist {
         returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 50000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/saddle/MathUtils.sol": {
-      "MathUtils": "0xcc24674f41a8100e6748daa184a191a8c8ce6741"
-    }
-  }
-}

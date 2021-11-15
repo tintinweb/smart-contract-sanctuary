@@ -291,21 +291,3 @@ interface AggregatorV3Interface {
 
 interface AggregatorV2V3Interface is AggregatorInterface, AggregatorV3Interface {}
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  }
-}

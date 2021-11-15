@@ -2444,23 +2444,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/PositionFee.sol": {
-      "PositionFee": "0x3c5b0a9d33bcce9de1f39412d7184d1cb5442ae2"
-    }
-  }
-}

@@ -1364,32 +1364,3 @@ library WithdrawHelper {
     }
 }
 
-{
-  "libraries": {
-    "IERC20.sol": {},
-    "IIntegralERC20.sol": {},
-    "IReserves.sol": {},
-    "IIntegralPair.sol": {},
-    "IWETH.sol": {},
-    "SafeMath.sol": {},
-    "Math.sol": {},
-    "IIntegralFactory.sol": {},
-    "TransferHelper.sol": {},
-    "TokenShares.sol": {},
-    "Orders.sol": {},
-    "WithdrawHelper.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

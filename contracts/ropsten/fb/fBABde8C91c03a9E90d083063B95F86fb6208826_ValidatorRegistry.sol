@@ -259,26 +259,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/utils/MerkleProof.sol": {
-      "MerkleProof": "0xd8cde9a104158321b1767f42b98a1dd3d5cc4c25"
-    }
-  }
-}

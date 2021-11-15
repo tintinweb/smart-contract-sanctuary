@@ -1638,19 +1638,3 @@ interface IKeep3rJob {
     function setRewardMultiplier(uint256 _rewardMultiplier) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

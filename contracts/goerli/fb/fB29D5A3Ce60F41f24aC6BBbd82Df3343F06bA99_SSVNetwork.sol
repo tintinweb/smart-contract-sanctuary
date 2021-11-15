@@ -127,19 +127,3 @@ interface ISSVNetwork {
   event OessAdded(bytes validatorPublicKey, uint index, bytes operatorPublicKey, bytes sharedPublicKey, bytes encryptedKey);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1641,18 +1641,3 @@ contract Story is Ownable, ERC721Enumerable, ERC721Burnable, ReentrancyGuard {
     
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

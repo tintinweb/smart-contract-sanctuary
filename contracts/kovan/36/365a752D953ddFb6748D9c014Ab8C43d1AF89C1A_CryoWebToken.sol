@@ -1196,22 +1196,3 @@ contract CryoWebToken is Context, IERC20, Ownable {
 
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 1
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

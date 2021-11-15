@@ -3147,25 +3147,3 @@ library EnumerableSetUpgradeable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/g/_projects/intercoin/NFT/contracts/lib/CoAuthors.sol": {
-      "CoAuthors": "0xc0AbDA7c78244875E13d0E2C939BC75Fead83AF0"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

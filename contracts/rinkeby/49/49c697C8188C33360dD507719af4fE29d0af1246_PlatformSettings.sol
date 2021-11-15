@@ -593,19 +593,3 @@ interface IRolesManager {
     event ConstsUpdated(address indexed sender, address oldConsts, address newConsts);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

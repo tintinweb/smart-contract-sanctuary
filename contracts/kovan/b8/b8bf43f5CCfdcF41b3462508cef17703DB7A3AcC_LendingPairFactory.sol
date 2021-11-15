@@ -2823,22 +2823,3 @@ interface IERC3156FlashBorrower {
     ) external returns (bytes32);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

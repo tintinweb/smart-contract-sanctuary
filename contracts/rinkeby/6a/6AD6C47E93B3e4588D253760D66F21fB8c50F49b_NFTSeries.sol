@@ -3366,28 +3366,3 @@ library EnumerableSetUpgradeable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/g/_projects/intercoin/NFT/contracts/lib/CoAuthors.sol": {
-      "CoAuthors": "0x7e1595aD529234018C19aeeDf77c6339403a3B0D"
-    },
-    "/g/_projects/intercoin/NFT/contracts/lib/LibCommunity.sol": {
-      "LibCommunity": "0x7da02b3E7e36669269F9776BDC49682b07A61a5B"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

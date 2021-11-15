@@ -5372,19 +5372,3 @@ interface IBorrowerOperations {
     function getCompositeDebt(uint _debt, uint _gasCompensation) external view returns (uint);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

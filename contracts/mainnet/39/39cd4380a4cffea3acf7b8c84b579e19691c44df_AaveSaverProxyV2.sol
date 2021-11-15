@@ -1794,19 +1794,3 @@ abstract contract GasTokenInterface is ERC20 {
     function freeFromUpTo(address from, uint256 value) public virtual returns (uint256 freed);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

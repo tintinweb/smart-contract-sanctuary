@@ -1731,22 +1731,3 @@ abstract contract ERC165 is IERC165 {
     }
 }
 
-{
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1449,21 +1449,3 @@ interface IDelegateCallProxyManager {
   function computeHolderAddressManyToOne(bytes32 implementationID) external view returns (address);
 }
 
-{
-  "metadata": {
-    "useLiteralContent": false
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

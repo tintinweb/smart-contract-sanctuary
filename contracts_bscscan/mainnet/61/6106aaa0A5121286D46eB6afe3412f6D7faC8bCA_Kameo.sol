@@ -713,32 +713,3 @@ library SafeBEP20 {
     }
 }
 
-{
-  "evmVersion": "london",
-  "libraries": {
-    "contracts/Kameo.sol:Kameo": {
-      "AmountNormalization": "0x9b5c3F8789792DD1622ed66E31EC5cE8734DdEEF",
-      "EnumerableAddressSet": "0x77307f9a85e67b2e6B6E047220e4c0AbB41BdF1b",
-      "FixedPointMath": "0xC6a7A9982e69f04b9F1647d35D75A921ff5782D0",
-      "SafeBEP20": "0x776064167cD080ddE2C42b0E1ED3DAEC4Bb70dbC"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "none",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

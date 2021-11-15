@@ -1743,23 +1743,3 @@ interface IERC20Metadata is IERC20 {
     function decimals() external view returns (uint8);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 20000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/DIADataNFT.sol": {
-      "NFTUtil": "0xc1f1adb5400069d08241b79c5e241d3d2c536988"
-    }
-  }
-}

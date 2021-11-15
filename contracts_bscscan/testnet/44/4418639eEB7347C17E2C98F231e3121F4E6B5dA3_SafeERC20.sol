@@ -114,29 +114,3 @@ library SafeERC20 {
     }
 }
 
-{
-  "evmVersion": "berlin",
-  "libraries": {
-    "contracts/libraries/SafeERC20.sol:SafeERC20": {
-      "Address": "0x89a7C29a9F1aDB7b859624f5B1e132152Fb258d8"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "none",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

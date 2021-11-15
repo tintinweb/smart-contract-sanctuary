@@ -2602,28 +2602,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/Users/ovdbigge/react/zknukes/contracts/game/MiMC.sol": {
-      "MiMC": "0x65287b60355B345bdaa28d22F559751C935D006d"
-    },
-    "/Users/ovdbigge/react/zknukes/contracts/game/Verifier.sol": {
-      "Verifier": "0x00F39bb8d564cE491c410E767A1D273f9E2d4924"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

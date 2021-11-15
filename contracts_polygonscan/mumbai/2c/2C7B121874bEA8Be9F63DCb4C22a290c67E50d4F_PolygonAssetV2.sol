@@ -1975,26 +1975,3 @@ contract WithAdmin {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 0
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "src/solc_0.8/asset/libraries/AssetHelper.sol": {
-      "AssetHelper": "0x61ab05bf91ace346a5aa56222fe70b66520b7bab"
-    },
-    "src/solc_0.8/asset/libraries/ERC1155ERC721Helper.sol": {
-      "ERC1155ERC721Helper": "0xe4f7b32dd6cf3da22783e3dae21baa6ccb1bedb7"
-    }
-  }
-}

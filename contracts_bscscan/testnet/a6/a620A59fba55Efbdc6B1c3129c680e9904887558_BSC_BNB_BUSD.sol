@@ -233,21 +233,3 @@ interface pancakeInterface {
 	function getAmountsOut(uint amountIn, address[] calldata path) external returns (uint[] memory amounts);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

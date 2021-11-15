@@ -692,25 +692,3 @@ contract Farm is AccountChangable {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/apple/Desktop/truffle-v5/blockchain/contracts/0-safe-math.sol": {
-      "SafeMath": "0xe7889d616f573249cF28DD4122F222fc2B112864"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -63,19 +63,3 @@ interface IOracle {
     function name(bytes calldata data) external view returns (string memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 9000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

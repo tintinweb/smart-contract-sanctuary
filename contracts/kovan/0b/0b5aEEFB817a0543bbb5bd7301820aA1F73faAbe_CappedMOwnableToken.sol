@@ -770,19 +770,3 @@ contract CappedMOwnableToken is ERC20Base, ERC20Capped, ERC20Mintable, Ownable, 
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

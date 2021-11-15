@@ -1804,23 +1804,3 @@ interface IERC20Metadata is IERC20 {
     function decimals() external view returns (uint8);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 20000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/DIAGenesisMinter.sol": {
-      "NFTUtil": "0x45aa3ae6c36b35b4c63d62476cbb13ed827317f0"
-    }
-  }
-}

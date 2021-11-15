@@ -3325,19 +3325,3 @@ library PoolAddress {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 850
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

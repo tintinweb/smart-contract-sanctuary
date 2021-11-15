@@ -2450,19 +2450,3 @@ contract TellorStorage {
     mapping(address => bool) public migrated;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 300
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

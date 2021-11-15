@@ -1025,19 +1025,3 @@ interface IExecutorWithTimelock {
     ) external returns (bytes32);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 25000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

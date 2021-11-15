@@ -1255,26 +1255,3 @@ library AddressStringUtil {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 2500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "@yield-protocol/utils-v2/contracts/token/SafeERC20Namer.sol": {
-      "SafeERC20Namer": "0xfB1d3CC0Cd8AE9cF73B3B4AeB5d508EdB0691E5d"
-    }
-  }
-}

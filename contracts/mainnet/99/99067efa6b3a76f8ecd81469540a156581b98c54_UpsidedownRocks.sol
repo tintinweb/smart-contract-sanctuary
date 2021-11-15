@@ -1488,19 +1488,3 @@ contract UpsidedownRocks is Ownable, ERC721Enumerable, ERC721Burnable, Reentranc
   }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

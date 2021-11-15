@@ -409,19 +409,3 @@ contract ConnectMaker is  BasicResolver {
     string public constant name = "MakerDAO-v1.0";
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

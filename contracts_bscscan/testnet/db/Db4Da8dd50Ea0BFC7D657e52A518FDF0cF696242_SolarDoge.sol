@@ -2005,25 +2005,3 @@ contract SolarDogeDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/Pla/Desktop/Smart Contract/SolarDoge/contracts/SolarDoge.sol": {
-      "IterableMapping": "0x3A08cE425045fdD93c152E3BeaE71fb384Ca5d40"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

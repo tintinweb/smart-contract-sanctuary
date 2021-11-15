@@ -1952,26 +1952,3 @@ contract WithAdmin {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "src/solc_0.8/asset/libraries/AssetHelper.sol": {
-      "AssetHelper": "0x809c17a77c9c0505a95bec274157cb23c3e54b6e"
-    },
-    "src/solc_0.8/asset/libraries/ERC1155ERC721Helper.sol": {
-      "ERC1155ERC721Helper": "0x00e9e534777fb51aaba8f5ccb51d5d528c283ba2"
-    }
-  }
-}

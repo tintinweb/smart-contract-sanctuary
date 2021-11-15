@@ -6118,25 +6118,3 @@ library Address {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/michalina/workspace2/keep-core/solidity/contracts/cryptography/BLS.sol": {
-      "BLS": "0xfD50bCBaefC1BA65608d4c0d22b05Ddd99442026"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

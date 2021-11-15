@@ -489,30 +489,20 @@ abstract contract Context {
 }
 
 // contracts/ATENAS.sol 
-// SPDX-License-Identifier: MIT 
-pragma solidity ^0.8.0; 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
-contract ATENAS is ERC20 { 
-constructor() ERC20("ATENAS","ATN") { 
-_mint(msg.sender, 1000000 * (10 ** uint256(decimals())));
-}
-}
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
+// SPDX-License-Identifier: MIT 
+
+pragma solidity ^0.8.0; 
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
+
+contract ATENAS is ERC20 { 
+
+constructor() ERC20("ATENAS","ATN") { 
+
+_mint(msg.sender, 1000000 * (10 ** uint256(decimals())));
+
 }
+
+}
+

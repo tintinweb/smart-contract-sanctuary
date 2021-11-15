@@ -5831,26 +5831,3 @@ contract Finder is FinderInterface, Ownable {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "deploy/contracts/@jarvis-network/uma-core/contracts/financial-templates/common/FeePayerPoolPartyLib.sol": {
-      "FeePayerPoolPartyLib": "0x5ec5556c7dc3823fcece4a2323c5ab2960aa86b5"
-    },
-    "deploy/contracts/@jarvis-network/uma-core/contracts/financial-templates/perpetual-poolParty/PerpetualPositionManagerPoolPartyLib.sol": {
-      "PerpetualPositionManagerPoolPartyLib": "0xf3c593e95fcbbfd1e9a048b7a5b726dd51addf80"
-    }
-  }
-}

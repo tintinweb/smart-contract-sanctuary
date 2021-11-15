@@ -1845,24 +1845,3 @@ contract ERC1155ERC721 is SuperOperators, ERC1155, ERC721 {
     }
 }
 
-{
-  "evmVersion": "petersburg",
-  "libraries": {},
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

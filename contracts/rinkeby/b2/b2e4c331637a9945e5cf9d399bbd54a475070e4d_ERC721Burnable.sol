@@ -1748,22 +1748,3 @@ interface IERC2981Upgradeable is IERC165Upgradeable {
         returns (address receiver, uint256 royaltyAmount);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

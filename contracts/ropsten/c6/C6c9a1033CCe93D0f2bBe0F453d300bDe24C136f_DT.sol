@@ -1848,19 +1848,3 @@ abstract contract SwapWithLP is Ownable {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 25
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

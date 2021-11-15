@@ -164,19 +164,3 @@ interface RandomizerInterface {
     function startGeneratingRandom(uint256 _maxNumber) external payable returns(uint256); 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1160,23 +1160,3 @@ interface ILock is IERC20 {
   function burn(address _account, uint256 _amount) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "@sherlock/v1-core/contracts/libraries/LibPool.sol": {
-      "LibPool": "0x8d2ec5bc323445041660d72d9c2608c5f049ed36"
-    }
-  }
-}

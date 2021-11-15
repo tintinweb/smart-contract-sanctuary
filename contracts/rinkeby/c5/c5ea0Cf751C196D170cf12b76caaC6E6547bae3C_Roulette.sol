@@ -1205,25 +1205,3 @@ contract Pausable is Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/user/Documents/Projects/solidity/ewgr/contracts/GambolrUtils.sol": {
-      "GambolrUtils": "0xcF9245AC0b0e175A88f86eBB8C051084Be2479E3"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

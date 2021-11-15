@@ -239,19 +239,3 @@ abstract contract CoreConstants {
     uint256 internal constant RATIO_MULTIPLY_FACTOR = 10 ** 6;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

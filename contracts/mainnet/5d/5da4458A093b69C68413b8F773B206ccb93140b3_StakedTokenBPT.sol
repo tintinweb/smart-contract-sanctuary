@@ -4418,23 +4418,3 @@ interface IQuestManager {
     function checkForSeasonFinish(address _account) external returns (uint8 newQuestMultiplier);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/rewards/staking/PlatformTokenVendorFactory.sol": {
-      "PlatformTokenVendorFactory": "0xfb73476911c5e84556a5bf953644b7ef50f6cbc5"
-    }
-  }
-}

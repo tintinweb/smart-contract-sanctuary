@@ -2618,25 +2618,3 @@ library Address {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "petersburg",
-  "libraries": {
-    "/Users/tonyz/_Project/Tony/Predictx/markets-interface-internal/contracts/Fixed192x64Math.sol": {
-      "Fixed192x64Math": "0xe335FDB0FD4c337d044703FD8BD18dAE5Ef0CA27"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

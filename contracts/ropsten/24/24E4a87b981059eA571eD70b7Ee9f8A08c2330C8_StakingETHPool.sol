@@ -860,26 +860,3 @@ library SafeMath {
 	}
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/protocol/impl/StakingETHPoolImpl.sol": {
-      "StakingETHPoolImpl": "0x9738ea88525bb087eb60b5b569e3342f01ad33e5"
-    }
-  }
-}

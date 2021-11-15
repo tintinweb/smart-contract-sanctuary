@@ -2042,19 +2042,3 @@ abstract contract BaseUpgradeable {
     event PlatformSettingsUpdated(address indexed oldSettings, address indexed newSettings);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

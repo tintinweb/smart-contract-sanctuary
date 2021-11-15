@@ -1588,21 +1588,3 @@ abstract contract SendValueWithFallbackWithdraw is ReentrancyGuardUpgradeable {
   uint256[499] private ______gap;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

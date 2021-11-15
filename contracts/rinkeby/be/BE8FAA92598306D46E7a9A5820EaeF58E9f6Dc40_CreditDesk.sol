@@ -3693,29 +3693,3 @@ contract Borrower is BaseUpgradeablePausable, BaseRelayRecipient {
   }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/protocol/core/CreditDesk.sol:CreditDesk": {
-      "Accountant": "0x72A8Ae819C79DD1fac1bFA3D842928f302060540"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

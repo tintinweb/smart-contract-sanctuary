@@ -3036,23 +3036,3 @@ contract VRFRequestIDBase {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/library/HeapSort.sol": {
-      "HeapSort": "0xdf98a7b05f1137222973bb535fd5386b6b7b01ac"
-    }
-  }
-}

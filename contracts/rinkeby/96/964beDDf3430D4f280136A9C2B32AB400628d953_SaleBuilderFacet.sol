@@ -2116,22 +2116,3 @@ interface IDiamondCut {
     ) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200,
-    "details": {
-      "yul": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

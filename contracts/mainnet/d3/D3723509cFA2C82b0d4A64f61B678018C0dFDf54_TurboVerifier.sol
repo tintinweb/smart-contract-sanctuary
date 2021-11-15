@@ -3124,24 +3124,3 @@ library EscapeHatchVk {
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/verifier/keys/VerificationKeys.sol": {
-      "VerificationKeys": "0x7431786f99c62df3d06d417cc4a5bf1d2bf1a61a"
-    }
-  }
-}

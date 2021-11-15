@@ -5700,31 +5700,3 @@ library MetaSwapUtils {
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/meta/MetaSwap.sol:MetaSwap": {
-      "SwapUtils": "0x11199A9eE50127F335B84A1eEb961D8A85147f5F",
-      "MetaSwapUtils": "0x88E7af57270F70BCF32CD61fff0Ff635775C8f7c",
-      "AmplificationUtils": "0xFE986b20d34df3Aa9fA2e4d18b8EBe5AC6c753b0"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

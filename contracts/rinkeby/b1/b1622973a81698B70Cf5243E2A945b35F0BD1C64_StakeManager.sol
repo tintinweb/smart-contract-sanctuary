@@ -5067,25 +5067,3 @@ library RLPReader {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/centos/alpha_testnet/code/contracts/contracts/common/lib/Merkle.sol": {
-      "Merkle": "0xBa0805419De9396BF3d4B525932fb81680f82C5b"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

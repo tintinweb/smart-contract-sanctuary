@@ -1801,19 +1801,3 @@ interface IBaseDistributor {
     function setDistributionCriteria(uint256 _minPeriod, uint256 _minDistribution) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1010,15 +1010,3 @@ contract LitiCapital is
     }
 }
 
-{
-  "optimizer": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

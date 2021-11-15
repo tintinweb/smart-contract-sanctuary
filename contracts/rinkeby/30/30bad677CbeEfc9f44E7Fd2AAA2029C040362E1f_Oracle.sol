@@ -344,19 +344,3 @@ interface IOracle {
     function consult(address tokenIn, uint amountIn, address tokenOut) external view returns (uint amountOut);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

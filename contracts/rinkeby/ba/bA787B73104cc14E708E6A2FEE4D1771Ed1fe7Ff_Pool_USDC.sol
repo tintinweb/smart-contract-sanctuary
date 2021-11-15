@@ -2138,25 +2138,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/enamakel/Work/mahadao.com/arthcoin/arthcoin-v2/contracts/Arth/Pools/ArthPoolLibrary.sol": {
-      "ArthPoolLibrary": "0x4A6D20434521e306BF0f9519f7962b552A4A7EA7"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

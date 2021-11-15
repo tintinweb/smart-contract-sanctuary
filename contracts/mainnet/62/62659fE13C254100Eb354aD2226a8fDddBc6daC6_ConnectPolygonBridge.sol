@@ -461,22 +461,3 @@ contract ConnectPolygonBridge is PolygonBridgeResolver {
     string public constant name = "Polygon-Bridge-v1.1";
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

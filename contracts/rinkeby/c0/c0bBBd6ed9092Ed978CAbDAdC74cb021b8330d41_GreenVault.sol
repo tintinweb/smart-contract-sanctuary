@@ -197,27 +197,3 @@ abstract contract ReentrancyGuard {
     }
 }
 
-{
-  "modelChecker": {
-    "engine": "none",
-    "showUnproved": true,
-    "timeout": 60
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -3706,19 +3706,3 @@ interface ILiquidityMigrator {
     function migrate(IERC20 token) external returns (IERC20);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -2119,23 +2119,3 @@ contract MDPDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/MiniDogePro.sol": {
-      "IterableMapping": "0xb6710DB1eAf75D27b4f98975065013CBaF785762"
-    }
-  }
-}

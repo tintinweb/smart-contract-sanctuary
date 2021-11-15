@@ -262,26 +262,3 @@ library TransferHelper {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000,
-    "details": {
-      "yul": true,
-      "cse": true,
-      "deduplicate": true,
-      "orderLiterals": true,
-      "constantOptimizer": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -939,22 +939,3 @@ interface IUniswapV3PoolEvents {
     event CollectProtocol(address indexed sender, address indexed recipient, uint128 amount0, uint128 amount1);
 }
 
-{
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

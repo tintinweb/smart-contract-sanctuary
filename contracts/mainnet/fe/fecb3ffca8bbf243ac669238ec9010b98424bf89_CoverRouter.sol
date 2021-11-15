@@ -1087,19 +1087,3 @@ interface IRollover {
   function rolloverAccount(address _account, address _cover, uint48 _newTimestamp) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

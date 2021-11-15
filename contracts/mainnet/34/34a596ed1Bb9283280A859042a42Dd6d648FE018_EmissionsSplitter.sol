@@ -761,19 +761,3 @@ interface IERC1820Implementer {
     function canImplementInterfaceForAddress(bytes32 interfaceHash, address account) external view returns (bytes32);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -2014,23 +2014,3 @@ contract BabyKingDogeDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Greeter.sol": {
-      "IterableMapping": "0xb05F354F78A4c95e5eD13D257cE7Ae246AD83ab5"
-    }
-  }
-}

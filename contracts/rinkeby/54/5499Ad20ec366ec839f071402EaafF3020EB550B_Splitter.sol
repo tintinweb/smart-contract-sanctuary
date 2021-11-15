@@ -257,19 +257,3 @@ contract SplitStorage {
     address public immutable zoraAH = 0xE7dd1252f50B3d845590Da0c5eADd985049a03ce; // rinkeby
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 750
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

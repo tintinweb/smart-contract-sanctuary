@@ -2511,25 +2511,3 @@ contract NativeMetaTransaction is EIP712Base {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 20
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/LootBoxRandomness.sol": {
-      "LootBoxRandomness": "0x322A991d25911BEbBD54103f60Fa3458413A0530"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

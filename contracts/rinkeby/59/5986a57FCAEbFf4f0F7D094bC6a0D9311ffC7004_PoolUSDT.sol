@@ -2098,25 +2098,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/newsgate/Work/arthcoin-v2/contracts/pools/core/ARTHPoolLibrary.sol": {
-      "ARTHPoolLibrary": "0x6a9E81874218172A2967FF9692d404999C2c4De1"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1622,26 +1622,3 @@ contract Keep3rV1 is ReentrancyGuard {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "solidity/contracts/Keep3rV1.sol": {
-      "Keep3rV1Library": "0xfc38b6eba9d47cbfc8c7b4ffffd142b78996b6f1"
-    }
-  }
-}

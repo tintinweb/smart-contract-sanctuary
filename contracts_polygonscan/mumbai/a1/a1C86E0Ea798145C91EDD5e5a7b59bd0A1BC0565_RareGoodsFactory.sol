@@ -2874,20 +2874,3 @@ abstract contract Context {
     }
 }
 
-{
-  "evmVersion": "constantinople",
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

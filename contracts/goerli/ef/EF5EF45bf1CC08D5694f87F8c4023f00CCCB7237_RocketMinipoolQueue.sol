@@ -940,21 +940,3 @@ enum MinipoolStatus {
     Dissolved       // The minipool has been dissolved and its user deposited ETH has been returned to the deposit pool
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 15000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

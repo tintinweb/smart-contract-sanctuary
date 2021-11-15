@@ -668,28 +668,3 @@ contract Test {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/E/fiverr/April/AsciiMan/asciiman-contract/contracts/Ascii_Man/AsciiManFactory.sol": {
-      "AsciiManFactory": "0x088ed3233267191527A096358C6361dF908a0030"
-    },
-    "/E/fiverr/April/AsciiMan/asciiman-contract/contracts/Ascii_Man/chainBeingFactory.sol": {
-      "chainBeingFactory": "0x3BF6Eb91e7A7751ac684Bb2815785aa2C6a2Fc65"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

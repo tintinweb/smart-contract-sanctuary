@@ -972,19 +972,3 @@ interface IERC20Permit is IERC20 {
     function DOMAIN_SEPARATOR() external view returns (bytes32);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 7500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

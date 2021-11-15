@@ -1716,18 +1716,3 @@ contract TrueLender2 is ITrueLender2, UpgradeableClaimable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 20000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

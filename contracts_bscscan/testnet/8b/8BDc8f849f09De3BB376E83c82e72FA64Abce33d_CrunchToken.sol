@@ -2871,25 +2871,3 @@ contract DividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/Users/mudaseriqbal/Documents/Developer/Luner/oros.contracts/src/active/CrunchToken.sol": {
-      "IterableMapping": "0x3f3455914B0cCE6bBe713Aee41F713AAD157323e"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

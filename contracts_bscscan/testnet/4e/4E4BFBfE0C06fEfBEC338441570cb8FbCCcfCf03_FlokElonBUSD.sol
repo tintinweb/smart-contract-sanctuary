@@ -2049,25 +2049,3 @@ contract FlokElonBUSDDividendTracker is DividendPayingToken, Ownable {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/contracts/TheContract.sol": {
-      "IterableMapping": "0xA3B4bDDEc0A57e4aF7F0b876E8DA6F0eaAB05D80"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

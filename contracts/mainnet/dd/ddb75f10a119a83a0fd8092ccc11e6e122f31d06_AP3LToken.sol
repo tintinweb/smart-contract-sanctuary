@@ -1409,19 +1409,3 @@ abstract contract ERC677Receiver {
     function onTokenTransfer(address _sender, uint _value, bytes memory _data) virtual public;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

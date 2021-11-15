@@ -301,27 +301,3 @@ contract TwapReader is ITwapReader {
     }
 }
 
-{
-  "libraries": {
-    "ITwapReader.sol": {},
-    "IERC20.sol": {},
-    "ITwapERC20.sol": {},
-    "IReserves.sol": {},
-    "ITwapPair.sol": {},
-    "ITwapOracle.sol": {},
-    "TwapReader.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

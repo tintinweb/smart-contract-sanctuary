@@ -703,19 +703,3 @@ library Address {
     }
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "evmVersion": "istanbul",
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  }
-}

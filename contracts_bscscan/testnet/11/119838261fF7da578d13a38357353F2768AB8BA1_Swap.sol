@@ -3611,25 +3611,3 @@ library SwapUtils {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/SwapUtils.sol": {
-      "SwapUtils": "0x25C8Ae6791299876D8f9A73215b9869c7da5A4B2"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

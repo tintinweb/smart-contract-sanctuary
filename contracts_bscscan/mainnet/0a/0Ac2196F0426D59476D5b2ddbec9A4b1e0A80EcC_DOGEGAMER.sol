@@ -2020,25 +2020,3 @@ contract DOGEGAMERDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/DOGEGAMER.sol": {
-      "IterableMapping": "0x2A959b0A1cf7cC8dEe323be2B2f54F09FfdC11BF"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

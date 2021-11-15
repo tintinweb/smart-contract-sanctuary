@@ -1865,23 +1865,3 @@ contract DBDOGEDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/13_GAME_TOKEN_TESTNET.sol": {
-      "IterableMapping": "0x9B4FaF024E157D5BE3a5779092918473F6398855"
-    }
-  }
-}

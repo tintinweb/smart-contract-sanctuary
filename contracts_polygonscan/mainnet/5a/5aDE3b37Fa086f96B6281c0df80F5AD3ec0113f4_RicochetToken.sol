@@ -7848,23 +7848,3 @@ interface IERC1820Registry {
     event ManagerChanged(address indexed account, address indexed newManager);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/SLPxHelper.sol": {
-      "SLPxHelper": "0x4aa6a91c1fff4c90bb9ab2ccfe27c99230892557"
-    }
-  }
-}

@@ -1009,25 +1009,3 @@ abstract contract AccessControl is Context, IAccessControl, ERC165 {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/utils/StringUtils.sol": {
-      "StringUtils": "0xd7e47e0cDA43aE053F62d89FeBEbFC1c931a4c43"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -148,19 +148,3 @@ contract ERC20Interface {
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

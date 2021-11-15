@@ -3995,25 +3995,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/contracts/libraries/TokenLib.sol": {
-      "TokenLib": "0x5f0b4155D083D8Eb1D19325b595B284e7A3e6E3D"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

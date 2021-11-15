@@ -3147,19 +3147,3 @@ interface IStakingV1 {
         external view returns (uint256[] memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 0
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

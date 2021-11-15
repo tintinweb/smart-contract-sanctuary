@@ -926,19 +926,3 @@ contract PKToken is ERC20("PK Token", "PK", 18, 0, 1000000000), Ownable, Mintabl
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

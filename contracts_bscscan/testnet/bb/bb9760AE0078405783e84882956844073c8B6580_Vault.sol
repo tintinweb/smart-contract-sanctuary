@@ -5000,19 +5000,3 @@ interface Upgradeable {
     function upgradeTarget(address newTarget, bytes calldata newTargetInitializationParameters) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

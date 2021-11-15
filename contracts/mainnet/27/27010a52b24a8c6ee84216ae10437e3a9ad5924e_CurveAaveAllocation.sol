@@ -3861,19 +3861,3 @@ abstract contract Curve3PoolConstants is
         0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

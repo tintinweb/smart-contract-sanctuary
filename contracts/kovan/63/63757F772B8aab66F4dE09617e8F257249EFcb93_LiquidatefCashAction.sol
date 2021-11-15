@@ -8940,23 +8940,3 @@ library FreeCollateral {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/external/FreeCollateralExternal.sol": {
-      "FreeCollateralExternal": "0x68225f47813af66f186b3714ffe6a91850bc76b4"
-    }
-  }
-}

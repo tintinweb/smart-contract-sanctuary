@@ -2319,19 +2319,3 @@ contract VRFRequestIDBase {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 175
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

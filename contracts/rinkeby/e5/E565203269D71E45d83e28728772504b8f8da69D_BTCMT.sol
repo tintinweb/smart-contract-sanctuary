@@ -1328,21 +1328,3 @@ interface IBTCMT is IERC20 {
     function transferFromFarm (address from, uint256 amountLocked, uint256 amountUnlocked) external returns (uint256[] memory);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

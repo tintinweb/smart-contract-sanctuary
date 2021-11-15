@@ -1038,21 +1038,3 @@ interface IVORCoordinator {
     function withdrawGasTopUpForProvider(bytes32 _keyHash) external returns (uint256 amountWithdrawn);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

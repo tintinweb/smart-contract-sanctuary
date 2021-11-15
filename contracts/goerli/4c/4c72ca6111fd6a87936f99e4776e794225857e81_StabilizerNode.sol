@@ -3032,19 +3032,3 @@ interface IStabilizerNode {
   function getAuctionCommitments(uint256 _id) external view returns (uint256 commitments, uint256 maxCommitments);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

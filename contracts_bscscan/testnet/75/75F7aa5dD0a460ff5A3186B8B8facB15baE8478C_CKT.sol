@@ -2176,23 +2176,3 @@ contract CKT is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/contract.sol": {
-      "Utils": "0xc6bcd948048c19050064f2999d90f33ca2f8fb41"
-    }
-  }
-}

@@ -910,24 +910,3 @@ contract PotOraiLoverEth is PotController {//Valcontroller
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/PotOraiLoverEth.sol": {
-      "SortitionSumTreeFactory": "0x1be992275b65f9417a25c7383dfde892c9a7bb1f"
-    }
-  }
-}

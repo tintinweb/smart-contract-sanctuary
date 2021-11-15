@@ -188,21 +188,3 @@ interface IStakingPool {
     function getUserStakingData(address account) external view returns(uint returnStakingAmount, uint returnReward, uint returnLocktime);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

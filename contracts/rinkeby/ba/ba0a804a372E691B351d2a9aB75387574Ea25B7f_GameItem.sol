@@ -1654,22 +1654,3 @@ interface IERC1155MetadataURIUpgradeable is IERC1155Upgradeable {
     function uri(uint256 id) external view returns (string memory);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

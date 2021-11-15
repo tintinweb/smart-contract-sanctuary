@@ -803,18 +803,3 @@ contract Hydra is IERC20, Auth {
     event BuybackMultiplierActive(uint256 duration);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

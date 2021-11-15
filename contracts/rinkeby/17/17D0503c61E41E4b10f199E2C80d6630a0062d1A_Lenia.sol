@@ -2230,29 +2230,3 @@ library SafeMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "devdoc",
-        "userdoc",
-        "metadata",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/libs/LeniaDescriptor.sol": {
-      "LeniaDescriptor": "0x70b5c2b4e3f7429b6c1b6ba012e9cd56c2edb3a3"
-    }
-  }
-}

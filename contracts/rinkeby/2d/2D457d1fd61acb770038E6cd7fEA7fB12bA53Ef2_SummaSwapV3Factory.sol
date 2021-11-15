@@ -3015,19 +3015,3 @@ contract SummaSwapV3Factory is ISummaSwapV3Factory, SummaSwapV3PoolDeployer, NoD
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

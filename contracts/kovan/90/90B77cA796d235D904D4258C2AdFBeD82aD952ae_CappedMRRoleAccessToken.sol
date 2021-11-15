@@ -1475,19 +1475,3 @@ contract CappedMRRoleAccessToken is ERC20Base, ERC20Capped, ERC20Mintable, Acces
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

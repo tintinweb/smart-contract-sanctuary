@@ -1410,23 +1410,3 @@ contract DogeDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/lildogecoin.sol": {
-      "IterableMapping": "0x865ADF5Ad659c87a0801160D9A87d65e7442F70C"
-    }
-  }
-}

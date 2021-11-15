@@ -1494,19 +1494,3 @@ contract UnlimitedMBRRoleAccessToken is BEP20Base, BEP20Mintable, BEP20Burnable,
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

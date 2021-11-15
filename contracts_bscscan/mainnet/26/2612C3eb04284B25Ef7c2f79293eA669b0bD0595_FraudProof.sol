@@ -1547,31 +1547,3 @@ library Types {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/libs/ECVerify.sol": {
-      "ECVerify": "0x6f7dDC7B4418A89e7A0ED6b5D0e7401907Ce5083"
-    },
-    "/contracts/libs/ParamManager.sol": {
-      "ParamManager": "0xfA9BD2d7457A3ffD8c8010b3bB4d7c113B9B2b85"
-    },
-    "/contracts/libs/RollupUtils.sol": {
-      "RollupUtils": "0x667d8EAf0D32a26321c9A34CdcE973675a8317D8"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1775,25 +1775,3 @@ contract ADADividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/C/Users/Chris/planetdoge/contracts/planetdoge.sol": {
-      "IterableMapping": "0x5D81a857E3970d3af5041785E74b2225053c2D75"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

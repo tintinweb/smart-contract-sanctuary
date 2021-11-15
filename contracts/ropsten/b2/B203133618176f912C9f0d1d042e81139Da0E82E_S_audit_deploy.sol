@@ -1672,25 +1672,3 @@ contract S_audit_deploy is Context, IBEP20, Ownable, ReentrancyGuard {
     receive() external payable {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "evmVersion": "constantinople",
-  "libraries": {
-    "/C/Users/Greg/Documents/Truffletest/Soho - Copy/contracts/SOHO_Token.sol": {
-      "Utils": "0xe7335b1a6FA4078f43E5d81E0cF1aFf25BEEA1f6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

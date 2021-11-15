@@ -2292,26 +2292,3 @@ abstract contract EIP712Upgradeable is Initializable {
     uint256[50] private __gap;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/options/lib/GenSymbol.sol": {
-      "GenSymbol": "0x362f47db5efc87f7806dbaecc7874910e9387fa9"
-    },
-    "contracts/options/lib/HeaderRLP.sol": {
-      "HeaderRLP": "0x73bf325fac102ced369d3292e0d0530e650771d6"
-    }
-  }
-}

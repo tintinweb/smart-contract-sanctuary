@@ -396,19 +396,3 @@ interface IABIManipulator {
   ) external view returns (bytes memory txDataManipulated, uint256 txValue); // TODO add transaction value.
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1436,19 +1436,3 @@ contract UnlimitedMRRoleAccessToken is BEP20Base, BEP20Mintable, AccessControlEn
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

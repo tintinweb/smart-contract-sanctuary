@@ -1995,23 +1995,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/library/IterableMapping.sol": {
-      "IterableMapping": "0x3b8369E92367b86C7a03BBCcDCf4F31E5624B806"
-    }
-  }
-}

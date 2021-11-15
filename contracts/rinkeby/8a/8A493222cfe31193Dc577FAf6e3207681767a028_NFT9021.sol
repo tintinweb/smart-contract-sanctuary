@@ -1726,19 +1726,3 @@ contract NFT9021 is Ownable, ERC721Enumerable, ReentrancyGuard {
 	}
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

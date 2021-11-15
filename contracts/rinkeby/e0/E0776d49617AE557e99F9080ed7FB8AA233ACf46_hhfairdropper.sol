@@ -1394,19 +1394,3 @@ contract hhfairdropper is Context, AccessControl {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 5500
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

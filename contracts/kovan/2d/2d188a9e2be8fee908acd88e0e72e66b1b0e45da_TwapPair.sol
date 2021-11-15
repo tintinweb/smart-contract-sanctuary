@@ -1118,33 +1118,3 @@ contract TwapPair is Reserves, TwapLPToken, ITwapPair {
     }
 }
 
-{
-  "libraries": {
-    "IERC20.sol": {},
-    "ITwapERC20.sol": {},
-    "IReserves.sol": {},
-    "ITwapPair.sol": {},
-    "SafeMath.sol": {},
-    "Reserves.sol": {},
-    "AbstractERC20.sol": {},
-    "TwapLPToken.sol": {},
-    "Math.sol": {},
-    "ITwapFactory.sol": {},
-    "ITwapOracle.sol": {},
-    "Normalizer.sol": {},
-    "TwapPair.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

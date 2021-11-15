@@ -5716,23 +5716,3 @@ interface AggregatorV3Interface {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Usr/Pools/UsrPoolLibrary.sol": {
-      "UsrPoolLibrary": "0x8b21b98df63f6f2bf94e48b8d99f9f22fceb6a11"
-    }
-  }
-}

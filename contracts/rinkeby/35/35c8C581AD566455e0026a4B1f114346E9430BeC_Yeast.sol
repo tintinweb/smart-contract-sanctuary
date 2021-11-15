@@ -543,21 +543,3 @@ contract ERC20Detailed is IERC20 {
   }
 }
 
-{
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

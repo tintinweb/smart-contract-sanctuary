@@ -1652,22 +1652,3 @@ contract PolygonAdapter01 is IAdapter, NewUniswapV2, Curve, Aavee2, WethExchange
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

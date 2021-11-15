@@ -1678,19 +1678,3 @@ contract AppolloAddress is Context, CustomOwnable, ICAMAEvents, ERC165, IERC721,
     function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal virtual { }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

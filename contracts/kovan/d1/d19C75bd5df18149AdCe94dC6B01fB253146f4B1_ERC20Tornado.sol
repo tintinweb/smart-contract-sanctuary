@@ -388,25 +388,3 @@ contract ERC20Tornado is Tornado {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "": {
-      "Hasher": "0x82b177c8B818f47C7948Cf403B3A8c0002F01E2d"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

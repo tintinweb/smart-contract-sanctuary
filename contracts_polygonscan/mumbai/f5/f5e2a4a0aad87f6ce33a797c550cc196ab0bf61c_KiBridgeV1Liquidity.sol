@@ -556,14 +556,3 @@ interface IKiBridgeV1LiquidityDeployer {
   
 }
 
-{
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

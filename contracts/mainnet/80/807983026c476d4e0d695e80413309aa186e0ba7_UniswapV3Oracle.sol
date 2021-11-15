@@ -1133,18 +1133,3 @@ interface IUniswapV3PoolImmutables {
     function maxLiquidityPerTick() external view returns (uint128);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

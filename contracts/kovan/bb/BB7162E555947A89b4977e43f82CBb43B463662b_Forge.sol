@@ -1529,25 +1529,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/Users/jacob/Developer/DeFiWorkspace/punk.protocol/contracts/libs/Score.sol": {
-      "Score": "0x3AbB96eC3913B5bc20CF6CfEeE1DB2fD7C3Be22C"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

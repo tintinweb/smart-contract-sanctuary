@@ -2499,25 +2499,3 @@ contract DogeBTCDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/DELL/Downloads/projects/erc20tokenPresale/contracts/DogeBTC.sol": {
-      "IterableMapping": "0x92A9c1B0830002ACA40581900b1c41605E7Ca45F"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1294,23 +1294,3 @@ library SafeMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/SeaPunkFactory.sol": {
-      "SeaPunkFactory": "0x97c226326c558f646fe1ddf98cd8f95fe83ebbd7"
-    }
-  }
-}

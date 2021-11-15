@@ -4876,31 +4876,3 @@ library Address {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/runner/work/keep-core/keep-core/solidity/contracts/libraries/staking/GrantStaking.sol": {
-      "GrantStaking": "0x8D701074430A99DD236222957Eae859797389661"
-    },
-    "/home/runner/work/keep-core/keep-core/solidity/contracts/libraries/staking/Locks.sol": {
-      "Locks": "0xc6370a107446632a22fA0b0A339399575439145D"
-    },
-    "/home/runner/work/keep-core/keep-core/solidity/contracts/libraries/staking/TopUps.sol": {
-      "TopUps": "0xb233AC0768569aa916263261bD9cdd95A6bBe4C3"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

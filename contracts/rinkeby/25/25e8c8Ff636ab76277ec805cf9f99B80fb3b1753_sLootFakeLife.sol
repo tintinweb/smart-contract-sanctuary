@@ -1641,21 +1641,3 @@ contract sLootFakeLife is ERC721Enumerable, ReentrancyGuard, Ownable {
     constructor() ERC721("sLootFakeLife", "SLFT") Ownable() {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

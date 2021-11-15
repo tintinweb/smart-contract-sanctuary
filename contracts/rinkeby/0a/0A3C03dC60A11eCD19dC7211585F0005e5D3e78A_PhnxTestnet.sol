@@ -287,19 +287,3 @@ contract PhnxTestnet is Ownable {
     event Burn(address indexed _burner, uint256 _amount);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

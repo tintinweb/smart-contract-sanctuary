@@ -3527,29 +3527,3 @@ interface IV2Router {
     ) external returns (uint[] memory amounts);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/libs/LibAccess.sol": {
-      "LibAccess": "0x76d3d679a6d7b4a490139bd0afc99cbb952fb522"
-    },
-    "contracts/libs/LibConfig.sol": {
-      "LibConfig": "0x62ecb6e24bd7d53112ebf386718d54a33b3c424e"
-    }
-  }
-}

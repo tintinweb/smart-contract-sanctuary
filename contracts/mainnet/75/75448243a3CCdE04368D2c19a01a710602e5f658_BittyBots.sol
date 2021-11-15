@@ -2196,25 +2196,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 20
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/Users/alexanderhsu/dev/nft/bittybots/bittybots-contract/contracts/UIntArrays.sol": {
-      "UIntArrays": "0xff99Ac97C9a882a815E582b23bB8030F159BC387"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

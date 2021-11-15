@@ -797,25 +797,3 @@ abstract contract Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/ravindra/projects/oddz-bridge-monorepo/src/solidity/contracts/libs/Misc.sol": {
-      "Misc": "0xCD40F2670CF58720b694968698A5514e924F742d"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

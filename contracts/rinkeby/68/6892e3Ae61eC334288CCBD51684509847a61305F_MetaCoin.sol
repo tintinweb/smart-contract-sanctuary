@@ -48,25 +48,3 @@ contract MetaCoin {
 	} 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/ConvertLib.sol": {
-      "ConvertLib": "0x462aB0D8936B443dDa33fB939326d72b0336fAc6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

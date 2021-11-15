@@ -775,19 +775,3 @@ contract UnlimitedMBOwnableToken is BEP20Base, BEP20Mintable, BEP20Burnable, Own
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

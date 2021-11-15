@@ -1143,25 +1143,3 @@ contract Ownable {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/E/Users/vive/Downloads/program/WorkSpaceSolidity/truffle-starter-kit/contracts/lib/ToHexString.sol": {
-      "ToHexString": "0x2ab680e8fCBB602CCDCfC236eE78748d567DEF87"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

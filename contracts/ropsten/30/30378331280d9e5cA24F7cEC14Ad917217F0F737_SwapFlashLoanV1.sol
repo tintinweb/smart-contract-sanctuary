@@ -4531,30 +4531,3 @@ interface ISwap {
     ) external returns (uint256);
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/SwapFlashLoanV1.sol:SwapFlashLoanV1": {
-      "SwapUtilsV1": "0x75720fAc0f99E17DCBdDa14D05CCdDE31090F04b",
-      "AmplificationUtilsV1": "0x161d3d3c5a6a8abbbe8bc404dcba19d6d97fd5b8"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

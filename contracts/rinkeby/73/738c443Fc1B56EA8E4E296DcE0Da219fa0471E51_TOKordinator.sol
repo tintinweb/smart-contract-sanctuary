@@ -1218,19 +1218,3 @@ interface ISwap {
     function swap (IERC20 src, IERC20 dst, uint256 amount, uint256 minReturn) external payable returns(uint256 result);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

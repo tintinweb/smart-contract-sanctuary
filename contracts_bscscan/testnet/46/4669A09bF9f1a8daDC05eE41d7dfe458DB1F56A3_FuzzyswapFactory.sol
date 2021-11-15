@@ -920,22 +920,3 @@ library Oracle {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 0
-  },
-  "metadata": {
-    "bytecodeHash": "none"
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

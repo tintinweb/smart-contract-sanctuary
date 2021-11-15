@@ -216,29 +216,3 @@ library Loan {
     }
 }
 
-{
-  "evmVersion": "berlin",
-  "libraries": {
-    "contracts/libraries/Loan.sol:Loan": {
-      "FixedPointMath": "0x9237492f368e9c3c2a4e47A6696a93f8f899Db67"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "none",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

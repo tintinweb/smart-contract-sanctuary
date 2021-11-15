@@ -819,19 +819,3 @@ contract POINT is ERC20Mintable, ERC20Detailed, ERC20Burnable {
     constructor() public ERC20Detailed("POINT Token", "POINT", 18) {}
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

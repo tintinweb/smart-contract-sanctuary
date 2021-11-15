@@ -1917,23 +1917,3 @@ contract PekingeseDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Pekingese.sol": {
-      "IterableMapping": "0x3e4c8d459ece3bad9aab8f4eb085c1f80f44864c"
-    }
-  }
-}

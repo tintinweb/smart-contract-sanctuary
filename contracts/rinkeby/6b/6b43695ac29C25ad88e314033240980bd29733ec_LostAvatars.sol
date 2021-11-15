@@ -1869,21 +1869,3 @@ contract LostAvatars is
 //https://github.com/ourzora/hollyplus-minting-contract/blob/main/contracts/HollyPlus.sol
 //https://github.com/dievardump/EIP2981-implementation
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}
