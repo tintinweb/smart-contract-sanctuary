@@ -18,7 +18,7 @@
 _______________
 
 <sup>
-last updated: Sun Nov 14 2021 18:40:22 GMT+0000 (Coordinated Universal Time)
+last updated: Mon Nov 15 2021 06:32:21 GMT+0000 (Coordinated Universal Time)
 </sup>
 
 ## Ethereum
@@ -272,36 +272,36 @@ last updated: Sun Nov 14 2021 18:40:22 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `70279`   
-**Unique Submissions (Name):** `40050`   
+**SourceUnits:** `70764`   
+**Unique Submissions (Name):** `40327`   
 
 **First Submission:** `7/6/2021`    
-**Most Recent Submission:** `11/13/2021`   
+**Most Recent Submission:** `11/14/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (28111)
-   * `0.8.4` (7775)
-   * `0.8.6` (4304)
-   * `0.5.16` (4042)
-   * `0.8.7` (3333)
-   * `0.7.6` (3331)
-   * `0.8.2` (2887)
-   * `0.7.4` (2472)
-   * `0.8.0` (2361)
-   * `0.5.17` (1796)   
+   * `0.6.12` (28285)
+   * `0.8.4` (7822)
+   * `0.8.6` (4314)
+   * `0.5.16` (4077)
+   * `0.8.7` (3371)
+   * `0.7.6` (3355)
+   * `0.8.2` (2903)
+   * `0.7.4` (2489)
+   * `0.8.0` (2374)
+   * `0.5.17` (1798)   
 
 **Names:**
-   * `Token` (3110)
-   * `BEP20Token` (2463)
-   * `IterableMapping` (1250)
-   * `Address` (793)
+   * `Token` (3133)
+   * `BEP20Token` (2491)
+   * `IterableMapping` (1254)
+   * `Address` (795)
    * `MasterChef` (462)
-   * `CoinToken` (422)
+   * `CoinToken` (428)
    * `ERC20` (330)
    * `Timelock` (154)
-   * `TokenBEP20` (136)
+   * `TokenBEP20` (137)
    * `Excavator` (130)   
 
 **Submission Dates:** 
@@ -366,8 +366,8 @@ last updated: Sun Nov 14 2021 18:40:22 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `133078`   
-**Unique Contract Names (submissions):** `58539`   
+**SourceUnits:** `133563`   
+**Unique Contract Names (submissions):** `58816`   
         
 
 -------
@@ -378,33 +378,33 @@ last updated: Sun Nov 14 2021 18:40:22 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `27098`   
-**Unique Submissions (Name):** `11529`   
+**SourceUnits:** `27249`   
+**Unique Submissions (Name):** `11595`   
 
 **First Submission:** `7/5/2021`    
-**Most Recent Submission:** `11/13/2021`   
+**Most Recent Submission:** `11/14/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (8683)
-   * `0.8.4` (3825)
-   * `0.8.7` (2937)
-   * `0.8.0` (2021)
-   * `0.8.6` (1707)
-   * `0.7.6` (1101)
-   * `0.8.9` (920)
+   * `0.6.12` (8703)
+   * `0.8.4` (3832)
+   * `0.8.7` (2983)
+   * `0.8.0` (2024)
+   * `0.8.6` (1725)
+   * `0.7.6` (1102)
+   * `0.8.9` (925)
    * `0.5.16` (838)
-   * `0.8.3` (810)
+   * `0.8.3` (819)
    * `0.5.17` (555)   
 
 **Names:**
    * `MasterChef` (819)
    * `Timelock` (390)
-   * `Token` (183)
+   * `Token` (185)
    * `ACMasterChef` (182)
-   * `Address` (162)
-   * `NFT` (157)
+   * `Address` (163)
+   * `NFT` (160)
    * `StrategyBase` (144)
    * `StrategyTwoAssets` (109)
    * `vaultBase` (106)
@@ -425,37 +425,37 @@ last updated: Sun Nov 14 2021 18:40:22 GMT+0000 (Coordinated Universal Time)
 
 ### Mumbai
 
-**SourceUnits:** `16920`   
-**Unique Submissions (Name):** `5444`   
+**SourceUnits:** `17046`   
+**Unique Submissions (Name):** `5488`   
 
 **First Submission:** `6/25/2021`    
-**Most Recent Submission:** `11/14/2021`   
+**Most Recent Submission:** `11/15/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.8.4` (2982)
-   * `0.8.0` (2248)
-   * `0.6.12` (2100)
-   * `0.8.7` (1740)
+   * `0.8.4` (3000)
+   * `0.8.0` (2265)
+   * `0.6.12` (2116)
+   * `0.8.7` (1759)
    * `0.7.6` (1216)
-   * `0.8.9` (1088)
-   * `0.8.6` (988)
-   * `0.5.16` (607)
-   * `0.6.6` (560)
-   * `0.8.2` (472)   
+   * `0.8.9` (1099)
+   * `0.8.6` (994)
+   * `0.5.16` (610)
+   * `0.6.6` (561)
+   * `0.8.2` (483)   
 
 **Names:**
-   * `MasterChef` (155)
-   * `Token` (115)
+   * `MasterChef` (156)
+   * `Token` (117)
    * `NFT` (104)
    * `CustomToken` (93)
-   * `Address` (87)
+   * `Address` (89)
    * `Bridge` (82)
    * `UniswapV2Router02` (70)
    * `UniswapV2Factory` (70)
    * `Presale` (66)
-   * `TestToken` (62)   
+   * `TestToken` (63)   
 
 **Submission Dates:** 
    * `7/12/2021` (391)
@@ -472,8 +472,8 @@ last updated: Sun Nov 14 2021 18:40:22 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `44018`   
-**Unique Contract Names (submissions):** `16973`   
+**SourceUnits:** `44295`   
+**Unique Contract Names (submissions):** `17083`   
         
 
 -------
