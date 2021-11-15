@@ -395,3 +395,8 @@
 {"address": "0xBDC592a0d69006Cb56248CD92e59F044a28570b4", "name": "ACLManager", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "11/11/2021"}
 {"address": "0x810be327d2fA51deF314a908F0e03EB1AB4b6AE0", "name": "MockAggregator", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/11/2021"}
 {"address": "0xE93bDC22C7b9b747Dd643Cb028235686aA429e62", "name": "MintableERC20", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/11/2021"}
+{"address": "0xC6c7e45658617238e8D2D2Bb16c08847Eb178639", "name": "Superseeder", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 13, "settings": "", "date": "11/15/2021"}
+{"address": "0xF91F8c2faaBcdF4e85Ef388833e1A329c3eeFA83", "name": "xPOP", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/14/2021"}
+{"address": "0x70c6062100b09af2ec63345cda372d52423be4ac", "name": "SpacePepeARBITRUM", "compiler": "0.8.7", "balance": "0.0025 ETH", "txcount": 4, "settings": "", "date": "11/14/2021"}
+{"address": "0xD97C8133633e9C9998A9648760b9c33d96F5Fd07", "name": "Margin", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/14/2021"}
+{"address": "0x006197cC4a60F9aFf7A32371Fd059f489B1489e9", "name": "Margin", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/14/2021"}
