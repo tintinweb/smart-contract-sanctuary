@@ -1380,21 +1380,3 @@ contract ItemStorage {
     event CreateItem(address indexed owner, uint256 indexed class, uint256 amount);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

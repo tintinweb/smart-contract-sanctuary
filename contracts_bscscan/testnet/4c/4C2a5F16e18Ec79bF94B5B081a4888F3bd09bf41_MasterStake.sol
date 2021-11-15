@@ -369,21 +369,3 @@ function updateFeeCollector(address _newAddress) external onlyAdmin {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "evmVersion": "berlin",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

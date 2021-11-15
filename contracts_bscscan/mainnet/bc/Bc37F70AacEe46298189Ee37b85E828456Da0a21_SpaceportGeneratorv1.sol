@@ -1213,25 +1213,3 @@ library TransferHelper {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/boss/Documents/Plasma-contracts-main-v2/Spaceport-IDO-LaunchPad/contracts/Spaceport-v1-periphery/contracts/SpaceportHelper.sol": {
-      "SpaceportHelper": "0x935621e928C95467FA3D8d61FaCBd3362f7d761C"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

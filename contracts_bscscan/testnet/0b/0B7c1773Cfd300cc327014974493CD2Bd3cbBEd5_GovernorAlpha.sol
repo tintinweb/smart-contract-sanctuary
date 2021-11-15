@@ -331,24 +331,3 @@ interface XVSInterface {
     function getPriorVotes(address account, uint blockNumber) external view returns (uint96);
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

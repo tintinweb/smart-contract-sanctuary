@@ -1591,25 +1591,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/Shared/rug-zombie-contracts/contracts/libraries/Percentages.sol": {
-      "Percentages": "0xcb22e1A2C00303EB855c5A5Aa0D6F3Ac62405370"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

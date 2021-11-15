@@ -2355,23 +2355,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/IterableMapping.sol": {
-      "IterableMapping": "0x123A5a6b09434025E0118EF3adb78BaA6B0376C3"
-    }
-  }
-}

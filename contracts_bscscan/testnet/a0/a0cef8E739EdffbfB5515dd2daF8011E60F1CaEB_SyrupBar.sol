@@ -1402,21 +1402,3 @@ contract BitsToken is BEP20('Metadapp Native Token', 'Bits') {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

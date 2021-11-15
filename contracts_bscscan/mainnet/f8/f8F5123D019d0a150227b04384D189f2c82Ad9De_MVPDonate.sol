@@ -1611,26 +1611,3 @@ contract MVPStake is ERC20("Stake MD", "ST-MD") {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "": {
-      "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-    }
-  }
-}

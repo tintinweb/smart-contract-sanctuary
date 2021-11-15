@@ -1961,25 +1961,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/macbookpro4eric/Projects/blockchain/testDividendPaying_rev/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x7A09b0C2abbd2b3fD4C3648a94B6ceca0dC3b01a"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -3676,29 +3676,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/IterableMapping.sol": {
-      "IterableMapping": "0xfa1152e75d5Ce85309Cf0F1fA898a76F70044464"
-    },
-    "contracts/IterableSummingTimeBasedQueue.sol": {
-      "IterableSummingTimeBasedQueue": "0xa3f38b8db71072096d89a987f175103c64ba611e"
-    },
-    "contracts/SummingPriorityQueue.sol": {
-      "SummingPriorityQueue": "0xa3f38b8db71072096d89a987f175103c64ba611e"
-    }
-  }
-}

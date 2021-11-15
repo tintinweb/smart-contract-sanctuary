@@ -1296,19 +1296,3 @@ contract NFTTOKEN is IERC721Mintable, IERC721Enumerable, IERC721Metadata {
     function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal virtual { }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

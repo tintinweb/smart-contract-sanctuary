@@ -1194,21 +1194,3 @@ contract SPACEMONKE is Context, IERC20, Ownable, TokenRecover {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -2143,21 +2143,3 @@ contract uziTokenCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Timed
  
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "petersburg",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

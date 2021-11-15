@@ -2160,26 +2160,3 @@ library SafeMath {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/IterableMapping.sol": {
-      "IterableMapping": "0x4b49ab57f568805d31fe748516d5cd3e06567709"
-    }
-  }
-}

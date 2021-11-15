@@ -2374,26 +2374,3 @@ contract BabyAlonzoDividendTracker is DividendPayingToken {
     }
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "libraries": {
-    "contracts/BabyAlonzo/IterableMapping.sol": {
-      "IterableMapping": "0x46932DA43E9273b7A6e50D3f81af5A83fd58658D"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

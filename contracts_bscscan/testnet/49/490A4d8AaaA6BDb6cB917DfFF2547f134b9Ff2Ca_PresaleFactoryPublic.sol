@@ -1967,25 +1967,3 @@ library ECDSA {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/Users/rita/Documents/less-contracts/contracts/libraries/Calculations.sol": {
-      "Calculations": "0xCB5Fd12e05788270AEF1af72C37743C78A637f24"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

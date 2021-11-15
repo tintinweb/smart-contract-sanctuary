@@ -3058,24 +3058,3 @@ contract PriceOracle {
     function getUnderlyingPrice(EToken eToken) external view returns (uint);
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1333,20 +1333,3 @@ contract AaveTokenV2 is GovernancePowerDelegationERC20, VersionedInitializable {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

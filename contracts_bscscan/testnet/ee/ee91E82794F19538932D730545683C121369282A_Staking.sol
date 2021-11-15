@@ -3513,28 +3513,3 @@ library EnumerableSet {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/Users/tepnik/Desktop/ydragon-contracts/contracts/lib/AssetLib.sol": {
-      "AssetLib": "0xf3D89bFBA3c07594E3bB1eaa5A4f4d407FAEACf6"
-    },
-    "/Users/tepnik/Desktop/ydragon-contracts/contracts/lib/AssetLib2.sol": {
-      "AssetLib2": "0xB3359017ab8C59f841E13ff3C442B05b5411f6e5"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

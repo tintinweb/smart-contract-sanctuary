@@ -1024,19 +1024,3 @@ interface IRewardToken {
     function transferReward(address stakingAddress, address staker, uint256 rewardAmount) external returns(bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

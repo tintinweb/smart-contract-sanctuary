@@ -2009,23 +2009,3 @@ contract DaddyCakeDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Greeter.sol": {
-      "IterableMapping": "0xe203EDaD8700d5cC9781BaB494E4ec47a1072ae3"
-    }
-  }
-}

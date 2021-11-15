@@ -1832,25 +1832,3 @@ contract bnbXToken is BEP20, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/yvesr/flashbnb/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xF1bD402282A4745Ef2049bD8b2Bbd226a15587E7"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1179,21 +1179,3 @@ interface INFTContract {
     function balanceOf(address _from) external returns (uint256);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -853,25 +853,3 @@ contract SIFTicketToken is ERC20Burnable, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/apple/Desktop/truffle-v5/blockchain/contracts/0-safe-math.sol": {
-      "SafeMath": "0x5c43D7d4782C4DC8b5D715779033F66C1B0cd536"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

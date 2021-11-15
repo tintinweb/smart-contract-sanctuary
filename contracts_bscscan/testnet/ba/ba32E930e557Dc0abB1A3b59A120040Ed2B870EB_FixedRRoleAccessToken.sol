@@ -1440,19 +1440,3 @@ contract FixedRRoleAccessToken is BEP20Base, FeeProcessor, AccessControlEnumerab
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

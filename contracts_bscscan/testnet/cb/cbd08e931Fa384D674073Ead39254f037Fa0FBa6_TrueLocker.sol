@@ -966,21 +966,3 @@ import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 
 abstract contract IBEP20 is ERC20 {}
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

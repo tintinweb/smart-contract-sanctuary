@@ -1976,25 +1976,3 @@ contract PassiveBUSDTestDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/C/Users/Chris/binance/contracts/PassiveBUSDTest.sol": {
-      "IterableMapping": "0x41937695B91cddcAfd0c4ed64aDfA05c0eeff9e6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

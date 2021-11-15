@@ -6863,25 +6863,3 @@ library ABDKMath64x64 {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/tamnguyen/Documents/project/xbn/cryptowars/contracts/pancakeUtils.sol": {
-      "PancakeUtil": "0x2ad4fe4dCA98C778d509EC775F3bd240cd8a52b6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -5080,19 +5080,3 @@ interface IBunicornsV2 {
     function setEnhancePowerByMigrator(uint256 _tokenId, uint8 _lowBurnPoints, uint8 _fourBurnPoints, uint8 _fiveBurnPoints) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

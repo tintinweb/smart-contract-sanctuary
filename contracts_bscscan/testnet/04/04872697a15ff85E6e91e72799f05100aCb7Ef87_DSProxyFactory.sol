@@ -224,28 +224,3 @@ contract ProxyRegistry {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200,
-    "details": {
-      "yul": true,
-      "deduplicate": true,
-      "cse": true,
-      "constantOptimizer": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

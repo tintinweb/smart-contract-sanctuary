@@ -3566,24 +3566,3 @@ interface IPriceOracleGetter {
   function getAssetPrice(address asset) external view returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/protocol/libraries/logic/GenericLogic.sol": {
-      "GenericLogic": "0x6e0717180ce911081ff82e2041c1b45f19ce8e27"
-    }
-  }
-}

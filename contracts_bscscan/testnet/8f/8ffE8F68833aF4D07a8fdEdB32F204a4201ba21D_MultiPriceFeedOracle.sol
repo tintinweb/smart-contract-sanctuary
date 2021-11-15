@@ -2528,22 +2528,3 @@ interface IAccessControl {
   function hasAccess(address user, bytes calldata data) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

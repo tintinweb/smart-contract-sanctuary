@@ -2438,26 +2438,3 @@ interface IAllowlist {
         returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/MathUtils.sol": {
-      "MathUtils": "0x1e8818d01f4913ca090e838b8f9480cfb8e03a5a"
-    }
-  }
-}

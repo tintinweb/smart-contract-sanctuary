@@ -1131,23 +1131,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/ProtoUtilV1.sol": {
-      "ProtoUtilV1": "0x4acbf26d53d2f58d7ae4f4352e289a0cb305bb13"
-    }
-  }
-}

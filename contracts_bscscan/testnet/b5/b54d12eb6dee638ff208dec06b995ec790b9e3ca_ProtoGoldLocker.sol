@@ -2510,29 +2510,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/locker/LockerConfig.sol": {
-      "LockerConfig": "0x4779595ea9c5fe9aa847bc24327d82bb99398d40"
-    },
-    "contracts/locker/LockerSafe.sol": {
-      "LockerSafe": "0xe7f8ad23a2110f4639e09ccb8ef8118b6e2cc51d"
-    }
-  }
-}

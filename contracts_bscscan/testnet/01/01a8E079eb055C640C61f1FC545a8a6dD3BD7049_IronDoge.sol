@@ -2434,25 +2434,3 @@ library SafeMathUint {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/contracts/IronDoge/IterableMapping.sol": {
-      "IterableMapping": "0xC50381d54f192e730799bdD84a2b3198c50193F6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

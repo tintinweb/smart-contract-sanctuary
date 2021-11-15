@@ -718,25 +718,3 @@ abstract contract Initializable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/Users/jan/My Drive/CodeShare/Wraith-Secure-V2-main/contracts/MerkleTreeWithHistory.sol": {
-      "Hasher": "0x6e3d17898AE2E3af8a877062EC654279d4A6bC23"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

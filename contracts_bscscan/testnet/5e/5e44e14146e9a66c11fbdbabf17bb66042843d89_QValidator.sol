@@ -9910,20 +9910,3 @@ interface IDashboard {
     function liquidationStates(uint page, uint resultPerPage) external view returns (LiquidationState[] memory, uint next);
 }
 
-{
-  "evmVersion": "istanbul",
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -2324,23 +2324,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/FeeFomula.sol": {
-      "FeeFomula": "0x994f1b024ac7e74e3048edbff99d503d18ce0de6"
-    }
-  }
-}

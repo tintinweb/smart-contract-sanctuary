@@ -2012,25 +2012,3 @@ contract SafeGainsReferral is ISafeGainsReferral, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1500
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/shahzeb/Desktop/projects/clients/dexter/safegains/contract/contracts/SafeGains.sol": {
-      "IterableMapping": "0x2226D4D99832872a7F15AacA75Ad72Cc0CAc08B2"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

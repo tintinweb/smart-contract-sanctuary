@@ -884,25 +884,3 @@ contract Mineable is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/contracts/Mineable.sol": {
-      "IterableMapping": "0x2B0913957bf347FA58c35b6b657Db5E8Ca7dd8a9"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

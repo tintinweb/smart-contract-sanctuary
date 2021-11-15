@@ -974,19 +974,3 @@ contract PriviTestToken is Context, IBEP20, Ownable, LGEWhitelisted, UsingLiquid
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

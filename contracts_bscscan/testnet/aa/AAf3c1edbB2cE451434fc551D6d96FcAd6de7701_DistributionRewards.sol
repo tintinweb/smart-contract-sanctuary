@@ -644,19 +644,3 @@ contract DistributionRewards is IStakingRewards, RewardsDistributionRecipient, R
     event RewardPaid(address indexed user, uint256 reward);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 150
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

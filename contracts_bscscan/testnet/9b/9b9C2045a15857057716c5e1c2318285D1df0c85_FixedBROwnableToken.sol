@@ -711,19 +711,3 @@ contract FixedBROwnableToken is BEP20Base, BEP20Burnable, BEP20Recoverable, FeeP
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

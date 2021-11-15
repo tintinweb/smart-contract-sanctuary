@@ -1958,25 +1958,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/C/Users/James/keieza/busd/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x80eBB8D3dB9EF7e140BCfc8BD3A9c90b03a1e87b"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

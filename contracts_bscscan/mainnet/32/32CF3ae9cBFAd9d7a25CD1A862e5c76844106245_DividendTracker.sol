@@ -1756,23 +1756,3 @@ abstract contract Ownable is Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/IterableMapping.sol": {
-      "IterableMapping": "0xd2a3b3ba66d468d10ca5012dc06fb2017a933e5c"
-    }
-  }
-}

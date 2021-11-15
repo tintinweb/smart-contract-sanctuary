@@ -933,25 +933,3 @@ abstract contract Ownable is Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/VerifySignatrure.sol": {
-      "VerifySignature": "0x57ABF76B368984B2DDEdA43276B1565aFE2B8370"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

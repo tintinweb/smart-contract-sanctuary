@@ -1171,25 +1171,3 @@ library Utils {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/contracts/Utils.sol": {
-      "Utils": "0x5f9E00eA4569e0E5Fa14cF3fC8FdA249c330cbD6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1932,19 +1932,3 @@ contract SyrupBar is BEP20('SyrupBar Token', 'SYRUP') {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 5000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

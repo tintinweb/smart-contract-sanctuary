@@ -3277,23 +3277,3 @@ interface IBEP20 {
     );
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/library/Iterable.sol": {
-      "IterableMapping": "0x97f13cd634bfae89de19950b2e0c22ec8366335c"
-    }
-  }
-}

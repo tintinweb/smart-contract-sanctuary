@@ -1218,25 +1218,3 @@ library TransferHelper {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/pavelbulochkin/plasmapay/Plasma-contracts/Spaceport-IDO-LaunchPad/contracts/Spaceport-v1-periphery/contracts/SpaceportHelper.sol": {
-      "SpaceportHelper": "0x00B9D55C472e98C04245e0Fd036EeAa6a022fE55"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

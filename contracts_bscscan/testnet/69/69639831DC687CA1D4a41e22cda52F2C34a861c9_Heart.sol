@@ -1062,25 +1062,3 @@ library Hasher {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "constantinople",
-  "libraries": {
-    "/Users/kevin/workspace/evrynet/contracts/vva-protocol/testnet/DRSv2/contracts/modules/book-room/Hasher.sol": {
-      "Hasher": "0x6d633F73D401aC6f6254580bD974a9b2e2992bdd"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

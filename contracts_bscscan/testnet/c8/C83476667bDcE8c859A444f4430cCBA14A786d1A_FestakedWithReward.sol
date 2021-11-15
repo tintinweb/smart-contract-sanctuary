@@ -1044,25 +1044,3 @@ library Address {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/I/applicature/staking1/contracts/Festaked.Library.sol": {
-      "FestakedLib": "0x8EB8aF1e9780699350407578DE6AF56bEF0b0a05"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

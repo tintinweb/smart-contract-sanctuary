@@ -1956,25 +1956,3 @@ abstract contract Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Project 2/DividendCoin/contracts/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xCBA9fdE4eE168D2fAdF474D83d41cd21895C8290"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

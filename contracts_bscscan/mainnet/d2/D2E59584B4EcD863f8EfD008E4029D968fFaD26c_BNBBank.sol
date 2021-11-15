@@ -2545,23 +2545,3 @@ library SafeMathInt {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/IterableMapping.sol": {
-      "IterableMapping": "0xd2a3b3BA66d468D10cA5012DC06Fb2017a933E5C"
-    }
-  }
-}

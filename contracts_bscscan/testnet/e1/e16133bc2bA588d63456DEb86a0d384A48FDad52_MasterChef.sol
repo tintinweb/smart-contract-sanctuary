@@ -1553,22 +1553,3 @@ contract BEP20 is Context, IBEP20, Ownable {
     function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual { }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

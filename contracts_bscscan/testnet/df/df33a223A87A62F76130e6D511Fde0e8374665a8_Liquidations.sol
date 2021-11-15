@@ -1513,25 +1513,3 @@ library SafeMath {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/SafeDecimalMath.sol": {
-      "SafeDecimalMath": "0x558Eac7DF1259D1ECb8E23Cde459417e5bDb53b0"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

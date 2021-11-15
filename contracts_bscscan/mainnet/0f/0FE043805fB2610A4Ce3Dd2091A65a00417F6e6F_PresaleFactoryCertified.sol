@@ -2172,28 +2172,3 @@ library ECDSA {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/Users/rita/Documents/less-contracts/contracts/libraries/Calculations.sol": {
-      "Calculations": "0x662aE45Fe98DFD93eA0EAB6adE75Fd42bFab48Fd"
-    },
-    "/Users/rita/Documents/less-contracts/contracts/libraries/Calculation1.sol": {
-      "Calculation1": "0x99Eb1a028A8e0c955AFCBD1e3030023a9010e53B"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

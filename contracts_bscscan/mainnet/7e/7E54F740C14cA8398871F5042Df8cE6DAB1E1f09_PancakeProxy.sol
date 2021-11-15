@@ -97,21 +97,3 @@ abstract contract Proxy {
     function _beforeFallback() internal virtual {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 10000
-  },
-  "evmVersion": "berlin",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

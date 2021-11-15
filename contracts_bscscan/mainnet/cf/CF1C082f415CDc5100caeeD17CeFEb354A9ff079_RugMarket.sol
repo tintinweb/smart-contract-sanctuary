@@ -347,25 +347,3 @@ abstract contract Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/Shared/rug-zombie-secondary-contracts/contracts/libraries/Percentages.sol": {
-      "Percentages": "0xAbb741072f003a908DFdc13C40B2Fc95423ba050"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

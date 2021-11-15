@@ -573,21 +573,3 @@ contract LFWToken is ERC20PresetFixedSupply {
     constructor() ERC20PresetFixedSupply("LegendFantasyWar-1", "LFW-1", 2000, msg.sender) {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -3257,23 +3257,3 @@ library AddressUpgradeable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libs/IterableMapping.sol": {
-      "IterableMapping": "0x573042e0a42910ca88742010ed73ad0926a7e3e3"
-    }
-  }
-}

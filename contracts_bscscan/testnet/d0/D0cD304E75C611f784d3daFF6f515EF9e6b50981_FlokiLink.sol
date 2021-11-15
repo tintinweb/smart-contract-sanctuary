@@ -2088,25 +2088,3 @@ contract FlokiLinkDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/C/Jay-Desktop-02282021/VSC/07112021/Contracts/flokilink/contracts/FlokiLink.sol": {
-      "IterableMapping": "0xcfaA2660a9916C3144E5E7d07AfA86B85c04a6d5"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

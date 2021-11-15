@@ -1944,19 +1944,3 @@ library console {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

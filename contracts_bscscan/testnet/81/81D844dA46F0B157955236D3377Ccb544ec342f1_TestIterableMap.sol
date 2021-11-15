@@ -81,23 +81,3 @@ contract TestIterableMap {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/TestIterableMap.sol": {
-      "IterableMapping1": "0x9362aad67c990d51e8356285a9486d0859937d05"
-    }
-  }
-}

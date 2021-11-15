@@ -766,21 +766,3 @@ Public License instead of this License.  But first, please read
 
 */
 
-{
-  "evmVersion": "byzantium",
-  "libraries": {},
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

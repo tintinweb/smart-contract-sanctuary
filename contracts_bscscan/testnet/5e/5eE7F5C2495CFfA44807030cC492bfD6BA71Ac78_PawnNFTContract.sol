@@ -4616,20 +4616,3 @@ interface IERC1155MetadataURIUpgradeable is IERC1155Upgradeable {
     function uri(uint256 id) external view returns (string memory);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

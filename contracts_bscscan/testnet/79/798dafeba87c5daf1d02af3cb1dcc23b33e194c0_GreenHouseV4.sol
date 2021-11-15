@@ -2873,19 +2873,3 @@ interface IOracle {
     function requestBurnTreeAvailable(uint256 requestId, address treeOwner) payable external;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

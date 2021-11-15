@@ -924,19 +924,3 @@ interface ICopycatReferral {
   function refMap(address wallet) external view returns(address);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 300
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

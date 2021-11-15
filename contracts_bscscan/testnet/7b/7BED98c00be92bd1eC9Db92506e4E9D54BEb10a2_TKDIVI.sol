@@ -2357,25 +2357,3 @@ contract TKDIVIDividendTracker is DividendPayingToken, Ownable {
     
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/fly/Desktop/dev/safeFlight/contracts/buybackTokenNoTxFeesBurnZeroFeeLimitsV9.sol": {
-      "IterableMapping": "0x95b7d77377e6a6481592D1392f1f7276B3EE5CDC"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

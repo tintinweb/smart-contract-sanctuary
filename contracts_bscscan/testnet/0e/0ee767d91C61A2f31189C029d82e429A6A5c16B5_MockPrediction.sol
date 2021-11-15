@@ -5160,29 +5160,3 @@ library console {
 
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/MockPrediction.sol:MockPrediction": {
-      "PredictionHelper": "0x8d5fC1bbd298F3B6ccE169475fC9be4067195785"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

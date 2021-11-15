@@ -2005,25 +2005,3 @@ contract TIKIDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/E/Task/ARC/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x51B66dD7794E06ACbeDb65c03EF818a1Fa4457bE"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -2584,25 +2584,3 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/D/DevelopContent/BabyWings/contracts/facades/IterableMapping.sol": {
-      "IterableMapping": "0x9916E0c3B38f4A48EC72AB13eae33Ab6a9e7C317"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

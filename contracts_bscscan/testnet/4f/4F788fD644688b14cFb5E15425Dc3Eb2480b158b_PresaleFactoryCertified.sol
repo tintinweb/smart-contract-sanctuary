@@ -2075,25 +2075,3 @@ library ECDSA {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/Users/rita/Documents/less-contracts/contracts/libraries/Calculations.sol": {
-      "Calculations": "0xC5D83626D9b1ecEFA4daa28a0e8C1935Ab55bf79"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

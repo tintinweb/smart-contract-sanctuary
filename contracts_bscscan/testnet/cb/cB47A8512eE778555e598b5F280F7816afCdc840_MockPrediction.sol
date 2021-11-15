@@ -3425,23 +3425,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/PredictionHelper.sol": {
-      "PredictionHelper": "0x954ae0eee2cd18c6119a6d33e422e9815d03d155"
-    }
-  }
-}

@@ -2031,25 +2031,3 @@ contract CTESTDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/BabyQueenDoge/contracts/CakeFactory.sol": {
-      "IterableMapping": "0x895F145a29Ce44Ba4936e0125dd1BC1e518e5971"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

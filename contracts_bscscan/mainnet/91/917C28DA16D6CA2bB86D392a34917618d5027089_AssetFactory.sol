@@ -2897,28 +2897,3 @@ library EnumerableSet {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/wsl-files/work/git/eth/ydragon-contracts/contracts/lib/AssetLib.sol": {
-      "AssetLib": "0xe1FB485484b8eb00b67cF74dE222B198D1285478"
-    },
-    "/wsl-files/work/git/eth/ydragon-contracts/contracts/lib/AssetLib2.sol": {
-      "AssetLib2": "0x7715884A75BBC694E6bb37F6Cd966Fa158E3E17f"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

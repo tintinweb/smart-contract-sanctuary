@@ -3157,23 +3157,3 @@ library AddressUpgradeable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libs/IterableMapping.sol": {
-      "IterableMapping": "0x0acccd1862d26e316389e4c175c6795db0fd6007"
-    }
-  }
-}

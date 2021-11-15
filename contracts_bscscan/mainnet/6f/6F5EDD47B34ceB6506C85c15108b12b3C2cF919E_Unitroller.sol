@@ -2991,24 +2991,3 @@ contract Unitroller is UnitrollerAdminStorage, EcoptrollerErrorReporter {
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

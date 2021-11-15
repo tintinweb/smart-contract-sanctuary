@@ -1938,23 +1938,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/FeeFomula.sol": {
-      "FeeFomula": "0x4815bbc04d5aa4c10c0f6f4251c286403751bd02"
-    }
-  }
-}

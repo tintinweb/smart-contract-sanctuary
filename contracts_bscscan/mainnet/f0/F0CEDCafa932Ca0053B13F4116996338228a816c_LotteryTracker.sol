@@ -362,19 +362,3 @@ contract LotteryTracker is ILotteryTracker, LotteryWinner, Ownable {
     event UpdateLambotteryAddress(address lambottery);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -34,26 +34,3 @@ struct UtilType {
     bool var2;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/Utils.sol": {
-      "Utils": "0x0b77b37e46ce7e1ab5946ef94f2b052b0a6e5862"
-    }
-  }
-}

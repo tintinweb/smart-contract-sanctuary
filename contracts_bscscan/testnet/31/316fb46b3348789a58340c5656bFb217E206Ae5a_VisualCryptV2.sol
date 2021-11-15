@@ -2860,23 +2860,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/ECDSA.sol": {
-      "ECDSA": "0xc9c765f65caa413e422cc703f4fc5ba675ddbdc2"
-    }
-  }
-}

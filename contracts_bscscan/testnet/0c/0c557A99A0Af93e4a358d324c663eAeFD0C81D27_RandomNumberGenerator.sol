@@ -1092,21 +1092,3 @@ interface ILinkTokenInterface {
     ) external returns (bool success);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

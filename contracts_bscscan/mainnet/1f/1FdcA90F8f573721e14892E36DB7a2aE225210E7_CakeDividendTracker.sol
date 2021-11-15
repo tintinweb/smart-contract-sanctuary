@@ -1375,23 +1375,3 @@ interface IERC20Metadata is IERC20 {
     function decimals() external view returns (uint8);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/IterableMapping.sol": {
-      "IterableMapping": "0x37913abfcc3715c22b6323b16eea5b74c37c0840"
-    }
-  }
-}

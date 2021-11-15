@@ -2073,25 +2073,3 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/contracts/Libraries/IterableMapping.sol": {
-      "IterableMapping": "0x31d1118F4Cdb41d60465a6dE37f85D9492BddBd1"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

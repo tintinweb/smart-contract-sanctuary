@@ -351,23 +351,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/lib/Heap.sol": {
-      "SummingPriorityQueue": "0x4b0876f5d03faa1e17939b6b032c811034538478"
-    }
-  }
-}

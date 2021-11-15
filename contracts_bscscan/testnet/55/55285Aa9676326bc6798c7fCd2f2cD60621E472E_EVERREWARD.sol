@@ -2480,25 +2480,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 2000
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Jay-Desktop-02282021/VSC/07112021/Contracts/EverReward/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x07926D7F75f6D8e5f4B98E859B2FbA443d796e74"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -4085,29 +4085,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/locker/LockerConfig.sol": {
-      "LockerConfig": "0xa610c088794d4743d70310c61f00e9cc2ae9b1b7"
-    },
-    "contracts/locker/LockerSafe.sol": {
-      "LockerSafe": "0xd061da2f4f580c3bcb475ebf6086032d69d1a6ee"
-    }
-  }
-}

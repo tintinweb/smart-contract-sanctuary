@@ -1602,23 +1602,3 @@ contract BConst {
     uint256 internal constant MAX_OUT_RATIO      = (BONE / 3) + 1 wei;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

@@ -1974,25 +1974,3 @@ contract TimeDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "petersburg",
-  "libraries": {
-    "/Users/smajser/Desktop/BSC/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xBe5Fc05d3fFFDea9817F1af0019D2694D6cC6368"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

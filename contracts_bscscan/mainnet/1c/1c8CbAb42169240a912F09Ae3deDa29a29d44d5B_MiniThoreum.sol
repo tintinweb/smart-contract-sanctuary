@@ -1890,25 +1890,3 @@ contract MiniThoreum is ERC20, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/yvesr/minithoreum/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xF24E4f8eF724326c450Fb2f3aaE43DC907A637a7"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

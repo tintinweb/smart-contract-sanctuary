@@ -647,21 +647,3 @@ interface iAirdropsApp {
 	function addAllocation(address userAddress, uint256 allocateValue, uint256 _allocationPercent) external payable;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

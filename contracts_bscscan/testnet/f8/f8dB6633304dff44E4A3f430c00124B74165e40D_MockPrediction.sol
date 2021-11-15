@@ -3456,29 +3456,3 @@ contract Ticket is ERC721, Ownable {
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {
-    "contracts/MockPrediction.sol:MockPrediction": {
-      "PredictionHelper": "0x19D63aE19175B30B649D4cE5f7e3a321F053d600"
-    }
-  },
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

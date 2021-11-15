@@ -3535,26 +3535,3 @@ interface IAllowlist {
         returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/SwapUtils.sol": {
-      "SwapUtils": "0xac28d6a21e36241e4eb8c07357071d0a9a3c35ac"
-    }
-  }
-}

@@ -1886,23 +1886,3 @@ library IterableMapping {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/library/IterableMapping.sol": {
-      "IterableMapping": "0x52385A14715F492b35A6901ef2Cb71B91A5b352f"
-    }
-  }
-}

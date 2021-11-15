@@ -1961,25 +1961,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/C/Users/James/Documents/Project Daddy Ethereum/Smart Contract/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xb67566DeD739183C7F034F3Ad989D6Bd368ED553"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -815,19 +815,3 @@ contract CappedMBOwnableToken is BEP20Base, BEP20Capped, BEP20Mintable, BEP20Bur
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

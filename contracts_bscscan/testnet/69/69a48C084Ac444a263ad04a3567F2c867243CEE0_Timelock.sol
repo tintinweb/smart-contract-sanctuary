@@ -322,19 +322,3 @@ contract Timelock {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 300
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

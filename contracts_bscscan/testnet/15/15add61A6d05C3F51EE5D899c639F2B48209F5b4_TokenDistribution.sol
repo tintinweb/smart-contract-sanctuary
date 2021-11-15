@@ -1809,25 +1809,3 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/tamnguyen/Documents/project/xbn/xblade-token-distribution/contracts/lib/Utils.sol": {
-      "Utils": "0x25D78864a984b6234DD1934533d3DFB1A2eD86dA"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

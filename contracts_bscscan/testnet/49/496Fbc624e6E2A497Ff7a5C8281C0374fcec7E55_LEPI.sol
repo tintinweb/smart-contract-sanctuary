@@ -2372,25 +2372,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 800
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/D/SmartContracts/LEPI/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x03E4D4aF0F105E02bdA1106548b344De08dcb6A6"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

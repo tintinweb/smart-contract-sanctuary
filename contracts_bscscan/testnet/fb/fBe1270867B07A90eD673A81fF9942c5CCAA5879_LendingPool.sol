@@ -11775,30 +11775,3 @@ contract LendingRateOracle is ILendingRateOracle, Ownable {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/protocol/libraries/logic/ReserveLogic.sol": {
-      "ReserveLogic": "0xfd16fcd4331ec71f318d08a9230891afde54cfc3"
-    },
-    "contracts/protocol/libraries/logic/ValidationLogic.sol": {
-      "ValidationLogic": "0x0b70cc86ce21828d498b4d00bf132f0e00202a67"
-    }
-  }
-}

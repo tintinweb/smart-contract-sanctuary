@@ -501,25 +501,3 @@ library ParamManager {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/libs/ParamManager.sol": {
-      "ParamManager": "0xfA9BD2d7457A3ffD8c8010b3bB4d7c113B9B2b85"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

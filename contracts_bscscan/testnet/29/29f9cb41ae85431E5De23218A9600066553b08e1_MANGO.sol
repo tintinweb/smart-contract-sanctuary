@@ -1196,23 +1196,3 @@ contract MANGO is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/TAR.sol": {
-      "Utils": "0xd9145cce52d386f254917e481eb44e9943f39138"
-    }
-  }
-}

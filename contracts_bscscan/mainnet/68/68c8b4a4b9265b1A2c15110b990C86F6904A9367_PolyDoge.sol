@@ -351,18 +351,3 @@ contract PolyDoge is Context, IERC20, IERC20Metadata, Ownable {
     ) internal virtual {}
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

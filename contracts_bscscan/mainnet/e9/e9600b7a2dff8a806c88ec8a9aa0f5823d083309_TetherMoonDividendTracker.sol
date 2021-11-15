@@ -1599,19 +1599,3 @@ interface IBEP20 is IERC20, IERC20Metadata {
     function getOwner() external view returns (address);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

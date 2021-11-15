@@ -124,20 +124,3 @@ contract TimeLockedWalletFactory {
     event Created(address wallet, address from, address to, uint256 createdAt, uint256 unlockDate, uint256 amount);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -684,23 +684,3 @@ library IterableMapping {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/library/Iterable.sol": {
-      "IterableMapping": "0x91282a04d174873c3e6c4798850acb14b1189cc7"
-    }
-  }
-}

@@ -1963,25 +1963,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/Users/smajser/Desktop/BSC/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x4C4AB42899562DB9A92E2D7D6764d0a2E64180Ba"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

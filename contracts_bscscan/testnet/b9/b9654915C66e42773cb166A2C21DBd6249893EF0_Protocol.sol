@@ -1222,26 +1222,3 @@ abstract contract Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/ProtoUtilV1.sol": {
-      "ProtoUtilV1": "0xe1aa8e7df01dd3b8cfada953b6d01c499b97b0c2"
-    },
-    "contracts/libraries/StoreKeyUtil.sol": {
-      "StoreKeyUtil": "0x74f9ea872054ff6df2f825fd39acb681ae7c2950"
-    }
-  }
-}

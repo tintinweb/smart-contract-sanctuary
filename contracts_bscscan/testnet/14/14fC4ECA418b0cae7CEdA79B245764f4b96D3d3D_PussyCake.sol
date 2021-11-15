@@ -1861,23 +1861,3 @@ contract PussyCakeDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/PussyCake.sol": {
-      "IterableMapping": "0x0a81cCc8EB072aFCe03eA552fFc2c17907Ee8a4F"
-    }
-  }
-}

@@ -1184,23 +1184,3 @@ contract AKPv4 is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/TAR.sol": {
-      "Utils": "0x45955de354f1e724c191f620dba8c1f486321a72"
-    }
-  }
-}

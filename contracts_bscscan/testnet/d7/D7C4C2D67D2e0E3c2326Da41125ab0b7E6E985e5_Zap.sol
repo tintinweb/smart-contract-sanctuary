@@ -4832,32 +4832,3 @@ contract ZapGetters {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/zap-miner/libraries/ZapStake.sol": {
-      "ZapStake": "0x2887eaa70ff182e5ae2c00ca20822eb7074b921e"
-    },
-    "contracts/zap-miner/libraries/ZapDispute.sol": {
-      "ZapDispute": "0x768738202b40c116aa860caeb1bb94bc70aae113"
-    },
-    "contracts/zap-miner/libraries/ZapLibrary.sol": {
-      "ZapLibrary": "0x308d9da0ea23b2615f16c0e3f4d70f75caeff6c5"
-    }
-  }
-}

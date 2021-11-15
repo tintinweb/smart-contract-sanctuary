@@ -1454,25 +1454,3 @@ contract FoxToken is BasicToken {
     constructor() BasicToken("FOX Token", "FOX") public {}
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

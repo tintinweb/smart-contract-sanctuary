@@ -1549,21 +1549,3 @@ struct CharacterInfo {
   uint256 elementType; // uint8; 1 - fire; 2 - water; 3 - earth; 4 - wood; 5 - metal
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

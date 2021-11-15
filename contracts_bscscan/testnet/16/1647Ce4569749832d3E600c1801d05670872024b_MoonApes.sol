@@ -1867,25 +1867,3 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {
-    "/home/TikiForks/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x8bdf881d7e49EF52F86E5014Ad58094aebaFA00e"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -3216,23 +3216,3 @@ contract ERC20 is Context, IERC20 {
     function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual { }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/SwapUtils.sol": {
-      "SwapUtils": "0xb5d3b0c9083c58ca8a55a8ce9f36ca54b18b46ec"
-    }
-  }
-}

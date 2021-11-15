@@ -10314,29 +10314,3 @@ contract FCXAuth {
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000,
-    "details": {
-      "yul": true,
-      "deduplicate": true,
-      "cse": true,
-      "constantOptimizer": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

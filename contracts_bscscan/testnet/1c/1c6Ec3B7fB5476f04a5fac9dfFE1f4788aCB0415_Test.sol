@@ -2441,25 +2441,3 @@ contract Test is Context, IERC20, Ownable {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/fly/Desktop/dev/safeFlight/contracts/task1DiviSetUser.sol": {
-      "IterableMapping": "0x79811B654C506A1F0fb9e8f99dDc1494F98eb39E"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

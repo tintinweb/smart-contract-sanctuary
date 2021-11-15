@@ -2087,25 +2087,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "petersburg",
-  "libraries": {
-    "/C/Users/NickBack/Desktop/project2/contracts/IterableMapping.sol": {
-      "IterableMapping": "0x4c906fdCB2c9349ef9c3337580e7B6E3421dBa0F"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -2197,25 +2197,3 @@ contract BabyTezosDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/home/BabyTezos/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xD7E8658bA6dFc7b7814F33c4a0c8Cdb043De043e"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

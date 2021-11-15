@@ -2978,19 +2978,3 @@ interface IERC1155Proxy is IERC1155Upgradeable {
     function proxyRegistryAddressRevoke() external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

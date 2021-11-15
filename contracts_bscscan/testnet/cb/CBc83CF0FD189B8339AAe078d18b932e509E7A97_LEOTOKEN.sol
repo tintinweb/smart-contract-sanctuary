@@ -1446,23 +1446,3 @@ contract LEOTOKEN is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/LeoToken.sol": {
-      "Utils": "0x91ea3595917bb32cf95c5f66f01805bbb4b5c805"
-    }
-  }
-}

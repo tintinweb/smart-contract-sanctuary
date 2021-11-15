@@ -579,19 +579,3 @@ interface IPancakeFactory {
     function getPair(address tokenA, address tokenB) external view returns (address pair);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

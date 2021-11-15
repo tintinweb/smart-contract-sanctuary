@@ -624,25 +624,3 @@ contract OwnableERC20 is ERC20, Ownable {
     }
 }
 
-{
-  "evmVersion": "berlin",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 2
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

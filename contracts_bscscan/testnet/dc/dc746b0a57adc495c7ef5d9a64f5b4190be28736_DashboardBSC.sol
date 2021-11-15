@@ -8617,20 +8617,3 @@ interface IDashboard {
     function statusOf(address account, address[] memory markets) external view returns (LockerData memory, MarketData[] memory);
 }
 
-{
-  "evmVersion": "istanbul",
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1883,25 +1883,3 @@ interface IERC20Metadata is IERC20 {
     function decimals() external view returns (uint8);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 150
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/wsl-files/work/git/eth/ydragon-contracts/contracts/lib/AssetLib.sol": {
-      "AssetLib": "0x9a94D6a6e311a1ccbc0E52D655753984FB71f6Ee"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

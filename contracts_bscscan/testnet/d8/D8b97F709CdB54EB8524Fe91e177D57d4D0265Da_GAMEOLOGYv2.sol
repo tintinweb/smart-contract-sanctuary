@@ -2318,25 +2318,3 @@ contract GAMEOLOGYv2DividendTracker is DividendPayingToken, Ownable {
     
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/fly/Desktop/dev/safeFlight/contracts/GAMEOLOGYv2+socials.sol": {
-      "IterableMapping": "0xCF6459315395bd336124A1fdd9bf5F1f39386b2E"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

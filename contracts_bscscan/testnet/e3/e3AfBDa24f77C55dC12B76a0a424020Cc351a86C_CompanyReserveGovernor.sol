@@ -3400,19 +3400,3 @@ abstract contract IGovernorCompatibilityBravo is IGovernor {
     function proposalThreshold() public view virtual returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

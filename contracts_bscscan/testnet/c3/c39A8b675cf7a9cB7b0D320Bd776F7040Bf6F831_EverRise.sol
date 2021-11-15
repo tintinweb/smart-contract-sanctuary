@@ -963,19 +963,3 @@ contract EverRise is Context, IERC20, Ownable {
     receive() external payable {}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 99999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

@@ -1939,25 +1939,3 @@ contract BabyBakeDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/D/ff/contracts/Ass.sol": {
-      "IterableMapping": "0xeE5fe198209575fb6c6770EF214C13A00Dfa2b16"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -2282,25 +2282,3 @@ library StringUtils{
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/alex/Projects/garfi/smartcontracts/contracts/lib/StringUtils.sol": {
-      "StringUtils": "0x670A2d570ea64777c914631d1f8EA962eb65a3bD"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

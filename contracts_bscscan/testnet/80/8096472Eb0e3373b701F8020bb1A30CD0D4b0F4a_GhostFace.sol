@@ -1455,23 +1455,3 @@ contract GhostFace is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/GhostFace.sol": {
-      "Utils": "0x93ebad311a3d637c3e82eb550f5fd41b21dce168"
-    }
-  }
-}

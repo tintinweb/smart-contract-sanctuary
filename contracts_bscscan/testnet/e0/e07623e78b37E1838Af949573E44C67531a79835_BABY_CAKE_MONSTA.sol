@@ -2016,25 +2016,3 @@ library SafeMathUint {
   }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "byzantium",
-  "libraries": {
-    "/E/work_data/blockchain/Cake_monster/contracts/utils/IterableMapping.sol": {
-      "IterableMapping": "0xAcA6fE299BBc1B9C6c19E324BEE2831Ad3D5506E"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

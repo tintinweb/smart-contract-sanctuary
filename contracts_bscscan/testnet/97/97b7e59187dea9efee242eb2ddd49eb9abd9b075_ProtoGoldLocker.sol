@@ -4139,29 +4139,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/locker/LockerConfig.sol": {
-      "LockerConfig": "0x0e90dce9112a0e4743db62e3f9f07b446d16510c"
-    },
-    "contracts/locker/LockerSafe.sol": {
-      "LockerSafe": "0x09f8b2344859aa2d53aecb8ab35732d736842bb2"
-    }
-  }
-}

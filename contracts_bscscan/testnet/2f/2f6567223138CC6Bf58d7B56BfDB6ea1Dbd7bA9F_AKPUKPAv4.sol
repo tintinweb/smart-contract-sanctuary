@@ -1179,23 +1179,3 @@ contract AKPUKPAv4 is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/TAR.sol": {
-      "Utils": "0xcf183eebc46a1bde100da2cbd1596cf5b29c9802"
-    }
-  }
-}

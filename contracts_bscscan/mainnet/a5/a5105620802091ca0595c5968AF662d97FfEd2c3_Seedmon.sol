@@ -1607,19 +1607,3 @@ abstract contract OwnableUpgradeable is Initializable, ContextUpgradeable {
     uint256[49] private __gap;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

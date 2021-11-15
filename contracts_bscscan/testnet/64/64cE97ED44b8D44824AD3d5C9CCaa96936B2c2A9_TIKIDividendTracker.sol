@@ -2040,23 +2040,3 @@ contract TIKIDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "dist/TIKI.sol": {
-      "IterableMapping": "0x4cd1239812e9f22e9521dfc9993ad4751ad9167f"
-    }
-  }
-}

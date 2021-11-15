@@ -2343,25 +2343,3 @@ interface ILotteryOffice {
     function getLockedAmountPercentage() external view returns (uint256 lockedAmountPercentage);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 9999
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/LotteryUtils.sol": {
-      "LotteryUtils": "0xbEa9A4ce0e2C865fE4B84f6F39A523A7f23E8ffF"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

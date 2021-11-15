@@ -1832,25 +1832,3 @@ contract KingGameFinance is BEP20, Ownable {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/yvesr/flashbnb/contracts/flashbnb.sol": {
-      "IterableMapping": "0x5C7faD97F7D832A1d53ccaF1BFb6935390A62A44"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

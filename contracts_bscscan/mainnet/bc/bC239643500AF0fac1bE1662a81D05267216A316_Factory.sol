@@ -536,21 +536,3 @@ interface ISimpleUniswapOracle {
 	function getResult(address uniswapV2Pair) external returns (uint224 price, uint32 T);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -12421,27 +12421,3 @@ contract MockParaSwapAugustusRegistry is IParaSwapAugustusRegistry {
   }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/protocol/libraries/logic/ReserveLogic.sol": {
-      "ReserveLogic": "0x6f20ca336853f2be305d649af97b4b1e66f29b85"
-    },
-    "contracts/protocol/libraries/logic/ValidationLogic.sol": {
-      "ValidationLogic": "0x21f0f6e7d36054c67f91c6cbad358063b37326ec"
-    }
-  }
-}

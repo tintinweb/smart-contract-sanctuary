@@ -1214,23 +1214,3 @@ contract AKP is Context, IBEP20, Ownable, ReentrancyGuard {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/TAR.sol": {
-      "Utils": "0x75132d1fa536a456e772c67ce6b849cdd33ee0cd"
-    }
-  }
-}

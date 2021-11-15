@@ -1366,25 +1366,3 @@ contract PandoraERC1155 is ERC1155, SafeOwnable {
     }
 }
 
-{
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

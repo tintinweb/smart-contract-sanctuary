@@ -3683,28 +3683,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 150
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/wsl-files/work/git/eth/ydragon-contracts/contracts/lib/AssetLib.sol": {
-      "AssetLib": "0x3e471D1D39bf465663AFB7B7d0dA94A8608E8908"
-    },
-    "/wsl-files/work/git/eth/ydragon-contracts/contracts/lib/AssetLib2.sol": {
-      "AssetLib2": "0x8686C885b639D4fcB16b4eDeD06E5E807b431f08"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

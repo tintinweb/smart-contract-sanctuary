@@ -438,19 +438,3 @@ interface IDetailedERC20 is IERC20Upgradeable {
   function decimals() external returns (uint8);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

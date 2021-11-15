@@ -44,25 +44,3 @@ library ConvertLib{
 	}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/ConvertLib.sol": {
-      "ConvertLib": "0x1A4A876e1188CdA973750533ead9D3C016305d0a"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

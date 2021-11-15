@@ -2135,32 +2135,3 @@ interface IProtoDistribution {
     function initProtoDistribution(uint256 currentRate) external;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/ProtoBEP20V2.sol": {
-      "ProtoBEP20V2": "0xc256959b867e19af4bd172f03288bc20065aff28"
-    },
-    "contracts/ProtoDistribution.sol": {
-      "ProtoDistribution": "0x86963486436df117c344dcc2f8beab4a2f15e982"
-    },
-    "contracts/ProtoType.sol": {
-      "ProtoType": "0x69955a2149991338888cb74a7d6839b268611576"
-    }
-  }
-}

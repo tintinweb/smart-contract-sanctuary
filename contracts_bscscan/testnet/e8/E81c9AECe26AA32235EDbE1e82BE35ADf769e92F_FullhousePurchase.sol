@@ -2546,19 +2546,3 @@ interface IERC1155 {
   function isApprovedForAll(address _owner, address _operator) external view returns (bool isOperator);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 10
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

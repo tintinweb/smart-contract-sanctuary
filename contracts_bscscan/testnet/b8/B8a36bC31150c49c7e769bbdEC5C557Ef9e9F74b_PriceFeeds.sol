@@ -818,22 +818,3 @@ interface IWbase {
     function withdraw(uint256 wad) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

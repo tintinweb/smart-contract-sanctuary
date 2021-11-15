@@ -1431,19 +1431,3 @@ contract MuskyUP is IBEP20, RSunAuth {
     event SendMarketingFeeFailure(uint256 amount, bytes data);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

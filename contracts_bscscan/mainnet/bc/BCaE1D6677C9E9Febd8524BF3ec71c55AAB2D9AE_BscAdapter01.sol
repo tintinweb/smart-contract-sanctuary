@@ -2491,22 +2491,3 @@ contract BscAdapter01 is IAdapter, UniswapV2, Curve, WethExchange, CurveV1ForkAd
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

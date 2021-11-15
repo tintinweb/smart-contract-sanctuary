@@ -1636,21 +1636,3 @@ interface IERC721Upgradeable is IERC165Upgradeable {
     function safeTransferFrom(address from, address to, uint256 tokenId, bytes calldata data) external;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

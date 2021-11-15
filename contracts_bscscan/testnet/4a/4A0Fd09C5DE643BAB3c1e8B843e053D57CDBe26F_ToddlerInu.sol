@@ -1683,20 +1683,3 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
 
-{
-  "evmVersion": "istanbul",
-  "optimizer": {
-    "enabled": true,
-    "runs": 1000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

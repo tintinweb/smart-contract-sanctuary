@@ -1496,25 +1496,3 @@ abstract contract Context {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 1
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xCe3716888e7251B6b793Bf9Be8f29ACe8C77F01a"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

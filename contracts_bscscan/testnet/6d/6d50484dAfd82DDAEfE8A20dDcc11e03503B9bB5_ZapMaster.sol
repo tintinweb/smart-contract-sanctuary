@@ -2174,26 +2174,3 @@ library ZapDispute {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/zap-miner/libraries/ZapStake.sol": {
-      "ZapStake": "0x8C269d8D5979be8b8e06785A293C9E3d254f91EE"
-    }
-  }
-}

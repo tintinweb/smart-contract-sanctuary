@@ -1936,25 +1936,3 @@ contract ChocolateCakeDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/C/Users/yvesr/ChocolateCacke/contracts/IterableMapping.sol": {
-      "IterableMapping": "0xb0120a55E9aecbEfefF4A63A2418B4d7bccAD68F"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

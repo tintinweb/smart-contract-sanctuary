@@ -2035,25 +2035,3 @@ contract TESTCAKEDividendTracker is Ownable, DividendPayingToken {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/contract.sol": {
-      "IterableMapping": "0x8AbfE365A78249dce0e36ede673c4b85739e5e35"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

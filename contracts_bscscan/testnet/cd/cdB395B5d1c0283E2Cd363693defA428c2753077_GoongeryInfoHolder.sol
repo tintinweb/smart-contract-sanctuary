@@ -4142,23 +4142,3 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libs/GoongeryHelper.sol": {
-      "GoongeryHelper": "0x7cb3c9f966f8e3eaacee7f6d6dab81ee38ff97ad"
-    }
-  }
-}

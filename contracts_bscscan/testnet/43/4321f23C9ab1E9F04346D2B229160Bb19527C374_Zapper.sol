@@ -564,26 +564,3 @@ interface IHyperswapRouter01 {
     function getAmountsIn(uint amountOut, address[] calldata path) external view returns (uint[] memory amounts);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/common/CalculateSwap.sol": {
-      "CalculateSwap": "0x14761096f184f83d4e175be2bd1d441b43f0dc38"
-    }
-  }
-}

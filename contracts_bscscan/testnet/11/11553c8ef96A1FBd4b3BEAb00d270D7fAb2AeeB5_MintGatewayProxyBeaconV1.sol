@@ -1283,25 +1283,3 @@ contract LockGatewayProxyBeaconV1 is ProxyBeaconV1 {
     constructor(address implementation, address adminAddress) ProxyBeaconV1(implementation, adminAddress) {}
 }
 
-{
-  "evmVersion": "london",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

@@ -1891,25 +1891,3 @@ contract BlueHorizonNFT is Ownable, AccessControl, ReentrancyGuard, ERC721, ERC7
     }
 }
 
-{
-  "evmVersion": "london",
-  "libraries": {},
-  "metadata": {
-    "bytecodeHash": "ipfs",
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 999999
-  },
-  "remappings": [],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

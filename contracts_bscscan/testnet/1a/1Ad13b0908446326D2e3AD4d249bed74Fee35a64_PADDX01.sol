@@ -2405,25 +2405,3 @@ contract PADDX01 is Context, IERC20, Ownable {
 
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 999
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/Users/fly/Desktop/dev/safeFlight/contracts/PADDX01UpdatedFixed.sol": {
-      "IterableMapping": "0x8cfB5CE7Bf76480C08A62fD713f37aBde9741aF3"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

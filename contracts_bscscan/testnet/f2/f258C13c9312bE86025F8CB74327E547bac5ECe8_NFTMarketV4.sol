@@ -7135,29 +7135,3 @@ contract BasicToken is ERC20Upgradeable {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/libraries/AskHelper.sol": {
-      "AskHelper": "0x3c8a288bc664466b9b1bf756c83ab0949e35a0f9"
-    },
-    "contracts/libraries/TradeHelper.sol": {
-      "TradeHelper": "0xb630b212dd9481a79f890589e3b140af9955ddcf"
-    }
-  }
-}

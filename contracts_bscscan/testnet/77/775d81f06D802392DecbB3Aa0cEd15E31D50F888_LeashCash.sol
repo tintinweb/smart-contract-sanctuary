@@ -2708,23 +2708,3 @@ contract LeashCash is Context, IBEP20, Ownable, ReentrancyGuard {
 	}
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/LeashCash.sol": {
-      "Utils": "0x2666f7e69274b8f1a96acaf1c4763372de0621e9"
-    }
-  }
-}

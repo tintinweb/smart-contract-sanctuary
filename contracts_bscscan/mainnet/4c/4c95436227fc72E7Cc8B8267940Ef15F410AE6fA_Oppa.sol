@@ -2741,23 +2741,3 @@ interface IPancakeRouter01 {
         returns (uint256[] memory amounts);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/library/Iterable.sol": {
-      "IterableMapping": "0x68d2204b7548c6506816b3584418953b6d7dad41"
-    }
-  }
-}

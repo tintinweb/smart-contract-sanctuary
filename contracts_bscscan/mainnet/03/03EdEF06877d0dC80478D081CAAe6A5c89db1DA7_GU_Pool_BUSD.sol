@@ -3058,25 +3058,3 @@ interface ISynth {
   function wbnb_address() external view returns (address);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/contracts/anchor/pool/PoolLibrary.sol": {
-      "PoolLibrary": "0x2AEa18b53a39b887e6d5CdB82219d12c5824BA08"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}
