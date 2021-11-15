@@ -4781,26 +4781,3 @@ interface ISetValuer {
     function calculateSetTokenValuation(ISetToken _setToken, address _quoteAsset) external view returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/protocol/integration/lib/AaveV2.sol": {
-      "AaveV2": "0xd6c648aae06b23fc5fc9904ef4b8d49d9d25845a"
-    }
-  }
-}

@@ -1661,21 +1661,3 @@ contract ChildPUSDT is ChildMintableERC20 {
     constructor(address childChainManager) public ChildMintableERC20('ChildPUSDT', 'pUSDT', 18, childChainManager) {}
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

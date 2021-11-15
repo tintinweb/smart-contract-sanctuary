@@ -2589,25 +2589,3 @@ library UIntArrays {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 50
-  },
-  "evmVersion": "london",
-  "libraries": {
-    "/contracts/UIntArrays.sol": {
-      "UIntArrays": "0xf0a30916aeef3f86a0939A44f1A0388DCC8eE443"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

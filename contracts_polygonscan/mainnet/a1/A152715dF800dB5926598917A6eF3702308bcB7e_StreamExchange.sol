@@ -6980,23 +6980,3 @@ interface ISETHCustom {
     function downgrade(uint256 amount) external;
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/StreamExchangeHelper.sol": {
-      "StreamExchangeHelper": "0xb330aa67a796ce740dfa41bf6e89ae4d0642eed3"
-    }
-  }
-}

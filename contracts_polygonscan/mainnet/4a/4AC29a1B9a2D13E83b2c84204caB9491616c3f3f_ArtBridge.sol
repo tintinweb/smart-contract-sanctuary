@@ -1743,26 +1743,3 @@ abstract contract Ownable is Context {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/libraries/BridgeBeams.sol": {
-      "BridgeBeams": "0xcf5d1a2189c102fa90e4fc84ac5053326a1997a1"
-    }
-  }
-}

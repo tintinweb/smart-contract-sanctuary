@@ -1422,19 +1422,3 @@ contract KushoPairMediumRiskV1 is ERC20, BoringOwnable, IMasterContract {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 350
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

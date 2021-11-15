@@ -1788,19 +1788,3 @@ interface IRewarder {
   external view returns (uint256 accSushiPerShare, uint256 lastRewardBlock, uint256 allocPoint);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

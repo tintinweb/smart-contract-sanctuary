@@ -7009,23 +7009,3 @@ interface IWETH9 {
     returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/StreamExchangeHelper.sol": {
-      "StreamExchangeHelper": "0x2f1a0d48d388e1f2fcfaecb2ca46f688143cdc49"
-    }
-  }
-}

@@ -637,21 +637,3 @@ string constant CommunityTokenTypeQuadratic = "QUADRATIC";
 string constant CommunityTokenTypeExponential = "EXPONENTIAL";
 string constant CommunityTokenTypeSigmoid = "SIGMOID";
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "berlin",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

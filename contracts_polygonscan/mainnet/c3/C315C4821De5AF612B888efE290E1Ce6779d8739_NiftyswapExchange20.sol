@@ -5211,21 +5211,3 @@ contract ERC20WrapperMock is MetaERC20Wrapper {
 
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100000,
-    "details": {
-      "yul": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

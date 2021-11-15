@@ -1089,21 +1089,3 @@ contract Vault is IVault, IRewardsDistributionRecipient, ReentrancyGuard, Ownabl
     event Recovered(address token, uint256 amount);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

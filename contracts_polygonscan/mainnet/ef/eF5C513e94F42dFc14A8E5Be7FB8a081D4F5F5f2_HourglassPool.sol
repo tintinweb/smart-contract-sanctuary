@@ -1279,21 +1279,3 @@ contract HourglassPool is IHourglassPool, ERC20, ReentrancyGuard, Ownable {
     event Unpause(address indexed underlying);
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

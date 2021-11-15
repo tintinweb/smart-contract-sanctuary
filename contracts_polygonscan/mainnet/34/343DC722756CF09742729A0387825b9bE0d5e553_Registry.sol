@@ -549,21 +549,3 @@ interface IRegistry{
     event ExtensionInfoLocationChanged(string indexed extensionName, bytes32 indexed newLocation);
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

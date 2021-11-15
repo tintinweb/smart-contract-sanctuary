@@ -5291,19 +5291,3 @@ interface IBorrowerOperations {
     function getCompositeDebt(uint _debt) external pure returns (uint);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 100
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

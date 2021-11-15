@@ -115,21 +115,3 @@ abstract contract FxBaseChildTunnel is IFxMessageProcessor{
     function _processMessageFromRoot(uint256 stateId, address sender, bytes memory message) virtual internal;
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {},
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

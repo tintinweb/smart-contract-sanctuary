@@ -1238,19 +1238,3 @@ interface IGasDiscountExtension {
     function calculateGas(uint256 gasUsed, uint256 flags, uint256 calldataLength) external view returns (IAcura, uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {}
-}

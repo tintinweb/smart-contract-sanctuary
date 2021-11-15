@@ -1760,18 +1760,3 @@ interface IERCHandler {
     function withdraw(address tokenAddress, address recipient, uint256 amountOrTokenID) external;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

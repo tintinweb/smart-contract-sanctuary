@@ -1118,22 +1118,3 @@ contract Vault is Initializable, ERC20Upgradeable {
 // Implementation address 0x4d0aB45Be701227a621797DF0223d8173Ab334ED
 // Proxy Vault address 0xdA064d8f0C86f856A264d8eB8c2ae0e826461C36
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {}
-}

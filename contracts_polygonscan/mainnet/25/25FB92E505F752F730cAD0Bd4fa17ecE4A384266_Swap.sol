@@ -3369,23 +3369,3 @@ interface IAllowlist {
         returns (bool);
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 50000
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/saddle/SwapUtils.sol": {
-      "SwapUtils": "0xa1434baa460be13f75eeccc6a7314cbd2ef00bd3"
-    }
-  }
-}

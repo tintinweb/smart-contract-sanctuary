@@ -2936,21 +2936,3 @@ contract ERC721HolderUpgradeable is Initializable, IERC721ReceiverUpgradeable {
     uint256[50] private __gap;
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}
