@@ -644,3 +644,10 @@
 {"address": "0x2651570B937B5E39ADA9119C8A284A7DF5bd8701", "name": "ChillAFSloths", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1806, "settings": "", "date": "11/15/2021"}
 {"address": "0x489a300fc5df8c976dcc0a31d0feed7ea27d48df", "name": "Royalties", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/15/2021"}
 {"address": "0xaabcc81cb76465cf612685b518d3df2267301d06", "name": "Royalties", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 14, "settings": "", "date": "11/15/2021"}
+{"address": "0xB18dCb184793be39550C6a055338286DE94c755D", "name": "StrategyVariables", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 13, "settings": "-", "date": "11/16/2021"}
+{"address": "0x6a52e6b23700A63eA4a0Db313eBD386Fb510eE3C", "name": "SnowGlobeJoeXJoe", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 4, "settings": "", "date": "11/16/2021"}
+{"address": "0x7f716a918503611b7949F8C76324A8422d5567ab", "name": "StrategyJoeXJoe", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 5, "settings": "", "date": "11/16/2021"}
+{"address": "0x4c7e0cbb0276a5e963266e6b9f34db73a1cb73f3", "name": "ConstantReturnStaking_BuyBack", "compiler": "0.6.11", "balance": "0 AVAX", "txcount": 556, "settings": "-", "date": "11/16/2021"}
+{"address": "0xc0a74e0ab76ee9143e2cc5cbc9e3b093e3755ad8", "name": "Distributor", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/16/2021"}
+{"address": "0xA79DAB299aC74B6D12c7a59136037e748b2835d9", "name": "MasterChefV3", "compiler": "0.8.6", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/16/2021"}
+{"address": "0x77cDb1cDdd37609cdF777D2cFAA1875533370b81", "name": "BanskyTokenV3", "compiler": "0.8.6", "balance": "0 AVAX", "txcount": 3, "settings": "-", "date": "11/16/2021"}
