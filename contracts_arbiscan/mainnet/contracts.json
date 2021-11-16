@@ -1069,3 +1069,4 @@
 {"address": "0xc0409ec303b727bc1f511d7f8c71fd5ead96de1c", "name": "LPToken", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/16/2021"}
 {"address": "0x4f6A43Ad7cba042606dECaCA730d4CE0A57ac62e", "name": "AmplificationUtils", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/16/2021"}
 {"address": "0x3757b49d79063E157dC376f2b409c3730fA17f61", "name": "TeamVestingV2", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/15/2021"}
+{"address": "0x8b84f8169cb2429F538475404f758E33BC9EFDCF", "name": "SacredCreatures", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "11/16/2021"}
