@@ -400,3 +400,11 @@
 {"address": "0x70c6062100b09af2ec63345cda372d52423be4ac", "name": "SpacePepeARBITRUM", "compiler": "0.8.7", "balance": "0.0025 ETH", "txcount": 4, "settings": "", "date": "11/14/2021"}
 {"address": "0xD97C8133633e9C9998A9648760b9c33d96F5Fd07", "name": "Margin", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/14/2021"}
 {"address": "0x006197cC4a60F9aFf7A32371Fd059f489B1489e9", "name": "Margin", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/14/2021"}
+{"address": "0x5c82BaABD7e86C57827fCaa237E94680d6886493", "name": "TestToken", "compiler": "0.7.3", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/15/2021"}
+{"address": "0x9BEc7e5fb3900e830644EedCA800E7Cb9be01e8d", "name": "Market", "compiler": "0.7.3", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/15/2021"}
+{"address": "0x704Fd6ab8b39953B0E713fA5b3D8bbf24071CD78", "name": "SpacePepeARBITRUM", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/15/2021"}
+{"address": "0x6E23EFbefba9682F8bA10d3d00935B7E77Af6501", "name": "CorePoolFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/15/2021"}
+{"address": "0x614fbbb610b7d874169afef783d35764f58907e7", "name": "Advanced", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 8, "settings": "-", "date": "11/15/2021"}
+{"address": "0xd6ae885A7EdfE18B43749bd77eB4F0eB3A3A7c00", "name": "CorePoolFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/15/2021"}
+{"address": "0x30801729784D11982a9A9411f0F8acD21Ce339A7", "name": "CorePoolFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/15/2021"}
+{"address": "0x63EBd438c2Ef0c06f3689861cC3c9a811fd5AdDa", "name": "MockToken", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/15/2021"}
