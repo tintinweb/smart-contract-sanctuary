@@ -408,3 +408,12 @@
 {"address": "0xd6ae885A7EdfE18B43749bd77eB4F0eB3A3A7c00", "name": "CorePoolFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/15/2021"}
 {"address": "0x30801729784D11982a9A9411f0F8acD21Ce339A7", "name": "CorePoolFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/15/2021"}
 {"address": "0x63EBd438c2Ef0c06f3689861cC3c9a811fd5AdDa", "name": "MockToken", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/15/2021"}
+{"address": "0x57b9fcf97690dcd93f5b6877c4f443189077d10d", "name": "Multicall2", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/16/2021"}
+{"address": "0xE987AD74E2fA21a2291556182Dfd0f7bE4C68FD3", "name": "Market", "compiler": "0.7.3", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/16/2021"}
+{"address": "0x9D47F0a7fD1D770B06Ab8D3EB95EF88580Eb18EB", "name": "Quoter", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/16/2021"}
+{"address": "0x5e3Ff34e1B76F0b2cF6A32e512ddc8d14cBDC295", "name": "BKeeper", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/16/2021"}
+{"address": "0xC443081E1E5381D4aCc570ad6E3dA89F7cefC049", "name": "Multicall2", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/16/2021"}
+{"address": "0xFa0D6cbB9F6AC7bb63672e8f4643f91990a5F8D1", "name": "Arb", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/16/2021"}
+{"address": "0x9e87dE6ce89604acdA37f90a7fa3e2e898E01932", "name": "MosaicNFT", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/16/2021"}
+{"address": "0x2e7202D31b8E4D06A12f9f5bce551EC42f83d23E", "name": "Summoner", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/16/2021"}
+{"address": "0x21751f70C777c37Fa3d443A61dF5FDB36dfC5d00", "name": "SummonerConfig", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/16/2021"}
