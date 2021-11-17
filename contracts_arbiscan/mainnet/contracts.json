@@ -1070,3 +1070,16 @@
 {"address": "0x4f6A43Ad7cba042606dECaCA730d4CE0A57ac62e", "name": "AmplificationUtils", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/16/2021"}
 {"address": "0x3757b49d79063E157dC376f2b409c3730fA17f61", "name": "TeamVestingV2", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/15/2021"}
 {"address": "0x8b84f8169cb2429F538475404f758E33BC9EFDCF", "name": "SacredCreatures", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "11/16/2021"}
+{"address": "0xfab8520deb728e267f4b937037bb83e22c480c98", "name": "StabilizeGovernanceCalculator", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/17/2021"}
+{"address": "0x2069043d7556B1207a505eb459D18d908DF29b55", "name": "MiniChefV2", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 78, "settings": "", "date": "11/17/2021"}
+{"address": "0x26887a9F95e1794e52aE1B72Bfa404c1562Eed0E", "name": "HyperVIBES", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/17/2021"}
+{"address": "0xFC240385B257DaC2600e7fD643090E02bDC314D0", "name": "SSOVDelegatorFactory", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/17/2021"}
+{"address": "0x82ef2bb7882bfba7f6e7ee8b19c58167d3d50eda", "name": "WZYX", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/17/2021"}
+{"address": "0x20dA1C3290769d8517Ab86D4c433551EAfE7a8A6", "name": "Timelock", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/17/2021"}
+{"address": "0xC3789CF96EdB7E3A6e85e14c72e5159c899324e6", "name": "OperatorProxy", "compiler": "0.7.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/17/2021"}
+{"address": "0x55F1da2618d3ceCb55b6F0543b04c13C7aaB947D", "name": "MultiTunableOracleSetter", "compiler": "0.7.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/17/2021"}
+{"address": "0x213Ae35a58e14f5022f333892c3c09Cf41bd51C2", "name": "StarNFTV1Cap", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/17/2021"}
+{"address": "0xb0731d50c681c45856bfc3f7539d5f61d4be81d8", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/17/2021"}
+{"address": "0xcfbca18910de440e0b88fe299b5af72f0252b411", "name": "SwapFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/17/2021"}
+{"address": "0x58228d352B6B2b8642395e6175b06D90ceA93B5a", "name": "TunableOracleRegister", "compiler": "0.7.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/17/2021"}
+{"address": "0x2B4378e156F1327f71734E12C57Ec4E42052920F", "name": "QuestBoard", "compiler": "0.4.24", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "11/17/2021"}
