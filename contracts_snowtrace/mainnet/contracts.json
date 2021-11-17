@@ -651,3 +651,6 @@
 {"address": "0xc0a74e0ab76ee9143e2cc5cbc9e3b093e3755ad8", "name": "Distributor", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/16/2021"}
 {"address": "0xA79DAB299aC74B6D12c7a59136037e748b2835d9", "name": "MasterChefV3", "compiler": "0.8.6", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/16/2021"}
 {"address": "0x77cDb1cDdd37609cdF777D2cFAA1875533370b81", "name": "BanskyTokenV3", "compiler": "0.8.6", "balance": "0 AVAX", "txcount": 3, "settings": "-", "date": "11/16/2021"}
+{"address": "0x6514c73189bDc5668B497b6d70C0f69dAce1aDdF", "name": "FarmersOnlySwapTokyoCoin", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 12, "settings": "", "date": "11/17/2021"}
+{"address": "0x41bad4bd3DC784DdB8E11b4b53110cdC6745AF5E", "name": "FarmersOnlySwapContract", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/17/2021"}
+{"address": "0x31C4c046EFAD4B04b823a919CC0bDd0f663c87d4", "name": "wsSB", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/16/2021"}
