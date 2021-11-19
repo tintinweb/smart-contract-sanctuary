@@ -51,8 +51,8 @@ for path in getFiles(sys.argv[1]):
                     print("NOT JSON")
                     continue
 
-                if lenBefore - data[:newEnd].count("\n") > 30: # safetycheck 4 (does not truncate too much)
-                    print("ERROR: truncates too much: %s (%d)"%(path,lenBefore - newEnd ))
+                if lenBefore - data[:newEnd].count("\n") > 150: # safetycheck 4 (does not truncate too much)
+                    print("ERROR: truncates too much: %s (%d)"%(path,lenBefore - data[:newEnd].count("\n") ))
                     continue
 
                 numFixedFiles +=1
@@ -67,4 +67,4 @@ print(numfiles)
 print(numFixableFiles)
 print(numFixedFiles)
 print(attribs)
-    
+
