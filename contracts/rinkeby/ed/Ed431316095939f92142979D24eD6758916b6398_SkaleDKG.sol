@@ -10679,35 +10679,3 @@ interface IWallets {
     function rechargeSchainWallet(bytes32 schainId) external payable;
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/dkg/SkaleDkgAlright.sol": {
-      "SkaleDkgAlright": "0xeb583229bcf6a3b9bbfee09404b0063c7459b8f6"
-    },
-    "contracts/dkg/SkaleDkgBroadcast.sol": {
-      "SkaleDkgBroadcast": "0x9ea111c267841918ae3bf645b6dc1a829cf87c9a"
-    },
-    "contracts/dkg/SkaleDkgComplaint.sol": {
-      "SkaleDkgComplaint": "0x6fe0af33a5b2061f9127077da3f0f4176c377e3f"
-    },
-    "contracts/dkg/SkaleDkgPreResponse.sol": {
-      "SkaleDkgPreResponse": "0x51e51c785f48a2c9d2a2a55cf01bb7bb9e180eaf"
-    },
-    "contracts/dkg/SkaleDkgResponse.sol": {
-      "SkaleDkgResponse": "0xdf415786fb64065616c7c43650f4634318119adf"
-    }
-  }
-}

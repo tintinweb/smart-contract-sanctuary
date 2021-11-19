@@ -5453,35 +5453,3 @@ library MerkleProof {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Curve.sol": {
-      "Curves": "0xb7605028c1f3cb042b8742f5d9b5e6bc581f6df3"
-    },
-    "contracts/Orchestrator.sol": {
-      "Orchestrator": "0x8dcfec0ece9ca8df377f3ff56577eeb2bbeed3af"
-    },
-    "contracts/ProportionalLiquidity.sol": {
-      "ProportionalLiquidity": "0xc61d432f3d56db0b2c2cb3d4cc350203614aab4e"
-    },
-    "contracts/Swaps.sol": {
-      "Swaps": "0x98b0a6ee8013fd9a6da3757616e291c8f8118679"
-    },
-    "contracts/ViewLiquidity.sol": {
-      "ViewLiquidity": "0x9fc963b7f51ffe4df6d048173f899f005c49483a"
-    }
-  }
-}

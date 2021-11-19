@@ -2000,38 +2000,3 @@ library Base64 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Libraries/CPL.sol": {
-      "CPL": "0x607a84f8ddb8d5a1c1208626df57f58b23ecda1b"
-    },
-    "contracts/Libraries/Metadata.sol": {
-      "Metadata": "0xf81b855bcd719066a1391bf17375af86bbe16c46"
-    },
-    "contracts/Libraries/Svg/Circle.sol": {
-      "Circle": "0x29f9e8ae56f2cd3e05d55f55c177f26366fefdc8"
-    },
-    "contracts/Libraries/Svg/Color.sol": {
-      "Color": "0x859000a247da0789fe81b06c02458637ad08d0b6"
-    },
-    "contracts/Libraries/Svg/Rect.sol": {
-      "Rect": "0x16ebdcf4aa5b21c0a4383f909350422cdb4aada7"
-    },
-    "contracts/Libraries/Svg/Svg.sol": {
-      "Svg": "0x8194de95e7ecda46c85cbeae9196004b39b1b0f9"
-    }
-  }
-}

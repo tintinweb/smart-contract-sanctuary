@@ -13133,35 +13133,3 @@ contract SegmentTreeTester {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/dkg/SkaleDkgAlright.sol": {
-      "SkaleDkgAlright": "0x2543201aadb947083bce34b3f64e1d9e62829420"
-    },
-    "contracts/dkg/SkaleDkgBroadcast.sol": {
-      "SkaleDkgBroadcast": "0x9b602198caac6f90ac6360e43e4b39e9de885784"
-    },
-    "contracts/dkg/SkaleDkgComplaint.sol": {
-      "SkaleDkgComplaint": "0x367173f9b18cd144bc2f0bb15d77f1c1787b526b"
-    },
-    "contracts/dkg/SkaleDkgPreResponse.sol": {
-      "SkaleDkgPreResponse": "0x0d0abf2be2cb1627760cc60fdf15bb3af351d9a6"
-    },
-    "contracts/dkg/SkaleDkgResponse.sol": {
-      "SkaleDkgResponse": "0x81d00c54f4338a72dc351fd892d93c400935af76"
-    }
-  }
-}

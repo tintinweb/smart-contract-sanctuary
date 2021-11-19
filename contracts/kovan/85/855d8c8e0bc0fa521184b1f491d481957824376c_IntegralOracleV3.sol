@@ -1679,39 +1679,3 @@ contract IntegralOracleV3 is IIntegralOracleV3 {
     }
 }
 
-{
-  "libraries": {
-    "Math.sol": {},
-    "SafeMath.sol": {},
-    "FixedSafeMath.sol": {},
-    "Normalizer.sol": {},
-    "IIntegralOracleV3.sol": {},
-    "IERC20.sol": {},
-    "FullMath.sol": {},
-    "TickMath.sol": {},
-    "IUniswapV3PoolImmutables.sol": {},
-    "IUniswapV3PoolState.sol": {},
-    "IUniswapV3PoolDerivedState.sol": {},
-    "IUniswapV3PoolActions.sol": {},
-    "IUniswapV3PoolOwnerActions.sol": {},
-    "IUniswapV3PoolEvents.sol": {},
-    "IUniswapV3Pool.sol": {},
-    "LowGasSafeMath.sol": {},
-    "PoolAddress.sol": {},
-    "OracleLibrary.sol": {},
-    "IntegralOracleV3.sol": {}
-  },
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

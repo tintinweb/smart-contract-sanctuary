@@ -2007,38 +2007,3 @@ library Base64 {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/Libraries/CPL.sol": {
-      "CPL": "0xd611d547530c026dec8ae4e8975e7a3b3dbe3b9c"
-    },
-    "contracts/Libraries/Metadata.sol": {
-      "Metadata": "0x56c2ad36664ea0216228199dac95fa5358037def"
-    },
-    "contracts/Libraries/Svg/Circle.sol": {
-      "Circle": "0x9af642273f18c3171eb6465bb0751eed9bc6d668"
-    },
-    "contracts/Libraries/Svg/Color.sol": {
-      "Color": "0xe364c254e854379648f4e96ac0d5fe9f965bf889"
-    },
-    "contracts/Libraries/Svg/Rect.sol": {
-      "Rect": "0xc269e37080bd0bd078385b32769bc7f91f4b8284"
-    },
-    "contracts/Libraries/Svg/Svg.sol": {
-      "Svg": "0xf27b44aa3a1269e6243dd0d68f135c8b5eefcb3d"
-    }
-  }
-}

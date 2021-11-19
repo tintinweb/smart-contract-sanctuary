@@ -1136,18 +1136,3 @@ contract TokenERC20 is ERC20, AccessControl, IToken {
   }
 }
 
-{
-  "remappings": [
-    "@openzeppelin/contracts/token/ERC20/ERC20.sol=./openzeppelin/ERC20.sol",
-    "@openzeppelin/contracts/access/AccessControl.sol=./openzeppelin/AccessControl.sol"
-  ],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

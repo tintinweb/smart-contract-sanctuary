@@ -864,18 +864,3 @@ contract Sale is AccessControl, Configurable {
   }
 }
 
-{
-  "remappings": [
-    "@openzeppelin/contracts/token/ERC20/IERC20.sol=./openzeppelin/IERC20.sol",
-    "@openzeppelin/contracts/access/AccessControl.sol=./openzeppelin/AccessControl.sol"
-  ],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

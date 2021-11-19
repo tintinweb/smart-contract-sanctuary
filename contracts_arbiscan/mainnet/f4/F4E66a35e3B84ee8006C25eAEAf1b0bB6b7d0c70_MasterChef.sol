@@ -23,7 +23,7 @@ pragma solidity 0.6.12;
  * Note that because there is a single `nonReentrant` guard, functions marked as
  * `nonReentrant` may not call one another. This can be worked around by making
  * those functions `private`, and then adding `external` `nonReentrant` entry
- * points to them.
+ * points to them.fbalancweo
  *
  * TIP: If you would like to learn more about reentrancy and alternative ways
  * to protect against it, check out our blog post

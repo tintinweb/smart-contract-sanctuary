@@ -3120,35 +3120,3 @@ library Address {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "libraries": {
-    "contracts/libraries/NTransferUtilV2.sol": {
-      "NTransferUtilV2": "0x4c31e2347413528b312d8fc21a1397e4a832b30e"
-    },
-    "contracts/libraries/ProtoUtilV1.sol": {
-      "ProtoUtilV1": "0x037445d26434248d4aa59d96ba476d3d8b4b0e96"
-    },
-    "contracts/libraries/RegistryLibV1.sol": {
-      "RegistryLibV1": "0xc94f6a0272e1f9f182d8dc710e3d3d983d7fb1d4"
-    },
-    "contracts/libraries/StoreKeyUtil.sol": {
-      "StoreKeyUtil": "0x341a9c0652638c19ccb4fa7540918eebaea4ed04"
-    },
-    "contracts/libraries/ValidationLibV1.sol": {
-      "ValidationLibV1": "0xc135fbe256c108d3c3fe460770ef842d0aba42a3"
-    }
-  }
-}

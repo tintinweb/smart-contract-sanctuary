@@ -1463,19 +1463,3 @@ contract TokenSafeERC20 is TokenERC20 {
   ) TokenERC20(name_, symbol_, arguments_) {}
 }
 
-{
-  "remappings": [
-    "@openzeppelin/contracts/token/ERC20/ERC20.sol=./openzeppelin/ERC20.sol",
-    "@openzeppelin/contracts/access/AccessControl.sol=./openzeppelin/AccessControl.sol",
-    "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol=./openzeppelin/SafeERC20.sol"
-  ],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

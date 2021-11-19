@@ -2958,35 +2958,3 @@ interface IProto {
         returns (uint256);
 }
 
-{
-  "optimizer": {
-    "enabled": false,
-    "runs": 200
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "contracts/law/LawBEP20V2.sol": {
-      "LawBEP20V2": "0x575654cbeb366ae8cdf77697c9674c7abd5e1905"
-    },
-    "contracts/law/LawDao.sol": {
-      "LawDao": "0x49017722109a68172af5658b0383b999290fdcdc"
-    },
-    "contracts/law/LawDrop.sol": {
-      "LawDrop": "0x84a547c7eee105f073c545c8fb6aac2fd357626e"
-    },
-    "contracts/law/LawGovernance.sol": {
-      "LawGovernance": "0x7f0fa5f83ca9394715e6fd5dc2db822fc873dae4"
-    }
-  }
-}

@@ -236,17 +236,3 @@ contract MoonShop is Ownable {
  
 }
 
-{
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

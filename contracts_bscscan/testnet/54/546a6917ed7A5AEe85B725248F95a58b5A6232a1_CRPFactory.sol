@@ -6512,38 +6512,3 @@ contract FCXAccessControl is AccessControl {
     }
 }
 
-{
-  "optimizer": {
-    "enabled": true,
-    "runs": 200,
-    "details": {
-      "yul": true,
-      "deduplicate": true,
-      "cse": true,
-      "constantOptimizer": true
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  },
-  "metadata": {
-    "useLiteralContent": true
-  },
-  "libraries": {
-    "libraries/BalancerSafeMath.sol": {
-      "BalancerSafeMath": "0xfa6f278b04788e20c2ec389224c98e79afd82214"
-    },
-    "libraries/RightsManager.sol": {
-      "RightsManager": "0x3783e54eb985d0420a8df30bb491cdf2d7048b31"
-    },
-    "libraries/SmartPoolManager.sol": {
-      "SmartPoolManager": "0x89f4725c94494d16f1a832d9804aba39f4d05ee2"
-    }
-  }
-}

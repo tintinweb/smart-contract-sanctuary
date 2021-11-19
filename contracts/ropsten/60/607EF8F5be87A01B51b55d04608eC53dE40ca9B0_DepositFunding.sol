@@ -4908,37 +4908,3 @@ contract DepositLog {
     }
 }
 
-{
-  "remappings": [],
-  "optimizer": {
-    "enabled": true,
-    "runs": 200
-  },
-  "evmVersion": "istanbul",
-  "libraries": {
-    "/home/runner/work/tbtc/tbtc/solidity/contracts/system/TBTCDevelopmentConstants.sol": {
-      "TBTCConstants": "0x7DC130F70e855a3B930DAAa6723E2e7b70AA6f9D"
-    },
-    "/home/runner/work/tbtc/tbtc/solidity/contracts/deposit/OutsourceDepositLogging.sol": {
-      "OutsourceDepositLogging": "0x6680a586CfCffB1861E721ac320245BA6020ecde"
-    },
-    "/home/runner/work/tbtc/tbtc/solidity/contracts/deposit/DepositStates.sol": {
-      "DepositStates": "0x40C4D75466268523e4C79ceb00ea5A8C47eafDee"
-    },
-    "/home/runner/work/tbtc/tbtc/solidity/contracts/deposit/DepositUtils.sol": {
-      "DepositUtils": "0x289cb3941f4080DF3D09d6476f9804BF2038Ac06"
-    },
-    "/home/runner/work/tbtc/tbtc/solidity/contracts/deposit/DepositLiquidation.sol": {
-      "DepositLiquidation": "0x689896837FbBcF5188786ffeCD334A27E285d903"
-    }
-  },
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}

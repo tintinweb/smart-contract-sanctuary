@@ -589,17 +589,3 @@ contract Whitelist is AccessControl, Configurable, IWhitelist {
   }
 }
 
-{
-  "remappings": [
-    "@openzeppelin/contracts/access/AccessControl.sol=./openzeppelin/AccessControl.sol"
-  ],
-  "outputSelection": {
-    "*": {
-      "*": [
-        "evm.bytecode",
-        "evm.deployedBytecode",
-        "abi"
-      ]
-    }
-  }
-}
