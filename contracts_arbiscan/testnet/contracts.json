@@ -435,3 +435,13 @@
 {"address": "0x84337D8542C5Da50Bb48DA56dBB15f1527f257E2", "name": "MerkleTree", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/17/2021"}
 {"address": "0x140444EeB3E0237ee75efa981b6d7574D75AAdEF", "name": "ArbitrumNFTCore", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/17/2021"}
 {"address": "0x7F17cD4A78FB24dD236f165E70aB60b7f2Ce8764", "name": "L2NFT", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/17/2021"}
+{"address": "0xfD6719D7d6Af0a0Ca828Fac072e4d2499fE0Cc44", "name": "LemmaRouter", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 56, "settings": "", "date": "11/19/2021"}
+{"address": "0x00b2BE1182D95f8eC5406FB4DE6BD9173a958AE7", "name": "BUCKStablecoin", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 31, "settings": "", "date": "11/19/2021"}
+{"address": "0xb22033fF04AD01fbE8d78ef4622a20626834271B", "name": "GovernorSpoke", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/19/2021"}
+{"address": "0x284ca1d6841C05942658Cd062E220Cb831964872", "name": "OracleSpoke", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/19/2021"}
+{"address": "0x278d6b1aA37d09769E519f05FcC5923161A8536D", "name": "OracleSpoke", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/18/2021"}
+{"address": "0xD8c6dD978a3768F7DDfE3A9aAD2c3Fd75Fa9B6Fd", "name": "Registry", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 5, "settings": "-", "date": "11/18/2021"}
+{"address": "0x0d6b8752e5AdBafb3F75299aD15863a1fd02D565", "name": "Finder", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "11/18/2021"}
+{"address": "0x5BE9F2a2f00475406f09e5bE82c06eFf206721d9", "name": "Arbitrum_ChildMessenger", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/18/2021"}
+{"address": "0x9BBC848c8174458E24487Ba3cE87F620928382e4", "name": "BalanceChecker", "compiler": "0.4.26", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/18/2021"}
+{"address": "0x2deE623eE31D6E707b427017D7B035345541FC99", "name": "Reservoir", "compiler": "0.5.16", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/18/2021"}
