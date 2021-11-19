@@ -114,7 +114,7 @@ class EtherScanIoApi(object):
             soup = BeautifulSoup(src, features="html.parser")
             source = soup.get_text() # normalize html.
             
-            if source.startswith("{") and "optimizer" in source and "pragma" not in source and is_json(source):
+            if source.startswith("{") and "outputSelection" in source and "pragma" not in source and is_json(source):
                 continue  # ignore settings
             
             if DEBUG_PRINT_CONTRACTS:
