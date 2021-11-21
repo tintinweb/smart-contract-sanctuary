@@ -1128,3 +1128,10 @@
 {"address": "0xd666d1CC3102cd03e07794A61E5F4333B4239F53", "name": "Land", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 145, "settings": "", "date": "11/20/2021"}
 {"address": "0x9F3fD5A36f0C30151660d742151b89BE5c04c984", "name": "Admin", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/19/2021"}
 {"address": "0x79dEe081724eaB142b988971f0D5646a7a8141BA", "name": "Admin", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/19/2021"}
+{"address": "0xCca920553ccc9aca80919e614325167d9Ec37b4A", "name": "LandFix", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/21/2021"}
+{"address": "0xcd3dabe34629a7f1456441119ee20ac946851cda", "name": "Pixal", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/21/2021"}
+{"address": "0x04208f296039f482810B550ae0d68c3E1A5EB719", "name": "BAMM", "compiler": "0.6.11", "balance": "0.0001 ETH", "txcount": 7, "settings": "", "date": "11/21/2021"}
+{"address": "0x3BCA6531eDb2b41319fC56bA3c142367F83B65EE", "name": "InstaSushiSwapResolverArbitrum", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/21/2021"}
+{"address": "0xA64bd15cAc500a5e40E93F93088A35DC00fE1851", "name": "BABYTOKENDividendTracker", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/21/2021"}
+{"address": "0x39B8Af25560a7fA15FD2990176eD55e8FE9451Db", "name": "IterableMapping", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/21/2021"}
+{"address": "0x62544Bd5da87F51934C09cD6464757ACecaf8e49", "name": "CurveAMO_ARBI", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "11/20/2021"}
