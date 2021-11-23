@@ -1161,3 +1161,5 @@
 {"address": "0x5e4e93C73EB0eE2cBEA828ae947b572415237BFB", "name": "Plunge", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/22/2021"}
 {"address": "0x23A530534Bf411b00676FB75ed8ED1Ac70766b8A", "name": "PrivateSale", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/22/2021"}
 {"address": "0xE5Ed85C9A92DA79df57978947eedb78638DcC5dE", "name": "ERC20VestingRescindable", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/22/2021"}
+{"address": "0xa871660281d720db65a1e31e4c2e820b6fb47351", "name": "zstToken", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/23/2021"}
+{"address": "0x8146B0330b616346aA004fe001216B0be9ab6CEd", "name": "StakingRewardsProxy", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "11/23/2021"}
