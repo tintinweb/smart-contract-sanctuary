@@ -833,3 +833,131 @@
 {"address": "0xf58dfcf21c92ea077bd2b9907d414ac986127d23", "name": "StrategyBalancerLp", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/23/2021"}
 {"address": "0xfdfaafb8104bf8f9b6d676fe9ff8231e2a63aba1", "name": "ERC20", "compiler": "0.5.16", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/23/2021"}
 {"address": "0x46D1296B9caF0A83C11C39FBcd9145132E13F766", "name": "Artion", "compiler": "0.8.0", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021"}
+{"address": "0x1EfEEC792e686F20bf6FE36bb551C2159da5bc50", "name": "StrategyV1_Spookyswap", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0x9f93988c31d621070AD65ee5938564cb475617D4", "name": "SAVEDOGS", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 1, "settings": "-", "date": "11/24/2021"}
+{"address": "0xBab92A2861fff24faA7670a6264283F700B1C2aE", "name": "Math", "compiler": "0.8.4", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x100999d3679e99aFF7231748071b41d0C5798b64", "name": "SAFAMIELPRBAINBO", "compiler": "0.5.17", "balance": "0 FTM", "txcount": 3, "settings": "-", "date": "11/24/2021"}
+{"address": "0xc8d8Ccb89b4B2e64e057C5934eC4DADb0Ec93135", "name": "BisharesZapUniswapRouterMinter", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0xcf9e047249b0834b296c96B60C67D026D0aB7CD5", "name": "Crypt", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0xa9ff0c1d7db41ae650e603726f487f1383a40d7c", "name": "MultiStakeCapital", "compiler": "0.8.7", "balance": "1 wei", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0x6fbbe7c2aad159ad9bb38e4ec2a4e7bbcfbac36e", "name": "Address", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xb204f506512d9c3da2f7b8a841cf160372adb517", "name": "Dirty_Deedz", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xab63a0ffcbd471ebc8beab8857cdfcb295cf4692", "name": "COAL", "compiler": "0.8.10", "balance": "0 FTM", "txcount": 6, "settings": "", "date": "11/24/2021"}
+{"address": "0x95c0eca4e2b4c688572a8044c2ffd68f09ae10cf", "name": "babyRaccoon", "compiler": "0.8.2", "balance": "0 FTM", "txcount": 49, "settings": "-", "date": "11/24/2021"}
+{"address": "0x0dc7962FE2abaf842E3Ec9725f2a745E6101aBf7", "name": "babyRaccoon", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 3, "settings": "-", "date": "11/24/2021"}
+{"address": "0x9e4aE7a6Fa19Dd19Df198D053f63e4EDA96B239d", "name": "Netizens", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xd8eab1ec859ce7c617aa49aad9e7678250111c33", "name": "COAL", "compiler": "0.8.10", "balance": "0 FTM", "txcount": 4, "settings": "", "date": "11/24/2021"}
+{"address": "0x1b1f2945cfe2d250c9dda24ea2e1621253adf99e", "name": "MultiApeCapital", "compiler": "0.6.12", "balance": "1 wei", "txcount": 21, "settings": "", "date": "11/24/2021"}
+{"address": "0xb8e024301F0A10EfE0Bb5fed512215b33611D0FF", "name": "OlympusBondingCalculator", "compiler": "0.7.5", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xd9426cA653555E1d83fb0eCC81B28F722f5E2c68", "name": "MetaChainCapital", "compiler": "0.5.16", "balance": "0 FTM", "txcount": 2, "settings": "-", "date": "11/24/2021"}
+{"address": "0xf38098629096596aB44cCf6f355bd97120e9D949", "name": "OlympusTreasury", "compiler": "0.7.5", "balance": "0 FTM", "txcount": 13, "settings": "", "date": "11/24/2021"}
+{"address": "0x52061275d416D2Dd8c2727A0b6D27f64309A4c68", "name": "ApparitionERC20Token", "compiler": "0.7.5", "balance": "0 FTM", "txcount": 13, "settings": "-", "date": "11/24/2021"}
+{"address": "0xa4c1fff7f2a84e6db578670f013084ff8e72e912", "name": "FreedomSwap", "compiler": "0.5.16", "balance": "0 FTM", "txcount": 4, "settings": "-", "date": "11/24/2021"}
+{"address": "0xEDCdE49F5E0e2f2995f60Ab645Ea6a531798fe7F", "name": "TelegrafNFT", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 13, "settings": "", "date": "11/24/2021"}
+{"address": "0xF61cCF694691c3d0d5cAa68f0B2F6cD01e41C99a", "name": "DogibaInuCoin", "compiler": "0.8.10", "balance": "0 FTM", "txcount": 3, "settings": "-", "date": "11/24/2021"}
+{"address": "0x84Ee4aAB969E38732Bce4Cee789357d4503afb27", "name": "CattoKatsu", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xd3324D50010F507618361A9F14201b982813F444", "name": "MesoStablecoin", "compiler": "0.8.10", "balance": "0 FTM", "txcount": 7, "settings": "", "date": "11/24/2021"}
+{"address": "0x17444662893361A110A86897374AC14FE7a6b67f", "name": "CGhostCrowdSale", "compiler": "0.5.5", "balance": "0 FTM", "txcount": 72, "settings": "", "date": "11/24/2021"}
+{"address": "0xdfDB01419927A48AFD550f32751D25Da571bC559", "name": "CasperGhostToken", "compiler": "0.5.5", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0xcaC664DE38B28c5A57402D9c6904B6F6587Bf81D", "name": "GhostToken", "compiler": "0.5.5", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xf70dfec98251b461ce9d67eda3cee02715699d07", "name": "GRINCH", "compiler": "0.7.6", "balance": "0.041426740750510401 FTM", "txcount": 51, "settings": "", "date": "11/24/2021"}
+{"address": "0x4c2AbE1A413CC1Cb38C9707Da6FC3aEaeCBDbC74", "name": "StrategyMasterChefLP", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 14, "settings": "", "date": "11/24/2021"}
+{"address": "0x220086d1cA715708C6b2862A04caa44312Ec85Be", "name": "SingleStrategy", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0xCe7C16fdDC101b2214e6B56c7609526FbD954d6d", "name": "StrategyMasterChefLP", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 13, "settings": "", "date": "11/24/2021"}
+{"address": "0xe794e5cFf1367BC06B6661eA4472e4919CB00186", "name": "GhostFarmerCapital", "compiler": "0.6.12", "balance": "1 wei", "txcount": 157, "settings": "", "date": "11/24/2021"}
+{"address": "0x8081226a0f61F28B2Da3B5841eF732d9cb591bA3", "name": "BisharesZapUniswapRouterMinter", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xFAD492D90e8FCEFc080e30284517cA64bD2318eD", "name": "BisharesUniswapV2Oracle", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x31f615cdd6fd3f09b3a0fa027f99b9affbdc608a", "name": "GasLimit", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "-", "date": "11/24/2021"}
+{"address": "0x58B6cf7339882c076062Ce0A1923802d43214aE7", "name": "BisharesZapUniswapRouterMinter", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x80fE0f42A7bFAd202cAE2Ad9Db4C40C4B4819fF8", "name": "BisharesZapUniswapRouterBurner", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0xc535F7a7FB3f1e113AdEc0E2c48d7eb03e892FD3", "name": "ZapUniswapV2", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x7d52b9A98579A22B65a76a2b6f40eC06C180A510", "name": "IndexPool", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x1ED0E49E4A89A1D480D39dE36D576791eD8C0187", "name": "PoolInitializer", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xdBed9C2Fe2db4c6A161b1805e5b3816828abDcE3", "name": "MarketCapSqrtController", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x51422850c44A136c92e2702bb6CF8d48C7b5ca09", "name": "PoolFactory", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0x2C1bc41AB3656312156D01EEF5314d57176A72BC", "name": "ProxyManagerAccessControl", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xbadf5F1FBBa42388B0d13057E8d049c3265B07Aa", "name": "DelegateCallProxyManager", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 6, "settings": "", "date": "11/24/2021"}
+{"address": "0x5Cf986Cb9058dA8740ca7f6DeeF2a35801bb94B9", "name": "StrategyMasterChefLP", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 6, "settings": "", "date": "11/24/2021"}
+{"address": "0xdC8bf8D8543F7bDd12c5314B0551B8B2CeFED64d", "name": "CompoundBondYield", "compiler": "0.8.0", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xcDE3eCE559F4538e527f58F60cCC1f1e517Df5c5", "name": "StrategyMasterChef", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0xed94e02B9946DE6Fc363823bB889522093B0694F", "name": "VaultV5", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0xACb790F4cae3c21bd820091d30862AFee5E6095b", "name": "BisharesGaugesRegister", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0xdEe4b177535359483dF3F226D3b184bC67ac6ef3", "name": "BisharesFarmsRegister", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0x115Fdb61b645a602Cc66699b5200afcd522d2cB0", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 532, "settings": "", "date": "11/24/2021"}
+{"address": "0x3d2563db9130633d78b408d6c5f634620471453f", "name": "SlurpDAOCapital", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 10, "settings": "", "date": "11/24/2021"}
+{"address": "0xf39636dA62A21486C4488Cc9182F0dE47040122B", "name": "BisharesGaugesRegister", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0xc1178cd9f1becc7440aC69bE71dB107eC3Eb27eD", "name": "BisharesGaugesRegister", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 7, "settings": "", "date": "11/24/2021"}
+{"address": "0xC74BF51b9244d05E691B1C24Fa4bfb23c22eB133", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 11, "settings": "", "date": "11/24/2021"}
+{"address": "0x593b4ffb4c400356a258c0817d926976ddfd4eeb", "name": "Multicall", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x740cf53EC8aaCBdA5B94491b1104720f32E44cA2", "name": "fantominaoiu", "compiler": "0.5.17", "balance": "0 FTM", "txcount": 3, "settings": "-", "date": "11/24/2021"}
+{"address": "0x66470823cF81790Ee9A30aCa895e5C0bD3Ae1084", "name": "EldritchRewardPool", "compiler": "0.5.5", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xf86b3fe3ffd286703a404184260d5745038f78ca", "name": "Fanty", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 9, "settings": "-", "date": "11/24/2021"}
+{"address": "0xf2f72681a1D7DF01caB6c973f99ece12EE5b4975", "name": "vampireswpa", "compiler": "0.5.17", "balance": "0 FTM", "txcount": 4, "settings": "-", "date": "11/24/2021"}
+{"address": "0x68c30e71c589c168fa1cca4ebb6ecc1987e60449", "name": "GNLOVE", "compiler": "0.8.10", "balance": "0 FTM", "txcount": 9, "settings": "", "date": "11/24/2021"}
+{"address": "0x7928de9d6DB88280DBa4613864a518A98F32D342", "name": "NeoPool", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 221, "settings": "", "date": "11/24/2021"}
+{"address": "0x7fb40134ae2f81b283c2b8d52cd14c80e587cbe0", "name": "ThoughtsIntoWords", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 4, "settings": "", "date": "11/24/2021"}
+{"address": "0xf146d663b01999067baf90aee0cde129a5880c05", "name": "StakingPool", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 4, "settings": "", "date": "11/24/2021"}
+{"address": "0x1701D51fb40E63269F7AA63f96Fb8b8284D5905A", "name": "EldritchFeeRecipient", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 5, "settings": "", "date": "11/24/2021"}
+{"address": "0x3A30fFC0BdFffB81D14c415EEC162222dA4d7260", "name": "EldritchFeeRecipient", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x7b3c6c6Fe3D8767049b514DC7f7c80d8721aB21C", "name": "FlashloanLender", "compiler": "0.5.17", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x1a949a8ac204f0a00bc10947a39a28e81ba9420f", "name": "test", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 10, "settings": "-", "date": "11/24/2021"}
+{"address": "0x9280E0ffdfAe4Ec895FDF4D4978c9E1B869Eb774", "name": "BridgePool", "compiler": "0.8.10", "balance": "0 FTM", "txcount": 12, "settings": "-", "date": "11/24/2021"}
+{"address": "0x1a21Ab52d1Ca1312232a72f4cf4389361A479829", "name": "FlashloanLender", "compiler": "0.5.17", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xa76b6744e1a2138d4b8d87464c9c4f32b9df1131", "name": "Aegistwar", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 6, "settings": "-", "date": "11/24/2021"}
+{"address": "0xee7e6bf6b3214e71f22841262f61fa3156de8c62", "name": "EldritchCrypt", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0x0daddf5719079d207da97d4d01e21883b94ba7f0", "name": "StrategyMasterChefLP", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 4, "settings": "", "date": "11/24/2021"}
+{"address": "0x57F16A1eaD53e4D8b594e4c783879634d6c43D5F", "name": "ShibaLight", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 3, "settings": "-", "date": "11/24/2021"}
+{"address": "0x8f4100909bea77a4569a380697de391b832b30c7", "name": "SantaStoner", "compiler": "0.8.9", "balance": "0 FTM", "txcount": 4, "settings": "", "date": "11/24/2021"}
+{"address": "0x5095e6B4b0Cd5b97DB9ac4E904A57B2D3c0b3290", "name": "Nfts", "compiler": "0.8.4", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0x0c133be1bcec8395ca30a0968ae09a707fced708", "name": "wSPA", "compiler": "0.7.5", "balance": "0 FTM", "txcount": 5, "settings": "", "date": "11/24/2021"}
+{"address": "0x75d4Cb17f5De0697F6975106aBe909b5D52883fd", "name": "SpectreDao", "compiler": "0.5.16", "balance": "0 FTM", "txcount": 2, "settings": "-", "date": "11/24/2021"}
+{"address": "0xFF1160de42bc6B7efF28EA43B2BaAC21dEE761e0", "name": "GenshinShibInuFantom", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 6, "settings": "-", "date": "11/24/2021"}
+{"address": "0xF6B7CB182Fc27bb4b04C3567083fAb10347C5d6B", "name": "OneTimeDistributor", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x05E62343B6b2114f72615f44A5a041C0fe324ee4", "name": "MonsterERC20", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x6768f8af27e7ef75e756c6f4bab7629e8c90d292", "name": "GateWrap", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 11, "settings": "-", "date": "11/24/2021"}
+{"address": "0x41185f2088179f8f1933567f2137314417913514", "name": "Address", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 1, "settings": "-", "date": "11/24/2021"}
+{"address": "0x9584fBDfdD82A44a991bd7244A06898d2F79eAd2", "name": "OneTimeDistributor", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0xf19cf96d7156750d364cdf93fc48d51111d9437a", "name": "PuppyWarrior", "compiler": "0.8.9", "balance": "0 FTM", "txcount": 5, "settings": "", "date": "11/24/2021"}
+{"address": "0xee252EeFf94F03DD4a5e8d660f2Ba8A0B5fFCF35", "name": "UNICORNINU", "compiler": "0.5.16", "balance": "0 FTM", "txcount": 6, "settings": "-", "date": "11/24/2021"}
+{"address": "0x7aa1d538bc7b8f756179d37fb92dc0435fb71ab1", "name": "FIDO", "compiler": "0.8.4", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0x47d07b33b9879e2f31f68ccd06096edaadcfbbdf", "name": "SpookyCrowToken", "compiler": "0.8.0", "balance": "0 FTM", "txcount": 17, "settings": "", "date": "11/24/2021"}
+{"address": "0xc383d7e55e0dd2ddb8ceeffadb95ade3ed5565ed", "name": "BarnApi", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "-", "date": "11/24/2021"}
+{"address": "0x74fabb704dbc79e1806092d62b5763b36b78ff01", "name": "BarnApi", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "-", "date": "11/24/2021"}
+{"address": "0x0a50ab5809e9712775a85B83AC2d11719b9169fF", "name": "MockERC20", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 24, "settings": "", "date": "11/24/2021"}
+{"address": "0x724091d8ccf37a7e15891e26947723faed15f263", "name": "FlokiAdventure", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 5, "settings": "", "date": "11/24/2021"}
+{"address": "0x8565f642180fe388f942460b66aba9c2ca7f02ed", "name": "HectorBondStakeDepository", "compiler": "0.7.5", "balance": "0 FTM", "txcount": 79, "settings": "", "date": "11/24/2021"}
+{"address": "0xd0373f236be04ecf08f51fc4e3ade7159d7cde65", "name": "HectorBondStakeDepository", "compiler": "0.7.5", "balance": "0 FTM", "txcount": 31, "settings": "", "date": "11/24/2021"}
+{"address": "0x23337b675375507ce218df5f92f1a71252dab3e5", "name": "HectorBondStakeDepository", "compiler": "0.7.5", "balance": "0 FTM", "txcount": 43, "settings": "", "date": "11/24/2021"}
+{"address": "0xd948efcc99be419ca9bdace89b2bec31edf13adb", "name": "TripTokenDegenHaus", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 5, "settings": "-", "date": "11/24/2021"}
+{"address": "0x61b140fc6c8844dec9d72e544af05b15965842fb", "name": "BondPriceHelperV2", "compiler": "0.7.5", "balance": "0 FTM", "txcount": 227, "settings": "", "date": "11/24/2021"}
+{"address": "0xa02ae657ce3a71936bf3ba40a1436a00f92a4496", "name": "FlokiMistakesElon", "compiler": "0.8.4", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0x826388c04CA69BE2775e3701880ebbfefaA31C86", "name": "FantoVox", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 7, "settings": "", "date": "11/24/2021"}
+{"address": "0xd100877A487076b93414766dD1EFB3995Bfb9f7a", "name": "Timelock", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xc01ee69df6881944bb36eb188a6b7c2b2a0c1ec7", "name": "FlokiAdventure", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0x3994f8EEeC4fB30bd709f262cFfc7C008e0E9fC7", "name": "BisharesZapUniswapRouterBurner", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xce2cEa0447a4715c3f166802C2A67191d200923f", "name": "FHMI", "compiler": "0.8.7", "balance": "2 FTM", "txcount": 5, "settings": "", "date": "11/24/2021"}
+{"address": "0xC11B116C7b6614Db48Eb8fc156A7858f475cF120", "name": "BisharesZapUniswapRouterBurner", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x07092Ba67905a831610DBB9E49C9095c1AC21257", "name": "BisharesZapUniswapRouterMinter", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0xbCf115063575bB4B66dC0892662b7Cc219f06023", "name": "BiSharesResidualsStorage", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 4, "settings": "", "date": "11/23/2021"}
+{"address": "0x0a5c1108d016b2486433cd838450c9ef932e03d5", "name": "Smiles", "compiler": "0.8.10", "balance": "0.5 FTM", "txcount": 2, "settings": "", "date": "11/23/2021", "err": "Exception('HTML IN OUTPUT!! - BeautifulSoup messed up..')"}
+{"address": "0xb63029e37fc5186cb58c3b8c193fd37b1e1e1d43", "name": "ScaryChainCapital", "compiler": "0.6.12", "balance": "1 wei", "txcount": 315, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xdf50943070B1D98BD03F1289626C353887356530", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 12, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xfdEa5c7A617e151fef08dC6398fc44f1918354Ee", "name": "Stakes", "compiler": "0.8.4", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xDE411865EFDFCb456eCDA713b81318e0B910D38C", "name": "ERC721Suika", "compiler": "0.8.4", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xdDEef553660C204a71D3c995a687c93092AA90b9", "name": "ERC721Mochi", "compiler": "0.8.4", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x9aE8c7c39044A15618A8cAe0610bA7c5a95c24D9", "name": "ERC721Matcha", "compiler": "0.5.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x3593e5e696282e50E283E0A11c0f6dc4b6BC42EE", "name": "ERC20Vanilla", "compiler": "0.5.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x215662DB3cF2d7dCC8E8547a40C264381100A947", "name": "ERC20Pistachio", "compiler": "0.5.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xDa3a78fEAa6350148332F59B0b29D464a34C3F85", "name": "ERC20Chocolate", "compiler": "0.5.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xEf1Ce020214B662dD7d010A11608aFA55Ee0dc58", "name": "CrowdsaleRaspberry", "compiler": "0.5.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x4946feF1281BB6A2c5dd8F1029116C2674A39C92", "name": "CrowdsaleBluemoon", "compiler": "0.5.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x4D26eF6C4c48f4B4C07A36B80cD5dC16f3E6FA5A", "name": "CampaignMango", "compiler": "0.5.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xfD229c9C211f0C765cbB0Ec45f11e787887dfa71", "name": "BiSharesResidualsStorage", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x7711e8Ff8C5f26Bf1b5eD5692a711a9194caaE57", "name": "ZapUniswapV2", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 4, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x46A99007872216d58d760232c625c16275fb62BD", "name": "BisharesZapUniswapRouterBurner", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x67A2475733A8Bdda37c9361cd03dF2bEF9622C42", "name": "BisharesZapUniswapRouterMinter", "compiler": "0.7.6", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x8Ccad80d4752913A92943E847d60d87bB9381d05", "name": "Token", "compiler": "0.8.2", "balance": "0 FTM", "txcount": 2, "settings": "-", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x76938fd93330dc41a4ffa299b94a993485197167", "name": "FantomRise", "compiler": "0.8.0", "balance": "0.469664480092660647 FTM", "txcount": 5, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xEc72A27121a5B639550bf096369D99f39de0A8b4", "name": "StrategyBeethovenx", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 8, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xdb04084c0c6efe4bd785e8d0d5e403265fcdc792", "name": "KishaToken", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 5, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x62b9553027b4a43dcaa98ecd6a10752d6628e3f9", "name": "DegenBox", "compiler": "0.7.6", "balance": "24.340913681353801015 FTM", "txcount": 113, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
