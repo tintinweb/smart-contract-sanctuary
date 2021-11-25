@@ -490,3 +490,13 @@
 {"address": "0xB61E87a81e938e8C9CA39c327c88bF00f2F1aE7B", "name": "BountyAuction", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 5, "settings": "-", "date": "11/24/2021"}
 {"address": "0x2B770679EB43457821F9B925C93829B281225409", "name": "OlympusBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "11/23/2021"}
 {"address": "0x22cC92de25d07De4B34F032f3361770c77454d40", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.01 ETH", "txcount": 9, "settings": "", "date": "11/23/2021"}
+{"address": "0x6c67eA270d038e8416Db406fbC98b24dc51ca1E2", "name": "MondrianNFT", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 6, "settings": "-", "date": "11/25/2021"}
+{"address": "0x587DD023fC83c83de03E658C7c63efd5E4869Bad", "name": "BatchBalance", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x178815d3301314f3b59761ccfc3cfd88cc92229b", "name": "BatchBalance", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xE08bA675d3904fBCA8f247f25F807fD8fD7851B4", "name": "PricingSession", "compiler": "0.8.0", "balance": "0.07 ETH", "txcount": 27, "settings": "", "date": "11/24/2021"}
+{"address": "0xE78618f82eB92B6B16f9e9E43dCBb2Ab463a01d6", "name": "BountyAuction", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 5, "settings": "-", "date": "11/24/2021"}
+{"address": "0x313441e7b8596ed9b9c58b19d2d56fc4a4c34afd", "name": "MockERC721", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xF89b6dee552A574AEED3Ad414bfDa607C197f2FF", "name": "MaviaNFTBridgeL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x0927546d24702d74f17bD1183dd0752944e0340E", "name": "MockERC721", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x5Ed276b8C75C7A3D049f81Cb04eac530441ea482", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.001 ETH", "txcount": 14, "settings": "", "date": "11/24/2021"}
+{"address": "0xF303217cC9ed09D13892e78aa72D3601A7c3Bb88", "name": "Quoter", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/24/2021"}
