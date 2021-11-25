@@ -1190,3 +1190,15 @@
 {"address": "0x7f70d0047Ae63131ab77F179a90F1a41CeEA93Aa", "name": "OracleDelegate", "compiler": "0.4.26", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/24/2021"}
 {"address": "0xBf9076B4ea99C1fcE5E2B0FC7Ac5955333f47d18", "name": "OracleProxy", "compiler": "0.4.26", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/24/2021"}
 {"address": "0xc928c8e48647c8b0ce550c2352087b1cf5c6111e", "name": "TokenManagerProxy", "compiler": "0.4.26", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/24/2021"}
+{"address": "0xcdaf122f137569fed097d1210b4800c3d995f299", "name": "Create2Deployer", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/25/2021"}
+{"address": "0x0ebd9537a25f56713e34c45b38f421a1e7191469", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0x99415856b37be9e75c0153615c7954f9ddb97a6e", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0x783353136e8b4b1eb14539422c36121af400ca6c", "name": "CommonProxy", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0x382B085a47cFF1ea34BaC4fe016f5fa5F061AF7a", "name": "Layer2BridgeDelegate", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/25/2021"}
+{"address": "0x8f8667137Be38ca1973C908ae1A1D27CF0caCCe4", "name": "TransparentUpgradeableProxy", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0xfC7b937D53fbcFE0881c3a3D99c9736d5887A006", "name": "Token", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/25/2021"}
+{"address": "0xfFA4D6cDF9A2aeb6FcB73808785f83260b6cBd19", "name": "ArkenDexV2", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x6EDd44dD70Dca9947d7D72F664Af3579c92De279", "name": "ProxyAdmin", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x91ac657bdff58f526e9b288c410321c7845d20a2", "name": "EtherWrapper", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xF7Ba155556E2CD4Dfe3Fe26e506A14d2f4b97613", "name": "CrossProxy", "compiler": "0.4.26", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "11/25/2021"}
+{"address": "0x519936385413Dbce03da2A4d34125a555D3f0438", "name": "AccessControlledOffchainAggregator", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "11/24/2021"}
