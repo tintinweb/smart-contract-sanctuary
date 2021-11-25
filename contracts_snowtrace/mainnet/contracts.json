@@ -1430,3 +1430,174 @@
 {"address": "0x677dCE0683e6Db30325cD97e8d04D138F34821A6", "name": "StakedLPToken0212", "compiler": "0.5.16", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x627Ea7ab417d293860D4B06E8ee36934Ff731459", "name": "SimpleToken", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x3B17EBa4Ca29cd02fec4F402e914b7316Db93142", "name": "Proxy", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 10, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x132a0030b114be48285fc58766b916698457a3f8", "name": "ROCO", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 1, "settings": "-", "date": "11/25/2021"}
+{"address": "0x80fd9cebe1b3af71c67b002c4cb0bd1f3973326d", "name": "EveRest", "compiler": "0.8.4", "balance": "24.237666667990711774 AVAX", "txcount": 272, "settings": "", "date": "11/25/2021"}
+{"address": "0x7acd55774bbe2dbf5e435c63a3ace200628e44c3", "name": "MultiSigWallet", "compiler": "0.4.15", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x262D7e2dF7B08534015bc7cF259d9186726849C2", "name": "Barn", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 15664, "settings": "", "date": "11/25/2021"}
+{"address": "0x66fb3407b42d1cf8b476bfcbbeaca9d30ca6ab24", "name": "SenpaiDAO", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0xaf767428acdefcb8c3654ff870c8d5a1014dd962", "name": "BlackFridayERC20Token", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 9, "settings": "-", "date": "11/25/2021"}
+{"address": "0x8B414448de8B609e96bd63Dcf2A8aDbd5ddf7fdd", "name": "BenqiStrategyAvaxV1", "compiler": "0.7.3", "balance": "0 AVAX", "txcount": 14794, "settings": "", "date": "11/25/2021"}
+{"address": "0x1Cb0912A2c3D112a72F1E2D654F390C1C349938d", "name": "TempoSale", "compiler": "0.8.0", "balance": "0 AVAX", "txcount": 122, "settings": "-", "date": "11/25/2021"}
+{"address": "0x491194ABAe307D53f9B2311dB74B4a96ee50a488", "name": "DistributorV1", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x1174f3f95cD673C6A3527E899dc73ef50D67cda0", "name": "CollectionMarket", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 4, "settings": "", "date": "11/25/2021"}
+{"address": "0xe4d7dab1b3b82c71730aac019d91203903acd3f7", "name": "CollectionMarket", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x1d87c1c7c192d97d617e441139ead6a682f2c0b9", "name": "BABY", "compiler": "0.8.7", "balance": "0.030292703219755359 AVAX", "txcount": 14, "settings": "", "date": "11/25/2021"}
+{"address": "0x8D76969ABd6cCE3Ef89c8E0BB0f31fBF008EC3C2", "name": "TimeBondDepository", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x706038beed71366d3df06b54cff213ee431f77e3", "name": "Ownable", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0x4a7Bd88e1e45dD4675998f57F7b1ED613eDa29b4", "name": "BabyJoe", "compiler": "0.8.7", "balance": "0.016521616679594225 AVAX", "txcount": 226, "settings": "", "date": "11/25/2021"}
+{"address": "0x23243A73cf380Eb7e39d235c3A3ff31A9a5ACF91", "name": "HentaiDAOERC20Token", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 53, "settings": "-", "date": "11/25/2021"}
+{"address": "0x272274dd61789c7d5213ab22b76fd2e88b027419", "name": "FundzTokenSaleV3", "compiler": "0.7.2", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xf7b4c4abb17634a8dc4abbbceb0934c7389ed198", "name": "Timelock", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x5133e64ea372ce805bfb0603fd16470e6d10306d", "name": "Ocean", "compiler": "0.8.7", "balance": "36.427130636788580795 AVAX", "txcount": 585, "settings": "", "date": "11/25/2021"}
+{"address": "0x757dd1Dcc4546e949CBF4369df13eBc768BFa0B2", "name": "wsGG", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x49EDb46546035e28B7138B21FC3fcCd41bF4b928", "name": "TimeBondDepository", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0xc140d33c955bca626c5897abaa6d74a522e46013", "name": "StrategyMasterChefLP", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xeDEA430279D40bEDf13ecA7b81bDF01327Abfdd2", "name": "ETHTimeBondDepository", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 4, "settings": "", "date": "11/25/2021"}
+{"address": "0x7a1d1700fedd62039badd64d0be5224ca5282b77", "name": "AverageJoe", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x8323dceB36a18944771006618988936086AB21D6", "name": "MiFuToAvaxHonorary", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 9, "settings": "-", "date": "11/25/2021"}
+{"address": "0x5Da00ceB825d60AF1f2E84D58B631EeBA6DC2362", "name": "StakingWarmup", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x78ed6e74806f60c0e3139c6fe7485a24c11120d2", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 8, "settings": "", "date": "11/25/2021"}
+{"address": "0xb7a53b551afcdb3b775fa1facdeb7c1b1d648302", "name": "StakingHelper", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0xBD79c01140CeE7040f8F5E935B72e13540a801b6", "name": "TimeStaking", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 4, "settings": "", "date": "11/25/2021"}
+{"address": "0x7F6e28B4d35769397eE0A0936d4d9F06A7D44069", "name": "Distributor", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0xdd2403317aaaedc51e81327c1f0e29c5e67de58f", "name": "BoreaToken", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 24, "settings": "-", "date": "11/25/2021"}
+{"address": "0x3E0b7BbaD42445dc760059F085d56a86963793c1", "name": "TimeBondingCalculator", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xD5F922e23693e552793fE0431F9a95ba67A60A23", "name": "TimeTreasury", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 21, "settings": "", "date": "11/25/2021"}
+{"address": "0xB183C1C7D7Da73D3d9c1dCDfa020F2eed3fb8973", "name": "CocaineCash", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 175, "settings": "-", "date": "11/25/2021"}
+{"address": "0x2482ec3928aDf1718caA5956608684F5A54e14D0", "name": "MEMOries", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 4, "settings": "", "date": "11/25/2021"}
+{"address": "0x20ea329ed901bdf48b9198591ccffb558a3b0323", "name": "TokenLock", "compiler": "0.6.11", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xF2F7CE610a091B94d41D69f4fF1129434a82E2f0", "name": "TimeERC20Token", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0xee73202ee64ac83a30768f3407edde05640aad92", "name": "BabyJoe", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 7, "settings": "", "date": "11/25/2021"}
+{"address": "0x489d179e04800ef61294e6edb2ba83a345fef653", "name": "swapOracle", "compiler": "0.5.16", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x5842598b594c91c627aaed1e58bd0cdc84c3171a", "name": "TEST", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 7, "settings": "", "date": "11/25/2021"}
+{"address": "0x90ff5d7Ab4228A48c8Dd9fDD729196107968D2b6", "name": "TalecraftVesting", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x374ccb9e23c735cc91f1161a0d058e590c56a72e", "name": "AvaxBricks", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0x1EE4144A707D0896F9594030f5D9af6935C80013", "name": "SwapContract", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0xA4EbD64423a6FF9baE958Bd0A38Fc216F41b3ef6", "name": "BondDepository", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 55, "settings": "", "date": "11/25/2021"}
+{"address": "0x93c375fDA3158b18889437D30049F2ABeFA34275", "name": "StakingHelper", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 702, "settings": "", "date": "11/25/2021"}
+{"address": "0x143d72506DB9004Fa251f2Aa7Ee9Cea6A31Eb65E", "name": "StakingWarmup", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x6d7AD602Ec2EFdF4B7d34A9A53f92F06d27b82B1", "name": "Staking", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 165, "settings": "", "date": "11/25/2021"}
+{"address": "0x7e66151841eeb3d8e68d5f5119dc46cdd3aa95a6", "name": "SSCustomBondDepository", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 352, "settings": "", "date": "11/25/2021"}
+{"address": "0xe55792B1926864a0734c3c49daE50D27e3D90265", "name": "StakingDistributor", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0xb84E864DDF96B57951Ebe687746418D221C4c1E6", "name": "BondingCalculator", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x22cF6c46b4E321913ec30127C2076b7b12aC6d15", "name": "Treasury", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 17, "settings": "", "date": "11/25/2021"}
+{"address": "0xEcE4D1b3C2020A312Ec41A7271608326894076b4", "name": "StakedMaximizerERC20", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 205, "settings": "", "date": "11/25/2021"}
+{"address": "0xdef1fac7bf08f173d286bbbdcbeeade695129840", "name": "CerbyToken", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 5, "settings": "", "date": "11/25/2021"}
+{"address": "0x9da77d18b260e070d44961d66806932d646f7f99", "name": "LoveBankPublicSale", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 33, "settings": "", "date": "11/25/2021"}
+{"address": "0x0305102A290a9624E7c6161012800f3dE5Ab23fE", "name": "ERC20", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 4, "settings": "", "date": "11/25/2021"}
+{"address": "0x2818E1C8E658245417cE563C143aEE849e702CA6", "name": "AHv2Farmer", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0xb34752775B24e016d00FF646a9e9Ab7329C0e22F", "name": "AHv2Farmer", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x855b33E57d0CdF28F089FC6d9d38A4B45Ef6C2DC", "name": "AHv2Farmer", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x7C08413cbf02202a1c13643dB173f2694e0F73f0", "name": "MaximizerERC20", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1335, "settings": "", "date": "11/25/2021"}
+{"address": "0xa3dbc3186fEd015Ef69f9C8690eA007D3D9D83E4", "name": "AHv2Farmer", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x6a0157c5d3fdf76e65d3f85aaa03dd752a6e54c1", "name": "OlivePair", "compiler": "0.5.16", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "11/25/2021"}
+{"address": "0x6cc27c639fb1c66eaa74ae81b53d5f6ac432d64a", "name": "PepeCapital", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 180, "settings": "", "date": "11/25/2021"}
+{"address": "0x45B181254aB5b5DfAC5Cf6165418b8EecAE351ce", "name": "AccessControlledOffchainAggregator", "compiler": "0.7.6", "balance": "0 AVAX", "txcount": 5, "settings": "", "date": "11/25/2021"}
+{"address": "0x0c45FB63001b56a21e29c7dcc1727bfDA273a368", "name": "OliveRouter", "compiler": "0.6.6", "balance": "0 AVAX", "txcount": 44267, "settings": "", "date": "11/25/2021"}
+{"address": "0x4fe5ccfa8c59aaa115650636a08f7252bfe6e752", "name": "LBPPTest", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 8, "settings": "", "date": "11/25/2021"}
+{"address": "0x617724974218a18769020a70162165a539c07e8a", "name": "OliveToken", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 10413, "settings": "", "date": "11/25/2021"}
+{"address": "0x5a9710f3f23053573301c2ab5024d0a43a461e80", "name": "MasterChef", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 33302, "settings": "", "date": "11/25/2021"}
+{"address": "0x8b81772b17f7d0dcc9252fc34ed2a8dd6be2b379", "name": "GnosisSafeProxy", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0xf1b9c667a53a800b48b55b14f7612d2638607288", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0x3d8f74620857dd8ed6d0da02ceb13fd0ed8ba678", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0x2eaa12c0c76ea8192d82b63f8dbbb7ec2a270295", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0xb84527d59b6ecb96f433029ecc890d4492c5dce1", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0xa87827efcac7ab82992665fc178cca16843fe353", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0xb2d5a8903d93cb2c4c57fe8520bccdfbeee1077d", "name": "DynamicBulkTransfer", "compiler": "0.7.6", "balance": "0 AVAX", "txcount": 1, "settings": "-", "date": "11/25/2021"}
+{"address": "0xf5268b2e0bdd62d3816e7078c595ccb67f5c693d", "name": "MeltSupply", "compiler": "0.5.16", "balance": "0 AVAX", "txcount": 6, "settings": "", "date": "11/25/2021"}
+{"address": "0xa8d648cf696b66f8b7024aa15bc5c030166dfa8b", "name": "DEFINIS", "compiler": "0.5.0", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xad9d83418edc36f372c3cde14d1ebe49504dd8b4", "name": "TestBankERC20Token", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 9, "settings": "-", "date": "11/25/2021"}
+{"address": "0x470f8c9ab3c5667af5063e2d737171d23a573c72", "name": "SnowShibaBondDepository", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 628, "settings": "", "date": "11/25/2021"}
+{"address": "0xdbf9ece961f696c56730671700beda19096a7fae", "name": "Misc", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/25/2021"}
+{"address": "0x2f86508f41310d8d974b76deb3d246c0caa71cf5", "name": "BEP20", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 97, "settings": "", "date": "11/25/2021"}
+{"address": "0xf5fba4f3454012b7b245eccb55ac5f04c8a8829c", "name": "MynosIDO", "compiler": "0.8.7", "balance": "2,771.786 AVAX", "txcount": 381, "settings": "", "date": "11/25/2021"}
+{"address": "0xd03ef6779bc652d6144ab287b839c4b93efc2d11", "name": "Nixxcoin", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 16, "settings": "-", "date": "11/25/2021"}
+{"address": "0x1daFE04B8907e8108b544DbFF69F68f7Ee3Aa056", "name": "MetaCardsToken", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x553b8d5919a7684d16bc885805f095784ecdce8f", "name": "MagicCarpet", "compiler": "0.8.2", "balance": "0 AVAX", "txcount": 6, "settings": "", "date": "11/25/2021"}
+{"address": "0xA3F6D62d480BBbB97ec7e8834D562AB6598397Cb", "name": "ChainLinkPricer", "compiler": "0.6.10", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x3a39ac5ed74a0f06a7dcc3ad331393a176abb391", "name": "CoinToken", "compiler": "0.4.24", "balance": "0 AVAX", "txcount": 10, "settings": "", "date": "11/25/2021"}
+{"address": "0x8807c1d0699385827fcf3b66ba94dc769c5653ed", "name": "CoinToken", "compiler": "0.8.5", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0xd5280111de430f2d2609a91012e7dde1905a7f21", "name": "ERC20token", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 11, "settings": "", "date": "11/25/2021"}
+{"address": "0x2c3ddb2ee81d875bcd17c464ad7517f568011ce5", "name": "CoinToken", "compiler": "0.8.2", "balance": "0 AVAX", "txcount": 15, "settings": "", "date": "11/25/2021"}
+{"address": "0xa2776A53Da0bf664EA34B8Efa1c8aB4241A10968", "name": "Blizzard", "compiler": "0.7.6", "balance": "0 AVAX", "txcount": 1095, "settings": "", "date": "11/25/2021"}
+{"address": "0xa3fa3d254bf6af295b5b22cc6730b04144314890", "name": "FiatTokenV2_1", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 4, "settings": "", "date": "11/25/2021"}
+{"address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E", "name": "FiatTokenProxy", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 16, "settings": "", "date": "11/25/2021"}
+{"address": "0xbeb05322b52ba2971a875455f7246af1819973c8", "name": "WhiteRabbit", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x1B713054bDEB720De302E3Fce331925b10D75d23", "name": "Rewarder_MasterChef_Style", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x5b96b904fa2a218f83ba2cadcfb581386cbb00fa", "name": "OlympusERC20Token", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 34, "settings": "", "date": "11/25/2021"}
+{"address": "0xB59FB3F79174D25f2cAB8394C35D1f2161497ca6", "name": "Rewarder_MasterChef_Style", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x21c743293da324315ACBA7b2b72C754B93133028", "name": "Rewarder_MasterChef_Style", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x49864B1B773b3AcbE8d71A9C3651d17ae4C4F95b", "name": "Rewarder_MasterChef_Style", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x21c6F72424Ad5785C1803fFbE9F7475cBabcb001", "name": "Rewarder_MasterChef_Style", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x55f02acd0ba21afac507c8c79cf5bc25a92a6754", "name": "ExchangeV2", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x3417e77e81cf31bb210c2364883eb83e5077f0dd", "name": "ERC20TransferProxy", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x3d7e2a3ecb2ae2a516465c611dff813d7b9297f8", "name": "TransferProxy", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/25/2021"}
+{"address": "0x068bEF92987D16eF682FF017B822CA1211401EaF", "name": "GhostMarketERC721", "compiler": "0.8.4", "balance": "0.0555 AVAX", "txcount": 47, "settings": "", "date": "11/25/2021"}
+{"address": "0xdcdaB251151c345AD527851ECa783521Ea3209E0", "name": "GhostMarketERC1155", "compiler": "0.8.4", "balance": "0.006 AVAX", "txcount": 9, "settings": "", "date": "11/25/2021"}
+{"address": "0x6838E23CABB7Ce15f6FaAa8aE89D22851e720e94", "name": "Giveaway", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 8, "settings": "-", "date": "11/25/2021"}
+{"address": "0xfdEa5c7A617e151fef08dC6398fc44f1918354Ee", "name": "Stakes", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xDE411865EFDFCb456eCDA713b81318e0B910D38C", "name": "ERC721Suika", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xdDEef553660C204a71D3c995a687c93092AA90b9", "name": "ERC721Mochi", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x9aE8c7c39044A15618A8cAe0610bA7c5a95c24D9", "name": "ERC721Matcha", "compiler": "0.5.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x3593e5e696282e50E283E0A11c0f6dc4b6BC42EE", "name": "ERC20Vanilla", "compiler": "0.5.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x215662DB3cF2d7dCC8E8547a40C264381100A947", "name": "ERC20Pistachio", "compiler": "0.5.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xDa3a78fEAa6350148332F59B0b29D464a34C3F85", "name": "ERC20Chocolate", "compiler": "0.5.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xEf1Ce020214B662dD7d010A11608aFA55Ee0dc58", "name": "CrowdsaleRaspberry", "compiler": "0.5.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x4946feF1281BB6A2c5dd8F1029116C2674A39C92", "name": "CrowdsaleBluemoon", "compiler": "0.5.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x4D26eF6C4c48f4B4C07A36B80cD5dC16f3E6FA5A", "name": "CampaignMango", "compiler": "0.5.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x616726A56743f6FfF7364DF1632F9b2dd08B75f6", "name": "ArcticShiba", "compiler": "0.8.1", "balance": "0 AVAX", "txcount": 9, "settings": "-", "date": "11/25/2021"}
+{"address": "0xBbD9678AEAF31b24520587aDbAff9Ce45c8674Ea", "name": "ERC20", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 6, "settings": "", "date": "11/25/2021"}
+{"address": "0xf7e6214E1f2b03b54f1594ECfa3834148aB26888", "name": "AaveSwapWrapper", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xDe6e01931A5120c7FFd90F59939b16415932E849", "name": "AaveSwapWrapper", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 6, "settings": "", "date": "11/25/2021"}
+{"address": "0xc81be0ad26ae860a68d81e2135565bbe0429647a", "name": "Airdropper", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 218, "settings": "", "date": "11/25/2021"}
+{"address": "0x30B9d7572260Af49685872213BD8ccE54D687f2E", "name": "AaveSwapWrapper", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0x264bF43EB1E0dE8ad148E9D6EA90a458e80Fb689", "name": "StrategyTraderJoeDualLP", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/24/2021"}
+{"address": "0x2127aaee952ef01bc1053a4b26e2053b0b4f6104", "name": "BABYJOE", "compiler": "0.8.7", "balance": "19.960518071501960948 AVAX", "txcount": 297, "settings": "", "date": "11/24/2021"}
+{"address": "0x98a6f922d405d25bdc965b1c23d1ebb31dfa8000", "name": "AVAROCK", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 78, "settings": "-", "date": "11/24/2021"}
+{"address": "0x00b4F18a0E116050B1699c8Aff25Da8681722467", "name": "OceanWave", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 36, "settings": "-", "date": "11/24/2021"}
+{"address": "0x309da17b1c0ebd29f31e44ee3ec18ea5cdde498e", "name": "PumpCoinCapital", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 613, "settings": "", "date": "11/24/2021"}
+{"address": "0xDaD847727cd1A7064E6C10CBD21F72Ea7a61D5Fa", "name": "PirateIsland", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 13, "settings": "", "date": "11/24/2021"}
+{"address": "0xdfb79e342d63798e71f1fa65acbb5b4b2766cd4b", "name": "WhiteRabbit", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 240, "settings": "", "date": "11/24/2021"}
+{"address": "0x471Df7244804260311654F653666422f2e79a682", "name": "MiFuToMintingRewards", "compiler": "0.8.7", "balance": "13.21608008927436402 AVAX", "txcount": 274, "settings": "-", "date": "11/24/2021"}
+{"address": "0x276e5D147fb855938815de63bb6910A7dE10249f", "name": "MiFuToAvax", "compiler": "0.8.7", "balance": "30.5 AVAX", "txcount": 832, "settings": "-", "date": "11/24/2021"}
+{"address": "0xb4380e7e408ec3cfaab351d8c4faa79a3f8d49a1", "name": "ChainFarmCapital", "compiler": "0.8.0", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/24/2021"}
+{"address": "0x59B123EcD1fF3bA86e3D5AF8a60823B455891B70", "name": "MiFuToMarket", "compiler": "0.8.7", "balance": "0.1 AVAX", "txcount": 40, "settings": "-", "date": "11/24/2021"}
+{"address": "0x1c72870d374375285B257B259012ae1180111648", "name": "Hawaii", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 17, "settings": "", "date": "11/24/2021"}
+{"address": "0x573f586db976209517a7cb5f7b59faff5318dc84", "name": "wMYNOS", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0x444398D9B4444612112B610fe995e7a758899F02", "name": "TheBahamas", "compiler": "0.8.4", "balance": "1 wei", "txcount": 59, "settings": "-", "date": "11/24/2021"}
+{"address": "0x7a04ecad82c98259046c46e344fe48bbae2e815e", "name": "AVAXMynosBondDepository", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xe720fca4cfF42F03eC01A12F23592b731A43EDCf", "name": "SnowGlobeJoeAVAXHCTMini", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 43, "settings": "", "date": "11/24/2021"}
+{"address": "0x99d3aebc3a4130E0c0030c91Bab93ed382e5AED6", "name": "Snowbird", "compiler": "0.8.1", "balance": "0 AVAX", "txcount": 8, "settings": "-", "date": "11/24/2021"}
+{"address": "0x4512029E332d184089A5Ba00FFCCFbe1f04870c2", "name": "StrategyPngAVAXHCTMiniLp", "compiler": "0.6.7", "balance": "0 AVAX", "txcount": 6, "settings": "", "date": "11/24/2021"}
+{"address": "0x0c7Fe9A166942346CF75c7b751f877FddC08a67E", "name": "TI", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 24, "settings": "", "date": "11/24/2021"}
+{"address": "0x0a5c1108d016b2486433cd838450c9ef932e03d5", "name": "Smiles", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/23/2021", "err": "Exception('HTML IN OUTPUT!! - BeautifulSoup messed up..')"}
+{"address": "0x2E099635041b3645186A2514426AfF86c5f7ed9f", "name": "ERC721Distribution", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x6664c8118284b3F5ECB47c2105cAa544Ab0Cf75B", "name": "TransferRoyaltyModel01", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x2CB1f04f059Bc8271ccFe03091550d993a2F3922", "name": "PAPATreasury", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xc2571eBbc8F2af4f832bB8a2D3A4b0932Ce24773", "name": "WrapperDistributor721", "compiler": "0.8.7", "balance": "0 AVAX", "txcount": 3, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xab8ef7872f83e2f619b9a627391a17ba5ef790cb", "name": "LBOtterPresaleTest", "compiler": "0.7.5", "balance": "0 AVAX", "txcount": 7, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xAbeC56f92a89eEe33F5194Ca4151DD59785c2C74", "name": "Multicall2", "compiler": "0.5.17", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x904A2bF9Bd211B9F95d55d195ffd3C2e68855CF6", "name": "StableStableStrategy", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x20a671BD1CEdC0C4ac5f74b14ab76dE8BC25B33C", "name": "StableAvaxStrategy", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x1Ad78A98cCcac5EF9f1B70390908212735C6d2FB", "name": "DeXStableStrategy", "compiler": "0.8.9", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x38F3D82166e60f529F6b2CBD7818d9AEf81e5F40", "name": "FarmersOnlySwapContract", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xF60cC6a6C813D54061A4B7E96C0ac3CC7a047cA6", "name": "FarmersOnlySwapContract", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xf0e7F37191D5062009eb8D738dd40505D355fDA1", "name": "FarmersOnlySwapContract", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xb91F21799cE5656dF342d5787d401A0Cc762dCD7", "name": "MasterDuo", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 18, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x494E3D785379fc66cB6e0d5464121f7117179Fb2", "name": "JoeStrategy", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 14, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x1047f900d0c889a97f792726648fbdd2c49ecc28", "name": "FarmersOnlySwapContract", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 6, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xf6de72c35aec9fd2ea239c77c125971bedfa5c07", "name": "RoboTime", "compiler": "0.7.6", "balance": "0.02400811096861244 AVAX", "txcount": 44, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xb7085a1d5b0130f831d94b7b73ba3697e42923a1", "name": "Vyper_contract", "compiler": "vyper:0.1.0b17", "balance": "0 AVAX", "txcount": 1, "settings": "-", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x481ad8566be48cc124166c407c70debe4958f479", "name": "StakingWarmup", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x7ecFCbdeb6f195030B9Bf2ECc402f6d5433d116D", "name": "MasterChefJoeLpRestake", "compiler": "0.8.6", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x3981c3bc81b52584c415ccc094a21e7e77672c81", "name": "TimeStaking", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xb2a846ecf0d7755340c8f64557cd92b26eed3725", "name": "UTBGiftBox", "compiler": "0.8.4", "balance": "5.61000000000000001 AVAX", "txcount": 22, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x308a7d6074ae5f734152ae305ba4d97084ff494b", "name": "Utilitybia", "compiler": "0.8.4", "balance": "0 AVAX", "txcount": 2, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x2a0EAB3b203ACE9eA7107b37dd97a1E296eAc8E1", "name": "Traits", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 14, "settings": "-", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x2B2338AA3A2BA2ec0a724380f82608638855c0E1", "name": "Barn", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 14, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xEF34287020E14867EB9e4168fc8c1B2e882bd6bE", "name": "WOOL", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 3, "settings": "-", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x978EBAdb7af0e4F00640283A5c1678C5AbF31FF0", "name": "Woolf", "compiler": "0.8.10", "balance": "87 AVAX", "txcount": 45, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xc596f6455054d8cdde627096be671e377791e295", "name": "StakedLPTokenFactory0212", "compiler": "0.5.16", "balance": "0 AVAX", "txcount": 7, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x677dCE0683e6Db30325cD97e8d04D138F34821A6", "name": "StakedLPToken0212", "compiler": "0.5.16", "balance": "0 AVAX", "txcount": 1, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x627Ea7ab417d293860D4B06E8ee36934Ff731459", "name": "SimpleToken", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x3B17EBa4Ca29cd02fec4F402e914b7316Db93142", "name": "Proxy", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 10, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
