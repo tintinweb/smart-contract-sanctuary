@@ -1202,3 +1202,5 @@
 {"address": "0x91ac657bdff58f526e9b288c410321c7845d20a2", "name": "EtherWrapper", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
 {"address": "0xF7Ba155556E2CD4Dfe3Fe26e506A14d2f4b97613", "name": "CrossProxy", "compiler": "0.4.26", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "11/25/2021"}
 {"address": "0x519936385413Dbce03da2A4d34125a555D3f0438", "name": "AccessControlledOffchainAggregator", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "11/24/2021"}
+{"address": "0xCD5F13b00014853e063ce6c795d89BfD9BA67270", "name": "PiggyDistribution", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/26/2021"}
+{"address": "0x41c1995fedb7fb04fabfeed3be45ac66f0903811", "name": "HyperLiquidriumFactory", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/25/2021"}
