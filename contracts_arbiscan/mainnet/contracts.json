@@ -1204,3 +1204,7 @@
 {"address": "0x519936385413Dbce03da2A4d34125a555D3f0438", "name": "AccessControlledOffchainAggregator", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "11/24/2021"}
 {"address": "0xCD5F13b00014853e063ce6c795d89BfD9BA67270", "name": "PiggyDistribution", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/26/2021"}
 {"address": "0x41c1995fedb7fb04fabfeed3be45ac66f0903811", "name": "HyperLiquidriumFactory", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/25/2021"}
+{"address": "0x56d9f2a3e3a78bf8ce57337f2b5e471b8d2d8a6d", "name": "LysToken", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "11/26/2021"}
+{"address": "0xdA7c97083369B97010f0E748a142355D5f791E8f", "name": "Plunge", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/26/2021"}
+{"address": "0x7F069df72b7A39bCE9806e3AfaF579E54D8CF2b9", "name": "LimitOrderProtocol", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/26/2021"}
+{"address": "0xF5c2B1b92456FE1B1208C63D8eA040D464f74a72", "name": "crosschainNativeQiStablecoin", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "11/26/2021"}
