@@ -500,3 +500,10 @@
 {"address": "0x0927546d24702d74f17bD1183dd0752944e0340E", "name": "MockERC721", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/24/2021"}
 {"address": "0x5Ed276b8C75C7A3D049f81Cb04eac530441ea482", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.001 ETH", "txcount": 14, "settings": "", "date": "11/24/2021"}
 {"address": "0xF303217cC9ed09D13892e78aa72D3601A7c3Bb88", "name": "Quoter", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/24/2021"}
+{"address": "0xa3A9664532E063A9D8188B515ef7F1BcB8583bBD", "name": "Counter", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/25/2021"}
+{"address": "0x071f6bBfC2eEe6de50056fEcE089BA891206D308", "name": "FarmlandCharacters", "compiler": "0.6.12", "balance": "0.007 ETH", "txcount": 14, "settings": "", "date": "11/25/2021"}
+{"address": "0xe3765b10c8c9df5BC5245833d77a4aBD29C65481", "name": "MaviaNFTBridgeL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x6D685Ed532CE09132c6CD408c5c51B3Af2C3C761", "name": "MaviaNFTBridgeL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xb674a7656C7D4D7180238Af64DeE01CF69A146bA", "name": "PiggyDistribution", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xfd9f9ed0d0c2a5ca2882ed6b07f32e615d66eb0c", "name": "PiggyDistribution", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0x378c6167351e03c1534516c5224cd2b6f69e7618", "name": "Comptroller", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
