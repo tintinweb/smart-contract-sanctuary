@@ -507,3 +507,15 @@
 {"address": "0xb674a7656C7D4D7180238Af64DeE01CF69A146bA", "name": "PiggyDistribution", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
 {"address": "0xfd9f9ed0d0c2a5ca2882ed6b07f32e615d66eb0c", "name": "PiggyDistribution", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
 {"address": "0x378c6167351e03c1534516c5224cd2b6f69e7618", "name": "Comptroller", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/25/2021"}
+{"address": "0xBC9A6D5d49D46d0577d3cdd76AE3b4B16Bf829DD", "name": "SimpleProxy", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 12, "settings": "", "date": "11/27/2021"}
+{"address": "0x704120e40Ccf46fe77c8cD61427ed30871Cca668", "name": "PricingSession", "compiler": "0.8.0", "balance": "0.03 ETH", "txcount": 24, "settings": "", "date": "11/26/2021"}
+{"address": "0x90737Dda4C6E4D700268a718E01CBdEf91eACF15", "name": "PricingSession", "compiler": "0.8.0", "balance": "0.09 ETH", "txcount": 9, "settings": "", "date": "11/26/2021"}
+{"address": "0x37142694e651027F395A2A598e18c7CBa1c5cA2e", "name": "PricingSession", "compiler": "0.8.0", "balance": "0.09 ETH", "txcount": 13, "settings": "", "date": "11/26/2021"}
+{"address": "0x3FeB5e620A1826E8892374079E0bBAA7963fB9Aa", "name": "PricingSession", "compiler": "0.8.0", "balance": "0.2 ETH", "txcount": 15, "settings": "", "date": "11/26/2021"}
+{"address": "0x38fb48C3884028982C9B754CFb08cAD4D68A4503", "name": "PricingSession", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "11/26/2021"}
+{"address": "0x09fE88b894692718Bda7Df125852C1aEF4095Ee4", "name": "ArbitrumNFTCore", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/26/2021"}
+{"address": "0xBa199d9286A11683fEad14A9fE06D4ABfa980219", "name": "PairFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "11/26/2021"}
+{"address": "0xf892FB864fA12C9919d80f51015BF661BFAF7632", "name": "PairFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/26/2021"}
+{"address": "0x703a87696a21743d3879Bc3A09Aee00Daa694A27", "name": "MondrianNFT", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/26/2021"}
+{"address": "0x4976FEA0f17013e51522BD08EB1DAd77A1dACc73", "name": "StakingPoolFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/26/2021"}
+{"address": "0xfd2a92866168bA4902Db857AceB2dacAe5189b20", "name": "MondrianNFT", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 10, "settings": "", "date": "11/26/2021"}
