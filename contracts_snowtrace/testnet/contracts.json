@@ -1205,3 +1205,59 @@
 {"address": "0x3C73B0F6ea9E0CD62014291A4472364903Dcfa94", "name": "KUSDMinterDelegator", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "11/25/2021"}
 {"address": "0xd24D9e0fA1964E11F2c8D3ef6199534b9036E45a", "name": "PeggedToken", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/25/2021"}
 {"address": "0xB6579885964B65D34B05B0D7176e05bCD259608d", "name": "KUSDMinterV3", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "11/25/2021"}
+{"address": "0xB2c302E422DA0F1b56AE97f7e84D9Cd5707CE560", "name": "AVAXGMTest", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "11/27/2021"}
+{"address": "0x92c4cf3970bfbf7f207544b188626df7b3df701a", "name": "AVAXGMTest", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "11/27/2021"}
+{"address": "0xb8D44a8B287249434032683e43c71cf3A119fE63", "name": "sigMint", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "11/27/2021"}
+{"address": "0x5cd0a77db5CA1A78e394E6D8095D7400D54b8706", "name": "ERC721LazyMintWith712", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "11/27/2021"}
+{"address": "0x7f334116e27cba0360921afbd623ae6f4ddbdea5", "name": "TestItem", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 0, "settings": "-", "date": "11/26/2021"}
+{"address": "0x404b9db0307ef9f61265625ec3b84640ecc0483c", "name": "TestToken", "compiler": "0.8.10", "balance": "0 AVAX", "txcount": 0, "settings": "-", "date": "11/26/2021"}
+{"address": "0x2B1A6d71611c9259Fd2006c39672badC93d83367", "name": "ERC721LazyMint", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x31ec50755f2ffec27824f078ae6d43d7c01f289a", "name": "ERC20UpgradeableProxy", "compiler": "0.6.12", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xa629e3d7b4dc7e925b8c77db709989bba3ebc933", "name": "Moonmug", "compiler": "0.8.7", "balance": "0.8 AVAX", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x3010E166D0BA4F2B11ea8085158aa0d2732b95a3", "name": "Staking", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xd05CB5A94E58d8d2A3BA396cBADf0328dE31Cab1", "name": "EnigmaPresale", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "-", "date": "11/26/2021"}
+{"address": "0x2872EC37F32eCd0ee4A575799029ec1dCbE18e59", "name": "Moonmug", "compiler": "0.8.7", "balance": "4 AVAX", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xee722B8B46fe7C63aDd331EbFf831B6ac2012cfD", "name": "Address", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x70cC7CCe25C61978CaE8a4b81Da32561EEc20036", "name": "Moonmug", "compiler": "0.8.7", "balance": "6 AVAX", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x6d96F7Ad211aaa80C9B7968d4B8C8fEd29059a9F", "name": "Moonmug", "compiler": "0.8.7", "balance": "4 AVAX", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xcd712eD5dc5bd0F419945A57D1c47AF15abF7A99", "name": "Address", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x7e4aeeaf979905df002e263f8970826cf71cbb1a", "name": "Vaccines", "compiler": "0.8.7", "balance": "0.095000000000000001 AVAX", "txcount": 0, "settings": "-", "date": "11/26/2021"}
+{"address": "0x97094290fb6290234E1adA1775Ad38D3Ab1694A1", "name": "AvaxCoin", "compiler": "0.8.4", "balance": "0.325 AVAX", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x86f9237E35b18360b6b3Ea240606eF164120DB46", "name": "Staking", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x0Cd1F1fe7A4a10B7Fd13f8A31391e836971AB1a4", "name": "Moonmug", "compiler": "0.8.7", "balance": "6 AVAX", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x2A1370604bD655DE8894A243fdBF0E6A6cdf0Af3", "name": "Staking", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x4b105056c607545137dbF0E5a57B217968b75960", "name": "ERC721LazyMint", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x22D4388895cA5AaB91F34315E676b6039351d450", "name": "ERC721LazyMintWith712", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x931604418a926ec1f826db7b102a3f515114980c", "name": "TimeBondDepository", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x7acD55774BBe2dbf5E435C63A3aCe200628e44c3", "name": "MultiSigWallet", "compiler": "0.4.15", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xd6fb7b70122316527abcf53902874e72b15c249d", "name": "DiocanCoin", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xcf7830567bcbe913ac90325eecdc9591bce627fb", "name": "Golira", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x4e97225ce263357f1d0a1c58089e5acb20fe89cb", "name": "ERC20", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x5a82829A769D3fd38E7B7801A2B75C1FAE37c01d", "name": "AlphaENIGM", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "-", "date": "11/26/2021"}
+{"address": "0xFe845AB6CB17b7d9134d9d96544dCa8E1cf6Cbb2", "name": "L2TimelockTrigger", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xa43230dc1C788386F139A65653617a1f748Ca81D", "name": "TimeBondDepository", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x4bb6262f3746368227501990720A3e8137bb0458", "name": "EnigmaPresale", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "-", "date": "11/26/2021"}
+{"address": "0xeE6b2Bb7715229ad465A498DA98cf65B690547Ce", "name": "MockYieldSource", "compiler": "0.8.6", "balance": "0 AVAX", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x75137Ad7eBAc72B68062f17D248ADAEF20aBB656", "name": "YieldSourcePrizePool", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xf648F7fCBE4033850919c8dFfF42b7943dDb2173", "name": "EnigmaPresale", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "-", "date": "11/26/2021"}
+{"address": "0xa033D5BF21296A15DF8782897855F0B1C7b9593f", "name": "PrizeSplitStrategy", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x13523d5079f3AbC5db03508a1c33F57404AEa651", "name": "EIP2612PermitAndDeposit", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x0bA89678565999742a65BE6DFE915DEC08cEAdba", "name": "DrawCalculatorTimelock", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x29995a9F4F286290bA8b70d26a11CDdf8130B290", "name": "L2TimelockTrigger", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x377d9B0ec05C8c2955470D430CB28Cd64a59bbC6", "name": "DrawCalculator", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xE48c3a799aAB4A3f3C6371246D8D4a8F6474706C", "name": "DrawBuffer", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xb308f23f31d2e5d553ab4ab0281a170bd2a9f949", "name": "Distributor", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xb729ce3f25ccae63c4852abe447da8020232c667", "name": "MEMOries", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xb26fe631bef196049c46cc3b5361755019d79f48", "name": "StakingHelper", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x3b068869E8f47e721345f0905d0bd494DD3D9Afb", "name": "RichBulls", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xa5e03a19d3f2ff97b001f47be83266098b47fd07", "name": "TimeStaking", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xf6e69dfd83fdc9d48905e91d0713f5ebb5346136", "name": "TimeBondingCalculator", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x0cabcb8185a14378a7cc68d21bf68884ff730fc3", "name": "Buba", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xca33ebe1c4d134f5ab2002c6e36607f7fda6075d", "name": "Buba", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x9B15c33C87997f26cE38B1e9A5795C97c457a38A", "name": "AthenaERC20Token", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x85c60f5C12Cf14dbb1aAfe3462fe27409c86dDfa", "name": "ERC20PresetMinterPauser", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x99899bD155c57be443A62D2cAfc59536b6E8b544", "name": "Quoter", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xce363F345100b29Af97147f5Fab030b4Fb24fA3a", "name": "InstaBenqiResolver", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "11/26/2021"}
+{"address": "0xBE0AB6528a896289BefbD848D0e81B9B2a70478D", "name": "Portfolio", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0xbaaABCa1424159655D0AA49F57D16aEDAE221Ee0", "name": "TimeBondDepository", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/26/2021"}
+{"address": "0x642162bef36aadbaff5b0e68d675935370279de4", "name": "ElectronERC20Token", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "-", "date": "11/26/2021"}
