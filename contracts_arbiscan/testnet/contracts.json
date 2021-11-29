@@ -535,3 +535,7 @@
 {"address": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485", "name": "Funding", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/27/2021"}
 {"address": "0x1f0c421312EA02e964Cec73fdC49a350626758D3", "name": "Finance", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/27/2021"}
 {"address": "0x70492D215774d05f279b7C811399AEe2406d4c2D", "name": "ERC1155Placeholders", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/27/2021"}
+{"address": "0x1c53F0E7c95f047f14159206658c296ad7347FFa", "name": "CentrumFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/28/2021"}
+{"address": "0xd726Eea70AA01a40Fe0EE067b7AC2ca47c66CAF8", "name": "CENTRUM", "compiler": "0.5.15", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "11/28/2021"}
+{"address": "0x294251d3B466EDf58fC34c99bb417Fb750EC2674", "name": "CentrumDelegate", "compiler": "0.5.15", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/28/2021"}
+{"address": "0xfE8c0617b0e79858f8742CF0527427A068B2f61C", "name": "CentrumRebaser", "compiler": "0.5.15", "balance": "0 ETH", "txcount": 10, "settings": "", "date": "11/28/2021"}
