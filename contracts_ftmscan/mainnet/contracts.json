@@ -1676,3 +1676,14 @@
 {"address": "0x4C2D9c4a67b037F6768e01d1D3146E87f696baAf", "name": "WolfImpact", "compiler": "0.8.0", "balance": "0 FTM", "txcount": 6, "settings": "", "date": "11/30/2021"}
 {"address": "0x8edb6cfd460d90e218f89b8427c0f6f51a1af873", "name": "cyber_kyler", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "11/30/2021"}
 {"address": "0x5ce66ba8b396a0ed8aebfb706dadbc60c6b030b1", "name": "LBNFT", "compiler": "0.8.7", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "11/30/2021"}
+{"address": "0xbc3153f5a9004f0356901a8fd9c4e84901808df7", "name": "JKPayments", "compiler": "0.8.0", "balance": "0.100000000000000001 FTM", "txcount": 2, "settings": "", "date": "12/1/2021"}
+{"address": "0x0FFB7F24BDc6FF9118EE02Bb2770F57C13c25a3B", "name": "PriceFeed", "compiler": "0.6.11", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "12/1/2021"}
+{"address": "0xC82b1849257Ab6ebd355d7a8CAC35bEF6c210986", "name": "StakingRewardsPenalty", "compiler": "0.6.11", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "12/1/2021"}
+{"address": "0x8736450d34C59Be0919957A01BBC5FCBcc187619", "name": "CommunityIssuance", "compiler": "0.6.11", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "12/1/2021"}
+{"address": "0xC19CBd4dc821DEC70d968666C596B0fEDf317d88", "name": "TroveManager", "compiler": "0.6.11", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "12/1/2021"}
+{"address": "0x4f2015f068B9eFB872eAf2D92b0Af1c8b241eCb8", "name": "BorrowerOperations", "compiler": "0.6.11", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "12/1/2021"}
+{"address": "0x47081a9dDb53064b6285619931450CCE82112fa5", "name": "LQTYTreasuryTester", "compiler": "0.6.11", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "12/1/2021"}
+{"address": "0xcd731405f87656389ee5b3f456ad44e69b4f753d", "name": "DefyToken", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 5, "settings": "", "date": "12/1/2021"}
+{"address": "0xe4dd58e5f95c0e94b6b976fb2c7ce470e6fe77dc", "name": "DefyTreasuryVault", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 1, "settings": "", "date": "12/1/2021"}
+{"address": "0x784260379a00661047cf64a7ad5EE1BC63E48558", "name": "YetiToken", "compiler": "0.6.12", "balance": "0 FTM", "txcount": 32, "settings": "-", "date": "12/1/2021"}
+{"address": "0xfC384530D52AC273A80655aE68E2425a6Bc75531", "name": "InitialLiquidityPoolTester", "compiler": "0.6.11", "balance": "0 FTM", "txcount": 2, "settings": "", "date": "12/1/2021"}
