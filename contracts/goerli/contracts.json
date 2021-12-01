@@ -15184,3 +15184,36 @@
 {"address": "0xA17F8466a7451135ef0F918785b85e25EF4f0674", "name": "VolmexToken", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0xf30AAEcC704B100c3b24Fff188b6ca3d1E1C1d83", "name": "MerkleVesting", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x9AC0c77beD00a18e2d30A049D8cC54967C673012", "name": "StakedToken", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x834d6205dc9b6abdff7decb8d44b409ee3d95ef1", "name": "SplishSplash", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xb241caF91E1D71AcBF4f4E73e98861D506ce2fC9", "name": "TOWER", "compiler": "0.6.8", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x5124718FD11F771eF1F1425E9dcEfb572EcDD897", "name": "CrossChainState", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xbd65B6870b232ca0dd20aB0363b5A1f98aF628d1", "name": "ExternalTokenStakeManager", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xff82A547748fA89DfeEAE48513f5aEF1D371ee7A", "name": "DrainFunds", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/1/2021"}
+{"address": "0x2d258E9420C2fb4b170562Bd077fBFD27767e2C7", "name": "DrainFunds", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/1/2021"}
+{"address": "0x3325938402B1B5Fee9c799a087a0A5b6e4C592cd", "name": "LIFIToken", "compiler": "0.8.9", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x006678c31a7ac04110152a8d3e023abe9965ac78", "name": "skrContract", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/1/2021"}
+{"address": "0xbFaE8d904640D362FcfCEF52768581eA360a9578", "name": "DummyMintableERC721", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x3b24b25C829cEAdFEC6AE282F34E29E5D5920057", "name": "SmplMultiSig", "compiler": "0.4.26", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xD24C8BD5273a53c5446131A95b5549a0DB6C72e0", "name": "MyToken", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "-", "date": "12/1/2021"}
+{"address": "0x1EB932F656784D28CD59F14fB18e884486fAb323", "name": "Will", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "12/1/2021"}
+{"address": "0xF04F0c23cB20e6718A17853959A05eD685499333", "name": "CrossChainState", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xC967CdCE9892bB55743B78329191eB4D6e384e1E", "name": "CrossChainManager", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xC4ea2c03dDfECAEF96a19Af751Bef71A3Bd0317d", "name": "PeriFinanceToEthereum", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xa9dEF9b01dcd224FAADDbd75826034a2c4ff73d2", "name": "Issuer", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x44C76A57736dBe644115218c6EA2224CE3bbDA31", "name": "DebtCache", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x5c04b0a99e1AC412203888969a04B646788Ed3e5", "name": "DummyERC20", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xAb67a0f40Cd8233E1c0d1d0Ba3aAfE32Ca4EB0B8", "name": "Owner", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "-", "date": "11/30/2021"}
+{"address": "0x3477EB82263dabb59AC0CAcE47a61292f28A2eA7", "name": "TellorPlayground", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0x11015F6271A4b09Ba5e42E64BCA2D554353fbDFC", "name": "MockIdentityOracle", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0x2f1f4045Be9A8cc209bF3fDF4f4fBbF5B75D079d", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0x2b93648CbF6f1a2573342d32Eb04a33316F243ED", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0xFc4B189F86a144e6b807F304431EEd4c7b011de9", "name": "Memberships", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0xB59C7597228fEBccEC3dC0571a7Ee39A26E316B9", "name": "ConvergentCurvePool", "compiler": "0.7.1", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0xBb6E8783b6e7F88855f2910e34c6cCa382420bC0", "name": "MembershipsFactory", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0x9caAbf215a0879a8F1a9994e76607aC9758e37a8", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0x8e4c0ea3d4c3f82650f43c1a2b4ffb14bde194ba", "name": "RootMintableERC721", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0x56d6D83163c498c856af7F307682805e589c838D", "name": "MembershipsFactory", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "11/30/2021"}
+{"address": "0xa05f7abe30a406c3962e91a08aa691f3fd0b1d42", "name": "TextBranding", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "Exception('HTML IN OUTPUT!! - BeautifulSoup messed up..')"}
+{"address": "0xA17F8466a7451135ef0F918785b85e25EF4f0674", "name": "VolmexToken", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xf30AAEcC704B100c3b24Fff188b6ca3d1E1C1d83", "name": "MerkleVesting", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x9AC0c77beD00a18e2d30A049D8cC54967C673012", "name": "StakedToken", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
