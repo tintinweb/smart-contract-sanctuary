@@ -1289,3 +1289,5 @@
 {"address": "0xe0d0e232c09de67a3d74da1284dc5e72fc79d808", "name": "StandardBondingCalculator", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/29/2021"}
 {"address": "0xe8e6a534146efdcadb64c4ce78600e5c9e71fc97", "name": "Treasury", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 49, "settings": "", "date": "11/29/2021"}
 {"address": "0x1622bf67e6e5747b81866fe0b85178a93c7f86e3", "name": "UMAMI", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 232, "settings": "", "date": "11/29/2021"}
+{"address": "0x289b030a774acc29bb656901987f30cd80dc9d32", "name": "ZeroTwOhmBondingCalculator", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/1/2021"}
+{"address": "0x9963F588C905f0D3a49b1810a3dEadd83Ca42143", "name": "InstaFlashloanResolverArbitrum", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/1/2021"}
