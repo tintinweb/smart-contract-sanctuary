@@ -555,3 +555,8 @@
 {"address": "0xfbC9CccC74b5C514b37c73D67Aba994D6BD503cE", "name": "MosaicVault", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/29/2021"}
 {"address": "0x805eaEAe057FE056F9Cb0fc66AB2d94A6AdF2233", "name": "MosaicVaultConfig", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "11/29/2021"}
 {"address": "0xf40415896C404E667f8Df2F8C27CBACaa066647f", "name": "MondrianNFT", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "11/29/2021"}
+{"address": "0xF060EaB0d4037847802f9839c023E83beD1B1393", "name": "Converter", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/1/2021"}
+{"address": "0x0c03Cbda17a4FbdA5F95aB0787c2A242DC14313e", "name": "FRY", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/1/2021"}
+{"address": "0xad2A9f0bB7Ab8Fb7962Da4c89e58EfA97117a754", "name": "aFRY", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/1/2021"}
+{"address": "0x216b72dde6c09041bd13ec8cf1ac92c5ac6ecf7c", "name": "ArbGasTest", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "11/30/2021"}
+{"address": "0xdc1264c61C722edd3b03145914f803ED1dd6EDAB", "name": "SwapFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "11/30/2021"}
