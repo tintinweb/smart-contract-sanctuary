@@ -560,3 +560,8 @@
 {"address": "0xad2A9f0bB7Ab8Fb7962Da4c89e58EfA97117a754", "name": "aFRY", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/1/2021"}
 {"address": "0x216b72dde6c09041bd13ec8cf1ac92c5ac6ecf7c", "name": "ArbGasTest", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "11/30/2021"}
 {"address": "0xdc1264c61C722edd3b03145914f803ED1dd6EDAB", "name": "SwapFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "11/30/2021"}
+{"address": "0xA2BF531FAc0Bcd24458134F392C60Aed4834f7E7", "name": "Nft", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/2/2021"}
+{"address": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e", "name": "QuoterV2", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/1/2021"}
+{"address": "0x075B36dE1Bd11cb361c5B3B1E80A9ab0e7aa8a60", "name": "SwapRouter02", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/1/2021"}
+{"address": "0x1460fe950c260670f941b018345f0e870e0f78dc", "name": "GamyFiNFTMarket", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/1/2021"}
+{"address": "0x420a6077cb4d62192c20086407077e068ed6e962", "name": "ArbGasTest", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "12/1/2021"}
