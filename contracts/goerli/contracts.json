@@ -15330,3 +15330,24 @@
 {"address": "0x5142f106B141924a1c6Ae51aF85642f9fDc80395", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
 {"address": "0x267ADdf1F3933C9DdD9665D3BBf7A61cE667f66D", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
 {"address": "0x1561ED5e286B30876D72E50A047f41f498f2c014", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xc4D19c9F0287F5f387e21bF7cC4eb978679E16Df", "name": "Gateway", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x9C7cDA7E230C82430C8d5D86C8cB9f9940431AF8", "name": "TestCoin", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x12E08c45080661cBb8eAb1592147dfDF4a83D180", "name": "TestCoin", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x391D1A95B8C56cdDfbE4Bf7dEcA3954f8ae99Aad", "name": "SwashToken", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x1b864e1CA9189CFbD8A14a53A02E26B00AB5e91a", "name": "EthProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x898948E879e487d7B9B7eb2637821fe566f4715e", "name": "Terabethia", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0xF22e79604434ea8213eb7D79fcEB854e5E4283f7", "name": "StatelessCollectionRegistry", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xF093d11A10D1caE56fECd665921a0aFe8899B5Df", "name": "Gateway", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x2e695b94dC82Ae61d665d9f546029f379FFa8bAC", "name": "FakeErc721", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x21d8cb9c7A0F986Bc00E708200b4f2e8acBea49d", "name": "Gateway", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xef166e511094fC6f540FA20d6dE40a6544462683", "name": "Multicall", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x75333f57749aeaa76859d6de76c8c9ee73e9bd4c", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x83dfeef43ef36c9b8b698cb599699704d3fe9b25", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0xff8C6E9F6933380C0E6645DB5A7cA3c60b0dE7dD", "name": "InstantDistributionAgreementV1", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x10c8c07cc0a22cee68d3c7af3b857769963b357f", "name": "SlotsBitmapLibrary", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xef55058EB503fE7290AED76628c1E8338d741367", "name": "ConstantFlowAgreementV1", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x838129fCaA8932C17e32F6C6F26aBa07802221b6", "name": "SuperToken", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xC8D8631aCE82C0Bb2D4Fa7681D3b390bCEaA44b3", "name": "SuperTokenFactory", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xf6CD282c6506ecc496a80EC3b0E20615861AeCe1", "name": "TestGovernance", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x4AFE242f88402433cf236D22b906607dd1e72064", "name": "Superfluid", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xd204c941d55a106d6697429b6cf57b855b6fd18e", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
