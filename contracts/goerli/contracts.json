@@ -15277,3 +15277,56 @@
 {"address": "0xA17F8466a7451135ef0F918785b85e25EF4f0674", "name": "VolmexToken", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0xf30AAEcC704B100c3b24Fff188b6ca3d1E1C1d83", "name": "MerkleVesting", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x9AC0c77beD00a18e2d30A049D8cC54967C673012", "name": "StakedToken", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "11/23/2021", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xe4e8a5924af57b39d057CD18bdb165F6A99F3Ac8", "name": "BridgeState", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xd66ce133b9448ac97c152b741d84c94f72576171", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0xc131850f8061af80f74f745f164a875196e24a64", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x8db1e8ad03e01a86dc9600bc7d42f80ffebd57a6", "name": "GlobalChainFarming", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xb539eb8fcd2ffbf17c08ef6a1e5c8ce492b5684e", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0xb230689b10a626826a694612025c8b58c32e683c", "name": "Packed", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x8875471879eac7a6c6b4c5bb0e687b36db2b43b8", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0xa05d75f5f5652385416e4fa8681e43afabb5c72a", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x8cdec917fc31fd484974d93b064f6af089e0b559", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x9F390Cbd6875AE345D2651E5979ce870A06274e9", "name": "GStakingBSCVault", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x4a71526b0c15d364dcf3dae0265bf43660cc6672", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x63c2af39d4814c293a093f60632b24907bbe5112", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0xC900fc762784d9b333Fc17313055956E18c69aE7", "name": "FundMe", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x897349f7edeae9b1f5fa98ee2b5d106df081c67b", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0xfbb0839783fe0910a2172acdf55a831575cd632d", "name": "FakeOracle", "compiler": "0.6.8", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x1b376f2960486e698a52f720dc121718e63dd07d", "name": "FakeERC20", "compiler": "0.6.8", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x91c73e055C3ba41adD32231BfA904c7d7031cFc6", "name": "LimitSwapVerifier", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x26e0a2EC2B79Ac3E9E0A8c52bCc76E8BbB843499", "name": "CallExecutor", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x0cc05334A1CD96AAcEEF9B8bCeA6EDcc49D6c1F7", "name": "SaltedDeployer", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x13FFD9e9de9a06c3725df2186215F0DA4857Bb72", "name": "DeployAndCall", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x8D448530F982EAf6Fe1d6A510DdF9f1c09b33a01", "name": "AccountFactory", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x4711b476A2397123C28b73c5447b7c5b09178AbF", "name": "Account", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e", "name": "QuoterV2", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x075B36dE1Bd11cb361c5B3B1E80A9ab0e7aa8a60", "name": "SwapRouter02", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xe3Cb50BDba310E120Bf6A4f095bf95E51Be9DB28", "name": "LimitSwapVerifier", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x0be5454900cade639ebde482f95a40bfbfc69914", "name": "ApeKidsClub", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xA9bB057B291d91C6b2e9D5Fc67f691d6Fc6b2350", "name": "RootDeployer", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x856D8B8c3f7573f8437775D0392AA89E5Ce65ae2", "name": "RootToken", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x06520213Ce8c4d71BB9394DdE67FD5b6Fb18224f", "name": "SaltedDeployer", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x2C44986Edc7c61a09D6bf1c0a056731b24d2711c", "name": "TestContract", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "12/1/2021"}
+{"address": "0xF348bA817015d79AEFCc367033A5FB66B98d9C13", "name": "DeployAndCall", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x70F86aBAdB35318131505432b5418b6222d06679", "name": "AccountFactory", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x02feA82359954725dEC7B135764C4A2d988475E7", "name": "Account", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x12Ba354DaCC2CdC961798F771C0B5B37BA3A793A", "name": "Curve", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x85Afe348c8278f7E20046B9A253F51d42DcC9a17", "name": "FxStateRootTunnel", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x49e5792b2bbe4Dd4A532B6ec8BF3E140A264C31C", "name": "Curve", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xb6a7F331F69A5C747675b3f323Ca8F21C1f5fD29", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x95794a96cb42cA68432b4d802aD7fAD518D087fB", "name": "Curve", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x70Eea6237F3339A303F15B0c6c1EA6b0FcD98543", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x43E6D86774d857d0F9EbcEEf5A18Baa1BB78413F", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x8EB450C6c85E398ADd08644486C3E3491a5d6dDF", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xec491c5D1bdc8860B293B1c409279eA400827f16", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xD64E9c071D196833dec4D72FA09eDA17f8AbCbF4", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x33967a7cF0f72B31c8a9F77FDB2F8754A5FA676A", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x55bDe0659B2558Ca0C8b77eb19402053f21eAde6", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x1073D844287cabE9B528D6ee7743d14c837d5e29", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x2d945D6391F6eCD849eB48b7aa19E194E810e7C7", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0xEcF26A8eF627ba390820F61392d008bf843e1558", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x95B5310644EF7F8e2eCB470665da08af8CA5C2E3", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x75D963B6AaDD0cf563fa388331Eedd0FA8f0b492", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x5142f106B141924a1c6Ae51aF85642f9fDc80395", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x267ADdf1F3933C9DdD9665D3BBf7A61cE667f66D", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
+{"address": "0x1561ED5e286B30876D72E50A047f41f498f2c014", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/1/2021"}
