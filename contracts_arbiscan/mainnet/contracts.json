@@ -1291,3 +1291,16 @@
 {"address": "0x1622bf67e6e5747b81866fe0b85178a93c7f86e3", "name": "UMAMI", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 232, "settings": "", "date": "11/29/2021"}
 {"address": "0x289b030a774acc29bb656901987f30cd80dc9d32", "name": "ZeroTwOhmBondingCalculator", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/1/2021"}
 {"address": "0x9963F588C905f0D3a49b1810a3dEadd83Ca42143", "name": "InstaFlashloanResolverArbitrum", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/1/2021"}
+{"address": "0xb6e4d1542baccfe64c946c135433f9d211c3f086", "name": "DAOLiquidrium", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
+{"address": "0x92fb3d044a592574a61fc07eD118C0954D858888", "name": "ERC20Vesting", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
+{"address": "0xb6F767453B41D71112A910d3B3f7e35d7FF7231f", "name": "ProcessExpiredKeeper", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "12/2/2021"}
+{"address": "0x0001468cF9aFDCFe7316D24DFb6A1A77c2166F74", "name": "AnimeMarket", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/2/2021"}
+{"address": "0xfbb1c0647C77fC34d9e70aBB32a332d9D2c31145", "name": "MultiTunableOracleSetter", "compiler": "0.7.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
+{"address": "0x6fC216BBBa44F2cc58377f0f6376eBd72f0F3a26", "name": "MultiSend", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "12/2/2021"}
+{"address": "0xa943f863fa69ff4f6d9022843fb861bbee45b2ce", "name": "Tangle", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 84, "settings": "", "date": "12/2/2021"}
+{"address": "0x09Fde18700C82a8F3134A5C01DC58f6cB2396A40", "name": "PoolWrite", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
+{"address": "0x312CcD65da10e12BaB2F5b09732B22dB3f047315", "name": "PoolIO", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
+{"address": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e", "name": "QuoterV2", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/1/2021"}
+{"address": "0x075B36dE1Bd11cb361c5B3B1E80A9ab0e7aa8a60", "name": "SwapRouter02", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/1/2021"}
+{"address": "0x490b7e951692A1e81017d9Cef82876d2894d7c49", "name": "Z2OBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 18, "settings": "", "date": "12/1/2021"}
+{"address": "0x99Cb07E3A57718B8A132b0de3F4980de52C4c93e", "name": "Z2OBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "12/1/2021"}
