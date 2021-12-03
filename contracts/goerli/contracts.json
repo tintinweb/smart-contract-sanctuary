@@ -15351,3 +15351,28 @@
 {"address": "0xf6CD282c6506ecc496a80EC3b0E20615861AeCe1", "name": "TestGovernance", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
 {"address": "0x4AFE242f88402433cf236D22b906607dd1e72064", "name": "Superfluid", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
 {"address": "0xd204c941d55a106d6697429b6cf57b855b6fd18e", "name": "CryptoNijigenProposalUpgradeable", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0xADDA549F39f488be22B7C5C5f47C8179aBFba379", "name": "MyToken", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0x2a02efd56034d9bb1b9c2f75b6b16278a7907412", "name": "MyToken", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0x226dE76dA0bA855f14427dcea6aF6FD5Aa5f3FE1", "name": "MyToken", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0x72b8443CDd9979e433Ca8D89bDD5D07F482c8fbB", "name": "CharityVault", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xfc2004ee942c2483ce5efac20ca8f9ee6c838790", "name": "CharityVaultMockStrategy", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x3Ad5B46BA68A0F4F81fA584ffb15EEaA1A2aE788", "name": "CharityVault", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x8c50a6a21be7375026d0412be3b2c933e2055bcc", "name": "CharityVaultFactory", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x05F119002D5520B9cE6d62DA89AE5B23020B5d89", "name": "Vault", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xb983c7a6f63623743ceb2f485118a37c9f77d2a0", "name": "FakeUSD", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0xe75e7b5cbff428263501a050c8f34a2e06b591e7", "name": "CharityVaultMockStrategy", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xC9562b2615b4DB2a03419507B22F7ee2a5e66484", "name": "CharityVault", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x538F5a95063280947F4099D30eb514b86833d226", "name": "Vault", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x9d0230d259fa6315ecdf5972e4c635babf02599c", "name": "DemoUSD", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0x66800f93a98761ff3002f959451023d279debe13", "name": "MockUSD", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0xa182544b2b97b0758ff96c6075c0faa2c44691b5", "name": "L2MintableERC1155", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x1F887B4Ad7848296efb8b67C0f02d1Efb0a6DD17", "name": "MyNFT", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x2EaFDbc5D7Acf94356901433Bc005F2162B4A268", "name": "DummyMintableERC721", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x09b9f9B0451a3793e6a07286366d7EEDBD3629ce", "name": "Token", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x0DFa386611395c5c01d046024bAd8E120358Ab20", "name": "Curve", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xcb2072832681f4a270Dc2bd4a4a915799d2e1f2F", "name": "Curve", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x8C8A80595C15d1C595d99cE293184DB1c7573E22", "name": "Curve", "compiler": "0.5.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x12855fA6B024e4fb8d9e4f8cc4A138d3E72Ce622", "name": "ETHRootPool", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xB0f42faE539342F16eaEF34A062618d2703cf6Ce", "name": "RootToken", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0xbF7b6930C4618d7C265719B4dc86cEb3EB495330", "name": "RootDeployer", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
+{"address": "0x6cF5D1F15577A3cab2006799dFB992E7140F1fb4", "name": "Cats", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
