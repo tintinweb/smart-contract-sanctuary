@@ -565,3 +565,15 @@
 {"address": "0x075B36dE1Bd11cb361c5B3B1E80A9ab0e7aa8a60", "name": "SwapRouter02", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/1/2021"}
 {"address": "0x1460fe950c260670f941b018345f0e870e0f78dc", "name": "GamyFiNFTMarket", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/1/2021"}
 {"address": "0x420a6077cb4d62192c20086407077e068ed6e962", "name": "ArbGasTest", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "12/1/2021"}
+{"address": "0x373c99fD6ef020876c3D0bbaFc1A92C04b3B06BD", "name": "MultiSigWalletWithDailyLimit", "compiler": "0.4.15", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/3/2021"}
+{"address": "0x735004d6022f3e0e45529a854463b0642ba85319", "name": "DuneSpices", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 4, "settings": "-", "date": "12/3/2021"}
+{"address": "0xf8260f88fbccb0eec415a7f6771759558e4cdf60", "name": "MultiSigWallet", "compiler": "0.4.15", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/3/2021"}
+{"address": "0x6759a46dbade0316603050d080a1dbb68801997b", "name": "MultiSigWallet", "compiler": "0.4.15", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/3/2021"}
+{"address": "0xbf0deb5cd8e072018632e9646b4fe998d4047a86", "name": "CrossProxy", "compiler": "0.4.26", "balance": "0 ETH", "txcount": 100, "settings": "", "date": "12/3/2021"}
+{"address": "0x20E457F9fd7a70ea4C15cd12FA3C8D888D514fee", "name": "MYDC", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "12/3/2021"}
+{"address": "0x957D1d20Bf5012A02A91669e9B7ea146e92D4c59", "name": "Migrations", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "12/3/2021"}
+{"address": "0xcb4FBf9058Fd556634e7De40B6dbd584234dCe52", "name": "StakingPoolFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/3/2021"}
+{"address": "0xf8583Be5ae65d3a74d8dA0CFcb5F1966b5a94E3c", "name": "BizzSwap", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
+{"address": "0x5a045121254CA50A2001c8FcA31ce2154e9d8202", "name": "BizzSwap", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
+{"address": "0x74f0222d30506f25e83d527dd6450bfaac4352cf", "name": "Adoption", "compiler": "0.5.3", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "12/2/2021"}
+{"address": "0x5f37F373133A11aE574c53cbC01D528bA7f247B4", "name": "AnimeMarket", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
