@@ -15376,3 +15376,53 @@
 {"address": "0xB0f42faE539342F16eaEF34A062618d2703cf6Ce", "name": "RootToken", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
 {"address": "0xbF7b6930C4618d7C265719B4dc86cEb3EB495330", "name": "RootDeployer", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/2/2021"}
 {"address": "0x6cF5D1F15577A3cab2006799dFB992E7140F1fb4", "name": "Cats", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "12/2/2021"}
+{"address": "0x1A1b288C68E4C19A98f686Ee14dbFDa18328263E", "name": "FxMintableERC20RootTunnel", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x5c09Cd38Ae8794575ca259E6725c9a2050E8EBe6", "name": "FxERC20Token", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xB60F3DF41242B55b210d7F6DEe413Ce7496dEbd2", "name": "FxERC20Token", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x32768C97463744bb325F072D0AfC1643F7389758", "name": "ERC20TokenFactory", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x42C4Dc4919b30872D324373eabDee5FE75AaC483", "name": "ERC20Token", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x137865Fbf2fF1796dE0E52C3f733e5E8334ed393", "name": "Verifier", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0x79b8a8d984c2d5021ec6a20fd027787a062e2810", "name": "KitsuneInuDividendTracker", "compiler": "0.8.0", "balance": "0.000232593233130233 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x19C36798a82DC185ABaB7e3cf7501005455B9F3C", "name": "NftMint", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x67430EF870694Fa0d72e1bE71BD468E7BA378d05", "name": "WaffleToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0x8e974B7725dF8311D77813520FA4E7c0fe5Fa4E3", "name": "WaffleToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0x2865514ff6c3e03c5a03dd8d77a452aea4930696", "name": "ProxyGroupWallet", "compiler": "0.5.16", "balance": "0.2 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x7366fEf3824995a200a735A0bdc9D2D410F6eA90", "name": "KitsuneInu", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xfD24364D2CFa5AE41c094e25179E0E5d706298d9", "name": "IterableMapping", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xed81F1b87F57070645d5723B73deE3b042578360", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xcA76a9d669be8986e56034E45056175d9E7B6943", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xd07075182eea6C32DE92B914063D1F03cD9881E8", "name": "IterableMapping", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x733B81BBcb63f87c023F488523E213D58c07531b", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x5019d5d78cecd528a1e457688d9b032469af554f", "name": "IterableMapping", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x3D2C2f9701Ba9b4a3ABE2D1C91380347f0aDf7A8", "name": "DefaultReserveInterestRateStrategy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x61C39C3aC4666d3f35F30660e35806b4759671BF", "name": "KitsuneInu", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xde383d8f203f5d80adfd9ea29669949e9ccb4bb5", "name": "GroupWalletFactory", "compiler": "0.5.16", "balance": "0.081845015437571047 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x2Ef1450C90ce0b3bFCF415e211c707767ba7225a", "name": "InitializableImmutableAdminUpgradeabilityProxy", "compiler": "0.6.12", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x8EF7e1992c9A7900a1a0CDb48d19e4cA10c66513", "name": "MeedsNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xAd458eF64C91f14Ce07a52844D7250c7c61611Ac", "name": "LPADStake", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xB618dA33DE0031639a40e6e4592d0ea84ECeE1b1", "name": "CoinbasePay", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xE3e2A34dBAd8F1a62E7FC91a8b3A92251B98a95C", "name": "CoinbasePay", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xC55dA92910C49D8042A3F17256AED6eC1C44d48b", "name": "FxERC20Token", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xfAe5DC5cD66E563bd6E74fE6dD0b04A1dEcB14D0", "name": "LOL", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0xa1881a4b244FadEc2129E6Ba4A339aC659Ef5F48", "name": "FxERC20Token", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x767eC38083E0727CEc7266595F2B6A0F73b245e6", "name": "ERC20TokenFactory", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xa5Cf0fDd535f40f8337304DBfb47eda689a97632", "name": "ERC20Token", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x57833c50BD6aca5B841540312aAB3d81b61E61F0", "name": "TestTokenS", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x634933076d0bb64ef77a3261cbe7068b6c4c5509", "name": "TokenMaster", "compiler": "0.5.16", "balance": "0.001 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x3EBeEB361e1da74f69310157fE6b03806A00dB3b", "name": "LIFIToken", "compiler": "0.8.9", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x7a404f1f068D57b2Ca3d5ff6B52F233aC50a0A38", "name": "TestToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x78f1432072a82c679115E6733BD1dDc3776658BD", "name": "LPADStake", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x8a95199AaDa2A6aE79778569b15409EeFAc540ee", "name": "Verify", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x6dAB469E0714DB1595D9b6e930bBDeA9cc7bc2bB", "name": "LIFIToken", "compiler": "0.8.9", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x27bd31285e874e93252b8effcac925fd9855577d", "name": "Voucher", "compiler": "0.8.1", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0x0c66bcd2e6526f29b4d7b4bce18ed0f4698a2b51", "name": "MyToken", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0xc4b0763ed68f8190da8c87e94d8f2278b8de49bc", "name": "UniswapV3Pool", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x486de0a11251989e64635bc375b8ed7b3e46cfa3", "name": "UniswapV3Pool", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x53febe48f1a2a43256f5ee594a8658f3c477675a", "name": "SimpleOracle", "compiler": "0.8.5", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xea06dd91f22b57656ac256a0055d176abc7e16e0", "name": "Nitro", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xd51edb8a506eb5226668af079c57098c4e9403d0", "name": "PeopleOFSimpleTown", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x36e19bB29573F5Dc5d6A124444e81646A59b6702", "name": "XMeedsNFTRewarding", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xa09D3A3ADB7a49a8a4fa1ab7C8c81A01F1336282", "name": "MeedsNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xf3a170ACD789918dE9f024daa115033A818704f6", "name": "MeedsNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x368c35AeF3E31eFEa81Fc58575991984871e73f3", "name": "SOT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x3d6E6Af094De5EB515050eb9c1EE622229c59F16", "name": "Shoebox", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
