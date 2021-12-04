@@ -15426,3 +15426,19 @@
 {"address": "0xf3a170ACD789918dE9f024daa115033A818704f6", "name": "MeedsNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
 {"address": "0x368c35AeF3E31eFEa81Fc58575991984871e73f3", "name": "SOT", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
 {"address": "0x3d6E6Af094De5EB515050eb9c1EE622229c59F16", "name": "Shoebox", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0xf7A734490103F50D629598Ad024b889B1BB10872", "name": "UniV2ExcessWethCrossPair", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x3aA6a95B8D6d6B9C17332adD08b4d54807F35372", "name": "UniV2ExcessOut", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x19a1cE8710e6f5024780754D8f24bb98148c43AC", "name": "UniV2ExcessIn", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x53E9F8BFC3836eE1ec27725454d5E19E7B25fea8", "name": "BitcoinLotteryProtocol", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x3dc89a6D540D4D62b17fDbb2e2E16d914C7B2C3D", "name": "KitsuneInu", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x0b5f47F60FEdf5ec6c2D5C518b4e00aDCA41dfb1", "name": "IterableMapping", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x2ae753a0C5cde9D165590a0C4548A4380ABB2Fc1", "name": "KitsuneInuDividendTracker", "compiler": "0.8.0", "balance": "0.000180041739716586 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0xE417A0C129765A049FD360eDCD540629265e1Ae3", "name": "BrokenContract", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0x96795A0ccca5ac59fcd3ccA24522D092dEEF20A6", "name": "BitcoinLotteryProtocol", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x2c4256d847bd7c6ac11af414c5b2a4661bf605fc", "name": "MyToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0xEAbDe72498399e5cf5d942A23d6ab9Da01ff1Ec1", "name": "CakeToken", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "12/3/2021"}
+{"address": "0xc93AEeb558d0BebBd9e880e1c8aFc24120d24D50", "name": "FNDNFTMarket", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x8D22f0d1725dBdFAF30351c83bd27a051cb846d7", "name": "DummyMintableERC1155", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x7306385f5a913d89868278F79F7D4AF5C500155e", "name": "NiftorianMintPass", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xe61972e1DD199BFEaEf42A4E82a37c316793c0FA", "name": "FNDNFT721", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0xC156bEc5BCA8F0935351AD439D9317422CDe0117", "name": "FoundationTreasury", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
