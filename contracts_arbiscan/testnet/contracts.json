@@ -577,3 +577,8 @@
 {"address": "0x5a045121254CA50A2001c8FcA31ce2154e9d8202", "name": "BizzSwap", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
 {"address": "0x74f0222d30506f25e83d527dd6450bfaac4352cf", "name": "Adoption", "compiler": "0.5.3", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "12/2/2021"}
 {"address": "0x5f37F373133A11aE574c53cbC01D528bA7f247B4", "name": "AnimeMarket", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/2/2021"}
+{"address": "0x937Acc3D97Ca094887B6C8e35b149a98f65FCf48", "name": "SimpleToken", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/3/2021"}
+{"address": "0x7A3f75dA5A455127F11ec9B521bfe086F2B879Ba", "name": "TradeImpl", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/3/2021"}
+{"address": "0xe446DCf18B5e3306F1dAC63277EaD4330780eE08", "name": "IrsMarket", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 20, "settings": "", "date": "12/3/2021"}
+{"address": "0xF72aea3C1019a7800a0768bb60f577302aeEF645", "name": "Strips", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 97, "settings": "", "date": "12/3/2021"}
+{"address": "0x83e4997b395b6471e6a21990131B1B17b96ca43D", "name": "LiquidationKeeper", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 401, "settings": "", "date": "12/3/2021"}
