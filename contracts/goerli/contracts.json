@@ -15442,3 +15442,17 @@
 {"address": "0x7306385f5a913d89868278F79F7D4AF5C500155e", "name": "NiftorianMintPass", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
 {"address": "0xe61972e1DD199BFEaEf42A4E82a37c316793c0FA", "name": "FNDNFT721", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
 {"address": "0xC156bEc5BCA8F0935351AD439D9317422CDe0117", "name": "FoundationTreasury", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/3/2021"}
+{"address": "0x0513Fa5a4a044F4852D8868FEf41b06c66eF1006", "name": "Lottery", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/4/2021"}
+{"address": "0x7A5D4331B53c0a9c0F3ebc5619836Cd6eF67b4A2", "name": "TellorTest", "compiler": "0.7.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0xD278F1707c2b1a665e552bC734358f2Afd7CCE86", "name": "CrimeGold", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x8dfae6e055ae3546d1f8983b4f74e4a12203410f", "name": "RightClickSaves", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x7dfa1Aec08dF64691DA5A4A4B88EefaA18c0aaEC", "name": "KitsuneInuDividendTracker", "compiler": "0.8.0", "balance": "0.000234628275322411 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x12f4d3B3F852e679Af473b875907cBD9dbFa0a18", "name": "KitsuneInu", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x05c404F5AB02693321Dd89cf2ab6d6fB5A770344", "name": "IterableMapping", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0xb26cCD76748Fa79bF242Cfaca6687184CaF48093", "name": "MeedsNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x43C0cd4AA14dDb90beD0faBb1FAFfEe2a88CaB2B", "name": "KitsuneInuDividendTracker", "compiler": "0.8.0", "balance": "0.000172868970197381 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x837ef3cc4713bef947af6ead84cbd8b80e620890", "name": "GroupWalletFactory2", "compiler": "0.5.16", "balance": "0.055870127696044196 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x39CB1A1B5e39F4Ac225366Bd95b3aFFfD455069a", "name": "KitsuneInu", "compiler": "0.8.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0xa8b349b01927b44205d9b1b88825dfbb897142f4", "name": "Nftrade", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x05aefc1d2c3a5b71d1ed6bc88d72d7fa06236b40", "name": "Nftrade", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/4/2021"}
+{"address": "0x00104D6Bd5290079e26B2c98E3C362b7c396d8d3", "name": "FundMe", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/4/2021"}
