@@ -582,3 +582,10 @@
 {"address": "0xe446DCf18B5e3306F1dAC63277EaD4330780eE08", "name": "IrsMarket", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 20, "settings": "", "date": "12/3/2021"}
 {"address": "0xF72aea3C1019a7800a0768bb60f577302aeEF645", "name": "Strips", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 97, "settings": "", "date": "12/3/2021"}
 {"address": "0x83e4997b395b6471e6a21990131B1B17b96ca43D", "name": "LiquidationKeeper", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 401, "settings": "", "date": "12/3/2021"}
+{"address": "0x39fB6b14b4C09cA50732eC8447cEE03519839A83", "name": "GBC", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "12/4/2021"}
+{"address": "0x60acc10577a48a457e84aff1ef37755b4706a710", "name": "TestEvent", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "12/4/2021"}
+{"address": "0xB0c8dbE15B349D7ae0Ff7239e10c8b48033A0EC3", "name": "Router", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 22, "settings": "", "date": "12/4/2021"}
+{"address": "0xa3ec97123ffcF33A8C31B76A5bd83FBB02b22067", "name": "Barn", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/4/2021"}
+{"address": "0x6A52820DF1a03D5e4e8315ab2396399c852cbC4c", "name": "WOOL", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/4/2021"}
+{"address": "0x6A5ae0859B44aD7C8fb836506F330fae2aA1C4C9", "name": "Woolf", "compiler": "0.8.10", "balance": "0.01 ETH", "txcount": 3, "settings": "", "date": "12/4/2021"}
+{"address": "0xA96C145f4a6619E1eC21ebD508df21df43A452F2", "name": "Traits", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/4/2021"}
