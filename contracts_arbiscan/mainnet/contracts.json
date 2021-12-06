@@ -1349,3 +1349,8 @@
 {"address": "0x3BA5428edAE11b1EBca4316eabD6cab23F72c781", "name": "MultiSigWallet", "compiler": "0.4.15", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/5/2021"}
 {"address": "0x252429aE6251331aC54C92aFFB0bcF85627660dB", "name": "MultiSigWalletWithDailyLimit", "compiler": "0.4.15", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/5/2021"}
 {"address": "0x09A454fD7A7f6F66CB2cC0196860F94CEd5b952B", "name": "RewardsDistribution", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/4/2021"}
+{"address": "0x849668517a74535ec5ecc09fa9a22e0cef91443e", "name": "HyperLiquidrium", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/6/2021"}
+{"address": "0x7F6d25dE79559e548f0417aeB1953Ab6D3D85b14", "name": "HyperLiquidrium", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/6/2021"}
+{"address": "0x002aBD9cCfDD544512fa21AfD18c2C5f6dc4107B", "name": "DODORouteProxy", "compiler": "0.6.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/6/2021"}
+{"address": "0x9c1aFAD79be99B73958381F136b7894CDcC907AE", "name": "StakingHelper", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 13, "settings": "", "date": "12/6/2021"}
+{"address": "0x49Ea4AE5516b265021277e7dc15B451449Db01F9", "name": "KOOGogocoin", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 131, "settings": "", "date": "12/6/2021"}
