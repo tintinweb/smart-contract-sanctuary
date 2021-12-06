@@ -15519,3 +15519,24 @@
 {"address": "0xcb35A690F8243Cc088f869b25f68e935917D3E3A", "name": "L1DAIBridge", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/5/2021"}
 {"address": "0x07BBe0741C5C824396d9894eC81575F90a43ae7e", "name": "KitsuneInu", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/5/2021"}
 {"address": "0x7569ba787c51cdb1181c1F6154F157cBF08Ff061", "name": "IterableMapping", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/5/2021"}
+{"address": "0xE99De844EF3Ef72806cf006224EF3b813e82662f", "name": "UMINT", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x56B2AAe63Cb9E363CdFc5cf76F4BD516d08fA970", "name": "Payton", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x2BBACC8c8B906b608edDf5c6C76C90bf4a98bDF0", "name": "Payton", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0xbf8c040178c7c215527c7157c3134b2233004098", "name": "StudentScore", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "12/6/2021"}
+{"address": "0x8d68e0fed24b42883a908bdcfafde4b815003993", "name": "RewardPool", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x615d0222f91d76a680eb99d3c8d3b88e03e5d607", "name": "LiquidityMiningManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x5C1d9b7Ba62b0A6D96F6838257D1F6b88fE78905", "name": "ERC20Ownable", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x56a3C087f4818C13C4056196F174CcEdC364326d", "name": "ERC20OwnableFactory", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x5495e1dE99d9eFCcf131cF49B2453F410128B1b1", "name": "SignMessageLib", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/6/2021"}
+{"address": "0xE89ce3bcD35bA068A9F9d906896D3d03Ad5C30EC", "name": "GnosisSafeProxyFactory", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/6/2021"}
+{"address": "0xE51abdf814f8854941b9Fe8e3A4F65CAB4e7A4a8", "name": "GnosisSafeL2", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/6/2021"}
+{"address": "0xb4A7C7da1631CF60A2Cf23ABc86986f99a1A7f70", "name": "GnosisSafe", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/6/2021"}
+{"address": "0xe16bA5bF81E5BB113e4752E4fdC20351d796fB24", "name": "CompatibilityFallbackHandler", "compiler": "0.7.6", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/6/2021"}
+{"address": "0x497788b11395ac762a238da09c815e6a2523386a", "name": "StarSeaERC20", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x81d842b75D3BAd1912B39Cd63FE342b9FDedA228", "name": "RewardPool", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x89AcD4263a332Dc9C425c01c2A5871E7bb0dD58A", "name": "DataContract", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "12/6/2021"}
+{"address": "0x02041574899AEF392c899CB6688Cc9A30C8B3efD", "name": "RangeOrder", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0xDCa5Bd0dD04A5ebEb9B09c46F76CDEbe179EfF80", "name": "RangeOrderResolver", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x4810eCA7ccBBC50dDdDcc1740AF4C2Bc45e1559A", "name": "EjectLP", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0xe0b94138be9334ee8b735bebf59effc29c7e84d7", "name": "FairTrustSwap", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
+{"address": "0x3b263db12722e6984fab61b21ddf6340c558caef", "name": "ZoricAirdrop", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/6/2021"}
