@@ -596,3 +596,9 @@
 {"address": "0x5A3e93b0ec647646a2d9B39802A5DAF93F1774dA", "name": "BountyAuction", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "12/6/2021"}
 {"address": "0x5165a6cf99F58AA20032AbDf5aaf3F8cD6978617", "name": "ABCTreasury", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 6, "settings": "-", "date": "12/6/2021"}
 {"address": "0x466611A30155E47038DB263149ad758ac46f76Ae", "name": "KOOGogocoin", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "12/5/2021"}
+{"address": "0x9eB5c0a649C52B4006FE836271bca82514fD93F5", "name": "BountyAuction", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "12/7/2021"}
+{"address": "0xAf9D4eeb825F9aE4915d52630c41032ECe990bb4", "name": "PricingSession", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "12/7/2021"}
+{"address": "0xe4BdB085cF6a21524757E0D3ff4495bfe123DC47", "name": "MintAsset", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 17, "settings": "-", "date": "12/6/2021"}
+{"address": "0x252AB4815F810d81BbFcc211F44800e49280E110", "name": "StakingPoolRewarder", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/6/2021"}
+{"address": "0x2Dfb43BFF44d1dB0B86aD9DC0f890140b61135cB", "name": "StakingPools", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "12/6/2021"}
+{"address": "0x3548Cf5c8cD4D4C0Cb42871B875fAA404DE00372", "name": "ArbswapToken", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/6/2021"}
