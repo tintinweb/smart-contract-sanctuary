@@ -1357,3 +1357,17 @@
 {"address": "0x8a0bd1773139C6609e861B9ab68082587a3cD581", "name": "Multicall", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/7/2021"}
 {"address": "0xc34fe8aa917716B6c12C7234EE4a7D91B231cBE1", "name": "PricingSession", "compiler": "0.8.0", "balance": "4.167 ETH", "txcount": 77, "settings": "", "date": "12/7/2021"}
 {"address": "0xae961a7d116bfd9b2534ad27fe4d178ed188c87a", "name": "OhmRewarder", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/7/2021"}
+{"address": "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca", "name": "StablePhantomPoolFactory", "compiler": "0.7.1", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/8/2021"}
+{"address": "0x0e614f2987F3AFd8312C45066f3068FbBdbf2578", "name": "PoolWrite", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0x342E36C6268fb06E9FDdC578Ed5dF013864DD0c8", "name": "PoolIO", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0xf4f8746Bad0C350E702585C6A1f602961D5741bF", "name": "PoolExercise", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0xdf9F14992503Ea0cb61b30ea3b0c5CCE63BE7A33", "name": "PoolBase", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965", "name": "AaveLinearPoolFactory", "compiler": "0.7.1", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0xeB3F28a0F6d1ca7A951d491c1Ed8D0cD82f59bBE", "name": "xAssetLev", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/8/2021"}
+{"address": "0xC0cdD1176aA1624b89B7476142b41C04414afaa0", "name": "RdpxCustomPriceOracle", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/8/2021"}
+{"address": "0x252C07E0356d3B1a8cE273E39885b094053137b9", "name": "DpxCustomPriceOracle", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/8/2021"}
+{"address": "0xc0d7Afa32cFa909e5C39793eB85e8a97be51844E", "name": "Market", "compiler": "0.7.3", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/8/2021"}
+{"address": "0x89c375CAff8176085C13E1603f05f482C6F939e2", "name": "MockAggregator", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/8/2021"}
+{"address": "0xB16966daD2B5a5282b99846B23dcDF8C47b6132C", "name": "SmolCar", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 211, "settings": "", "date": "12/8/2021"}
+{"address": "0xd414aBa77365A1CbC90d3EA8C0E33c1AB5346C9F", "name": "MerkleAirdrop", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2877, "settings": "", "date": "12/8/2021"}
+{"address": "0xff3cf3142632f25e9ce363a66ccef247ddba3261", "name": "VolmexToken", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/7/2021"}
