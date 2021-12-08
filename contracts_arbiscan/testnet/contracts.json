@@ -602,3 +602,17 @@
 {"address": "0x252AB4815F810d81BbFcc211F44800e49280E110", "name": "StakingPoolRewarder", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/6/2021"}
 {"address": "0x2Dfb43BFF44d1dB0B86aD9DC0f890140b61135cB", "name": "StakingPools", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "12/6/2021"}
 {"address": "0x3548Cf5c8cD4D4C0Cb42871B875fAA404DE00372", "name": "ArbswapToken", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/6/2021"}
+{"address": "0x585B2BE008581D57c6D9C5eE700bE79C5fE95B77", "name": "TradeMint", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0x1335308e848bE2AB92B7D3659F887aE86ff7C343", "name": "VotingEscrowReward", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0xe4303e401dcf9257FB477621b7dB96189516dFd0", "name": "TransparentUpgradeableProxy", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0x2ac144B27f4dcc86a72527c55CC2281eaB4Dc28b", "name": "VotingEscrow", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0x203bb08090d18066Cfc2e3fC974b75CCafaB1231", "name": "FarmlandCharacters", "compiler": "0.8.4", "balance": "0.051 ETH", "txcount": 8, "settings": "", "date": "12/7/2021"}
+{"address": "0x8D135C725C8A5541A8D47C0f187f2BE53b3DFf41", "name": "OpenNFTs", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "12/7/2021"}
+{"address": "0x17b5cC29c8fEE4A7f4a9a4D3aA89CEeceb1e2127", "name": "NFTsFactory", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/7/2021"}
+{"address": "0xF6169393986b38e57D61187051c3F5B554796f83", "name": "ContractProbe", "compiler": "0.4.23", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "12/7/2021"}
+{"address": "0xAcB2C08F39b9b9a408c7Ec890f699cF50A062630", "name": "FixedPricePool", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/7/2021"}
+{"address": "0xa78F1941751347763a6125CA64958B562c974819", "name": "Counter", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/7/2021"}
+{"address": "0x552387A94Ab489F70742188D7a9fa772e98989e1", "name": "MaviaNFTBridgeL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/7/2021"}
+{"address": "0xD589D2B62Df7800F042c140D8dB19dBE267Eb664", "name": "MockERC721", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/7/2021"}
+{"address": "0xa2C0C70A1E922f5f060ec20EE3aF002C163b4567", "name": "Resolver", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 11, "settings": "", "date": "12/7/2021"}
+{"address": "0x21185C500FF97e0C0fEe3145A722Ace9389574eC", "name": "MaviaTokenL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/7/2021"}
