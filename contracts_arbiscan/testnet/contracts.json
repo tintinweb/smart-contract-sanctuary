@@ -616,3 +616,15 @@
 {"address": "0xD589D2B62Df7800F042c140D8dB19dBE267Eb664", "name": "MockERC721", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/7/2021"}
 {"address": "0xa2C0C70A1E922f5f060ec20EE3aF002C163b4567", "name": "Resolver", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 11, "settings": "", "date": "12/7/2021"}
 {"address": "0x21185C500FF97e0C0fEe3145A722Ace9389574eC", "name": "MaviaTokenL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/7/2021"}
+{"address": "0xCB283eD3aa534CaCaB4b8FDE13b0Fc66612a8c11", "name": "NFTree", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 39, "settings": "", "date": "12/8/2021"}
+{"address": "0x17e5fACc4F35089d550c42F9D5a8b5C142c355f4", "name": "FarmlandCharacters", "compiler": "0.8.4", "balance": "0.001 ETH", "txcount": 10, "settings": "", "date": "12/8/2021"}
+{"address": "0x2452Bb1C68Bd10C3374eA7748cf5D8072077C19B", "name": "MaviaTokenL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0xdE62033F32B1D0b5911290105f39E006cffC7a9e", "name": "TestGovernance", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/8/2021"}
+{"address": "0x5b672D7C10aFa82Ae6c0e1AfE95300FcA6964726", "name": "Superfluid", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/8/2021"}
+{"address": "0xE01F8743677Da897F4e7De9073b57Bf034FC2433", "name": "UUPSProxy", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/8/2021"}
+{"address": "0x3db619104b07ba4164b84556e2f5d7c74591629d", "name": "StakeManager", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 15, "settings": "", "date": "12/8/2021"}
+{"address": "0x4bCc4122e169680458c5eF87b9E4735C8408D042", "name": "SummaSwapV3Router", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 256, "settings": "", "date": "12/8/2021"}
+{"address": "0x50Cb530B9c29FC6bD02984d2291f5cF165Be8D65", "name": "SummaSwapV3Manager", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 252, "settings": "", "date": "12/8/2021"}
+{"address": "0xAb49739554E4B167F1B05F2AafeF84714AB65325", "name": "SummaSwapV3Factory", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/8/2021"}
+{"address": "0x7485931e9234A8174687f9f34cd740eDa44abBba", "name": "MetaKeeper", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "12/8/2021"}
+{"address": "0x1EA3FfD41c3ed3e3f788830aAef553F8F691aD8C", "name": "CreateERC20Minter", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "12/8/2021"}
