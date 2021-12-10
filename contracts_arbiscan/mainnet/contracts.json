@@ -1383,3 +1383,17 @@
 {"address": "0x06060a6258C84dFCD42c1fB82e0028758808F5aC", "name": "PricingSession", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/9/2021"}
 {"address": "0xdc0B4eb507d483B77ECF3B82503D5630037aF3cF", "name": "ABCTreasury", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "12/9/2021"}
 {"address": "0x63ae3cea2225be3390854e824a65bbbb02616bb4", "name": "CreateERC20Minter", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/9/2021"}
+{"address": "0xFb952b88b2d2C99d2A30E78deD6d393e2a2a4553", "name": "StrategyArbSushiDualLP", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "12/10/2021"}
+{"address": "0x64851F10A66EBCA74bAAC5087E4446202cE02a6b", "name": "StrategySushiLP", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "12/10/2021"}
+{"address": "0xfa39410bc50a1ba223606225cea01e17271f62ff", "name": "WErc20Delegator", "compiler": "0.5.16", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
+{"address": "0x0076dc289216fb3a1f007440fc32c2c4ca895f19", "name": "WErc20Delegate", "compiler": "0.5.16", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
+{"address": "0x6764573c2541ce0f3dabd51d25b25ae2bdf983d5", "name": "JumpRateModel", "compiler": "0.5.16", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
+{"address": "0x372ab1986c16ee6a9b960ae987bd911df0ed024a", "name": "Wooftroller", "compiler": "0.5.16", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/10/2021"}
+{"address": "0x93db30deb36b78466c302e79460b13943976111a", "name": "Unitroller", "compiler": "0.5.16", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "12/10/2021"}
+{"address": "0x308d72e84510fe37972e8372eca5cdc5c198027b", "name": "Woof", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
+{"address": "0x9162c114a85280f6905B2C7c541731Ff69D04782", "name": "VaultPriceFeed", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 15, "settings": "", "date": "12/10/2021"}
+{"address": "0xD2A0d451B73aFc30cdfE74fc629e5512c7FefB1c", "name": "FastPriceFeed", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/10/2021"}
+{"address": "0x4530b7DE1958270A2376be192a24175D795e1b07", "name": "FastPriceEvents", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/10/2021"}
+{"address": "0xE4606B7C077f5E49Ae56134599138747292738a1", "name": "FaircastleBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 35, "settings": "", "date": "12/10/2021"}
+{"address": "0xB678c334aAe2ba7CaA7F50C202011B06468ebfaC", "name": "FaircastlewETHBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 26, "settings": "", "date": "12/9/2021"}
+{"address": "0x06e8c853d643bf913a1cebab062317a385973eea", "name": "AEthSplitter", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "12/9/2021"}
