@@ -643,3 +643,9 @@
 {"address": "0xf2e685218930C4Da60b817D06719A5963296E8f0", "name": "StakingPools", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/9/2021"}
 {"address": "0x1cC09359d1FC9f5286e725639A2F3644d21e745A", "name": "StakingPoolRewarder", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/9/2021"}
 {"address": "0xdb76b0cde006be37aaca9b2a6085fb5d72500eb5", "name": "SimpleStorage", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 4, "settings": "-", "date": "12/9/2021"}
+{"address": "0x18247845550add4193a3c3237e9019fdcbf22843", "name": "DIAOracle", "compiler": "0.7.4", "balance": "0 ETH", "txcount": 117, "settings": "", "date": "12/10/2021"}
+{"address": "0x99844564A2fFCE31A646a319651bE6239FcE6624", "name": "NFTree", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 42, "settings": "", "date": "12/10/2021"}
+{"address": "0xB102118533B2a4dcD28F836859Af17323A747Ca9", "name": "Storage", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "12/10/2021"}
+{"address": "0x925b6Dea592f731A9183cAe3a29568e2dD98cBE5", "name": "BizzSwap", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
+{"address": "0x179b83CC8dE47e940b8E2A77bb3039Db66aF1512", "name": "Multicall2", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
+{"address": "0x1151cF367E21e724226BA0312C9F0D55E62A2B08", "name": "Multicall", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
