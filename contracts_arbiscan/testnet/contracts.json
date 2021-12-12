@@ -649,3 +649,8 @@
 {"address": "0x925b6Dea592f731A9183cAe3a29568e2dD98cBE5", "name": "BizzSwap", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
 {"address": "0x179b83CC8dE47e940b8E2A77bb3039Db66aF1512", "name": "Multicall2", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
 {"address": "0x1151cF367E21e724226BA0312C9F0D55E62A2B08", "name": "Multicall", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
+{"address": "0x977923a4097cd0c21b272c0644d18b57d3676b8f", "name": "Multicall2", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "12/11/2021"}
+{"address": "0x5E03Acd53d5D3A834278014D91F0AFD36f8147Ce", "name": "NFTsFactory", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/11/2021"}
+{"address": "0xD53e7aa446e4615DEC602c1D0d024425256f631a", "name": "OpenNFTs", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "12/11/2021"}
+{"address": "0x0ED91009756b1d684F2D953f56cF84373D8CEB25", "name": "NFTsFactory", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/11/2021"}
+{"address": "0x174c4f8e422810CC808C08D34C0A5c759f45b661", "name": "FootyNouns", "compiler": "0.8.4", "balance": "0.03 ETH", "txcount": 4, "settings": "", "date": "12/11/2021"}
