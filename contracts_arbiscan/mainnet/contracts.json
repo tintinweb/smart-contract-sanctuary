@@ -1414,3 +1414,10 @@
 {"address": "0x2Ac51A7bC5E41cc35a1ce107E39847Ce00c20161", "name": "Vyper_contract", "compiler": "vyper:0.3.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
 {"address": "0x69f36f4486168d8eebd472375588e88b702f5344", "name": "Vyper_contract", "compiler": "vyper:0.3.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
 {"address": "0xaf506be344ce8f2739e294a2a6446a66c0cfedfe", "name": "Vyper_contract", "compiler": "vyper:0.3.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/10/2021"}
+{"address": "0x1a2B9E570fe9032562F0E200D03cd29DCf082268", "name": "AccessControlledOffchainAggregator", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "12/13/2021"}
+{"address": "0x57da811a9EF9b79DbC2EA6f6dc39368a8Da1Cf07", "name": "WethUnwrapper", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0xecb456ea5365865ebab8a2661b0c503410e9b347", "name": "Vyper_contract", "compiler": "vyper:0.3.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0x55858adabb9ea24ddd0678db0e9b41d8bd48e7ee", "name": "Vyper_contract", "compiler": "vyper:0.3.0", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "12/13/2021"}
+{"address": "0xb8f9632e8d3cfaf84c254d98aea182a33a9d11bb", "name": "USDLemma", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0x5293B22B62038a458AB45ce8a463deC6d51bf506", "name": "TradeMint", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 19, "settings": "", "date": "12/13/2021"}
+{"address": "0x95CB52523FF97DfA4de7cf683766E360e0A6e0a2", "name": "NaiadWaterInvestmentCoin", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/12/2021"}
