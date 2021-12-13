@@ -654,3 +654,13 @@
 {"address": "0xD53e7aa446e4615DEC602c1D0d024425256f631a", "name": "OpenNFTs", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "12/11/2021"}
 {"address": "0x0ED91009756b1d684F2D953f56cF84373D8CEB25", "name": "NFTsFactory", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/11/2021"}
 {"address": "0x174c4f8e422810CC808C08D34C0A5c759f45b661", "name": "FootyNouns", "compiler": "0.8.4", "balance": "0.03 ETH", "txcount": 4, "settings": "", "date": "12/11/2021"}
+{"address": "0x03C295ff7f1Fe1085e9ceA827d5d7b7f8cA7c684", "name": "BondPoolFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/13/2021"}
+{"address": "0xcb186F6bbB2Df145ff450ee0A4Ec6aF4baadEec7", "name": "PCVTreasury", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0x5d738b2a61A8f87c786D17F2ddd73840826f2070", "name": "MarginFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0xC6811eA01eF191990ddf1ab29696c0D953877b66", "name": "AmmFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0xa28e2370e2d7f6cf2cDe43734D78Ad477d7Afc68", "name": "PairFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "12/13/2021"}
+{"address": "0x2eA4B7CdD3fDe0576Bc44F6522350741D6cBA8E6", "name": "Router", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0x6fbe1c378Df494b5F66dd03491aA504d963eaD14", "name": "PriceOracle", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0x52f2547D6f86DCfA985B4580761256ffd9e13cb9", "name": "TracerDevMultisig", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0xeA61de381a5c88496eE66b4A06b272086bDc69c4", "name": "nProxy", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/12/2021"}
+{"address": "0x1940AA6C563E90658D508243C331dA51Ae2d7381", "name": "ArbitrumL2NoteERC20", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/12/2021"}
