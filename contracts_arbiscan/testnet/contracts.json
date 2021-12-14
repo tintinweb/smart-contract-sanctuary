@@ -664,3 +664,14 @@
 {"address": "0x52f2547D6f86DCfA985B4580761256ffd9e13cb9", "name": "TracerDevMultisig", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
 {"address": "0xeA61de381a5c88496eE66b4A06b272086bDc69c4", "name": "nProxy", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/12/2021"}
 {"address": "0x1940AA6C563E90658D508243C331dA51Ae2d7381", "name": "ArbitrumL2NoteERC20", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/12/2021"}
+{"address": "0xa778d8A10E7d41FCC17270263AF3B0BE81Df13d4", "name": "PoolFactory", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/13/2021"}
+{"address": "0x60853C60BAa5d1D0F9e180A9ca9ce93F8F5A8aA1", "name": "PoolFactory", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/13/2021"}
+{"address": "0xEa34FB987C96a320d48790641a70f465d456F46e", "name": "PoolFactory", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/13/2021"}
+{"address": "0xBbb94aD0286673bB4B038925ac3A66Fe68458405", "name": "PoolFactory", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/13/2021"}
+{"address": "0xb61f47B147021aF6f7e76625eC0f35DFa00C74F6", "name": "PoolFactory", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/13/2021"}
+{"address": "0x9d3e83B0d93b2bC6A4473A9a43FE29D391eA6c7A", "name": "PoolFactory", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/13/2021"}
+{"address": "0x6151de8219c922c773eA171960c0821376437C99", "name": "ChainlinkOracleWrapper", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0xB4A11c25e3120cA3709b54B863797fCBCB161875", "name": "PriceOracleForTest", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/13/2021"}
+{"address": "0xd46d02552bdb5dFa9a18F02324E30965238788Ea", "name": "Router", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "12/13/2021"}
+{"address": "0xDc0A5d9037cEe5272D8E5FCD6Ee4833FCDcD63f5", "name": "OwnerTest", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/13/2021"}
+{"address": "0xE8eA820Cbb639498D5d08AA0eF3F9077a4360D0F", "name": "OwnerTest", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/13/2021"}
