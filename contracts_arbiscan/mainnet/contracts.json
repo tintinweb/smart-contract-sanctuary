@@ -1455,3 +1455,11 @@
 {"address": "0x375d515b1d4B77F5e57bE448666fb1884626737e", "name": "DummyVault", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/14/2021"}
 {"address": "0x6dF7B3bE3cb88895D1e53e4EDfDD5aDf9CA9677B", "name": "BTCVault", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "12/14/2021"}
 {"address": "0x59741D0210Dd24FFfDBa2eEEc9E130A016B8eb3F", "name": "ArbitrumConvert", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/14/2021"}
+{"address": "0x6aEa5785829db22bCb0Cc721Ba6BDD98877A9d0C", "name": "ProtocolToken", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/16/2021"}
+{"address": "0x4C96226495E28AE2772CD5134608Ba6efbF88169", "name": "FootyNouns", "compiler": "0.8.4", "balance": "1.105 ETH", "txcount": 214, "settings": "", "date": "12/16/2021"}
+{"address": "0x360F9ffd9a640DAbe6b6c079332B4FD239d68e07", "name": "LendingPoolAddressesProviderRegistry", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/16/2021"}
+{"address": "0xede678B37cb71593E8Dfff262AB7882BB82927ac", "name": "ClaimBuckLoot", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/16/2021"}
+{"address": "0x1d5f1a025392a8e590410dcbe84ff4b1e7a67372", "name": "Farming", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/16/2021"}
+{"address": "0x912a384b21627Dddc70bdd181166930Bd1a79586", "name": "TradeMint", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 65, "settings": "", "date": "12/16/2021"}
+{"address": "0x8a05F2A17D476412C086968f366C984475c598A2", "name": "TradeMint", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 19, "settings": "", "date": "12/16/2021"}
+{"address": "0xec932d20ba851ac26630835771476dc2d1a3ac8d", "name": "PremiaRewarder", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/16/2021"}
