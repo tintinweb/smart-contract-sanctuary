@@ -699,3 +699,14 @@
 {"address": "0x50aA1325c07f0e74bF061337e13650464CC0f0b5", "name": "STokensManager", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/14/2021"}
 {"address": "0x008fAF4D31e86BC86bC15A72c1E3E9313F3Cc150", "name": "PromifyClone", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/14/2021"}
 {"address": "0xE2161003669225eaf44581D1AD2A1b0a953C67Ce", "name": "PromifyArbitrum", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/14/2021"}
+{"address": "0x684aea510f6e041d1ea297c931c2312793eec03a", "name": "LendingPool", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/16/2021"}
+{"address": "0x2e0fd083f034c0e801a1152c3cc196cb67e61a01", "name": "Address", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/16/2021"}
+{"address": "0xd1f6a2d4Cfa893AdD3C50f714148bFc2Bd564d17", "name": "LendingPoolAddressesProvider", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/15/2021"}
+{"address": "0xF004495136B95243D8B6B3eA210467711C8FC1Ab", "name": "CreditVault", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "12/15/2021"}
+{"address": "0xD0ac36cD8A5869eACEF7a43287cd743cd961a0B4", "name": "UniswapStakerNFT", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/15/2021"}
+{"address": "0xb314A84793e98024805fdff47159912Ca896d30f", "name": "UniswapV3Staker", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/15/2021"}
+{"address": "0x82a7e0a5287a992a51c19bdb5b15987fe412fe63", "name": "LendingPoolAddressesProviderRegistry", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/15/2021"}
+{"address": "0x4e9fCAd25277a429946f40e6921414ED3b5Dc5E3", "name": "XferFactory", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/15/2021"}
+{"address": "0x6A50a0181B3dB71f485b9BC512CF2c10F2c2889A", "name": "XferFactory", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/15/2021"}
+{"address": "0x10a8f4b231e3c09718d3c5d0a5dfb8dd0b1bb41a", "name": "Faucet", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 22, "settings": "-", "date": "12/15/2021"}
+{"address": "0xD4111b08124B77c621077dC7B85729D334193759", "name": "FootyNouns", "compiler": "0.8.4", "balance": "0.375 ETH", "txcount": 18, "settings": "", "date": "12/15/2021"}
