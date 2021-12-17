@@ -1463,3 +1463,17 @@
 {"address": "0x912a384b21627Dddc70bdd181166930Bd1a79586", "name": "TradeMint", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 65, "settings": "", "date": "12/16/2021"}
 {"address": "0x8a05F2A17D476412C086968f366C984475c598A2", "name": "TradeMint", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 19, "settings": "", "date": "12/16/2021"}
 {"address": "0xec932d20ba851ac26630835771476dc2d1a3ac8d", "name": "PremiaRewarder", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/16/2021"}
+{"address": "0xBa57440fA35Fdb671E58F6F56c1A4447aB1f6C2B", "name": "Vyper_contract", "compiler": "vyper:0.2.12", "balance": "0 ETH", "txcount": 200, "settings": "", "date": "12/17/2021"}
+{"address": "0xCEB65eF8840F56902351f8aE0A0cF7B782ba742D", "name": "FootyDescriptor", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 8, "settings": "-", "date": "12/17/2021"}
+{"address": "0x8Fbd420956FDD301f4493500fd0BCaAa80f2389C", "name": "AmyFinanceToken", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2097, "settings": "-", "date": "12/17/2021"}
+{"address": "0xd367270D2480c5BF600488d32083eF2B107ecFF2", "name": "FixedPricePool", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
+{"address": "0x8AfF2AC89b7119df41DAD38689C7607E2C8E8E9f", "name": "Whitelist", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
+{"address": "0x0F2574E9C173207F90A67e1F3E5b0811DE2F5e54", "name": "StakingImp", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
+{"address": "0xE13410B65a55F42b64b7C8FE60Ad70b482FC7286", "name": "UpgradeabilityProxy", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/17/2021"}
+{"address": "0xf0e406c49c63abf358030a299c0e00118c4c6ba5", "name": "NerveMultiSigWalletIII", "compiler": "0.5.17", "balance": "0.000000001 ETH", "txcount": 3, "settings": "", "date": "12/17/2021"}
+{"address": "0xBEcC23eD0488F0EE91a47197daC9A1509C911661", "name": "FootySeeder", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "12/17/2021"}
+{"address": "0x930b5c97483ce350253fd784036412c045880a69", "name": "HotPotV3FundFactory", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
+{"address": "0xda2d6e2abb42deaa267e16504a164d5d8046454f", "name": "Position", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
+{"address": "0x615d8e5e1344b36a95f6ecd8e6cda020e84dc25b", "name": "HotPotV3FundController", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
+{"address": "0x5Ec477EdA75303450a4185B3557c2C2fbb85A9fC", "name": "SPELLETHStrategy", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 52, "settings": "", "date": "12/17/2021"}
+{"address": "0xAa366bEB7F46F69c8546B81282ef39Ba142ac6FF", "name": "SushiGOHMEscrow", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
