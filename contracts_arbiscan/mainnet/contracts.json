@@ -1477,3 +1477,7 @@
 {"address": "0x615d8e5e1344b36a95f6ecd8e6cda020e84dc25b", "name": "HotPotV3FundController", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
 {"address": "0x5Ec477EdA75303450a4185B3557c2C2fbb85A9fC", "name": "SPELLETHStrategy", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 52, "settings": "", "date": "12/17/2021"}
 {"address": "0xAa366bEB7F46F69c8546B81282ef39Ba142ac6FF", "name": "SushiGOHMEscrow", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
+{"address": "0x50188692d5549386d102642036bab916b998c814", "name": "BatchBalance", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
+{"address": "0x4Bbd138e2Ba312754B1d075DEdf2F337521Dd638", "name": "PricingSession", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 12, "settings": "", "date": "12/17/2021"}
+{"address": "0x1e5C3433F511A9AaAf371406A5BEb8F883eB7EfA", "name": "ABCTreasury", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/17/2021"}
+{"address": "0xB3f1069B04726C145197853Db772483Bd6B9650D", "name": "CreditVault", "compiler": "0.8.0", "balance": "1.629 ETH", "txcount": 17, "settings": "-", "date": "12/17/2021"}
