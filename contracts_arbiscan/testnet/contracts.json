@@ -739,3 +739,6 @@
 {"address": "0x46C5D0Beb22daCe56e7AD5BeA8B4bbE1b281e090", "name": "TradeMint", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 19, "settings": "", "date": "12/16/2021"}
 {"address": "0x3dc16Ff813fDbca3cFBf4490793152795dD4843e", "name": "TradeMint", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 19, "settings": "", "date": "12/16/2021"}
 {"address": "0x71f9cc88c400FCb1D595D4dA5cAE10B27ba31A90", "name": "TradeMint", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 19, "settings": "", "date": "12/16/2021"}
+{"address": "0x9B6a10AA667454E00F5cC1c9895e16e225079234", "name": "PairFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/17/2021"}
+{"address": "0x1eE0a3217aa347B4933d40513B20492aDDB0e9Ee", "name": "Router", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 22, "settings": "", "date": "12/17/2021"}
+{"address": "0xfE4598Ed44C70c34a6824e0b32561671AC6225fd", "name": "PriceOracle", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/17/2021"}
