@@ -1481,3 +1481,10 @@
 {"address": "0x4Bbd138e2Ba312754B1d075DEdf2F337521Dd638", "name": "PricingSession", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 12, "settings": "", "date": "12/17/2021"}
 {"address": "0x1e5C3433F511A9AaAf371406A5BEb8F883eB7EfA", "name": "ABCTreasury", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/17/2021"}
 {"address": "0xB3f1069B04726C145197853Db772483Bd6B9650D", "name": "CreditVault", "compiler": "0.8.0", "balance": "1.629 ETH", "txcount": 17, "settings": "-", "date": "12/17/2021"}
+{"address": "0x66Da6ED5Be00AB1dFfcD419E57f21e161031Ee8A", "name": "TransparentUpgradeableProxy", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/19/2021"}
+{"address": "0x27621f911467e98730D01CC43BFB6a489c45CE8D", "name": "NOM", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/19/2021"}
+{"address": "0xEB58af5F7a6e050E170Bf0ebF0dF21d2D713F494", "name": "TransparentUpgradeableProxy", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/19/2021"}
+{"address": "0xa5d79dC842EeC2483fDD6332D5BF63cA4598381F", "name": "HungryBunz", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/19/2021"}
+{"address": "0x052f7aa028a8338bc2d93c39c36ffc634c961345", "name": "ProxyAdmin", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/19/2021"}
+{"address": "0x8F2894459026CaE358C4613eD6779e515f1F514e", "name": "StrategyArbSushiDualLP", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "12/19/2021"}
+{"address": "0xfbD63fadb7B13E0599c3643405276f97217147B2", "name": "BIFIBalance", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/19/2021"}
