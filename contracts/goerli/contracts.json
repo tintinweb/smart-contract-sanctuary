@@ -16507,3 +16507,11 @@
 {"address": "0x00000000AfCbce78c080F96032a5C1cB1b832D7B", "name": "Account", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/18/2021"}
 {"address": "0x7F623b337dd9d5b9B26eE8c3386D58f165399E2B", "name": "JollyNft", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/18/2021"}
 {"address": "0x26c4ca34f722bd8fd23d58f34576d8718c883a80", "name": "WasteGas", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/18/2021"}
+{"address": "0x32a3263ccA5c65A09aC9b5Fa6d6897065143b83f", "name": "Instamint1155", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/19/2021"}
+{"address": "0x1febB2aa02e0d93cBF1469F494D6e3dcFa1B24B9", "name": "Instamint721", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/19/2021"}
+{"address": "0xd3ae750155ead3628830C16c4B98c2e2BdB2e096", "name": "SXDao", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "12/19/2021"}
+{"address": "0xe4a2dd0c7f8e09281ee9e6398c76e137fb308c25", "name": "Gweivo", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/19/2021"}
+{"address": "0x59cdaCA111E9b4241409303CE92E92a159aF4a89", "name": "Election", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/18/2021"}
+{"address": "0xE01d4CF8B62b27448c0778e0f91406E6605f3B2A", "name": "Will", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/18/2021"}
+{"address": "0xFD58c9F1A69AaDD7b182Fcdad1E9253302f5E9ff", "name": "Bank", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/18/2021"}
+{"address": "0x9b966B3eba27EB9d2d8cD6aEf97F3D451b111222", "name": "Ilove", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/18/2021"}
