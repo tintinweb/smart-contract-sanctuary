@@ -770,3 +770,7 @@
 {"address": "0x6B2656E5d46f9Bc9f0dF427414e9d50d389F7db5", "name": "TheFryingPan", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "12/18/2021"}
 {"address": "0x2E1129fB3Cf3Da37e042a6842608De8E91613f80", "name": "Bacon", "compiler": "0.8.10", "balance": "0.285 ETH", "txcount": 9, "settings": "", "date": "12/18/2021"}
 {"address": "0x9B22a4F836d04718957BD98BBD00e0e18E83644E", "name": "GREASE", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/18/2021"}
+{"address": "0xA494CF3F1F68523391709662ef361d0D39Bd85B9", "name": "Faucet", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/20/2021"}
+{"address": "0x2c8cEc61EcAFc5F57bCaB869bDCDdfAcA397BB31", "name": "MintAsset", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 16, "settings": "-", "date": "12/20/2021"}
+{"address": "0x106affaf7617c8713449402ce9ea560c8c95af47", "name": "LendingPoolConfigurator", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/20/2021"}
+{"address": "0x1c8C9Ca747C5f5126acCc4c4B3E843FD9565e308", "name": "FarmlandLotto", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/19/2021"}
