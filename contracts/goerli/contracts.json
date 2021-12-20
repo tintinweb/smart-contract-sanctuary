@@ -16537,3 +16537,10 @@
 {"address": "0x232c35bce5a264a4fa43a016b0799d3b2bb70f63", "name": "SushiClient", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "12/19/2021"}
 {"address": "0x57e7829760A78523157dD959F4069fA2e40632F8", "name": "TokenVesting", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/19/2021"}
 {"address": "0xEb4bc6297E7cA877F5419a1B9D075961ce869Ba3", "name": "SushiClient", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "12/19/2021"}
+{"address": "0xEd59f5b18Aa92bA4B7f62F66Ad4bDa3C846833Bf", "name": "Staker", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/20/2021"}
+{"address": "0x6da3109c850B4966fd8C0E2BB4543a88BCa5FB51", "name": "Staker", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/19/2021"}
+{"address": "0x7f9b3a453c9646fce4bb85ab53955ccf5f067f7e", "name": "ExampleNFTcontract", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/19/2021"}
+{"address": "0xF7D2dD0b42e2eCd003B7560f1b10Aea7e5a2A021", "name": "NounsAuctionHouse", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/19/2021"}
+{"address": "0x9E3DF144fD9069A731546647Eba52C07C4fd6cc9", "name": "ExampleExternalContract", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/19/2021"}
+{"address": "0xf44de82212552e6bfc0bb962701e9aec2249f92b", "name": "sendTocontract", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/19/2021"}
+{"address": "0x8d21020D3134C20AEE7a7706FB07cc21e3b47C3B", "name": "Rabiha", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/19/2021"}
