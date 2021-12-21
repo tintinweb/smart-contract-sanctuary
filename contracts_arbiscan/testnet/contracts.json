@@ -774,3 +774,9 @@
 {"address": "0x2c8cEc61EcAFc5F57bCaB869bDCDdfAcA397BB31", "name": "MintAsset", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 16, "settings": "-", "date": "12/20/2021"}
 {"address": "0x106affaf7617c8713449402ce9ea560c8c95af47", "name": "LendingPoolConfigurator", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/20/2021"}
 {"address": "0x1c8C9Ca747C5f5126acCc4c4B3E843FD9565e308", "name": "FarmlandLotto", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/19/2021"}
+{"address": "0xf06e081c545282e95cab66805487c054E92A7758", "name": "LendingPoolConfigurator", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/21/2021"}
+{"address": "0xf47dddba64dd7ff5d676c252ce812b6dfd0e25ae", "name": "Position", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/21/2021"}
+{"address": "0x2ac730d61850E15456a88077C289265C287110e8", "name": "FarmlandLotto", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/20/2021"}
+{"address": "0xf4c54b011ce13B51a3F6001Be35a0f070af54E21", "name": "FarmlandLotto", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/20/2021"}
+{"address": "0x224493023e67a76AB8e89B60E436540443C17880", "name": "FarmlandLotto", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/20/2021"}
+{"address": "0x2b42AFFD4b7C14d9B7C2579229495c052672Ccd3", "name": "HopImplL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/20/2021"}
