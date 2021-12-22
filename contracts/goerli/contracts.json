@@ -16694,3 +16694,22 @@
 {"address": "0x3ceA948fD7322Dac1A098C4f4E888fB6ce0C940d", "name": "StakeManager", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/21/2021"}
 {"address": "0x0316b276b8a813f02296633014f21f68acfe8dab", "name": "piggyBank", "compiler": "0.7.1", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/21/2021"}
 {"address": "0x59995c51daf6d1dcc8e4abd8fda4943b699d85c2", "name": "Calc", "compiler": "0.7.1", "balance": "-", "txcount": 0, "settings": "-", "date": "12/21/2021"}
+{"address": "0x02dA24dA6Db333E3Bc47A1BbdE1bC3419F32bF96", "name": "FreewayVesting", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/22/2021"}
+{"address": "0xC9F3865657a43ae776f643117F68aA9f8363f9d2", "name": "FreewayToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/22/2021"}
+{"address": "0x284ee5e43f0e482f188adf98d241f67a33357ad9", "name": "OKPCMetadata", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/22/2021"}
+{"address": "0xB880dDeF3b8696A376dE333e9C738Fc9D76592FC", "name": "OKPC", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/22/2021"}
+{"address": "0x024de0e9b39cf0b716ef89001d3391964d77b7b8", "name": "OKPCFont", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/22/2021"}
+{"address": "0xD271255594a2337a7B80b6c3b6f0f8A70949371a", "name": "YourToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/22/2021"}
+{"address": "0x0C3955DA178A0dc82691Ea4b0C64a2921B3de3CE", "name": "Vendor", "compiler": "0.8.4", "balance": "0.52 Ether", "txcount": 0, "settings": "", "date": "12/22/2021"}
+{"address": "0x61F81fd38a2e38D51e03AEFF363C665aEE031E9E", "name": "PetroTokenProxy", "compiler": "0.8.11", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/22/2021"}
+{"address": "0x7cfdd5bc2c2474d343b46480e845d74ccc409189", "name": "StrongSale", "compiler": "0.7.5", "balance": "-", "txcount": 0, "settings": "", "date": "12/22/2021"}
+{"address": "0x46c50F6A18F4c1833A71ECceBB43BA741Be4394C", "name": "BrexitCoin", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "12/22/2021"}
+{"address": "0xe31550c73ce84b51f6b2b3411f109eb2686832b9", "name": "TokenERC20", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/21/2021"}
+{"address": "0x39ed1fa74a0761123bce6ddef759e63003cf8be2", "name": "DOGEGF", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/21/2021"}
+{"address": "0x311A17196Be01E99AA2EcC5e95915728eBc5EC0F", "name": "NFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/21/2021"}
+{"address": "0xaf26ea89502cC640E41475C5A0FdB90b99b44455", "name": "NFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/21/2021"}
+{"address": "0x38FF304b6A62Ba58c41b30B3ca649a7A2005c829", "name": "NFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/21/2021"}
+{"address": "0x35853F7FC41c1727089b8D4623e289193c99000A", "name": "CErc20Delegate", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "12/21/2021"}
+{"address": "0x587eEF75710CdFB9a67F95cD747E256D71130d11", "name": "NFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/21/2021"}
+{"address": "0xE78D39510AA86103B9BF857B145b41F0dA63CbE9", "name": "KATA", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "12/21/2021"}
+{"address": "0xcDb972E8c80c17AE6ecBb04f52517e938493b0ab", "name": "NFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/21/2021"}
