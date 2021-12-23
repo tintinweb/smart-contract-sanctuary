@@ -1551,3 +1551,9 @@
 {"address": "0xb96b904ba83ddeece47caada8b40ee6936d92091", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/22/2021"}
 {"address": "0x1E2d3ba40F973135f397fF7f2Ec0d1cC835E8b73", "name": "WethMaker", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/22/2021"}
 {"address": "0xDeCd456313C19DdF8c100F78C516500069D7D4A0", "name": "WnDGameTG", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "12/21/2021"}
+{"address": "0x6695bb079fCfaBE0Ac4144e194451e83b25Ef7a3", "name": "StrategyRenVMArbitrum", "compiler": "0.7.6", "balance": "0.097859065748182124 ETH", "txcount": 1, "settings": "", "date": "12/23/2021"}
+{"address": "0x6b9F827D9e0607098d5DdA6D84D2c2164e1B90A9", "name": "ArbitrumConvert", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/23/2021"}
+{"address": "0x3610a0cc263aef12d196f26267ae1a9377d4bf4c", "name": "StrategySushiEthOhmLp", "compiler": "0.6.7", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/23/2021"}
+{"address": "0x2d2f89146543aa1386ddab19fef67efd798994bb", "name": "StrategySushiMagicEthLp", "compiler": "0.6.7", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/23/2021"}
+{"address": "0x6779eb2838f44300cb6025d17deb9f2e27cc9540", "name": "PickleJar", "compiler": "0.6.7", "balance": "0 ETH", "txcount": 14, "settings": "", "date": "12/23/2021"}
+{"address": "0x80816266cdd5d0d18b3c13e066d9d5f9c3fe410c", "name": "StrategySushiEthOhmLp", "compiler": "0.6.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/23/2021"}
