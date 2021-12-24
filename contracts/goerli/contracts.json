@@ -16800,3 +16800,31 @@
 {"address": "0xe0fb6dd77091dc87a1ab7c983b940fd0df11a6d6", "name": "FakeERC20", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "12/23/2021"}
 {"address": "0xea315bb312d6addc5d1f4365c1acdfa81194404e", "name": "Pawthereum", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "-", "date": "12/23/2021"}
 {"address": "0xb311919ae7c748aff503850ac55110712631900e", "name": "TestWordsOfThree", "compiler": "0.8.7", "balance": "0.006 Ether", "txcount": 0, "settings": "", "date": "12/23/2021"}
+{"address": "0x2585a869C0efa5aae4E048d778cBF05E3B537ca5", "name": "FastFoodDoodles", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/24/2021"}
+{"address": "0x8bFE568aFC3FB42385861c604E5c3EaF1365049B", "name": "NFT", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x10ba6aa18bfdd20af1e8addcbf4aa1e50f0beaaa", "name": "InBetweeners", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x1e054e938BACA37BebE0f4E1B481edcD599e0701", "name": "DummyMintableERC721", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x82701BeBa99BBE383BDF85721339C3dd0487cA3e", "name": "ACPIFour", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x34FB879ad8172298350BdD305d3Bc2d85139655d", "name": "ACPIThree", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x2b56be8EfaA9410Fef9bb24b9a4f876A7D72aD9b", "name": "ACPIMaster", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x5adce79e6e846625b9e1c70c159b3339c6fee737", "name": "WitnetRequestRandomness", "compiler": "0.8.11", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0xD533438959DB06edc11dc4c51c123860d5873A4c", "name": "WitnetRandomness", "compiler": "0.8.11", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x33ac5ABb4d4cBD757F32E00505b9efd18d475fD7", "name": "WitnetPriceRouter", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x75e7A688ebF0628EDdFDab4E683708150f12Af92", "name": "LdcNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x1317E8D5006F5BbA4f9C57532512029c1D52530b", "name": "GStakingManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0xd11e8d37e585d36ecaa3e8e1a8943fe95645fa2f", "name": "SamuraiInu", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x29a88044562cfe9720c9d8dc3d4c4d0cdb605df7", "name": "JHSDJHFAS", "compiler": "0.7.6", "balance": "2 wei", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0xeE079007142aC4FB9B025154EdDdDF4884E13437", "name": "MoonFlip", "compiler": "0.8.11", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "12/24/2021"}
+{"address": "0x474212cb1d8e5973edd82b2711abcd9b886da750", "name": "DePoll", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "12/24/2021"}
+{"address": "0xDd75819DA9cCFfD633d3D394325B2D014f78550e", "name": "StateSender", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x8237EFfE31A6Ab410f56288160824Ce523e0b25c", "name": "StakingNFT", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0xEA03383C98ae609EDC7E57fA12dcAeB5b83bD864", "name": "GStakingManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x2456dD06D0D397f2f525e18EB1eE3b7C05098711", "name": "StakeManagerProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0xc83A54278F1D182831FDC50a9aEa6BAA54f22d84", "name": "StakeManager", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x5b462E52FAeB0E9E221615f8564ed994Dc1e4eFc", "name": "EventsHubProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0xdbC699860a61AfF7304710c29B678C417F3FD2B2", "name": "EventsHub", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x644ca26c323414511FCBd4D344b359719B05254b", "name": "StakingInfo", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x8100CA3d86D918613CBddD0386ee0c4f1506F0b8", "name": "TestToken", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x29EFD8bE1fba70881F74eEe0Fca4ef50c590FC04", "name": "Registry", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x1fa0036d90dB2462B58C46B140e135Eb60fBE7e9", "name": "GovernanceProxy", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x145e66a2a2c64e62506E1DC466c7F005f25C7102", "name": "Governance", "compiler": "0.5.17", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
