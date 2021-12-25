@@ -1575,3 +1575,4 @@
 {"address": "0x29f80c1f685e19aE1807063eDa432F431ac623D0", "name": "TransformerDeployer", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "12/23/2021"}
 {"address": "0x6bE55414d677E432998849Ed170e8efAfa6AE86e", "name": "AuctionHouse", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "12/23/2021"}
 {"address": "0x2649F3c206c2cD754aE0b7530e3961c30056c55e", "name": "MintableERC721", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/23/2021"}
+{"address": "0x6a0Fc220D129F4D21e40764ed0BeA4ec777f3D03", "name": "CrossChainOracleSingleAsset", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/25/2021"}
