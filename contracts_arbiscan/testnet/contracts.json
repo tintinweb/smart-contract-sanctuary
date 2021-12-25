@@ -880,3 +880,6 @@
 {"address": "0xf5bA75b24fFc5f484a63109Fd1dbBA6DA45162dD", "name": "Config", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/23/2021"}
 {"address": "0xb57a8D6e97C8bb552E83fCcaAc60adcC2Ee40FCb", "name": "Router", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "12/23/2021"}
 {"address": "0x27Bc2D90D1a015D6f88C064fF248553a5D82FCd6", "name": "StakingPools", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "12/23/2021"}
+{"address": "0x2019dCE59f5d7dB433417aCCb2B3d02920245B48", "name": "Faucet", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "12/25/2021"}
+{"address": "0x8fa47848D2a1EF283ffdBF8b3Dc0D1F1A06A94C3", "name": "Presale", "compiler": "0.8.0", "balance": "100 wei", "txcount": 11, "settings": "", "date": "12/24/2021"}
+{"address": "0xa0c679dD9d92d8F9ACF757FbAeb876Bf4371C80F", "name": "CatGems", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/24/2021"}
