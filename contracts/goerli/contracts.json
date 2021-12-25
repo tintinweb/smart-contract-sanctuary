@@ -16841,3 +16841,12 @@
 {"address": "0x33A4cca0560985Da79427586fc2c9CF47ECae638", "name": "InternetCameraRegistry", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "12/25/2021"}
 {"address": "0xa54d491ef2784213B7e8c16Dd0C807Ba91c5bB2E", "name": "SquidMoon", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
 {"address": "0x99Ea68d1798524ead1B310396f5d981CbbB3cc71", "name": "LiquidityMachine", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/24/2021"}
+{"address": "0x0db1e56a9bf2f782fde0a3173ae78193e4e0774a", "name": "fastfoodd", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/25/2021"}
+{"address": "0x36e9ac86376f460f2f5df77458d2cde449dea564", "name": "TransparentUpgradeableProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/25/2021"}
+{"address": "0xe1cd6b2000574c2b8c3ba624eb2b849a57196711", "name": "TiltBatchRegistry", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "12/25/2021"}
+{"address": "0xfa46e7115557974D72e79C1f3ED7872FdaDb877B", "name": "TokenContract", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/25/2021"}
+{"address": "0x2d230dd1c60aab89fd37350ee1ed1778d742ba35", "name": "FastDoodles", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/25/2021"}
+{"address": "0x86113e047c2830c6b9adcf312f21edf16e535dd8", "name": "Zoric", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/25/2021"}
+{"address": "0xe24e15e42c9f5269272d7d0d28e4ee6247cbe0b1", "name": "TransparentUpgradeableProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/25/2021"}
+{"address": "0x1548eCb01C371Df9D2f29b2Ca1e734A070b1dCcf", "name": "EpicNFT", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "12/25/2021"}
+{"address": "0xee1bccb759a4c1e5029a7dd8a7337ac13019660b", "name": "TransparentUpgradeableProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/25/2021"}
