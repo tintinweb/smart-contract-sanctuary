@@ -16850,3 +16850,19 @@
 {"address": "0xe24e15e42c9f5269272d7d0d28e4ee6247cbe0b1", "name": "TransparentUpgradeableProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/25/2021"}
 {"address": "0x1548eCb01C371Df9D2f29b2Ca1e734A070b1dCcf", "name": "EpicNFT", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "12/25/2021"}
 {"address": "0xee1bccb759a4c1e5029a7dd8a7337ac13019660b", "name": "TransparentUpgradeableProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/25/2021"}
+{"address": "0xbc40308b2d32811bd26796a5c7969cd0d4f750a7", "name": "TestCoin", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0x9cc3f6e0e5c4c12bb5b6eda608fa90c827ab6e6b", "name": "TestCoinProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0xeF10C97b6d53BE00a6D7b2f99B23b0BA94Ef7570", "name": "LITToken", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "-", "date": "12/26/2021"}
+{"address": "0x1fe37b7bD9bFE4e9ccE2f98a60C949Cee354C44e", "name": "FiresaleArt", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "-", "date": "12/26/2021"}
+{"address": "0x979aFb89A61619619227E9A3E716aB2D1c6c04f2", "name": "LITToken", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "-", "date": "12/26/2021"}
+{"address": "0xC7A6Da4bBD657b4c872cbCA52C744612387101Bd", "name": "JollyNft", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0xfd6ed032EC7Ad97FE0E3f30a16f3355aD0F0e061", "name": "LdcNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0x4176ce9615c48ccfc04f4fe47884ef0b5f3be136", "name": "SingleCoin", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0xa8f2560ac0259a63c6d4ccef89a60b2b1a65424e", "name": "BedpageCoin", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0xc8344cab649b1847f897fb18fec7a95addd1fbc9", "name": "BedpageCoin", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0xc4e51d6369416cf11d769025ed03bfc545f72c8b", "name": "TransparentUpgradeableProxy", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0xaA0381fCd1190d06F283bCCdD102f5E1fCc92580", "name": "TestCounter", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0xc01c693cb0Cf2Ae645e83B27a3e166e87D26E071", "name": "SimpleWallet", "compiler": "0.8.7", "balance": "0.01 Ether", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0x682Dc3DF6b2f238F8E0c85cf0541E259b44D64e0", "name": "EntryPoint", "compiler": "0.8.7", "balance": "0.02 Ether", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0xc2a8dD01aabB1e21bF2535Ca1C222ffC916e6609", "name": "Pawthereum", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "12/26/2021"}
+{"address": "0xbDeA5831e4B858027D0107aeacfdfe0648E36258", "name": "LdcNFT", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "12/25/2021"}
