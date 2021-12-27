@@ -18,7 +18,7 @@
 _______________
 
 <sup>
-last updated: Sun Dec 26 2021 20:09:40 GMT+0000 (Coordinated Universal Time)
+last updated: Mon Dec 27 2021 07:11:24 GMT+0000 (Coordinated Universal Time)
 </sup>
 
 ## Ethereum
@@ -272,36 +272,36 @@ last updated: Sun Dec 26 2021 20:09:40 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `90445`   
-**Unique Submissions (Name):** `51516`   
+**SourceUnits:** `90938`   
+**Unique Submissions (Name):** `51820`   
 
 **First Submission:** `7/6/2021`    
-**Most Recent Submission:** `12/25/2021`   
+**Most Recent Submission:** `12/26/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (34177)
-   * `0.8.4` (9865)
-   * `0.5.16` (5446)
-   * `0.8.7` (5154)
-   * `0.8.6` (4899)
-   * `0.7.6` (4243)
-   * `0.8.2` (3792)
-   * `0.7.4` (3305)
-   * `0.8.0` (3041)
-   * `0.5.17` (2056)   
+   * `0.6.12` (34318)
+   * `0.8.4` (9931)
+   * `0.5.16` (5485)
+   * `0.8.7` (5196)
+   * `0.8.6` (4910)
+   * `0.7.6` (4267)
+   * `0.8.2` (3808)
+   * `0.7.4` (3337)
+   * `0.8.0` (3049)
+   * `0.5.17` (2062)   
 
 **Names:**
-   * `Token` (4073)
-   * `BEP20Token` (3323)
-   * `IterableMapping` (1444)
-   * `Address` (1024)
-   * `CoinToken` (595)
-   * `MasterChef` (523)
-   * `ERC20` (383)
+   * `Token` (4091)
+   * `BEP20Token` (3341)
+   * `IterableMapping` (1446)
+   * `Address` (1028)
+   * `CoinToken` (603)
+   * `MasterChef` (524)
+   * `ERC20` (384)
    * `SampleBEP20Token` (213)
-   * `TokenBEP20` (170)
+   * `TokenBEP20` (171)
    * `Timelock` (167)   
 
 **Submission Dates:** 
@@ -366,8 +366,8 @@ last updated: Sun Dec 26 2021 20:09:40 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `171040`   
-**Unique Contract Names (submissions):** `75805`   
+**SourceUnits:** `171533`   
+**Unique Contract Names (submissions):** `76109`   
         
 
 -------
@@ -378,31 +378,31 @@ last updated: Sun Dec 26 2021 20:09:40 GMT+0000 (Coordinated Universal Time)
 
 ### Mainnet
 
-**SourceUnits:** `35534`   
-**Unique Submissions (Name):** `15832`   
+**SourceUnits:** `35710`   
+**Unique Submissions (Name):** `15925`   
 
 **First Submission:** `7/5/2021`    
-**Most Recent Submission:** `12/25/2021`   
+**Most Recent Submission:** `12/26/2021`   
 
 #### Top 10
 
 **Compiler:** 
-   * `0.6.12` (9582)
-   * `0.8.7` (5171)
-   * `0.8.4` (4913)
-   * `0.8.0` (2590)
-   * `0.8.6` (1992)
-   * `0.7.6` (1525)
-   * `0.8.9` (1400)
+   * `0.6.12` (9586)
+   * `0.8.7` (5237)
+   * `0.8.4` (4920)
+   * `0.8.0` (2609)
+   * `0.8.6` (1998)
+   * `0.7.6` (1528)
+   * `0.8.9` (1409)
    * `0.8.3` (1001)
-   * `0.5.16` (967)
-   * `0.7.5` (675)   
+   * `0.5.16` (970)
+   * `0.7.5` (695)   
 
 **Names:**
    * `MasterChef` (847)
    * `Timelock` (408)
-   * `NFT` (279)
-   * `Token` (240)
+   * `NFT` (284)
+   * `Token` (242)
    * `Address` (196)
    * `ACMasterChef` (182)
    * `StrategyBase` (144)
@@ -472,8 +472,8 @@ last updated: Sun Dec 26 2021 20:09:40 GMT+0000 (Coordinated Universal Time)
 
 ### ___totals___
 
-**SourceUnits:** `61330`   
-**Unique Contract Names (submissions):** `24035`   
+**SourceUnits:** `61506`   
+**Unique Contract Names (submissions):** `24128`   
         
 
 -------
