@@ -1583,3 +1583,4 @@
 {"address": "0xFCe0502293dCacbFc2d663f7814b2771dEcfd576", "name": "DeBridgeGate", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/27/2021"}
 {"address": "0x83b0916af62f556384f3e3c542fee8992d3f3e40", "name": "StabilizeStrategyWBTCTraderV2", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/27/2021"}
 {"address": "0xac1699E45a39FFABF3Cb0C3977bAd35765eEcF9d", "name": "STokensManager", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/27/2021"}
+{"address": "0x6C4E795f3f844010096563449AcbcCD8681A5E45", "name": "FeeRateDIP3Impl", "compiler": "0.6.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/28/2021"}
