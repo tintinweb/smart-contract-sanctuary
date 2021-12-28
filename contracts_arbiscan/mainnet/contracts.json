@@ -1578,3 +1578,8 @@
 {"address": "0x6a0Fc220D129F4D21e40764ed0BeA4ec777f3D03", "name": "CrossChainOracleSingleAsset", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/25/2021"}
 {"address": "0xa7e1e151b4a24b403c272ec0a4d2b89ee30ea6b9", "name": "OrbitVault", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "12/26/2021"}
 {"address": "0x689287E4ff1Dfb87da7aE3936083eB67787bA0b0", "name": "MagicVault", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 34, "settings": "", "date": "12/25/2021"}
+{"address": "0xfE7De3c1e1BD252C67667B56347cABFC6df08dF4", "name": "SignatureVerifier", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/27/2021"}
+{"address": "0xf8A2902c0a5f817F5e22C82f453538d3f0734C2b", "name": "DeBridgeToken", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/27/2021"}
+{"address": "0xFCe0502293dCacbFc2d663f7814b2771dEcfd576", "name": "DeBridgeGate", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/27/2021"}
+{"address": "0x83b0916af62f556384f3e3c542fee8992d3f3e40", "name": "StabilizeStrategyWBTCTraderV2", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/27/2021"}
+{"address": "0xac1699E45a39FFABF3Cb0C3977bAd35765eEcF9d", "name": "STokensManager", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/27/2021"}
