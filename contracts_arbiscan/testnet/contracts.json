@@ -948,3 +948,7 @@
 {"address": "0x61cb5de075639b2423418cd6c593a60c18e1c033", "name": "PlennyLocking", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/29/2021"}
 {"address": "0x08a3d195b082a21d157cd1cb2d178e2bb39a49b6", "name": "PlennyLiqMining", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/29/2021"}
 {"address": "0xFffdd2A55246543c9576A97b8Ca80fC339850EEf", "name": "PlennyDistribution", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/29/2021"}
+{"address": "0xaDb3254FaAaB88A6470384537d5Aa15854419615", "name": "ChaChaERC721", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0xa20865768907E399FBFC269455B6D9eE9CACF89C", "name": "NFTDeployer", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/31/2021"}
+{"address": "0xFc3bD96230Fc263DeE95F7823019B6D2D34374ca", "name": "Adoption", "compiler": "0.7.2", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "12/31/2021"}
+{"address": "0x0B1EA733e7D724DC91DAF44F965bDb6c0053B4cf", "name": "PlennyArbERC20", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/30/2021"}
