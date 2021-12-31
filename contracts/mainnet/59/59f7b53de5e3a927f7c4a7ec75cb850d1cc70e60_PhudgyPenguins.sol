@@ -1,0 +1,80 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+import "./ERC721.sol";
+import "./Ownable.sol";
+import "./Strings.sol";
+import "./Counters.sol";
+import "./Phake.sol";
+
+contract PhudgyPenguins is ERC721, Ownable {
+    using Strings for uint256;
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenSupply;
+    
+    bool public public_sale_running = false;
+
+    // mainnet
+    Phake private immutable Phunks = Phake(0xf07468eAd8cf26c752C676E43C814FEe9c8CF402);
+    Phake private immutable PudgyPenguins = Phake(0xBd3531dA5CF5857e7CfAA92426877b022e612cf8);
+    Phake private immutable PHAYC = Phake(0xcb88735A1eAe17fF2A2aBAEC1ba03d877F4Bc055);
+
+    string private base_uri = "https://ipfs.io/ipfs/QmTgCQtL9Eec4uwu3tJajWSmEJjC5AKv1QCkFr33iKm2c3/";
+    
+    constructor () ERC721("Phudgy Penguins", "PHUDGIES") {
+        _safeMint(0x899873799Bf3C7cC934826e0a772856791Ec91C4, _tokenSupply.current());
+        _tokenSupply.increment();
+    }
+
+    function setBaseURI(string memory new_uri) external onlyOwner {
+        base_uri = new_uri;
+    }
+    
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
+        return string(abi.encodePacked(base_uri, tokenId.toString(), ".json"));
+    }   
+
+    function publicMint(uint _quantity) external payable {
+        require(public_sale_running, "Public sale is not running");
+        require(_quantity <= 20, "Invalid number of tokens queries for minting");
+        require(_tokenSupply.current() + _quantity <= 8888, "Not enough tokens left to mint");
+
+        if (Phunks.balanceOf(msg.sender) + PudgyPenguins.balanceOf(msg.sender) + PHAYC.balanceOf(msg.sender) > 0) {
+            if (_tokenSupply.current() >= 2222) {
+                require(msg.value == 0.02 ether * _quantity, "Incorrect ETH sent to mint");
+            } else {
+                require(msg.value == 0, "Bro it's free...");
+            }
+        } else {
+            if (_tokenSupply.current() >= 6666) {
+                require(msg.value == 0.04 ether * _quantity, "Incorrect ETH sent to mint");
+            } else if (_tokenSupply.current() >= 4444) {
+                require(msg.value == 0.03 ether * _quantity, "Incorrect ETH sent to mint");
+            } else if (_tokenSupply.current() >= 2222) {
+                require(msg.value == 0.02 ether * _quantity, "Incorrect ETH sent to mint");
+            } else {
+                require(msg.value == 0.01 ether * _quantity, "Incorrect ETH sent to mint");
+            }
+        }  
+            
+        for (uint i = 0; i < _quantity; ++i) {
+            _safeMint(msg.sender, _tokenSupply.current());
+            _tokenSupply.increment();
+        }
+    }
+
+    function togglePublicSale() external onlyOwner {
+        public_sale_running = !public_sale_running;
+    }
+    
+    function withdraw() external onlyOwner {
+        uint balance = address(this).balance;
+
+        payable(0xe0C3909337CD28056f1b7c76a10Aa2295fD549cC).transfer(balance / 5); 
+        payable(0xc2bff1BAA0Da87aAa7A91410A6cd836EbceF1599).transfer(balance / 5); 
+        payable(0xea4EC48D01E0A64CEb44846Df887d02139bAcCBf).transfer(balance / 5); 
+        payable(0x899873799Bf3C7cC934826e0a772856791Ec91C4).transfer(balance / 5); 
+        payable(0xbE0a67121d7aa71a471Cd3cd8A889Ff625C249ce).transfer(balance / 5);
+    }
+}
