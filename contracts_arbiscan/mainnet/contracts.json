@@ -1620,3 +1620,4 @@
 {"address": "0xCdb25d0A6FfFE639BC591a565F2D99507837f2b7", "name": "Registry", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/29/2021"}
 {"address": "0x196767568F848fF7607145A7C1f3CDE44bb4Ce98", "name": "OracleSpoke", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/29/2021"}
 {"address": "0x1771c470d41b8c39338450C380bf2C080a2CEdD8", "name": "GovernorSpoke", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/29/2021"}
+{"address": "0xd2dc33495693a8d45b44649e81b720b67a985b39", "name": "FaircastleRedeemer", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 40, "settings": "", "date": "12/31/2021"}
