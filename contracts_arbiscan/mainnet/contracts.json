@@ -1621,3 +1621,10 @@
 {"address": "0x196767568F848fF7607145A7C1f3CDE44bb4Ce98", "name": "OracleSpoke", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/29/2021"}
 {"address": "0x1771c470d41b8c39338450C380bf2C080a2CEdD8", "name": "GovernorSpoke", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/29/2021"}
 {"address": "0xd2dc33495693a8d45b44649e81b720b67a985b39", "name": "FaircastleRedeemer", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 40, "settings": "", "date": "12/31/2021"}
+{"address": "0x91FbD0C9dbA8C42B7Fa636CC60344c72E7D065c9", "name": "DODOLimitOrder", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "1/2/2022"}
+{"address": "0x0F278Ee5FDd139f9aE8c6498Cca0f2c2208684a2", "name": "DODOLimitOrderBot", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/2/2022"}
+{"address": "0xd4cAfE592Be189aeB7826ee5062B29405ee63488", "name": "RdpxSSOVV2", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 98, "settings": "", "date": "1/1/2022"}
+{"address": "0x460F95323a32e26c8d32346Abe73Eb94d7Db08D6", "name": "GohmSSOVV2", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 135, "settings": "", "date": "1/1/2022"}
+{"address": "0x3F3c58CCb0655Fa9161D0B4B49B217b3f6478D5A", "name": "FeeStrategy", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/1/2022"}
+{"address": "0x48252eDBFCc8A27390827950ccFc1c00152894E3", "name": "DpxSSOVV2", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 125, "settings": "", "date": "1/1/2022"}
+{"address": "0x711Da677a0D61Ee855DAd4241B552A706F529C70", "name": "ArbEthSSOVV2", "compiler": "0.8.9", "balance": "2,567.932392460037928 ETH", "txcount": 217, "settings": "", "date": "1/1/2022"}
