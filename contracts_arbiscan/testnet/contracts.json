@@ -952,3 +952,15 @@
 {"address": "0xa20865768907E399FBFC269455B6D9eE9CACF89C", "name": "NFTDeployer", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "12/31/2021"}
 {"address": "0xFc3bD96230Fc263DeE95F7823019B6D2D34374ca", "name": "Adoption", "compiler": "0.7.2", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "12/31/2021"}
 {"address": "0x0B1EA733e7D724DC91DAF44F965bDb6c0053B4cf", "name": "PlennyArbERC20", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/30/2021"}
+{"address": "0x916A45e44122CB088b2318A8A7A0F9d97c792B55", "name": "GameDRM", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 19, "settings": "", "date": "1/1/2022"}
+{"address": "0x6dbcf5c2398b1054d5bd404ea4d0cfee3a1cbc0e", "name": "PlennyOracleValidatorV2", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0x6daddc3ffd23786130b10b7004b9ef26e839d8e3", "name": "PlennyRePLENishmentV3", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0xcf8c42119a7406159a8a6d71bae4ed79aac31471", "name": "PlennyValidatorElection", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0xc60edbd39ee945fa2c16d44113499a65464203d5", "name": "PlennyTreasury", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0xa9c6c03cfa7f0ff55a467d36eab333476977d030", "name": "PlennyStaking", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0x7b322ee04bec49bc1859972247947fc2ed91552c", "name": "PlennyReward", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0xddbf6c621c588fae4151be2703f9d1dec97628da", "name": "PlennyOcean", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0x79Ef2f3026f9260e97dB5A60F1BB920786dAd9AE", "name": "PlennyDistribution", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "12/31/2021"}
+{"address": "0x6d67fd8332246538facbc259b220377f318bfec0", "name": "PlennyDappFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0xfa0618296c014bfdb3fe811407c4c95bb3e2e428", "name": "PlennyCoordinator", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0x0df1b76a9eee188cf54bbcb99b27d6d1de8cf8ce", "name": "PlennyContractRegistry", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
