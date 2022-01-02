@@ -17114,3 +17114,37 @@
 {"address": "0xFe822408CeEe80Bc4cE54Cf16505EBAa023049ed", "name": "Implementation", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/31/2021"}
 {"address": "0x30702d49f20e163555141ba575Eb834a4b0B9aE4", "name": "Setup", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "12/31/2021"}
 {"address": "0xC1f98235009F3B2fF72f112d8e61025D6f32cCB3", "name": "X", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "12/31/2021"}
+{"address": "0xa15a5cb36022b13e4d49d3cfbc14cbf16c25048d", "name": "GLDToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xa3afeb700d3fe34a4a06b1f61f99276291998eab", "name": "PRARARA2", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xA2629913cDe850090CC2336c708b2cd908C0EE67", "name": "KaijuDAO", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xa372e86b0a3e7f3bb80490fc72cc1fe2ced407d7", "name": "NFT", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "1/2/2022"}
+{"address": "0xbc5096d6068b4c552Ab367bd70aB2b5A6011aF4A", "name": "TestCounter", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x1a55d88af279112B7a16B49be21fb58999B53fA9", "name": "SimpleWallet", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xcd01C8aa8995A59eB7B2627E69b40e0524B5ecf8", "name": "EntryPoint", "compiler": "0.8.7", "balance": "0.019865021998861237 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x9d13d288159580af3d44b05c0cd99f183dc5fc97", "name": "PRARARA", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x156b82e12401eb870375c41bc625d1cca39f98fd", "name": "PropertyCreator", "compiler": "0.8.11", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xe532fe2B2073bF89EC2e5C79d512133256C648B0", "name": "TestCounter", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xB75223969139258cDb7380B1FdA117C75B3ceFFF", "name": "SimpleWallet", "compiler": "0.8.7", "balance": "0.00947332799595613 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x8D3921170AD5e21398e531CaAa8E09547C9FbA12", "name": "EntryPoint", "compiler": "0.8.7", "balance": "0.000086594000692752 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xDc9Cf448760ed211B3466eeCdaeB8abC1135EeD5", "name": "KaijuDAO", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xA8feb49B4EBdeAe6344047917e1B6Bb818501925", "name": "Property", "compiler": "0.8.11", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xCE75548EFE9D634f5748CEfbA06FFA7773cD661e", "name": "KaijuDAO", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x4B1Eb8897b23dEd5B46B3040385f843f65453a25", "name": "KaijuDAO", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xF39ad052F52796eD97b51d12C9140A6cD91b1Dd0", "name": "KaijuDAO", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x7Db0aE30f0c6b2Dd76a196d3B33C75c57215D5B1", "name": "KaijuDAO", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x306F7B019827D6110a9eDf564D4C740c162Bd661", "name": "PurpleEye", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x03272a531a2a7ab25e1d2061009111edb6d7806f", "name": "FakeArtMinter", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "1/2/2022"}
+{"address": "0x928880ee2c102fE2bb0Da5c1f31737499f765861", "name": "LemonHeads", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x817a2101B746AA95ACa460773BD5371323f0DA1B", "name": "KaijuDAO", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xd5a543372f71149338218f2CddB4cdFf879d214e", "name": "BulkErc20D", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xCBd9c2C10Abb84FbE4FA3F9Ee31cFD39EDa87D6F", "name": "Fraktal1155", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x19F73B42ED8Ec8d83d3EE1c4C7750E9A41E138b6", "name": "ERC1155", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xD4746419DA62E7694D8769A41879BeD20235326f", "name": "MerkleStatementContract", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xBdd799c275B7dAc2a09Bd6b00f67A80dB87DCDe8", "name": "GasFuture", "compiler": "0.8.0", "balance": "0.001 Ether", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x054cf41407ad1833fdc095d3e47f030c680ff9cc", "name": "SatvNFT", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0xe33371b31e71C5E9058093974F18B515c8B83bE2", "name": "YourContract", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x8B9A49D1E12015DF48714b26718c031D99273eb0", "name": "FOLLYToken", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/2/2022"}
+{"address": "0x40697B7bDD82A60b332011e22695a6711D5ad6B0", "name": "HM", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "1/1/2022"}
+{"address": "0x41E42aF6C7daCD61Dc4910973B580C5a79EE71C7", "name": "LITToken", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "1/1/2022"}
+{"address": "0xC1c54Da1676A16223474fB1557bE295959B20038", "name": "VendingMachine", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/1/2022"}
+{"address": "0x24FeD4a8CbC8CF781AE376D1190f20a7dB171447", "name": "Wallet", "compiler": "0.8.4", "balance": "0 Ether", "txcount": 0, "settings": "-", "date": "1/1/2022"}
