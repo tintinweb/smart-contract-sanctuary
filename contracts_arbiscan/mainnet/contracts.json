@@ -1628,3 +1628,6 @@
 {"address": "0x3F3c58CCb0655Fa9161D0B4B49B217b3f6478D5A", "name": "FeeStrategy", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/1/2022"}
 {"address": "0x48252eDBFCc8A27390827950ccFc1c00152894E3", "name": "DpxSSOVV2", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 125, "settings": "", "date": "1/1/2022"}
 {"address": "0x711Da677a0D61Ee855DAd4241B552A706F529C70", "name": "ArbEthSSOVV2", "compiler": "0.8.9", "balance": "2,567.932392460037928 ETH", "txcount": 217, "settings": "", "date": "1/1/2022"}
+{"address": "0xBea9F78090bDB9e662d8CB301A00ad09A5b756e9", "name": "SwapFlashLoan", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 869, "settings": "", "date": "1/3/2022"}
+{"address": "0xfeEa4D1BacB0519E8f952460A70719944fe56Ee0", "name": "SwapFlashLoan", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "1/3/2022"}
+{"address": "0x5709D90932b199DF946821ee0f2Bf1ed111f5B36", "name": "InstaFlashAggregatorArbitrum", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/3/2022"}
