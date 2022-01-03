@@ -964,3 +964,10 @@
 {"address": "0x6d67fd8332246538facbc259b220377f318bfec0", "name": "PlennyDappFactory", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
 {"address": "0xfa0618296c014bfdb3fe811407c4c95bb3e2e428", "name": "PlennyCoordinator", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
 {"address": "0x0df1b76a9eee188cf54bbcb99b27d6d1de8cf8ce", "name": "PlennyContractRegistry", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "12/31/2021"}
+{"address": "0x0e4BD9576CB4BD0B35881608728E0013C700FCb3", "name": "Aquarium", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/3/2022"}
+{"address": "0x67052468720547Ad5Aa231f91b9CeBB0Abbc33b9", "name": "Aquarium", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/3/2022"}
+{"address": "0x6A697c4044E1a4aE53b094075AF1F89B17DA83b7", "name": "Bonus", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/3/2022"}
+{"address": "0xF7fE3C95E52f7ac551D7fbbB2F2F0b3935bD9cF5", "name": "Resource", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/3/2022"}
+{"address": "0x6fb40244DdC7c207b68b5851EF44D60E4608C8eC", "name": "Data", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/3/2022"}
+{"address": "0x33b0E83B08CE7c9099a744958a7478F9bFEc125f", "name": "Manager", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/3/2022"}
+{"address": "0x8509377B724Cde3CA1C63992CedA1c0ce3F161A1", "name": "Realm", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/3/2022"}
