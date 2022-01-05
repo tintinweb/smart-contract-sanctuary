@@ -1641,3 +1641,13 @@
 {"address": "0x8957A18a77451d762dE204b61EA4F858Bb3bED4d", "name": "Rocket", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 4556, "settings": "", "date": "1/3/2022"}
 {"address": "0x48420FAd7CC1b517E3b49126edc9988df6e0e778", "name": "PublicKeeper", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/3/2022"}
 {"address": "0xea7322c309464dfc1d5761948b1be61afc3ff5cb", "name": "StrategyDodoHndEthLpV2", "compiler": "0.6.7", "balance": "0 ETH", "txcount": 10, "settings": "", "date": "1/3/2022"}
+{"address": "0xe8de72a847bcaf6bfbc395491e900801a2b5ca89", "name": "PortfolioBoard", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/5/2022"}
+{"address": "0xe6e799b1db84c9931b2742ead0aa08a8e9f2edff", "name": "TokenMasterFinance", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/5/2022"}
+{"address": "0xd041478644048d9281f88558e6088e9da97df624", "name": "DIAOracleV2", "compiler": "0.7.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/5/2022"}
+{"address": "0x2b52d1b2b359ea39536069d8c6f2a3cfe3a09c31", "name": "Storage", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/5/2022"}
+{"address": "0xBbF8e2C147dA291eb9c0Ae23a90B6Cc2e57669d4", "name": "EpicStrategy_Arbitrum_Abracadabra_MIM", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/5/2022"}
+{"address": "0x23bcd3ff39360de178faf4b83132c06a2c60319e", "name": "EpicVault", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/5/2022"}
+{"address": "0xff88fbe9cc24725c1fe2acf19aa947e104fb6e9b", "name": "InfinityFinance", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/5/2022"}
+{"address": "0xc4e63f3bE080d932f6d2d1ba1936Be72b37Fc134", "name": "RewardsDistributionV2", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
+{"address": "0xB964912B4054E8FB54431ed952F29aE3c8B3DEAC", "name": "FeeStrategy3", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
+{"address": "0x1a5444362857CaFDc58AB95b79A5A9285d16563A", "name": "FeeStrategy2", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
