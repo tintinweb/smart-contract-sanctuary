@@ -998,3 +998,14 @@
 {"address": "0x06FEF32D741a3B1aE3758A2fDbFF973D4760F93F", "name": "MosaicHolding", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/3/2022"}
 {"address": "0xd331A39E628117804B4C0542df904e0CB83d2698", "name": "ARTStaking", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/3/2022"}
 {"address": "0x0C9C9B12f1D7DBE56B1335608E60b43Ad6b666E1", "name": "MintAsset", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 26, "settings": "-", "date": "1/3/2022"}
+{"address": "0x1158F18eFe4DAF4e71b31b077b340927A8A9f5Ef", "name": "TestERC20WithName", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "1/5/2022"}
+{"address": "0x6f0D9D666D1bA3aE960aAd350C78F13E64f65b5f", "name": "ArbitrumBridgeDestination", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/5/2022"}
+{"address": "0x67A767BEBf84E95103ed283070D988B4A27dd36D", "name": "ArbitrumBridgeSource", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/5/2022"}
+{"address": "0x81970632A48b65737392dE2FB4e956d859747Fb2", "name": "L2NftGateway", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/4/2022"}
+{"address": "0x96DB1F8055074aB62161B6Ad66Ab6B8679513DeF", "name": "Multicall2", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
+{"address": "0xFC39A7E3f7980266f1CB99c37AE67Ab0D707f86e", "name": "Router", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "1/4/2022"}
+{"address": "0xFD6f0BC3730DddDcd4ce800aA1615cD7B140511c", "name": "MarginFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
+{"address": "0xe88ac0920d653f345b81ae96FA979746C1a6c342", "name": "AmmFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
+{"address": "0x22217f70EF5a1D92Fb1879c5214cA17A4963c090", "name": "PairFactory", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/4/2022"}
+{"address": "0x2A143b30a73CAa0989CEa58ED0582AdB6B8f87F3", "name": "MyNft", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 4, "settings": "-", "date": "1/4/2022"}
+{"address": "0x539D6a2c11040167351DBfb5bee97aEd2619330d", "name": "MaviaNFTLand", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
