@@ -1,0 +1,57 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.2;
+
+import "./Ownable.sol";
+import "./Pausable.sol";
+import "./IBEP20.sol";
+
+/**
+ * Transfer Gateway
+ * @dev Allow anyone swap token between mainchain and sidechain
+ */
+contract TransferGateway is Pausable, Ownable {
+    IBEP20 immutable _tokenContract;
+
+    event Deposit(
+        address indexed user,
+        string kyc,
+        uint256 amount,
+        uint256 timestamp
+    );
+
+    /**
+     * Constructor
+     * @dev Set token address
+     */
+    constructor(address token) {
+        _tokenContract = IBEP20(token);
+    }
+
+    /**
+     * Pause
+     * @dev Allow owner pause deposit function
+     */
+    function pause() external onlyOwner {
+        _pause();
+    }
+
+    /**
+     * Unpause
+     * @dev Allow owner unpause deposit function
+     */
+    function unpause() external onlyOwner {
+        _unpause();
+    }
+
+    /**
+     * Deposit token
+     * @dev Allow user deposit token
+     */
+    function depositToken(string memory kyc, uint256 amount)
+        external
+        whenNotPaused
+    {
+        _tokenContract.transferFrom(_msgSender(), owner(), amount);
+        emit Deposit(_msgSender(), kyc, amount, block.timestamp);
+    }
+}
