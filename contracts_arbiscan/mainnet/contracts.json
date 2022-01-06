@@ -1651,3 +1651,8 @@
 {"address": "0xc4e63f3bE080d932f6d2d1ba1936Be72b37Fc134", "name": "RewardsDistributionV2", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
 {"address": "0xB964912B4054E8FB54431ed952F29aE3c8B3DEAC", "name": "FeeStrategy3", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
 {"address": "0x1a5444362857CaFDc58AB95b79A5A9285d16563A", "name": "FeeStrategy2", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/4/2022"}
+{"address": "0xf5fb9ce16dbf5b0a7b632ed5d3f0278e0043b7ae", "name": "DaoConditionalHelper", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/6/2022"}
+{"address": "0x9873795f5dab11e1c0342c4a58904c59827ede0c", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/6/2022"}
+{"address": "0x750bfe8490175c2a9a9387b19aa2aae2d75db638", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/6/2022"}
+{"address": "0x83db71dab0f0d957843120143a72ce88dc3c30ac", "name": "EOSDao", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/6/2022"}
+{"address": "0xecf2adaff1de8a512f6e8bfe67a2c836edb25da3", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/6/2022"}
