@@ -1024,3 +1024,9 @@
 {"address": "0xa4f7e85327BE5648488844A85a00197af9ef136a", "name": "ArbitrumBridgeDestination", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "1/5/2022"}
 {"address": "0x205a3DF5A7753DD3d7A35aB016804681A9A2e3f3", "name": "ArbitrumBridgeDestination", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/5/2022"}
 {"address": "0xDf586298E011e84568261B25C02eF52289B409f0", "name": "ArbitrumBridgeDestination", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/5/2022"}
+{"address": "0x54b45bbfb1efbf6b0bbf01d5536343525ab44fee", "name": "TestArray", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/6/2022"}
+{"address": "0x598f6986a40131d12249802498a500c4bbf14a37", "name": "Array", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/6/2022"}
+{"address": "0x4cCCc8671eA10cc1177b5366Cec5eBE2254A3e05", "name": "A", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/6/2022"}
+{"address": "0xBD70683d66f2f85AabD801679F49f78B1dE53e38", "name": "InterestRateModelV3", "compiler": "0.6.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/6/2022"}
+{"address": "0x45AE69F764800156f7e4B99dD5a1e0FbdA0d9a81", "name": "MaviaNFTBridgeL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/6/2022"}
+{"address": "0x3F5103602889C6356547f0dE368D900f93120fc7", "name": "MaviaNFT", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/6/2022"}
