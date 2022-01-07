@@ -1656,3 +1656,9 @@
 {"address": "0x750bfe8490175c2a9a9387b19aa2aae2d75db638", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/6/2022"}
 {"address": "0x83db71dab0f0d957843120143a72ce88dc3c30ac", "name": "EOSDao", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/6/2022"}
 {"address": "0xecf2adaff1de8a512f6e8bfe67a2c836edb25da3", "name": "AnyswapV5ERC20", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/6/2022"}
+{"address": "0xc8E41bf27B401BB1585362cfB20106361FCeC67a", "name": "StrategyBalancerPickleWethLp", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
+{"address": "0x8fe2b9CB70E4050dc8A7e62b538b950A5210Cbe2", "name": "LockMintBridge", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/7/2022"}
+{"address": "0xFa374f10D09A8E426fb8FcAcF4020C763FE4b663", "name": "InterestRateModelV3", "compiler": "0.6.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
+{"address": "0x9c020cb5962a5907a73ed7bbf3db08ca12291076", "name": "P1MultisigGateway", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
+{"address": "0xd6baba81c521dc78cfa3d5be14a3b93101a55dcc", "name": "P1MultisigAdmin", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
+{"address": "0x2d6FAD39059f5FCe80bFf691F8f0Bb30D5d4f214", "name": "Store", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "1/6/2022"}
