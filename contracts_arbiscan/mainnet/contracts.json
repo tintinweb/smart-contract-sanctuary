@@ -1662,3 +1662,14 @@
 {"address": "0x9c020cb5962a5907a73ed7bbf3db08ca12291076", "name": "P1MultisigGateway", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
 {"address": "0xd6baba81c521dc78cfa3d5be14a3b93101a55dcc", "name": "P1MultisigAdmin", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
 {"address": "0x2d6FAD39059f5FCe80bFf691F8f0Bb30D5d4f214", "name": "Store", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "1/6/2022"}
+{"address": "0x2376d589B5029876F866754538025aA1D2EDb59c", "name": "SynapseBaseAdapter", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/8/2022"}
+{"address": "0xEAD21e79f2B7A4493b7D587b285C747c809c223D", "name": "UnilikeAdapter", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/8/2022"}
+{"address": "0x882B1b918641bB1B588a111811A55e48A18277F2", "name": "SafeERC20", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/8/2022"}
+{"address": "0x5948635463A9c8ceCAA17B5D9ba846D789DF6df4", "name": "BytesManipulation", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/8/2022"}
+{"address": "0xf7e6214E1f2b03b54f1594ECfa3834148aB26888", "name": "SynapseBridge", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/8/2022"}
+{"address": "0x76dc79b4b14c417c2ebf40a1c93df18c3be54761", "name": "BuyWithEther", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/8/2022"}
+{"address": "0x86d36e2c6c3d7eb7a740cf136d37a9a0edb4fa8d", "name": "StrategyBalancerBalWethLp", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/8/2022"}
+{"address": "0x979cb85f2fe4b6036c089c554c91fdfb7158bb28", "name": "PickleJarCooldown", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/7/2022"}
+{"address": "0x23F5FDDF2DbD790045F62c1dB3eC2357A0140375", "name": "LoanClosings", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
+{"address": "0xEfBB7C14017129987f8F92b7bdf16478995B350E", "name": "LoanMaintenance", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
+{"address": "0xdb2800b894FDa88F6c49c38379398b257062dF80", "name": "LoanMaintenance_2", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
