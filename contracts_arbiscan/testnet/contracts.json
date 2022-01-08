@@ -1030,3 +1030,11 @@
 {"address": "0xBD70683d66f2f85AabD801679F49f78B1dE53e38", "name": "InterestRateModelV3", "compiler": "0.6.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/6/2022"}
 {"address": "0x45AE69F764800156f7e4B99dD5a1e0FbdA0d9a81", "name": "MaviaNFTBridgeL2", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/6/2022"}
 {"address": "0x3F5103602889C6356547f0dE368D900f93120fc7", "name": "MaviaNFT", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/6/2022"}
+{"address": "0xd9831ad5b96ea8c8e60c156323c8c9f88b712987", "name": "broadcasterPermissionsDatabase", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/7/2022"}
+{"address": "0xe9bf3dba326cc4e029143a4888af858b8534f0d2", "name": "broadcasterPermissionsDatabase", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 9, "settings": "-", "date": "1/7/2022"}
+{"address": "0xce0890aaccf8d5707cbf4f046c60911e60d6e480", "name": "livestreamServerConfigurationDatabase", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "1/7/2022"}
+{"address": "0xca62fE0D561B52B899b48045e88dE579aC837b02", "name": "livestreamServerConfigurationDatabase", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 2, "settings": "-", "date": "1/7/2022"}
+{"address": "0x5474CDB8e66b49eda210fA9B6eEcAc4e7359caA4", "name": "livestreamServerConfigurationDatabase", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/7/2022"}
+{"address": "0xd54F54D02e8aD28270c70865eD71f29e34F2db2B", "name": "AToken", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
+{"address": "0x261242b5aba164fcff4afdb540e0f0de97c640d8", "name": "PixelPengus", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "1/7/2022"}
+{"address": "0x55364E27D90Cdb45a17cdF812B7B9C4F5bCb4643", "name": "Commission", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 4, "settings": "", "date": "1/7/2022"}
