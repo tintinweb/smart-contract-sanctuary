@@ -1673,3 +1673,4 @@
 {"address": "0x23F5FDDF2DbD790045F62c1dB3eC2357A0140375", "name": "LoanClosings", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
 {"address": "0xEfBB7C14017129987f8F92b7bdf16478995B350E", "name": "LoanMaintenance", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
 {"address": "0xdb2800b894FDa88F6c49c38379398b257062dF80", "name": "LoanMaintenance_2", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
+{"address": "0xE7dDb1ec1F8872f60816ECC5DdD0faC47058b696", "name": "GOHMVault", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/8/2022"}
