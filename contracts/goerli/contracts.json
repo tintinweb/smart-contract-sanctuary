@@ -17554,3 +17554,6 @@
 {"address": "0xEA2B0589B100cAB9010D31E7E2eb495c024493bD", "name": "NearBridge", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/8/2022"}
 {"address": "0xeFBE064a18BC9dc08E97A9f59139fcAa62f21563", "name": "LendingPair", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/8/2022"}
 {"address": "0xc46944673af7a699d5e75b8ab3083e2f5d484cba", "name": "VoxelVille", "compiler": "0.8.6", "balance": "0.1 Ether", "txcount": 0, "settings": "-", "date": "1/8/2022"}
+{"address": "0xbFFB7B696ceB3f0e24302320fb4d6f1CC7f17344", "name": "LendingPair", "compiler": "0.8.6", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/9/2022"}
+{"address": "0x1cAA1167Ff1BD298d71A2E9b19aA5595C1fbC341", "name": "Minter", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022"}
+{"address": "0xa53008af04bfc5F69fBcC604872d855e6D03317c", "name": "SuPPhunks", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/8/2022"}
