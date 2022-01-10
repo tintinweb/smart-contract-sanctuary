@@ -1674,3 +1674,10 @@
 {"address": "0xEfBB7C14017129987f8F92b7bdf16478995B350E", "name": "LoanMaintenance", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
 {"address": "0xdb2800b894FDa88F6c49c38379398b257062dF80", "name": "LoanMaintenance_2", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/7/2022"}
 {"address": "0xE7dDb1ec1F8872f60816ECC5DdD0faC47058b696", "name": "GOHMVault", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/8/2022"}
+{"address": "0x0E9fBb167DF83EdE3240D6a5fa5d40c6C6851e15", "name": "Vyper_contract", "compiler": "vyper:0.3.0", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/10/2022"}
+{"address": "0xd288A09f07C5AfBd65AEa7ba9534D5f830f9d1c6", "name": "ArkenApprove", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/10/2022"}
+{"address": "0xFe31bFc4f7C9b69246a6dc0087D91a91Cb040f76", "name": "OriginalTokenVault", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 18, "settings": "", "date": "1/10/2022"}
+{"address": "0x181f824232bd1A6395573e73064cB90E8ca86646", "name": "Treasury", "compiler": "0.8.3", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/10/2022"}
+{"address": "0x15779fEFdF5be6F422883E746A1D139a6A12a873", "name": "SynapseBridge", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/10/2022"}
+{"address": "0x109523DB4336E01F030ED51c581C3fa9222F878c", "name": "SwapEthWrapper", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/10/2022"}
+{"address": "0xbf6f960ad8a822df2c96583dc7c68a0a6fe90e7b", "name": "PixelPengus", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "1/10/2022"}
