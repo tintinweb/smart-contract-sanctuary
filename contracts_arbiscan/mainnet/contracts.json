@@ -1681,3 +1681,14 @@
 {"address": "0x15779fEFdF5be6F422883E746A1D139a6A12a873", "name": "SynapseBridge", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/10/2022"}
 {"address": "0x109523DB4336E01F030ED51c581C3fa9222F878c", "name": "SwapEthWrapper", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/10/2022"}
 {"address": "0xbf6f960ad8a822df2c96583dc7c68a0a6fe90e7b", "name": "PixelPengus", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "1/10/2022"}
+{"address": "0x53D698d543BE1d8E5c73a2406c209E26095f2284", "name": "RewardDelegators", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
+{"address": "0x848f682c9C35B87f2843608d198f3852B9542A03", "name": "ElixirSoundLibrary", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/11/2022"}
+{"address": "0x8a7fCeE0e1Ff6DB33C7E83060c18e3B97915A970", "name": "ConnectV2SushiswapArbitrum", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/11/2022"}
+{"address": "0x9B36f165baB9ebe611d491180418d8De4b8f3a1f", "name": "TransferSwap", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "1/11/2022"}
+{"address": "0xFb5c4D167802099adb085a049B8fA39df769B07d", "name": "ProxyAdmin", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/11/2022"}
+{"address": "0xf67c6daCFfDc989276374c4af45cCe15DF9AE570", "name": "TransparentUpgradeableProxy", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/11/2022"}
+{"address": "0x29c79cB6324a50bd08Ac55C44a92D1A242A535F7", "name": "ArkenDexV3", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/11/2022"}
+{"address": "0xBaDE2a874e27b5B0920DA93EfE6845036C6fb5A4", "name": "TransferSwap", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/11/2022"}
+{"address": "0x95b3e0f38E949789A4c7C85C7bC16DDc0167dD9E", "name": "MessageBus", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "1/11/2022"}
+{"address": "0x2A98D03d1A593F0f3E0AA7c17B24fca68302051e", "name": "Bridge", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "1/10/2022"}
+{"address": "0xF7aafe77100a853599020c1BcaE048607aF55Db5", "name": "WMiniChefV2", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/10/2022"}
