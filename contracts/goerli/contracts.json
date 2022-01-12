@@ -17801,3 +17801,53 @@
 {"address": "0xacD5b4f63d44B10a648e039B1b221f5e5Db58ff6", "name": "FundMe", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0xC88e08d5A1D3A035847A4fcdFe68561ADf6E8959", "name": "Owner", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
 {"address": "0x1c398a564a86178dba2464d792069aa3fb5574c2", "name": "IterableMapping", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xfe197d65482728e99bb6ade52d4c9718f0270e38", "name": "UncheckedToken", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "-", "date": "1/12/2022"}
+{"address": "0x470efFD7d5967703ae29e1AE82e3B018735C5D04", "name": "Ticket", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xd34718abB0a49903FfC15779864672B7bC077ce3", "name": "DecentraTokens", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xBBF765530D140a395AAF22Dc74B443ec8739946D", "name": "Minting", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x246639a6bce37db8a430243629e5178e772e21cf", "name": "DoodleDoge", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x13eba3f2dd908e3624e9fb721ea9bd2f5d46f2c0", "name": "UniswapV2LpTokenCalleeDai", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xf8499c8a9bb947ee2a9f24e5fa7870d5909560ec", "name": "DoodleDoge", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x16521659158d7f9cFa9F29f54C75745f137d5a77", "name": "NFT", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x4c859c7e79c39097c2c22df24024047f3d1ce99d", "name": "DoodleDoge", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x383042e4bAABd7B5eE6B8278cB527eE18417227e", "name": "GenToken", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x6d9139ac89ad2263f138633de20e47bcae253938", "name": "UniswapV2CalleeDai", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xe044F357e3605E4cE2ca736F81CBbE80Cc7A781f", "name": "GStakingManager", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xcc937467c343152843F5A5388f80B6Eaa8966062", "name": "AStETH", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xA3688e5E37507da3c189Ef9B72b447a6DfF06fB3", "name": "Implementation", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xdc95b71a99065E3014E3A2B9676841316AC428b9", "name": "Setup", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xc1182d6aadb11c67549e892cbfa547929ee2087c", "name": "UniswapV2CalleeDai", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xDc9d00d4829ead2005126DF93f8787a1Ca31EeC0", "name": "MyNFT", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "-", "date": "1/12/2022"}
+{"address": "0xb5d84d2EB40bdf914982B4a0ae088b3134650677", "name": "Migrations", "compiler": "0.6.2", "balance": "-", "txcount": 0, "settings": "-", "date": "1/12/2022"}
+{"address": "0x4BB23eE3009cb9F0af5D6efd3da816E480dafA46", "name": "NFT", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x2837bd80c84e3310b7ef0a02ee694bbc148085bc", "name": "DevMOEToken", "compiler": "0.6.2", "balance": "-", "txcount": 0, "settings": "-", "date": "1/12/2022"}
+{"address": "0x4f21777dd8aeceaf465dc89a199c532b2d255e20", "name": "Coin", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "1/12/2022"}
+{"address": "0xa9ef14aa5af11296c4e130a1ee856025968baba9", "name": "AirdropBTIG", "compiler": "0.8.4", "balance": "2 Ether", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xFE6508f0015C778Bdcc1fB5465bA5ebE224C9912", "name": "MockUATOMOracleWrapperProxy", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x89752d61db6da420df9259f0279c0032a6f83c1b", "name": "GMOnChainTestGoerli", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "1/12/2022"}
+{"address": "0xaE0D7F0Df6f60a88A9665820c3b0238beFF19bf4", "name": "MarvelousFUSE", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x2af0ec1314c240CfFc69A46e77417960513aa9C3", "name": "RinkDoge", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x6d7080fD14aae6Dcd31008F5a5ffAACB3E2FC2F2", "name": "DummyMintableERC20", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xfb12a70149853d2f7624453579dc849dd23642e6", "name": "UmeeOracle", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xc74c8c4b98CBEEaf0e99483EEdD16F569E34dBeF", "name": "Starknet", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0xa553c3f4e65A1FC951B236142C1f69c1BcA5bF2b", "name": "MultiplyProxyActionsGoerli", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x5Ba87C40ff34dBc4ebF492052Fb23BB8B24f6dc0", "name": "GoerliDummyExchange", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x780469df978ecea0a21afe6447928e980260a608", "name": "SimpleStorage", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "1/12/2022"}
+{"address": "0xd7B365c3CaCEd91EE91dBB0f1e4c677114cb3D0e", "name": "GStakingManager", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/12/2022"}
+{"address": "0x5Abc8219515aD0FF8300aA43e9669893E318919C", "name": "TextBranding", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "Exception('HTML IN OUTPUT!! - BeautifulSoup messed up..')"}
+{"address": "0xeA99842e169536eFAd8f28901FC0916205cedAfa", "name": "ImmortalApe", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x6F69141C0419B1D94C29bD5972F99213C2CE7b92", "name": "SyncXColors", "compiler": "0.8.4", "balance": "0.25 Ether", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x8782861627fA81F34B51F37Ba520a9D252926F9d", "name": "CryptoDivers", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x264eD319F50F14eB014d3961854E6eC69412ff63", "name": "AccessControlRegistry", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x4D88B93bd1cB5A695E19B96Fc34CC7bf080f5891", "name": "OwnableCallForwarder", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x06DC65d26ecD289058014b7A23c94182ab198020", "name": "RrpBeaconServer", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x2262744f3ca6e5Ea0Af7AEA8F0B0Dc7Ae97ed553", "name": "YUPETH", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "-", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xa6D60a2aaE8A6A157751e0A19436CbA0e816aC0d", "name": "YUP", "compiler": "0.8.3", "balance": "-", "txcount": 0, "settings": "-", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x13d3db6813c9e7241174ffc2fe509f857ebb97ea", "name": "ImmortalApe", "compiler": "0.8.7", "balance": "0.6 Ether", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x60569614a3ae1d53a2478332fbc770F6C21d26eD", "name": "Coin", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xd9b31c71654825e80be4eabb5d958d03df0c91cb", "name": "StakingProtocol", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x7f7c720b2fa6d3a587ae9693ae281b441ea42bd6", "name": "NotSoSimpleStorage", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x9aD2e99E5AFcad129351883bFCF4643a863245fF", "name": "SimpleStorage", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xacD5b4f63d44B10a648e039B1b221f5e5Db58ff6", "name": "FundMe", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0xC88e08d5A1D3A035847A4fcdFe68561ADf6E8959", "name": "Owner", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
+{"address": "0x1c398a564a86178dba2464d792069aa3fb5574c2", "name": "IterableMapping", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/9/2022", "err": "UnboundLocalError(\"local variable 'e' referenced before assignment\")"}
