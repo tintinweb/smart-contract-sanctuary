@@ -1697,3 +1697,7 @@
 {"address": "0x39f91452a6E9994762876e1EDd87Be28a46d5c99", "name": "ERC20DIA", "compiler": "0.7.4", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/12/2022"}
 {"address": "0x13fef63b503aaa376de3c7ea2d95b8869cb636ed", "name": "P1MultisigAdmin", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
 {"address": "0xb981b29c5190bb12c7236a994649efcb0b36e83b", "name": "PerpetualV1", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
+{"address": "0xa39ec7633a8b340acb9bc522769a0811d75d6dd3", "name": "StabilizeStrategyImpermaxUSDCV1", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/13/2022"}
+{"address": "0xee251cEC8b16cD85D4054660e3C06e3158Be86dB", "name": "Bridge", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/13/2022"}
+{"address": "0xc7c3d5a0bfb42cf4b1b05b7e98a2b5f9350cec1f", "name": "StabilizeStrategyImpermaxUSDCV1", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/13/2022"}
+{"address": "0x3b308089b9271a5b90bf8c8b6959c2745c386cd5", "name": "zsToken", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 15, "settings": "", "date": "1/12/2022"}
