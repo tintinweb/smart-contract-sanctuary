@@ -1078,3 +1078,13 @@
 {"address": "0xa19d66ad9c9bfef8bdc1542c412b58721a8b64f8", "name": "matiliao123", "compiler": "0.7.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/11/2022"}
 {"address": "0x38B3C88392492Ce8f3dA3902043be90f102A9d1E", "name": "matiliao123456", "compiler": "0.7.0", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/11/2022"}
 {"address": "0x4B85F9520064e9418C14Ef3817BEeEE74eD07813", "name": "ArbswapToken", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/11/2022"}
+{"address": "0x82aF208f404bC2C1a5ff77a0C638b30Bc3888C57", "name": "LimitOrderManager", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
+{"address": "0x458f8f8De070717169044e33939d3627F37a19b7", "name": "Fiat24Account", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
+{"address": "0x85651f17cF0Fd0D6384D08a4C3F1c458e3f8B6Ba", "name": "MintAsset", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 21, "settings": "", "date": "1/12/2022"}
+{"address": "0x2336af15a337b63075bfda12baec211f1906625c", "name": "generalisedGatekeeper", "compiler": "0.8.7", "balance": "0 ETH", "txcount": 5, "settings": "-", "date": "1/12/2022"}
+{"address": "0xb96c589df24ac659a2d158641230db9d92f47715", "name": "Proxy", "compiler": "0.5.0", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/12/2022"}
+{"address": "0xA742D4A4a79147Df9b313B4d252eF97340a98B89", "name": "LimitOrderManager", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
+{"address": "0x201Aab9d1A67F5581e2c7507f35c5E95EFC56512", "name": "LimitOrderManager", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
+{"address": "0x8C8DAa5E6464fB3E8eD26A39fB48e452D3b887b9", "name": "LimitOrderManager", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
+{"address": "0xC823CC33a9997DA38B92E603D90B956bb24DEce2", "name": "LimitOrderManager", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
+{"address": "0x36F126FD9C517Eb026eAB9feEAbF7bc2255fcc50", "name": "LimitOrderManager", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/12/2022"}
