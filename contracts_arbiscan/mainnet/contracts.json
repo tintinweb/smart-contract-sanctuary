@@ -1701,3 +1701,6 @@
 {"address": "0xee251cEC8b16cD85D4054660e3C06e3158Be86dB", "name": "Bridge", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/13/2022"}
 {"address": "0xc7c3d5a0bfb42cf4b1b05b7e98a2b5f9350cec1f", "name": "StabilizeStrategyImpermaxUSDCV1", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/13/2022"}
 {"address": "0x3b308089b9271a5b90bf8c8b6959c2745c386cd5", "name": "zsToken", "compiler": "0.6.6", "balance": "0 ETH", "txcount": 15, "settings": "", "date": "1/12/2022"}
+{"address": "0x13b0d85ccb8bf860b6b79af3029fca081ae9bef2", "name": "Create2Deployer", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/14/2022"}
+{"address": "0x503cdba19c484fc4aec22f0e8f3dc37a5c327c27", "name": "BabySitter", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/14/2022"}
+{"address": "0xa3A9664532E063A9D8188B515ef7F1BcB8583bBD", "name": "SwapEthDaiTool", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/14/2022"}
