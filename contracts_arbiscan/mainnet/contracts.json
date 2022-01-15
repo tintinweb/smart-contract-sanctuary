@@ -1704,3 +1704,8 @@
 {"address": "0x13b0d85ccb8bf860b6b79af3029fca081ae9bef2", "name": "Create2Deployer", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/14/2022"}
 {"address": "0x503cdba19c484fc4aec22f0e8f3dc37a5c327c27", "name": "BabySitter", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/14/2022"}
 {"address": "0xa3A9664532E063A9D8188B515ef7F1BcB8583bBD", "name": "SwapEthDaiTool", "compiler": "0.7.6", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/14/2022"}
+{"address": "0x1ac7A2fC7f66fA4edf2713A88CD4Bad24220c86C", "name": "ArbiDudesGenOne", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "1/15/2022"}
+{"address": "0x2c9773E9B7c240735175E8211887774accBD0B44", "name": "UMAMIBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 34, "settings": "", "date": "1/15/2022"}
+{"address": "0x43FA4f431E8cf7954143F9F34650FAC02a93cb83", "name": "EthBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 34, "settings": "", "date": "1/15/2022"}
+{"address": "0xab1306fd02cBf789b239427c75E863B6A97e98D1", "name": "EthBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 97, "settings": "", "date": "1/15/2022"}
+{"address": "0x1896361F05C116FF08c3D493368c1021159D9Ea3", "name": "EthBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 75, "settings": "", "date": "1/15/2022"}
