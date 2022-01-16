@@ -1108,3 +1108,10 @@
 {"address": "0x8ddf7021fea12a277f75414a1bac32f1586cb5e6", "name": "BulletLoans", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/13/2022"}
 {"address": "0xd69cabbe6700f329261a6aa901f9ee88f045976a", "name": "SignatureOnlyLenderVerifier", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/13/2022"}
 {"address": "0x285fe8cb345d2b05b497d9c8dbb9601a8243d759", "name": "BorrowerSignatureVerifier", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/13/2022"}
+{"address": "0xa41aE7a240ca19ae78Ee8db1124CbBF4aC00eF7e", "name": "L2ERC1155", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/15/2022"}
+{"address": "0x16f7EFdEBEea2924cEAFE7c0c2c5be9Ee0a61b73", "name": "FarmlandLotto", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 7, "settings": "", "date": "1/15/2022"}
+{"address": "0xCcef40A80bCe71aaCA7951ec6539558B9d91F654", "name": "FarmlandItems", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/15/2022"}
+{"address": "0x1475Cf08f882351fd9BF5509e51EB9E13aA68458", "name": "FarmlandLotto", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 9, "settings": "", "date": "1/15/2022"}
+{"address": "0xAbceAf63b1C74a3469E82680b67a1Fa4108aF32d", "name": "NFT", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/15/2022"}
+{"address": "0x8AEb1056fCDe3edbfC764683bc21602c8B318c14", "name": "ARTStaking", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/15/2022"}
+{"address": "0x7167982F44Abb55D6675DF1FEAbf88Db414001aC", "name": "MintAsset", "compiler": "0.8.0", "balance": "0 ETH", "txcount": 16, "settings": "", "date": "1/15/2022"}
