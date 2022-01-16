@@ -1709,3 +1709,7 @@
 {"address": "0x43FA4f431E8cf7954143F9F34650FAC02a93cb83", "name": "EthBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 34, "settings": "", "date": "1/15/2022"}
 {"address": "0xab1306fd02cBf789b239427c75E863B6A97e98D1", "name": "EthBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 97, "settings": "", "date": "1/15/2022"}
 {"address": "0x1896361F05C116FF08c3D493368c1021159D9Ea3", "name": "EthBondDepository", "compiler": "0.7.5", "balance": "0 ETH", "txcount": 75, "settings": "", "date": "1/15/2022"}
+{"address": "0x04996AFcf40A14D0892B00C816874F9C1A52C93B", "name": "GmxSSOV", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 37, "settings": "", "date": "1/16/2022"}
+{"address": "0xF92009a73D810798cB71651a73e4c33A3033c3E7", "name": "GmxCustomPriceOracle", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/16/2022"}
+{"address": "0x83A5b587Ae36F342d405A7e5971941168E0adB5d", "name": "GmxVolatilityOracle", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/16/2022"}
+{"address": "0x0Ab8Ebe87FC82E3AF6367909083eb01973EAF472", "name": "SynapseBridge", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/16/2022"}
