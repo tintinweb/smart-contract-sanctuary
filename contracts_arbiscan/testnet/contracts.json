@@ -1125,3 +1125,16 @@
 {"address": "0x50849C466CEF1f07756Bb95E9EBF5cf673eF7a79", "name": "FarmlandLotto", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 17, "settings": "", "date": "1/16/2022"}
 {"address": "0x9054afEdc3E44e071086775Bc1610A82aD2A36Fa", "name": "FarmlandItems", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 6, "settings": "", "date": "1/16/2022"}
 {"address": "0x71729Ed7eb2fb39e4fd6885A97E794240007343A", "name": "GoatGang", "compiler": "0.8.11", "balance": "0.248 ETH", "txcount": 8, "settings": "", "date": "1/16/2022"}
+{"address": "0xb3b697bd7507949b40773d947d81d32955addba4", "name": "MyTokenV1", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/18/2022"}
+{"address": "0x4fd462131eeebde499f61cfd425e83d1096247bf", "name": "MyTokenV1", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/18/2022"}
+{"address": "0x371B7A3B655b947B99C40A83858caA22F5412c5B", "name": "StakingRoulette", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/18/2022"}
+{"address": "0xeaA38808Ca764a826ce0E88eD025f57913800CdA", "name": "StakingRoulette", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/18/2022"}
+{"address": "0xce0Bb40F3e89Ad933D1a7acC9bB0F1A81b7e1BDc", "name": "StakingRoulette", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/18/2022"}
+{"address": "0xbAe3b8318A0AE1CC10D8c98Ab7f61c5fF81f149D", "name": "StakingRoulette", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/18/2022"}
+{"address": "0xf6e7de1847f27ba6fc660ae947901b469d382322", "name": "MyTokenV2", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/17/2022"}
+{"address": "0xf3e7a07ca9437a19715a85e2f0ad2f9f45f17bae", "name": "MyTokenV2", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/17/2022"}
+{"address": "0x1e089e17782d5a61acba8f95d5a1f3a535fe31e3", "name": "MyTokenV1", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/17/2022"}
+{"address": "0x8e8FccA80eA1A79f7Cc102C8691fD8Ae2AA01eF7", "name": "MyTokenV1", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/17/2022"}
+{"address": "0x7833baa486e7d98cb04ac9c01a0d14c8e48a8543", "name": "PerpetualV1", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/17/2022"}
+{"address": "0x4c66303464b46d56f362dd2ace4786f45d2088fd", "name": "PerpetualV1", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/17/2022"}
+{"address": "0xf73940bCE9b8999b222fBa3a03FbF91D16DCF9d4", "name": "BAMM", "compiler": "0.6.11", "balance": "0.0531 ETH", "txcount": 10, "settings": "", "date": "1/17/2022"}
