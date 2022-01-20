@@ -1764,3 +1764,15 @@
 {"address": "0x5fD1968aeE3d0afF0B1396367F5d3491f2a29B0C", "name": "SynapseSwap", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/19/2022"}
 {"address": "0x4165568ac614a4ed95d87e18652eDA069F1Fc3EF", "name": "UniswapV2Wrapper", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/19/2022"}
 {"address": "0x6EACA3F0458C063F96fbC0CcD54dCd923C9F1F52", "name": "CurveWrapper", "compiler": "0.8.4", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/19/2022"}
+{"address": "0x21980aEB5EDa532F4D300314e981cFF6B1486656", "name": "LoanOpenings", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/20/2022"}
+{"address": "0x5fa21F5387e1dE57aC66cC9d84A101eb02D267f1", "name": "LoanMaintenance_Arbitrum", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/20/2022"}
+{"address": "0x3a2f2A87d32A3c0fE751C1713E662Ee25D1e414b", "name": "LoanClosings_Arbitrum", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/20/2022"}
+{"address": "0x3AaAA0C547B3EFe4b585242771396a10521B19bA", "name": "LoanSettings", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/20/2022"}
+{"address": "0xB96454D0Fb2937080586b2e2F19a7A717cE87DB5", "name": "LoanMaintenance_2", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/20/2022"}
+{"address": "0xA0Dc9e505373e92eDE773dE021444ae251f9C171", "name": "MYEGG", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 438, "settings": "", "date": "1/20/2022"}
+{"address": "0x746Ba48fC973596d0077573BDa6185cA3BB9c3dC", "name": "MintSwapCanonicalToken", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/20/2022"}
+{"address": "0x504027Bb37A1d34dBdB19cd494F2d1aFB476D393", "name": "NyanBridge", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "1/20/2022"}
+{"address": "0xE0329C991cB1eb25ab03B25B00aF7921B7736a1c", "name": "EthBalance", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/20/2022"}
+{"address": "0x4b5436983ACB98e4D227967D5c4BE66FF8614293", "name": "LoanTokenLogicWeth", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/20/2022"}
+{"address": "0xc86D648Ea34e01aA115FF9D2d7C104C185BAE866", "name": "LoanTokenLogicStandard", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/20/2022"}
+{"address": "0x11eeDF003A63DE2e38F2B06D9034251c0A103C36", "name": "LoanTokenSettings", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/20/2022"}
