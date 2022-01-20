@@ -18552,3 +18552,24 @@
 {"address": "0x7dC146AE7c98F5dE9fE288e92E83bc77D7E8616D", "name": "CarNFT", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/19/2022"}
 {"address": "0x5B2B3f681939F55021D78f2e22cCba1342f1821F", "name": "rMutantCoin", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/19/2022"}
 {"address": "0x6c2db64da6c32afb0b9c558e5c548b04059aec3e", "name": "NoteNFT", "compiler": "0.8.10", "balance": "-", "txcount": 0, "settings": "", "date": "1/19/2022"}
+{"address": "0xd01af24db83fdfd659175aa9048177385dd9123a", "name": "Calc", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "1/20/2022"}
+{"address": "0x190f3c506a0cc29ca7bd3805e963a88c52fc1c7a", "name": "Storage", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "1/20/2022"}
+{"address": "0x42EBe462d34157419cC518524487E9E7672733e0", "name": "FxWnDRootTunnel", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "1/20/2022"}
+{"address": "0xaD40F3C2a3540015eEF220DD6c7Ad7eaBc818BF8", "name": "BoxV2", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "1/20/2022"}
+{"address": "0x3871768F2296CeC7aBBEbD0Aa4D8dBd342261E1e", "name": "TestToken", "compiler": "0.6.6", "balance": "-", "txcount": 0, "settings": "", "date": "1/20/2022"}
+{"address": "0xAf908AeA94CBdb91535bCA086C8f00F7aD992441", "name": "Gambling", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "-", "date": "1/20/2022"}
+{"address": "0x5CcD140b864a28B37a070B3DAA21F74dc16bb859", "name": "StrategyDummy", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "1/20/2022"}
+{"address": "0x4a4B27Db001080eE20F553696313913432137eF8", "name": "OutputTokenDummy", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "1/20/2022"}
+{"address": "0xA380C20516AcfdBe9BD4151931e662f7958010E3", "name": "InputTokenDummy", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "1/20/2022"}
+{"address": "0xEcc10B1baAbA47d71082B042a66B4984fB674C95", "name": "SamToken", "compiler": "0.8.2", "balance": "-", "txcount": 0, "settings": "-", "date": "1/20/2022"}
+{"address": "0xf8495ed2dC41E884fAF95b7542ce904EBE59d6e2", "name": "SueiBianDispenser", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/20/2022"}
+{"address": "0x1D63d1A1E1Bd5FC0c9418848d2FBff984832faCc", "name": "SueiBianDAO", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/20/2022"}
+{"address": "0x5198e6ef8996fc70e6208a417603b3eee13e1b14", "name": "OnePerWalletNft", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/19/2022"}
+{"address": "0x7b35815E21AfA2175ff4219167A9eb73F7cc2199", "name": "FundMe", "compiler": "0.6.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/19/2022"}
+{"address": "0xCc4f4716D10753f8390eA4482ce47e35A4194e28", "name": "HelloWorld", "compiler": "0.7.3", "balance": "-", "txcount": 0, "settings": "", "date": "1/19/2022"}
+{"address": "0x83ba948c4b019320f352190586f8e1ca4db4a5cc", "name": "Void", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/19/2022"}
+{"address": "0x6B90b1703Fd278848d64d8745B9cdB630344263f", "name": "DssVestTopUp", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/19/2022"}
+{"address": "0xF8d289bD665B4580f2abD9CEa7bD82bD9c039b06", "name": "TokenWrapper", "compiler": "0.6.12", "balance": "-", "txcount": 0, "settings": "", "date": "1/19/2022"}
+{"address": "0x9a21824e4e86efc4cebe896cc486c7ac436ff264", "name": "Bananaz", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "1/19/2022"}
+{"address": "0x753fAD27EF143015B181323760F9Fa53e081F8D9", "name": "RoyaltyRegistry", "compiler": "0.8.11", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/19/2022"}
+{"address": "0x91BB69F1aF23Acd20038181e2D902DBE278aAfe6", "name": "NFTCollectible", "compiler": "0.8.4", "balance": "0.03 Ether", "txcount": 0, "settings": "", "date": "1/19/2022"}
