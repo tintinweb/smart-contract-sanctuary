@@ -18835,3 +18835,34 @@
 {"address": "0x9D46a628862ed5E8d8409A761dAbeACB21D611Bb", "name": "Gravity", "compiler": "0.8.10", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/22/2022"}
 {"address": "0x524528628903ad60d14487b56d6093569dd2a981", "name": "DummyToken", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "-", "date": "1/22/2022"}
 {"address": "0xe0e04ec8c143baE9ef84c81f3D7795aC831C97E1", "name": "FaucetToken", "compiler": "0.5.16", "balance": "-", "txcount": 0, "settings": "", "date": "1/22/2022"}
+{"address": "0xAE47f473E783961C2bE6Fd70768e2501b675AB77", "name": "GrumpyDwarves", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0xc1Ba27DB86970f35245Ee0f8Fc81c97FEeC44854", "name": "ExclusiveDinos", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0x9f904aEaC497C6dF6922dE85985f955cA12F93D7", "name": "ArmNftRoot", "compiler": "0.8.6", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x453859988162333e74cf08fec391669f1ac2852f", "name": "TheDefundings", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0xA2d07059FADe97F61b989f9Ca8aB522ce459684a", "name": "Demo", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0xfD38318ca469e18556e88b915C29c98BD3F76223", "name": "Demo", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0xcad4cf73ee7001ab70e68c60f39554874d77ce27", "name": "PiggyBank", "compiler": "0.7.0", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x5F11946CD4443a645289477c7f922b6011Ead91c", "name": "Demo", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x46863712c719675f590a4ad869da07949a10522f", "name": "Calc", "compiler": "0.7.0", "balance": "-", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0x6af1139f42cd91d07bcfa24f1d28f3b5de34a419", "name": "ElfCampaigns", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0xe080db14f1b1482ec1467c5c341d940316224337", "name": "MyInuCoin", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x4d163E524bf89247760b2AC9F0f546F4C3CbE0ec", "name": "StMATIC", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x6dE6cA00b0dB149fac6A700935bde8DBBe949D15", "name": "gaprefinal", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x3bfea3290c0d7963dc76327493bbab4daa31e806", "name": "ElfMetadataHandler", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x162a888df59a0415c66e8d035b1b4106e9ea52ad", "name": "PinkLock", "compiler": "0.8.4", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0xCacEd5C212051fFcec67ec2E5078f043d665d249", "name": "NFT", "compiler": "0.8.0", "balance": "0.08 Ether", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0x86eF99ca76202a6BF9b95cAE1dAc466Ec7377990", "name": "TastyToastys", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x45a97c64aea27b7a014049eb7f989b779ad8dfb7", "name": "EthernalElves", "compiler": "0.8.7", "balance": "0 Ether", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x4132d54da257ddc15f859903a376441d2843370e", "name": "Calc", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0x950B23a0AC93770DD06F6B99CD344c23E1e825B4", "name": "HoneyFarmQueenDeluxe", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0xb74eebb37e0644caeae4789ff1cedccb40ef7ff2", "name": "ProxyGroupWallet", "compiler": "0.5.16", "balance": "0.2 Ether", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x3E7bAA0dD1C5b26390c55310022b4FDD1867617b", "name": "NFT", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0x7a2ffb48c901bc3452ea0c0f9c121de8016dff29", "name": "ProxyToken", "compiler": "0.5.16", "balance": "0.2 Ether", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x0c39160d083bbfa3b2f43ffebf683bf4c4bca9da", "name": "GroupWalletMaster", "compiler": "0.5.16", "balance": "0.003 Ether", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0xf585783ca092a26868e60a878564cb911009a011", "name": "GroupWalletFactory2", "compiler": "0.5.16", "balance": "0.025866572340526252 Ether", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x8118c732146c9d4D4F8ec756Bb8b5260a21A8ded", "name": "ExenoTokenRoot", "compiler": "0.8.11", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0xB268A4a355A0C54dF5D260722b79009C281Ce407", "name": "Voting", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0x29833353b1410edea706dc2ba0bf6690f31b78cb", "name": "Escribir", "compiler": "0.7.6", "balance": "-", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0xF907AF7001f8a4C921cE24d1e37A9662bD700145", "name": "FlashBotTest", "compiler": "0.8.0", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
+{"address": "0x5ccC2eF03FB84C557DaF95dBF73611939bf53C71", "name": "BatchCaller", "compiler": "0.8.9", "balance": "-", "txcount": 0, "settings": "-", "date": "1/23/2022"}
+{"address": "0x7b9b3f0c66d5afec1db9fa667e5cf3535f9100e8", "name": "RootERC20", "compiler": "0.8.7", "balance": "-", "txcount": 0, "settings": "", "date": "1/23/2022"}
