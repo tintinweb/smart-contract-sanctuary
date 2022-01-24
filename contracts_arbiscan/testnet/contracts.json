@@ -1340,3 +1340,12 @@
 {"address": "0x659fac3342b313344b88492076616e9a2056f91d", "name": "StakingRewardsFactory", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/22/2022"}
 {"address": "0xe0ea0537e427f0702e2d6d353185146131e081d0", "name": "StakingRewardsFactory", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 3, "settings": "", "date": "1/22/2022"}
 {"address": "0x5d7e03edcFFF18b18539ee0f7CF05a464e20b260", "name": "StakingRewardsFactory", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/22/2022"}
+{"address": "0x5080e5e006daa15aB38BC5d293E478cd5401b513", "name": "L2GatewayRouter", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/24/2022"}
+{"address": "0x096a9674FfA23316940a8158Eb6e13D6ac6B95df", "name": "L2CustomGateway", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/24/2022"}
+{"address": "0xAc6E8F56fEF67ba5b8F28267E60Ac92964e2037b", "name": "TransparentUpgradeableProxy", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/24/2022"}
+{"address": "0x6f030d3Ba7ba18D83176bBa3b27D0D179CB7dc47", "name": "ProxyAdmin", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/24/2022"}
+{"address": "0x677c2FE4F802555f08fE8Ae2fd1C6A50Fa8A6AE5", "name": "L2GatewayRouter", "compiler": "0.6.11", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/24/2022"}
+{"address": "0xe2c6b9a183f830d81272c6f51746c1ebf090aeea", "name": "PerpetualV1", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 8, "settings": "", "date": "1/24/2022"}
+{"address": "0x6630ffd33ab9d51f64377663265e760e4F8a224D", "name": "TextBlockToken", "compiler": "0.8.2", "balance": "0 ETH", "txcount": 3, "settings": "-", "date": "1/23/2022"}
+{"address": "0xb5C03f024505e7ACfC1DE09465a7CFa1ede9437E", "name": "Summoning", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/23/2022"}
+{"address": "0x9356b714e6b4d8de3930ab059e2753db3b266b3b", "name": "TeamVesting", "compiler": "0.8.10", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/23/2022"}
