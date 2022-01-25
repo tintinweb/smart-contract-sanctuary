@@ -1828,3 +1828,14 @@
 {"address": "0x3e9D89A883c00608d932f92bbD8bd948Bf1A9Cf6", "name": "PoolView", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/24/2022"}
 {"address": "0xC445D7e3Cdc96840439560675Ca9023204Ea9aCD", "name": "YieldMathExtensions", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/24/2022"}
 {"address": "0x511707B1311d6C3319e7A5BE6edb12D3777Be0dA", "name": "YieldMath", "compiler": "0.8.6", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/24/2022"}
+{"address": "0xcad10033c86b0c1ed6bfccaa2ff6779938558e9f", "name": "AddressesProvider", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 2, "settings": "", "date": "1/25/2022"}
+{"address": "0xaf6a3dae16915a281295725a9db06b1146f8d830", "name": "String", "compiler": "0.8.11", "balance": "0 ETH", "txcount": 1, "settings": "-", "date": "1/25/2022"}
+{"address": "0x6580f41efC34e6d49AB692BD338d2A0e0636f79a", "name": "JonesTokenSale", "compiler": "0.8.10", "balance": "4,549.995 ETH", "txcount": 3083, "settings": "", "date": "1/25/2022"}
+{"address": "0x1215107d442d70D43DC5EAd1Bfd2268525015c4f", "name": "FraxBridgeToken", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/25/2022"}
+{"address": "0xc71e6725569Af73aC6641ec4BCC99a709eAd40c7", "name": "AtlasMine", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/25/2022"}
+{"address": "0xf5EF1ad33d0D997a7c0C147d4D2CCb4669FEC9f4", "name": "MasterOfCoin", "compiler": "0.8.9", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/25/2022"}
+{"address": "0x89971b89e346fc372641a1ae427add6a738df50d", "name": "CErc20Delegate", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/24/2022"}
+{"address": "0x440253a301b4fc749a24e653fdb11b742e621892", "name": "CEtherDelegate", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/24/2022"}
+{"address": "0x53cc546053a09431c9d1a2b288471680d15000a4", "name": "Comptroller", "compiler": "0.5.17", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/24/2022"}
+{"address": "0xd1A758149896530a114C7F5e4c4daf093FC184A6", "name": "ChainlinkPriceOracleV2Arbitrum", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 5, "settings": "", "date": "1/24/2022"}
+{"address": "0x59FA438cD0731EBF5F4cDCaf72D4960EFd13FCe6", "name": "MasterPriceOracle", "compiler": "0.6.12", "balance": "0 ETH", "txcount": 1, "settings": "", "date": "1/24/2022"}
