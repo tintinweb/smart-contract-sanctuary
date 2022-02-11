@@ -13,10 +13,12 @@
 
 ## Usage
 
+The repo is configured for use with `git+ssh` (much more stable and faster).
+
 #### First time - clone the index and checkout all chain-specific sub repositories from scratch:
 
 ```console
-⇒  git clone --recursive --depth=1 git@github.com:tintinweb/smart-contract-sanctuary-multirepo.git
+⇒  git clone --recursive --depth=1 git@github.com:tintinweb/smart-contract-sanctuary.git
 ```
 
 <sub> also see https://git-scm.com/docs/git-submodule for more options</sub>
@@ -25,13 +27,13 @@
 #### Existing repository but submodules never initialized - checkout submodules and update all chain-specific sub repositories:
 
 ```console
-⇒  git submodule update --init --remote --recursive
+⇒  git submodule update --init --remote --depth=1
 ```
 
 #### Existing repository with submodules - update all chain-specific sub repositories:
 
 ```console
-⇒  git submodule update --remote --recursive
+⇒  git submodule update --remote
 ```
 
 ## Layout
