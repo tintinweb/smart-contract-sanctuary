@@ -4,6 +4,20 @@
 
 **Note**: This repo is updated twice a day.
 
+## How to check out and update the repo
+
+Clone all subchains:
+
+```console
+⇒  git clone --recursive git@github.com:tintinweb/smart-contract-sanctuary-multirepo.git
+```
+
+Update all subrepos:
+
+```
+⇒  git submodule update --remote --recursive
+```
+
 ## Repo Layout
 
 | Folder       | Description   |

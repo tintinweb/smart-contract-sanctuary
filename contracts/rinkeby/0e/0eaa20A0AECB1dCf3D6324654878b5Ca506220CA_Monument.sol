@@ -1,9 +1,0 @@
-/**
- *Submitted for verification at Etherscan.io on 2021-12-19
-*/
-
-contract Monument{string public inscription=
-"Sample text line 1"
-"Sample text sadasdline 2"
-"Sample text line 3"
-;}
