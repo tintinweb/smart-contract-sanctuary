@@ -1,6 +1,6 @@
 <sup>
  <b>Smart Contract Sanctuary - MultiRepo / Index</b><br>
- ⚠️<b>UPDATE:</b> Repo layout changed! see <a href="https://github.com/tintinweb/smart-contract-sanctuary/issues/13">#13</a>
+ ⚠️<b>UPDATE:</b> Repo layout changed! see <a href="https://github.com/tintinweb/smart-contract-sanctuary/issues/13">#13</a> (<a href="https://github.com/tintinweb/smart-contract-sanctuary/releases/tag/v1">v1-layout</a>)
 </sup>
 
 # Smart Contract Sanctuary
@@ -8,7 +8,8 @@
 <br><br>
 <sup>
 **⇝** This is the **index repository** for the **smart-contract-sanctuary**. 🔖 Bookmark this repo.<br>
-**⇝** This repo is updated twice a day.
+**⇝** Chain-specific sub-repos and the index are updated twice a day.<br>
+**⇝** Expect a full, recursive check-out to take 2GB+ disk space.<br>
 </sup>
 
 ## Usage
