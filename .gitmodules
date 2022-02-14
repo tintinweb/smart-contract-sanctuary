@@ -1,0 +1,24 @@
+[submodule "ethereum"]
+	path = ethereum
+	branch = master
+	url = git@github.com:tintinweb/smart-contract-sanctuary-ethereum.git
+[submodule "arbitrum"]
+	path = arbitrum
+	branch = master
+	url = git@github.com:tintinweb/smart-contract-sanctuary-arbitrum.git
+[submodule "polygon"]
+	path = polygon
+	branch = master
+	url = git@github.com:tintinweb/smart-contract-sanctuary-polygon.git
+[submodule "bsc"]
+	path = bsc
+	branch = master
+	url = git@github.com:tintinweb/smart-contract-sanctuary-bsc.git
+[submodule "fantom"]
+	path = fantom
+	branch = master
+	url = git@github.com:tintinweb/smart-contract-sanctuary-fantom.git
+[submodule "avalanche"]
+	path = avalanche
+	branch = master
+	url = git@github.com:tintinweb/smart-contract-sanctuary-avalanche.git
