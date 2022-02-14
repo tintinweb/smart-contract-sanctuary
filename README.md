@@ -28,13 +28,13 @@ The repo is configured for use with `git+ssh` (much more stable and faster).
 #### Existing repository but submodules never initialized - checkout submodules and update all chain-specific sub repositories:
 
 ```console
-⇒  git submodule update --init --remote --depth=1
+⇒  git submodule update --init --remote --depth=1 --progress
 ```
 
 #### Existing repository with submodules - update all chain-specific sub repositories:
 
 ```console
-⇒  git submodule update --remote
+⇒  git submodule update --remote --progress
 ```
 
 ## Layout
