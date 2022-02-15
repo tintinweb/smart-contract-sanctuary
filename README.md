@@ -49,6 +49,7 @@ The repo is configured for use with `git+ssh` (much more stable and faster).
 | ↳ [bsc](https://github.com/tintinweb/smart-contract-sanctuary-bsc)<sub>/contracts</sub> | Git SubModule 👉 https://github.com/tintinweb/smart-contract-sanctuary-bsc|
 | ↳ [fantom](https://github.com/tintinweb/smart-contract-sanctuary-fantom)<sub>/contracts</sub> | Git SubModule 👉 https://github.com/tintinweb/smart-contract-sanctuary-fantom|
 | ↳ [polygon](https://github.com/tintinweb/smart-contract-sanctuary-polygon)<sub>/contracts</sub> | Git SubModule 👉 https://github.com/tintinweb/smart-contract-sanctuary-polygon|
+| ↳ [tron](https://github.com/tintinweb/smart-contract-sanctuary-tron)<sub>/contracts</sub> | Git SubModule 👉 https://github.com/tintinweb/smart-contract-sanctuary-tron|
 | &lt;chain&gt;<sub>/utils</sub> | Chain specific support scripts |
 
 
