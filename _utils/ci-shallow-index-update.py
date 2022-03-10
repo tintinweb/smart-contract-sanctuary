@@ -24,7 +24,7 @@ def updateIndex(mode, sha1, path):
     subprocess.check_output(cmd)
 
 def main():
-    repos = ["ethereum", "arbitrum", "avalanche", "bsc", "fantom", "polygon", "tron"]
+    repos = ["ethereum", "arbitrum", "avalanche", "bsc", "fantom", "polygon", "tron", "optimism"]
     for r in repos:
         latestCommit = getLatestCommit("tintinweb", "smart-contract-sanctuary-%s"%r, "master")
         print("  ⇝   %s is at %s"%(r, latestCommit))
