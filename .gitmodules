@@ -24,4 +24,9 @@
 	url = git@github.com:tintinweb/smart-contract-sanctuary-avalanche.git
 [submodule "tron"]
 	path = tron
+	branch = master
 	url = git@github.com:tintinweb/smart-contract-sanctuary-tron.git
+[submodule "optimism"]
+	path = optimism
+	branch = master
+	url = git@github.com:tintinweb/smart-contract-sanctuary-optimism.git
