@@ -76,6 +76,7 @@ To use [List of Verified Contract addresses with an OpenSource license](https://
 ## 👩‍🔬 Data Science Tools
 
 * [🧠 SolGrep](https://github.com/tintinweb/solgrep) - A scriptable semantic grep utility for solidity (crunch numbers, find specific contracts, extract data)
+* [🐞 semgrep](https://semgrep.dev/) - Semgrep is a fast, open-source, static analysis tool for finding bugs and enforcing code standards at editor, commit, and CI time, and now supports **Solidity**! ❤️ Thanks [@JoranHonig](https://github.com/JoranHonig) for contributing the [semgrep solidity parser](https://github.com/JoranHonig/tree-sitter-solidity).
 
 ## 🎓 Citation
 
