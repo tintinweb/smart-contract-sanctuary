@@ -30,3 +30,7 @@
 	path = optimism
 	branch = master
 	url = git@github.com:tintinweb/smart-contract-sanctuary-optimism.git
+[submodule "celo"]
+	path = celo
+	branch = master
+	url = git@github.com:tintinweb/smart-contract-sanctuary-celo.git
