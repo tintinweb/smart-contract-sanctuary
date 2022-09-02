@@ -78,6 +78,7 @@ To use [List of Verified Contract addresses with an OpenSource license](https://
 
 * [🧠 SolGrep](https://github.com/tintinweb/solgrep) - A scriptable semantic grep utility for solidity (crunch numbers, find specific contracts, extract data)
 * [🐞 semgrep](https://semgrep.dev/) - Semgrep is a fast, open-source, static analysis tool for finding bugs and enforcing code standards at editor, commit, and CI time, and now supports **Solidity**! ❤️ Thanks [@JoranHonig](https://github.com/JoranHonig) for contributing the [semgrep solidity parser](https://github.com/JoranHonig/tree-sitter-solidity).
+* [🌟 Sourcegraph](https://sourcegraph.com/search?q=context:global+repo:tintinweb/smart-contract-sanctuary*+file:/mainnet/&patternType=literal) - A powerful online code search service that can be used to search the sanctuary without cloning.
 
 ## 🎓 Citation
 
