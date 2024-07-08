@@ -60,13 +60,13 @@ The repo is configured for use with `git+ssh` (much more stable and faster).
 Contains smart contract sources for various networks, grouped by the first two chars of the contract address.
 Files are named in the format `<address>_<source_unit_name>`, e.g. `0f0c3fedb6226cd5a18826ce23bec92d18336a98_URToken.sol`
 
-Some contracts are listed in `contracts.json`, but the file-system may contain more files than what is listed in this summary. Rely on the folder/file structure for a full list. 
+Some contracts are listed in `contracts.json`, but the file system may contain more files than what is listed in this summary. Rely on the folder/file structure for a full list. 
 This repo used to auto submit contracts to [4byte.directory](https://www.4byte.directory/).
 
 
 ##### 📂 &lt;chain&gt;/utils
 
-Support scripts for various activies like dumping smart contracts from public sources (etherscan.io, etherchain.com)
+Support scripts for various activities like dumping smart contracts from public sources (etherscan.io, etherchain.com)
 
 **requires:** `pip install -r requirements.txt`
 
