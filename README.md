@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> **This dataset is no longer kept up to date.** The chain-specific sub-repos stopped receiving new contracts between 2023 and mid-2024, so anything verified after that is missing here.
+>
+> For a larger and continuously updated dataset of verified contracts, have a look at **[Sourcify](https://sourcify.dev)** and its open, freely available repository: **https://docs.sourcify.dev/docs/repository/**
+
 <sup>
  <b>Smart Contract Sanctuary - MultiRepo / Index</b><br>
  ⚠️<b>UPDATE:</b> Repo layout changed! see <a href="https://github.com/tintinweb/smart-contract-sanctuary/issues/13">#13</a> (<a href="https://github.com/tintinweb/smart-contract-sanctuary/releases/tag/v1">v1-layout</a>)
@@ -8,7 +13,6 @@
 <br><br>
 <sup>
 **⇝** This is the **index repository** for the **smart-contract-sanctuary**. 🔖 Bookmark this repo.<br>
-**⇝** Chain-specific sub-repos and the index are updated twice a day.<br>
 **⇝** Expect a full, recursive check-out to take 2GB+ disk space.<br>
 </sup>
 
