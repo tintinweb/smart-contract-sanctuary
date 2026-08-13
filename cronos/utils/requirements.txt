@@ -1,0 +1,4 @@
+py-etherscan-api
+bs4
+pyetherchain
+retry
